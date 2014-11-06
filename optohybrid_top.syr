@@ -1,0 +1,556 @@
+Release 14.7 - xst P.20131013 (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.11 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.11 secs
+ 
+--> Reading design: optohybrid_top.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "optohybrid_top.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "optohybrid_top"
+Output Format                      : NGC
+Target Device                      : xc6slx150t-3-fgg676
+
+---- Source Options
+Top Module Name                    : optohybrid_top
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : Soft
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+Cores Search Directories           : {"ipcore_dir"  }
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "\\psf\home\Documents\PhD\Code\OH\ipcore_dir\fpga_clk_pll.vhd" into library work
+Parsing entity <fpga_clk_pll>.
+Parsing architecture <xilinx> of entity <fpga_clk_pll>.
+Parsing VHDL file "\\psf\home\Documents\PhD\Code\OH\ipcore_dir\gtp_pll.vhd" into library work
+Parsing entity <gtp_pll>.
+Parsing architecture <xilinx> of entity <gtp_pll>.
+Parsing VHDL file "\\psf\home\Documents\PhD\Code\OH\ipcore_dir\s6_gtpwizard_v1_11_tile.vhd" into library work
+Parsing entity <s6_gtpwizard_v1_11_tile>.
+Parsing architecture <RTL> of entity <s6_gtpwizard_v1_11_tile>.
+Parsing VHDL file "\\psf\home\Documents\PhD\Code\OH\ipcore_dir\s6_gtpwizard_v1_11.vhd" into library work
+Parsing entity <s6_gtpwizard_v1_11>.
+Parsing architecture <RTL> of entity <s6_gtpwizard_v1_11>.
+Parsing VHDL file "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" into library work
+Parsing entity <gtp_wrapper>.
+Parsing architecture <Behavioral> of entity <gtp_wrapper>.
+Parsing VHDL file "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" into library work
+Parsing entity <optohybrid_top>.
+Parsing architecture <Behavioral> of entity <optohybrid_top>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <optohybrid_top> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:871 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" Line 139: Using initial value '0' for vfat2_t1 since it is never assigned
+
+Elaborating entity <fpga_clk_pll> (architecture <xilinx>) from library <work>.
+
+Elaborating entity <gtp_wrapper> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <gtp_pll> (architecture <xilinx>) from library <work>.
+
+Elaborating entity <s6_gtpwizard_v1_11> (architecture <RTL>) with generics from library <work>.
+WARNING:HDLCompiler:1127 - "\\psf\home\Documents\PhD\Code\OH\ipcore_dir\s6_gtpwizard_v1_11.vhd" Line 341: Assignment to tied_to_ground_i ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "\\psf\home\Documents\PhD\Code\OH\ipcore_dir\s6_gtpwizard_v1_11.vhd" Line 343: Assignment to tied_to_vcc_i ignored, since the identifier is never used
+
+Elaborating entity <s6_gtpwizard_v1_11_tile> (architecture <RTL>) with generics from library <work>.
+WARNING:HDLCompiler:1127 - "\\psf\home\Documents\PhD\Code\OH\ipcore_dir\s6_gtpwizard_v1_11_tile.vhd" Line 205: Assignment to tied_to_vcc_vec_i ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "\\psf\home\Documents\PhD\Code\OH\ipcore_dir\s6_gtpwizard_v1_11_tile.vhd" Line 547: Assignment to rxcharisk0_float_i ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "\\psf\home\Documents\PhD\Code\OH\ipcore_dir\s6_gtpwizard_v1_11_tile.vhd" Line 549: Assignment to rxcharisk1_float_i ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "\\psf\home\Documents\PhD\Code\OH\ipcore_dir\s6_gtpwizard_v1_11_tile.vhd" Line 553: Assignment to rxdisperr0_float_i ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "\\psf\home\Documents\PhD\Code\OH\ipcore_dir\s6_gtpwizard_v1_11_tile.vhd" Line 555: Assignment to rxdisperr1_float_i ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "\\psf\home\Documents\PhD\Code\OH\ipcore_dir\s6_gtpwizard_v1_11_tile.vhd" Line 557: Assignment to rxnotintable0_float_i ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "\\psf\home\Documents\PhD\Code\OH\ipcore_dir\s6_gtpwizard_v1_11_tile.vhd" Line 559: Assignment to rxnotintable1_float_i ignored, since the identifier is never used
+WARNING:HDLCompiler:634 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" Line 109: Net <tx_kchar[7]> does not have a driver.
+WARNING:HDLCompiler:634 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" Line 110: Net <tx_data[63]> does not have a driver.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <optohybrid_top>.
+    Related source file is "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd".
+WARNING:Xst:647 - Input <vfat2_dvalid_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <vfat2_data_0_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <vfat2_data_1_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <vfat2_data_2_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <vfat2_data_3_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <vfat2_data_4_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <vfat2_data_5_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <vfat2_data_6_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <vfat2_data_7_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <vfat2_data_8_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <vfat2_data_9_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <vfat2_data_10_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <vfat2_data_11_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <vfat2_data_12_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <vfat2_data_13_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <vfat2_data_14_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <vfat2_data_15_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <vfat2_data_16_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <vfat2_data_17_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <vfat2_data_18_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <vfat2_data_19_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <vfat2_data_20_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <vfat2_data_21_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <vfat2_data_22_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <vfat2_data_23_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <fpga_rx_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <cdce_miso_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <cdce_auxout_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <cdce_plllock_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 157: Output port <clk100MHz_o> of the instance <fpga_clk_pll_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 157: Output port <clk160MHz_o> of the instance <fpga_clk_pll_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 184: Output port <rx_error_o> of the instance <gtp_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 184: Output port <rx_kchar_o> of the instance <gtp_wrapper_inst> is unconnected or connected to loadless signal.
+WARNING:Xst:2935 - Signal 'tx_kchar<7:4>', unconnected in block 'optohybrid_top', is tied to its initial value (0000).
+WARNING:Xst:2935 - Signal 'tx_kchar<1:0>', unconnected in block 'optohybrid_top', is tied to its initial value (00).
+WARNING:Xst:2935 - Signal 'tx_data<63:32>', unconnected in block 'optohybrid_top', is tied to its initial value (00000000000000000000000000000000).
+WARNING:Xst:2935 - Signal 'tx_data<15:0>', unconnected in block 'optohybrid_top', is tied to its initial value (0000000000000000).
+    Register <tx_data<18>> equivalent to <tx_data<23>> has been removed
+    Register <tx_data<19>> equivalent to <tx_data<23>> has been removed
+    Register <tx_data<20>> equivalent to <tx_data<23>> has been removed
+    Register <tx_data<21>> equivalent to <tx_data<23>> has been removed
+    Found 4-bit register for signal <data>.
+    Found 1-bit register for signal <tx_data<31>>.
+    Found 1-bit register for signal <tx_data<30>>.
+    Found 1-bit register for signal <tx_data<29>>.
+    Found 1-bit register for signal <tx_data<28>>.
+    Found 1-bit register for signal <tx_data<23>>.
+    Found 1-bit register for signal <tx_kchar<2>>.
+    Found 28-bit register for signal <cnt>.
+    Found 28-bit adder for signal <cnt[27]_GND_5_o_add_0_OUT> created at line 210.
+    Found 4-bit adder for signal <data[3]_GND_5_o_add_2_OUT> created at line 1241.
+    WARNING:Xst:2404 -  FFs/Latches <tx_kchar<3><0:0>> (without init value) have a constant value of 0 in block <optohybrid_top>.
+    WARNING:Xst:2404 -  FFs/Latches <tx_data<27><3:3>> (without init value) have a constant value of 0 in block <optohybrid_top>.
+    WARNING:Xst:2404 -  FFs/Latches <tx_data<26><27:27>> (without init value) have a constant value of 0 in block <optohybrid_top>.
+    WARNING:Xst:2404 -  FFs/Latches <tx_data<25><26:26>> (without init value) have a constant value of 0 in block <optohybrid_top>.
+    WARNING:Xst:2404 -  FFs/Latches <tx_data<24><25:25>> (without init value) have a constant value of 0 in block <optohybrid_top>.
+    WARNING:Xst:2404 -  FFs/Latches <tx_data<22><24:24>> (without init value) have a constant value of 0 in block <optohybrid_top>.
+    WARNING:Xst:2404 -  FFs/Latches <tx_data<17><22:22>> (without init value) have a constant value of 0 in block <optohybrid_top>.
+    WARNING:Xst:2404 -  FFs/Latches <tx_data<16><17:17>> (without init value) have a constant value of 0 in block <optohybrid_top>.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  38 D-type flip-flop(s).
+	inferred   2 Multiplexer(s).
+Unit <optohybrid_top> synthesized.
+
+Synthesizing Unit <fpga_clk_pll>.
+    Related source file is "\\psf\home\Documents\PhD\Code\OH\ipcore_dir\fpga_clk_pll.vhd".
+    Summary:
+	no macro.
+Unit <fpga_clk_pll> synthesized.
+
+Synthesizing Unit <gtp_wrapper>.
+    Related source file is "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd".
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 94: Output port <locked_o> of the instance <gtp_pll_tile_0_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 105: Output port <locked_o> of the instance <gtp_pll_tile_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 118: Output port <TILE0_RXLOSSOFSYNC0_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 118: Output port <TILE0_RXLOSSOFSYNC1_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 118: Output port <TILE0_GTPCLKOUT1_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 118: Output port <TILE1_RXLOSSOFSYNC0_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 118: Output port <TILE1_RXLOSSOFSYNC1_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 118: Output port <TILE1_GTPCLKOUT1_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 118: Output port <TILE0_RESETDONE0_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 118: Output port <TILE0_RESETDONE1_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 118: Output port <TILE0_RXBYTEISALIGNED0_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 118: Output port <TILE0_RXBYTEISALIGNED1_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 118: Output port <TILE0_RXRECCLK0_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 118: Output port <TILE0_RXRECCLK1_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 118: Output port <TILE1_PLLLKDET0_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 118: Output port <TILE1_PLLLKDET1_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 118: Output port <TILE1_RESETDONE0_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 118: Output port <TILE1_RESETDONE1_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 118: Output port <TILE1_RXBYTEISALIGNED0_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 118: Output port <TILE1_RXBYTEISALIGNED1_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 118: Output port <TILE1_RXRECCLK0_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 118: Output port <TILE1_RXRECCLK1_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
+    Summary:
+	no macro.
+Unit <gtp_wrapper> synthesized.
+
+Synthesizing Unit <gtp_pll>.
+    Related source file is "\\psf\home\Documents\PhD\Code\OH\ipcore_dir\gtp_pll.vhd".
+    Summary:
+	no macro.
+Unit <gtp_pll> synthesized.
+
+Synthesizing Unit <s6_gtpwizard_v1_11>.
+    Related source file is "\\psf\home\Documents\PhD\Code\OH\ipcore_dir\s6_gtpwizard_v1_11.vhd".
+        WRAPPER_SIM_GTPRESET_SPEEDUP = 0
+        WRAPPER_CLK25_DIVIDER_0 = 10
+        WRAPPER_CLK25_DIVIDER_1 = 10
+        WRAPPER_PLL_DIVSEL_FB_0 = 2
+        WRAPPER_PLL_DIVSEL_FB_1 = 2
+        WRAPPER_PLL_DIVSEL_REF_0 = 1
+        WRAPPER_PLL_DIVSEL_REF_1 = 1
+        WRAPPER_SIMULATION = 0
+    Summary:
+	no macro.
+Unit <s6_gtpwizard_v1_11> synthesized.
+
+Synthesizing Unit <s6_gtpwizard_v1_11_tile>.
+    Related source file is "\\psf\home\Documents\PhD\Code\OH\ipcore_dir\s6_gtpwizard_v1_11_tile.vhd".
+        TILE_SIM_GTPRESET_SPEEDUP = 0
+        TILE_CLK25_DIVIDER_0 = 10
+        TILE_CLK25_DIVIDER_1 = 10
+        TILE_PLL_DIVSEL_FB_0 = 2
+        TILE_PLL_DIVSEL_FB_1 = 2
+        TILE_PLL_DIVSEL_REF_0 = 1
+        TILE_PLL_DIVSEL_REF_1 = 1
+        TILE_PLL_SOURCE_0 = "PLL0"
+        TILE_PLL_SOURCE_1 = "PLL1"
+    Summary:
+	no macro.
+Unit <s6_gtpwizard_v1_11_tile> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 2
+ 28-bit adder                                          : 1
+ 4-bit adder                                           : 1
+# Registers                                            : 8
+ 1-bit register                                        : 6
+ 28-bit register                                       : 1
+ 4-bit register                                        : 1
+# Multiplexers                                         : 2
+ 28-bit 2-to-1 multiplexer                             : 1
+ 4-bit 2-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:1426 - The value init of the FF/Latch tx_data_23 hinder the constant cleaning in the block optohybrid_top.
+   You should achieve better results by setting this init to 1.
+
+Synthesizing (advanced) Unit <optohybrid_top>.
+The following registers are absorbed into counter <data>: 1 register on signal <data>.
+Unit <optohybrid_top> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 2
+ 28-bit adder                                          : 1
+ 4-bit adder                                           : 1
+# Counters                                             : 1
+ 4-bit up counter                                      : 1
+# Registers                                            : 34
+ Flip-Flops                                            : 34
+# Multiplexers                                         : 2
+ 28-bit 2-to-1 multiplexer                             : 1
+ 4-bit 2-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1426 - The value init of the FF/Latch tx_data_23 hinder the constant cleaning in the block optohybrid_top.
+   You should achieve better results by setting this init to 1.
+INFO:Xst:1901 - Instance pll_base_inst in unit pll_base_inst of type PLL_BASE has been replaced by PLL_ADV
+INFO:Xst:2261 - The FF/Latch <tx_data_28> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <data_0> 
+INFO:Xst:2261 - The FF/Latch <tx_data_29> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <data_1> 
+INFO:Xst:2261 - The FF/Latch <tx_data_30> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <data_2> 
+INFO:Xst:2261 - The FF/Latch <tx_data_31> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <data_3> 
+
+Optimizing unit <s6_gtpwizard_v1_11> ...
+
+Optimizing unit <s6_gtpwizard_v1_11_tile> ...
+
+Optimizing unit <gtp_pll> ...
+
+Optimizing unit <fpga_clk_pll> ...
+
+Optimizing unit <optohybrid_top> ...
+
+Optimizing unit <gtp_wrapper> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block optohybrid_top, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 34
+ Flip-Flops                                            : 34
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : optohybrid_top.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 129
+#      GND                         : 7
+#      INV                         : 3
+#      LUT1                        : 26
+#      LUT2                        : 3
+#      LUT3                        : 1
+#      LUT4                        : 3
+#      LUT5                        : 3
+#      LUT6                        : 24
+#      MUXCY                       : 27
+#      VCC                         : 4
+#      XORCY                       : 28
+# FlipFlops/Latches                : 34
+#      FD                          : 34
+# Clock Buffers                    : 8
+#      BUFG                        : 8
+# IO Buffers                       : 34
+#      BUFIO2                      : 2
+#      IBUF                        : 8
+#      IBUFDS                      : 4
+#      IBUFG                       : 1
+#      OBUF                        : 16
+#      OBUFDS                      : 3
+# DCMs                             : 2
+#      DCM_SP                      : 2
+# GigabitIOs                       : 2
+#      GTPA1_DUAL                  : 2
+# Others                           : 1
+#      PLL_ADV                     : 1
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx150tfgg676-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:              34  out of  184304     0%  
+ Number of Slice LUTs:                   63  out of  92152     0%  
+    Number used as Logic:                63  out of  92152     0%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:     97
+   Number with an unused Flip Flop:      63  out of     97    64%  
+   Number with an unused LUT:            34  out of     97    35%  
+   Number of fully used LUT-FF pairs:     0  out of     97     0%  
+   Number of unique control sets:         1
+
+IO Utilization: 
+ Number of IOs:                         289
+ Number of bonded IOBs:                  39  out of    396     9%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                8  out of     16    50%  
+ Number of PLL_ADVs:                      1  out of      6    16%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+----------------------------------------------------------------------+------------------------+-------+
+Clock Signal                                                          | Clock buffer(FF name)  | Load  |
+----------------------------------------------------------------------+------------------------+-------+
+gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT0_OUT<0>| DCM_SP:CLK0            | 34    |
+----------------------------------------------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 5.034ns (Maximum Frequency: 198.647MHz)
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: No path found
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT0_OUT<0>'
+  Clock period: 5.034ns (frequency: 198.647MHz)
+  Total number of paths / destination ports: 5871 / 33
+-------------------------------------------------------------------------
+Delay:               5.034ns (Levels of Logic = 12)
+  Source:            cnt_0 (FF)
+  Destination:       tx_kchar_2 (FF)
+  Source Clock:      gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT0_OUT<0> rising
+  Destination Clock: gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT0_OUT<0> rising
+
+  Data Path: cnt_0 to tx_kchar_2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               1   0.447   0.579  cnt_0 (cnt_0)
+     INV:I->O              1   0.206   0.000  Madd_cnt[27]_GND_5_o_add_0_OUT_lut<0>_INV_0 (Madd_cnt[27]_GND_5_o_add_0_OUT_lut<0>)
+     MUXCY:S->O            1   0.172   0.000  Madd_cnt[27]_GND_5_o_add_0_OUT_cy<0> (Madd_cnt[27]_GND_5_o_add_0_OUT_cy<0>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_cnt[27]_GND_5_o_add_0_OUT_cy<1> (Madd_cnt[27]_GND_5_o_add_0_OUT_cy<1>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_cnt[27]_GND_5_o_add_0_OUT_cy<2> (Madd_cnt[27]_GND_5_o_add_0_OUT_cy<2>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_cnt[27]_GND_5_o_add_0_OUT_cy<3> (Madd_cnt[27]_GND_5_o_add_0_OUT_cy<3>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_cnt[27]_GND_5_o_add_0_OUT_cy<4> (Madd_cnt[27]_GND_5_o_add_0_OUT_cy<4>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_cnt[27]_GND_5_o_add_0_OUT_cy<5> (Madd_cnt[27]_GND_5_o_add_0_OUT_cy<5>)
+     MUXCY:CI->O           1   0.019   0.000  Madd_cnt[27]_GND_5_o_add_0_OUT_cy<6> (Madd_cnt[27]_GND_5_o_add_0_OUT_cy<6>)
+     XORCY:CI->O           2   0.180   0.981  Madd_cnt[27]_GND_5_o_add_0_OUT_xor<7> (cnt[27]_GND_5_o_add_0_OUT<7>)
+     LUT6:I0->O           14   0.203   1.062  PWR_5_o_cnt[27]_equal_2_o<27>11 (PWR_5_o_cnt[27]_equal_2_o<27>11)
+     LUT6:I4->O            1   0.203   0.580  GND_5_o_cnt[27]_equal_6_o<27>_SW2 (N48)
+     LUT6:I5->O            1   0.205   0.000  GND_5_o_cnt[27]_equal_6_o<27> (GND_5_o_cnt[27]_equal_6_o)
+     FD:D                      0.102          tx_kchar_2
+    ----------------------------------------
+    Total                      5.034ns (1.832ns logic, 3.202ns route)
+                                       (36.4% logic, 63.6% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT0_OUT<0>
+----------------------------------------------------------------------+---------+---------+---------+---------+
+                                                                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                                          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------------------------------------------------------------+---------+---------+---------+---------+
+gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT0_OUT<0>|    5.034|         |         |         |
+----------------------------------------------------------------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 5.76 secs
+ 
+--> 
+
+Total memory usage is 223580 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   55 (   0 filtered)
+Number of infos    :   31 (   0 filtered)
+

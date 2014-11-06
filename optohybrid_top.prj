@@ -1,0 +1,6 @@
+vhdl work "ipcore_dir/fpga_clk_pll.vhd"
+vhdl work "ipcore_dir/gtp_pll.vhd"
+vhdl work "ipcore_dir/s6_gtpwizard_v1_11_tile.vhd"
+vhdl work "ipcore_dir/s6_gtpwizard_v1_11.vhd"
+vhdl work "src/gtp_wrapper.vhd"
+vhdl work "src/optohybrid_top.vhd"
