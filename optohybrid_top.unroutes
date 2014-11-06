@@ -1,11 +1,11 @@
 Release 14.7 - par P.20131013 (nt)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Thu Nov 06 14:58:38 2014
+Thu Nov 06 17:41:23 2014
 
 All signals are completely routed.
 
-WARNING:ParHelpers:362 - There are 12 sourceless signals in this design. This design will not pass the DRC check run by
+WARNING:ParHelpers:362 - There are 14 sourceless signals in this design. This design will not pass the DRC check run by
    Bitgen.
 
    cdce_le_o_OBUF
@@ -18,19 +18,29 @@ WARNING:ParHelpers:362 - There are 12 sourceless signals in this design. This de
    fpga_test_o<4>_OBUF
    fpga_test_o<5>_OBUF
    fpga_tx_o_OBUF
-   vfat2_resets_o<0>_OBUF
-   vfat2_resets_o<1>_OBUF
-WARNING:ParHelpers:361 - There are 64 loadless signals in this design. This design will cause Bitgen to issue DRC
+   leds_o<0>_OBUF
+   leds_o<1>_OBUF
+   leds_o<2>_OBUF
+   leds_o<3>_OBUF
+WARNING:ParHelpers:361 - There are 72 loadless signals in this design. This design will cause Bitgen to issue DRC
    warnings.
 
    cdce_auxout_i_IBUF
    cdce_miso_i_IBUF
    cdce_plllock_i_IBUF
    fpga_rx_i_IBUF
-   scl_io<2>_IBUF
-   scl_io<3>_IBUF
-   sda_io<2>_IBUF
-   sda_io<3>_IBUF
+   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<19>
+   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<20>
+   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<21>
+   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<22>
+   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<23>
+   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<25>
+   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<26>
+   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<27>
+   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<28>
+   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<29>
+   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<30>
+   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<31>
    vfat2_data_10_i<0>_IBUF
    vfat2_data_10_i<1>_IBUF
    vfat2_data_10_i<2>_IBUF

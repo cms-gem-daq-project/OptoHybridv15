@@ -1,179 +1,179 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Thu Nov 06 14:58:10 2014
+// Written by: Map P.20131013 on Thu Nov 06 17:40:32 2014
 //! **************************************************************************
 
 SCHEMATIC START;
+COMP "cdce_plllock_i" LOCATE = SITE "J7" LEVEL 1;
+COMP "enable_gtp_o" LOCATE = SITE "AA23" LEVEL 1;
+COMP "cdce_le_o" LOCATE = SITE "L10" LEVEL 1;
+COMP "cdce_ref_o" LOCATE = SITE "J9" LEVEL 1;
+COMP "fpga_rx_i" LOCATE = SITE "B1" LEVEL 1;
+COMP "fpga_tx_o" LOCATE = SITE "C1" LEVEL 1;
+COMP "leds_o<0>" LOCATE = SITE "AF13" LEVEL 1;
+COMP "leds_o<1>" LOCATE = SITE "AF14" LEVEL 1;
+COMP "leds_o<2>" LOCATE = SITE "AF15" LEVEL 1;
+COMP "leds_o<3>" LOCATE = SITE "AE15" LEVEL 1;
+COMP "cdce_miso_i" LOCATE = SITE "K9" LEVEL 1;
+COMP "vfat2_t1_n_o" LOCATE = SITE "J17" LEVEL 1;
+COMP "cdce_sclk_o" LOCATE = SITE "K10" LEVEL 1;
+COMP "vfat2_t1_p_o" LOCATE = SITE "J16" LEVEL 1;
+COMP "cdce_mosi_o" LOCATE = SITE "L9" LEVEL 1;
+COMP "cdce_sync_o" LOCATE = SITE "H6" LEVEL 1;
+COMP "cdce_auxout_i" LOCATE = SITE "H5" LEVEL 1;
+COMP "sda_io<2>" LOCATE = SITE "B22" LEVEL 1;
+COMP "sda_io<3>" LOCATE = SITE "D21" LEVEL 1;
+COMP "cdce_powerdown_o" LOCATE = SITE "G4" LEVEL 1;
+COMP "fpga_clk_i" LOCATE = SITE "AD14" LEVEL 1;
+COMP "rx_n_i<0>" LOCATE = SITE "C7" LEVEL 1;
+COMP "rx_n_i<1>" LOCATE = SITE "C9" LEVEL 1;
+COMP "rx_n_i<2>" LOCATE = SITE "C17" LEVEL 1;
+COMP "rx_n_i<3>" LOCATE = SITE "C19" LEVEL 1;
+COMP "rx_p_i<0>" LOCATE = SITE "D7" LEVEL 1;
+COMP "rx_p_i<1>" LOCATE = SITE "D9" LEVEL 1;
+COMP "rx_p_i<2>" LOCATE = SITE "D17" LEVEL 1;
+COMP "rx_p_i<3>" LOCATE = SITE "D19" LEVEL 1;
+COMP "vfat2_data_10_i<0>" LOCATE = SITE "W26" LEVEL 1;
+COMP "vfat2_data_10_i<1>" LOCATE = SITE "V26" LEVEL 1;
+COMP "vfat2_data_10_i<2>" LOCATE = SITE "U25" LEVEL 1;
+COMP "vfat2_data_10_i<3>" LOCATE = SITE "U26" LEVEL 1;
+COMP "vfat2_data_10_i<4>" LOCATE = SITE "T26" LEVEL 1;
+COMP "vfat2_data_10_i<5>" LOCATE = SITE "R25" LEVEL 1;
+COMP "vfat2_data_10_i<6>" LOCATE = SITE "R26" LEVEL 1;
+COMP "vfat2_data_10_i<7>" LOCATE = SITE "P26" LEVEL 1;
+COMP "vfat2_data_10_i<8>" LOCATE = SITE "N26" LEVEL 1;
+COMP "vfat2_data_11_i<0>" LOCATE = SITE "D24" LEVEL 1;
+COMP "vfat2_data_11_i<1>" LOCATE = SITE "C24" LEVEL 1;
+COMP "vfat2_data_11_i<2>" LOCATE = SITE "M26" LEVEL 1;
+COMP "vfat2_data_11_i<3>" LOCATE = SITE "L26" LEVEL 1;
+COMP "vfat2_data_11_i<4>" LOCATE = SITE "L25" LEVEL 1;
+COMP "vfat2_data_11_i<5>" LOCATE = SITE "K26" LEVEL 1;
+COMP "vfat2_data_11_i<6>" LOCATE = SITE "J26" LEVEL 1;
+COMP "vfat2_data_11_i<7>" LOCATE = SITE "J25" LEVEL 1;
+COMP "vfat2_data_11_i<8>" LOCATE = SITE "H26" LEVEL 1;
+COMP "vfat2_data_12_i<0>" LOCATE = SITE "R24" LEVEL 1;
+COMP "vfat2_data_12_i<1>" LOCATE = SITE "P24" LEVEL 1;
+COMP "vfat2_data_12_i<2>" LOCATE = SITE "N24" LEVEL 1;
+COMP "vfat2_data_12_i<3>" LOCATE = SITE "M24" LEVEL 1;
+COMP "vfat2_data_12_i<4>" LOCATE = SITE "L24" LEVEL 1;
+COMP "vfat2_data_12_i<5>" LOCATE = SITE "K24" LEVEL 1;
+COMP "vfat2_data_12_i<6>" LOCATE = SITE "J24" LEVEL 1;
+COMP "vfat2_data_12_i<7>" LOCATE = SITE "H24" LEVEL 1;
+COMP "vfat2_data_12_i<8>" LOCATE = SITE "E24" LEVEL 1;
+COMP "vfat2_data_13_i<0>" LOCATE = SITE "AD24" LEVEL 1;
+COMP "vfat2_data_13_i<1>" LOCATE = SITE "AC24" LEVEL 1;
+COMP "vfat2_data_13_i<2>" LOCATE = SITE "AB24" LEVEL 1;
+COMP "vfat2_data_13_i<3>" LOCATE = SITE "AA24" LEVEL 1;
+COMP "vfat2_data_13_i<4>" LOCATE = SITE "Y24" LEVEL 1;
+COMP "vfat2_data_13_i<5>" LOCATE = SITE "W24" LEVEL 1;
+COMP "vfat2_data_13_i<6>" LOCATE = SITE "V24" LEVEL 1;
+COMP "vfat2_data_13_i<7>" LOCATE = SITE "U24" LEVEL 1;
+COMP "vfat2_data_13_i<8>" LOCATE = SITE "T24" LEVEL 1;
+COMP "scl_o<2>" LOCATE = SITE "B23" LEVEL 1;
+COMP "scl_o<3>" LOCATE = SITE "D22" LEVEL 1;
+COMP "gtp_refclk_n_i<0>" LOCATE = SITE "A10" LEVEL 1;
+COMP "gtp_refclk_n_i<1>" LOCATE = SITE "C11" LEVEL 1;
+COMP "gtp_refclk_n_i<2>" LOCATE = SITE "C15" LEVEL 1;
+COMP "gtp_refclk_n_i<3>" LOCATE = SITE "A16" LEVEL 1;
+COMP "gtp_refclk_p_i<0>" LOCATE = SITE "B10" LEVEL 1;
+COMP "gtp_refclk_p_i<1>" LOCATE = SITE "D11" LEVEL 1;
+COMP "gtp_refclk_p_i<2>" LOCATE = SITE "D15" LEVEL 1;
+COMP "gtp_refclk_p_i<3>" LOCATE = SITE "B16" LEVEL 1;
+COMP "tx_n_o<0>" LOCATE = SITE "A6" LEVEL 1;
+COMP "tx_n_o<1>" LOCATE = SITE "A8" LEVEL 1;
+COMP "tx_n_o<2>" LOCATE = SITE "A18" LEVEL 1;
+COMP "tx_n_o<3>" LOCATE = SITE "A20" LEVEL 1;
+COMP "tx_p_o<0>" LOCATE = SITE "B6" LEVEL 1;
+COMP "tx_p_o<1>" LOCATE = SITE "B8" LEVEL 1;
+COMP "tx_p_o<2>" LOCATE = SITE "B18" LEVEL 1;
+COMP "tx_p_o<3>" LOCATE = SITE "B20" LEVEL 1;
+COMP "vfat2_mclk_n_o" LOCATE = SITE "D13" LEVEL 1;
+COMP "vfat2_mclk_p_o" LOCATE = SITE "E13" LEVEL 1;
+COMP "cdce_pri_n_o" LOCATE = SITE "A12" LEVEL 1;
+COMP "cdce_pri_p_o" LOCATE = SITE "B12" LEVEL 1;
+COMP "fpga_test_o<0>" LOCATE = SITE "E1" LEVEL 1;
+COMP "fpga_test_o<1>" LOCATE = SITE "D1" LEVEL 1;
+COMP "fpga_test_o<2>" LOCATE = SITE "G1" LEVEL 1;
+COMP "fpga_test_o<3>" LOCATE = SITE "F1" LEVEL 1;
+COMP "fpga_test_o<4>" LOCATE = SITE "J1" LEVEL 1;
+COMP "fpga_test_o<5>" LOCATE = SITE "H1" LEVEL 1;
+COMP "vfat2_dvalid_i<2>" LOCATE = SITE "F24" LEVEL 1;
+COMP "vfat2_dvalid_i<3>" LOCATE = SITE "G24" LEVEL 1;
+COMP "vfat2_resets_o<0>" LOCATE = SITE "E18" LEVEL 1;
+COMP "vfat2_resets_o<1>" LOCATE = SITE "F18" LEVEL 1;
+COMP "vfat2_data_8_i<0>" LOCATE = SITE "G26" LEVEL 1;
+COMP "vfat2_data_8_i<1>" LOCATE = SITE "G25" LEVEL 1;
+COMP "vfat2_data_8_i<2>" LOCATE = SITE "F26" LEVEL 1;
+COMP "vfat2_data_8_i<3>" LOCATE = SITE "E26" LEVEL 1;
+COMP "vfat2_data_8_i<4>" LOCATE = SITE "E25" LEVEL 1;
+COMP "vfat2_data_8_i<5>" LOCATE = SITE "D26" LEVEL 1;
+COMP "vfat2_data_8_i<6>" LOCATE = SITE "C26" LEVEL 1;
+COMP "vfat2_data_8_i<7>" LOCATE = SITE "C25" LEVEL 1;
+COMP "vfat2_data_8_i<8>" LOCATE = SITE "B26" LEVEL 1;
+COMP "vfat2_data_9_i<0>" LOCATE = SITE "AE26" LEVEL 1;
+COMP "vfat2_data_9_i<1>" LOCATE = SITE "AD26" LEVEL 1;
+COMP "vfat2_data_9_i<2>" LOCATE = SITE "AC25" LEVEL 1;
+COMP "vfat2_data_9_i<3>" LOCATE = SITE "AC26" LEVEL 1;
+COMP "vfat2_data_9_i<4>" LOCATE = SITE "AB26" LEVEL 1;
+COMP "vfat2_data_9_i<5>" LOCATE = SITE "AA25" LEVEL 1;
+COMP "vfat2_data_9_i<6>" LOCATE = SITE "AA26" LEVEL 1;
+COMP "vfat2_data_9_i<7>" LOCATE = SITE "Y26" LEVEL 1;
+COMP "vfat2_data_9_i<8>" LOCATE = SITE "W25" LEVEL 1;
 COMP "gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/gtpa1_dual_i"
         LOCATE = SITE "GTPA1_DUAL_X0Y1" LEVEL 1;
 COMP "gtp_wrapper_inst/gtp_inst/tile1_s6_gtpwizard_v1_11_i/gtpa1_dual_i"
         LOCATE = SITE "GTPA1_DUAL_X1Y1" LEVEL 1;
-COMP "cdce_sync_o" LOCATE = SITE "H6" LEVEL 1;
-COMP "vfat2_data_8_i<8>" LOCATE = SITE "B26" LEVEL 1;
-COMP "rx_p_i<0>" LOCATE = SITE "D7" LEVEL 1;
-COMP "rx_p_i<1>" LOCATE = SITE "D9" LEVEL 1;
-COMP "rx_p_i<2>" LOCATE = SITE "D17" LEVEL 1;
-COMP "vfat2_resets_o<0>" LOCATE = SITE "E18" LEVEL 1;
-COMP "rx_p_i<3>" LOCATE = SITE "D19" LEVEL 1;
-COMP "vfat2_resets_o<1>" LOCATE = SITE "F18" LEVEL 1;
-COMP "vfat2_data_13_i<0>" LOCATE = SITE "AD24" LEVEL 1;
-COMP "vfat2_data_13_i<1>" LOCATE = SITE "AC24" LEVEL 1;
-COMP "cdce_powerdown_o" LOCATE = SITE "G4" LEVEL 1;
-COMP "cdce_mosi_o" LOCATE = SITE "L9" LEVEL 1;
-COMP "cdce_pri_n_o" LOCATE = SITE "A12" LEVEL 1;
-COMP "vfat2_data_13_i<2>" LOCATE = SITE "AB24" LEVEL 1;
-COMP "vfat2_data_10_i<0>" LOCATE = SITE "W26" LEVEL 1;
-COMP "vfat2_data_9_i<0>" LOCATE = SITE "AE26" LEVEL 1;
-COMP "vfat2_data_13_i<3>" LOCATE = SITE "AA24" LEVEL 1;
-COMP "sda_io<2>" LOCATE = SITE "B22" LEVEL 1;
-COMP "vfat2_data_10_i<1>" LOCATE = SITE "V26" LEVEL 1;
-COMP "vfat2_data_9_i<1>" LOCATE = SITE "AD26" LEVEL 1;
-COMP "vfat2_data_13_i<4>" LOCATE = SITE "Y24" LEVEL 1;
-COMP "sda_io<3>" LOCATE = SITE "D21" LEVEL 1;
-COMP "vfat2_data_10_i<2>" LOCATE = SITE "U25" LEVEL 1;
-COMP "vfat2_data_9_i<2>" LOCATE = SITE "AC25" LEVEL 1;
-COMP "fpga_test_o<0>" LOCATE = SITE "E1" LEVEL 1;
-COMP "vfat2_data_13_i<5>" LOCATE = SITE "W24" LEVEL 1;
-COMP "fpga_rx_i" LOCATE = SITE "B1" LEVEL 1;
-COMP "vfat2_data_10_i<3>" LOCATE = SITE "U26" LEVEL 1;
-COMP "vfat2_data_9_i<3>" LOCATE = SITE "AC26" LEVEL 1;
-COMP "cdce_pri_p_o" LOCATE = SITE "B12" LEVEL 1;
-COMP "fpga_test_o<1>" LOCATE = SITE "D1" LEVEL 1;
-COMP "vfat2_data_13_i<6>" LOCATE = SITE "V24" LEVEL 1;
-COMP "cdce_plllock_i" LOCATE = SITE "J7" LEVEL 1;
-COMP "vfat2_data_10_i<4>" LOCATE = SITE "T26" LEVEL 1;
-COMP "vfat2_data_9_i<4>" LOCATE = SITE "AB26" LEVEL 1;
-COMP "fpga_test_o<2>" LOCATE = SITE "G1" LEVEL 1;
-COMP "vfat2_data_13_i<7>" LOCATE = SITE "U24" LEVEL 1;
-COMP "enable_gtp_o" LOCATE = SITE "AA23" LEVEL 1;
-COMP "vfat2_data_10_i<5>" LOCATE = SITE "R25" LEVEL 1;
-COMP "vfat2_data_9_i<5>" LOCATE = SITE "AA25" LEVEL 1;
-COMP "fpga_test_o<3>" LOCATE = SITE "F1" LEVEL 1;
-COMP "vfat2_data_13_i<8>" LOCATE = SITE "T24" LEVEL 1;
-COMP "vfat2_data_10_i<6>" LOCATE = SITE "R26" LEVEL 1;
-COMP "vfat2_data_9_i<6>" LOCATE = SITE "AA26" LEVEL 1;
-COMP "fpga_test_o<4>" LOCATE = SITE "J1" LEVEL 1;
-COMP "vfat2_data_10_i<7>" LOCATE = SITE "P26" LEVEL 1;
-COMP "vfat2_data_9_i<7>" LOCATE = SITE "Y26" LEVEL 1;
-COMP "fpga_test_o<5>" LOCATE = SITE "H1" LEVEL 1;
-COMP "vfat2_data_10_i<8>" LOCATE = SITE "N26" LEVEL 1;
-COMP "vfat2_data_9_i<8>" LOCATE = SITE "W25" LEVEL 1;
-COMP "leds_o<0>" LOCATE = SITE "AF13" LEVEL 1;
-COMP "leds_o<1>" LOCATE = SITE "AF14" LEVEL 1;
-COMP "leds_o<2>" LOCATE = SITE "AF15" LEVEL 1;
-COMP "cdce_miso_i" LOCATE = SITE "K9" LEVEL 1;
-COMP "leds_o<3>" LOCATE = SITE "AE15" LEVEL 1;
-COMP "rx_n_i<0>" LOCATE = SITE "C7" LEVEL 1;
-COMP "vfat2_dvalid_i<2>" LOCATE = SITE "F24" LEVEL 1;
-COMP "rx_n_i<1>" LOCATE = SITE "C9" LEVEL 1;
-COMP "vfat2_dvalid_i<3>" LOCATE = SITE "G24" LEVEL 1;
-COMP "rx_n_i<2>" LOCATE = SITE "C17" LEVEL 1;
-COMP "fpga_tx_o" LOCATE = SITE "C1" LEVEL 1;
-COMP "rx_n_i<3>" LOCATE = SITE "C19" LEVEL 1;
-COMP "fpga_clk_i" LOCATE = SITE "AD14" LEVEL 1;
-COMP "vfat2_data_11_i<0>" LOCATE = SITE "D24" LEVEL 1;
-COMP "vfat2_data_11_i<1>" LOCATE = SITE "C24" LEVEL 1;
-COMP "vfat2_data_11_i<2>" LOCATE = SITE "M26" LEVEL 1;
-COMP "vfat2_t1_n_o" LOCATE = SITE "J17" LEVEL 1;
-COMP "vfat2_mclk_n_o" LOCATE = SITE "D13" LEVEL 1;
-COMP "vfat2_data_11_i<3>" LOCATE = SITE "L26" LEVEL 1;
-COMP "vfat2_data_11_i<4>" LOCATE = SITE "L25" LEVEL 1;
-COMP "tx_p_o<0>" LOCATE = SITE "B6" LEVEL 1;
-COMP "gtp_refclk_p_i<0>" LOCATE = SITE "B10" LEVEL 1;
-COMP "cdce_auxout_i" LOCATE = SITE "H5" LEVEL 1;
-COMP "vfat2_data_11_i<5>" LOCATE = SITE "K26" LEVEL 1;
-COMP "tx_p_o<1>" LOCATE = SITE "B8" LEVEL 1;
-COMP "gtp_refclk_p_i<1>" LOCATE = SITE "D11" LEVEL 1;
-COMP "vfat2_data_11_i<6>" LOCATE = SITE "J26" LEVEL 1;
-COMP "tx_p_o<2>" LOCATE = SITE "B18" LEVEL 1;
-COMP "gtp_refclk_p_i<2>" LOCATE = SITE "D15" LEVEL 1;
-COMP "vfat2_t1_p_o" LOCATE = SITE "J16" LEVEL 1;
-COMP "vfat2_mclk_p_o" LOCATE = SITE "E13" LEVEL 1;
-COMP "vfat2_data_11_i<7>" LOCATE = SITE "J25" LEVEL 1;
-COMP "tx_p_o<3>" LOCATE = SITE "B20" LEVEL 1;
-COMP "gtp_refclk_p_i<3>" LOCATE = SITE "B16" LEVEL 1;
-COMP "vfat2_data_11_i<8>" LOCATE = SITE "H26" LEVEL 1;
-COMP "cdce_sclk_o" LOCATE = SITE "K10" LEVEL 1;
-COMP "vfat2_data_12_i<0>" LOCATE = SITE "R24" LEVEL 1;
-COMP "vfat2_data_12_i<1>" LOCATE = SITE "P24" LEVEL 1;
-COMP "vfat2_data_12_i<2>" LOCATE = SITE "N24" LEVEL 1;
-COMP "vfat2_data_8_i<0>" LOCATE = SITE "G26" LEVEL 1;
-COMP "vfat2_data_12_i<3>" LOCATE = SITE "M24" LEVEL 1;
-COMP "vfat2_data_8_i<1>" LOCATE = SITE "G25" LEVEL 1;
-COMP "vfat2_data_12_i<4>" LOCATE = SITE "L24" LEVEL 1;
-COMP "scl_io<2>" LOCATE = SITE "B23" LEVEL 1;
-COMP "vfat2_data_8_i<2>" LOCATE = SITE "F26" LEVEL 1;
-COMP "vfat2_data_12_i<5>" LOCATE = SITE "K24" LEVEL 1;
-COMP "scl_io<3>" LOCATE = SITE "D22" LEVEL 1;
-COMP "vfat2_data_8_i<3>" LOCATE = SITE "E26" LEVEL 1;
-COMP "vfat2_data_12_i<6>" LOCATE = SITE "J24" LEVEL 1;
-COMP "vfat2_data_8_i<4>" LOCATE = SITE "E25" LEVEL 1;
-COMP "tx_n_o<0>" LOCATE = SITE "A6" LEVEL 1;
-COMP "gtp_refclk_n_i<0>" LOCATE = SITE "A10" LEVEL 1;
-COMP "vfat2_data_12_i<7>" LOCATE = SITE "H24" LEVEL 1;
-COMP "vfat2_data_8_i<5>" LOCATE = SITE "D26" LEVEL 1;
-COMP "tx_n_o<1>" LOCATE = SITE "A8" LEVEL 1;
-COMP "gtp_refclk_n_i<1>" LOCATE = SITE "C11" LEVEL 1;
-COMP "vfat2_data_12_i<8>" LOCATE = SITE "E24" LEVEL 1;
-COMP "vfat2_data_8_i<6>" LOCATE = SITE "C26" LEVEL 1;
-COMP "cdce_ref_o" LOCATE = SITE "J9" LEVEL 1;
-COMP "tx_n_o<2>" LOCATE = SITE "A18" LEVEL 1;
-COMP "gtp_refclk_n_i<2>" LOCATE = SITE "C15" LEVEL 1;
-COMP "cdce_le_o" LOCATE = SITE "L10" LEVEL 1;
-COMP "vfat2_data_8_i<7>" LOCATE = SITE "C25" LEVEL 1;
-COMP "tx_n_o<3>" LOCATE = SITE "A20" LEVEL 1;
-COMP "gtp_refclk_n_i<3>" LOCATE = SITE "A16" LEVEL 1;
 PIN
-        gtp_wrapper_inst/gtp_inst/tile1_s6_gtpwizard_v1_11_i/gtpa1_dual_i_pins<136>
+        gtp_wrapper_inst/gtp_inst/tile1_s6_gtpwizard_v1_11_i/gtpa1_dual_i_pins<132>
         = BEL
         "gtp_wrapper_inst/gtp_inst/tile1_s6_gtpwizard_v1_11_i/gtpa1_dual_i"
         PINNAME RXUSRCLK0;
 PIN
-        gtp_wrapper_inst/gtp_inst/tile1_s6_gtpwizard_v1_11_i/gtpa1_dual_i_pins<137>
+        gtp_wrapper_inst/gtp_inst/tile1_s6_gtpwizard_v1_11_i/gtpa1_dual_i_pins<133>
         = BEL
         "gtp_wrapper_inst/gtp_inst/tile1_s6_gtpwizard_v1_11_i/gtpa1_dual_i"
         PINNAME RXUSRCLK1;
 PIN
-        gtp_wrapper_inst/gtp_inst/tile1_s6_gtpwizard_v1_11_i/gtpa1_dual_i_pins<324>
+        gtp_wrapper_inst/gtp_inst/tile1_s6_gtpwizard_v1_11_i/gtpa1_dual_i_pins<320>
         = BEL
         "gtp_wrapper_inst/gtp_inst/tile1_s6_gtpwizard_v1_11_i/gtpa1_dual_i"
         PINNAME TXUSRCLK0;
 PIN
-        gtp_wrapper_inst/gtp_inst/tile1_s6_gtpwizard_v1_11_i/gtpa1_dual_i_pins<325>
+        gtp_wrapper_inst/gtp_inst/tile1_s6_gtpwizard_v1_11_i/gtpa1_dual_i_pins<321>
         = BEL
         "gtp_wrapper_inst/gtp_inst/tile1_s6_gtpwizard_v1_11_i/gtpa1_dual_i"
         PINNAME TXUSRCLK1;
 TIMEGRP gtp_userclk1 = PIN
-        "gtp_wrapper_inst/gtp_inst/tile1_s6_gtpwizard_v1_11_i/gtpa1_dual_i_pins<136>"
+        "gtp_wrapper_inst/gtp_inst/tile1_s6_gtpwizard_v1_11_i/gtpa1_dual_i_pins<132>"
         PIN
-        "gtp_wrapper_inst/gtp_inst/tile1_s6_gtpwizard_v1_11_i/gtpa1_dual_i_pins<137>"
+        "gtp_wrapper_inst/gtp_inst/tile1_s6_gtpwizard_v1_11_i/gtpa1_dual_i_pins<133>"
         PIN
-        "gtp_wrapper_inst/gtp_inst/tile1_s6_gtpwizard_v1_11_i/gtpa1_dual_i_pins<324>"
+        "gtp_wrapper_inst/gtp_inst/tile1_s6_gtpwizard_v1_11_i/gtpa1_dual_i_pins<320>"
         PIN
-        "gtp_wrapper_inst/gtp_inst/tile1_s6_gtpwizard_v1_11_i/gtpa1_dual_i_pins<325>"
+        "gtp_wrapper_inst/gtp_inst/tile1_s6_gtpwizard_v1_11_i/gtpa1_dual_i_pins<321>"
         PIN
-        "gtp_wrapper_inst/gtp_inst/tile1_s6_gtpwizard_v1_11_i/gtpa1_dual_i_pins<136>"
+        "gtp_wrapper_inst/gtp_inst/tile1_s6_gtpwizard_v1_11_i/gtpa1_dual_i_pins<132>"
         PIN
-        "gtp_wrapper_inst/gtp_inst/tile1_s6_gtpwizard_v1_11_i/gtpa1_dual_i_pins<137>"
+        "gtp_wrapper_inst/gtp_inst/tile1_s6_gtpwizard_v1_11_i/gtpa1_dual_i_pins<133>"
         PIN
-        "gtp_wrapper_inst/gtp_inst/tile1_s6_gtpwizard_v1_11_i/gtpa1_dual_i_pins<324>"
+        "gtp_wrapper_inst/gtp_inst/tile1_s6_gtpwizard_v1_11_i/gtpa1_dual_i_pins<320>"
         PIN
-        "gtp_wrapper_inst/gtp_inst/tile1_s6_gtpwizard_v1_11_i/gtpa1_dual_i_pins<325>"
+        "gtp_wrapper_inst/gtp_inst/tile1_s6_gtpwizard_v1_11_i/gtpa1_dual_i_pins<321>"
         PIN
-        "gtp_wrapper_inst/gtp_inst/tile1_s6_gtpwizard_v1_11_i/gtpa1_dual_i_pins<136>"
+        "gtp_wrapper_inst/gtp_inst/tile1_s6_gtpwizard_v1_11_i/gtpa1_dual_i_pins<132>"
         PIN
-        "gtp_wrapper_inst/gtp_inst/tile1_s6_gtpwizard_v1_11_i/gtpa1_dual_i_pins<137>"
+        "gtp_wrapper_inst/gtp_inst/tile1_s6_gtpwizard_v1_11_i/gtpa1_dual_i_pins<133>"
         PIN
-        "gtp_wrapper_inst/gtp_inst/tile1_s6_gtpwizard_v1_11_i/gtpa1_dual_i_pins<324>"
+        "gtp_wrapper_inst/gtp_inst/tile1_s6_gtpwizard_v1_11_i/gtpa1_dual_i_pins<320>"
         PIN
-        "gtp_wrapper_inst/gtp_inst/tile1_s6_gtpwizard_v1_11_i/gtpa1_dual_i_pins<325>"
+        "gtp_wrapper_inst/gtp_inst/tile1_s6_gtpwizard_v1_11_i/gtpa1_dual_i_pins<321>"
         PIN
-        "gtp_wrapper_inst/gtp_inst/tile1_s6_gtpwizard_v1_11_i/gtpa1_dual_i_pins<136>"
+        "gtp_wrapper_inst/gtp_inst/tile1_s6_gtpwizard_v1_11_i/gtpa1_dual_i_pins<132>"
         PIN
-        "gtp_wrapper_inst/gtp_inst/tile1_s6_gtpwizard_v1_11_i/gtpa1_dual_i_pins<137>"
+        "gtp_wrapper_inst/gtp_inst/tile1_s6_gtpwizard_v1_11_i/gtpa1_dual_i_pins<133>"
         PIN
-        "gtp_wrapper_inst/gtp_inst/tile1_s6_gtpwizard_v1_11_i/gtpa1_dual_i_pins<324>"
+        "gtp_wrapper_inst/gtp_inst/tile1_s6_gtpwizard_v1_11_i/gtpa1_dual_i_pins<320>"
         PIN
-        "gtp_wrapper_inst/gtp_inst/tile1_s6_gtpwizard_v1_11_i/gtpa1_dual_i_pins<325>";
+        "gtp_wrapper_inst/gtp_inst/tile1_s6_gtpwizard_v1_11_i/gtpa1_dual_i_pins<321>";
 PIN
         gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/gtpa1_dual_i_pins<134>
         = BEL

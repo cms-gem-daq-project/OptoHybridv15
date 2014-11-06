@@ -119,20 +119,20 @@ architecture Behavioral of optohybrid_top is
     alias rx_kchar_2        : std_logic_vector(1 downto 0) is rx_kchar(5 downto 4);
     alias rx_kchar_3        : std_logic_vector(1 downto 0) is rx_kchar(7 downto 6);
     
-    alias rx_data_0         : std_logic_vector(15 downto 0) is rx_kchar(15 downto 0);
-    alias rx_data_1         : std_logic_vector(15 downto 0) is rx_kchar(31 downto 16);
-    alias rx_data_2         : std_logic_vector(15 downto 0) is rx_kchar(47 downto 32);
-    alias rx_data_3         : std_logic_vector(15 downto 0) is rx_kchar(63 downto 48);
+    alias rx_data_0         : std_logic_vector(15 downto 0) is rx_data(15 downto 0);
+    alias rx_data_1         : std_logic_vector(15 downto 0) is rx_data(31 downto 16);
+    alias rx_data_2         : std_logic_vector(15 downto 0) is rx_data(47 downto 32);
+    alias rx_data_3         : std_logic_vector(15 downto 0) is rx_data(63 downto 48);
     
     alias tx_kchar_0        : std_logic_vector(1 downto 0) is tx_kchar(1 downto 0);
     alias tx_kchar_1        : std_logic_vector(1 downto 0) is tx_kchar(3 downto 2);
     alias tx_kchar_2        : std_logic_vector(1 downto 0) is tx_kchar(5 downto 4);
     alias tx_kchar_3        : std_logic_vector(1 downto 0) is tx_kchar(7 downto 6);
     
-    alias tx_data_0         : std_logic_vector(15 downto 0) is tx_kchar(15 downto 0);
-    alias tx_data_1         : std_logic_vector(15 downto 0) is tx_kchar(31 downto 16);
-    alias tx_data_2         : std_logic_vector(15 downto 0) is tx_kchar(47 downto 32);
-    alias tx_data_3         : std_logic_vector(15 downto 0) is tx_kchar(63 downto 48);
+    alias tx_data_0         : std_logic_vector(15 downto 0) is tx_data(15 downto 0);
+    alias tx_data_1         : std_logic_vector(15 downto 0) is tx_data(31 downto 16);
+    alias tx_data_2         : std_logic_vector(15 downto 0) is tx_data(47 downto 32);
+    alias tx_data_3         : std_logic_vector(15 downto 0) is tx_data(63 downto 48);
     
     -- VFAT2
     
@@ -146,9 +146,16 @@ begin
 
     -- OptoHybrid reset
     reset <= '0';
+    
+    --================================--
+    -- VFAT2 
+    --================================--
   
-    -- T1 line LVDS
+    -- T1
     t1_obufds : obufds port map(I => vfat2_t1, O => vfat2_t1_p_o, OB => vfat2_t1_n_o);
+    
+    -- Resets 
+    vfat2_resets_o <= "11";
     
     --================================--
     -- Clocking
@@ -218,7 +225,7 @@ begin
     
     link_tracking_1_inst : entity work.link_tracking
     port map(
-        gtx_clk_i       => gtp_clk,
+        gtp_clk_i       => gtp_clk,
         vfat2_clk_i     => vfat2_clk,
         reset_i         => reset,
         rx_error_i      => rx_error_1,
@@ -232,13 +239,13 @@ begin
         scl_o           => scl_o(3 downto 2),
         vfat2_dvalid_i  => vfat2_dvalid_i(3 downto 2),
         vfat2_data_0_i  => vfat2_data_8_i(8),
-        vfat2_data_1_i  => vfat2_data_8_i(9),
-        vfat2_data_2_i  => vfat2_data_8_i(10),
-        vfat2_data_3_i  => vfat2_data_8_i(11),
-        vfat2_data_4_i  => vfat2_data_8_i(12),
-        vfat2_data_5_i  => vfat2_data_8_i(13),
-        vfat2_data_6_i  => vfat2_data_8_i(14),
-        vfat2_data_7_i  => vfat2_data_8_i(15)
+        vfat2_data_1_i  => vfat2_data_9_i(8),
+        vfat2_data_2_i  => vfat2_data_10_i(8),
+        vfat2_data_3_i  => vfat2_data_11_i(8),
+        vfat2_data_4_i  => vfat2_data_12_i(8),
+        vfat2_data_5_i  => vfat2_data_13_i(8),
+        vfat2_data_6_i  => vfat2_data_14_i(8),
+        vfat2_data_7_i  => vfat2_data_15_i(8)
     );
       
 end Behavioral;

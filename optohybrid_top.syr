@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Reading design: optohybrid_top.prj
 
@@ -114,12 +114,33 @@ Parsing architecture <xilinx> of entity <fpga_clk_pll>.
 Parsing VHDL file "\\psf\home\Documents\PhD\Code\OH\ipcore_dir\gtp_pll.vhd" into library work
 Parsing entity <gtp_pll>.
 Parsing architecture <xilinx> of entity <gtp_pll>.
+Parsing VHDL file "\\psf\home\Documents\PhD\Code\OH\ipcore_dir\chipscope_icon.vhd" into library work
+Parsing entity <chipscope_icon>.
+Parsing architecture <chipscope_icon_a> of entity <chipscope_icon>.
+Parsing VHDL file "\\psf\home\Documents\PhD\Code\OH\ipcore_dir\chipscope_vio.vhd" into library work
+Parsing entity <chipscope_vio>.
+Parsing architecture <chipscope_vio_a> of entity <chipscope_vio>.
+Parsing VHDL file "\\psf\home\Documents\PhD\Code\OH\src\i2c_data.vhd" into library work
+Parsing entity <i2c_data>.
+Parsing architecture <behave> of entity <i2c_data>.
+Parsing VHDL file "\\psf\home\Documents\PhD\Code\OH\src\i2c_ctrl.vhd" into library work
+Parsing entity <i2c_ctrl>.
+Parsing architecture <behave> of entity <i2c_ctrl>.
+Parsing VHDL file "\\psf\home\Documents\PhD\Code\OH\src\i2c_master.vhd" into library work
+Parsing entity <i2c_master>.
+Parsing architecture <hierarchy> of entity <i2c_master>.
 Parsing VHDL file "\\psf\home\Documents\PhD\Code\OH\ipcore_dir\s6_gtpwizard_v1_11_tile.vhd" into library work
 Parsing entity <s6_gtpwizard_v1_11_tile>.
 Parsing architecture <RTL> of entity <s6_gtpwizard_v1_11_tile>.
+Parsing VHDL file "\\psf\home\Documents\PhD\Code\OH\src\i2c_wrapper.vhd" into library work
+Parsing entity <i2c_wrapper>.
+Parsing architecture <Behavioral> of entity <i2c_wrapper>.
 Parsing VHDL file "\\psf\home\Documents\PhD\Code\OH\ipcore_dir\s6_gtpwizard_v1_11.vhd" into library work
 Parsing entity <s6_gtpwizard_v1_11>.
 Parsing architecture <RTL> of entity <s6_gtpwizard_v1_11>.
+Parsing VHDL file "\\psf\home\Documents\PhD\Code\OH\src\link_tracking.vhd" into library work
+Parsing entity <link_tracking>.
+Parsing architecture <Behavioral> of entity <link_tracking>.
 Parsing VHDL file "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" into library work
 Parsing entity <gtp_wrapper>.
 Parsing architecture <Behavioral> of entity <gtp_wrapper>.
@@ -152,8 +173,24 @@ WARNING:HDLCompiler:1127 - "\\psf\home\Documents\PhD\Code\OH\ipcore_dir\s6_gtpwi
 WARNING:HDLCompiler:1127 - "\\psf\home\Documents\PhD\Code\OH\ipcore_dir\s6_gtpwizard_v1_11_tile.vhd" Line 555: Assignment to rxdisperr1_float_i ignored, since the identifier is never used
 WARNING:HDLCompiler:1127 - "\\psf\home\Documents\PhD\Code\OH\ipcore_dir\s6_gtpwizard_v1_11_tile.vhd" Line 557: Assignment to rxnotintable0_float_i ignored, since the identifier is never used
 WARNING:HDLCompiler:1127 - "\\psf\home\Documents\PhD\Code\OH\ipcore_dir\s6_gtpwizard_v1_11_tile.vhd" Line 559: Assignment to rxnotintable1_float_i ignored, since the identifier is never used
+
+Elaborating entity <link_tracking> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <i2c_wrapper> (architecture <Behavioral>) with generics from library <work>.
+
+Elaborating entity <i2c_master> (architecture <hierarchy>) from library <work>.
+
+Elaborating entity <i2c_data> (architecture <behave>) with generics from library <work>.
+
+Elaborating entity <i2c_ctrl> (architecture <behave>) from library <work>.
+
+Elaborating entity <chipscope_icon> (architecture <chipscope_icon_a>) from library <work>.
+
+Elaborating entity <chipscope_vio> (architecture <chipscope_vio_a>) from library <work>.
 WARNING:HDLCompiler:634 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" Line 109: Net <tx_kchar[7]> does not have a driver.
 WARNING:HDLCompiler:634 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" Line 110: Net <tx_data[63]> does not have a driver.
+WARNING:HDLCompiler:634 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" Line 142: Net <sda_o[5]> does not have a driver.
+WARNING:HDLCompiler:634 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" Line 143: Net <sda_t[5]> does not have a driver.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -161,7 +198,8 @@ WARNING:HDLCompiler:634 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.v
 
 Synthesizing Unit <optohybrid_top>.
     Related source file is "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd".
-WARNING:Xst:647 - Input <vfat2_dvalid_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <vfat2_dvalid_i<1:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <vfat2_dvalid_i<5:4>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <vfat2_data_0_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <vfat2_data_1_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <vfat2_data_2_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -170,14 +208,14 @@ WARNING:Xst:647 - Input <vfat2_data_4_i> is never used. This port will be preser
 WARNING:Xst:647 - Input <vfat2_data_5_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <vfat2_data_6_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <vfat2_data_7_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <vfat2_data_8_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <vfat2_data_9_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <vfat2_data_10_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <vfat2_data_11_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <vfat2_data_12_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <vfat2_data_13_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <vfat2_data_14_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <vfat2_data_15_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <vfat2_data_8_i<7:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <vfat2_data_9_i<7:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <vfat2_data_10_i<7:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <vfat2_data_11_i<7:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <vfat2_data_12_i<7:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <vfat2_data_13_i<7:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <vfat2_data_14_i<7:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <vfat2_data_15_i<7:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <vfat2_data_16_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <vfat2_data_17_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <vfat2_data_18_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -190,40 +228,18 @@ WARNING:Xst:647 - Input <fpga_rx_i> is never used. This port will be preserved a
 WARNING:Xst:647 - Input <cdce_miso_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <cdce_auxout_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <cdce_plllock_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 157: Output port <clk100MHz_o> of the instance <fpga_clk_pll_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 157: Output port <clk160MHz_o> of the instance <fpga_clk_pll_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 184: Output port <rx_error_o> of the instance <gtp_wrapper_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 184: Output port <rx_kchar_o> of the instance <gtp_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 168: Output port <clk100MHz_o> of the instance <fpga_clk_pll_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 168: Output port <clk160MHz_o> of the instance <fpga_clk_pll_inst> is unconnected or connected to loadless signal.
 WARNING:Xst:2935 - Signal 'tx_kchar<7:4>', unconnected in block 'optohybrid_top', is tied to its initial value (0000).
 WARNING:Xst:2935 - Signal 'tx_kchar<1:0>', unconnected in block 'optohybrid_top', is tied to its initial value (00).
 WARNING:Xst:2935 - Signal 'tx_data<63:32>', unconnected in block 'optohybrid_top', is tied to its initial value (00000000000000000000000000000000).
 WARNING:Xst:2935 - Signal 'tx_data<15:0>', unconnected in block 'optohybrid_top', is tied to its initial value (0000000000000000).
-    Register <tx_data<18>> equivalent to <tx_data<23>> has been removed
-    Register <tx_data<19>> equivalent to <tx_data<23>> has been removed
-    Register <tx_data<20>> equivalent to <tx_data<23>> has been removed
-    Register <tx_data<21>> equivalent to <tx_data<23>> has been removed
-    Found 4-bit register for signal <data>.
-    Found 1-bit register for signal <tx_data<31>>.
-    Found 1-bit register for signal <tx_data<30>>.
-    Found 1-bit register for signal <tx_data<29>>.
-    Found 1-bit register for signal <tx_data<28>>.
-    Found 1-bit register for signal <tx_data<23>>.
-    Found 1-bit register for signal <tx_kchar<2>>.
-    Found 28-bit register for signal <cnt>.
-    Found 28-bit adder for signal <cnt[27]_GND_5_o_add_0_OUT> created at line 210.
-    Found 4-bit adder for signal <data[3]_GND_5_o_add_2_OUT> created at line 1241.
-    WARNING:Xst:2404 -  FFs/Latches <tx_kchar<3><0:0>> (without init value) have a constant value of 0 in block <optohybrid_top>.
-    WARNING:Xst:2404 -  FFs/Latches <tx_data<27><3:3>> (without init value) have a constant value of 0 in block <optohybrid_top>.
-    WARNING:Xst:2404 -  FFs/Latches <tx_data<26><27:27>> (without init value) have a constant value of 0 in block <optohybrid_top>.
-    WARNING:Xst:2404 -  FFs/Latches <tx_data<25><26:26>> (without init value) have a constant value of 0 in block <optohybrid_top>.
-    WARNING:Xst:2404 -  FFs/Latches <tx_data<24><25:25>> (without init value) have a constant value of 0 in block <optohybrid_top>.
-    WARNING:Xst:2404 -  FFs/Latches <tx_data<22><24:24>> (without init value) have a constant value of 0 in block <optohybrid_top>.
-    WARNING:Xst:2404 -  FFs/Latches <tx_data<17><22:22>> (without init value) have a constant value of 0 in block <optohybrid_top>.
-    WARNING:Xst:2404 -  FFs/Latches <tx_data<16><17:17>> (without init value) have a constant value of 0 in block <optohybrid_top>.
+WARNING:Xst:2935 - Signal 'sda_o<5:4>', unconnected in block 'optohybrid_top', is tied to its initial value (00).
+WARNING:Xst:2935 - Signal 'sda_o<1:0>', unconnected in block 'optohybrid_top', is tied to its initial value (00).
+WARNING:Xst:2935 - Signal 'sda_t<5:4>', unconnected in block 'optohybrid_top', is tied to its initial value (00).
+WARNING:Xst:2935 - Signal 'sda_t<1:0>', unconnected in block 'optohybrid_top', is tied to its initial value (00).
     Summary:
-	inferred   2 Adder/Subtractor(s).
-	inferred  38 D-type flip-flop(s).
-	inferred   2 Multiplexer(s).
+	no macro.
 Unit <optohybrid_top> synthesized.
 
 Synthesizing Unit <fpga_clk_pll>.
@@ -295,20 +311,254 @@ Synthesizing Unit <s6_gtpwizard_v1_11_tile>.
 	no macro.
 Unit <s6_gtpwizard_v1_11_tile> synthesized.
 
+Synthesizing Unit <link_tracking>.
+    Related source file is "\\psf\home\Documents\PhD\Code\OH\src\link_tracking.vhd".
+WARNING:Xst:647 - Input <rx_kchar_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <rx_data_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <vfat2_dvalid_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <vfat2_clk_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <rx_error_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <vfat2_data_0_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <vfat2_data_1_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <vfat2_data_2_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <vfat2_data_3_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <vfat2_data_4_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <vfat2_data_5_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <vfat2_data_6_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <vfat2_data_7_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:653 - Signal <tx_kchar_o> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <tx_data_o> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Found 1-bit register for signal <en_i>.
+    Found 27-bit register for signal <cnt>.
+    Found 27-bit adder for signal <cnt[26]_GND_61_o_add_6_OUT> created at line 104.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  28 D-type flip-flop(s).
+Unit <link_tracking> synthesized.
+
+Synthesizing Unit <i2c_wrapper>.
+    Related source file is "\\psf\home\Documents\PhD\Code\OH\src\i2c_wrapper.vhd".
+        clk_freq = 160000000
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\i2c_wrapper.vhd" line 238: Output port <done_str> of the instance <i2c_master_inst> is unconnected or connected to loadless signal.
+    Found 1-bit register for signal <exec>.
+    Found 1-bit register for signal <enable>.
+    Found 3-bit register for signal <state>.
+    Found 3-bit register for signal <chip_select>.
+    Found 8-bit register for signal <register_select>.
+    Found 1-bit register for signal <read_write_n>.
+    Found 8-bit register for signal <data>.
+    Found 32-bit register for signal <data_reg>.
+    Found 8-bit register for signal <data_o>.
+    Found 1-bit register for signal <status_o>.
+    Found 1-bit register for signal <en_o>.
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 6                                              |
+    | Transitions        | 11                                             |
+    | Inputs             | 4                                              |
+    | Outputs            | 6                                              |
+    | Clock              | fabric_clk_i (rising_edge)                     |
+    | Power Up State     | 000                                            |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 8-bit subtractor for signal <GND_62_o_GND_62_o_sub_8_OUT<7:0>> created at line 1308.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  64 D-type flip-flop(s).
+	inferred  14 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <i2c_wrapper> synthesized.
+
+Synthesizing Unit <i2c_master>.
+    Related source file is "\\psf\home\Documents\PhD\Code\OH\src\i2c_master.vhd".
+WARNING:Xst:647 - Input <ctrlreg<14:13>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <datareg<15:15>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <datareg<23:23>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <datareg<31:26>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 32-bit register for signal <status>.
+    Found 1-bit register for signal <done_dld>.
+    Found 1-bit register for signal <busy_dld>.
+    Found 1-bit register for signal <ignoreack>.
+    Summary:
+	inferred  35 D-type flip-flop(s).
+	inferred   9 Multiplexer(s).
+Unit <i2c_master> synthesized.
+
+Synthesizing Unit <i2c_data>.
+    Related source file is "\\psf\home\Documents\PhD\Code\OH\src\i2c_data.vhd".
+        M = 1
+        N = 12
+WARNING:Xst:647 - Input <selected_iic<31:1>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 12-bit register for signal <prescaler>.
+    Found 1-bit register for signal <i2cscl.level>.
+    Found 1-bit register for signal <i2cscl.clkhasstarted>.
+    Found 12-bit register for signal <i2cscl.timer>.
+    Found 1-bit register for signal <en_clk_DFF_69>.
+    Found 1-bit register for signal <wrbit>.
+    Found 4-bit register for signal <datafsm>.
+    Found 1-bit register for signal <completed>.
+    Found 1-bit register for signal <failed>.
+    Found 12-bit register for signal <i2csda.timer>.
+    Found 8-bit register for signal <i2csda.byte>.
+    Found 4-bit register for signal <i2csda.cnt>.
+    Found 12-bit register for signal <i2csda.samplingtime>.
+    Found 8-bit register for signal <byteread>.
+    Found 1-bit register for signal <en>.
+    Found finite state machine <FSM_1> for signal <datafsm>.
+    -----------------------------------------------------------------------
+    | States             | 9                                              |
+    | Transitions        | 25                                             |
+    | Inputs             | 10                                             |
+    | Outputs            | 5                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Power Up State     | idle                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 12-bit adder for signal <GND_64_o_GND_64_o_add_58_OUT> created at line 1241.
+    Found 12-bit subtractor for signal <GND_64_o_GND_64_o_sub_4_OUT<11:0>> created at line 1308.
+    Found 12-bit subtractor for signal <GND_64_o_GND_64_o_sub_15_OUT<11:0>> created at line 209.
+    Found 4-bit subtractor for signal <GND_64_o_GND_64_o_sub_80_OUT<3:0>> created at line 320.
+    Found 12-bit subtractor for signal <GND_64_o_GND_64_o_sub_93_OUT<11:0>> created at line 1308.
+    Found 1-bit tristate buffer for signal <scl<1>> created at line 125
+    Found 1-bit tristate buffer for signal <scl<0>> created at line 125
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_16_o_selected_iic[0]_DLATCH_1_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <rdbit> created at line 341
+WARNING:Xst:737 - Found 1-bit latch for signal <wrbit_selected_iic[0]_DLATCH_2_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_16_o_selected_iic[0]_DLATCH_3_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <sda_o<1>> created at line 32
+WARNING:Xst:737 - Found 1-bit latch for signal <wrbit_selected_iic[0]_DLATCH_4_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <sda_t<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <sda_o<0>> created at line 32
+WARNING:Xst:737 - Found 1-bit latch for signal <sda_t<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 12-bit comparator equal for signal <i2csda.timer[11]_GND_64_o_equal_60_o> created at line 276
+    Found 12-bit comparator equal for signal <i2csda.timer[11]_i2csda.samplingtime[11]_equal_73_o> created at line 300
+    WARNING:Xst:2404 -  FFs/Latches <scl<1:2>> (without init value) have a constant value of 0 in block <i2c_data>.
+    Summary:
+	inferred   5 Adder/Subtractor(s).
+	inferred  75 D-type flip-flop(s).
+	inferred   6 Latch(s).
+	inferred   2 Comparator(s).
+	inferred  40 Multiplexer(s).
+	inferred   5 Tristate(s).
+	inferred   1 Finite State Machine(s).
+Unit <i2c_data> synthesized.
+
+Synthesizing Unit <i2c_ctrl>.
+    Related source file is "\\psf\home\Documents\PhD\Code\OH\src\i2c_ctrl.vhd".
+WARNING:Xst:647 - Input <completed> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 1-bit register for signal <reg_in.ff>.
+    Found 1-bit register for signal <executestrobe_reg>.
+    Found 8-bit register for signal <slaveaddress_reg>.
+    Found 8-bit register for signal <slaveregister_reg>.
+    Found 8-bit register for signal <datatoslave_reg>.
+    Found 1-bit register for signal <writetoslave_reg>.
+    Found 12-bit register for signal <clkprescaler_reg>.
+    Found 1-bit register for signal <ralmode_reg>.
+    Found 1-bit register for signal <exec>.
+    Found 8-bit register for signal <addr>.
+    Found 8-bit register for signal <reg>.
+    Found 8-bit register for signal <datain>.
+    Found 1-bit register for signal <wr>.
+    Found 1-bit register for signal <ral>.
+    Found 2-bit register for signal <chopexecfsm>.
+    Found 12-bit register for signal <i2creg.timer>.
+    Found 4-bit register for signal <ctrlfsm>.
+    Found 4-bit register for signal <ctrlfsmprev>.
+    Found 1-bit register for signal <startclk>.
+    Found 1-bit register for signal <execstart>.
+    Found 1-bit register for signal <execstop>.
+    Found 1-bit register for signal <execwr>.
+    Found 1-bit register for signal <execgetack>.
+    Found 1-bit register for signal <execrd>.
+    Found 1-bit register for signal <execsendack>.
+    Found 1-bit register for signal <busy>.
+    Found 1-bit register for signal <done>.
+    Found 1-bit register for signal <error>.
+    Found 1-bit register for signal <main.interrupted>.
+    Found 1-bit register for signal <error_rdack1>.
+    Found 1-bit register for signal <error_rdack2>.
+    Found 1-bit register for signal <error_rdack3>.
+    Found 1-bit register for signal <error_rdack4>.
+    Found 1-bit register for signal <main.clkhasstarted>.
+    Found 1-bit register for signal <main.stdWR>.
+    Found 1-bit register for signal <main.stdRD>.
+    Found 1-bit register for signal <main.ralWR>.
+    Found 12-bit register for signal <main.timer>.
+    Found 1-bit register for signal <main.ralRD>.
+    Found 3-bit register for signal <main.cnt>.
+    Found 8-bit register for signal <bytetowrite>.
+    Found 1-bit register for signal <enable_reg>.
+    Found finite state machine <FSM_2> for signal <chopexecfsm>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 6                                              |
+    | Inputs             | 2                                              |
+    | Outputs            | 2                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Power Up State     | idle                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found finite state machine <FSM_3> for signal <ctrlfsm>.
+    -----------------------------------------------------------------------
+    | States             | 16                                             |
+    | Transitions        | 84                                             |
+    | Inputs             | 10                                             |
+    | Outputs            | 10                                             |
+    | Clock              | clk (rising_edge)                              |
+    | Power Up State     | idle                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 12-bit subtractor for signal <GND_77_o_GND_77_o_sub_11_OUT<11:0>> created at line 1308.
+    Found 3-bit subtractor for signal <GND_77_o_GND_77_o_sub_76_OUT<2:0>> created at line 456.
+    Found 12-bit subtractor for signal <GND_77_o_GND_77_o_sub_104_OUT<11:0>> created at line 1308.
+    Found 1-bit 3-to-1 multiplexer for signal <chopexecfsm[1]_X_28_o_Mux_14_o> created at line 155.
+    Found 4-bit 16-to-1 multiplexer for signal <ctrlfsm[3]_PWR_45_o_wide_mux_92_OUT> created at line 285.
+    Summary:
+	inferred   3 Adder/Subtractor(s).
+	inferred 127 D-type flip-flop(s).
+	inferred  48 Multiplexer(s).
+	inferred   2 Finite State Machine(s).
+Unit <i2c_ctrl> synthesized.
+
 =========================================================================
 HDL Synthesis Report
 
 Macro Statistics
-# Adders/Subtractors                                   : 2
- 28-bit adder                                          : 1
- 4-bit adder                                           : 1
-# Registers                                            : 8
- 1-bit register                                        : 6
- 28-bit register                                       : 1
- 4-bit register                                        : 1
-# Multiplexers                                         : 2
- 28-bit 2-to-1 multiplexer                             : 1
- 4-bit 2-to-1 multiplexer                              : 1
+# Adders/Subtractors                                   : 10
+ 12-bit adder                                          : 1
+ 12-bit subtractor                                     : 5
+ 27-bit adder                                          : 1
+ 3-bit subtractor                                      : 1
+ 4-bit subtractor                                      : 1
+ 8-bit subtractor                                      : 1
+# Registers                                            : 70
+ 1-bit register                                        : 44
+ 12-bit register                                       : 7
+ 27-bit register                                       : 1
+ 3-bit register                                        : 2
+ 32-bit register                                       : 2
+ 4-bit register                                        : 2
+ 8-bit register                                        : 12
+# Latches                                              : 6
+ 1-bit latch                                           : 6
+# Comparators                                          : 2
+ 12-bit comparator equal                               : 2
+# Multiplexers                                         : 111
+ 1-bit 2-to-1 multiplexer                              : 58
+ 1-bit 3-to-1 multiplexer                              : 1
+ 12-bit 2-to-1 multiplexer                             : 26
+ 3-bit 2-to-1 multiplexer                              : 5
+ 32-bit 2-to-1 multiplexer                             : 1
+ 4-bit 16-to-1 multiplexer                             : 1
+ 4-bit 2-to-1 multiplexer                              : 13
+ 8-bit 2-to-1 multiplexer                              : 6
+# Tristates                                            : 5
+ 1-bit tristate buffer                                 : 5
+# FSMs                                                 : 4
 
 =========================================================================
 
@@ -316,40 +566,215 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
-WARNING:Xst:1426 - The value init of the FF/Latch tx_data_23 hinder the constant cleaning in the block optohybrid_top.
+Reading core <ipcore_dir/chipscope_vio.ngc>.
+Reading core <ipcore_dir/chipscope_icon.ngc>.
+Loading core <chipscope_vio> for timing and area information for instance <chipscope_vio_inst>.
+Loading core <chipscope_icon> for timing and area information for instance <chipscope_icon_inst>.
+WARNING:Xst:1426 - The value init of the FF/Latch enable hinder the constant cleaning in the block i2c_wrapper_inst.
    You should achieve better results by setting this init to 1.
+WARNING:Xst:1710 - FF/Latch <ignoreack> (without init value) has a constant value of 0 in block <i2c_master_inst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <clkprescaler_reg_11> (without init value) has a constant value of 0 in block <u2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <clkprescaler_reg_10> (without init value) has a constant value of 1 in block <u2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <clkprescaler_reg_9> (without init value) has a constant value of 1 in block <u2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <clkprescaler_reg_8> (without init value) has a constant value of 0 in block <u2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <clkprescaler_reg_7> (without init value) has a constant value of 0 in block <u2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <clkprescaler_reg_6> (without init value) has a constant value of 1 in block <u2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <clkprescaler_reg_5> (without init value) has a constant value of 0 in block <u2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <clkprescaler_reg_4> (without init value) has a constant value of 0 in block <u2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <clkprescaler_reg_3> (without init value) has a constant value of 0 in block <u2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <clkprescaler_reg_2> (without init value) has a constant value of 0 in block <u2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <clkprescaler_reg_1> (without init value) has a constant value of 0 in block <u2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <clkprescaler_reg_0> (without init value) has a constant value of 0 in block <u2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <sda_t_1> (without init value) has a constant value of 0 in block <u1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Z_16_o_selected_iic[0]_DLATCH_3_q> (without init value) has a constant value of 0 in block <u1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Z_16_o_selected_iic[0]_DLATCH_1_q> (without init value) has a constant value of 0 in block <u1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <wrbit_selected_iic[0]_DLATCH_2_q> (without init value) has a constant value of 0 in block <u1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <prescaler_11> (without init value) has a constant value of 0 in block <u1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <prescaler_10> (without init value) has a constant value of 1 in block <u1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <prescaler_9> (without init value) has a constant value of 1 in block <u1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <prescaler_8> (without init value) has a constant value of 0 in block <u1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <prescaler_7> (without init value) has a constant value of 0 in block <u1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <prescaler_6> (without init value) has a constant value of 1 in block <u1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <prescaler_5> (without init value) has a constant value of 0 in block <u1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <prescaler_4> (without init value) has a constant value of 0 in block <u1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <prescaler_3> (without init value) has a constant value of 0 in block <u1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <prescaler_2> (without init value) has a constant value of 0 in block <u1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <prescaler_1> (without init value) has a constant value of 0 in block <u1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <prescaler_0> (without init value) has a constant value of 0 in block <u1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <slaveregister_reg_7> of sequential type is unconnected in block <u2>.
+WARNING:Xst:2677 - Node <slaveaddress_reg_7> of sequential type is unconnected in block <u2>.
+WARNING:Xst:2677 - Node <reg_7> of sequential type is unconnected in block <u2>.
+WARNING:Xst:2677 - Node <addr_7> of sequential type is unconnected in block <u2>.
+WARNING:Xst:2677 - Node <error_rdack3> of sequential type is unconnected in block <u2>.
+WARNING:Xst:2677 - Node <error_rdack1> of sequential type is unconnected in block <u2>.
+WARNING:Xst:2677 - Node <error_rdack2> of sequential type is unconnected in block <u2>.
+WARNING:Xst:2677 - Node <error_rdack4> of sequential type is unconnected in block <u2>.
+WARNING:Xst:2677 - Node <status_8> of sequential type is unconnected in block <i2c_master_inst>.
+WARNING:Xst:2677 - Node <status_9> of sequential type is unconnected in block <i2c_master_inst>.
+WARNING:Xst:2677 - Node <status_10> of sequential type is unconnected in block <i2c_master_inst>.
+WARNING:Xst:2677 - Node <status_11> of sequential type is unconnected in block <i2c_master_inst>.
+WARNING:Xst:2677 - Node <status_12> of sequential type is unconnected in block <i2c_master_inst>.
+WARNING:Xst:2677 - Node <status_13> of sequential type is unconnected in block <i2c_master_inst>.
+WARNING:Xst:2677 - Node <status_14> of sequential type is unconnected in block <i2c_master_inst>.
+WARNING:Xst:2677 - Node <status_15> of sequential type is unconnected in block <i2c_master_inst>.
+WARNING:Xst:2677 - Node <status_16> of sequential type is unconnected in block <i2c_master_inst>.
+WARNING:Xst:2677 - Node <status_17> of sequential type is unconnected in block <i2c_master_inst>.
+WARNING:Xst:2677 - Node <status_18> of sequential type is unconnected in block <i2c_master_inst>.
+WARNING:Xst:2677 - Node <status_19> of sequential type is unconnected in block <i2c_master_inst>.
+WARNING:Xst:2677 - Node <status_20> of sequential type is unconnected in block <i2c_master_inst>.
+WARNING:Xst:2677 - Node <status_21> of sequential type is unconnected in block <i2c_master_inst>.
+WARNING:Xst:2677 - Node <status_22> of sequential type is unconnected in block <i2c_master_inst>.
+WARNING:Xst:2677 - Node <status_23> of sequential type is unconnected in block <i2c_master_inst>.
+WARNING:Xst:2677 - Node <status_24> of sequential type is unconnected in block <i2c_master_inst>.
+WARNING:Xst:2677 - Node <status_25> of sequential type is unconnected in block <i2c_master_inst>.
+WARNING:Xst:2677 - Node <status_26> of sequential type is unconnected in block <i2c_master_inst>.
+WARNING:Xst:2677 - Node <status_28> of sequential type is unconnected in block <i2c_master_inst>.
+WARNING:Xst:2677 - Node <status_29> of sequential type is unconnected in block <i2c_master_inst>.
+WARNING:Xst:2677 - Node <status_30> of sequential type is unconnected in block <i2c_master_inst>.
+WARNING:Xst:2677 - Node <status_31> of sequential type is unconnected in block <i2c_master_inst>.
+WARNING:Xst:2677 - Node <data_reg_15> of sequential type is unconnected in block <i2c_wrapper_inst>.
+WARNING:Xst:2677 - Node <data_reg_23> of sequential type is unconnected in block <i2c_wrapper_inst>.
+WARNING:Xst:2677 - Node <data_reg_26> of sequential type is unconnected in block <i2c_wrapper_inst>.
+WARNING:Xst:2677 - Node <data_reg_27> of sequential type is unconnected in block <i2c_wrapper_inst>.
+WARNING:Xst:2677 - Node <data_reg_28> of sequential type is unconnected in block <i2c_wrapper_inst>.
+WARNING:Xst:2677 - Node <data_reg_29> of sequential type is unconnected in block <i2c_wrapper_inst>.
+WARNING:Xst:2677 - Node <data_reg_30> of sequential type is unconnected in block <i2c_wrapper_inst>.
+WARNING:Xst:2677 - Node <data_reg_31> of sequential type is unconnected in block <i2c_wrapper_inst>.
+WARNING:Xst:1294 - Latch <wrbit_selected_iic[0]_DLATCH_4_q> is equivalent to a wire in block <u1>.
+WARNING:Xst:1294 - Latch <sda_t_0> is equivalent to a wire in block <u1>.
 
-Synthesizing (advanced) Unit <optohybrid_top>.
-The following registers are absorbed into counter <data>: 1 register on signal <data>.
-Unit <optohybrid_top> synthesized (advanced).
+Synthesizing (advanced) Unit <i2c_ctrl>.
+The following registers are absorbed into counter <i2creg.timer>: 1 register on signal <i2creg.timer>.
+Unit <i2c_ctrl> synthesized (advanced).
+
+Synthesizing (advanced) Unit <i2c_data>.
+The following registers are absorbed into counter <i2csda.cnt>: 1 register on signal <i2csda.cnt>.
+Unit <i2c_data> synthesized (advanced).
+
+Synthesizing (advanced) Unit <link_tracking>.
+The following registers are absorbed into counter <cnt>: 1 register on signal <cnt>.
+Unit <link_tracking> synthesized (advanced).
 
 =========================================================================
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# Adders/Subtractors                                   : 2
- 28-bit adder                                          : 1
- 4-bit adder                                           : 1
-# Counters                                             : 1
- 4-bit up counter                                      : 1
-# Registers                                            : 34
- Flip-Flops                                            : 34
-# Multiplexers                                         : 2
- 28-bit 2-to-1 multiplexer                             : 1
- 4-bit 2-to-1 multiplexer                              : 1
+# Adders/Subtractors                                   : 7
+ 12-bit adder                                          : 1
+ 12-bit subtractor                                     : 4
+ 3-bit subtractor                                      : 1
+ 8-bit subtractor                                      : 1
+# Counters                                             : 3
+ 12-bit down counter                                   : 1
+ 27-bit up counter                                     : 1
+ 4-bit down counter                                    : 1
+# Registers                                            : 286
+ Flip-Flops                                            : 286
+# Comparators                                          : 2
+ 12-bit comparator equal                               : 2
+# Multiplexers                                         : 115
+ 1-bit 2-to-1 multiplexer                              : 65
+ 1-bit 3-to-1 multiplexer                              : 1
+ 12-bit 2-to-1 multiplexer                             : 25
+ 3-bit 2-to-1 multiplexer                              : 5
+ 32-bit 2-to-1 multiplexer                             : 1
+ 4-bit 16-to-1 multiplexer                             : 1
+ 4-bit 2-to-1 multiplexer                              : 12
+ 8-bit 2-to-1 multiplexer                              : 5
+# FSMs                                                 : 4
 
 =========================================================================
 
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-WARNING:Xst:1426 - The value init of the FF/Latch tx_data_23 hinder the constant cleaning in the block optohybrid_top.
+WARNING:Xst:1426 - The value init of the FF/Latch enable hinder the constant cleaning in the block i2c_wrapper.
    You should achieve better results by setting this init to 1.
+WARNING:Xst:1710 - FF/Latch <status_26> (without init value) has a constant value of 1 in block <i2c_master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <wrbit_selected_iic[0]_DLATCH_2_q> (without init value) has a constant value of 0 in block <i2c_data>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Z_16_o_selected_iic[0]_DLATCH_1_q> (without init value) has a constant value of 0 in block <i2c_data>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Z_16_o_selected_iic[0]_DLATCH_3_q> (without init value) has a constant value of 0 in block <i2c_data>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <sda_t_1> (without init value) has a constant value of 0 in block <i2c_data>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1294 - Latch <wrbit_selected_iic[0]_DLATCH_4_q> is equivalent to a wire in block <i2c_data>.
+WARNING:Xst:1294 - Latch <sda_t_0> is equivalent to a wire in block <i2c_data>.
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <link_tracking_1_inst/i2c_wrapper_inst/FSM_0> on signal <state[1:3]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 000   | 000
+ 001   | 001
+ 100   | 100
+ 010   | 010
+ 011   | 011
+ 101   | 101
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <link_tracking_1_inst/i2c_wrapper_inst/i2c_master_inst/u1/FSM_1> on signal <datafsm[1:4]> with user encoding.
+------------------------------
+ State            | Encoding
+------------------------------
+ idle             | 0000
+ startcondition_1 | 0001
+ startcondition_2 | 0010
+ stopcondition_1  | 0011
+ stopcondition_2  | 0100
+ writebyte        | 0101
+ getack           | 0110
+ readbyte         | 0111
+ sendack          | 1000
+------------------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <link_tracking_1_inst/i2c_wrapper_inst/i2c_master_inst/u2/FSM_2> on signal <chopexecfsm[1:2]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ idle  | 00
+ a     | 01
+ b     | 10
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <link_tracking_1_inst/i2c_wrapper_inst/i2c_master_inst/u2/FSM_3> on signal <ctrlfsm[1:4]> with user encoding.
+----------------------------
+ State          | Encoding
+----------------------------
+ idle           | 0000
+ req_startclk   | 0001
+ req_start_1    | 0010
+ req_chipaddr_1 | 0011
+ req_getack_1   | 0100
+ req_regaddr    | 0101
+ req_getack_2   | 0110
+ req_wrdata     | 0111
+ req_getack_3   | 1000
+ req_stop_1     | 1001
+ req_start_2    | 1010
+ req_chipaddr_2 | 1011
+ req_getack_4   | 1100
+ req_rddata     | 1101
+ req_sendack    | 1110
+ req_stop_2     | 1111
+----------------------------
+WARNING:Xst:1293 - FF/Latch <data_reg_8> has a constant value of 0 in block <i2c_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <data_reg_9> has a constant value of 0 in block <i2c_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <data_reg_10> has a constant value of 0 in block <i2c_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <data_reg_11> has a constant value of 0 in block <i2c_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <data_reg_12> has a constant value of 0 in block <i2c_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <data_reg_13> has a constant value of 0 in block <i2c_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <data_reg_14> has a constant value of 0 in block <i2c_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <data_reg_15> has a constant value of 0 in block <i2c_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <data_reg_23> has a constant value of 0 in block <i2c_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <data_reg_25> has a constant value of 0 in block <i2c_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <data_reg_26> has a constant value of 0 in block <i2c_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <data_reg_27> has a constant value of 0 in block <i2c_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <data_reg_28> has a constant value of 0 in block <i2c_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <data_reg_29> has a constant value of 0 in block <i2c_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <data_reg_30> has a constant value of 0 in block <i2c_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <data_reg_31> has a constant value of 0 in block <i2c_wrapper>. This FF/Latch will be trimmed during the optimization process.
 INFO:Xst:1901 - Instance pll_base_inst in unit pll_base_inst of type PLL_BASE has been replaced by PLL_ADV
-INFO:Xst:2261 - The FF/Latch <tx_data_28> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <data_0> 
-INFO:Xst:2261 - The FF/Latch <tx_data_29> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <data_1> 
-INFO:Xst:2261 - The FF/Latch <tx_data_30> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <data_2> 
-INFO:Xst:2261 - The FF/Latch <tx_data_31> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <data_3> 
+WARNING:Xst:2042 - Unit i2c_data: 3 internal tristates are replaced by logic (pull-up yes): rdbit, sda_o<0>, sda_o<1>.
+
+Optimizing unit <optohybrid_top> ...
 
 Optimizing unit <s6_gtpwizard_v1_11> ...
 
@@ -359,9 +784,113 @@ Optimizing unit <gtp_pll> ...
 
 Optimizing unit <fpga_clk_pll> ...
 
-Optimizing unit <optohybrid_top> ...
-
 Optimizing unit <gtp_wrapper> ...
+
+Optimizing unit <link_tracking> ...
+
+Optimizing unit <i2c_wrapper> ...
+
+Optimizing unit <i2c_master> ...
+
+Optimizing unit <i2c_data> ...
+
+Optimizing unit <i2c_ctrl> ...
+WARNING:Xst:1710 - FF/Latch <slaveregister_reg_0> (without init value) has a constant value of 0 in block <u2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slaveregister_reg_1> (without init value) has a constant value of 0 in block <u2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slaveregister_reg_2> (without init value) has a constant value of 0 in block <u2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slaveregister_reg_3> (without init value) has a constant value of 0 in block <u2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slaveregister_reg_4> (without init value) has a constant value of 0 in block <u2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slaveregister_reg_5> (without init value) has a constant value of 0 in block <u2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <slaveregister_reg_6> (without init value) has a constant value of 0 in block <u2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <clkprescaler_reg_0> (without init value) has a constant value of 0 in block <u2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <clkprescaler_reg_1> (without init value) has a constant value of 0 in block <u2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <clkprescaler_reg_2> (without init value) has a constant value of 0 in block <u2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <clkprescaler_reg_3> (without init value) has a constant value of 0 in block <u2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <clkprescaler_reg_4> (without init value) has a constant value of 0 in block <u2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <clkprescaler_reg_5> (without init value) has a constant value of 0 in block <u2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <clkprescaler_reg_6> (without init value) has a constant value of 1 in block <u2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <clkprescaler_reg_7> (without init value) has a constant value of 0 in block <u2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <clkprescaler_reg_8> (without init value) has a constant value of 0 in block <u2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <clkprescaler_reg_9> (without init value) has a constant value of 1 in block <u2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <clkprescaler_reg_10> (without init value) has a constant value of 1 in block <u2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <clkprescaler_reg_11> (without init value) has a constant value of 0 in block <u2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ralmode_reg> (without init value) has a constant value of 0 in block <u2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <main.ralRD> (without init value) has a constant value of 0 in block <u2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <main.ralWR> (without init value) has a constant value of 0 in block <u2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <prescaler_3> (without init value) has a constant value of 0 in block <u1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <prescaler_4> (without init value) has a constant value of 0 in block <u1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <prescaler_5> (without init value) has a constant value of 0 in block <u1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <prescaler_6> (without init value) has a constant value of 1 in block <u1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <prescaler_7> (without init value) has a constant value of 0 in block <u1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <prescaler_8> (without init value) has a constant value of 0 in block <u1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <prescaler_9> (without init value) has a constant value of 1 in block <u1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <prescaler_10> (without init value) has a constant value of 1 in block <u1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <prescaler_11> (without init value) has a constant value of 0 in block <u1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <prescaler_2> (without init value) has a constant value of 0 in block <u1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <prescaler_1> (without init value) has a constant value of 0 in block <u1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <prescaler_0> (without init value) has a constant value of 0 in block <u1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ignoreack> (without init value) has a constant value of 0 in block <i2c_master_inst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_0> (without init value) has a constant value of 0 in block <u2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_1> (without init value) has a constant value of 0 in block <u2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_2> (without init value) has a constant value of 0 in block <u2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_3> (without init value) has a constant value of 0 in block <u2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_4> (without init value) has a constant value of 0 in block <u2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_5> (without init value) has a constant value of 0 in block <u2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reg_6> (without init value) has a constant value of 0 in block <u2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ral> (without init value) has a constant value of 0 in block <u2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <i2csda.samplingtime_0> (without init value) has a constant value of 0 in block <u1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <i2csda.samplingtime_1> (without init value) has a constant value of 0 in block <u1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <i2csda.samplingtime_2> (without init value) has a constant value of 0 in block <u1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <i2csda.samplingtime_3> (without init value) has a constant value of 0 in block <u1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <i2csda.samplingtime_4> (without init value) has a constant value of 1 in block <u1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <i2csda.samplingtime_5> (without init value) has a constant value of 1 in block <u1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <i2csda.samplingtime_6> (without init value) has a constant value of 0 in block <u1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <i2csda.samplingtime_7> (without init value) has a constant value of 1 in block <u1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <i2csda.samplingtime_8> (without init value) has a constant value of 0 in block <u1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <i2csda.samplingtime_11> (without init value) has a constant value of 0 in block <u1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <i2csda.samplingtime_10> (without init value) has a constant value of 1 in block <u1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <i2csda.samplingtime_9> (without init value) has a constant value of 0 in block <u1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <done_dld> of sequential type is unconnected in block <i2c_master_inst>.
+WARNING:Xst:2677 - Node <status_8> of sequential type is unconnected in block <i2c_master_inst>.
+WARNING:Xst:2677 - Node <status_9> of sequential type is unconnected in block <i2c_master_inst>.
+WARNING:Xst:2677 - Node <status_10> of sequential type is unconnected in block <i2c_master_inst>.
+WARNING:Xst:2677 - Node <status_11> of sequential type is unconnected in block <i2c_master_inst>.
+WARNING:Xst:2677 - Node <status_12> of sequential type is unconnected in block <i2c_master_inst>.
+WARNING:Xst:2677 - Node <status_13> of sequential type is unconnected in block <i2c_master_inst>.
+WARNING:Xst:2677 - Node <status_14> of sequential type is unconnected in block <i2c_master_inst>.
+WARNING:Xst:2677 - Node <status_15> of sequential type is unconnected in block <i2c_master_inst>.
+WARNING:Xst:2677 - Node <status_16> of sequential type is unconnected in block <i2c_master_inst>.
+WARNING:Xst:2677 - Node <status_17> of sequential type is unconnected in block <i2c_master_inst>.
+WARNING:Xst:2677 - Node <status_18> of sequential type is unconnected in block <i2c_master_inst>.
+WARNING:Xst:2677 - Node <status_19> of sequential type is unconnected in block <i2c_master_inst>.
+WARNING:Xst:2677 - Node <status_20> of sequential type is unconnected in block <i2c_master_inst>.
+WARNING:Xst:2677 - Node <status_21> of sequential type is unconnected in block <i2c_master_inst>.
+WARNING:Xst:2677 - Node <status_22> of sequential type is unconnected in block <i2c_master_inst>.
+WARNING:Xst:2677 - Node <status_23> of sequential type is unconnected in block <i2c_master_inst>.
+WARNING:Xst:2677 - Node <status_24> of sequential type is unconnected in block <i2c_master_inst>.
+WARNING:Xst:2677 - Node <status_25> of sequential type is unconnected in block <i2c_master_inst>.
+WARNING:Xst:2677 - Node <status_28> of sequential type is unconnected in block <i2c_master_inst>.
+WARNING:Xst:2677 - Node <status_29> of sequential type is unconnected in block <i2c_master_inst>.
+WARNING:Xst:2677 - Node <status_30> of sequential type is unconnected in block <i2c_master_inst>.
+WARNING:Xst:2677 - Node <status_31> of sequential type is unconnected in block <i2c_master_inst>.
+WARNING:Xst:2677 - Node <completed> of sequential type is unconnected in block <u1>.
+WARNING:Xst:2677 - Node <slaveregister_reg_7> of sequential type is unconnected in block <u2>.
+WARNING:Xst:2677 - Node <slaveaddress_reg_7> of sequential type is unconnected in block <u2>.
+WARNING:Xst:2677 - Node <reg_7> of sequential type is unconnected in block <u2>.
+WARNING:Xst:2677 - Node <addr_7> of sequential type is unconnected in block <u2>.
+WARNING:Xst:2677 - Node <ctrlfsmprev_0> of sequential type is unconnected in block <u2>.
+WARNING:Xst:2677 - Node <ctrlfsmprev_1> of sequential type is unconnected in block <u2>.
+WARNING:Xst:2677 - Node <ctrlfsmprev_2> of sequential type is unconnected in block <u2>.
+WARNING:Xst:2677 - Node <ctrlfsmprev_3> of sequential type is unconnected in block <u2>.
+WARNING:Xst:2677 - Node <error_rdack3> of sequential type is unconnected in block <u2>.
+WARNING:Xst:2677 - Node <error_rdack1> of sequential type is unconnected in block <u2>.
+WARNING:Xst:2677 - Node <error_rdack2> of sequential type is unconnected in block <u2>.
+WARNING:Xst:2677 - Node <error_rdack4> of sequential type is unconnected in block <u2>.
+WARNING:Xst:1710 - FF/Latch <i2cscl.timer_10> (without init value) has a constant value of 0 in block <u1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <i2cscl.timer_11> (without init value) has a constant value of 0 in block <u1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <main.timer_11> (without init value) has a constant value of 0 in block <u2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <i2creg.timer_11> (without init value) has a constant value of 0 in block <u2>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <exec> in Unit <u2> is equivalent to the following FF/Latch, which will be removed : <chopexecfsm_FSM_FFd2> 
 
 Mapping all equations...
 Building and optimizing final netlist ...
@@ -369,12 +898,18 @@ Found area constraint ratio of 100 (+ 5) on block optohybrid_top, actual ratio i
 
 Final Macro Processing ...
 
+Processing Unit <u2> :
+	Found 2-bit shift register for signal <enable_reg>.
+Unit <u2> processed.
+
 =========================================================================
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 34
- Flip-Flops                                            : 34
+# Registers                                            : 227
+ Flip-Flops                                            : 227
+# Shift Registers                                      : 1
+ 2-bit shift register                                  : 1
 
 =========================================================================
 
@@ -397,34 +932,48 @@ Top Level Output File Name         : optohybrid_top.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 129
-#      GND                         : 7
-#      INV                         : 3
-#      LUT1                        : 26
-#      LUT2                        : 3
-#      LUT3                        : 1
-#      LUT4                        : 3
-#      LUT5                        : 3
-#      LUT6                        : 24
-#      MUXCY                       : 27
-#      VCC                         : 4
-#      XORCY                       : 28
-# FlipFlops/Latches                : 34
-#      FD                          : 34
-# Clock Buffers                    : 8
-#      BUFG                        : 8
-# IO Buffers                       : 34
+# BELS                             : 760
+#      GND                         : 12
+#      INV                         : 76
+#      LUT1                        : 43
+#      LUT2                        : 30
+#      LUT3                        : 135
+#      LUT4                        : 113
+#      LUT5                        : 41
+#      LUT6                        : 132
+#      MUXCY                       : 66
+#      MUXCY_L                     : 12
+#      MUXF5                       : 2
+#      MUXF6                       : 1
+#      MUXF7                       : 2
+#      VCC                         : 10
+#      XORCY                       : 85
+# FlipFlops/Latches                : 589
+#      FD                          : 81
+#      FDC                         : 65
+#      FDCE                        : 10
+#      FDE                         : 342
+#      FDR                         : 44
+#      FDRE                        : 47
+# Shift Registers                  : 1
+#      SRLC16E                     : 1
+# Clock Buffers                    : 9
+#      BUFG                        : 9
+# IO Buffers                       : 40
 #      BUFIO2                      : 2
 #      IBUF                        : 8
 #      IBUFDS                      : 4
 #      IBUFG                       : 1
-#      OBUF                        : 16
+#      IOBUF                       : 6
+#      OBUF                        : 14
 #      OBUFDS                      : 3
+#      OBUFT                       : 2
 # DCMs                             : 2
 #      DCM_SP                      : 2
 # GigabitIOs                       : 2
 #      GTPA1_DUAL                  : 2
-# Others                           : 1
+# Others                           : 2
+#      BSCAN_SPARTAN6              : 1
 #      PLL_ADV                     : 1
 
 Device utilization summary:
@@ -434,23 +983,25 @@ Selected Device : 6slx150tfgg676-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              34  out of  184304     0%  
- Number of Slice LUTs:                   63  out of  92152     0%  
-    Number used as Logic:                63  out of  92152     0%  
+ Number of Slice Registers:             589  out of  184304     0%  
+ Number of Slice LUTs:                  571  out of  92152     0%  
+    Number used as Logic:               570  out of  92152     0%  
+    Number used as Memory:                1  out of  21680     0%  
+       Number used as SRL:                1
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:     97
-   Number with an unused Flip Flop:      63  out of     97    64%  
-   Number with an unused LUT:            34  out of     97    35%  
-   Number of fully used LUT-FF pairs:     0  out of     97     0%  
-   Number of unique control sets:         1
+ Number of LUT Flip Flop pairs used:    897
+   Number with an unused Flip Flop:     308  out of    897    34%  
+   Number with an unused LUT:           326  out of    897    36%  
+   Number of fully used LUT-FF pairs:   263  out of    897    29%  
+   Number of unique control sets:       126
 
 IO Utilization: 
  Number of IOs:                         289
- Number of bonded IOBs:                  39  out of    396     9%  
+ Number of bonded IOBs:                  45  out of    396    11%  
 
 Specific Feature Utilization:
- Number of BUFG/BUFGCTRLs:                8  out of     16    50%  
+ Number of BUFG/BUFGCTRLs:                9  out of     16    56%  
  Number of PLL_ADVs:                      1  out of      6    16%  
 
 ---------------------------
@@ -471,11 +1022,25 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
-----------------------------------------------------------------------+------------------------+-------+
-Clock Signal                                                          | Clock buffer(FF name)  | Load  |
-----------------------------------------------------------------------+------------------------+-------+
-gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT0_OUT<0>| DCM_SP:CLK0            | 34    |
-----------------------------------------------------------------------+------------------------+-------+
+-------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------+
+Clock Signal                                                                   | Clock buffer(FF name)                                                                          | Load  |
+-------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------+
+gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT0_OUT<0>         | DCM_SP:CLK0                                                                                    | 229   |
+link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL| BUFG                                                                                           | 296   |
+link_tracking_1_inst/tx_data_o<0>                                              | NONE(link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/GEN_ASYNC_IN[31].ASYNC_IN_CELL/U_FALLING)| 44    |
+link_tracking_1_inst/i2c_wrapper_inst/en_o                                     | NONE(link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/GEN_ASYNC_IN[9].ASYNC_IN_CELL/U_FALLING) | 2     |
+link_tracking_1_inst/i2c_wrapper_inst/status_o                                 | NONE(link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/GEN_ASYNC_IN[8].ASYNC_IN_CELL/U_FALLING) | 2     |
+link_tracking_1_inst/i2c_wrapper_inst/data_o_7                                 | NONE(link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/GEN_ASYNC_IN[7].ASYNC_IN_CELL/U_FALLING) | 2     |
+link_tracking_1_inst/i2c_wrapper_inst/data_o_6                                 | NONE(link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/GEN_ASYNC_IN[6].ASYNC_IN_CELL/U_FALLING) | 2     |
+link_tracking_1_inst/i2c_wrapper_inst/data_o_5                                 | NONE(link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/GEN_ASYNC_IN[5].ASYNC_IN_CELL/U_FALLING) | 2     |
+link_tracking_1_inst/i2c_wrapper_inst/data_o_4                                 | NONE(link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/GEN_ASYNC_IN[4].ASYNC_IN_CELL/U_FALLING) | 2     |
+link_tracking_1_inst/i2c_wrapper_inst/data_o_3                                 | NONE(link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/GEN_ASYNC_IN[3].ASYNC_IN_CELL/U_FALLING) | 2     |
+link_tracking_1_inst/i2c_wrapper_inst/data_o_2                                 | NONE(link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/GEN_ASYNC_IN[2].ASYNC_IN_CELL/U_FALLING) | 2     |
+link_tracking_1_inst/i2c_wrapper_inst/data_o_1                                 | NONE(link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/GEN_ASYNC_IN[1].ASYNC_IN_CELL/U_FALLING) | 2     |
+link_tracking_1_inst/i2c_wrapper_inst/data_o_0                                 | NONE(link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/GEN_ASYNC_IN[0].ASYNC_IN_CELL/U_FALLING) | 2     |
+link_tracking_1_inst/chipscope_icon_inst/U0/iUPDATE_OUT                        | NONE(link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/U_iDATA_CMD)                           | 1     |
+-------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------+
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
 Asynchronous Control Signals Information:
 ----------------------------------------
@@ -485,9 +1050,9 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 5.034ns (Maximum Frequency: 198.647MHz)
-   Minimum input arrival time before clock: No path found
-   Maximum output required time after clock: No path found
+   Minimum period: 8.096ns (Maximum Frequency: 123.521MHz)
+   Minimum input arrival time before clock: 7.148ns
+   Maximum output required time after clock: 4.419ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -496,36 +1061,194 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT0_OUT<0>'
-  Clock period: 5.034ns (frequency: 198.647MHz)
-  Total number of paths / destination ports: 5871 / 33
+  Clock period: 6.262ns (frequency: 159.684MHz)
+  Total number of paths / destination ports: 7741 / 354
 -------------------------------------------------------------------------
-Delay:               5.034ns (Levels of Logic = 12)
-  Source:            cnt_0 (FF)
-  Destination:       tx_kchar_2 (FF)
+Delay:               6.262ns (Levels of Logic = 5)
+  Source:            link_tracking_1_inst/i2c_wrapper_inst/i2c_master_inst/u1/datafsm_FSM_FFd4 (FF)
+  Destination:       link_tracking_1_inst/i2c_wrapper_inst/i2c_master_inst/u1/i2csda.timer_9 (FF)
   Source Clock:      gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT0_OUT<0> rising
   Destination Clock: gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT0_OUT<0> rising
 
-  Data Path: cnt_0 to tx_kchar_2
+  Data Path: link_tracking_1_inst/i2c_wrapper_inst/i2c_master_inst/u1/datafsm_FSM_FFd4 to link_tracking_1_inst/i2c_wrapper_inst/i2c_master_inst/u1/i2csda.timer_9
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               1   0.447   0.579  cnt_0 (cnt_0)
-     INV:I->O              1   0.206   0.000  Madd_cnt[27]_GND_5_o_add_0_OUT_lut<0>_INV_0 (Madd_cnt[27]_GND_5_o_add_0_OUT_lut<0>)
-     MUXCY:S->O            1   0.172   0.000  Madd_cnt[27]_GND_5_o_add_0_OUT_cy<0> (Madd_cnt[27]_GND_5_o_add_0_OUT_cy<0>)
-     MUXCY:CI->O           1   0.019   0.000  Madd_cnt[27]_GND_5_o_add_0_OUT_cy<1> (Madd_cnt[27]_GND_5_o_add_0_OUT_cy<1>)
-     MUXCY:CI->O           1   0.019   0.000  Madd_cnt[27]_GND_5_o_add_0_OUT_cy<2> (Madd_cnt[27]_GND_5_o_add_0_OUT_cy<2>)
-     MUXCY:CI->O           1   0.019   0.000  Madd_cnt[27]_GND_5_o_add_0_OUT_cy<3> (Madd_cnt[27]_GND_5_o_add_0_OUT_cy<3>)
-     MUXCY:CI->O           1   0.019   0.000  Madd_cnt[27]_GND_5_o_add_0_OUT_cy<4> (Madd_cnt[27]_GND_5_o_add_0_OUT_cy<4>)
-     MUXCY:CI->O           1   0.019   0.000  Madd_cnt[27]_GND_5_o_add_0_OUT_cy<5> (Madd_cnt[27]_GND_5_o_add_0_OUT_cy<5>)
-     MUXCY:CI->O           1   0.019   0.000  Madd_cnt[27]_GND_5_o_add_0_OUT_cy<6> (Madd_cnt[27]_GND_5_o_add_0_OUT_cy<6>)
-     XORCY:CI->O           2   0.180   0.981  Madd_cnt[27]_GND_5_o_add_0_OUT_xor<7> (cnt[27]_GND_5_o_add_0_OUT<7>)
-     LUT6:I0->O           14   0.203   1.062  PWR_5_o_cnt[27]_equal_2_o<27>11 (PWR_5_o_cnt[27]_equal_2_o<27>11)
-     LUT6:I4->O            1   0.203   0.580  GND_5_o_cnt[27]_equal_6_o<27>_SW2 (N48)
-     LUT6:I5->O            1   0.205   0.000  GND_5_o_cnt[27]_equal_6_o<27> (GND_5_o_cnt[27]_equal_6_o)
-     FD:D                      0.102          tx_kchar_2
+     FD:C->Q              38   0.447   1.605  datafsm_FSM_FFd4 (datafsm_FSM_FFd4)
+     LUT4:I1->O            5   0.205   0.715  Mmux_datafsm[3]_i2csda.timer[11]_mux_106_OUT16131 (Mmux_datafsm[3]_i2csda.timer[11]_mux_106_OUT1613)
+     LUT6:I5->O            3   0.205   0.651  Mmux_datafsm[3]_i2csda.timer[11]_mux_106_OUT16171 (Mmux_datafsm[3]_i2csda.timer[11]_mux_106_OUT1617)
+     LUT6:I5->O           12   0.205   0.909  Mmux_datafsm[3]_i2csda.timer[11]_mux_106_OUT1613_SW0 (N18)
+     LUT6:I5->O            1   0.205   0.808  Mmux_datafsm[3]_i2csda.timer[11]_mux_106_OUT1614_SW10 (N46)
+     LUT6:I3->O            1   0.205   0.000  Mmux_datafsm[3]_i2csda.timer[11]_mux_106_OUT48 (datafsm[3]_i2csda.timer[11]_mux_106_OUT<9>)
+     FD:D                      0.102          i2csda.timer_9
     ----------------------------------------
-    Total                      5.034ns (1.832ns logic, 3.202ns route)
-                                       (36.4% logic, 63.6% route)
+    Total                      6.262ns (1.574ns logic, 4.688ns route)
+                                       (25.1% logic, 74.9% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL'
+  Clock period: 8.096ns (frequency: 123.521MHz)
+  Total number of paths / destination ports: 3430 / 470
+-------------------------------------------------------------------------
+Delay:               8.096ns (Levels of Logic = 6)
+  Source:            link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/U_CMD/G_TARGET[12].I_NE0.U_TARGET (FF)
+  Destination:       link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/U_STATUS/U_TDO (FF)
+  Source Clock:      link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL rising
+  Destination Clock: link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL rising
+
+  Data Path: link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/U_CMD/G_TARGET[12].I_NE0.U_TARGET to link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/U_STATUS/U_TDO
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q            18   0.447   1.297  U0/U_ICON/U_CMD/G_TARGET[12].I_NE0.U_TARGET (U0/U_ICON/iCORE_ID<0>)
+     LUT4:I0->O           32   0.203   1.396  U0/U_ICON/U_CMD/U_CORE_ID_SEL/I4.FI[0].U_LUT (U0/U_ICON/iCORE_ID_SEL<0>)
+     LUT4:I2->O           97   0.203   2.086  U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[1].U_LCE (CONTROL0<5>)
+     end scope: 'link_tracking_1_inst/chipscope_icon_inst:CONTROL0<5>'
+     begin scope: 'link_tracking_1_inst/chipscope_vio_inst:CONTROL<5>'
+     LUT6:I3->O            1   0.205   0.827  U0/I_VIO/U_STATUS/U_SMUX/U_CS_MUX/I4.U_MUX16/Mmux_O25 (U0/I_VIO/U_STATUS/U_SMUX/U_CS_MUX/I4.U_MUX16/Mmux_O24)
+     LUT6:I2->O            1   0.203   0.924  U0/I_VIO/U_STATUS/U_SMUX/U_CS_MUX/I4.U_MUX16/Mmux_O29 (U0/I_VIO/U_STATUS/U_SMUX/U_CS_MUX/I4.U_MUX16/Mmux_O28)
+     LUT5:I0->O            1   0.203   0.000  U0/I_VIO/U_STATUS/U_SMUX/U_CS_MUX/I4.U_MUX16/Mmux_O210 (U0/I_VIO/U_STATUS/TDO_next)
+     FDE:D                     0.102          U0/I_VIO/U_STATUS/U_TDO
+    ----------------------------------------
+    Total                      8.096ns (1.566ns logic, 6.530ns route)
+                                       (19.3% logic, 80.7% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'link_tracking_1_inst/chipscope_icon_inst/U0/iUPDATE_OUT'
+  Clock period: 1.984ns (frequency: 504.007MHz)
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Delay:               1.984ns (Levels of Logic = 1)
+  Source:            link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/U_iDATA_CMD (FF)
+  Destination:       link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/U_iDATA_CMD (FF)
+  Source Clock:      link_tracking_1_inst/chipscope_icon_inst/U0/iUPDATE_OUT rising
+  Destination Clock: link_tracking_1_inst/chipscope_icon_inst/U0/iUPDATE_OUT rising
+
+  Data Path: link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/U_iDATA_CMD to link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/U_iDATA_CMD
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              3   0.447   0.650  U0/U_ICON/U_iDATA_CMD (U0/U_ICON/iDATA_CMD)
+     INV:I->O              1   0.206   0.579  U0/U_ICON/U_iDATA_CMD_n (U0/U_ICON/iDATA_CMD_n)
+     FDC:D                     0.102          U0/U_ICON/U_iDATA_CMD
+    ----------------------------------------
+    Total                      1.984ns (0.755ns logic, 1.229ns route)
+                                       (38.1% logic, 61.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT0_OUT<0>'
+  Total number of paths / destination ports: 2 / 2
+-------------------------------------------------------------------------
+Offset:              3.920ns (Levels of Logic = 6)
+  Source:            sda_io<2> (PAD)
+  Destination:       link_tracking_1_inst/i2c_wrapper_inst/i2c_master_inst/u1/failed (FF)
+  Destination Clock: gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT0_OUT<0> rising
+
+  Data Path: sda_io<2> to link_tracking_1_inst/i2c_wrapper_inst/i2c_master_inst/u1/failed
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IOBUF:IO->O           2   1.222   0.721  sda_2_iobuf (sda_i<2>)
+     begin scope: 'link_tracking_1_inst:sda_i<0>'
+     begin scope: 'link_tracking_1_inst/i2c_wrapper_inst:sda_i<0>'
+     begin scope: 'link_tracking_1_inst/i2c_wrapper_inst/i2c_master_inst:sda_i<0>'
+     begin scope: 'link_tracking_1_inst/i2c_wrapper_inst/i2c_master_inst/u1:sda_i<0>'
+     LUT6:I4->O            1   0.203   0.684  Mmux__n031911_SW1_F (N98)
+     LUT3:I1->O            1   0.203   0.580  Mmux__n031911_SW11 (N57)
+     LUT5:I4->O            1   0.205   0.000  failed_rstpot (failed_rstpot)
+     FD:D                      0.102          failed
+    ----------------------------------------
+    Total                      3.920ns (1.935ns logic, 1.985ns route)
+                                       (49.4% logic, 50.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL'
+  Total number of paths / destination ports: 293 / 262
+-------------------------------------------------------------------------
+Offset:              7.148ns (Levels of Logic = 6)
+  Source:            link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/I_S6.ISYN.I_USE_SOFTBSCAN_EQ0.U_BS:SHIFT (PAD)
+  Destination:       link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/U_STATUS/U_TDO (FF)
+  Destination Clock: link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL rising
+
+  Data Path: link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/I_S6.ISYN.I_USE_SOFTBSCAN_EQ0.U_BS:SHIFT to link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/U_STATUS/U_TDO
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+    BSCAN_SPARTAN6:SHIFT    3   0.000   0.651  U0/U_ICON/I_YES_BSCAN.U_BS/I_S6.ISYN.I_USE_SOFTBSCAN_EQ0.U_BS (U0/iSHIFT_OUT)
+     LUT2:I1->O           32   0.205   1.539  U0/U_ICON/U_CTRL_OUT/U_DATA_VALID (U0/U_ICON/U_CTRL_OUT/iDATA_VALID)
+     LUT4:I0->O           97   0.203   2.086  U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[1].U_LCE (CONTROL0<5>)
+     end scope: 'link_tracking_1_inst/chipscope_icon_inst:CONTROL0<5>'
+     begin scope: 'link_tracking_1_inst/chipscope_vio_inst:CONTROL<5>'
+     LUT6:I3->O            1   0.205   0.827  U0/I_VIO/U_STATUS/U_SMUX/U_CS_MUX/I4.U_MUX16/Mmux_O25 (U0/I_VIO/U_STATUS/U_SMUX/U_CS_MUX/I4.U_MUX16/Mmux_O24)
+     LUT6:I2->O            1   0.203   0.924  U0/I_VIO/U_STATUS/U_SMUX/U_CS_MUX/I4.U_MUX16/Mmux_O29 (U0/I_VIO/U_STATUS/U_SMUX/U_CS_MUX/I4.U_MUX16/Mmux_O28)
+     LUT5:I0->O            1   0.203   0.000  U0/I_VIO/U_STATUS/U_SMUX/U_CS_MUX/I4.U_MUX16/Mmux_O210 (U0/I_VIO/U_STATUS/TDO_next)
+     FDE:D                     0.102          U0/I_VIO/U_STATUS/U_TDO
+    ----------------------------------------
+    Total                      7.148ns (1.121ns logic, 6.027ns route)
+                                       (15.7% logic, 84.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'link_tracking_1_inst/chipscope_icon_inst/U0/iUPDATE_OUT'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              1.831ns (Levels of Logic = 1)
+  Source:            link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/I_S6.ISYN.I_USE_SOFTBSCAN_EQ0.U_BS:SEL (PAD)
+  Destination:       link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/U_iDATA_CMD (FF)
+  Destination Clock: link_tracking_1_inst/chipscope_icon_inst/U0/iUPDATE_OUT rising
+
+  Data Path: link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/I_S6.ISYN.I_USE_SOFTBSCAN_EQ0.U_BS:SEL to link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/U_iDATA_CMD
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+    BSCAN_SPARTAN6:SEL     2   0.000   0.616  U0/U_ICON/I_YES_BSCAN.U_BS/I_S6.ISYN.I_USE_SOFTBSCAN_EQ0.U_BS (U0/U_ICON/iSEL)
+     INV:I->O              1   0.206   0.579  U0/U_ICON/U_iSEL_n (U0/U_ICON/iSEL_n)
+     FDC:CLR                   0.430          U0/U_ICON/U_iDATA_CMD
+    ----------------------------------------
+    Total                      1.831ns (0.636ns logic, 1.195ns route)
+                                       (34.7% logic, 65.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT0_OUT<0>'
+  Total number of paths / destination ports: 4 / 3
+-------------------------------------------------------------------------
+Offset:              4.419ns (Levels of Logic = 4)
+  Source:            link_tracking_1_inst/i2c_wrapper_inst/i2c_master_inst/u1/en_clk_DFF_69 (FF)
+  Destination:       scl_o<3> (PAD)
+  Source Clock:      gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT0_OUT<0> rising
+
+  Data Path: link_tracking_1_inst/i2c_wrapper_inst/i2c_master_inst/u1/en_clk_DFF_69 to scl_o<3>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              1   0.447   0.579  en_clk_DFF_69 (en_clk_DFF_69)
+     INV:I->O              2   0.206   0.616  en_clk_DFF_69_inv1_INV_0 (en_clk_DFF_69_inv)
+     OBUFT:T->O                2.571          scl_o_3_OBUFT (scl<1>)
+     end scope: 'link_tracking_1_inst/i2c_wrapper_inst/i2c_master_inst/u1:scl<1>'
+     end scope: 'link_tracking_1_inst/i2c_wrapper_inst/i2c_master_inst:scl<1>'
+     end scope: 'link_tracking_1_inst/i2c_wrapper_inst:scl_o<1>'
+     end scope: 'link_tracking_1_inst:scl_o<1>'
+    ----------------------------------------
+    Total                      4.419ns (3.224ns logic, 1.195ns route)
+                                       (73.0% logic, 27.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              0.447ns (Levels of Logic = 0)
+  Source:            link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/U_TDO_reg (FF)
+  Destination:       link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/I_S6.ISYN.I_USE_SOFTBSCAN_EQ0.U_BS:TDO (PAD)
+  Source Clock:      link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL rising
+
+  Data Path: link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/U_TDO_reg to link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/I_S6.ISYN.I_USE_SOFTBSCAN_EQ0.U_BS:TDO
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              0   0.447   0.000  U0/U_ICON/U_TDO_reg (U0/U_ICON/iTDO)
+    BSCAN_SPARTAN6:TDO         0.000          U0/U_ICON/I_YES_BSCAN.U_BS/I_S6.ISYN.I_USE_SOFTBSCAN_EQ0.U_BS
+    ----------------------------------------
+    Total                      0.447ns (0.447ns logic, 0.000ns route)
+                                       (100.0% logic, 0.0% route)
 
 =========================================================================
 
@@ -533,24 +1256,142 @@ Cross Clock Domains Report:
 --------------------------
 
 Clock to Setup on destination clock gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT0_OUT<0>
-----------------------------------------------------------------------+---------+---------+---------+---------+
-                                                                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                                                          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
-----------------------------------------------------------------------+---------+---------+---------+---------+
-gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT0_OUT<0>|    5.034|         |         |         |
-----------------------------------------------------------------------+---------+---------+---------+---------+
+-------------------------------------------------------------------------------+---------+---------+---------+---------+
+                                                                               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                                                   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-------------------------------------------------------------------------------+---------+---------+---------+---------+
+gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT0_OUT<0>         |    6.262|         |         |         |
+link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL|    1.128|         |         |         |
+-------------------------------------------------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL
+-------------------------------------------------------------------------------+---------+---------+---------+---------+
+                                                                               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                                                   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-------------------------------------------------------------------------------+---------+---------+---------+---------+
+gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT0_OUT<0>         |    1.666|         |         |         |
+link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL|    8.096|         |         |         |
+link_tracking_1_inst/chipscope_icon_inst/U0/iUPDATE_OUT                        |    2.583|         |         |         |
+link_tracking_1_inst/i2c_wrapper_inst/data_o_0                                 |    1.562|    1.562|         |         |
+link_tracking_1_inst/i2c_wrapper_inst/data_o_1                                 |    1.562|    1.562|         |         |
+link_tracking_1_inst/i2c_wrapper_inst/data_o_2                                 |    1.562|    1.562|         |         |
+link_tracking_1_inst/i2c_wrapper_inst/data_o_3                                 |    1.562|    1.562|         |         |
+link_tracking_1_inst/i2c_wrapper_inst/data_o_4                                 |    1.562|    1.562|         |         |
+link_tracking_1_inst/i2c_wrapper_inst/data_o_5                                 |    1.562|    1.562|         |         |
+link_tracking_1_inst/i2c_wrapper_inst/data_o_6                                 |    1.562|    1.562|         |         |
+link_tracking_1_inst/i2c_wrapper_inst/data_o_7                                 |    1.562|    1.562|         |         |
+link_tracking_1_inst/i2c_wrapper_inst/en_o                                     |    1.562|    1.562|         |         |
+link_tracking_1_inst/i2c_wrapper_inst/status_o                                 |    1.562|    1.562|         |         |
+link_tracking_1_inst/tx_data_o<0>                                              |    1.562|    1.562|         |         |
+-------------------------------------------------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock link_tracking_1_inst/chipscope_icon_inst/U0/iUPDATE_OUT
+-------------------------------------------------------+---------+---------+---------+---------+
+                                                       | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                           |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-------------------------------------------------------+---------+---------+---------+---------+
+link_tracking_1_inst/chipscope_icon_inst/U0/iUPDATE_OUT|    1.984|         |         |         |
+-------------------------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock link_tracking_1_inst/i2c_wrapper_inst/data_o_0
+-------------------------------------------------------------------------------+---------+---------+---------+---------+
+                                                                               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                                                   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-------------------------------------------------------------------------------+---------+---------+---------+---------+
+link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL|    2.516|         |    2.516|         |
+-------------------------------------------------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock link_tracking_1_inst/i2c_wrapper_inst/data_o_1
+-------------------------------------------------------------------------------+---------+---------+---------+---------+
+                                                                               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                                                   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-------------------------------------------------------------------------------+---------+---------+---------+---------+
+link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL|    2.516|         |    2.516|         |
+-------------------------------------------------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock link_tracking_1_inst/i2c_wrapper_inst/data_o_2
+-------------------------------------------------------------------------------+---------+---------+---------+---------+
+                                                                               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                                                   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-------------------------------------------------------------------------------+---------+---------+---------+---------+
+link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL|    2.516|         |    2.516|         |
+-------------------------------------------------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock link_tracking_1_inst/i2c_wrapper_inst/data_o_3
+-------------------------------------------------------------------------------+---------+---------+---------+---------+
+                                                                               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                                                   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-------------------------------------------------------------------------------+---------+---------+---------+---------+
+link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL|    2.516|         |    2.516|         |
+-------------------------------------------------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock link_tracking_1_inst/i2c_wrapper_inst/data_o_4
+-------------------------------------------------------------------------------+---------+---------+---------+---------+
+                                                                               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                                                   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-------------------------------------------------------------------------------+---------+---------+---------+---------+
+link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL|    2.516|         |    2.516|         |
+-------------------------------------------------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock link_tracking_1_inst/i2c_wrapper_inst/data_o_5
+-------------------------------------------------------------------------------+---------+---------+---------+---------+
+                                                                               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                                                   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-------------------------------------------------------------------------------+---------+---------+---------+---------+
+link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL|    2.516|         |    2.516|         |
+-------------------------------------------------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock link_tracking_1_inst/i2c_wrapper_inst/data_o_6
+-------------------------------------------------------------------------------+---------+---------+---------+---------+
+                                                                               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                                                   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-------------------------------------------------------------------------------+---------+---------+---------+---------+
+link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL|    2.516|         |    2.516|         |
+-------------------------------------------------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock link_tracking_1_inst/i2c_wrapper_inst/data_o_7
+-------------------------------------------------------------------------------+---------+---------+---------+---------+
+                                                                               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                                                   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-------------------------------------------------------------------------------+---------+---------+---------+---------+
+link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL|    2.516|         |    2.516|         |
+-------------------------------------------------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock link_tracking_1_inst/i2c_wrapper_inst/en_o
+-------------------------------------------------------------------------------+---------+---------+---------+---------+
+                                                                               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                                                   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-------------------------------------------------------------------------------+---------+---------+---------+---------+
+link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL|    2.516|         |    2.516|         |
+-------------------------------------------------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock link_tracking_1_inst/i2c_wrapper_inst/status_o
+-------------------------------------------------------------------------------+---------+---------+---------+---------+
+                                                                               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                                                   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-------------------------------------------------------------------------------+---------+---------+---------+---------+
+link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL|    2.516|         |    2.516|         |
+-------------------------------------------------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock link_tracking_1_inst/tx_data_o<0>
+-------------------------------------------------------------------------------+---------+---------+---------+---------+
+                                                                               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                                                   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-------------------------------------------------------------------------------+---------+---------+---------+---------+
+link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL|    2.516|         |    2.516|         |
+-------------------------------------------------------------------------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 6.00 secs
-Total CPU time to Xst completion: 5.76 secs
+Total REAL time to Xst completion: 12.00 secs
+Total CPU time to Xst completion: 12.39 secs
  
 --> 
 
-Total memory usage is 223580 kilobytes
+Total memory usage is 227356 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   55 (   0 filtered)
-Number of infos    :   31 (   0 filtered)
+Number of warnings :  271 (   0 filtered)
+Number of infos    :   28 (   0 filtered)
 

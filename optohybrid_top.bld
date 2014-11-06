@@ -7,6 +7,23 @@ ise -dd _ngo -sd ipcore_dir -nt timestamp -uc src/timing.ucf -uc src/pinout.ucf
 optohybrid_top.ngc optohybrid_top.ngd
 
 Reading NGO file "Z:/Documents/PhD/Code/OH/optohybrid_top.ngc" ...
+Loading design module "ipcore_dir/chipscope_vio.ngc"...
+Loading design module "ipcore_dir/chipscope_icon.ngc"...
+INFO:NgdBuild:1317 - Using core chipscope_vio_v1 requires a ChipScopePro
+   license.  The following blocks are instances of core chipscope_vio_v1:
+	/optohybrid_top/optohybrid_top
+	/optohybrid_top/link_tracking_1_inst/chipscope_vio_inst
+
+-----------------------------------------------
+INFO:Security:71 - If a license for part 'xc6slx150t' is available, it will be
+possible to use 'ChipScopePro_TDP' instead of 'ChipScopePro'.
+WARNING:Security:42 - Your software subscription period has lapsed. Your current
+version of Xilinx tools will continue to function, but you no longer qualify for
+Xilinx software updates or new releases.
+
+-----------------------------------------------
+
+-----------------------------------------------
 Gathering constraint information from source properties...
 Done.
 
@@ -25,12 +42,41 @@ WARNING:NgdBuild:1345 - The constraint <TIMESPEC "TS_gtp_userclk0" = PERIOD
 Done...
 
 Checking expanded design ...
+WARNING:NgdBuild:452 - logical net 'rx_error<1>' has no driver
+WARNING:NgdBuild:478 - clock net vfat2_clk with clock driver vfat2_clk_bufg
+   drives no clock pins
+WARNING:NgdBuild:452 - logical net
+   'link_tracking_1_inst/i2c_wrapper_inst/i2c_master_inst/ctrlreg<11>' has no
+   driver
+WARNING:NgdBuild:452 - logical net
+   'link_tracking_1_inst/i2c_wrapper_inst/i2c_master_inst/ctrlreg<8>' has no
+   driver
+WARNING:NgdBuild:452 - logical net
+   'link_tracking_1_inst/i2c_wrapper_inst/i2c_master_inst/ctrlreg<7>' has no
+   driver
+WARNING:NgdBuild:452 - logical net
+   'link_tracking_1_inst/i2c_wrapper_inst/i2c_master_inst/ctrlreg<5>' has no
+   driver
+WARNING:NgdBuild:452 - logical net
+   'link_tracking_1_inst/i2c_wrapper_inst/i2c_master_inst/ctrlreg<4>' has no
+   driver
+WARNING:NgdBuild:452 - logical net
+   'link_tracking_1_inst/i2c_wrapper_inst/i2c_master_inst/ctrlreg<3>' has no
+   driver
+WARNING:NgdBuild:452 - logical net
+   'link_tracking_1_inst/i2c_wrapper_inst/i2c_master_inst/ctrlreg<2>' has no
+   driver
+WARNING:NgdBuild:452 - logical net
+   'link_tracking_1_inst/i2c_wrapper_inst/i2c_master_inst/ctrlreg<1>' has no
+   driver
+WARNING:NgdBuild:452 - logical net
+   'link_tracking_1_inst/i2c_wrapper_inst/i2c_master_inst/ctrlreg<0>' has no
+   driver
+WARNING:NgdBuild:452 - logical net
+   'link_tracking_1_inst/i2c_wrapper_inst/i2c_master_inst/completed' has no
+   driver
 WARNING:NgdBuild:478 - clock net fpga_clk_pll_inst/clk100MHz_o with clock driver
    fpga_clk_pll_inst/clkout1_buf drives no clock pins
-WARNING:NgdBuild:470 - bidirect pad net 'sda_io<3>' has no legal driver
-WARNING:NgdBuild:470 - bidirect pad net 'sda_io<2>' has no legal driver
-WARNING:NgdBuild:470 - bidirect pad net 'scl_io<3>' has no legal driver
-WARNING:NgdBuild:470 - bidirect pad net 'scl_io<2>' has no legal driver
 
 Partition Implementation Status
 -------------------------------
@@ -41,12 +87,12 @@ Partition Implementation Status
 
 NGDBUILD Design Results Summary:
   Number of errors:     0
-  Number of warnings:   6
+  Number of warnings:  14
 
-Total memory usage is 139292 kilobytes
+Total memory usage is 153852 kilobytes
 
 Writing NGD file "optohybrid_top.ngd" ...
-Total REAL time to NGDBUILD completion:  3 sec
+Total REAL time to NGDBUILD completion:  4 sec
 Total CPU time to NGDBUILD completion:   3 sec
 
 Writing NGDBUILD log file "optohybrid_top.bld"...
