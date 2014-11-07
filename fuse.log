@@ -26,8 +26,8 @@ Parsing VHDL file "Z:/Documents/PhD/Code/OH/src/link_tracking.vhd" into library 
 Parsing VHDL file "Z:/Documents/PhD/Code/OH/src/sim/sim_link_tracking.vhd" into library work
 Starting static elaboration
 Completed static elaboration
-Fuse Memory Usage: 124316 KB
-Fuse CPU Usage: 452 ms
+Fuse Memory Usage: 124252 KB
+Fuse CPU Usage: 436 ms
 Compiling package standard
 Compiling package std_logic_1164
 Compiling package user_package
@@ -58,8 +58,8 @@ Compiling architecture chipscope_ila_a of entity chipscope_ila [chipscope_ila_de
 Compiling architecture behavioral of entity link_tracking [link_tracking_default]
 Compiling architecture behavior of entity sim_link_tracking
 Time Resolution for simulation is 1ps.
-Waiting for 1 sub-compilation(s) to finish...
+Waiting for 15 sub-compilation(s) to finish...
 Compiled 51 VHDL Units
 Built simulation executable Z:/Documents/PhD/Code/OH/sim_link_tracking_isim_beh.exe
-Fuse Memory Usage: 145356 KB
-Fuse CPU Usage: 1201 ms
+Fuse Memory Usage: 147340 KB
+Fuse CPU Usage: 1153 ms

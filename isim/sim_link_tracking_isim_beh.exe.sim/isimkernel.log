@@ -2,14 +2,14 @@ Command line:
    sim_link_tracking_isim_beh.exe
      -simmode  gui
      -simrunnum  0
-     -socket  55798
+     -socket  55804
 
-Fri Nov 07 21:59:16 2014
+Fri Nov 07 22:19:26 2014
 
 
- Elaboration Time: 0.296401 sec
+ Elaboration Time: 0.218401 sec
 
- Current Memory Usage: 685.24 Meg
+ Current Memory Usage: 685.044 Meg
 
  Total Signals          : 928
  Total Nets             : 17787
@@ -20,9 +20,9 @@ Fri Nov 07 21:59:16 2014
  Total Traceable Variables  : 355
  Total Scalar Nets and Variables : 18720
 
- Total Simulation Time: 1.43521 sec
+ Total Simulation Time: 0.312002 sec
 
- Current Memory Usage: 1000.34 Meg
+ Current Memory Usage: 685.044 Meg
 
-Fri Nov 07 22:00:40 2014
+Fri Nov 07 22:19:38 2014
 
