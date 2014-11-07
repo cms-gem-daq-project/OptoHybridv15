@@ -247,5 +247,5 @@ begin
         vfat2_data_6_i  => vfat2_data_14_i(8),
         vfat2_data_7_i  => vfat2_data_15_i(8)
     );
-      
+       
 end Behavioral;

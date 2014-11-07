@@ -7,11 +7,16 @@ ise -dd _ngo -sd ipcore_dir -nt timestamp -uc src/timing.ucf -uc src/pinout.ucf
 optohybrid_top.ngc optohybrid_top.ngd
 
 Reading NGO file "Z:/Documents/PhD/Code/OH/optohybrid_top.ngc" ...
-Loading design module "ipcore_dir/chipscope_vio.ngc"...
+Loading design module "ipcore_dir/chipscope_ila.ngc"...
 Loading design module "ipcore_dir/chipscope_icon.ngc"...
+Loading design module "ipcore_dir/chipscope_vio.ngc"...
+INFO:NgdBuild:1317 - Using core chipscope_ila_v1 requires a ChipScopePro
+   license.  The following blocks are instances of core chipscope_ila_v1:
+	/optohybrid_top/optohybrid_top
+	/optohybrid_top/link_tracking_1_inst/chipscope_ila_inst
+
 INFO:NgdBuild:1317 - Using core chipscope_vio_v1 requires a ChipScopePro
    license.  The following blocks are instances of core chipscope_vio_v1:
-	/optohybrid_top/optohybrid_top
 	/optohybrid_top/link_tracking_1_inst/chipscope_vio_inst
 
 -----------------------------------------------
@@ -46,35 +51,128 @@ WARNING:NgdBuild:452 - logical net 'rx_error<1>' has no driver
 WARNING:NgdBuild:478 - clock net vfat2_clk with clock driver vfat2_clk_bufg
    drives no clock pins
 WARNING:NgdBuild:452 - logical net
-   'link_tracking_1_inst/i2c_wrapper_inst/i2c_master_inst/ctrlreg<11>' has no
-   driver
+   'link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/selected_iic_i<31>'
+   has no driver
 WARNING:NgdBuild:452 - logical net
-   'link_tracking_1_inst/i2c_wrapper_inst/i2c_master_inst/ctrlreg<8>' has no
-   driver
+   'link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/selected_iic_i<30>'
+   has no driver
 WARNING:NgdBuild:452 - logical net
-   'link_tracking_1_inst/i2c_wrapper_inst/i2c_master_inst/ctrlreg<7>' has no
-   driver
+   'link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/selected_iic_i<29>'
+   has no driver
 WARNING:NgdBuild:452 - logical net
-   'link_tracking_1_inst/i2c_wrapper_inst/i2c_master_inst/ctrlreg<5>' has no
-   driver
+   'link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/selected_iic_i<28>'
+   has no driver
 WARNING:NgdBuild:452 - logical net
-   'link_tracking_1_inst/i2c_wrapper_inst/i2c_master_inst/ctrlreg<4>' has no
-   driver
+   'link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/selected_iic_i<27>'
+   has no driver
 WARNING:NgdBuild:452 - logical net
-   'link_tracking_1_inst/i2c_wrapper_inst/i2c_master_inst/ctrlreg<3>' has no
-   driver
+   'link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/selected_iic_i<26>'
+   has no driver
 WARNING:NgdBuild:452 - logical net
-   'link_tracking_1_inst/i2c_wrapper_inst/i2c_master_inst/ctrlreg<2>' has no
-   driver
+   'link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/selected_iic_i<25>'
+   has no driver
 WARNING:NgdBuild:452 - logical net
-   'link_tracking_1_inst/i2c_wrapper_inst/i2c_master_inst/ctrlreg<1>' has no
-   driver
+   'link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/selected_iic_i<24>'
+   has no driver
 WARNING:NgdBuild:452 - logical net
-   'link_tracking_1_inst/i2c_wrapper_inst/i2c_master_inst/ctrlreg<0>' has no
-   driver
+   'link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/selected_iic_i<23>'
+   has no driver
 WARNING:NgdBuild:452 - logical net
-   'link_tracking_1_inst/i2c_wrapper_inst/i2c_master_inst/completed' has no
-   driver
+   'link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/selected_iic_i<22>'
+   has no driver
+WARNING:NgdBuild:452 - logical net
+   'link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/selected_iic_i<21>'
+   has no driver
+WARNING:NgdBuild:452 - logical net
+   'link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/selected_iic_i<20>'
+   has no driver
+WARNING:NgdBuild:452 - logical net
+   'link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/selected_iic_i<19>'
+   has no driver
+WARNING:NgdBuild:452 - logical net
+   'link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/selected_iic_i<18>'
+   has no driver
+WARNING:NgdBuild:452 - logical net
+   'link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/selected_iic_i<17>'
+   has no driver
+WARNING:NgdBuild:452 - logical net
+   'link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/selected_iic_i<16>'
+   has no driver
+WARNING:NgdBuild:452 - logical net
+   'link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/selected_iic_i<15>'
+   has no driver
+WARNING:NgdBuild:452 - logical net
+   'link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/selected_iic_i<14>'
+   has no driver
+WARNING:NgdBuild:452 - logical net
+   'link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/selected_iic_i<13>'
+   has no driver
+WARNING:NgdBuild:452 - logical net
+   'link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/selected_iic_i<12>'
+   has no driver
+WARNING:NgdBuild:452 - logical net
+   'link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/selected_iic_i<11>'
+   has no driver
+WARNING:NgdBuild:452 - logical net
+   'link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/selected_iic_i<10>'
+   has no driver
+WARNING:NgdBuild:452 - logical net
+   'link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/selected_iic_i<9>' has
+   no driver
+WARNING:NgdBuild:452 - logical net
+   'link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/selected_iic_i<8>' has
+   no driver
+WARNING:NgdBuild:452 - logical net
+   'link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/selected_iic_i<7>' has
+   no driver
+WARNING:NgdBuild:452 - logical net
+   'link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/selected_iic_i<6>' has
+   no driver
+WARNING:NgdBuild:452 - logical net
+   'link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/selected_iic_i<5>' has
+   no driver
+WARNING:NgdBuild:452 - logical net
+   'link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/selected_iic_i<4>' has
+   no driver
+WARNING:NgdBuild:452 - logical net
+   'link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/selected_iic_i<3>' has
+   no driver
+WARNING:NgdBuild:452 - logical net
+   'link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/selected_iic_i<2>' has
+   no driver
+WARNING:NgdBuild:452 - logical net
+   'link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/selected_iic_i<1>' has
+   no driver
+WARNING:NgdBuild:452 - logical net
+   'link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/ctrlre
+   g<11>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/ctrlre
+   g<8>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/ctrlre
+   g<7>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/ctrlre
+   g<5>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/ctrlre
+   g<4>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/ctrlre
+   g<3>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/ctrlre
+   g<2>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/ctrlre
+   g<1>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/ctrlre
+   g<0>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/comple
+   ted' has no driver
 WARNING:NgdBuild:478 - clock net fpga_clk_pll_inst/clk100MHz_o with clock driver
    fpga_clk_pll_inst/clkout1_buf drives no clock pins
 
@@ -87,12 +185,12 @@ Partition Implementation Status
 
 NGDBUILD Design Results Summary:
   Number of errors:     0
-  Number of warnings:  14
+  Number of warnings:  45
 
-Total memory usage is 153852 kilobytes
+Total memory usage is 161020 kilobytes
 
 Writing NGD file "optohybrid_top.ngd" ...
-Total REAL time to NGDBUILD completion:  4 sec
-Total CPU time to NGDBUILD completion:   3 sec
+Total REAL time to NGDBUILD completion:  5 sec
+Total CPU time to NGDBUILD completion:   4 sec
 
 Writing NGDBUILD log file "optohybrid_top.bld"...

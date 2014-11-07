@@ -4,7 +4,7 @@ use ieee.numeric_std.all;
 
 library work;
 
-entity i2c_wrapper is
+entity vi2c_wrapper is
 generic(
     clk_freq            : integer := 160_000_000
 );
@@ -31,9 +31,9 @@ port(
     scl_o               : out std_logic_vector
     
 );
-end i2c_wrapper;
+end vi2c_wrapper;
 
-architecture Behavioral of i2c_wrapper is
+architecture Behavioral of vi2c_wrapper is
 
     signal ctrl_reg     : std_logic_vector(15 downto 0) := (others => '0');
     signal data_reg     : std_logic_vector(31 downto 0) := (others => '0');
@@ -131,15 +131,13 @@ begin
                 
                     exec <= '0';
                     
-                    data_o <= status_reg(7 downto 0);
-                    
-                    status_o <= not status_reg(27);
-                    
                     if (done = '1') then
                     
-                        en_o <= '1';
+                        data_o <= status_reg(7 downto 0);
+                    
+                        status_o <= not status_reg(27);
                         
-                        state := 0;
+                        state := 7;
                         
                     end if;
                     
@@ -155,31 +153,45 @@ begin
                 
                     exec <= '0';
                     
-                    data_o <= status_reg(7 downto 0);
-                    
-                    status_o <= not status_reg(27);
-                    
                     if (done = '1') then
+                    
+                        data_o <= status_reg(7 downto 0);
+                    
+                        status_o <= not status_reg(27);
                         
                         if (status_reg(27) = '1') then
-                        
-                            en_o <= '1';
                             
-                            state := 0;
+                            state := 7;
                             
-                        else                        
-                            
-                            data_reg(31 downto 25) <= (others => '0');
-                            data_reg(24) <= not read_write_n;
-                            data_reg(23 downto 16) <= '0' & chip_select & "1111";
-                            data_reg(15 downto 8) <= (others => '0');
-                            data_reg(7 downto 0) <= data;
-                            
-                            state := 2;
+                        else       
+
+                            state := 6;
                         
                         end if;
                         
                     end if;
+                    
+                -- Send second IIC operation
+                elsif (state = 6) then
+                
+                    if (busy = '0') then
+                    
+                        data_reg(31 downto 25) <= (others => '0');
+                        data_reg(24) <= not read_write_n;
+                        data_reg(23 downto 16) <= '0' & chip_select & "1111";
+                        data_reg(15 downto 8) <= (others => '0');
+                        data_reg(7 downto 0) <= data;
+                        
+                        state := 2;
+                        
+                    end if;
+                    
+                -- Send enable signal
+                elsif (state = 7) then
+                
+                    en_o <= '1';
+                    
+                    state := 0;
       
                 else
                 

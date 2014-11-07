@@ -1,7 +1,7 @@
 Release 14.7 - par P.20131013 (nt)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Thu Nov 06 17:41:21 2014
+Fri Nov 07 18:40:48 2014
 
 
 # NOTE: This file is designed to be imported into a spreadsheet program
@@ -273,7 +273,7 @@ D17|rx_p_i<2>|IPAD|MGTRXP0_123|INPUT||||||NONE||LOCATED|NO|NONE|
 D18|||MGTAVTTRX_123||||||||||||
 D19|rx_p_i<3>|IPAD|MGTRXP1_123|INPUT||||||NONE||LOCATED|NO|NONE|
 D20|||VCCAUX||||||||2.5||||
-D21|sda_io<3>|IOB|IO_L66P_SCP1_0|TRISTATE|I2C|0||||||LOCATED|NO|NONE|
+D21|sda_io<3>|IOB|IO_L66P_SCP1_0|BIDIR|I2C|0||||NONE||LOCATED|NO|NONE|
 D22|scl_o<3>|IOB|IO_L66N_SCP0_0|TRISTATE|I2C|0||||||LOCATED|NO|NONE|
 D23||IOBM|IO_L4P_M5CKE_5|UNUSED||5|||||||||
 D24|vfat2_data_11_i<0>|IOB|IO_L17P_M5DQ6_5|INPUT|LVCMOS33|5||||NONE||LOCATED|NO|NONE|
