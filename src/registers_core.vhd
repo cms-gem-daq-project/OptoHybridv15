@@ -128,7 +128,7 @@ begin
                     state := 5;
                     
                 -- Wait for done
-                elsif (state = 6) then
+                elsif (state = 5) then
                 
                     if (tx_done_i = '1') then
                     

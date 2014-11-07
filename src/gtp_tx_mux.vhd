@@ -18,6 +18,10 @@ port(
     regs_done_o     : out std_logic;
     regs_data_i     : in std_logic_vector(47 downto 0);  
     
+    track_ready_i   : in std_logic;
+    track_done_o    : out std_logic;
+    track_data_i    : in std_logic_vector(191 downto 0);  
+    
     tx_kchar_o      : out std_logic_vector(1 downto 0);
     tx_data_o       : out std_logic_vector(15 downto 0)
     
@@ -34,7 +38,7 @@ begin
         
         -- Data
         variable header         : std_logic_vector(7 downto 0) := (others => '0');
-        variable data           : std_logic_vector(47 downto 0) := (others => '0');
+        variable data           : std_logic_vector(191 downto 0) := (others => '0');
         variable data_cnt       : integer range 0 to 15 := 0;
     
         -- Last kchar sent
@@ -54,6 +58,8 @@ begin
                 vi2c_done_o <= '0';
                 
                 regs_done_o <= '0';
+                
+                track_done_o <= '0';
                 
                 state := 0;
                 
@@ -108,6 +114,19 @@ begin
                         
                         state := 1;
                         
+                    -- Tracking data is available
+                    elsif (track_ready_i = '1') then
+                    
+                        header := def_gtp_tracks;
+                    
+                        data(191 downto 0) := track_data_i;
+                        
+                        data_cnt := 12;
+                        
+                        track_done_o <= '1';
+                        
+                        state := 1;
+                        
                     end if;
                     
                 -- Send header
@@ -116,6 +135,8 @@ begin
                     vi2c_done_o <= '0';
                     
                     regs_done_o <= '0';
+                        
+                    track_done_o <= '0';
                     
                     -- Set the TX data
                     tx_data_o <= header & x"BC";
@@ -154,6 +175,8 @@ begin
                     vi2c_done_o <= '0';
                     
                     regs_done_o <= '0';
+                    
+                    track_done_o <= '0';
                     
                     state := 0;
                     

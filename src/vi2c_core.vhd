@@ -40,10 +40,6 @@ architecture Behavioral of vi2c_core is
 
 begin    
 
-    ----------------------------------
-    -- IIC wrapper                  --
-    ----------------------------------
-
     process(fabric_clk_i)
     
         variable state          : integer range 0 to 7 := 0;
@@ -212,9 +208,6 @@ begin
     
     end process;
     
-    ----------------------------------
-    -- IIC core                     --
-    ----------------------------------
     
     vi2c_wrapper_inst : entity work.vi2c_wrapper
     port map(

@@ -165,11 +165,7 @@ begin
     fpga_clk_ibufg : ibufg port map(I => fpga_clk_i, O => fpga_clk);
     
     -- PLL used to generate the 40 MHz clock to the CDCE and the VFAT2 
-    fpga_clk_pll_inst : entity work.fpga_clk_pll
-    port map(
-        clk50MHz_i    => fpga_clk,
-        clk40MHz_o    => clk40MHz
-    );    
+    fpga_clk_pll_inst : entity work.fpga_clk_pll port map(clk50MHz_i => fpga_clk, clk40MHz_o => clk40MHz);    
     
     -- Internal 40 MHz clock
     vfat2_clk_bufg : bufg port map(I => clk40MHz, O => vfat2_clk);

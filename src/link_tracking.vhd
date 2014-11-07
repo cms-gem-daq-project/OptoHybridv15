@@ -72,6 +72,12 @@ architecture Behavioral of link_tracking is
     signal registers_write  : registers_wbus;
     signal registers_read   : registers_rbus;
     
+    -- Tracking signals
+    
+    signal track_tx_ready   : std_logic := '0';
+    signal track_tx_done    : std_logic := '0';
+    signal track_tx_data    : std_logic_vector(191 downto 0) := (others => '0');
+    
     -- Counters
     
     signal rx_error_counter : std_logic_vector(31 downto 0) := (others => '0');
@@ -89,42 +95,6 @@ architecture Behavioral of link_tracking is
     signal cs_ila       : std_logic_vector(31 downto 0);
 
 begin
-
---    -- TEST
---    process(gtp_clk_i)
---        variable cnt : integer range 0 to 320_000_000 := 0;
---    begin
---        if (rising_edge(gtp_clk_i)) then
---            if (cnt = 320_000_000) then
---                cnt := 0;
---            else
---                cnt := cnt + 1;
---            end if;
---            if (cnt = 1) then
---                rx_data <= x"01BC";
---                rx_kchar <= "01";
---            elsif (cnt = 2) then
---                rx_data <= "00101000" & "00001000";
---                rx_kchar <= "00";
---            elsif (cnt = 3) then
---                rx_data <= "00000000" & x"21";
---                rx_kchar <= "00";
---            
---            elsif (cnt = 160_000_000) then
---                rx_data <= x"01BC";
---                rx_kchar <= "01";
---            elsif (cnt = 160_000_001) then
---                rx_data <= "00101000" & "00001001";
---                rx_kchar <= "00";
---            elsif (cnt = 160_000_002) then
---                rx_data <= "00000000" & x"20";
---                rx_kchar <= "00";
---            else    
---                rx_data <= x"00BC";
---                rx_kchar <= "00";
---            end if;
---        end if;
---    end process; 
 
     --================================--
     -- GTP
@@ -152,6 +122,9 @@ begin
         regs_ready_i    => regs_tx_ready,
         regs_done_o     => regs_tx_done,
         regs_data_i     => regs_tx_data, 
+        track_ready_i   => track_tx_ready,
+        track_done_o    => track_tx_done,
+        track_data_i    => track_tx_data, 
         tx_kchar_o      => tx_kchar_o,
         tx_data_o       => tx_data
     );
@@ -225,11 +198,36 @@ begin
     --================================--    
     
     rx_error_counter_inst : entity work.counter port map(fabric_clk_i => gtp_clk_i, reset_i => reset_i, en_i => rx_error_i, data_o => rx_error_counter);
+    
     vi2c_rx_counter_inst : entity work.counter port map(fabric_clk_i => gtp_clk_i, reset_i => reset_i, en_i => vi2c_rx_en, data_o => vi2c_rx_counter);
     vi2c_tx_counter_inst : entity work.counter port map(fabric_clk_i => gtp_clk_i, reset_i => reset_i, en_i => vi2c_tx_done, data_o => vi2c_tx_counter);
+    
     regs_rx_counter_inst : entity work.counter port map(fabric_clk_i => gtp_clk_i, reset_i => reset_i, en_i => regs_rx_en, data_o => regs_rx_counter);
     regs_tx_counter_inst : entity work.counter port map(fabric_clk_i => gtp_clk_i, reset_i => reset_i, en_i => regs_tx_done, data_o => regs_tx_counter);
 
+    --================================--
+    -- Tracking path
+    --================================--  
+
+    tracking_core_inst : entity work.tracking_core
+    port map(
+        gtp_clk_i       => gtp_clk_i,
+        vfat2_clk_i     => vfat2_clk_i,
+        reset_i         => reset_i,
+        tx_ready_o      => track_tx_ready,
+        tx_done_i       => track_tx_done,
+        tx_data_o       => track_tx_data,
+        vfat2_dvalid_i  => vfat2_dvalid_i,
+        vfat2_data_0_i  => vfat2_data_0_i,
+        vfat2_data_1_i  => vfat2_data_1_i,
+        vfat2_data_2_i  => vfat2_data_2_i,
+        vfat2_data_3_i  => vfat2_data_3_i,
+        vfat2_data_4_i  => vfat2_data_4_i,
+        vfat2_data_5_i  => vfat2_data_5_i,
+        vfat2_data_6_i  => vfat2_data_6_i,
+        vfat2_data_7_i  => vfat2_data_7_i
+    );
+    
     --================================--
     -- ChipScope
     --================================--
