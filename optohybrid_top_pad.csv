@@ -1,7 +1,7 @@
 #Release 14.7 - par P.20131013 (nt)
 #Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-#Fri Nov 07 20:00:30 2014
+#Fri Nov 07 22:06:51 2014
 
 #
 ## NOTE: This file is designed to be imported into a spreadsheet program
@@ -457,7 +457,7 @@ L19,,IOBM,IO_L9P_M5BA0_5,UNUSED,,5,,,,,,,,,
 L20,,IOBM,IO_L27P_5,UNUSED,,5,,,,,,,,,
 L21,,IOBS,IO_L27N_5,UNUSED,,5,,,,,,,,,
 L22,,,VCCAUX,,,,,,,,2.5,,,,
-L23,,IOBM,IO_L29P_A23_M1A13_1,UNUSED,,1,,,,,,,,,
+L23,vfat2_data_15_i<8>,IOB,IO_L29P_A23_M1A13_1,INPUT,LVCMOS25*,1,,,,NONE,,UNLOCATED,NO,NONE,
 L24,vfat2_data_12_i<4>,IOB,IO_L29N_A22_M1A14_1,INPUT,LVCMOS33,1,,,,NONE,,LOCATED,NO,NONE,
 L25,vfat2_data_11_i<4>,IOB,IO_L24P_M5DQ12_5,INPUT,LVCMOS33,5,,,,NONE,,LOCATED,NO,NONE,
 L26,vfat2_data_11_i<3>,IOB,IO_L24N_M5DQ13_5,INPUT,LVCMOS33,5,,,,NONE,,LOCATED,NO,NONE,
@@ -556,7 +556,7 @@ R14,,,VCCINT,,,,,,,,1.2,,,,
 R15,,,VCCINT,,,,,,,,1.2,,,,
 R16,,,VCCINT,,,,,,,,1.2,,,,
 R17,,,VCCINT,,,,,,,,1.2,,,,
-R18,,IOBM,IO_L34P_A13_M1WE_1,UNUSED,,1,,,,,,,,,
+R18,vfat2_data_14_i<8>,IOB,IO_L34P_A13_M1WE_1,INPUT,LVCMOS25*,1,,,,NONE,,UNLOCATED,NO,NONE,
 R19,,IOBS,IO_L34N_A12_M1BA2_1,UNUSED,,1,,,,,,,,,
 R20,,IOBM,IO_L36P_A9_M1BA0_1,UNUSED,,1,,,,,,,,,
 R21,,IOBS,IO_L36N_A8_M1BA1_1,UNUSED,,1,,,,,,,,,
