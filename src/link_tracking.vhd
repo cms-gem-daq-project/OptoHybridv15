@@ -149,6 +149,9 @@ begin
         vi2c_ready_i    => vi2c_tx_ready,
         vi2c_done_o     => vi2c_tx_done,
         vi2c_data_i     => vi2c_tx_data, 
+        regs_ready_i    => regs_tx_ready,
+        regs_done_o     => regs_tx_done,
+        regs_data_i     => regs_tx_data, 
         tx_kchar_o      => tx_kchar_o,
         tx_data_o       => tx_data
     );
@@ -223,9 +226,9 @@ begin
     
     rx_error_counter_inst : entity work.counter port map(fabric_clk_i => gtp_clk_i, reset_i => reset_i, en_i => rx_error_i, data_o => rx_error_counter);
     vi2c_rx_counter_inst : entity work.counter port map(fabric_clk_i => gtp_clk_i, reset_i => reset_i, en_i => vi2c_rx_en, data_o => vi2c_rx_counter);
-    vi2c_tx_counter_inst : entity work.counter port map(fabric_clk_i => gtp_clk_i, reset_i => reset_i, en_i => vi2c_tx_en, data_o => vi2c_tx_counter);
+    vi2c_tx_counter_inst : entity work.counter port map(fabric_clk_i => gtp_clk_i, reset_i => reset_i, en_i => vi2c_tx_done, data_o => vi2c_tx_counter);
     regs_rx_counter_inst : entity work.counter port map(fabric_clk_i => gtp_clk_i, reset_i => reset_i, en_i => regs_rx_en, data_o => regs_rx_counter);
-    regs_tx_counter_inst : entity work.counter port map(fabric_clk_i => gtp_clk_i, reset_i => reset_i, en_i => regs_tx_en, data_o => regs_tx_counter);
+    regs_tx_counter_inst : entity work.counter port map(fabric_clk_i => gtp_clk_i, reset_i => reset_i, en_i => regs_tx_done, data_o => regs_tx_counter);
 
     --================================--
     -- ChipScope

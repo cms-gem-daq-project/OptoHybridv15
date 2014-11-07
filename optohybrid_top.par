@@ -1,7 +1,7 @@
 Release 14.7 par P.20131013 (nt)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-THOMAS-LENZI-PC::  Fri Nov 07 18:40:18 2014
+THOMAS-LENZI-PC::  Fri Nov 07 19:59:35 2014
 
 par -w -intstyle ise -ol high -mt 4 optohybrid_top_map.ncd optohybrid_top.ncd
 optohybrid_top.pcf 
@@ -28,16 +28,16 @@ Device speed data version:  "PRODUCTION 1.23 2013-10-13".
 Device Utilization Summary:
 
 Slice Logic Utilization:
-  Number of Slice Registers:                 1,059 out of 184,304    1%
-    Number used as Flip Flops:               1,054
+  Number of Slice Registers:                 9,727 out of 184,304    5%
+    Number used as Flip Flops:               9,722
     Number used as Latches:                      5
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                        669 out of  92,152    1%
-    Number used as logic:                      519 out of  92,152    1%
-      Number using O6 output only:             291
-      Number using O5 output only:              56
-      Number using O5 and O6:                  172
+  Number of Slice LUTs:                      4,929 out of  92,152    5%
+    Number used as logic:                    4,573 out of  92,152    4%
+      Number using O6 output only:           1,932
+      Number using O5 output only:             361
+      Number using O5 and O6:                2,280
       Number used as ROM:                        0
     Number used as Memory:                      67 out of  21,680    1%
       Number used as Dual Port RAM:              0
@@ -46,18 +46,18 @@ Slice Logic Utilization:
         Number using O6 output only:            51
         Number using O5 output only:             0
         Number using O5 and O6:                 16
-    Number used exclusively as route-thrus:     83
-      Number with same-slice register load:     76
-      Number with same-slice carry load:         7
+    Number used exclusively as route-thrus:    289
+      Number with same-slice register load:    272
+      Number with same-slice carry load:        17
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                   462 out of  23,038    2%
-  Number of MUXCYs used:                       164 out of  46,076    1%
-  Number of LUT Flip Flop pairs used:        1,104
-    Number with an unused Flip Flop:           239 out of   1,104   21%
-    Number with an unused LUT:                 435 out of   1,104   39%
-    Number of fully used LUT-FF pairs:         430 out of   1,104   38%
+  Number of occupied Slices:                 2,478 out of  23,038   10%
+  Number of MUXCYs used:                       484 out of  46,076    1%
+  Number of LUT Flip Flop pairs used:        8,470
+    Number with an unused Flip Flop:         1,214 out of   8,470   14%
+    Number with an unused LUT:               3,541 out of   8,470   41%
+    Number of fully used LUT-FF pairs:       3,715 out of   8,470   43%
     Number of slice register sites lost
       to control set restrictions:               0 out of 184,304    0%
 
@@ -188,21 +188,21 @@ WARNING:Par:288 - The signal vfat2_data_9_i<5>_IBUF has no load.  PAR will not a
 WARNING:Par:288 - The signal vfat2_data_9_i<6>_IBUF has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal vfat2_data_9_i<7>_IBUF has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal vfat2_data_9_i<8>_IBUF has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<4> has no load.  PAR will not attempt to route this
+WARNING:Par:288 - The signal link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<24> has no load.  PAR will not attempt to route this
    signal.
-WARNING:Par:288 - The signal link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<8> has no load.  PAR will not attempt to route this
+WARNING:Par:288 - The signal link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<25> has no load.  PAR will not attempt to route this
    signal.
-WARNING:Par:288 - The signal link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<5> has no load.  PAR will not attempt to route this
+WARNING:Par:288 - The signal link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<26> has no load.  PAR will not attempt to route this
    signal.
-WARNING:Par:288 - The signal link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<9> has no load.  PAR will not attempt to route this
+WARNING:Par:288 - The signal link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<27> has no load.  PAR will not attempt to route this
    signal.
-WARNING:Par:288 - The signal link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<6> has no load.  PAR will not attempt to route this
+WARNING:Par:288 - The signal link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<28> has no load.  PAR will not attempt to route this
    signal.
-WARNING:Par:288 - The signal link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<10> has no load.  PAR will not attempt to route this
+WARNING:Par:288 - The signal link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<29> has no load.  PAR will not attempt to route this
    signal.
-WARNING:Par:288 - The signal link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<7> has no load.  PAR will not attempt to route this
+WARNING:Par:288 - The signal link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<30> has no load.  PAR will not attempt to route this
    signal.
-WARNING:Par:288 - The signal link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<11> has no load.  PAR will not attempt to route this
+WARNING:Par:288 - The signal link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<31> has no load.  PAR will not attempt to route this
    signal.
 WARNING:Par:288 - The signal link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<12> has no load.  PAR will not attempt to route this
    signal.
@@ -220,13 +220,29 @@ WARNING:Par:288 - The signal link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UP
    signal.
 WARNING:Par:288 - The signal link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<19> has no load.  PAR will not attempt to route this
    signal.
-WARNING:Par:288 - The signal link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<28> has no load.  PAR will not attempt to route this
+WARNING:Par:288 - The signal link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<20> has no load.  PAR will not attempt to route this
    signal.
-WARNING:Par:288 - The signal link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<29> has no load.  PAR will not attempt to route this
+WARNING:Par:288 - The signal link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<21> has no load.  PAR will not attempt to route this
    signal.
-WARNING:Par:288 - The signal link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<30> has no load.  PAR will not attempt to route this
+WARNING:Par:288 - The signal link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<22> has no load.  PAR will not attempt to route this
    signal.
-WARNING:Par:288 - The signal link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<31> has no load.  PAR will not attempt to route this
+WARNING:Par:288 - The signal link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<23> has no load.  PAR will not attempt to route this
+   signal.
+WARNING:Par:288 - The signal link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<7> has no load.  PAR will not attempt to route this
+   signal.
+WARNING:Par:288 - The signal link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<6> has no load.  PAR will not attempt to route this
+   signal.
+WARNING:Par:288 - The signal link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<5> has no load.  PAR will not attempt to route this
+   signal.
+WARNING:Par:288 - The signal link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<4> has no load.  PAR will not attempt to route this
+   signal.
+WARNING:Par:288 - The signal link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<8> has no load.  PAR will not attempt to route this
+   signal.
+WARNING:Par:288 - The signal link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<9> has no load.  PAR will not attempt to route this
+   signal.
+WARNING:Par:288 - The signal link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<10> has no load.  PAR will not attempt to route this
+   signal.
+WARNING:Par:288 - The signal link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<11> has no load.  PAR will not attempt to route this
    signal.
 WARNING:Par:288 - The signal link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<0> has no load.  PAR will not attempt to route this
    signal.
@@ -236,48 +252,32 @@ WARNING:Par:288 - The signal link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UP
    signal.
 WARNING:Par:288 - The signal link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<3> has no load.  PAR will not attempt to route this
    signal.
-WARNING:Par:288 - The signal link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<20> has no load.  PAR will not attempt to route this
-   signal.
-WARNING:Par:288 - The signal link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<24> has no load.  PAR will not attempt to route this
-   signal.
-WARNING:Par:288 - The signal link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<21> has no load.  PAR will not attempt to route this
-   signal.
-WARNING:Par:288 - The signal link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<25> has no load.  PAR will not attempt to route this
-   signal.
-WARNING:Par:288 - The signal link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<22> has no load.  PAR will not attempt to route this
-   signal.
-WARNING:Par:288 - The signal link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<26> has no load.  PAR will not attempt to route this
-   signal.
-WARNING:Par:288 - The signal link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<23> has no load.  PAR will not attempt to route this
-   signal.
-WARNING:Par:288 - The signal link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<27> has no load.  PAR will not attempt to route this
-   signal.
 Starting Multi-threaded Router
 
 
-Phase  1  : 5101 unrouted;      REAL time: 11 secs 
+Phase  1  : 34977 unrouted;      REAL time: 13 secs 
 
-Phase  2  : 3557 unrouted;      REAL time: 18 secs 
+Phase  2  : 29425 unrouted;      REAL time: 21 secs 
 
-Phase  3  : 1358 unrouted;      REAL time: 21 secs 
+Phase  3  : 15819 unrouted;      REAL time: 34 secs 
 
-Phase  4  : 1358 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 26 secs 
+Phase  4  : 15819 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 38 secs 
 
 Updating file: optohybrid_top.ncd with current fully routed design.
 
-Phase  5  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 28 secs 
+Phase  5  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 52 secs 
 
-Phase  6  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 28 secs 
+Phase  6  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 52 secs 
 
-Phase  7  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 28 secs 
+Phase  7  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 52 secs 
 
-Phase  8  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 28 secs 
+Phase  8  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 52 secs 
 
-Phase  9  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 28 secs 
+Phase  9  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 52 secs 
 
-Phase 10  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 28 secs 
-Total REAL time to Router completion: 28 secs 
-Total CPU time to Router completion (all processors): 33 secs 
+Phase 10  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 52 secs 
+Total REAL time to Router completion: 52 secs 
+Total CPU time to Router completion (all processors): 1 mins 30 secs 
 
 Generating "PAR" statistics.
 
@@ -288,10 +288,10 @@ Generating Clock Report
 +---------------------+--------------+------+------+------------+-------------+
 |        Clock Net    |   Resource   |Locked|Fanout|Net Skew(ns)|Max Delay(ns)|
 +---------------------+--------------+------+------+------------+-------------+
-|             gtp_clk |  BUFGMUX_X2Y4| No   |  213 |  0.395     |  1.483      |
+|             gtp_clk |  BUFGMUX_X2Y4| No   | 1820 |  0.396     |  1.483      |
 +---------------------+--------------+------+------+------------+-------------+
 |link_tracking_1_inst |              |      |      |            |             |
-|        /cs_icon0<0> | BUFGMUX_X2Y12| No   |  120 |  0.346     |  1.433      |
+|        /cs_icon0<0> | BUFGMUX_X2Y12| No   |  114 |  0.198     |  1.284      |
 +---------------------+--------------+------+------+------------+-------------+
 |gtp_wrapper_inst/gtp |              |      |      |            |             |
 |        _userclk2<1> | BUFGMUX_X3Y13| No   |    5 |  0.010     |  1.297      |
@@ -303,104 +303,25 @@ Generating Clock Report
 |         _userclk<1> |  BUFGMUX_X2Y3| No   |    4 |  0.009     |  1.296      |
 +---------------------+--------------+------+------+------------+-------------+
 |link_tracking_1_inst |              |      |      |            |             |
-|   /vi2c_tx_data<27> |         Local|      |    4 |  0.161     |  1.361      |
+|   /vi2c_tx_data<18> |         Local|      |    4 |  0.427     |  1.638      |
 +---------------------+--------------+------+------+------------+-------------+
 |link_tracking_1_inst |              |      |      |            |             |
-|   /vi2c_tx_data<28> |         Local|      |    4 |  0.242     |  1.832      |
+|   /vi2c_tx_data<26> |         Local|      |    4 |  0.169     |  1.030      |
 +---------------------+--------------+------+------+------------+-------------+
 |link_tracking_1_inst |              |      |      |            |             |
-|   /vi2c_tx_data<25> |         Local|      |    4 |  0.000     |  0.767      |
+|    /vi2c_tx_data<9> |         Local|      |    4 |  0.491     |  0.991      |
 +---------------------+--------------+------+------+------------+-------------+
 |link_tracking_1_inst |              |      |      |            |             |
-|   /vi2c_tx_data<26> |         Local|      |    4 |  0.161     |  0.882      |
+|    /vi2c_tx_data<5> |         Local|      |    4 |  0.000     |  0.564      |
 +---------------------+--------------+------+------+------------+-------------+
 |link_tracking_1_inst |              |      |      |            |             |
-|   /vi2c_tx_data<17> |         Local|      |    4 |  0.234     |  1.466      |
+|   /vi2c_tx_data<30> |         Local|      |    4 |  0.000     |  0.513      |
 +---------------------+--------------+------+------+------------+-------------+
 |link_tracking_1_inst |              |      |      |            |             |
-|   /vi2c_tx_data<18> |         Local|      |    4 |  0.021     |  1.155      |
+|    /vi2c_tx_data<2> |         Local|      |    4 |  0.230     |  0.901      |
 +---------------------+--------------+------+------+------------+-------------+
 |link_tracking_1_inst |              |      |      |            |             |
-|   /vi2c_tx_data<23> |         Local|      |    4 |  0.121     |  0.947      |
-+---------------------+--------------+------+------+------------+-------------+
-|link_tracking_1_inst |              |      |      |            |             |
-|   /vi2c_tx_data<24> |         Local|      |    4 |  0.000     |  0.691      |
-+---------------------+--------------+------+------+------------+-------------+
-|link_tracking_1_inst |              |      |      |            |             |
-|   /vi2c_tx_data<15> |         Local|      |    4 |  0.000     |  0.742      |
-+---------------------+--------------+------+------+------------+-------------+
-|link_tracking_1_inst |              |      |      |            |             |
-|   /vi2c_tx_data<16> |         Local|      |    4 |  0.000     |  1.021      |
-+---------------------+--------------+------+------+------------+-------------+
-|link_tracking_1_inst |              |      |      |            |             |
-|    /vi2c_tx_data<3> |         Local|      |    4 |  0.000     |  0.649      |
-+---------------------+--------------+------+------+------------+-------------+
-|link_tracking_1_inst |              |      |      |            |             |
-|   /vi2c_tx_data<30> |         Local|      |    4 |  0.000     |  0.938      |
-+---------------------+--------------+------+------+------------+-------------+
-|link_tracking_1_inst |              |      |      |            |             |
-|   /vi2c_tx_data<21> |         Local|      |    4 |  0.345     |  0.660      |
-+---------------------+--------------+------+------+------------+-------------+
-|link_tracking_1_inst |              |      |      |            |             |
-|   /vi2c_tx_data<22> |         Local|      |    4 |  0.024     |  0.508      |
-+---------------------+--------------+------+------+------------+-------------+
-|link_tracking_1_inst |              |      |      |            |             |
-|   /vi2c_tx_data<13> |         Local|      |    4 |  0.044     |  0.545      |
-+---------------------+--------------+------+------+------------+-------------+
-|link_tracking_1_inst |              |      |      |            |             |
-|   /vi2c_tx_data<14> |         Local|      |    4 |  0.154     |  0.693      |
-+---------------------+--------------+------+------+------------+-------------+
-|link_tracking_1_inst |              |      |      |            |             |
-|   /vi2c_tx_data<11> |         Local|      |    4 |  0.345     |  0.821      |
-+---------------------+--------------+------+------+------------+-------------+
-|link_tracking_1_inst |              |      |      |            |             |
-|   /vi2c_tx_data<12> |         Local|      |    4 |  0.000     |  1.033      |
-+---------------------+--------------+------+------+------------+-------------+
-|link_tracking_1_inst |              |      |      |            |             |
-|    /vi2c_tx_data<2> |         Local|      |    4 |  0.228     |  1.206      |
-+---------------------+--------------+------+------+------------+-------------+
-|link_tracking_1_inst |              |      |      |            |             |
-|   /vi2c_tx_data<20> |         Local|      |    4 |  0.158     |  1.232      |
-+---------------------+--------------+------+------+------------+-------------+
-|link_tracking_1_inst |              |      |      |            |             |
-|    /vi2c_tx_data<1> |         Local|      |    4 |  0.349     |  0.834      |
-+---------------------+--------------+------+------+------------+-------------+
-|link_tracking_1_inst |              |      |      |            |             |
-|   /vi2c_tx_data<10> |         Local|      |    4 |  0.161     |  0.880      |
-+---------------------+--------------+------+------+------------+-------------+
-|link_tracking_1_inst |              |      |      |            |             |
-|/vi2c_core_inst/chip |              |      |      |            |             |
-|           _select_2 |         Local|      |    4 |  0.171     |  1.734      |
-+---------------------+--------------+------+------+------------+-------------+
-|link_tracking_1_inst |              |      |      |            |             |
-|    /vi2c_tx_data<7> |         Local|      |    4 |  0.370     |  1.309      |
-+---------------------+--------------+------+------+------------+-------------+
-|link_tracking_1_inst |              |      |      |            |             |
-|    /vi2c_tx_data<8> |         Local|      |    4 |  0.345     |  0.834      |
-+---------------------+--------------+------+------+------------+-------------+
-|link_tracking_1_inst |              |      |      |            |             |
-|    /vi2c_tx_data<5> |         Local|      |    4 |  0.236     |  1.391      |
-+---------------------+--------------+------+------+------------+-------------+
-|link_tracking_1_inst |              |      |      |            |             |
-|    /vi2c_tx_data<6> |         Local|      |    4 |  0.188     |  1.294      |
-+---------------------+--------------+------+------+------------+-------------+
-|link_tracking_1_inst |              |      |      |            |             |
-|    /vi2c_tx_data<0> |         Local|      |    4 |  0.024     |  1.008      |
-+---------------------+--------------+------+------+------------+-------------+
-|link_tracking_1_inst |              |      |      |            |             |
-|    /vi2c_tx_data<4> |         Local|      |    4 |  0.000     |  1.038      |
-+---------------------+--------------+------+------+------------+-------------+
-|link_tracking_1_inst |              |      |      |            |             |
-|    /vi2c_tx_data<9> |         Local|      |    4 |  0.000     |  0.486      |
-+---------------------+--------------+------+------+------------+-------------+
-|link_tracking_1_inst |              |      |      |            |             |
-|   /vi2c_tx_data<19> |         Local|      |    4 |  0.225     |  1.187      |
-+---------------------+--------------+------+------+------------+-------------+
-|link_tracking_1_inst |              |      |      |            |             |
-|   /vi2c_tx_data<29> |         Local|      |    4 |  0.208     |  1.564      |
-+---------------------+--------------+------+------+------------+-------------+
-|link_tracking_1_inst |              |      |      |            |             |
-|   /vi2c_tx_data<31> |         Local|      |    4 |  0.345     |  1.727      |
+|    /vi2c_tx_data<1> |         Local|      |    4 |  0.242     |  0.801      |
 +---------------------+--------------+------+------+------------+-------------+
 |gtp_wrapper_inst/gtp |              |      |      |            |             |
 |_refclk_0_ibufds_ML_ |              |      |      |            |             |
@@ -448,10 +369,89 @@ Generating Clock Report
 +---------------------+--------------+------+------+------------+-------------+
 |link_tracking_1_inst |              |      |      |            |             |
 |/chipscope_icon_inst |              |      |      |            |             |
-|     /U0/iUPDATE_OUT |         Local|      |    1 |  0.000     |  2.382      |
+|     /U0/iUPDATE_OUT |         Local|      |    1 |  0.000     |  2.154      |
 +---------------------+--------------+------+------+------------+-------------+
 |link_tracking_1_inst |              |      |      |            |             |
-|       /cs_icon1<13> |         Local|      |    4 |  0.000     |  0.452      |
+|   /vi2c_tx_data<11> |         Local|      |    4 |  0.164     |  0.618      |
++---------------------+--------------+------+------+------------+-------------+
+|link_tracking_1_inst |              |      |      |            |             |
+|/vi2c_core_inst/chip |              |      |      |            |             |
+|           _select_2 |         Local|      |    5 |  0.212     |  3.287      |
++---------------------+--------------+------+------+------------+-------------+
+|link_tracking_1_inst |              |      |      |            |             |
+|   /vi2c_tx_data<10> |         Local|      |    4 |  0.042     |  0.543      |
++---------------------+--------------+------+------+------------+-------------+
+|link_tracking_1_inst |              |      |      |            |             |
+|   /vi2c_tx_data<20> |         Local|      |    4 |  0.237     |  1.421      |
++---------------------+--------------+------+------+------------+-------------+
+|link_tracking_1_inst |              |      |      |            |             |
+|   /vi2c_tx_data<12> |         Local|      |    4 |  0.564     |  1.179      |
++---------------------+--------------+------+------+------------+-------------+
+|link_tracking_1_inst |              |      |      |            |             |
+|   /vi2c_tx_data<21> |         Local|      |    4 |  0.000     |  0.737      |
++---------------------+--------------+------+------+------------+-------------+
+|link_tracking_1_inst |              |      |      |            |             |
+|   /vi2c_tx_data<13> |         Local|      |    4 |  0.312     |  1.053      |
++---------------------+--------------+------+------+------------+-------------+
+|link_tracking_1_inst |              |      |      |            |             |
+|   /vi2c_tx_data<22> |         Local|      |    4 |  1.085     |  1.768      |
++---------------------+--------------+------+------+------------+-------------+
+|link_tracking_1_inst |              |      |      |            |             |
+|   /vi2c_tx_data<14> |         Local|      |    4 |  0.191     |  0.931      |
++---------------------+--------------+------+------+------------+-------------+
+|link_tracking_1_inst |              |      |      |            |             |
+|   /vi2c_tx_data<31> |         Local|      |    4 |  0.185     |  1.043      |
++---------------------+--------------+------+------+------------+-------------+
+|link_tracking_1_inst |              |      |      |            |             |
+|   /vi2c_tx_data<23> |         Local|      |    4 |  0.000     |  1.096      |
++---------------------+--------------+------+------+------------+-------------+
+|link_tracking_1_inst |              |      |      |            |             |
+|   /vi2c_tx_data<15> |         Local|      |    4 |  0.375     |  1.141      |
++---------------------+--------------+------+------+------------+-------------+
+|link_tracking_1_inst |              |      |      |            |             |
+|   /vi2c_tx_data<24> |         Local|      |    4 |  0.139     |  1.392      |
++---------------------+--------------+------+------+------------+-------------+
+|link_tracking_1_inst |              |      |      |            |             |
+|   /vi2c_tx_data<16> |         Local|      |    4 |  0.537     |  1.289      |
++---------------------+--------------+------+------+------------+-------------+
+|link_tracking_1_inst |              |      |      |            |             |
+|   /vi2c_tx_data<25> |         Local|      |    4 |  0.381     |  1.296      |
++---------------------+--------------+------+------+------------+-------------+
+|link_tracking_1_inst |              |      |      |            |             |
+|   /vi2c_tx_data<17> |         Local|      |    4 |  0.273     |  1.158      |
++---------------------+--------------+------+------+------------+-------------+
+|link_tracking_1_inst |              |      |      |            |             |
+|   /vi2c_tx_data<27> |         Local|      |    4 |  0.000     |  1.083      |
++---------------------+--------------+------+------+------------+-------------+
+|link_tracking_1_inst |              |      |      |            |             |
+|   /vi2c_tx_data<19> |         Local|      |    4 |  0.160     |  0.882      |
++---------------------+--------------+------+------+------------+-------------+
+|link_tracking_1_inst |              |      |      |            |             |
+|   /vi2c_tx_data<28> |         Local|      |    4 |  0.004     |  0.971      |
++---------------------+--------------+------+------+------------+-------------+
+|link_tracking_1_inst |              |      |      |            |             |
+|   /vi2c_tx_data<29> |         Local|      |    4 |  0.217     |  0.747      |
++---------------------+--------------+------+------+------------+-------------+
+|link_tracking_1_inst |              |      |      |            |             |
+|       /cs_icon1<13> |         Local|      |    4 |  0.000     |  0.880      |
++---------------------+--------------+------+------+------------+-------------+
+|link_tracking_1_inst |              |      |      |            |             |
+|    /vi2c_tx_data<4> |         Local|      |    4 |  0.063     |  0.815      |
++---------------------+--------------+------+------+------------+-------------+
+|link_tracking_1_inst |              |      |      |            |             |
+|    /vi2c_tx_data<3> |         Local|      |    4 |  0.126     |  0.876      |
++---------------------+--------------+------+------+------------+-------------+
+|link_tracking_1_inst |              |      |      |            |             |
+|    /vi2c_tx_data<6> |         Local|      |    4 |  0.000     |  0.669      |
++---------------------+--------------+------+------+------------+-------------+
+|link_tracking_1_inst |              |      |      |            |             |
+|    /vi2c_tx_data<7> |         Local|      |    4 |  0.275     |  0.772      |
++---------------------+--------------+------+------+------------+-------------+
+|link_tracking_1_inst |              |      |      |            |             |
+|    /vi2c_tx_data<0> |         Local|      |    4 |  0.037     |  0.585      |
++---------------------+--------------+------+------+------------+-------------+
+|link_tracking_1_inst |              |      |      |            |             |
+|    /vi2c_tx_data<8> |         Local|      |    4 |  0.215     |  0.510      |
 +---------------------+--------------+------+------+------------+-------------+
 
 * Net Skew is the difference between the minimum and maximum routing
@@ -500,10 +500,10 @@ WARNING:Par:283 - There are 92 loadless signals in this design. This design will
 
 WARNING:Par:284 - There are 14 sourceless signals in this design. This design will not pass the DRC check run by Bitgen.
 
-Total REAL time to PAR completion: 33 secs 
-Total CPU time to PAR completion (all processors): 37 secs 
+Total REAL time to PAR completion: 58 secs 
+Total CPU time to PAR completion (all processors): 1 mins 35 secs 
 
-Peak Memory Usage:  384 MB
+Peak Memory Usage:  435 MB
 
 Placer: Placement generated during map.
 Routing: Completed - No errors found.

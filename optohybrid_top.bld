@@ -47,7 +47,6 @@ WARNING:NgdBuild:1345 - The constraint <TIMESPEC "TS_gtp_userclk0" = PERIOD
 Done...
 
 Checking expanded design ...
-WARNING:NgdBuild:452 - logical net 'rx_error<1>' has no driver
 WARNING:NgdBuild:478 - clock net vfat2_clk with clock driver vfat2_clk_bufg
    drives no clock pins
 WARNING:NgdBuild:452 - logical net
@@ -185,12 +184,12 @@ Partition Implementation Status
 
 NGDBUILD Design Results Summary:
   Number of errors:     0
-  Number of warnings:  45
+  Number of warnings:  44
 
-Total memory usage is 161020 kilobytes
+Total memory usage is 189564 kilobytes
 
 Writing NGD file "optohybrid_top.ngd" ...
-Total REAL time to NGDBUILD completion:  5 sec
-Total CPU time to NGDBUILD completion:   4 sec
+Total REAL time to NGDBUILD completion:  9 sec
+Total CPU time to NGDBUILD completion:   8 sec
 
 Writing NGDBUILD log file "optohybrid_top.bld"...

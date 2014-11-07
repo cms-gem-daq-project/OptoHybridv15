@@ -5,16 +5,13 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="info" file="NgdBuild" num="1317" delta="new" >Using core <arg fmt="%s" index="1">chipscope_ila_v1</arg> requires a ChipScopePro license.  The following blocks are instances of core <arg fmt="%s" index="2">chipscope_ila_v1</arg>:
+<msg type="info" file="NgdBuild" num="1317" delta="old" >Using core <arg fmt="%s" index="1">chipscope_ila_v1</arg> requires a ChipScopePro license.  The following blocks are instances of core <arg fmt="%s" index="2">chipscope_ila_v1</arg>:
 </msg>
 
 <msg type="info" file="NgdBuild" num="1317" delta="old" >Using core <arg fmt="%s" index="1">chipscope_vio_v1</arg> requires a ChipScopePro license.  The following blocks are instances of core <arg fmt="%s" index="2">chipscope_vio_v1</arg>:
 </msg>
 
 <msg type="warning" file="NgdBuild" num="1345" delta="old" >The constraint <arg fmt="%s" index="1">&lt;TIMESPEC &quot;TS_gtp_userclk0&quot; = PERIOD &quot;gtp_userclk0&quot; 3.125 ns;&gt; [src/timing.ucf(12)]</arg> is overridden by the constraint <arg fmt="%s" index="2">&lt;TIMESPEC &quot;TS_gtp_userclk1&quot; = PERIOD &quot;gtp_userclk0&quot; 3.125 ns;&gt; [src/timing.ucf(18)]</arg>. The overriden constraint usually comes from the input netlist or ncf files. Please set XIL_NGDBUILD_CONSTR_OVERRIDE_ERROR to promote this message to an error.
-</msg>
-
-<msg type="warning" file="NgdBuild" num="452" delta="old" ><arg fmt="%s" index="1">logical</arg> net &apos;<arg fmt="%s" index="2">rx_error&lt;1&gt;</arg>&apos; has no driver
 </msg>
 
 <msg type="warning" file="NgdBuild" num="478" delta="old" >clock net <arg fmt="%s" index="1">vfat2_clk</arg> with clock driver <arg fmt="%s" index="2">vfat2_clk_bufg</arg> drives no clock pins
