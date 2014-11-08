@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> Reading design: optohybrid_top.prj
 
@@ -276,7 +276,7 @@ WARNING:HDLCompiler:634 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.v
 
 Synthesizing Unit <optohybrid_top>.
     Related source file is "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd".
-WARNING:Xst:647 - Input <vfat2_dvalid_i<1:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <vfat2_dvalid_i<1:1>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <vfat2_dvalid_i<5:4>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <vfat2_data_0_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <vfat2_data_1_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -305,7 +305,6 @@ WARNING:Xst:647 - Input <vfat2_data_23_i> is never used. This port will be prese
 WARNING:Xst:647 - Input <fpga_rx_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <cdce_miso_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <cdce_auxout_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <cdce_plllock_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 157: Output port <clk100MHz_o> of the instance <fpga_clk_pll_inst> is unconnected or connected to loadless signal.
 INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 157: Output port <clk160MHz_o> of the instance <fpga_clk_pll_inst> is unconnected or connected to loadless signal.
 INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 245: Output port <ASYNC_OUT> of the instance <chipscope_vio_inst> is unconnected or connected to loadless signal.
@@ -10239,9 +10238,9 @@ Primitive and Black Box Usage:
 #      SRLC32E                     : 38
 # Clock Buffers                    : 9
 #      BUFG                        : 9
-# IO Buffers                       : 50
+# IO Buffers                       : 52
 #      BUFIO2                      : 2
-#      IBUF                        : 18
+#      IBUF                        : 20
 #      IBUFDS                      : 4
 #      IBUFG                       : 1
 #      IOBUF                       : 6
@@ -10278,7 +10277,7 @@ Slice Logic Distribution:
 
 IO Utilization: 
  Number of IOs:                         289
- Number of bonded IOBs:                  55  out of    396    13%  
+ Number of bonded IOBs:                  57  out of    396    14%  
 
 Specific Feature Utilization:
  Number of Block RAM/FIFO:                5  out of    268     1%  
@@ -10313,7 +10312,7 @@ fpga_clk_pll_inst/pll_base_inst/CLKOUT1                                         
 chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL                                          | BUFG                                                                                                           | 405   |
 chipscope_icon_inst/CONTROL1<13>(chipscope_icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[9].U_LCE:O)| NONE(*)(chipscope_ila_inst/U0/I_NO_D.U_ILA/U_STAT/U_DIRTY_LDC)                                                 | 1     |
 chipscope_icon_inst/U0/iUPDATE_OUT                                                                  | NONE(chipscope_icon_inst/U0/U_ICON/U_iDATA_CMD)                                                                | 1     |
-reset                                                                                               | NONE(chipscope_vio_inst/U0/I_VIO/GEN_ASYNC_IN[31].ASYNC_IN_CELL/U_FALLING)                                     | 64    |
+vfat2_sda_0_iobuf                                                                                   | NONE(chipscope_vio_inst/U0/I_VIO/GEN_ASYNC_IN[31].ASYNC_IN_CELL/U_FALLING)                                     | 64    |
 ----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+-------+
 (*) This 1 clock signal(s) are generated by combinatorial logic,
 and XST is not able to identify which are the primary clock signals.
@@ -10340,7 +10339,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT0_OUT<0>'
   Clock period: 6.845ns (frequency: 146.103MHz)
-  Total number of paths / destination ports: 86762 / 15306
+  Total number of paths / destination ports: 86746 / 15290
 -------------------------------------------------------------------------
 Delay:               6.845ns (Levels of Logic = 6)
   Source:            link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/i2csda.timer_7 (FF)
@@ -10438,7 +10437,7 @@ Delay:               1.984ns (Levels of Logic = 1)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT0_OUT<0>'
-  Total number of paths / destination ports: 77 / 75
+  Total number of paths / destination ports: 80 / 78
 -------------------------------------------------------------------------
 Offset:              5.121ns (Levels of Logic = 3)
   Source:            chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/I_S6.ISYN.I_USE_SOFTBSCAN_EQ0.U_BS:SHIFT (PAD)
@@ -10583,7 +10582,7 @@ Offset:              4.419ns (Levels of Logic = 5)
 Timing constraint: Default OFFSET OUT AFTER for Clock 'fpga_clk_pll_inst/pll_base_inst/CLKOUT1'
   Total number of paths / destination ports: 2 / 2
 -------------------------------------------------------------------------
-Offset:              3.597ns (Levels of Logic = 2)
+Offset:              3.634ns (Levels of Logic = 2)
   Source:            t1_handling_inst/t1_encoder_inst/t1_o (FF)
   Destination:       vfat2_t1_p_o (PAD)
   Source Clock:      fpga_clk_pll_inst/pll_base_inst/CLKOUT1 rising
@@ -10592,13 +10591,13 @@ Offset:              3.597ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               1   0.447   0.579  t1_o (t1_o)
+     FD:C->Q               2   0.447   0.616  t1_o (t1_o)
      end scope: 't1_handling_inst/t1_encoder_inst:t1_o'
      end scope: 't1_handling_inst:t1_o'
      OBUFDS:I->O               2.571          t1_obufds (vfat2_t1_p_o)
     ----------------------------------------
-    Total                      3.597ns (3.018ns logic, 0.579ns route)
-                                       (83.9% logic, 16.1% route)
+    Total                      3.634ns (3.018ns logic, 0.616ns route)
+                                       (83.0% logic, 17.0% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL'
@@ -10641,7 +10640,7 @@ chipscope_icon_inst/CONTROL1<13>                                      |         
 chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL            |    8.118|         |         |         |
 chipscope_icon_inst/U0/iUPDATE_OUT                                    |    2.583|         |         |         |
 gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT0_OUT<0>|    3.634|         |         |         |
-reset                                                                 |    1.562|    1.562|         |         |
+vfat2_sda_0_iobuf                                                     |    1.562|    1.562|         |         |
 ----------------------------------------------------------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock chipscope_icon_inst/U0/iUPDATE_OUT
@@ -10667,7 +10666,7 @@ Clock to Setup on destination clock gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard
 Source Clock                                                          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ----------------------------------------------------------------------+---------+---------+---------+---------+
 chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL            |    5.743|         |         |         |
-fpga_clk_pll_inst/pll_base_inst/CLKOUT1                               |    1.128|         |         |         |
+fpga_clk_pll_inst/pll_base_inst/CLKOUT1                               |    1.165|         |         |         |
 gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT0_OUT<0>|    6.845|         |         |         |
 ----------------------------------------------------------------------+---------+---------+---------+---------+
 
@@ -10679,7 +10678,7 @@ Source Clock                                                          |Dest:Rise
 gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT0_OUT<0>|    2.020|         |    2.020|         |
 ----------------------------------------------------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock reset
+Clock to Setup on destination clock vfat2_sda_0_iobuf
 ----------------------------------------------------------+---------+---------+---------+---------+
                                                           | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                                              |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
@@ -10690,14 +10689,14 @@ chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL|    2.516|         | 
 =========================================================================
 
 
-Total REAL time to Xst completion: 70.00 secs
-Total CPU time to Xst completion: 69.95 secs
+Total REAL time to Xst completion: 71.00 secs
+Total CPU time to Xst completion: 71.13 secs
  
 --> 
 
 Total memory usage is 318556 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  422 (   0 filtered)
+Number of warnings :  421 (   0 filtered)
 Number of infos    : 8244 (   0 filtered)
 

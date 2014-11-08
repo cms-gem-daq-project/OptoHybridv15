@@ -47,7 +47,7 @@
 <msg type="warning" file="HDLCompiler" num="634" delta="old" >"\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" Line 122: Net &lt;<arg fmt="%s" index="1">cs_in[31]</arg>&gt; does not have a driver.
 </msg>
 
-<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">vfat2_dvalid_i&lt;1:0&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">vfat2_dvalid_i&lt;1:1&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 </msg>
 
 <msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">vfat2_dvalid_i&lt;5:4&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -134,16 +134,13 @@
 <msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">cdce_auxout_i</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 </msg>
 
-<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">cdce_plllock_i</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd</arg>&quot; line <arg fmt="%s" index="2">157</arg>: Output port &lt;<arg fmt="%s" index="3">clk100MHz_o</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">fpga_clk_pll_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd</arg>&quot; line <arg fmt="%s" index="2">157</arg>: Output port &lt;<arg fmt="%s" index="3">clk100MHz_o</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">fpga_clk_pll_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd</arg>&quot; line <arg fmt="%s" index="2">157</arg>: Output port &lt;<arg fmt="%s" index="3">clk160MHz_o</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">fpga_clk_pll_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd</arg>&quot; line <arg fmt="%s" index="2">157</arg>: Output port &lt;<arg fmt="%s" index="3">clk160MHz_o</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">fpga_clk_pll_inst</arg>&gt; is unconnected or connected to loadless signal.
-</msg>
-
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd</arg>&quot; line <arg fmt="%s" index="2">245</arg>: Output port &lt;<arg fmt="%s" index="3">ASYNC_OUT</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">chipscope_vio_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd</arg>&quot; line <arg fmt="%s" index="2">245</arg>: Output port &lt;<arg fmt="%s" index="3">ASYNC_OUT</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">chipscope_vio_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
 <msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">vfat2_sda_o&lt;5:4&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">optohybrid_top</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">00</arg>).

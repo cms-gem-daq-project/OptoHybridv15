@@ -165,7 +165,7 @@ begin
     -- CDCE control
     cdce_primary_clk_obufds : obufds port map(I => clk40MHz, O => cdce_pri_p_o, OB => cdce_pri_n_o);
     cdce_ref_o <= '1';
-    cdce_powerdown_o <= fpga_pll_locked; --'1'
+    cdce_powerdown_o <= '1';
     cdce_sync_o <= '1';
        
     --================================--
@@ -246,6 +246,8 @@ begin
     
     chipscope_ila_inst : entity work.chipscope_ila port map (CONTROL => cs_icon1, CLK => gtp_clk, TRIG0 => cs_ila);
     
-    cs_ila <= tx_data(31 downto 16) & rx_data(31 downto 16);
+    --cs_ila <= tx_data(31 downto 16) & rx_data(31 downto 16);
+    cs_ila <= x"00" & "000" & fpga_pll_locked & cdce_plllock_i & vfat2_data_8_i(8) & vfat2_dvalid_i(0) & vfat2_t1
+              & rx_data(31 downto 16);
        
 end Behavioral;
