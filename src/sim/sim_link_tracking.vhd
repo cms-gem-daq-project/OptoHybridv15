@@ -81,32 +81,29 @@ begin
         wait for gtp_clk_period / 2;
     end process;
  
-    -- VFAT2 tracking data
-    stim_proc: process
-    begin		
-        reset_i <= '1';
-        wait for 100 ns;
-        reset_i <= '0';        
-
-        wait for vfat2_clk_period * 10;
-        
-        vfat2_dvalid_i <= "11";
-        vfat2_data_0_i <= '1';
-        wait for vfat2_clk_period * 1;
-        vfat2_data_0_i <= '0';
-        wait for vfat2_clk_period * 1;
-        vfat2_data_0_i <= '1';
-        wait for vfat2_clk_period * 1;
-        vfat2_data_0_i <= '0';
-        wait for vfat2_clk_period * 1;
-        vfat2_data_0_i <= '1';
-        wait for vfat2_clk_period * 188;
-        vfat2_dvalid_i <= "00";
-
-        wait;
+    -- VFAT2 tracking data    
+    process(vfat2_clk)
+        variable cnt    : integer range 0 to 400 := 0;
+        variable data   : std_logic_vector(191 downto 0) := x"0123456789012345678901234567890123456789ABCDEF01";
+    begin
+        if (rising_edge(vfat2_clk)) then
+            if (cnt = 400) then
+                cnt := 0;
+            else
+                cnt := cnt + 1;
+            end if;
+            
+            if (cnt < 192) then
+                vfat2_dvalid_i <= "11";
+                vfat2_data_0_i <= data(cnt);
+            else
+                vfat2_dvalid_i <= "00";
+                vfat2_data_0_i <= '0';
+            end if;
+        end if;
     end process;
     
-    -- RX
+    -- Requests
     process(gtp_clk_i)
         variable cnt : integer range 0 to 20_000 := 0;
     begin

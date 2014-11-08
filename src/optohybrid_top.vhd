@@ -89,41 +89,39 @@ architecture Behavioral of optohybrid_top is
     
     -- Clocking
 
-    signal fpga_clk     : std_logic := '0';  
-    signal clk40MHz     : std_logic := '0';
-    signal vfat2_clk    : std_logic := '0';
-    signal gtp_clk      : std_logic := '0';
+    signal fpga_clk         : std_logic := '0';  
+    signal clk40MHz         : std_logic := '0';
+    signal vfat2_clk        : std_logic := '0';
+    signal gtp_clk          : std_logic := '0';
+    
+    signal fpga_pll_locked  : std_logic := '0';
     
     -- Resets
     
-    signal reset        : std_logic := '0';
+    signal reset            : std_logic := '0';
     
     -- VFAT2
     
-    signal vfat2_t1     : std_logic := '0';
-    signal vfat2_sda_i  : std_logic_vector(5 downto 0) := (others => '0');
-    signal vfat2_sda_o  : std_logic_vector(5 downto 0) := (others => '0');
-    signal vfat2_sda_t  : std_logic_vector(5 downto 0) := (others => '0');
+    signal vfat2_t1         : std_logic := '0';
+    signal vfat2_sda_i      : std_logic_vector(5 downto 0) := (others => '0');
+    signal vfat2_sda_o      : std_logic_vector(5 downto 0) := (others => '0');
+    signal vfat2_sda_t      : std_logic_vector(5 downto 0) := (others => '0');
     
     -- GTP
     
-    signal rx_error     : std_logic_vector(3 downto 0) := (others => '0');
-    signal rx_kchar     : std_logic_vector(7 downto 0) := (others => '0');
-    signal rx_data      : std_logic_vector(63 downto 0) := (others => '0');
-    signal tx_kchar     : std_logic_vector(7 downto 0) := (others => '0');
-    signal tx_data      : std_logic_vector(63 downto 0) := (others => '0');
+    signal rx_error         : std_logic_vector(3 downto 0) := (others => '0');
+    signal rx_kchar         : std_logic_vector(7 downto 0) := (others => '0');
+    signal rx_data          : std_logic_vector(63 downto 0) := (others => '0');
+    signal tx_kchar         : std_logic_vector(7 downto 0) := (others => '0');
+    signal tx_data          : std_logic_vector(63 downto 0) := (others => '0');
 
     -- ChipScope signals
     
-    signal cs_icon0     : std_logic_vector(35 downto 0);
-    signal cs_icon1     : std_logic_vector(35 downto 0);
-    signal cs_in        : std_logic_vector(31 downto 0);
-    signal cs_out       : std_logic_vector(31 downto 0);
-    signal cs_ila       : std_logic_vector(31 downto 0);
-    
-    -- Testing 
-    signal tmp_en       : std_logic_vector(1 downto 0) := (others => '0');
-    signal tmp_data     : std_logic := '0';
+    signal cs_icon0         : std_logic_vector(35 downto 0);
+    signal cs_icon1         : std_logic_vector(35 downto 0);
+    signal cs_in            : std_logic_vector(31 downto 0);
+    signal cs_out           : std_logic_vector(31 downto 0);
+    signal cs_ila           : std_logic_vector(31 downto 0);
     
 begin
 
@@ -156,7 +154,7 @@ begin
     fpga_clk_ibufg : ibufg port map(I => fpga_clk_i, O => fpga_clk);
     
     -- PLL used to generate the 40 MHz clock to the CDCE and the VFAT2 
-    fpga_clk_pll_inst : entity work.fpga_clk_pll port map(clk50MHz_i => fpga_clk, clk40MHz_o => clk40MHz);    
+    fpga_clk_pll_inst : entity work.fpga_clk_pll port map(clk50MHz_i => fpga_clk, clk40MHz_o => clk40MHz, locked_o => fpga_pll_locked);    
     
     -- Internal 40 MHz clock
     vfat2_clk_bufg : bufg port map(I => clk40MHz, O => vfat2_clk);
@@ -167,7 +165,7 @@ begin
     -- CDCE control
     cdce_primary_clk_obufds : obufds port map(I => clk40MHz, O => cdce_pri_p_o, OB => cdce_pri_n_o);
     cdce_ref_o <= '1';
-    cdce_powerdown_o <= '1';
+    cdce_powerdown_o <= fpga_pll_locked; --'1'
     cdce_sync_o <= '1';
        
     --================================--
@@ -213,8 +211,8 @@ begin
         vfat2_sda_o     => vfat2_sda_o(3 downto 2),
         vfat2_sda_t     => vfat2_sda_t(3 downto 2),
         vfat2_scl_o     => vfat2_scl_o(3 downto 2),
-        vfat2_dvalid_i  => tmp_en, --vfat2_dvalid_i(3 downto 2),
-        vfat2_data_0_i  => tmp_data, --vfat2_data_8_i(8),
+        vfat2_dvalid_i  => vfat2_dvalid_i(3 downto 2),
+        vfat2_data_0_i  => vfat2_data_8_i(8),
         vfat2_data_1_i  => vfat2_data_9_i(8),
         vfat2_data_2_i  => vfat2_data_10_i(8),
         vfat2_data_3_i  => vfat2_data_11_i(8),
@@ -222,6 +220,20 @@ begin
         vfat2_data_5_i  => vfat2_data_13_i(8),
         vfat2_data_6_i  => vfat2_data_14_i(8),
         vfat2_data_7_i  => vfat2_data_15_i(8)
+    );
+    
+    --================================--
+    -- T1 handling
+    --================================--
+    
+    t1_handling_inst : entity work.t1_handling 
+    port map(
+        gtp_clk_i   => gtp_clk,
+        vfat2_clk_i => vfat2_clk,
+        reset_i     => reset,
+        rx_kchar_i  => rx_kchar(3 downto 2),
+        rx_data_i   => rx_data(31 downto 16),
+        t1_o        => vfat2_t1  
     );
     
     --================================--
@@ -235,85 +247,5 @@ begin
     chipscope_ila_inst : entity work.chipscope_ila port map (CONTROL => cs_icon1, CLK => gtp_clk, TRIG0 => cs_ila);
     
     cs_ila <= tx_data(31 downto 16) & rx_data(31 downto 16);
-    
-    
-    --================================--
-    -- Testing
-    --================================--
-    
-    process(gtp_clk)
-        variable cnt    : integer range 0 to 20_000 := 0;
-    begin
-        if (rising_edge(gtp_clk)) then
-            if (cnt = 20_000) then
-                cnt := 0;
-            else
-                cnt := cnt + 1;
-            end if;
-            
-            -- I2C
-            if (cnt = 1) then
-                tx_data(47 downto 32) <= x"01BC";
-                tx_kchar(5 downto 4) <= "01";
-            elsif (cnt = 2) then
-                tx_data(47 downto 32) <= "00101000" & "00001000";
-                tx_kchar(5 downto 4) <= "00";
-            elsif (cnt = 3) then
-                tx_data(47 downto 32) <= "00000000" & x"21";
-                tx_kchar(5 downto 4) <= "00";
-            -- Regs write
-            elsif (cnt = 1_000) then
-                tx_data(47 downto 32) <= x"02BC";
-                tx_kchar(5 downto 4) <= "01";
-            elsif (cnt = 1_001) then
-                tx_data(47 downto 32) <= "00000000" & "00000000";
-                tx_kchar(5 downto 4) <= "00";
-            elsif (cnt = 1_002) then
-                tx_data(47 downto 32) <= "00000000" & "11111001";
-                tx_kchar(5 downto 4) <= "00";
-            elsif (cnt = 1_003) then
-                tx_data(47 downto 32) <= "00000100" & "11111111";
-                tx_kchar(5 downto 4) <= "00";
-            -- Regs read
-            elsif (cnt = 1_200) then
-                tx_data(47 downto 32) <= x"02BC";
-                tx_kchar(5 downto 4) <= "01";
-            elsif (cnt = 1_201) then
-                tx_data(47 downto 32) <= "00000000" & "00000000";
-                tx_kchar(5 downto 4) <= "00";
-            elsif (cnt = 1_202) then
-                tx_data(47 downto 32) <= "00000000" & "00000000";
-                tx_kchar(5 downto 4) <= "00";
-            elsif (cnt = 1_203) then
-                tx_data(47 downto 32) <= "11111101" & "11111111";
-                tx_kchar(5 downto 4) <= "00";
-            -- Other
-            else    
-                tx_data(47 downto 32) <= x"00BC";
-                tx_kchar(5 downto 4) <= "00";
-            end if;
-        end if;
-    end process; 
-    
-    process(vfat2_clk)
-        variable cnt    : integer range 0 to 400 := 0;
-        variable data   : std_logic_vector(191 downto 0) := x"0123456789012345678901234567890123456789ABCDEF01";
-    begin
-        if (rising_edge(vfat2_clk)) then
-            if (cnt = 400) then
-                cnt := 0;
-            else
-                cnt := cnt + 1;
-            end if;
-            
-            if (cnt < 192) then
-                tmp_en <= "11";
-                tmp_data <= data(cnt);
-            else
-                tmp_en <= "00";
-                tmp_data <= '0';
-            end if;
-        end if;
-    end process;
        
 end Behavioral;

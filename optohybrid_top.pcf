@@ -1,8 +1,12 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Sat Nov 08 13:31:53 2014
+// Written by: Map P.20131013 on Sat Nov 08 15:03:20 2014
 //! **************************************************************************
 
 SCHEMATIC START;
+COMP "gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/gtpa1_dual_i"
+        LOCATE = SITE "GTPA1_DUAL_X0Y1" LEVEL 1;
+COMP "gtp_wrapper_inst/gtp_inst/tile1_s6_gtpwizard_v1_11_i/gtpa1_dual_i"
+        LOCATE = SITE "GTPA1_DUAL_X1Y1" LEVEL 1;
 COMP "cdce_plllock_i" LOCATE = SITE "J7" LEVEL 1;
 COMP "enable_gtp_o" LOCATE = SITE "AA23" LEVEL 1;
 COMP "cdce_le_o" LOCATE = SITE "L10" LEVEL 1;
@@ -118,10 +122,6 @@ COMP "vfat2_data_9_i<5>" LOCATE = SITE "AA25" LEVEL 1;
 COMP "vfat2_data_9_i<6>" LOCATE = SITE "AA26" LEVEL 1;
 COMP "vfat2_data_9_i<7>" LOCATE = SITE "Y26" LEVEL 1;
 COMP "vfat2_data_9_i<8>" LOCATE = SITE "W25" LEVEL 1;
-COMP "gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/gtpa1_dual_i"
-        LOCATE = SITE "GTPA1_DUAL_X0Y1" LEVEL 1;
-COMP "gtp_wrapper_inst/gtp_inst/tile1_s6_gtpwizard_v1_11_i/gtpa1_dual_i"
-        LOCATE = SITE "GTPA1_DUAL_X1Y1" LEVEL 1;
 PIN
         link_tracking_1_inst/tracking_core_inst/tracking_buffer_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram_pins<26>
         = BEL
@@ -152,9 +152,7 @@ PIN
         = BEL
         "link_tracking_1_inst/tracking_core_inst/tracking_buffer_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[5].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram"
         PINNAME CLKAWRCLK;
-TIMEGRP clk40MHz = BEL "tmp_data" BEL "tmp_en_0" BEL "cnt_0" BEL "cnt_1" BEL
-        "cnt_2" BEL "cnt_3" BEL "cnt_4" BEL "cnt_5" BEL "cnt_6" BEL "cnt_7"
-        BEL "cnt_8" BEL "vfat2_clk_bufg" BEL
+TIMEGRP clk40MHz = BEL "vfat2_clk_bufg" BEL
         "link_tracking_1_inst/tracking_core_inst/track_7_inst/data_0" BEL
         "link_tracking_1_inst/tracking_core_inst/track_7_inst/data_1" BEL
         "link_tracking_1_inst/tracking_core_inst/track_7_inst/data_2" BEL
@@ -3814,11 +3812,15 @@ TIMEGRP clk40MHz = BEL "tmp_data" BEL "tmp_en_0" BEL "cnt_0" BEL "cnt_1" BEL
         "link_tracking_1_inst/tracking_core_inst/tracking_buffer_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_1"
         BEL
         "link_tracking_1_inst/tracking_core_inst/tracking_buffer_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_d1_0"
-        BEL "vfat2_mclk_p_o" BEL "vfat2_mclk_n_o" BEL "cdce_pri_p_o" BEL
-        "cdce_pri_n_o";
-TIMEGRP clk40MHz_0 = BEL "tmp_data" BEL "tmp_en_0" BEL "cnt_0" BEL "cnt_1" BEL
-        "cnt_2" BEL "cnt_3" BEL "cnt_4" BEL "cnt_5" BEL "cnt_6" BEL "cnt_7"
-        BEL "cnt_8" BEL "vfat2_clk_bufg" BEL
+        BEL "t1_handling_inst/t1_encoder_inst/data_cnt_0" BEL
+        "t1_handling_inst/t1_encoder_inst/data_cnt_1" BEL
+        "t1_handling_inst/t1_encoder_inst/state_0" BEL
+        "t1_handling_inst/t1_encoder_inst/data_0" BEL
+        "t1_handling_inst/t1_encoder_inst/data_1" BEL
+        "t1_handling_inst/t1_encoder_inst/data_2" BEL
+        "t1_handling_inst/t1_encoder_inst/t1_o" BEL "vfat2_mclk_p_o" BEL
+        "vfat2_mclk_n_o" BEL "cdce_pri_p_o" BEL "cdce_pri_n_o";
+TIMEGRP clk40MHz_0 = BEL "vfat2_clk_bufg" BEL
         "link_tracking_1_inst/tracking_core_inst/track_7_inst/data_0" BEL
         "link_tracking_1_inst/tracking_core_inst/track_7_inst/data_1" BEL
         "link_tracking_1_inst/tracking_core_inst/track_7_inst/data_2" BEL
@@ -7478,8 +7480,14 @@ TIMEGRP clk40MHz_0 = BEL "tmp_data" BEL "tmp_en_0" BEL "cnt_0" BEL "cnt_1" BEL
         "link_tracking_1_inst/tracking_core_inst/tracking_buffer_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_1"
         BEL
         "link_tracking_1_inst/tracking_core_inst/tracking_buffer_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_d1_0"
-        BEL "vfat2_mclk_p_o" BEL "vfat2_mclk_n_o" BEL "cdce_pri_p_o" BEL
-        "cdce_pri_n_o";
+        BEL "t1_handling_inst/t1_encoder_inst/data_cnt_0" BEL
+        "t1_handling_inst/t1_encoder_inst/data_cnt_1" BEL
+        "t1_handling_inst/t1_encoder_inst/state_0" BEL
+        "t1_handling_inst/t1_encoder_inst/data_0" BEL
+        "t1_handling_inst/t1_encoder_inst/data_1" BEL
+        "t1_handling_inst/t1_encoder_inst/data_2" BEL
+        "t1_handling_inst/t1_encoder_inst/t1_o" BEL "vfat2_mclk_p_o" BEL
+        "vfat2_mclk_n_o" BEL "cdce_pri_p_o" BEL "cdce_pri_n_o";
 PIN
         gtp_wrapper_inst/gtp_inst/tile1_s6_gtpwizard_v1_11_i/gtpa1_dual_i_pins<132>
         = BEL

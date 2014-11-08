@@ -73,7 +73,9 @@ port
   COUNTER_RESET     : in  std_logic;
   CLK_OUT           : out std_logic_vector(3 downto 1) ;
   -- High bits of counters driven by clocks
-  COUNT             : out std_logic_vector(3 downto 1)
+  COUNT             : out std_logic_vector(3 downto 1);
+  -- Status and control signals
+  LOCKED            : out std_logic
  );
 end fpga_clk_pll_exdes;
 
@@ -89,7 +91,8 @@ architecture xilinx of fpga_clk_pll_exdes is
   -- Array typedef
   type ctrarr is array (1 to NUM_C) of std_logic_vector(C_W-1 downto 0);
 
-  -- Reset for counters when lock status changes
+  -- When the clock goes out of lock, reset the counters
+  signal   locked_int : std_logic;
   signal   reset_int  : std_logic                     := '0';
   -- Declare the clocks and counters
   signal   clk        : std_logic_vector(NUM_C downto 1);
@@ -110,13 +113,18 @@ port
   -- Clock out ports
   clk100MHz_o          : out    std_logic;
   clk40MHz_o          : out    std_logic;
-  clk160MHz_o          : out    std_logic
+  clk160MHz_o          : out    std_logic;
+  -- Status and control signals
+  locked_o            : out    std_logic
  );
 end component;
 
 begin
-  -- Create reset for the counters
-  reset_int <= COUNTER_RESET;
+  -- Alias output to internally used signal
+  LOCKED    <= locked_int;
+
+  -- When the clock goes out of lock, reset the counters
+  reset_int <= (not locked_int) or COUNTER_RESET;
 
 
   counters_1: for count_gen in 1 to NUM_C generate begin
@@ -145,7 +153,9 @@ end generate counters_1;
     -- Clock out ports
     clk100MHz_o           => clk_int(1),
     clk40MHz_o           => clk_int(2),
-    clk160MHz_o           => clk_int(3));
+    clk160MHz_o           => clk_int(3),
+    -- Status and control signals
+    locked_o             => locked_int);
 
   gen_outclk_oddr: 
   for clk_out_pins in 1 to NUM_C generate 

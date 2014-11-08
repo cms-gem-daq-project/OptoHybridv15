@@ -73,7 +73,9 @@ port
   -- Clock out ports
   clk100MHz_o          : out    std_logic;
   clk40MHz_o          : out    std_logic;
-  clk160MHz_o          : out    std_logic
+  clk160MHz_o          : out    std_logic;
+  -- Status and control signals
+  locked_o            : out    std_logic
  );
 end component;
 
@@ -88,5 +90,7 @@ your_instance_name : fpga_clk_pll
     -- Clock out ports
     clk100MHz_o => clk100MHz_o,
     clk40MHz_o => clk40MHz_o,
-    clk160MHz_o => clk160MHz_o);
+    clk160MHz_o => clk160MHz_o,
+    -- Status and control signals
+    locked_o => locked_o);
 -- INST_TAG_END ------ End INSTANTIATION Template ------------

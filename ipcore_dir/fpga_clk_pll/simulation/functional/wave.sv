@@ -99,6 +99,14 @@ group clear 0 end
 group insert \
     {fpga_clk_pll_tb.dut.counter[1]} \
     {fpga_clk_pll_tb.dut.counter[2]}  \     {fpga_clk_pll_tb.dut.counter[3]} 
+group using {Status/control}
+group set -overlay 0
+group set -comment {}
+group clear 0 end
+
+group insert \
+   {nc::fpga_clk_pll_tb.LOCKED}
+
 
 set id [waveform add -signals [list {nc::fpga_clk_pll_tb.COUNT} ]]
 
