@@ -10,8 +10,9 @@ port(
     fabric_clk_i    : in std_logic;
     reset_i         : in std_logic;
 
-    wbus_i          : in registers_wbus;
-    rbus_o          : out registers_rbus
+    wbus_i          : in array128x32;
+    wbus_t          : in std_logic_vector(127 downto 0);
+    rbus_o          : out array128x32
 
 );
 end registers;
@@ -21,7 +22,7 @@ begin
 
     process(fabric_clk_i)
 
-        variable registers  : registers_array := (others => (others => '0'));
+        variable registers  : array128x32 := (others => (others => '0'));
 
     begin
 
@@ -33,20 +34,20 @@ begin
 
             else
 
-                for i in 0 to (register_count - 1)
+                for i in 0 to 127
                 loop
 
-                    if (wbus_i.en(i) = '1') then
+                    if (wbus_t(i) = '1') then
 
-                        registers(i) := wbus_i.data(i);
+                        registers(i) := wbus_i(i);
 
                     end if;
+                    
+                    rbus_o(i) <= registers(i);
 
                 end loop;
 
             end if;
-
-            rbus_o.data <= registers;
 
         end if;
 

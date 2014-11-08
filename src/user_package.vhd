@@ -13,23 +13,7 @@ package user_package is
     --=== Custom types ==========--
     
     type array8x192 is array(7 downto 0) of std_logic_vector(191 downto 0);
-    
-	--=== Registers ===========--
-    
-    constant register_count : integer := 128;
-    
-	type registers_array is array((register_count - 1) downto 0) of std_logic_vector(31 downto 0);
-
-	type registers_rbus is
-	record
-		data 	: registers_array;
-	end record;
-
-	type registers_wbus is
-	record
-		en 		: std_logic_vector((register_count - 1) downto 0);
-		data 	: registers_array;
-	end record;
+    type array128x32 is array(127 downto 0) of std_logic_vector(31 downto 0);
     
 end user_package;
    

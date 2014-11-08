@@ -29,7 +29,7 @@ architecture behavior of sim_link_tracking is
     --outputs
     signal tx_kchar_o           : std_logic_vector(1 downto 0) := (others => '0');
     signal tx_data_o            : std_logic_vector(15 downto 0) := (others => '0');
-    signal sda_o                : std_logic_vector(1 downto 0) := (others => '0');
+    signal vfat2_sda_o          : std_logic_vector(1 downto 0) := (others => '0');
     signal vfat2_sda_t          : std_logic_vector(1 downto 0) := (others => '0');
     signal vfat2_scl_o          : std_logic_vector(1 downto 0) := (others => '0');
 
@@ -135,10 +135,10 @@ begin
                 rx_data_i <= "00000000" & "00000000";
                 rx_kchar_i <= "00";
             elsif (cnt = 1_002) then
-                rx_data_i <= "00000000" & "11111101";
+                rx_data_i <= "00000000" & "11111001";
                 rx_kchar_i <= "00";
             elsif (cnt = 1_003) then
-                rx_data_i <= "00000000" & "11111111";
+                rx_data_i <= "00000100" & "11111111";
                 rx_kchar_i <= "00";
             -- Regs read
             elsif (cnt = 1_200) then
@@ -151,7 +151,7 @@ begin
                 rx_data_i <= "00000000" & "00000000";
                 rx_kchar_i <= "00";
             elsif (cnt = 1_203) then
-                rx_data_i <= "10000000" & "10000010";
+                rx_data_i <= "11111101" & "11111111";
                 rx_kchar_i <= "00";
             -- Other
             else    

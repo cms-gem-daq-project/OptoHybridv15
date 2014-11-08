@@ -228,8 +228,8 @@ begin
     
     chipscope_vio_inst : entity work.chipscope_vio port map (CONTROL => cs_icon0, ASYNC_IN => cs_in, ASYNC_OUT => cs_out);
     
-    chipscope_ila_inst : entity work.chipscope_ila port map (CONTROL => cs_icon1, CLK => gtp_clk_i, TRIG0 => cs_ila);
+    chipscope_ila_inst : entity work.chipscope_ila port map (CONTROL => cs_icon1, CLK => gtp_clk, TRIG0 => cs_ila);
     
-    cs_ila <= tx_data(31 downto 16) & rx_data_i(31 downto 16);
+    cs_ila <= tx_data(31 downto 16) & rx_data(31 downto 16);
        
 end Behavioral;

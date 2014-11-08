@@ -62,10 +62,13 @@ architecture Behavioral of link_tracking is
     signal regs_tx_ready    : std_logic := '0';
     signal regs_tx_done     : std_logic := '0';
     signal regs_tx_data     : std_logic_vector(47 downto 0) := (others => '0');
-    signal regs_write       : registers_wbus;
     
-    signal registers_write  : registers_wbus;
-    signal registers_read   : registers_rbus;
+    signal regs_write       : array128x32;
+    signal regs_tri         : std_logic_vector(127 downto 0);
+    
+    signal registers_write  : array128x32;
+    signal registers_tri    : std_logic_vector(127 downto 0);
+    signal registers_read   : array128x32;
     
     -- Tracking signals
     
@@ -149,6 +152,7 @@ begin
         tx_done_i       => regs_tx_done,
         tx_data_o       => regs_tx_data,
         wbus_o          => regs_write,
+        wbus_t          => regs_tri,
         rbus_i          => registers_read
     );
 
@@ -157,26 +161,19 @@ begin
         fabric_clk_i    => gtp_clk_i,
         reset_i         => reset_i,
         wbus_i          => registers_write,
+        wbus_t          => registers_tri,
         rbus_o          => registers_read
     );
     
-    registers_write.data(122 downto 0) <= regs_write.data(122 downto 0); 
-    registers_write.en(122 downto 0) <= regs_write.en(122 downto 0); 
+    registers_tri(127 downto 123) <= (others => '1');
+    registers_write(127) <= vi2c_rx_counter;
+    registers_write(126) <= vi2c_tx_counter;
+    registers_write(125) <= regs_rx_counter;
+    registers_write(124) <= regs_tx_counter;
+    registers_write(123) <= rx_error_counter;
     
-    registers_write.data(127) <= vi2c_rx_counter;
-    registers_write.en(127) <= '1';
-    
-    registers_write.data(126) <= vi2c_tx_counter;
-    registers_write.en(126) <= '1';
-    
-    registers_write.data(125) <= regs_rx_counter;
-    registers_write.en(125) <= '1';
-    
-    registers_write.data(124) <= regs_tx_counter;
-    registers_write.en(124) <= '1';
-    
-    registers_write.data(123) <= rx_error_counter;
-    registers_write.en(123) <= '1';
+    registers_tri(122 downto 0) <= regs_tri(122 downto 0); 
+    registers_write(122 downto 0) <= regs_write(122 downto 0); 
     
     --================================--
     -- Registers

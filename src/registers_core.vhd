@@ -18,8 +18,9 @@ port(
     tx_done_i       : in std_logic;
     tx_data_o       : out std_logic_vector(47 downto 0);
 
-    wbus_o          : out registers_wbus;
-    rbus_i          : in registers_rbus
+    wbus_o          : out array128x32;
+    wbus_t          : out std_logic_vector(127 downto 0);
+    rbus_i          : in array128x32
 
 );
 end registers_core;
@@ -44,7 +45,7 @@ begin
             
                 tx_ready_o <= '0';
 
-                wbus_o.en <= (others => '0');
+                wbus_t <= (others => '0');
                 
                 state := 0;
             
@@ -75,11 +76,11 @@ begin
                 
                     if (register_byte(7) = '1') then
                     
-                        data_byte := rbus_i.data(to_integer(unsigned(register_byte(6 downto 0))));
+                        data_byte := rbus_i(to_integer(unsigned(register_byte(6 downto 0))));
                         
                     else
                     
-                        wbus_o.data(to_integer(unsigned(register_byte(6 downto 0)))) <= data_byte;
+                        wbus_o(to_integer(unsigned(register_byte(6 downto 0)))) <= data_byte;
                         
                     end if;
                     
@@ -98,7 +99,7 @@ begin
                 
                     if (register_byte(7) = '0') then
                     
-                        wbus_o.en(to_integer(unsigned(register_byte(6 downto 0)))) <= '1';
+                        wbus_t(to_integer(unsigned(register_byte(6 downto 0)))) <= '1';
                     
                     end if;
                     
@@ -107,7 +108,7 @@ begin
                 -- Reset the strobes and compute the CRC
                 elsif (state = 3) then
                 
-                    wbus_o.en(to_integer(unsigned(register_byte(6 downto 0)))) <= '0';
+                    wbus_t(to_integer(unsigned(register_byte(6 downto 0)))) <= '0';
                 
                     crc_byte := def_gtp_regs 
                                 xor data_byte(31 downto 24) 
@@ -142,7 +143,7 @@ begin
             
                     tx_ready_o <= '0';
 
-                    wbus_o.en <= (others => '0');
+                    wbus_t <= (others => '0');
                     
                     state := 0;
           
