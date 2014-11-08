@@ -253,22 +253,22 @@ Elaborating entity <tracking_fifo> (architecture <tracking_fifo_a>) from library
 
 Elaborating entity <tracking_readout> (architecture <Behavioral>) from library <work>.
 
-Elaborating entity <t1_handling> (architecture <Behavioral>) from library <work>.
-
-Elaborating entity <t1_finder> (architecture <Behavioral>) from library <work>.
-
-Elaborating entity <t1_encoder> (architecture <Behavioral>) from library <work>.
-
 Elaborating entity <chipscope_icon> (architecture <chipscope_icon_a>) from library <work>.
 
 Elaborating entity <chipscope_vio> (architecture <chipscope_vio_a>) from library <work>.
 
 Elaborating entity <chipscope_ila> (architecture <chipscope_ila_a>) from library <work>.
+WARNING:HDLCompiler:634 - "\\psf\home\Documents\PhD\Code\OH\src\link_tracking.vhd" Line 93: Net <cs_in[31]> does not have a driver.
+
+Elaborating entity <t1_handling> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <t1_finder> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <t1_encoder> (architecture <Behavioral>) from library <work>.
 WARNING:HDLCompiler:634 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" Line 107: Net <vfat2_sda_o[5]> does not have a driver.
 WARNING:HDLCompiler:634 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" Line 108: Net <vfat2_sda_t[5]> does not have a driver.
 WARNING:HDLCompiler:634 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" Line 115: Net <tx_kchar[7]> does not have a driver.
 WARNING:HDLCompiler:634 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" Line 116: Net <tx_data[63]> does not have a driver.
-WARNING:HDLCompiler:634 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" Line 122: Net <cs_in[31]> does not have a driver.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -276,7 +276,7 @@ WARNING:HDLCompiler:634 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.v
 
 Synthesizing Unit <optohybrid_top>.
     Related source file is "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd".
-WARNING:Xst:647 - Input <vfat2_dvalid_i<1:1>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <vfat2_dvalid_i<1:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <vfat2_dvalid_i<5:4>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <vfat2_data_0_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <vfat2_data_1_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -305,9 +305,10 @@ WARNING:Xst:647 - Input <vfat2_data_23_i> is never used. This port will be prese
 WARNING:Xst:647 - Input <fpga_rx_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <cdce_miso_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <cdce_auxout_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 157: Output port <clk100MHz_o> of the instance <fpga_clk_pll_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 157: Output port <clk160MHz_o> of the instance <fpga_clk_pll_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 245: Output port <ASYNC_OUT> of the instance <chipscope_vio_inst> is unconnected or connected to loadless signal.
+WARNING:Xst:647 - Input <cdce_plllock_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 149: Output port <clk100MHz_o> of the instance <fpga_clk_pll_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 149: Output port <clk160MHz_o> of the instance <fpga_clk_pll_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 149: Output port <locked_o> of the instance <fpga_clk_pll_inst> is unconnected or connected to loadless signal.
 WARNING:Xst:2935 - Signal 'vfat2_sda_o<5:4>', unconnected in block 'optohybrid_top', is tied to its initial value (00).
 WARNING:Xst:2935 - Signal 'vfat2_sda_o<1:0>', unconnected in block 'optohybrid_top', is tied to its initial value (00).
 WARNING:Xst:2935 - Signal 'vfat2_sda_t<5:4>', unconnected in block 'optohybrid_top', is tied to its initial value (00).
@@ -316,7 +317,6 @@ WARNING:Xst:2935 - Signal 'tx_kchar<7:4>', unconnected in block 'optohybrid_top'
 WARNING:Xst:2935 - Signal 'tx_kchar<1:0>', unconnected in block 'optohybrid_top', is tied to its initial value (00).
 WARNING:Xst:2935 - Signal 'tx_data<63:32>', unconnected in block 'optohybrid_top', is tied to its initial value (00000000000000000000000000000000).
 WARNING:Xst:2935 - Signal 'tx_data<15:0>', unconnected in block 'optohybrid_top', is tied to its initial value (0000000000000000).
-WARNING:Xst:653 - Signal <cs_in> is used but never assigned. This sourceless signal will be automatically connected to value GND.
     Summary:
 	no macro.
 Unit <optohybrid_top> synthesized.
@@ -392,11 +392,13 @@ Unit <s6_gtpwizard_v1_11_tile> synthesized.
 
 Synthesizing Unit <link_tracking>.
     Related source file is "\\psf\home\Documents\PhD\Code\OH\src\link_tracking.vhd".
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\link_tracking.vhd" line 145: Output port <wbus_o<127>> of the instance <registers_core_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\link_tracking.vhd" line 145: Output port <wbus_o<126>> of the instance <registers_core_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\link_tracking.vhd" line 145: Output port <wbus_o<125>> of the instance <registers_core_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\link_tracking.vhd" line 145: Output port <wbus_o<124>> of the instance <registers_core_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\link_tracking.vhd" line 145: Output port <wbus_o<123>> of the instance <registers_core_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\link_tracking.vhd" line 158: Output port <wbus_o<127>> of the instance <registers_core_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\link_tracking.vhd" line 158: Output port <wbus_o<126>> of the instance <registers_core_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\link_tracking.vhd" line 158: Output port <wbus_o<125>> of the instance <registers_core_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\link_tracking.vhd" line 158: Output port <wbus_o<124>> of the instance <registers_core_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\link_tracking.vhd" line 158: Output port <wbus_o<123>> of the instance <registers_core_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\link_tracking.vhd" line 232: Output port <ASYNC_OUT> of the instance <chipscope_vio_inst> is unconnected or connected to loadless signal.
+WARNING:Xst:653 - Signal <cs_in> is used but never assigned. This sourceless signal will be automatically connected to value GND.
     Summary:
 	no macro.
 Unit <link_tracking> synthesized.
@@ -1213,7 +1215,7 @@ Synthesizing Unit <t1_finder>.
     Found 1-bit register for signal <state>.
     Found 3-bit register for signal <counter>.
     Found 1-bit register for signal <lv1a_o>.
-    Found 3-bit subtractor for signal <GND_121_o_GND_121_o_sub_14_OUT<2:0>> created at line 107.
+    Found 3-bit subtractor for signal <GND_124_o_GND_124_o_sub_14_OUT<2:0>> created at line 107.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred   8 D-type flip-flop(s).
@@ -1226,8 +1228,8 @@ Synthesizing Unit <t1_encoder>.
     Found 3-bit register for signal <data>.
     Found 2-bit register for signal <data_cnt>.
     Found 1-bit register for signal <t1_o>.
-    Found 2-bit subtractor for signal <GND_122_o_GND_122_o_sub_13_OUT<1:0>> created at line 90.
-    Found 1-bit 3-to-1 multiplexer for signal <data_cnt[1]_X_43_o_Mux_10_o> created at line 82.
+    Found 2-bit subtractor for signal <GND_125_o_GND_125_o_sub_13_OUT<1:0>> created at line 90.
+    Found 1-bit 3-to-1 multiplexer for signal <data_cnt[1]_X_46_o_Mux_10_o> created at line 82.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred   7 D-type flip-flop(s).
@@ -10144,7 +10146,7 @@ INFO:Xst:2261 - The FF/Latch <exec> in Unit <u2> is equivalent to the following 
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block optohybrid_top, actual ratio is 5.
+Found area constraint ratio of 100 (+ 5) on block optohybrid_top, actual ratio is 4.
 INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_i> in Unit <tracking_buffer_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_fb_i> 
 INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1> in Unit <tracking_buffer_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0> 
 INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i> in Unit <tracking_buffer_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i> 
@@ -10198,49 +10200,49 @@ Top Level Output File Name         : optohybrid_top.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 10918
+# BELS                             : 10955
 #      GND                         : 22
 #      INV                         : 104
-#      LUT1                        : 379
-#      LUT2                        : 157
+#      LUT1                        : 381
+#      LUT2                        : 159
 #      LUT3                        : 4426
-#      LUT4                        : 399
-#      LUT5                        : 1932
-#      LUT6                        : 2250
+#      LUT4                        : 403
+#      LUT5                        : 1934
+#      LUT6                        : 2260
 #      MUXCY                       : 406
-#      MUXCY_L                     : 85
+#      MUXCY_L                     : 103
 #      MUXF5                       : 2
 #      MUXF6                       : 1
-#      MUXF7                       : 242
+#      MUXF7                       : 240
 #      MUXF8                       : 2
 #      VCC                         : 23
-#      XORCY                       : 488
-# FlipFlops/Latches                : 13751
-#      FD                          : 4289
+#      XORCY                       : 489
+# FlipFlops/Latches                : 13884
+#      FD                          : 4353
 #      FDC                         : 122
 #      FDCE                        : 28
 #      FDE                         : 8856
-#      FDP                         : 82
+#      FDP                         : 147
 #      FDPE                        : 1
 #      FDR                         : 241
-#      FDRE                        : 117
-#      FDS                         : 10
+#      FDRE                        : 119
+#      FDS                         : 12
 #      LD                          : 2
 #      LD_1                        : 2
 #      LDC                         : 1
-# RAMS                             : 8
-#      RAMB16BWER                  : 2
+# RAMS                             : 10
+#      RAMB16BWER                  : 4
 #      RAMB8BWER                   : 6
-# Shift Registers                  : 83
-#      SRL16                       : 32
+# Shift Registers                  : 131
+#      SRL16                       : 64
 #      SRL16E                      : 1
-#      SRLC16E                     : 12
-#      SRLC32E                     : 38
+#      SRLC16E                     : 16
+#      SRLC32E                     : 50
 # Clock Buffers                    : 9
 #      BUFG                        : 9
-# IO Buffers                       : 52
+# IO Buffers                       : 50
 #      BUFIO2                      : 2
-#      IBUF                        : 20
+#      IBUF                        : 18
 #      IBUFDS                      : 4
 #      IBUFG                       : 1
 #      IOBUF                       : 6
@@ -10262,26 +10264,26 @@ Selected Device : 6slx150tfgg676-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:           13751  out of  184304     7%  
- Number of Slice LUTs:                 9730  out of  92152    10%  
-    Number used as Logic:              9647  out of  92152    10%  
-    Number used as Memory:               83  out of  21680     0%  
-       Number used as SRL:               83
+ Number of Slice Registers:           13884  out of  184304     7%  
+ Number of Slice LUTs:                 9798  out of  92152    10%  
+    Number used as Logic:              9667  out of  92152    10%  
+    Number used as Memory:              131  out of  21680     0%  
+       Number used as SRL:              131
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:  16522
-   Number with an unused Flip Flop:    2771  out of  16522    16%  
-   Number with an unused LUT:          6792  out of  16522    41%  
-   Number of fully used LUT-FF pairs:  6959  out of  16522    42%  
-   Number of unique control sets:       391
+ Number of LUT Flip Flop pairs used:  16690
+   Number with an unused Flip Flop:    2806  out of  16690    16%  
+   Number with an unused LUT:          6892  out of  16690    41%  
+   Number of fully used LUT-FF pairs:  6992  out of  16690    41%  
+   Number of unique control sets:       392
 
 IO Utilization: 
  Number of IOs:                         289
- Number of bonded IOBs:                  57  out of    396    14%  
+ Number of bonded IOBs:                  55  out of    396    13%  
 
 Specific Feature Utilization:
- Number of Block RAM/FIFO:                5  out of    268     1%  
-    Number using Block RAM only:          5
+ Number of Block RAM/FIFO:                7  out of    268     2%  
+    Number using Block RAM only:          7
  Number of BUFG/BUFGCTRLs:                9  out of     16    56%  
  Number of PLL_ADVs:                      1  out of      6    16%  
 
@@ -10303,17 +10305,17 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
-----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+-------+
-Clock Signal                                                                                        | Clock buffer(FF name)                                                                                          | Load  |
-----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+-------+
-gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT0_OUT<0>                              | DCM_SP:CLK0                                                                                                    | 9961  |
-link_tracking_1_inst/vi2c_core_inst/chip_select_2                                                   | NONE(link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/wrbit_selected_iic[0]_DLATCH_2_q)| 4     |
-fpga_clk_pll_inst/pll_base_inst/CLKOUT1                                                             | BUFG                                                                                                           | 3414  |
-chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL                                          | BUFG                                                                                                           | 405   |
-chipscope_icon_inst/CONTROL1<13>(chipscope_icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[9].U_LCE:O)| NONE(*)(chipscope_ila_inst/U0/I_NO_D.U_ILA/U_STAT/U_DIRTY_LDC)                                                 | 1     |
-chipscope_icon_inst/U0/iUPDATE_OUT                                                                  | NONE(chipscope_icon_inst/U0/U_ICON/U_iDATA_CMD)                                                                | 1     |
-vfat2_sda_0_iobuf                                                                                   | NONE(chipscope_vio_inst/U0/I_VIO/GEN_ASYNC_IN[31].ASYNC_IN_CELL/U_FALLING)                                     | 64    |
-----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+-------+
+----------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+-------+
+Clock Signal                                                                                                                                  | Clock buffer(FF name)                                                                                          | Load  |
+----------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+-------+
+gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT0_OUT<0>                                                                        | DCM_SP:CLK0                                                                                                    | 10126 |
+link_tracking_1_inst/vi2c_core_inst/chip_select_2                                                                                             | NONE(link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/wrbit_selected_iic[0]_DLATCH_2_q)| 4     |
+fpga_clk_pll_inst/pll_base_inst/CLKOUT1                                                                                                       | BUFG                                                                                                           | 3414  |
+link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL                                                               | BUFG                                                                                                           | 425   |
+link_tracking_1_inst/chipscope_icon_inst/CONTROL1<13>(link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[9].U_LCE:O)| NONE(*)(link_tracking_1_inst/chipscope_ila_inst/U0/I_NO_D.U_ILA/U_STAT/U_DIRTY_LDC)                            | 1     |
+link_tracking_1_inst/chipscope_icon_inst/U0/iUPDATE_OUT                                                                                       | NONE(link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/U_iDATA_CMD)                                           | 1     |
+link_tracking_1_inst/cs_in<1>                                                                                                                 | NONE(link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/GEN_ASYNC_IN[31].ASYNC_IN_CELL/U_FALLING)                | 64    |
+----------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+-------+
 (*) This 1 clock signal(s) are generated by combinatorial logic,
 and XST is not able to identify which are the primary clock signals.
 Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
@@ -10338,30 +10340,29 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT0_OUT<0>'
-  Clock period: 6.845ns (frequency: 146.103MHz)
-  Total number of paths / destination ports: 86746 / 15290
+  Clock period: 6.588ns (frequency: 151.787MHz)
+  Total number of paths / destination ports: 86687 / 15502
 -------------------------------------------------------------------------
-Delay:               6.845ns (Levels of Logic = 6)
+Delay:               6.588ns (Levels of Logic = 5)
   Source:            link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/i2csda.timer_7 (FF)
-  Destination:       link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/i2csda.timer_0 (FF)
+  Destination:       link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/i2csda.byte_0 (FF)
   Source Clock:      gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT0_OUT<0> rising
   Destination Clock: gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT0_OUT<0> rising
 
-  Data Path: link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/i2csda.timer_7 to link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/i2csda.timer_0
+  Data Path: link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/i2csda.timer_7 to link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/i2csda.byte_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FD:C->Q               5   0.447   1.059  i2csda.timer_7 (i2csda.timer_7)
      LUT5:I0->O            1   0.203   0.580  i2csda.timer[11]_GND_67_o_equal_62_o<11>1_SW0 (N2)
-     LUT6:I5->O           13   0.205   0.933  i2csda.timer[11]_GND_67_o_equal_62_o<11>1 (i2csda.timer[11]_GND_67_o_equal_62_o<11>1)
-     LUT6:I5->O            8   0.205   0.907  i2csda.timer[11]_GND_67_o_AND_20_o1 (i2csda.timer[11]_GND_67_o_AND_20_o)
-     LUT6:I4->O            1   0.203   0.684  Mmux_datafsm[3]_i2csda.timer[11]_mux_106_OUT1633_SW1 (N22)
-     LUT6:I4->O           12   0.203   0.909  Mmux_datafsm[3]_i2csda.timer[11]_mux_106_OUT1633 (Mmux_datafsm[3]_i2csda.timer[11]_mux_106_OUT163)
-     LUT4:I3->O            1   0.205   0.000  Mmux_datafsm[3]_i2csda.timer[11]_mux_106_OUT121 (datafsm[3]_i2csda.timer[11]_mux_106_OUT<11>)
-     FD:D                      0.102          i2csda.timer_11
+     LUT6:I5->O           12   0.205   0.909  i2csda.timer[11]_GND_67_o_equal_62_o<11>1 (i2csda.timer[11]_GND_67_o_equal_62_o<11>1)
+     LUT3:I2->O            9   0.205   0.830  i2csda.timer[11]_GND_67_o_equal_62_o<11>2 (i2csda.timer[11]_GND_67_o_equal_62_o)
+     LUT6:I5->O            2   0.205   0.617  _n0390_inv33 (_n0390_inv3)
+     LUT6:I5->O            8   0.205   0.802  _n0390_inv1 (_n0390_inv)
+     FDE:CE                    0.322          i2csda.byte_0
     ----------------------------------------
-    Total                      6.845ns (1.773ns logic, 5.072ns route)
-                                       (25.9% logic, 74.1% route)
+    Total                      6.588ns (1.792ns logic, 4.796ns route)
+                                       (27.2% logic, 72.8% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'fpga_clk_pll_inst/pll_base_inst/CLKOUT1'
@@ -10386,25 +10387,25 @@ Delay:               5.179ns (Levels of Logic = 1)
                                        (18.8% logic, 81.2% route)
 
 =========================================================================
-Timing constraint: Default period analysis for Clock 'chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL'
+Timing constraint: Default period analysis for Clock 'link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL'
   Clock period: 8.118ns (frequency: 123.185MHz)
-  Total number of paths / destination ports: 5408 / 693
+  Total number of paths / destination ports: 5753 / 742
 -------------------------------------------------------------------------
 Delay:               8.118ns (Levels of Logic = 6)
-  Source:            chipscope_icon_inst/U0/U_ICON/U_CMD/G_TARGET[12].I_NE0.U_TARGET (FF)
-  Destination:       chipscope_vio_inst/U0/I_VIO/U_STATUS/U_TDO (FF)
-  Source Clock:      chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL rising
-  Destination Clock: chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL rising
+  Source:            link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/U_CMD/G_TARGET[12].I_NE0.U_TARGET (FF)
+  Destination:       link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/U_STATUS/U_TDO (FF)
+  Source Clock:      link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL rising
+  Destination Clock: link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL rising
 
-  Data Path: chipscope_icon_inst/U0/U_ICON/U_CMD/G_TARGET[12].I_NE0.U_TARGET to chipscope_vio_inst/U0/I_VIO/U_STATUS/U_TDO
+  Data Path: link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/U_CMD/G_TARGET[12].I_NE0.U_TARGET to link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/U_STATUS/U_TDO
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FDCE:C->Q            19   0.447   1.319  U0/U_ICON/U_CMD/G_TARGET[12].I_NE0.U_TARGET (U0/U_ICON/iCORE_ID<0>)
      LUT4:I0->O           32   0.203   1.396  U0/U_ICON/U_CMD/U_CORE_ID_SEL/I4.FI[0].U_LUT (U0/U_ICON/iCORE_ID_SEL<0>)
      LUT4:I2->O           97   0.203   2.086  U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[1].U_LCE (CONTROL0<5>)
-     end scope: 'chipscope_icon_inst:CONTROL0<5>'
-     begin scope: 'chipscope_vio_inst:CONTROL<5>'
+     end scope: 'link_tracking_1_inst/chipscope_icon_inst:CONTROL0<5>'
+     begin scope: 'link_tracking_1_inst/chipscope_vio_inst:CONTROL<5>'
      LUT6:I3->O            1   0.205   0.827  U0/I_VIO/U_STATUS/U_SMUX/U_CS_MUX/I4.U_MUX16/Mmux_O25 (U0/I_VIO/U_STATUS/U_SMUX/U_CS_MUX/I4.U_MUX16/Mmux_O24)
      LUT6:I2->O            1   0.203   0.924  U0/I_VIO/U_STATUS/U_SMUX/U_CS_MUX/I4.U_MUX16/Mmux_O29 (U0/I_VIO/U_STATUS/U_SMUX/U_CS_MUX/I4.U_MUX16/Mmux_O28)
      LUT5:I0->O            1   0.203   0.000  U0/I_VIO/U_STATUS/U_SMUX/U_CS_MUX/I4.U_MUX16/Mmux_O210 (U0/I_VIO/U_STATUS/TDO_next)
@@ -10414,17 +10415,17 @@ Delay:               8.118ns (Levels of Logic = 6)
                                        (19.3% logic, 80.7% route)
 
 =========================================================================
-Timing constraint: Default period analysis for Clock 'chipscope_icon_inst/U0/iUPDATE_OUT'
+Timing constraint: Default period analysis for Clock 'link_tracking_1_inst/chipscope_icon_inst/U0/iUPDATE_OUT'
   Clock period: 1.984ns (frequency: 504.007MHz)
   Total number of paths / destination ports: 1 / 1
 -------------------------------------------------------------------------
 Delay:               1.984ns (Levels of Logic = 1)
-  Source:            chipscope_icon_inst/U0/U_ICON/U_iDATA_CMD (FF)
-  Destination:       chipscope_icon_inst/U0/U_ICON/U_iDATA_CMD (FF)
-  Source Clock:      chipscope_icon_inst/U0/iUPDATE_OUT rising
-  Destination Clock: chipscope_icon_inst/U0/iUPDATE_OUT rising
+  Source:            link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/U_iDATA_CMD (FF)
+  Destination:       link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/U_iDATA_CMD (FF)
+  Source Clock:      link_tracking_1_inst/chipscope_icon_inst/U0/iUPDATE_OUT rising
+  Destination Clock: link_tracking_1_inst/chipscope_icon_inst/U0/iUPDATE_OUT rising
 
-  Data Path: chipscope_icon_inst/U0/U_ICON/U_iDATA_CMD to chipscope_icon_inst/U0/U_ICON/U_iDATA_CMD
+  Data Path: link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/U_iDATA_CMD to link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/U_iDATA_CMD
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
@@ -10437,23 +10438,23 @@ Delay:               1.984ns (Levels of Logic = 1)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT0_OUT<0>'
-  Total number of paths / destination ports: 80 / 78
+  Total number of paths / destination ports: 143 / 141
 -------------------------------------------------------------------------
 Offset:              5.121ns (Levels of Logic = 3)
-  Source:            chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/I_S6.ISYN.I_USE_SOFTBSCAN_EQ0.U_BS:SHIFT (PAD)
-  Destination:       chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[0].I_IN_RANGE.U_GAND_DLY2 (FF)
+  Source:            link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/I_S6.ISYN.I_USE_SOFTBSCAN_EQ0.U_BS:SHIFT (PAD)
+  Destination:       link_tracking_1_inst/chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[1].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[0].I_IN_RANGE.U_GAND_DLY2 (FF)
   Destination Clock: gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT0_OUT<0> rising
 
-  Data Path: chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/I_S6.ISYN.I_USE_SOFTBSCAN_EQ0.U_BS:SHIFT to chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[0].I_IN_RANGE.U_GAND_DLY2
+  Data Path: link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/I_S6.ISYN.I_USE_SOFTBSCAN_EQ0.U_BS:SHIFT to link_tracking_1_inst/chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[1].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[0].I_IN_RANGE.U_GAND_DLY2
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
     BSCAN_SPARTAN6:SHIFT    3   0.000   0.651  U0/U_ICON/I_YES_BSCAN.U_BS/I_S6.ISYN.I_USE_SOFTBSCAN_EQ0.U_BS (U0/iSHIFT_OUT)
      LUT2:I1->O           64   0.205   1.887  U0/U_ICON/U_CTRL_OUT/U_DATA_VALID (U0/U_ICON/U_CTRL_OUT/iDATA_VALID)
-     LUT4:I0->O           80   0.203   1.745  U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[0].U_HCE (CONTROL1<20>)
-     end scope: 'chipscope_icon_inst:CONTROL1<20>'
-     begin scope: 'chipscope_ila_inst:CONTROL<20>'
-     FDP:PRE                   0.430          U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[0].I_IN_RANGE.U_GAND_DLY2
+     LUT4:I0->O           80   0.203   1.745  U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[1].U_HCE (CONTROL1<21>)
+     end scope: 'link_tracking_1_inst/chipscope_icon_inst:CONTROL1<21>'
+     begin scope: 'link_tracking_1_inst/chipscope_ila_inst:CONTROL<21>'
+     FDP:PRE                   0.430          U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[1].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[0].I_IN_RANGE.U_GAND_DLY2
     ----------------------------------------
     Total                      5.121ns (0.838ns logic, 4.283ns route)
                                        (16.4% logic, 83.6% route)
@@ -10483,23 +10484,23 @@ Offset:              5.137ns (Levels of Logic = 5)
                                        (33.7% logic, 66.3% route)
 
 =========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL'
-  Total number of paths / destination ports: 432 / 388
+Timing constraint: Default OFFSET IN BEFORE for Clock 'link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL'
+  Total number of paths / destination ports: 452 / 410
 -------------------------------------------------------------------------
 Offset:              7.496ns (Levels of Logic = 6)
-  Source:            chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/I_S6.ISYN.I_USE_SOFTBSCAN_EQ0.U_BS:SHIFT (PAD)
-  Destination:       chipscope_vio_inst/U0/I_VIO/U_STATUS/U_TDO (FF)
-  Destination Clock: chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL rising
+  Source:            link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/I_S6.ISYN.I_USE_SOFTBSCAN_EQ0.U_BS:SHIFT (PAD)
+  Destination:       link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/U_STATUS/U_TDO (FF)
+  Destination Clock: link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL rising
 
-  Data Path: chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/I_S6.ISYN.I_USE_SOFTBSCAN_EQ0.U_BS:SHIFT to chipscope_vio_inst/U0/I_VIO/U_STATUS/U_TDO
+  Data Path: link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/I_S6.ISYN.I_USE_SOFTBSCAN_EQ0.U_BS:SHIFT to link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/U_STATUS/U_TDO
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
     BSCAN_SPARTAN6:SHIFT    3   0.000   0.651  U0/U_ICON/I_YES_BSCAN.U_BS/I_S6.ISYN.I_USE_SOFTBSCAN_EQ0.U_BS (U0/iSHIFT_OUT)
      LUT2:I1->O           64   0.205   1.887  U0/U_ICON/U_CTRL_OUT/U_DATA_VALID (U0/U_ICON/U_CTRL_OUT/iDATA_VALID)
      LUT4:I0->O           97   0.203   2.086  U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[1].U_LCE (CONTROL0<5>)
-     end scope: 'chipscope_icon_inst:CONTROL0<5>'
-     begin scope: 'chipscope_vio_inst:CONTROL<5>'
+     end scope: 'link_tracking_1_inst/chipscope_icon_inst:CONTROL0<5>'
+     begin scope: 'link_tracking_1_inst/chipscope_vio_inst:CONTROL<5>'
      LUT6:I3->O            1   0.205   0.827  U0/I_VIO/U_STATUS/U_SMUX/U_CS_MUX/I4.U_MUX16/Mmux_O25 (U0/I_VIO/U_STATUS/U_SMUX/U_CS_MUX/I4.U_MUX16/Mmux_O24)
      LUT6:I2->O            1   0.203   0.924  U0/I_VIO/U_STATUS/U_SMUX/U_CS_MUX/I4.U_MUX16/Mmux_O29 (U0/I_VIO/U_STATUS/U_SMUX/U_CS_MUX/I4.U_MUX16/Mmux_O28)
      LUT5:I0->O            1   0.203   0.000  U0/I_VIO/U_STATUS/U_SMUX/U_CS_MUX/I4.U_MUX16/Mmux_O210 (U0/I_VIO/U_STATUS/TDO_next)
@@ -10509,15 +10510,15 @@ Offset:              7.496ns (Levels of Logic = 6)
                                        (15.0% logic, 85.0% route)
 
 =========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'chipscope_icon_inst/U0/iUPDATE_OUT'
+Timing constraint: Default OFFSET IN BEFORE for Clock 'link_tracking_1_inst/chipscope_icon_inst/U0/iUPDATE_OUT'
   Total number of paths / destination ports: 1 / 1
 -------------------------------------------------------------------------
 Offset:              1.831ns (Levels of Logic = 1)
-  Source:            chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/I_S6.ISYN.I_USE_SOFTBSCAN_EQ0.U_BS:SEL (PAD)
-  Destination:       chipscope_icon_inst/U0/U_ICON/U_iDATA_CMD (FF)
-  Destination Clock: chipscope_icon_inst/U0/iUPDATE_OUT rising
+  Source:            link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/I_S6.ISYN.I_USE_SOFTBSCAN_EQ0.U_BS:SEL (PAD)
+  Destination:       link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/U_iDATA_CMD (FF)
+  Destination Clock: link_tracking_1_inst/chipscope_icon_inst/U0/iUPDATE_OUT rising
 
-  Data Path: chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/I_S6.ISYN.I_USE_SOFTBSCAN_EQ0.U_BS:SEL to chipscope_icon_inst/U0/U_ICON/U_iDATA_CMD
+  Data Path: link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/I_S6.ISYN.I_USE_SOFTBSCAN_EQ0.U_BS:SEL to link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/U_iDATA_CMD
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
@@ -10582,7 +10583,7 @@ Offset:              4.419ns (Levels of Logic = 5)
 Timing constraint: Default OFFSET OUT AFTER for Clock 'fpga_clk_pll_inst/pll_base_inst/CLKOUT1'
   Total number of paths / destination ports: 2 / 2
 -------------------------------------------------------------------------
-Offset:              3.634ns (Levels of Logic = 2)
+Offset:              3.597ns (Levels of Logic = 2)
   Source:            t1_handling_inst/t1_encoder_inst/t1_o (FF)
   Destination:       vfat2_t1_p_o (PAD)
   Source Clock:      fpga_clk_pll_inst/pll_base_inst/CLKOUT1 rising
@@ -10591,24 +10592,24 @@ Offset:              3.634ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               2   0.447   0.616  t1_o (t1_o)
+     FD:C->Q               1   0.447   0.579  t1_o (t1_o)
      end scope: 't1_handling_inst/t1_encoder_inst:t1_o'
      end scope: 't1_handling_inst:t1_o'
      OBUFDS:I->O               2.571          t1_obufds (vfat2_t1_p_o)
     ----------------------------------------
-    Total                      3.634ns (3.018ns logic, 0.616ns route)
-                                       (83.0% logic, 17.0% route)
+    Total                      3.597ns (3.018ns logic, 0.579ns route)
+                                       (83.9% logic, 16.1% route)
 
 =========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL'
+Timing constraint: Default OFFSET OUT AFTER for Clock 'link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL'
   Total number of paths / destination ports: 1 / 1
 -------------------------------------------------------------------------
 Offset:              0.447ns (Levels of Logic = 0)
-  Source:            chipscope_icon_inst/U0/U_ICON/U_TDO_reg (FF)
-  Destination:       chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/I_S6.ISYN.I_USE_SOFTBSCAN_EQ0.U_BS:TDO (PAD)
-  Source Clock:      chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL rising
+  Source:            link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/U_TDO_reg (FF)
+  Destination:       link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/I_S6.ISYN.I_USE_SOFTBSCAN_EQ0.U_BS:TDO (PAD)
+  Source Clock:      link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL rising
 
-  Data Path: chipscope_icon_inst/U0/U_ICON/U_TDO_reg to chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/I_S6.ISYN.I_USE_SOFTBSCAN_EQ0.U_BS:TDO
+  Data Path: link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/U_TDO_reg to link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/I_S6.ISYN.I_USE_SOFTBSCAN_EQ0.U_BS:TDO
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
@@ -10623,34 +10624,6 @@ Offset:              0.447ns (Levels of Logic = 0)
 Cross Clock Domains Report:
 --------------------------
 
-Clock to Setup on destination clock chipscope_icon_inst/CONTROL1<13>
-----------------------------------------------------------------------+---------+---------+---------+---------+
-                                                                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                                                          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
-----------------------------------------------------------------------+---------+---------+---------+---------+
-gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT0_OUT<0>|         |         |    1.948|         |
-----------------------------------------------------------------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL
-----------------------------------------------------------------------+---------+---------+---------+---------+
-                                                                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                                                          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
-----------------------------------------------------------------------+---------+---------+---------+---------+
-chipscope_icon_inst/CONTROL1<13>                                      |         |    4.643|         |         |
-chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL            |    8.118|         |         |         |
-chipscope_icon_inst/U0/iUPDATE_OUT                                    |    2.583|         |         |         |
-gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT0_OUT<0>|    3.634|         |         |         |
-vfat2_sda_0_iobuf                                                     |    1.562|    1.562|         |         |
-----------------------------------------------------------------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock chipscope_icon_inst/U0/iUPDATE_OUT
-----------------------------------+---------+---------+---------+---------+
-                                  | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                      |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
-----------------------------------+---------+---------+---------+---------+
-chipscope_icon_inst/U0/iUPDATE_OUT|    1.984|         |         |         |
-----------------------------------+---------+---------+---------+---------+
-
 Clock to Setup on destination clock fpga_clk_pll_inst/pll_base_inst/CLKOUT1
 ----------------------------------------------------------------------+---------+---------+---------+---------+
                                                                       | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
@@ -10661,14 +10634,50 @@ gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT0_OUT<0>|    3.450
 ----------------------------------------------------------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT0_OUT<0>
+-------------------------------------------------------------------------------+---------+---------+---------+---------+
+                                                                               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                                                   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-------------------------------------------------------------------------------+---------+---------+---------+---------+
+fpga_clk_pll_inst/pll_base_inst/CLKOUT1                                        |    1.128|         |         |         |
+gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT0_OUT<0>         |    6.588|         |         |         |
+link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL|    5.743|         |         |         |
+-------------------------------------------------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock link_tracking_1_inst/chipscope_icon_inst/CONTROL1<13>
 ----------------------------------------------------------------------+---------+---------+---------+---------+
                                                                       | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                                                          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ----------------------------------------------------------------------+---------+---------+---------+---------+
-chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL            |    5.743|         |         |         |
-fpga_clk_pll_inst/pll_base_inst/CLKOUT1                               |    1.165|         |         |         |
-gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT0_OUT<0>|    6.845|         |         |         |
+gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT0_OUT<0>|         |         |    1.948|         |
 ----------------------------------------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL
+-------------------------------------------------------------------------------+---------+---------+---------+---------+
+                                                                               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                                                   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-------------------------------------------------------------------------------+---------+---------+---------+---------+
+gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT0_OUT<0>         |    3.636|         |         |         |
+link_tracking_1_inst/chipscope_icon_inst/CONTROL1<13>                          |         |    4.267|         |         |
+link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL|    8.118|         |         |         |
+link_tracking_1_inst/chipscope_icon_inst/U0/iUPDATE_OUT                        |    2.583|         |         |         |
+link_tracking_1_inst/cs_in<1>                                                  |    1.562|    1.562|         |         |
+-------------------------------------------------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock link_tracking_1_inst/chipscope_icon_inst/U0/iUPDATE_OUT
+-------------------------------------------------------+---------+---------+---------+---------+
+                                                       | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                           |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-------------------------------------------------------+---------+---------+---------+---------+
+link_tracking_1_inst/chipscope_icon_inst/U0/iUPDATE_OUT|    1.984|         |         |         |
+-------------------------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock link_tracking_1_inst/cs_in<1>
+-------------------------------------------------------------------------------+---------+---------+---------+---------+
+                                                                               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                                                   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-------------------------------------------------------------------------------+---------+---------+---------+---------+
+link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL|    2.516|         |    2.516|         |
+-------------------------------------------------------------------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock link_tracking_1_inst/vi2c_core_inst/chip_select_2
 ----------------------------------------------------------------------+---------+---------+---------+---------+
@@ -10678,25 +10687,17 @@ Source Clock                                                          |Dest:Rise
 gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT0_OUT<0>|    2.020|         |    2.020|         |
 ----------------------------------------------------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock vfat2_sda_0_iobuf
-----------------------------------------------------------+---------+---------+---------+---------+
-                                                          | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                                              |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
-----------------------------------------------------------+---------+---------+---------+---------+
-chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL|    2.516|         |    2.516|         |
-----------------------------------------------------------+---------+---------+---------+---------+
-
 =========================================================================
 
 
-Total REAL time to Xst completion: 71.00 secs
-Total CPU time to Xst completion: 71.13 secs
+Total REAL time to Xst completion: 73.00 secs
+Total CPU time to Xst completion: 73.48 secs
  
 --> 
 
-Total memory usage is 318556 kilobytes
+Total memory usage is 319708 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  421 (   0 filtered)
-Number of infos    : 8244 (   0 filtered)
+Number of warnings :  422 (   0 filtered)
+Number of infos    : 8245 (   0 filtered)
 

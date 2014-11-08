@@ -114,14 +114,6 @@ architecture Behavioral of optohybrid_top is
     signal rx_data          : std_logic_vector(63 downto 0) := (others => '0');
     signal tx_kchar         : std_logic_vector(7 downto 0) := (others => '0');
     signal tx_data          : std_logic_vector(63 downto 0) := (others => '0');
-
-    -- ChipScope signals
-    
-    signal cs_icon0         : std_logic_vector(35 downto 0);
-    signal cs_icon1         : std_logic_vector(35 downto 0);
-    signal cs_in            : std_logic_vector(31 downto 0);
-    signal cs_out           : std_logic_vector(31 downto 0);
-    signal cs_ila           : std_logic_vector(31 downto 0);
     
 begin
 
@@ -235,19 +227,5 @@ begin
         rx_data_i   => rx_data(31 downto 16),
         t1_o        => vfat2_t1  
     );
-    
-    --================================--
-    -- ChipScope
-    --================================--
-    
-    chipscope_icon_inst : entity work.chipscope_icon port map (CONTROL0 => cs_icon0, CONTROL1 => cs_icon1);
-    
-    chipscope_vio_inst : entity work.chipscope_vio port map (CONTROL => cs_icon0, ASYNC_IN => cs_in, ASYNC_OUT => cs_out);
-    
-    chipscope_ila_inst : entity work.chipscope_ila port map (CONTROL => cs_icon1, CLK => gtp_clk, TRIG0 => cs_ila);
-    
-    --cs_ila <= tx_data(31 downto 16) & rx_data(31 downto 16);
-    cs_ila <= x"00" & "000" & fpga_pll_locked & cdce_plllock_i & vfat2_data_8_i(8) & vfat2_dvalid_i(0) & vfat2_t1
-              & rx_data(31 downto 16);
        
 end Behavioral;

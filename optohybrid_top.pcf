@@ -1,12 +1,8 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Sat Nov 08 15:50:03 2014
+// Written by: Map P.20131013 on Sat Nov 08 16:21:12 2014
 //! **************************************************************************
 
 SCHEMATIC START;
-COMP "gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/gtpa1_dual_i"
-        LOCATE = SITE "GTPA1_DUAL_X0Y1" LEVEL 1;
-COMP "gtp_wrapper_inst/gtp_inst/tile1_s6_gtpwizard_v1_11_i/gtpa1_dual_i"
-        LOCATE = SITE "GTPA1_DUAL_X1Y1" LEVEL 1;
 COMP "cdce_plllock_i" LOCATE = SITE "J7" LEVEL 1;
 COMP "enable_gtp_o" LOCATE = SITE "AA23" LEVEL 1;
 COMP "cdce_le_o" LOCATE = SITE "L10" LEVEL 1;
@@ -122,6 +118,10 @@ COMP "vfat2_data_9_i<5>" LOCATE = SITE "AA25" LEVEL 1;
 COMP "vfat2_data_9_i<6>" LOCATE = SITE "AA26" LEVEL 1;
 COMP "vfat2_data_9_i<7>" LOCATE = SITE "Y26" LEVEL 1;
 COMP "vfat2_data_9_i<8>" LOCATE = SITE "W25" LEVEL 1;
+COMP "gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/gtpa1_dual_i"
+        LOCATE = SITE "GTPA1_DUAL_X0Y1" LEVEL 1;
+COMP "gtp_wrapper_inst/gtp_inst/tile1_s6_gtpwizard_v1_11_i/gtpa1_dual_i"
+        LOCATE = SITE "GTPA1_DUAL_X1Y1" LEVEL 1;
 PIN
         link_tracking_1_inst/tracking_core_inst/tracking_buffer_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram_pins<26>
         = BEL
