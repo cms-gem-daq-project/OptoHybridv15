@@ -14,5 +14,14 @@ Time resolution is 1 ps
 Simulator is doing circuit initialization process.
 at 0 ps: Note: WARNING: Behavioral models for independent clock FIFO configurations do not model synchronization delays. The behavioral models are functionally correct, and will represent the behavior of the configured FIFO. See the FIFO Generator User Guide for more information. (/sim_link_tracking/uut/tracking_core_inst/tracking_buffer_fifo/U0/gconvfifo/inst_conv_fifo/).
 Finished circuit initialization process.
+# restart
+# run all
+Simulator is doing circuit initialization process.
+at 0 ps: Note: WARNING: Behavioral models for independent clock FIFO configurations do not model synchronization delays. The behavioral models are functionally correct, and will represent the behavior of the configured FIFO. See the FIFO Generator User Guide for more information. (/sim_link_tracking/uut/tracking_core_inst/tracking_buffer_fifo/U0/gconvfifo/inst_conv_fifo/).
+Finished circuit initialization process.
+Stopped at time : 150450 ns : File "//psf/Home/Documents/PhD/Code/OH/src/sim/sim_link_tracking.vhd" Line 69
+# restart
 # run 10.00us
-# run 10.00us
+Simulator is doing circuit initialization process.
+at 0 ps: Note: WARNING: Behavioral models for independent clock FIFO configurations do not model synchronization delays. The behavioral models are functionally correct, and will represent the behavior of the configured FIFO. See the FIFO Generator User Guide for more information. (/sim_link_tracking/uut/tracking_core_inst/tracking_buffer_fifo/U0/gconvfifo/inst_conv_fifo/).
+Finished circuit initialization process.

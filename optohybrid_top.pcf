@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Sat Nov 08 12:17:29 2014
+// Written by: Map P.20131013 on Sat Nov 08 12:50:43 2014
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -152,7 +152,9 @@ PIN
         = BEL
         "link_tracking_1_inst/tracking_core_inst/tracking_buffer_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[5].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram"
         PINNAME CLKAWRCLK;
-TIMEGRP clk40MHz = BEL "vfat2_clk_bufg" BEL
+TIMEGRP clk40MHz = BEL "tmp_data" BEL "tmp_en_0" BEL "cnt_0" BEL "cnt_1" BEL
+        "cnt_2" BEL "cnt_3" BEL "cnt_4" BEL "cnt_5" BEL "cnt_6" BEL "cnt_7"
+        BEL "cnt_8" BEL "vfat2_clk_bufg" BEL
         "link_tracking_1_inst/tracking_core_inst/track_7_inst/data_0" BEL
         "link_tracking_1_inst/tracking_core_inst/track_7_inst/data_1" BEL
         "link_tracking_1_inst/tracking_core_inst/track_7_inst/data_2" BEL
@@ -3814,7 +3816,9 @@ TIMEGRP clk40MHz = BEL "vfat2_clk_bufg" BEL
         "link_tracking_1_inst/tracking_core_inst/tracking_buffer_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_d1_0"
         BEL "vfat2_mclk_p_o" BEL "vfat2_mclk_n_o" BEL "cdce_pri_p_o" BEL
         "cdce_pri_n_o";
-TIMEGRP clk40MHz_0 = BEL "vfat2_clk_bufg" BEL
+TIMEGRP clk40MHz_0 = BEL "tmp_data" BEL "tmp_en_0" BEL "cnt_0" BEL "cnt_1" BEL
+        "cnt_2" BEL "cnt_3" BEL "cnt_4" BEL "cnt_5" BEL "cnt_6" BEL "cnt_7"
+        BEL "cnt_8" BEL "vfat2_clk_bufg" BEL
         "link_tracking_1_inst/tracking_core_inst/track_7_inst/data_0" BEL
         "link_tracking_1_inst/tracking_core_inst/track_7_inst/data_1" BEL
         "link_tracking_1_inst/tracking_core_inst/track_7_inst/data_2" BEL

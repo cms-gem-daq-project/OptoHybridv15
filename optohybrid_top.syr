@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.17 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.17 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> Reading design: optohybrid_top.prj
 
@@ -262,8 +262,7 @@ WARNING:HDLCompiler:634 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.v
 
 Synthesizing Unit <optohybrid_top>.
     Related source file is "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd".
-WARNING:Xst:647 - Input <vfat2_dvalid_i<1:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <vfat2_dvalid_i<5:4>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <vfat2_dvalid_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <vfat2_data_0_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <vfat2_data_1_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <vfat2_data_2_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -272,7 +271,7 @@ WARNING:Xst:647 - Input <vfat2_data_4_i> is never used. This port will be preser
 WARNING:Xst:647 - Input <vfat2_data_5_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <vfat2_data_6_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <vfat2_data_7_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <vfat2_data_8_i<7:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <vfat2_data_8_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <vfat2_data_9_i<7:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <vfat2_data_10_i<7:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <vfat2_data_11_i<7:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -292,9 +291,9 @@ WARNING:Xst:647 - Input <fpga_rx_i> is never used. This port will be preserved a
 WARNING:Xst:647 - Input <cdce_miso_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <cdce_auxout_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <cdce_plllock_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 155: Output port <clk100MHz_o> of the instance <fpga_clk_pll_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 155: Output port <clk160MHz_o> of the instance <fpga_clk_pll_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 229: Output port <ASYNC_OUT> of the instance <chipscope_vio_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 159: Output port <clk100MHz_o> of the instance <fpga_clk_pll_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 159: Output port <clk160MHz_o> of the instance <fpga_clk_pll_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 233: Output port <ASYNC_OUT> of the instance <chipscope_vio_inst> is unconnected or connected to loadless signal.
 WARNING:Xst:2935 - Signal 'vfat2_sda_o<5:4>', unconnected in block 'optohybrid_top', is tied to its initial value (00).
 WARNING:Xst:2935 - Signal 'vfat2_sda_o<1:0>', unconnected in block 'optohybrid_top', is tied to its initial value (00).
 WARNING:Xst:2935 - Signal 'vfat2_sda_t<5:4>', unconnected in block 'optohybrid_top', is tied to its initial value (00).
@@ -304,6 +303,9 @@ WARNING:Xst:2935 - Signal 'tx_kchar<1:0>', unconnected in block 'optohybrid_top'
 WARNING:Xst:2935 - Signal 'tx_data<63:48>', unconnected in block 'optohybrid_top', is tied to its initial value (0000000000000000).
 WARNING:Xst:2935 - Signal 'tx_data<15:0>', unconnected in block 'optohybrid_top', is tied to its initial value (0000000000000000).
 WARNING:Xst:653 - Signal <cs_in> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:2999 - Signal 'data', unconnected in block 'optohybrid_top', is tied to its initial value.
+WARNING:Xst:3035 - Index value(s) does not match array range for signal <data>, simulation mismatch.
+    Found 192x1-bit single-port Read Only RAM <Mram_data> for signal <data>.
     Register <tx_data<36>> equivalent to <tx_data<39>> has been removed
     Register <tx_data<43>> equivalent to <tx_data<45>> has been removed
     Register <tx_data<33>> equivalent to <tx_data<42>> has been removed
@@ -321,13 +323,20 @@ WARNING:Xst:653 - Signal <cs_in> is used but never assigned. This sourceless sig
     Found 1-bit register for signal <tx_data<34>>.
     Found 1-bit register for signal <tx_data<32>>.
     Found 1-bit register for signal <tx_kchar<4>>.
-    Found 15-bit register for signal <cnt>.
-    Found 15-bit adder for signal <cnt[14]_GND_5_o_add_3_OUT> created at line 249.
+    Found 9-bit register for signal <cnt>.
+    Found 2-bit register for signal <tmp_en>.
+    Found 1-bit register for signal <tmp_data>.
+    Found 15-bit register for signal <_v2>.
+    Found 15-bit adder for signal <cnt[14]_GND_5_o_add_3_OUT> created at line 251.
+    Found 9-bit adder for signal <cnt[8]_GND_5_o_add_18_OUT> created at line 306.
+    Found 9-bit comparator greater for signal <cnt[8]_GND_5_o_LessThan_21_o> created at line 309
     WARNING:Xst:2404 -  FFs/Latches <tx_kchar<5><0:0>> (without init value) have a constant value of 0 in block <optohybrid_top>.
     Summary:
-	inferred   1 Adder/Subtractor(s).
-	inferred  27 D-type flip-flop(s).
-	inferred  45 Multiplexer(s).
+	inferred   1 RAM(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred  39 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred  46 Multiplexer(s).
 Unit <optohybrid_top> synthesized.
 
 Synthesizing Unit <fpga_clk_pll>.
@@ -1184,23 +1193,26 @@ Unit <tracking_concentrator> synthesized.
 Synthesizing Unit <tracking_readout>.
     Related source file is "\\psf\home\Documents\PhD\Code\OH\src\tracking_readout.vhd".
     Found 1-bit register for signal <tx_ready_o>.
-    Found 3-bit register for signal <state>.
+    Found 2-bit register for signal <state>.
+    Found 2-bit register for signal <wait_cnt>.
     Found 192-bit register for signal <data>.
     Found 192-bit register for signal <tx_data_o>.
     Found 1-bit register for signal <fifo_read_o>.
     Found finite state machine <FSM_9> for signal <state>.
     -----------------------------------------------------------------------
-    | States             | 3                                              |
-    | Transitions        | 5                                              |
-    | Inputs             | 2                                              |
+    | States             | 4                                              |
+    | Transitions        | 7                                              |
+    | Inputs             | 3                                              |
     | Outputs            | 4                                              |
     | Clock              | gtp_clk_i (rising_edge)                        |
-    | Power Up State     | 000                                            |
+    | Power Up State     | 00                                             |
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
+    Found 2-bit subtractor for signal <GND_120_o_GND_120_o_sub_4_OUT<1:0>> created at line 74.
     Summary:
-	inferred 386 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred 388 D-type flip-flop(s).
 	inferred   1 Multiplexer(s).
 	inferred   1 Finite State Machine(s).
 Unit <tracking_readout> synthesized.
@@ -1209,41 +1221,46 @@ Unit <tracking_readout> synthesized.
 HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 1
+# RAMs                                                 : 2
+ 192x1-bit single-port Read Only RAM                   : 1
  32x4-bit single-port Read Only RAM                    : 1
-# Adders/Subtractors                                   : 29
+# Adders/Subtractors                                   : 31
  10-bit adder                                          : 1
  12-bit adder                                          : 1
  12-bit subtractor                                     : 5
  15-bit adder                                          : 1
+ 2-bit subtractor                                      : 1
  3-bit adder                                           : 1
  3-bit subtractor                                      : 1
  32-bit adder                                          : 5
  4-bit subtractor                                      : 3
  7-bit subtractor                                      : 1
  8-bit subtractor                                      : 9
+ 9-bit adder                                           : 1
  9-bit subtractor                                      : 1
-# Registers                                            : 550
- 1-bit register                                        : 76
+# Registers                                            : 554
+ 1-bit register                                        : 77
  10-bit register                                       : 1
  12-bit register                                       : 7
  128-bit register                                      : 1
  15-bit register                                       : 1
  16-bit register                                       : 1
  192-bit register                                      : 20
- 2-bit register                                        : 2
+ 2-bit register                                        : 4
  3-bit register                                        : 3
  32-bit register                                       : 399
  4-bit register                                        : 5
  48-bit register                                       : 3
  8-bit register                                        : 31
+ 9-bit register                                        : 1
 # Latches                                              : 6
  1-bit latch                                           : 6
-# Comparators                                          : 4
+# Comparators                                          : 5
  12-bit comparator equal                               : 2
  8-bit comparator equal                                : 2
-# Multiplexers                                         : 2162
- 1-bit 2-to-1 multiplexer                              : 1950
+ 9-bit comparator greater                              : 1
+# Multiplexers                                         : 2163
+ 1-bit 2-to-1 multiplexer                              : 1949
  1-bit 3-to-1 multiplexer                              : 1
  10-bit 2-to-1 multiplexer                             : 2
  12-bit 2-to-1 multiplexer                             : 26
@@ -1251,13 +1268,14 @@ Macro Statistics
  15-bit 2-to-1 multiplexer                             : 1
  16-bit 4-to-1 multiplexer                             : 1
  192-bit 8-to-1 multiplexer                            : 1
- 2-bit 2-to-1 multiplexer                              : 1
+ 2-bit 2-to-1 multiplexer                              : 2
  3-bit 2-to-1 multiplexer                              : 5
  32-bit 128-to-1 multiplexer                           : 1
  32-bit 2-to-1 multiplexer                             : 135
  4-bit 16-to-1 multiplexer                             : 1
  4-bit 2-to-1 multiplexer                              : 16
  8-bit 2-to-1 multiplexer                              : 19
+ 9-bit 2-to-1 multiplexer                              : 1
 # Tristates                                            : 5
  1-bit tristate buffer                                 : 5
 # FSMs                                                 : 17
@@ -5466,6 +5484,18 @@ Unit <i2c_data> synthesized (advanced).
 
 Synthesizing (advanced) Unit <optohybrid_top>.
 The following registers are absorbed into counter <cnt>: 1 register on signal <cnt>.
+The following registers are absorbed into counter <_i000025>: 1 register on signal <_i000025>.
+INFO:Xst:3231 - The small RAM <Mram_data> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 192-word x 1-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <cnt[8]_GND_5_o_mux_19_OUT<7:0>> |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
 Unit <optohybrid_top> synthesized (advanced).
 
 Synthesizing (advanced) Unit <tracking_concentrator>.
@@ -5494,31 +5524,36 @@ Unit <vi2c_core> synthesized (advanced).
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 1
+# RAMs                                                 : 2
+ 192x1-bit single-port distributed Read Only RAM       : 1
  32x4-bit single-port distributed Read Only RAM        : 1
-# Adders/Subtractors                                   : 16
+# Adders/Subtractors                                   : 18
  10-bit adder                                          : 1
  12-bit adder                                          : 1
  12-bit subtractor                                     : 4
  15-bit adder                                          : 1
+ 2-bit subtractor                                      : 1
  3-bit subtractor                                      : 1
  32-bit adder                                          : 5
  7-bit subtractor                                      : 1
  8-bit subtractor                                      : 1
+ 9-bit adder                                           : 1
  9-bit subtractor                                      : 1
-# Counters                                             : 19
+# Counters                                             : 20
  12-bit down counter                                   : 1
  15-bit up counter                                     : 1
  3-bit up counter                                      : 1
  32-bit up counter                                     : 5
  4-bit down counter                                    : 3
  8-bit down counter                                    : 8
-# Registers                                            : 17096
- Flip-Flops                                            : 17096
-# Comparators                                          : 4
+ 9-bit up counter                                      : 1
+# Registers                                            : 17101
+ Flip-Flops                                            : 17101
+# Comparators                                          : 5
  12-bit comparator equal                               : 2
  8-bit comparator equal                                : 2
-# Multiplexers                                         : 2154
+ 9-bit comparator greater                              : 1
+# Multiplexers                                         : 2155
  1-bit 2-to-1 multiplexer                              : 1955
  1-bit 3-to-1 multiplexer                              : 1
  10-bit 2-to-1 multiplexer                             : 2
@@ -5534,6 +5569,7 @@ Macro Statistics
  4-bit 16-to-1 multiplexer                             : 1
  4-bit 2-to-1 multiplexer                              : 13
  8-bit 2-to-1 multiplexer                              : 10
+ 9-bit 2-to-1 multiplexer                              : 1
 # FSMs                                                 : 17
 # Xors                                                 : 4
  8-bit xor4                                            : 2
@@ -9645,6 +9681,7 @@ INFO:Xst:2261 - The FF/Latch <registers_61_18> in Unit <registers> is equivalent
 INFO:Xst:2261 - The FF/Latch <registers_61_23> in Unit <registers> is equivalent to the following FF/Latch, which will be removed : <rbus_o_61_23> 
 INFO:Xst:2261 - The FF/Latch <registers_72_23> in Unit <registers> is equivalent to the following FF/Latch, which will be removed : <rbus_o_72_23> 
 INFO:Xst:2261 - The FF/Latch <registers_72_18> in Unit <registers> is equivalent to the following FF/Latch, which will be removed : <rbus_o_72_18> 
+INFO:Xst:2261 - The FF/Latch <tmp_en_0> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <tmp_en_1> 
 Analyzing FSM <MFsm> for best encoding.
 Optimizing FSM <link_tracking_1_inst/gtp_rx_mux_inst/FSM_0> on signal <state[1:2]> with gray encoding.
 -------------------
@@ -9728,13 +9765,14 @@ Optimizing FSM <link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master
  req_stop_2     | 1111
 ----------------------------
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <link_tracking_1_inst/tracking_core_inst/tracking_readout_inst/FSM_9> on signal <state[1:2]> with gray encoding.
+Optimizing FSM <link_tracking_1_inst/tracking_core_inst/tracking_readout_inst/FSM_9> on signal <state[1:2]> with user encoding.
 -------------------
  State | Encoding
 -------------------
- 000   | 00
- 010   | 01
- 011   | 11
+ 00    | 00
+ 01    | 01
+ 10    | 10
+ 11    | 11
 -------------------
 Analyzing FSM <MFsm> for best encoding.
 Optimizing FSM <link_tracking_1_inst/tracking_core_inst/track_0_inst/FSM_8> on signal <state[1:2]> with user encoding.
@@ -10133,8 +10171,8 @@ Unit <u2> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 13019
- Flip-Flops                                            : 13019
+# Registers                                            : 13032
+ Flip-Flops                                            : 13032
 # Shift Registers                                      : 1
  2-bit shift register                                  : 1
 
@@ -10159,31 +10197,31 @@ Top Level Output File Name         : optohybrid_top.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 11015
+# BELS                             : 11063
 #      GND                         : 22
 #      INV                         : 106
-#      LUT1                        : 407
-#      LUT2                        : 154
-#      LUT3                        : 4420
+#      LUT1                        : 408
+#      LUT2                        : 155
+#      LUT3                        : 4433
 #      LUT4                        : 403
-#      LUT5                        : 1933
-#      LUT6                        : 2263
-#      MUXCY                       : 434
+#      LUT5                        : 1936
+#      LUT6                        : 2275
+#      MUXCY                       : 442
 #      MUXCY_L                     : 85
 #      MUXF5                       : 2
 #      MUXF6                       : 1
-#      MUXF7                       : 242
+#      MUXF7                       : 243
 #      MUXF8                       : 2
 #      VCC                         : 23
-#      XORCY                       : 518
-# FlipFlops/Latches                : 13760
-#      FD                          : 4301
+#      XORCY                       : 527
+# FlipFlops/Latches                : 13773
+#      FD                          : 4310
 #      FDC                         : 122
 #      FDCE                        : 28
-#      FDE                         : 8851
+#      FDE                         : 8853
 #      FDP                         : 82
 #      FDPE                        : 1
-#      FDR                         : 243
+#      FDR                         : 245
 #      FDRE                        : 117
 #      FDS                         : 10
 #      LD                          : 2
@@ -10199,9 +10237,9 @@ Primitive and Black Box Usage:
 #      SRLC32E                     : 38
 # Clock Buffers                    : 9
 #      BUFG                        : 9
-# IO Buffers                       : 50
+# IO Buffers                       : 47
 #      BUFIO2                      : 2
-#      IBUF                        : 18
+#      IBUF                        : 15
 #      IBUFDS                      : 4
 #      IBUFG                       : 1
 #      IOBUF                       : 6
@@ -10223,22 +10261,22 @@ Selected Device : 6slx150tfgg676-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:           13760  out of  184304     7%  
- Number of Slice LUTs:                 9769  out of  92152    10%  
-    Number used as Logic:              9686  out of  92152    10%  
+ Number of Slice Registers:           13773  out of  184304     7%  
+ Number of Slice LUTs:                 9799  out of  92152    10%  
+    Number used as Logic:              9716  out of  92152    10%  
     Number used as Memory:               83  out of  21680     0%  
        Number used as SRL:               83
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:  16560
-   Number with an unused Flip Flop:    2800  out of  16560    16%  
-   Number with an unused LUT:          6791  out of  16560    41%  
-   Number of fully used LUT-FF pairs:  6969  out of  16560    42%  
-   Number of unique control sets:       389
+ Number of LUT Flip Flop pairs used:  16591
+   Number with an unused Flip Flop:    2818  out of  16591    16%  
+   Number with an unused LUT:          6792  out of  16591    40%  
+   Number of fully used LUT-FF pairs:  6981  out of  16591    42%  
+   Number of unique control sets:       392
 
 IO Utilization: 
  Number of IOs:                         289
- Number of bonded IOBs:                  55  out of    396    13%  
+ Number of bonded IOBs:                  52  out of    396    13%  
 
 Specific Feature Utilization:
  Number of Block RAM/FIFO:                5  out of    268     1%  
@@ -10267,9 +10305,9 @@ Clock Information:
 ----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+-------+
 Clock Signal                                                                                        | Clock buffer(FF name)                                                                                          | Load  |
 ----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+-------+
-gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT0_OUT<0>                              | DCM_SP:CLK0                                                                                                    | 9977  |
+gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT0_OUT<0>                              | DCM_SP:CLK0                                                                                                    | 9979  |
+fpga_clk_pll_inst/pll_base_inst/CLKOUT1                                                             | BUFG                                                                                                           | 3418  |
 link_tracking_1_inst/vi2c_core_inst/chip_select_2                                                   | NONE(link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/wrbit_selected_iic[0]_DLATCH_2_q)| 4     |
-fpga_clk_pll_inst/pll_base_inst/CLKOUT1                                                             | BUFG                                                                                                           | 3407  |
 chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL                                          | BUFG                                                                                                           | 405   |
 chipscope_icon_inst/CONTROL1<13>(chipscope_icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[9].U_LCE:O)| NONE(*)(chipscope_ila_inst/U0/I_NO_D.U_ILA/U_STAT/U_DIRTY_LDC)                                                 | 1     |
 chipscope_icon_inst/U0/iUPDATE_OUT                                                                  | NONE(chipscope_icon_inst/U0/U_ICON/U_iDATA_CMD)                                                                | 1     |
@@ -10300,19 +10338,19 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT0_OUT<0>'
   Clock period: 6.957ns (frequency: 143.745MHz)
-  Total number of paths / destination ports: 92156 / 15321
+  Total number of paths / destination ports: 92365 / 15325
 -------------------------------------------------------------------------
 Delay:               6.957ns (Levels of Logic = 5)
-  Source:            cnt_2 (FF)
+  Source:            _i000025_2 (FF)
   Destination:       tx_data_41 (FF)
   Source Clock:      gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT0_OUT<0> rising
   Destination Clock: gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT0_OUT<0> rising
 
-  Data Path: cnt_2 to tx_data_41
+  Data Path: _i000025_2 to tx_data_41
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               3   0.447   1.015  cnt_2 (cnt_2)
+     FD:C->Q               3   0.447   1.015  _i000025_2 (_i000025_2)
      LUT6:I0->O           16   0.203   1.109  PWR_5_o_cnt[14]_equal_3_o<14>2 (PWR_5_o_cnt[14]_equal_3_o<14>1)
      LUT5:I3->O            7   0.203   0.774  PWR_5_o_cnt[14]_equal_3_o<14>3 (PWR_5_o_cnt[14]_equal_3_o)
      LUT6:I5->O            5   0.205   0.715  GND_5_o_cnt[14]_equal_10_o<14>111 (GND_5_o_cnt[14]_equal_10_o<14>11)
@@ -10325,25 +10363,30 @@ Delay:               6.957ns (Levels of Logic = 5)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'fpga_clk_pll_inst/pll_base_inst/CLKOUT1'
-  Clock period: 5.179ns (frequency: 193.083MHz)
-  Total number of paths / destination ports: 33206 / 7020
+  Clock period: 6.252ns (frequency: 159.951MHz)
+  Total number of paths / destination ports: 35739 / 7040
 -------------------------------------------------------------------------
-Delay:               5.179ns (Levels of Logic = 1)
-  Source:            link_tracking_1_inst/tracking_core_inst/track_6_inst/state_FSM_FFd2 (FF)
-  Destination:       link_tracking_1_inst/tracking_core_inst/track_6_inst/data_0 (FF)
+Delay:               6.252ns (Levels of Logic = 6)
+  Source:            cnt_1 (FF)
+  Destination:       tmp_data (FF)
   Source Clock:      fpga_clk_pll_inst/pll_base_inst/CLKOUT1 rising
   Destination Clock: fpga_clk_pll_inst/pll_base_inst/CLKOUT1 rising
 
-  Data Path: link_tracking_1_inst/tracking_core_inst/track_6_inst/state_FSM_FFd2 to link_tracking_1_inst/tracking_core_inst/track_6_inst/data_0
+  Data Path: cnt_1 to tmp_data
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q            215   0.447   2.162  state_FSM_FFd2 (state_FSM_FFd2)
-     LUT2:I0->O          192   0.203   2.046  _n0297_inv1 (_n0297_inv)
-     FDE:CE                    0.322          data_o_0
+     FD:C->Q               9   0.447   1.058  cnt_1 (cnt_1)
+     LUT4:I1->O            3   0.205   0.651  PWR_5_o_cnt[8]_equal_18_o<8>_SW0 (N2)
+     LUT6:I5->O           12   0.205   1.253  PWR_5_o_cnt[8]_equal_18_o<8> (PWR_5_o_cnt[8]_equal_18_o)
+     LUT5:I0->O            3   0.203   0.898  Mmux_cnt[8]_GND_5_o_mux_19_OUT41 (cnt[8]_GND_5_o_mux_19_OUT<3>)
+     LUT6:I2->O            1   0.203   0.000  Mram_data2 (Mram_data1)
+     MUXF7:I1->O           1   0.140   0.684  Mram_data_f7 (Mram_data_f7)
+     LUT3:I1->O            1   0.203   0.000  Mram_data_f8 (_n0167)
+     FDR:D                     0.102          tmp_data
     ----------------------------------------
-    Total                      5.179ns (0.972ns logic, 4.207ns route)
-                                       (18.8% logic, 81.2% route)
+    Total                      6.252ns (1.708ns logic, 4.544ns route)
+                                       (27.3% logic, 72.7% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL'
@@ -10420,7 +10463,7 @@ Offset:              5.121ns (Levels of Logic = 3)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'fpga_clk_pll_inst/pll_base_inst/CLKOUT1'
-  Total number of paths / destination ports: 3160 / 3152
+  Total number of paths / destination ports: 1344 / 1344
 -------------------------------------------------------------------------
 Offset:              5.137ns (Levels of Logic = 5)
   Source:            vfat2_data_15_i<8> (PAD)
@@ -10595,7 +10638,7 @@ Clock to Setup on destination clock fpga_clk_pll_inst/pll_base_inst/CLKOUT1
                                                                       | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                                                          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ----------------------------------------------------------------------+---------+---------+---------+---------+
-fpga_clk_pll_inst/pll_base_inst/CLKOUT1                               |    5.179|         |         |         |
+fpga_clk_pll_inst/pll_base_inst/CLKOUT1                               |    6.252|         |         |         |
 gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT0_OUT<0>|    1.128|         |         |         |
 ----------------------------------------------------------------------+---------+---------+---------+---------+
 
@@ -10628,14 +10671,14 @@ chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL|    2.516|         | 
 =========================================================================
 
 
-Total REAL time to Xst completion: 73.00 secs
-Total CPU time to Xst completion: 73.04 secs
+Total REAL time to Xst completion: 72.00 secs
+Total CPU time to Xst completion: 72.28 secs
  
 --> 
 
-Total memory usage is 318428 kilobytes
+Total memory usage is 319708 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  424 (   0 filtered)
-Number of infos    : 8244 (   0 filtered)
+Number of warnings :  425 (   0 filtered)
+Number of infos    : 8246 (   0 filtered)
 

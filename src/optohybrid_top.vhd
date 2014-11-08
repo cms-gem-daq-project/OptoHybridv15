@@ -121,6 +121,10 @@ architecture Behavioral of optohybrid_top is
     signal cs_out       : std_logic_vector(31 downto 0);
     signal cs_ila       : std_logic_vector(31 downto 0);
     
+    -- Testing 
+    signal tmp_en       : std_logic_vector(1 downto 0) := (others => '0');
+    signal tmp_data     : std_logic := '0';
+    
 begin
 
     -- OptoHybrid reset
@@ -209,8 +213,8 @@ begin
         vfat2_sda_o     => vfat2_sda_o(3 downto 2),
         vfat2_sda_t     => vfat2_sda_t(3 downto 2),
         vfat2_scl_o     => vfat2_scl_o(3 downto 2),
-        vfat2_dvalid_i  => vfat2_dvalid_i(3 downto 2),
-        vfat2_data_0_i  => vfat2_data_8_i(8),
+        vfat2_dvalid_i  => tmp_en, --vfat2_dvalid_i(3 downto 2),
+        vfat2_data_0_i  => tmp_data, --vfat2_data_8_i(8),
         vfat2_data_1_i  => vfat2_data_9_i(8),
         vfat2_data_2_i  => vfat2_data_10_i(8),
         vfat2_data_3_i  => vfat2_data_11_i(8),
@@ -237,10 +241,8 @@ begin
     -- Testing
     --================================--
     
-    
-    -- RX
     process(gtp_clk)
-        variable cnt : integer range 0 to 20_000 := 0;
+        variable cnt    : integer range 0 to 20_000 := 0;
     begin
         if (rising_edge(gtp_clk)) then
             if (cnt = 20_000) then
@@ -292,5 +294,26 @@ begin
             end if;
         end if;
     end process; 
+    
+    process(vfat2_clk)
+        variable cnt    : integer range 0 to 400 := 0;
+        variable data   : std_logic_vector(191 downto 0) := x"0123456789012345678901234567890123456789ABCDEF01";
+    begin
+        if (rising_edge(vfat2_clk)) then
+            if (cnt = 400) then
+                cnt := 0;
+            else
+                cnt := cnt + 1;
+            end if;
+            
+            if (cnt < 192) then
+                tmp_en <= "11";
+                tmp_data <= data(cnt);
+            else
+                tmp_en <= "00";
+                tmp_data <= '0';
+            end if;
+        end if;
+    end process;
        
 end Behavioral;

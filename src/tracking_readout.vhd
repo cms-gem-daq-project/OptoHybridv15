@@ -26,9 +26,10 @@ begin
 
     process(gtp_clk_i)
         
-        variable state  : integer range 0 to 7 := 0;
+        variable state      : integer range 0 to 3 := 0;
+        variable wait_cnt   : integer range 0 to 3 := 0;
         
-        variable data   : std_logic_vector(191 downto 0) := (others => '0');
+        variable data       : std_logic_vector(191 downto 0) := (others => '0');    
     
     begin
     
@@ -47,20 +48,33 @@ begin
                 -- Request data
                 if (state = 0) then
                 
+                    fifo_read_o <= '1';
+                    
+                    wait_cnt := 2;
+                    
+                    state := 1;
+                
+                -- Wait for valid
+                elsif (state = 1) then
+                
+                    fifo_read_o <= '0';
+                   
                     if (fifo_valid_i = '1') then
                     
-                        fifo_read_o <= '0';
-                        
                         data := fifo_data_i;
                         
                         state := 2;
                         
-                    else 
+                    elsif (wait_cnt = 0) then
+                        
+                        state := 0;
+                   
+                    else
                     
-                        fifo_read_o <= '1';
+                        wait_cnt := wait_cnt - 1;
                         
                     end if;
-                    
+                                        
                 -- Set data ready
                 elsif (state = 2) then
                 
