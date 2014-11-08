@@ -9,32 +9,32 @@ end sim_link_tracking;
 architecture behavior of sim_link_tracking is 
 
     --inputs
-    signal vfat2_clk_i         : std_logic := '0';
-    signal gtp_clk_i           : std_logic := '0';
-    signal reset_i             : std_logic := '0';
-    signal rx_error_i          : std_logic := '0';
-    signal rx_kchar_i          : std_logic_vector(1 downto 0) := (others => '0');
-    signal rx_data_i           : std_logic_vector(15 downto 0) := (others => '0');
-    signal vfat2_dvalid_i      : std_logic_vector(1 downto 0) := (others => '0');
-    signal vfat2_data_0_i      : std_logic := '0';
-    signal vfat2_data_1_i      : std_logic := '0';
-    signal vfat2_data_2_i      : std_logic := '0';
-    signal vfat2_data_3_i      : std_logic := '0';
-    signal vfat2_data_4_i      : std_logic := '0';
-    signal vfat2_data_5_i      : std_logic := '0';
-    signal vfat2_data_6_i      : std_logic := '0';
-    signal vfat2_data_7_i      : std_logic := '0';
-    signal sda_i               : std_logic_vector(1 downto 0) := (others => '0');
-    
-    --outputs
-    signal tx_kchar_o          : std_logic_vector(1 downto 0) := (others => '0');
-    signal tx_data_o           : std_logic_vector(15 downto 0) := (others => '0');
-    signal sda_o               : std_logic_vector(1 downto 0) := (others => '0');
-    signal sda_t               : std_logic_vector(1 downto 0) := (others => '0');
-    signal scl_o               : std_logic_vector(1 downto 0) := (others => '0');
+    signal vfat2_clk_i          : std_logic := '0';
+    signal gtp_clk_i            : std_logic := '0';
+    signal reset_i              : std_logic := '0';
+    signal rx_error_i           : std_logic := '0';
+    signal rx_kchar_i           : std_logic_vector(1 downto 0) := (others => '0');
+    signal rx_data_i            : std_logic_vector(15 downto 0) := (others => '0');
+    signal vfat2_dvalid_i       : std_logic_vector(1 downto 0) := (others => '0');
+    signal vfat2_data_0_i       : std_logic := '0';
+    signal vfat2_data_1_i       : std_logic := '0';
+    signal vfat2_data_2_i       : std_logic := '0';
+    signal vfat2_data_3_i       : std_logic := '0';
+    signal vfat2_data_4_i       : std_logic := '0';
+    signal vfat2_data_5_i       : std_logic := '0';
+    signal vfat2_data_6_i       : std_logic := '0';
+    signal vfat2_data_7_i       : std_logic := '0';
+    signal vfat2_sda_i          : std_logic_vector(1 downto 0) := (others => '0');
 
-    constant vfat2_clk_period  : time := 25 ns;
-    constant gtp_clk_period    : time := 6.25 ns;
+    --outputs
+    signal tx_kchar_o           : std_logic_vector(1 downto 0) := (others => '0');
+    signal tx_data_o            : std_logic_vector(15 downto 0) := (others => '0');
+    signal sda_o                : std_logic_vector(1 downto 0) := (others => '0');
+    signal vfat2_sda_t          : std_logic_vector(1 downto 0) := (others => '0');
+    signal vfat2_scl_o          : std_logic_vector(1 downto 0) := (others => '0');
+
+    constant vfat2_clk_period   : time := 25 ns;
+    constant gtp_clk_period     : time := 6.25 ns;
  
 begin
 
@@ -48,10 +48,10 @@ begin
         rx_data_i       => rx_data_i,
         tx_kchar_o      => tx_kchar_o,
         tx_data_o       => tx_data_o,
-        sda_i           => sda_i,
-        sda_o           => sda_o,
-        sda_t           => sda_t,
-        scl_o           => scl_o,
+        vfat2_sda_i     => vfat2_sda_i,
+        vfat2_sda_o     => vfat2_sda_o,
+        vfat2_sda_t     => vfat2_sda_t,
+        vfat2_scl_o     => vfat2_scl_o,
         vfat2_dvalid_i  => vfat2_dvalid_i,
         vfat2_data_0_i  => vfat2_data_0_i,
         vfat2_data_1_i  => vfat2_data_1_i,

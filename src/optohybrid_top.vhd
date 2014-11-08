@@ -34,11 +34,6 @@ port(
     cdce_pri_p_o        : out std_logic;
     cdce_pri_n_o        : out std_logic;
     
-    -- IIC signals
-    
-    sda_io              : inout std_logic_vector(5 downto 0); -- 6 IIC sectors
-    scl_o               : inout std_logic_vector(5 downto 0);
-    
     -- VFAT2 common lines
     
     vfat2_resets_o      : out std_logic_vector(1 downto 0);
@@ -46,8 +41,10 @@ port(
     vfat2_mclk_n_o      : out std_logic;
     vfat2_t1_p_o        : out std_logic;
     vfat2_t1_n_o        : out std_logic;
-    vfat2_dvalid_i      : in std_logic_vector(5 downto 0); -- 6 data_valid sectors
-    
+    vfat2_sda_io        : inout std_logic_vector(5 downto 0);
+    vfat2_scl_o         : inout std_logic_vector(5 downto 0);
+    vfat2_dvalid_i      : in std_logic_vector(5 downto 0);
+
     -- VFAT2 signal lines
     
     vfat2_data_0_i      : in std_logic_vector(8 downto 0); -- 7 downto 0 = S bits, 8 = data_out (tracking)
@@ -92,55 +89,37 @@ architecture Behavioral of optohybrid_top is
     
     -- Clocking
 
-    signal fpga_clk         : std_logic := '0';  
-    signal clk40MHz         : std_logic := '0';
-    signal vfat2_clk        : std_logic := '0';
-    signal gtp_clk          : std_logic := '0';
+    signal fpga_clk     : std_logic := '0';  
+    signal clk40MHz     : std_logic := '0';
+    signal vfat2_clk    : std_logic := '0';
+    signal gtp_clk      : std_logic := '0';
     
     -- Resets
     
-    signal reset            : std_logic := '0';
-    
-    -- GTP
-    
-    signal rx_error         : std_logic_vector(3 downto 0) := (others => '0');
-    signal rx_kchar         : std_logic_vector(7 downto 0) := (others => '0');
-    signal rx_data          : std_logic_vector(63 downto 0) := (others => '0');
-    signal tx_kchar         : std_logic_vector(7 downto 0) := (others => '0');
-    signal tx_data          : std_logic_vector(63 downto 0) := (others => '0');
-    
-    alias rx_error_0        : std_logic is rx_error(0);
-    alias rx_error_1        : std_logic is rx_error(1);
-    alias rx_error_2        : std_logic is rx_error(2);
-    alias rx_error_3        : std_logic is rx_error(3);
-    
-    alias rx_kchar_0        : std_logic_vector(1 downto 0) is rx_kchar(1 downto 0);
-    alias rx_kchar_1        : std_logic_vector(1 downto 0) is rx_kchar(3 downto 2);
-    alias rx_kchar_2        : std_logic_vector(1 downto 0) is rx_kchar(5 downto 4);
-    alias rx_kchar_3        : std_logic_vector(1 downto 0) is rx_kchar(7 downto 6);
-    
-    alias rx_data_0         : std_logic_vector(15 downto 0) is rx_data(15 downto 0);
-    alias rx_data_1         : std_logic_vector(15 downto 0) is rx_data(31 downto 16);
-    alias rx_data_2         : std_logic_vector(15 downto 0) is rx_data(47 downto 32);
-    alias rx_data_3         : std_logic_vector(15 downto 0) is rx_data(63 downto 48);
-    
-    alias tx_kchar_0        : std_logic_vector(1 downto 0) is tx_kchar(1 downto 0);
-    alias tx_kchar_1        : std_logic_vector(1 downto 0) is tx_kchar(3 downto 2);
-    alias tx_kchar_2        : std_logic_vector(1 downto 0) is tx_kchar(5 downto 4);
-    alias tx_kchar_3        : std_logic_vector(1 downto 0) is tx_kchar(7 downto 6);
-    
-    alias tx_data_0         : std_logic_vector(15 downto 0) is tx_data(15 downto 0);
-    alias tx_data_1         : std_logic_vector(15 downto 0) is tx_data(31 downto 16);
-    alias tx_data_2         : std_logic_vector(15 downto 0) is tx_data(47 downto 32);
-    alias tx_data_3         : std_logic_vector(15 downto 0) is tx_data(63 downto 48);
+    signal reset        : std_logic := '0';
     
     -- VFAT2
     
-    signal vfat2_t1         : std_logic := '0';
+    signal vfat2_t1     : std_logic := '0';
+    signal vfat2_sda_i  : std_logic_vector(5 downto 0) := (others => '0');
+    signal vfat2_sda_o  : std_logic_vector(5 downto 0) := (others => '0');
+    signal vfat2_sda_t  : std_logic_vector(5 downto 0) := (others => '0');
     
-    signal sda_i            : std_logic_vector(5 downto 0) := (others => '0');
-    signal sda_o            : std_logic_vector(5 downto 0) := (others => '0');
-    signal sda_t            : std_logic_vector(5 downto 0) := (others => '0');
+    -- GTP
+    
+    signal rx_error     : std_logic_vector(3 downto 0) := (others => '0');
+    signal rx_kchar     : std_logic_vector(7 downto 0) := (others => '0');
+    signal rx_data      : std_logic_vector(63 downto 0) := (others => '0');
+    signal tx_kchar     : std_logic_vector(7 downto 0) := (others => '0');
+    signal tx_data      : std_logic_vector(63 downto 0) := (others => '0');
+
+    -- ChipScope signals
+    
+    signal cs_icon0     : std_logic_vector(35 downto 0);
+    signal cs_icon1     : std_logic_vector(35 downto 0);
+    signal cs_in        : std_logic_vector(31 downto 0);
+    signal cs_out       : std_logic_vector(31 downto 0);
+    signal cs_ila       : std_logic_vector(31 downto 0);
     
 begin
 
@@ -156,6 +135,14 @@ begin
     
     -- Resets 
     vfat2_resets_o <= "11";
+    
+    -- I2C
+    vfat2_sda_0_iobuf : iobuf port map (o => vfat2_sda_i(0), io => vfat2_sda_io(0), i => vfat2_sda_o(0), t => vfat2_sda_t(0));    
+    vfat2_sda_1_iobuf : iobuf port map (o => vfat2_sda_i(1), io => vfat2_sda_io(1), i => vfat2_sda_o(1), t => vfat2_sda_t(1));    
+    vfat2_sda_2_iobuf : iobuf port map (o => vfat2_sda_i(2), io => vfat2_sda_io(2), i => vfat2_sda_o(2), t => vfat2_sda_t(2));    
+    vfat2_sda_3_iobuf : iobuf port map (o => vfat2_sda_i(3), io => vfat2_sda_io(3), i => vfat2_sda_o(3), t => vfat2_sda_t(3));    
+    vfat2_sda_4_iobuf : iobuf port map (o => vfat2_sda_i(4), io => vfat2_sda_io(4), i => vfat2_sda_o(4), t => vfat2_sda_t(4));    
+    vfat2_sda_5_iobuf : iobuf port map (o => vfat2_sda_i(5), io => vfat2_sda_io(5), i => vfat2_sda_o(5), t => vfat2_sda_t(5));
     
     --================================--
     -- Clocking
@@ -205,17 +192,6 @@ begin
     );   
     
     --================================--
-    -- I2C
-    --================================--
-    
-    sda_0_iobuf : iobuf port map (o => sda_i(0), io => sda_io(0), i => sda_o(0), t => sda_t(0));    
-    sda_1_iobuf : iobuf port map (o => sda_i(1), io => sda_io(1), i => sda_o(1), t => sda_t(1));    
-    sda_2_iobuf : iobuf port map (o => sda_i(2), io => sda_io(2), i => sda_o(2), t => sda_t(2));    
-    sda_3_iobuf : iobuf port map (o => sda_i(3), io => sda_io(3), i => sda_o(3), t => sda_t(3));    
-    sda_4_iobuf : iobuf port map (o => sda_i(4), io => sda_io(4), i => sda_o(4), t => sda_t(4));    
-    sda_5_iobuf : iobuf port map (o => sda_i(5), io => sda_io(5), i => sda_o(5), t => sda_t(5));
-    
-    --================================--
     -- Tracking Link
     --================================--
     
@@ -224,15 +200,15 @@ begin
         gtp_clk_i       => gtp_clk,
         vfat2_clk_i     => vfat2_clk,
         reset_i         => reset,
-        rx_error_i      => rx_error_1,
-        rx_kchar_i      => rx_kchar_1,
-        rx_data_i       => rx_data_1,
-        tx_kchar_o      => tx_kchar_1,
-        tx_data_o       => tx_data_1,
-        sda_i           => sda_i(3 downto 2),
-        sda_o           => sda_o(3 downto 2),
-        sda_t           => sda_t(3 downto 2),
-        scl_o           => scl_o(3 downto 2),
+        rx_error_i      => rx_error(1),
+        rx_kchar_i      => rx_kchar(3 downto 2),
+        rx_data_i       => rx_data(31 downto 16),
+        tx_kchar_o      => tx_kchar(3 downto 2),
+        tx_data_o       => tx_data(31 downto 16),
+        vfat2_sda_i     => vfat2_sda_i(3 downto 2),
+        vfat2_sda_o     => vfat2_sda_o(3 downto 2),
+        vfat2_sda_t     => vfat2_sda_t(3 downto 2),
+        vfat2_scl_o     => vfat2_scl_o(3 downto 2),
         vfat2_dvalid_i  => vfat2_dvalid_i(3 downto 2),
         vfat2_data_0_i  => vfat2_data_8_i(8),
         vfat2_data_1_i  => vfat2_data_9_i(8),
@@ -243,5 +219,17 @@ begin
         vfat2_data_6_i  => vfat2_data_14_i(8),
         vfat2_data_7_i  => vfat2_data_15_i(8)
     );
+    
+    --================================--
+    -- ChipScope
+    --================================--
+    
+    chipscope_icon_inst : entity work.chipscope_icon port map (CONTROL0 => cs_icon0, CONTROL1 => cs_icon1);
+    
+    chipscope_vio_inst : entity work.chipscope_vio port map (CONTROL => cs_icon0, ASYNC_IN => cs_in, ASYNC_OUT => cs_out);
+    
+    chipscope_ila_inst : entity work.chipscope_ila port map (CONTROL => cs_icon1, CLK => gtp_clk_i, TRIG0 => cs_ila);
+    
+    cs_ila <= tx_data(31 downto 16) & rx_data_i(31 downto 16);
        
 end Behavioral;

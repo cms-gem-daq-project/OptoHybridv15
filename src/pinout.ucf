@@ -41,11 +41,6 @@ NET "cdce_pri_n_o"          LOC = A12 | IOSTANDARD = LVDS_25;
 # IIC
 #
 
-NET "scl_o<2>"              LOC = B23 | IOSTANDARD = I2C;
-NET "scl_o<3>"              LOC = D22 | IOSTANDARD = I2C;
-
-NET "sda_io<2>"             LOC = B22 | IOSTANDARD = I2C;
-NET "sda_io<3>"             LOC = D21 | IOSTANDARD = I2C;
 
 #
 # VFAT2 signals
@@ -59,6 +54,12 @@ NET "vfat2_mclk_n_o"        LOC = D13 | IOSTANDARD = LVDS_25;
 
 NET "vfat2_t1_p_o"          LOC = J16 | IOSTANDARD = LVDS_25;
 NET "vfat2_t1_n_o"          LOC = J17 | IOSTANDARD = LVDS_25;
+
+NET "vfat2_scl_o<2>"        LOC = B23 | IOSTANDARD = I2C;
+NET "vfat2_scl_o<3>"        LOC = D22 | IOSTANDARD = I2C;
+
+NET "vfat2_sda_io<2>"       LOC = B22 | IOSTANDARD = I2C;
+NET "vfat2_sda_io<3>"       LOC = D21 | IOSTANDARD = I2C;
 
 NET "vfat2_dvalid_i<2>"     LOC = F24 | IOSTANDARD = LVCMOS33;
 NET "vfat2_dvalid_i<3>"     LOC = G24 | IOSTANDARD = LVCMOS33;

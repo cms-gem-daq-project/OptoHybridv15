@@ -24,14 +24,14 @@ port(
     
     -- IIC signals
     
-    sda_i           : in std_logic_vector(1 downto 0); -- 2 IIC sectors
-    sda_o           : out std_logic_vector(1 downto 0);
-    sda_t           : out std_logic_vector(1 downto 0);
-    scl_o           : out std_logic_vector(1 downto 0);
+    vfat2_sda_i     : in std_logic_vector(1 downto 0);
+    vfat2_sda_o     : out std_logic_vector(1 downto 0);
+    vfat2_sda_t     : out std_logic_vector(1 downto 0);
+    vfat2_scl_o     : out std_logic_vector(1 downto 0);
     
     -- VFAT2 data lines
     
-    vfat2_dvalid_i  : in std_logic_vector(1 downto 0); -- 2 data valid sectors
+    vfat2_dvalid_i  : in std_logic_vector(1 downto 0);
     
     vfat2_data_0_i  : in std_logic;
     vfat2_data_1_i  : in std_logic;
@@ -46,11 +46,6 @@ port(
 end link_tracking;
 
 architecture Behavioral of link_tracking is
-
-    signal rx_kchar : std_logic_vector(1 downto 0);
-    signal rx_data : std_logic_vector(15 downto 0);
-    signal tx_kchar : std_logic_vector(1 downto 0);
-    signal tx_data : std_logic_vector(15 downto 0);
     
     -- VFAT2 I2C signals
     
@@ -86,14 +81,6 @@ architecture Behavioral of link_tracking is
     signal regs_rx_counter  : std_logic_vector(31 downto 0) := (others => '0');
     signal regs_tx_counter  : std_logic_vector(31 downto 0) := (others => '0');
 
-    -- ChipScope signals
-    
-    signal cs_icon0     : std_logic_vector(35 downto 0);
-    signal cs_icon1     : std_logic_vector(35 downto 0);
-    signal cs_in        : std_logic_vector(31 downto 0);
-    signal cs_out       : std_logic_vector(31 downto 0);
-    signal cs_ila       : std_logic_vector(31 downto 0);
-
 begin
 
     --================================--
@@ -126,10 +113,8 @@ begin
         track_done_o    => track_tx_done,
         track_data_i    => track_tx_data, 
         tx_kchar_o      => tx_kchar_o,
-        tx_data_o       => tx_data
+        tx_data_o       => tx_data_o
     );
-    
-    tx_data_o <= tx_data;
     
     --================================--
     -- VFAT2 I2C
@@ -144,10 +129,10 @@ begin
         tx_ready_o      => vi2c_tx_ready,
         tx_done_i       => vi2c_tx_done,
         tx_data_o       => vi2c_tx_data,
-        sda_i           => sda_i,
-        sda_o           => sda_o,
-        sda_t           => sda_t,
-        scl_o           => scl_o
+        sda_i           => vfat2_sda_i,
+        sda_o           => vfat2_sda_o,
+        sda_t           => vfat2_sda_t,
+        scl_o           => vfat2_scl_o
     );
     
     --================================--
@@ -227,19 +212,5 @@ begin
         vfat2_data_6_i  => vfat2_data_6_i,
         vfat2_data_7_i  => vfat2_data_7_i
     );
-    
-    --================================--
-    -- ChipScope
-    --================================--
-    
-    chipscope_icon_inst : entity work.chipscope_icon port map (CONTROL0 => cs_icon0, CONTROL1 => cs_icon1);
-    
-    chipscope_vio_inst : entity work.chipscope_vio port map (CONTROL => cs_icon0, ASYNC_IN => cs_in, ASYNC_OUT => cs_out);
-    
-    chipscope_ila_inst : entity work.chipscope_ila port map (CONTROL => cs_icon1, CLK => gtp_clk_i, TRIG0 => cs_ila);
-    
-    cs_ila <= tx_data & rx_data_i;
-    
-    cs_in <= vi2c_tx_data;
     
 end Behavioral;
