@@ -231,5 +231,66 @@ begin
     chipscope_ila_inst : entity work.chipscope_ila port map (CONTROL => cs_icon1, CLK => gtp_clk, TRIG0 => cs_ila);
     
     cs_ila <= tx_data(31 downto 16) & rx_data(31 downto 16);
+    
+    
+    --================================--
+    -- Testing
+    --================================--
+    
+    
+    -- RX
+    process(gtp_clk)
+        variable cnt : integer range 0 to 20_000 := 0;
+    begin
+        if (rising_edge(gtp_clk)) then
+            if (cnt = 20_000) then
+                cnt := 0;
+            else
+                cnt := cnt + 1;
+            end if;
+            
+            -- I2C
+            if (cnt = 1) then
+                tx_data(47 downto 32) <= x"01BC";
+                tx_kchar(5 downto 4) <= "01";
+            elsif (cnt = 2) then
+                tx_data(47 downto 32) <= "00101000" & "00001000";
+                tx_kchar(5 downto 4) <= "00";
+            elsif (cnt = 3) then
+                tx_data(47 downto 32) <= "00000000" & x"21";
+                tx_kchar(5 downto 4) <= "00";
+            -- Regs write
+            elsif (cnt = 1_000) then
+                tx_data(47 downto 32) <= x"02BC";
+                tx_kchar(5 downto 4) <= "01";
+            elsif (cnt = 1_001) then
+                tx_data(47 downto 32) <= "00000000" & "00000000";
+                tx_kchar(5 downto 4) <= "00";
+            elsif (cnt = 1_002) then
+                tx_data(47 downto 32) <= "00000000" & "11111001";
+                tx_kchar(5 downto 4) <= "00";
+            elsif (cnt = 1_003) then
+                tx_data(47 downto 32) <= "00000100" & "11111111";
+                tx_kchar(5 downto 4) <= "00";
+            -- Regs read
+            elsif (cnt = 1_200) then
+                tx_data(47 downto 32) <= x"02BC";
+                tx_kchar(5 downto 4) <= "01";
+            elsif (cnt = 1_201) then
+                tx_data(47 downto 32) <= "00000000" & "00000000";
+                tx_kchar(5 downto 4) <= "00";
+            elsif (cnt = 1_202) then
+                tx_data(47 downto 32) <= "00000000" & "00000000";
+                tx_kchar(5 downto 4) <= "00";
+            elsif (cnt = 1_203) then
+                tx_data(47 downto 32) <= "11111101" & "11111111";
+                tx_kchar(5 downto 4) <= "00";
+            -- Other
+            else    
+                tx_data(47 downto 32) <= x"00BC";
+                tx_kchar(5 downto 4) <= "00";
+            end if;
+        end if;
+    end process; 
        
 end Behavioral;

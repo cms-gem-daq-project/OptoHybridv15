@@ -1,8 +1,31 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Sat Nov 08 10:21:24 2014
+// Written by: Map P.20131013 on Sat Nov 08 12:17:29 2014
 //! **************************************************************************
 
 SCHEMATIC START;
+COMP "cdce_plllock_i" LOCATE = SITE "J7" LEVEL 1;
+COMP "enable_gtp_o" LOCATE = SITE "AA23" LEVEL 1;
+COMP "cdce_le_o" LOCATE = SITE "L10" LEVEL 1;
+COMP "cdce_ref_o" LOCATE = SITE "J9" LEVEL 1;
+COMP "fpga_rx_i" LOCATE = SITE "B1" LEVEL 1;
+COMP "fpga_tx_o" LOCATE = SITE "C1" LEVEL 1;
+COMP "leds_o<0>" LOCATE = SITE "AF13" LEVEL 1;
+COMP "leds_o<1>" LOCATE = SITE "AF14" LEVEL 1;
+COMP "leds_o<2>" LOCATE = SITE "AF15" LEVEL 1;
+COMP "leds_o<3>" LOCATE = SITE "AE15" LEVEL 1;
+COMP "cdce_miso_i" LOCATE = SITE "K9" LEVEL 1;
+COMP "vfat2_t1_n_o" LOCATE = SITE "J17" LEVEL 1;
+COMP "cdce_sclk_o" LOCATE = SITE "K10" LEVEL 1;
+COMP "vfat2_t1_p_o" LOCATE = SITE "J16" LEVEL 1;
+COMP "cdce_mosi_o" LOCATE = SITE "L9" LEVEL 1;
+COMP "cdce_sync_o" LOCATE = SITE "H6" LEVEL 1;
+COMP "cdce_auxout_i" LOCATE = SITE "H5" LEVEL 1;
+COMP "vfat2_sda_io<2>" LOCATE = SITE "B22" LEVEL 1;
+COMP "vfat2_sda_io<3>" LOCATE = SITE "D21" LEVEL 1;
+COMP "cdce_powerdown_o" LOCATE = SITE "G4" LEVEL 1;
+COMP "fpga_clk_i" LOCATE = SITE "AD14" LEVEL 1;
+COMP "rx_n_i<0>" LOCATE = SITE "C7" LEVEL 1;
+COMP "rx_n_i<1>" LOCATE = SITE "C9" LEVEL 1;
 COMP "rx_n_i<2>" LOCATE = SITE "C17" LEVEL 1;
 COMP "rx_n_i<3>" LOCATE = SITE "C19" LEVEL 1;
 COMP "rx_p_i<0>" LOCATE = SITE "D7" LEVEL 1;
@@ -45,8 +68,6 @@ COMP "vfat2_data_13_i<5>" LOCATE = SITE "W24" LEVEL 1;
 COMP "vfat2_data_13_i<6>" LOCATE = SITE "V24" LEVEL 1;
 COMP "vfat2_data_13_i<7>" LOCATE = SITE "U24" LEVEL 1;
 COMP "vfat2_data_13_i<8>" LOCATE = SITE "T24" LEVEL 1;
-COMP "scl_o<2>" LOCATE = SITE "B23" LEVEL 1;
-COMP "scl_o<3>" LOCATE = SITE "D22" LEVEL 1;
 COMP "gtp_refclk_n_i<0>" LOCATE = SITE "A10" LEVEL 1;
 COMP "gtp_refclk_n_i<1>" LOCATE = SITE "C11" LEVEL 1;
 COMP "gtp_refclk_n_i<2>" LOCATE = SITE "C15" LEVEL 1;
@@ -67,6 +88,8 @@ COMP "vfat2_mclk_n_o" LOCATE = SITE "D13" LEVEL 1;
 COMP "vfat2_mclk_p_o" LOCATE = SITE "E13" LEVEL 1;
 COMP "cdce_pri_n_o" LOCATE = SITE "A12" LEVEL 1;
 COMP "cdce_pri_p_o" LOCATE = SITE "B12" LEVEL 1;
+COMP "vfat2_scl_o<2>" LOCATE = SITE "B23" LEVEL 1;
+COMP "vfat2_scl_o<3>" LOCATE = SITE "D22" LEVEL 1;
 COMP "fpga_test_o<0>" LOCATE = SITE "E1" LEVEL 1;
 COMP "fpga_test_o<1>" LOCATE = SITE "D1" LEVEL 1;
 COMP "fpga_test_o<2>" LOCATE = SITE "G1" LEVEL 1;
@@ -99,29 +122,6 @@ COMP "gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/gtpa1_dual_i"
         LOCATE = SITE "GTPA1_DUAL_X0Y1" LEVEL 1;
 COMP "gtp_wrapper_inst/gtp_inst/tile1_s6_gtpwizard_v1_11_i/gtpa1_dual_i"
         LOCATE = SITE "GTPA1_DUAL_X1Y1" LEVEL 1;
-COMP "cdce_plllock_i" LOCATE = SITE "J7" LEVEL 1;
-COMP "enable_gtp_o" LOCATE = SITE "AA23" LEVEL 1;
-COMP "cdce_le_o" LOCATE = SITE "L10" LEVEL 1;
-COMP "cdce_ref_o" LOCATE = SITE "J9" LEVEL 1;
-COMP "fpga_rx_i" LOCATE = SITE "B1" LEVEL 1;
-COMP "fpga_tx_o" LOCATE = SITE "C1" LEVEL 1;
-COMP "leds_o<0>" LOCATE = SITE "AF13" LEVEL 1;
-COMP "leds_o<1>" LOCATE = SITE "AF14" LEVEL 1;
-COMP "leds_o<2>" LOCATE = SITE "AF15" LEVEL 1;
-COMP "leds_o<3>" LOCATE = SITE "AE15" LEVEL 1;
-COMP "cdce_miso_i" LOCATE = SITE "K9" LEVEL 1;
-COMP "vfat2_t1_n_o" LOCATE = SITE "J17" LEVEL 1;
-COMP "cdce_sclk_o" LOCATE = SITE "K10" LEVEL 1;
-COMP "vfat2_t1_p_o" LOCATE = SITE "J16" LEVEL 1;
-COMP "cdce_mosi_o" LOCATE = SITE "L9" LEVEL 1;
-COMP "cdce_sync_o" LOCATE = SITE "H6" LEVEL 1;
-COMP "cdce_auxout_i" LOCATE = SITE "H5" LEVEL 1;
-COMP "sda_io<2>" LOCATE = SITE "B22" LEVEL 1;
-COMP "sda_io<3>" LOCATE = SITE "D21" LEVEL 1;
-COMP "cdce_powerdown_o" LOCATE = SITE "G4" LEVEL 1;
-COMP "fpga_clk_i" LOCATE = SITE "AD14" LEVEL 1;
-COMP "rx_n_i<0>" LOCATE = SITE "C7" LEVEL 1;
-COMP "rx_n_i<1>" LOCATE = SITE "C9" LEVEL 1;
 PIN
         link_tracking_1_inst/tracking_core_inst/tracking_buffer_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram_pins<26>
         = BEL

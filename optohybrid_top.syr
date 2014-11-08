@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total CPU time to Xst completion: 0.17 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total CPU time to Xst completion: 0.17 secs
  
 --> Reading design: optohybrid_top.prj
 
@@ -299,13 +299,35 @@ WARNING:Xst:2935 - Signal 'vfat2_sda_o<5:4>', unconnected in block 'optohybrid_t
 WARNING:Xst:2935 - Signal 'vfat2_sda_o<1:0>', unconnected in block 'optohybrid_top', is tied to its initial value (00).
 WARNING:Xst:2935 - Signal 'vfat2_sda_t<5:4>', unconnected in block 'optohybrid_top', is tied to its initial value (00).
 WARNING:Xst:2935 - Signal 'vfat2_sda_t<1:0>', unconnected in block 'optohybrid_top', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'tx_kchar<7:4>', unconnected in block 'optohybrid_top', is tied to its initial value (0000).
+WARNING:Xst:2935 - Signal 'tx_kchar<7:6>', unconnected in block 'optohybrid_top', is tied to its initial value (00).
 WARNING:Xst:2935 - Signal 'tx_kchar<1:0>', unconnected in block 'optohybrid_top', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'tx_data<63:32>', unconnected in block 'optohybrid_top', is tied to its initial value (00000000000000000000000000000000).
+WARNING:Xst:2935 - Signal 'tx_data<63:48>', unconnected in block 'optohybrid_top', is tied to its initial value (0000000000000000).
 WARNING:Xst:2935 - Signal 'tx_data<15:0>', unconnected in block 'optohybrid_top', is tied to its initial value (0000000000000000).
 WARNING:Xst:653 - Signal <cs_in> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Register <tx_data<36>> equivalent to <tx_data<39>> has been removed
+    Register <tx_data<43>> equivalent to <tx_data<45>> has been removed
+    Register <tx_data<33>> equivalent to <tx_data<42>> has been removed
+    Register <tx_data<44>> equivalent to <tx_data<47>> has been removed
+    Register <tx_data<46>> equivalent to <tx_data<47>> has been removed
+    Found 1-bit register for signal <tx_data<47>>.
+    Found 1-bit register for signal <tx_data<45>>.
+    Found 1-bit register for signal <tx_data<42>>.
+    Found 1-bit register for signal <tx_data<41>>.
+    Found 1-bit register for signal <tx_data<40>>.
+    Found 1-bit register for signal <tx_data<39>>.
+    Found 1-bit register for signal <tx_data<38>>.
+    Found 1-bit register for signal <tx_data<37>>.
+    Found 1-bit register for signal <tx_data<35>>.
+    Found 1-bit register for signal <tx_data<34>>.
+    Found 1-bit register for signal <tx_data<32>>.
+    Found 1-bit register for signal <tx_kchar<4>>.
+    Found 15-bit register for signal <cnt>.
+    Found 15-bit adder for signal <cnt[14]_GND_5_o_add_3_OUT> created at line 249.
+    WARNING:Xst:2404 -  FFs/Latches <tx_kchar<5><0:0>> (without init value) have a constant value of 0 in block <optohybrid_top>.
     Summary:
-	no macro.
+	inferred   1 Adder/Subtractor(s).
+	inferred  27 D-type flip-flop(s).
+	inferred  45 Multiplexer(s).
 Unit <optohybrid_top> synthesized.
 
 Synthesizing Unit <fpga_clk_pll>.
@@ -479,7 +501,7 @@ Synthesizing Unit <vi2c_core>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 32x4-bit Read Only RAM for signal <_n0369>
+    Found 32x4-bit Read Only RAM for signal <_n0368>
     Found 8-bit comparator equal for signal <crc_byte[7]_crc_check[7]_equal_14_o> created at line 132
     Summary:
 	inferred   1 RAM(s).
@@ -1189,10 +1211,11 @@ HDL Synthesis Report
 Macro Statistics
 # RAMs                                                 : 1
  32x4-bit single-port Read Only RAM                    : 1
-# Adders/Subtractors                                   : 28
+# Adders/Subtractors                                   : 29
  10-bit adder                                          : 1
  12-bit adder                                          : 1
  12-bit subtractor                                     : 5
+ 15-bit adder                                          : 1
  3-bit adder                                           : 1
  3-bit subtractor                                      : 1
  32-bit adder                                          : 5
@@ -1200,11 +1223,12 @@ Macro Statistics
  7-bit subtractor                                      : 1
  8-bit subtractor                                      : 9
  9-bit subtractor                                      : 1
-# Registers                                            : 537
- 1-bit register                                        : 64
+# Registers                                            : 550
+ 1-bit register                                        : 76
  10-bit register                                       : 1
  12-bit register                                       : 7
  128-bit register                                      : 1
+ 15-bit register                                       : 1
  16-bit register                                       : 1
  192-bit register                                      : 20
  2-bit register                                        : 2
@@ -1218,12 +1242,13 @@ Macro Statistics
 # Comparators                                          : 4
  12-bit comparator equal                               : 2
  8-bit comparator equal                                : 2
-# Multiplexers                                         : 2117
- 1-bit 2-to-1 multiplexer                              : 1906
+# Multiplexers                                         : 2162
+ 1-bit 2-to-1 multiplexer                              : 1950
  1-bit 3-to-1 multiplexer                              : 1
  10-bit 2-to-1 multiplexer                             : 2
  12-bit 2-to-1 multiplexer                             : 26
  128-bit 2-to-1 multiplexer                            : 2
+ 15-bit 2-to-1 multiplexer                             : 1
  16-bit 4-to-1 multiplexer                             : 1
  192-bit 8-to-1 multiplexer                            : 1
  2-bit 2-to-1 multiplexer                              : 1
@@ -5439,6 +5464,10 @@ Synthesizing (advanced) Unit <i2c_data>.
 The following registers are absorbed into counter <i2csda.cnt>: 1 register on signal <i2csda.cnt>.
 Unit <i2c_data> synthesized (advanced).
 
+Synthesizing (advanced) Unit <optohybrid_top>.
+The following registers are absorbed into counter <cnt>: 1 register on signal <cnt>.
+Unit <optohybrid_top> synthesized (advanced).
+
 Synthesizing (advanced) Unit <tracking_concentrator>.
 The following registers are absorbed into counter <cnt>: 1 register on signal <cnt>.
 Unit <tracking_concentrator> synthesized (advanced).
@@ -5448,7 +5477,7 @@ The following registers are absorbed into counter <data_cnt>: 1 register on sign
 Unit <tracking_decoder> synthesized (advanced).
 
 Synthesizing (advanced) Unit <vi2c_core>.
-INFO:Xst:3231 - The small RAM <Mram__n0369> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+INFO:Xst:3231 - The small RAM <Mram__n0368> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
@@ -5467,32 +5496,35 @@ Advanced HDL Synthesis Report
 Macro Statistics
 # RAMs                                                 : 1
  32x4-bit single-port distributed Read Only RAM        : 1
-# Adders/Subtractors                                   : 15
+# Adders/Subtractors                                   : 16
  10-bit adder                                          : 1
  12-bit adder                                          : 1
  12-bit subtractor                                     : 4
+ 15-bit adder                                          : 1
  3-bit subtractor                                      : 1
  32-bit adder                                          : 5
  7-bit subtractor                                      : 1
  8-bit subtractor                                      : 1
  9-bit subtractor                                      : 1
-# Counters                                             : 18
+# Counters                                             : 19
  12-bit down counter                                   : 1
+ 15-bit up counter                                     : 1
  3-bit up counter                                      : 1
  32-bit up counter                                     : 5
  4-bit down counter                                    : 3
  8-bit down counter                                    : 8
-# Registers                                            : 17084
- Flip-Flops                                            : 17084
+# Registers                                            : 17096
+ Flip-Flops                                            : 17096
 # Comparators                                          : 4
  12-bit comparator equal                               : 2
  8-bit comparator equal                                : 2
-# Multiplexers                                         : 2109
- 1-bit 2-to-1 multiplexer                              : 1911
+# Multiplexers                                         : 2154
+ 1-bit 2-to-1 multiplexer                              : 1955
  1-bit 3-to-1 multiplexer                              : 1
  10-bit 2-to-1 multiplexer                             : 2
  12-bit 2-to-1 multiplexer                             : 25
  128-bit 2-to-1 multiplexer                            : 2
+ 15-bit 2-to-1 multiplexer                             : 1
  16-bit 4-to-1 multiplexer                             : 1
  192-bit 8-to-1 multiplexer                            : 1
  2-bit 2-to-1 multiplexer                              : 1
@@ -9767,8 +9799,6 @@ WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tx_kchar_o_1> (with
 INFO:Xst:1901 - Instance pll_base_inst in unit pll_base_inst of type PLL_BASE has been replaced by PLL_ADV
 WARNING:Xst:2042 - Unit i2c_data: 3 internal tristates are replaced by logic (pull-up yes): rdbit, sda_o<0>, sda_o<1>.
 
-Optimizing unit <optohybrid_top> ...
-
 Optimizing unit <s6_gtpwizard_v1_11> ...
 
 Optimizing unit <s6_gtpwizard_v1_11_tile> ...
@@ -9780,6 +9810,8 @@ Optimizing unit <link_tracking> ...
 Optimizing unit <tracking_core> ...
 
 Optimizing unit <fpga_clk_pll> ...
+
+Optimizing unit <optohybrid_top> ...
 
 Optimizing unit <gtp_wrapper> ...
 
@@ -10101,8 +10133,8 @@ Unit <u2> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 12992
- Flip-Flops                                            : 12992
+# Registers                                            : 13019
+ Flip-Flops                                            : 13019
 # Shift Registers                                      : 1
  2-bit shift register                                  : 1
 
@@ -10127,31 +10159,31 @@ Top Level Output File Name         : optohybrid_top.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 10881
+# BELS                             : 11015
 #      GND                         : 22
-#      INV                         : 104
-#      LUT1                        : 379
+#      INV                         : 106
+#      LUT1                        : 407
 #      LUT2                        : 154
-#      LUT3                        : 4418
-#      LUT4                        : 398
-#      LUT5                        : 1925
-#      LUT6                        : 2232
-#      MUXCY                       : 406
+#      LUT3                        : 4420
+#      LUT4                        : 403
+#      LUT5                        : 1933
+#      LUT6                        : 2263
+#      MUXCY                       : 434
 #      MUXCY_L                     : 85
 #      MUXF5                       : 2
 #      MUXF6                       : 1
 #      MUXF7                       : 242
 #      MUXF8                       : 2
 #      VCC                         : 23
-#      XORCY                       : 488
-# FlipFlops/Latches                : 13733
-#      FD                          : 4276
+#      XORCY                       : 518
+# FlipFlops/Latches                : 13760
+#      FD                          : 4301
 #      FDC                         : 122
 #      FDCE                        : 28
 #      FDE                         : 8851
 #      FDP                         : 82
 #      FDPE                        : 1
-#      FDR                         : 241
+#      FDR                         : 243
 #      FDRE                        : 117
 #      FDS                         : 10
 #      LD                          : 2
@@ -10191,18 +10223,18 @@ Selected Device : 6slx150tfgg676-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:           13733  out of  184304     7%  
- Number of Slice LUTs:                 9693  out of  92152    10%  
-    Number used as Logic:              9610  out of  92152    10%  
+ Number of Slice Registers:           13760  out of  184304     7%  
+ Number of Slice LUTs:                 9769  out of  92152    10%  
+    Number used as Logic:              9686  out of  92152    10%  
     Number used as Memory:               83  out of  21680     0%  
        Number used as SRL:               83
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:  16484
-   Number with an unused Flip Flop:    2751  out of  16484    16%  
-   Number with an unused LUT:          6791  out of  16484    41%  
-   Number of fully used LUT-FF pairs:  6942  out of  16484    42%  
-   Number of unique control sets:       387
+ Number of LUT Flip Flop pairs used:  16560
+   Number with an unused Flip Flop:    2800  out of  16560    16%  
+   Number with an unused LUT:          6791  out of  16560    41%  
+   Number of fully used LUT-FF pairs:  6969  out of  16560    42%  
+   Number of unique control sets:       389
 
 IO Utilization: 
  Number of IOs:                         289
@@ -10235,13 +10267,13 @@ Clock Information:
 ----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+-------+
 Clock Signal                                                                                        | Clock buffer(FF name)                                                                                          | Load  |
 ----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+-------+
-gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT0_OUT<0>                              | DCM_SP:CLK0                                                                                                    | 9950  |
+gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT0_OUT<0>                              | DCM_SP:CLK0                                                                                                    | 9977  |
 link_tracking_1_inst/vi2c_core_inst/chip_select_2                                                   | NONE(link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/wrbit_selected_iic[0]_DLATCH_2_q)| 4     |
 fpga_clk_pll_inst/pll_base_inst/CLKOUT1                                                             | BUFG                                                                                                           | 3407  |
 chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL                                          | BUFG                                                                                                           | 405   |
 chipscope_icon_inst/CONTROL1<13>(chipscope_icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[9].U_LCE:O)| NONE(*)(chipscope_ila_inst/U0/I_NO_D.U_ILA/U_STAT/U_DIRTY_LDC)                                                 | 1     |
 chipscope_icon_inst/U0/iUPDATE_OUT                                                                  | NONE(chipscope_icon_inst/U0/U_ICON/U_iDATA_CMD)                                                                | 1     |
-reset                                                                                               | NONE(chipscope_vio_inst/U0/I_VIO/GEN_ASYNC_IN[31].ASYNC_IN_CELL/U_FALLING)                                     | 64    |
+vfat2_sda_0_iobuf                                                                                   | NONE(chipscope_vio_inst/U0/I_VIO/GEN_ASYNC_IN[31].ASYNC_IN_CELL/U_FALLING)                                     | 64    |
 ----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+-------+
 (*) This 1 clock signal(s) are generated by combinatorial logic,
 and XST is not able to identify which are the primary clock signals.
@@ -10267,30 +10299,29 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT0_OUT<0>'
-  Clock period: 6.845ns (frequency: 146.103MHz)
-  Total number of paths / destination ports: 86496 / 15292
+  Clock period: 6.957ns (frequency: 143.745MHz)
+  Total number of paths / destination ports: 92156 / 15321
 -------------------------------------------------------------------------
-Delay:               6.845ns (Levels of Logic = 6)
-  Source:            link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/i2csda.timer_7 (FF)
-  Destination:       link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/i2csda.timer_0 (FF)
+Delay:               6.957ns (Levels of Logic = 5)
+  Source:            cnt_2 (FF)
+  Destination:       tx_data_41 (FF)
   Source Clock:      gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT0_OUT<0> rising
   Destination Clock: gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT0_OUT<0> rising
 
-  Data Path: link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/i2csda.timer_7 to link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/i2csda.timer_0
+  Data Path: cnt_2 to tx_data_41
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               5   0.447   1.059  i2csda.timer_7 (i2csda.timer_7)
-     LUT5:I0->O            1   0.203   0.580  i2csda.timer[11]_GND_68_o_equal_62_o<11>1_SW0 (N2)
-     LUT6:I5->O           13   0.205   0.933  i2csda.timer[11]_GND_68_o_equal_62_o<11>1 (i2csda.timer[11]_GND_68_o_equal_62_o<11>1)
-     LUT6:I5->O            8   0.205   0.907  i2csda.timer[11]_GND_68_o_AND_20_o1 (i2csda.timer[11]_GND_68_o_AND_20_o)
-     LUT6:I4->O            1   0.203   0.684  Mmux_datafsm[3]_i2csda.timer[11]_mux_106_OUT1633_SW0 (N21)
-     LUT6:I4->O           12   0.203   0.909  Mmux_datafsm[3]_i2csda.timer[11]_mux_106_OUT1633 (Mmux_datafsm[3]_i2csda.timer[11]_mux_106_OUT163)
-     LUT4:I3->O            1   0.205   0.000  Mmux_datafsm[3]_i2csda.timer[11]_mux_106_OUT121 (datafsm[3]_i2csda.timer[11]_mux_106_OUT<11>)
-     FD:D                      0.102          i2csda.timer_11
+     FD:C->Q               3   0.447   1.015  cnt_2 (cnt_2)
+     LUT6:I0->O           16   0.203   1.109  PWR_5_o_cnt[14]_equal_3_o<14>2 (PWR_5_o_cnt[14]_equal_3_o<14>1)
+     LUT5:I3->O            7   0.203   0.774  PWR_5_o_cnt[14]_equal_3_o<14>3 (PWR_5_o_cnt[14]_equal_3_o)
+     LUT6:I5->O            5   0.205   0.715  GND_5_o_cnt[14]_equal_10_o<14>111 (GND_5_o_cnt[14]_equal_10_o<14>11)
+     LUT6:I5->O            9   0.205   0.830  GND_5_o_cnt[14]_equal_6_o<14>11 (GND_5_o_cnt[14]_equal_6_o<14>1)
+     LUT3:I2->O            2   0.205   0.616  GND_5_o_cnt[14]_equal_6_o<14>2 (GND_5_o_cnt[14]_equal_6_o)
+     FDR:R                     0.430          tx_data_41
     ----------------------------------------
-    Total                      6.845ns (1.773ns logic, 5.072ns route)
-                                       (25.9% logic, 74.1% route)
+    Total                      6.957ns (1.898ns logic, 5.059ns route)
+                                       (27.3% logic, 72.7% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'fpga_clk_pll_inst/pll_base_inst/CLKOUT1'
@@ -10548,7 +10579,7 @@ chipscope_icon_inst/CONTROL1<13>                                      |         
 chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL            |    8.118|         |         |         |
 chipscope_icon_inst/U0/iUPDATE_OUT                                    |    2.583|         |         |         |
 gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT0_OUT<0>|    3.634|         |         |         |
-reset                                                                 |    1.562|    1.562|         |         |
+vfat2_sda_0_iobuf                                                     |    1.562|    1.562|         |         |
 ----------------------------------------------------------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock chipscope_icon_inst/U0/iUPDATE_OUT
@@ -10575,7 +10606,7 @@ Source Clock                                                          |Dest:Rise
 ----------------------------------------------------------------------+---------+---------+---------+---------+
 chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL            |    5.743|         |         |         |
 fpga_clk_pll_inst/pll_base_inst/CLKOUT1                               |    1.128|         |         |         |
-gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT0_OUT<0>|    6.845|         |         |         |
+gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT0_OUT<0>|    6.957|         |         |         |
 ----------------------------------------------------------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock link_tracking_1_inst/vi2c_core_inst/chip_select_2
@@ -10586,7 +10617,7 @@ Source Clock                                                          |Dest:Rise
 gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT0_OUT<0>|    2.020|         |    2.020|         |
 ----------------------------------------------------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock reset
+Clock to Setup on destination clock vfat2_sda_0_iobuf
 ----------------------------------------------------------+---------+---------+---------+---------+
                                                           | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                                              |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
@@ -10597,14 +10628,14 @@ chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL|    2.516|         | 
 =========================================================================
 
 
-Total REAL time to Xst completion: 70.00 secs
-Total CPU time to Xst completion: 70.17 secs
+Total REAL time to Xst completion: 73.00 secs
+Total CPU time to Xst completion: 73.04 secs
  
 --> 
 
-Total memory usage is 317660 kilobytes
+Total memory usage is 318428 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  423 (   0 filtered)
+Number of warnings :  424 (   0 filtered)
 Number of infos    : 8244 (   0 filtered)
 

@@ -1,7 +1,7 @@
 Release 14.7 - par P.20131013 (nt)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Sat Nov 08 10:22:52 2014
+Sat Nov 08 12:19:13 2014
 
 All signals are completely routed.
 
@@ -22,45 +22,46 @@ WARNING:ParHelpers:362 - There are 14 sourceless signals in this design. This de
    leds_o<1>_OBUF
    leds_o<2>_OBUF
    leds_o<3>_OBUF
-WARNING:ParHelpers:361 - There are 84 loadless signals in this design. This design will cause Bitgen to issue DRC
+WARNING:ParHelpers:361 - There are 85 loadless signals in this design. This design will cause Bitgen to issue DRC
    warnings.
 
    cdce_auxout_i_IBUF
    cdce_miso_i_IBUF
    cdce_plllock_i_IBUF
+   chipscope_vio_inst/U0/I_VIO/RESET
+   chipscope_vio_inst/U0/I_VIO/UPDATE<0>
+   chipscope_vio_inst/U0/I_VIO/UPDATE<10>
+   chipscope_vio_inst/U0/I_VIO/UPDATE<11>
+   chipscope_vio_inst/U0/I_VIO/UPDATE<12>
+   chipscope_vio_inst/U0/I_VIO/UPDATE<13>
+   chipscope_vio_inst/U0/I_VIO/UPDATE<14>
+   chipscope_vio_inst/U0/I_VIO/UPDATE<15>
+   chipscope_vio_inst/U0/I_VIO/UPDATE<16>
+   chipscope_vio_inst/U0/I_VIO/UPDATE<17>
+   chipscope_vio_inst/U0/I_VIO/UPDATE<18>
+   chipscope_vio_inst/U0/I_VIO/UPDATE<19>
+   chipscope_vio_inst/U0/I_VIO/UPDATE<1>
+   chipscope_vio_inst/U0/I_VIO/UPDATE<20>
+   chipscope_vio_inst/U0/I_VIO/UPDATE<21>
+   chipscope_vio_inst/U0/I_VIO/UPDATE<22>
+   chipscope_vio_inst/U0/I_VIO/UPDATE<23>
+   chipscope_vio_inst/U0/I_VIO/UPDATE<24>
+   chipscope_vio_inst/U0/I_VIO/UPDATE<25>
+   chipscope_vio_inst/U0/I_VIO/UPDATE<26>
+   chipscope_vio_inst/U0/I_VIO/UPDATE<27>
+   chipscope_vio_inst/U0/I_VIO/UPDATE<28>
+   chipscope_vio_inst/U0/I_VIO/UPDATE<29>
+   chipscope_vio_inst/U0/I_VIO/UPDATE<2>
+   chipscope_vio_inst/U0/I_VIO/UPDATE<30>
+   chipscope_vio_inst/U0/I_VIO/UPDATE<31>
+   chipscope_vio_inst/U0/I_VIO/UPDATE<3>
+   chipscope_vio_inst/U0/I_VIO/UPDATE<4>
+   chipscope_vio_inst/U0/I_VIO/UPDATE<5>
+   chipscope_vio_inst/U0/I_VIO/UPDATE<6>
+   chipscope_vio_inst/U0/I_VIO/UPDATE<7>
+   chipscope_vio_inst/U0/I_VIO/UPDATE<8>
+   chipscope_vio_inst/U0/I_VIO/UPDATE<9>
    fpga_rx_i_IBUF
-   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<0>
-   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<10>
-   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<11>
-   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<12>
-   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<13>
-   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<14>
-   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<15>
-   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<16>
-   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<17>
-   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<18>
-   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<19>
-   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<1>
-   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<20>
-   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<21>
-   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<22>
-   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<23>
-   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<24>
-   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<25>
-   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<26>
-   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<27>
-   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<28>
-   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<29>
-   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<2>
-   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<30>
-   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<31>
-   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<3>
-   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<4>
-   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<5>
-   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<6>
-   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<7>
-   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<8>
-   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<9>
    vfat2_data_10_i<0>_IBUF
    vfat2_data_10_i<1>_IBUF
    vfat2_data_10_i<2>_IBUF
