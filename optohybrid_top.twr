@@ -103,7 +103,7 @@ Slack: 21.876ns (period - min period limit)
 --------------------------------------------------------------------------------
 
 ================================================================================
-Timing constraint: TS_gtp_userclk1 = PERIOD TIMEGRP "gtp_userclk0" 3.125 ns 
+Timing constraint: TS_gtp_userclk00 = PERIOD TIMEGRP "gtp_userclk00" 3.125 ns 
 HIGH 50%;
 For more information, see Period Analysis in the Timing Closure User Guide (UG612).
 
@@ -112,7 +112,7 @@ For more information, see Period Analysis in the Timing Closure User Guide (UG61
  Minimum period is   3.125ns.
 --------------------------------------------------------------------------------
 
-Component Switching Limit Checks: TS_gtp_userclk1 = PERIOD TIMEGRP "gtp_userclk0" 3.125 ns HIGH 50%;
+Component Switching Limit Checks: TS_gtp_userclk00 = PERIOD TIMEGRP "gtp_userclk00" 3.125 ns HIGH 50%;
 --------------------------------------------------------------------------------
 Slack: 0.000ns (period - min period limit)
   Period: 3.125ns
@@ -137,6 +137,43 @@ Slack: 0.000ns (period - min period limit)
   Logical resource: gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/gtpa1_dual_i/TXUSRCLK0
   Location pin: GTPA1_DUAL_X0Y1.TXUSRCLK0
   Clock network: gtp_wrapper_inst/gtp_userclk<0>
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: TS_gtp_userclk01 = PERIOD TIMEGRP "gtp_userclk01" 3.125 ns 
+HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 0 paths analyzed, 0 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 component switching limit errors)
+ Minimum period is   3.125ns.
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_gtp_userclk01 = PERIOD TIMEGRP "gtp_userclk01" 3.125 ns HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 0.000ns (period - min period limit)
+  Period: 3.125ns
+  Min period limit: 3.125ns (320.000MHz) (Tgtpcper_RXUSRCLK)
+  Physical resource: gtp_wrapper_inst/gtp_inst/tile1_s6_gtpwizard_v1_11_i/gtpa1_dual_i/RXUSRCLK0
+  Logical resource: gtp_wrapper_inst/gtp_inst/tile1_s6_gtpwizard_v1_11_i/gtpa1_dual_i/RXUSRCLK0
+  Location pin: GTPA1_DUAL_X1Y1.RXUSRCLK0
+  Clock network: gtp_wrapper_inst/gtp_userclk<1>
+--------------------------------------------------------------------------------
+Slack: 0.000ns (period - min period limit)
+  Period: 3.125ns
+  Min period limit: 3.125ns (320.000MHz) (Tgtpcper_RXUSRCLK)
+  Physical resource: gtp_wrapper_inst/gtp_inst/tile1_s6_gtpwizard_v1_11_i/gtpa1_dual_i/RXUSRCLK1
+  Logical resource: gtp_wrapper_inst/gtp_inst/tile1_s6_gtpwizard_v1_11_i/gtpa1_dual_i/RXUSRCLK1
+  Location pin: GTPA1_DUAL_X1Y1.RXUSRCLK1
+  Clock network: gtp_wrapper_inst/gtp_userclk<1>
+--------------------------------------------------------------------------------
+Slack: 0.000ns (period - min period limit)
+  Period: 3.125ns
+  Min period limit: 3.125ns (320.000MHz) (Tgtpcper_TXUSRCLK)
+  Physical resource: gtp_wrapper_inst/gtp_inst/tile1_s6_gtpwizard_v1_11_i/gtpa1_dual_i/TXUSRCLK0
+  Logical resource: gtp_wrapper_inst/gtp_inst/tile1_s6_gtpwizard_v1_11_i/gtpa1_dual_i/TXUSRCLK0
+  Location pin: GTPA1_DUAL_X1Y1.TXUSRCLK0
+  Clock network: gtp_wrapper_inst/gtp_userclk<1>
 --------------------------------------------------------------------------------
 
 ================================================================================
@@ -608,7 +645,7 @@ Design statistics:
 ------------------------------------Footnotes-----------------------------------
 1)  The minimum period statistic assumes all single cycle delays.
 
-Analysis completed Fri Nov 07 22:07:12 2014 
+Analysis completed Sat Nov 08 10:23:11 2014 
 --------------------------------------------------------------------------------
 
 Trace Settings:
