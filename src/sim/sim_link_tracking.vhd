@@ -82,15 +82,15 @@ begin
     end process;
  
     -- VFAT2 tracking data    
-    process(vfat2_clk)
+    process(vfat2_clk_i)
         variable cnt    : integer range 0 to 400 := 0;
-        variable data   : std_logic_vector(191 downto 0) := x"0123456789012345678901234567890123456789ABCDEF01";
+        variable data   : std_logic_vector(191 downto 0) := x"A123456789012345678901234567890123456789ABCDEF01";
     begin
-        if (rising_edge(vfat2_clk)) then
-            if (cnt = 400) then
-                cnt := 0;
+        if (rising_edge(vfat2_clk_i)) then
+            if (cnt = 0) then
+                cnt := 400;
             else
-                cnt := cnt + 1;
+                cnt := cnt - 1;
             end if;
             
             if (cnt < 192) then
@@ -126,20 +126,20 @@ begin
                 rx_kchar_i <= "00";
             -- Regs write
             elsif (cnt = 1_000) then
-                rx_data_i <= x"02BC";
+                rx_data_i <= x"03BC";
                 rx_kchar_i <= "01";
             elsif (cnt = 1_001) then
                 rx_data_i <= "00000000" & "00000000";
                 rx_kchar_i <= "00";
             elsif (cnt = 1_002) then
-                rx_data_i <= "00000000" & "11111001";
+                rx_data_i <= "00000000" & "11111000";
                 rx_kchar_i <= "00";
             elsif (cnt = 1_003) then
                 rx_data_i <= "00000100" & "11111111";
                 rx_kchar_i <= "00";
             -- Regs read
             elsif (cnt = 1_200) then
-                rx_data_i <= x"02BC";
+                rx_data_i <= x"03BC";
                 rx_kchar_i <= "01";
             elsif (cnt = 1_201) then
                 rx_data_i <= "00000000" & "00000000";
@@ -148,7 +148,7 @@ begin
                 rx_data_i <= "00000000" & "00000000";
                 rx_kchar_i <= "00";
             elsif (cnt = 1_203) then
-                rx_data_i <= "11111101" & "11111111";
+                rx_data_i <= "11111100" & "11111111";
                 rx_kchar_i <= "00";
             -- Other
             else    
