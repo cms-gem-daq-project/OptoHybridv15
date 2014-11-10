@@ -894,7 +894,7 @@ NGDBUILD Design Results Summary:
   Number of errors:     0
   Number of warnings: 397
 
-Total memory usage is 205820 kilobytes
+Total memory usage is 205756 kilobytes
 
 Writing NGD file "optohybrid_top.ngd" ...
 Total REAL time to NGDBUILD completion:  13 sec

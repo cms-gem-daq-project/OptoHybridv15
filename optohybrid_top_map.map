@@ -11,7 +11,7 @@ Target Device  : xc6slx150t
 Target Package : fgg676
 Target Speed   : -3
 Mapper Version : spartan6 -- $Revision: 1.55 $
-Mapped Date    : Mon Nov 10 14:57:19 2014
+Mapped Date    : Mon Nov 10 15:27:24 2014
 
 vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 INFO:Security:56 - Part 'xc6slx150t' is not a WebPack part.
@@ -86,11 +86,11 @@ Updating timing models...
 INFO:Map:215 - The Interim Design Summary has been generated in the MAP Report
    (.mrp).
 Running timing-driven placement...
-Total REAL time at the beginning of Placer: 28 secs 
+Total REAL time at the beginning of Placer: 27 secs 
 Total CPU  time at the beginning of Placer: 27 secs 
 
 Phase 1.1  Initial Placement Analysis
-Phase 1.1  Initial Placement Analysis (Checksum:4385ec82) REAL time: 33 secs 
+Phase 1.1  Initial Placement Analysis (Checksum:80c429ab) REAL time: 32 secs 
 
 Phase 2.7  Design Feasibility Check
 WARNING:Place:837 - Partially locked IO Bus is found. 
@@ -113,48 +113,48 @@ WARNING:Place:838 - An IO Bus with more than one IO standard is found.
 INFO:Place:834 - Only a subset of IOs are locked. Out of 97 IOs, 91 are locked
    and 6 are not locked. If you would like to print the names of these IOs,
    please set the environment variable XIL_PAR_DESIGN_CHECK_VERBOSE to 1. 
-Phase 2.7  Design Feasibility Check (Checksum:4385ec82) REAL time: 35 secs 
+Phase 2.7  Design Feasibility Check (Checksum:80c429ab) REAL time: 34 secs 
 
 Phase 3.31  Local Placement Optimization
-Phase 3.31  Local Placement Optimization (Checksum:6d38df33) REAL time: 35 secs 
+Phase 3.31  Local Placement Optimization (Checksum:cb0dfc37) REAL time: 34 secs 
 
 Phase 4.2  Initial Placement for Architecture Specific Features
 ...
 Phase 4.2  Initial Placement for Architecture Specific Features
-(Checksum:ea678572) REAL time: 44 secs 
+(Checksum:41e9d43b) REAL time: 42 secs 
 
 Phase 5.36  Local Placement Optimization
-Phase 5.36  Local Placement Optimization (Checksum:ea678572) REAL time: 44 secs 
+Phase 5.36  Local Placement Optimization (Checksum:41e9d43b) REAL time: 42 secs 
 
 Phase 6.30  Global Clock Region Assignment
-Phase 6.30  Global Clock Region Assignment (Checksum:ea678572) REAL time: 44 secs 
+Phase 6.30  Global Clock Region Assignment (Checksum:41e9d43b) REAL time: 42 secs 
 
 Phase 7.3  Local Placement Optimization
 ...
-Phase 7.3  Local Placement Optimization (Checksum:49e1cfce) REAL time: 45 secs 
+Phase 7.3  Local Placement Optimization (Checksum:bd5b5435) REAL time: 44 secs 
 
 Phase 8.5  Local Placement Optimization
-Phase 8.5  Local Placement Optimization (Checksum:74e59410) REAL time: 45 secs 
+Phase 8.5  Local Placement Optimization (Checksum:cb956caa) REAL time: 44 secs 
 
 Phase 9.8  Global Placement
-........................................................................
+..........................................................................
 .........................................
-Phase 9.8  Global Placement (Checksum:72108c8b) REAL time: 1 mins 5 secs 
+Phase 9.8  Global Placement (Checksum:70d41531) REAL time: 1 mins 
 
 Phase 10.5  Local Placement Optimization
-Phase 10.5  Local Placement Optimization (Checksum:72108c8b) REAL time: 1 mins 5 secs 
+Phase 10.5  Local Placement Optimization (Checksum:70d41531) REAL time: 1 mins 
 
 Phase 11.18  Placement Optimization
-Phase 11.18  Placement Optimization (Checksum:22f8ebd0) REAL time: 1 mins 41 secs 
+Phase 11.18  Placement Optimization (Checksum:924d8f69) REAL time: 1 mins 29 secs 
 
 Phase 12.5  Local Placement Optimization
-Phase 12.5  Local Placement Optimization (Checksum:22f8ebd0) REAL time: 1 mins 41 secs 
+Phase 12.5  Local Placement Optimization (Checksum:924d8f69) REAL time: 1 mins 29 secs 
 
 Phase 13.34  Placement Validation
-Phase 13.34  Placement Validation (Checksum:9b9892d9) REAL time: 1 mins 42 secs 
+Phase 13.34  Placement Validation (Checksum:9817023f) REAL time: 1 mins 29 secs 
 
-Total REAL time to Placer completion: 2 mins 43 secs 
-Total CPU  time to Placer completion: 2 mins 43 secs 
+Total REAL time to Placer completion: 2 mins 30 secs 
+Total CPU  time to Placer completion: 2 mins 32 secs 
 Running post-placement packing...
 Writing output files...
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
@@ -197,6 +197,54 @@ WARNING:PhysDesignRules:367 - The signal
    <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/RESET> is incomplete. The
    signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal
+   <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<0>> is incomplete.
+   The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<1>> is incomplete.
+   The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<2>> is incomplete.
+   The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<3>> is incomplete.
+   The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<4>> is incomplete.
+   The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<5>> is incomplete.
+   The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<6>> is incomplete.
+   The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<7>> is incomplete.
+   The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<8>> is incomplete.
+   The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<9>> is incomplete.
+   The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<10>> is incomplete.
+   The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<11>> is incomplete.
+   The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<28>> is incomplete.
+   The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<29>> is incomplete.
+   The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<30>> is incomplete.
+   The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<31>> is incomplete.
+   The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
    <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<12>> is incomplete.
    The signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal
@@ -221,54 +269,6 @@ WARNING:PhysDesignRules:367 - The signal
    <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<27>> is incomplete.
    The signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal
-   <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<20>> is incomplete.
-   The signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
-   <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<21>> is incomplete.
-   The signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
-   <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<22>> is incomplete.
-   The signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
-   <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<23>> is incomplete.
-   The signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
-   <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<28>> is incomplete.
-   The signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
-   <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<29>> is incomplete.
-   The signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
-   <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<30>> is incomplete.
-   The signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
-   <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<31>> is incomplete.
-   The signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
-   <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<8>> is incomplete.
-   The signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
-   <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<9>> is incomplete.
-   The signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
-   <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<10>> is incomplete.
-   The signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
-   <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<11>> is incomplete.
-   The signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
-   <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<4>> is incomplete.
-   The signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
-   <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<5>> is incomplete.
-   The signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
-   <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<6>> is incomplete.
-   The signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
-   <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<7>> is incomplete.
-   The signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
    <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<16>> is incomplete.
    The signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal
@@ -281,16 +281,16 @@ WARNING:PhysDesignRules:367 - The signal
    <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<19>> is incomplete.
    The signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal
-   <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<0>> is incomplete.
+   <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<20>> is incomplete.
    The signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal
-   <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<1>> is incomplete.
+   <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<21>> is incomplete.
    The signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal
-   <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<2>> is incomplete.
+   <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<22>> is incomplete.
    The signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal
-   <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<3>> is incomplete.
+   <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<23>> is incomplete.
    The signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:2410 - This design is using one or more 9K Block RAMs
    (RAMB8BWER).  9K Block RAM initialization data, both user defined and
@@ -309,7 +309,7 @@ Slice Logic Utilization:
     Number used as Latches:                      5
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                      8,583 out of  92,152    9%
+  Number of Slice LUTs:                      8,263 out of  92,152    8%
     Number used as logic:                    7,164 out of  92,152    7%
       Number using O6 output only:           4,226
       Number using O5 output only:             614
@@ -322,18 +322,18 @@ Slice Logic Utilization:
         Number using O6 output only:            73
         Number using O5 output only:             0
         Number using O5 and O6:                 29
-    Number used exclusively as route-thrus:  1,317
-      Number with same-slice register load:  1,292
+    Number used exclusively as route-thrus:    997
+      Number with same-slice register load:    972
       Number with same-slice carry load:        25
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                 4,590 out of  23,038   19%
+  Number of occupied Slices:                 4,812 out of  23,038   20%
   Number of MUXCYs used:                       824 out of  46,076    1%
-  Number of LUT Flip Flop pairs used:       16,291
-    Number with an unused Flip Flop:         1,606 out of  16,291    9%
-    Number with an unused LUT:               7,708 out of  16,291   47%
-    Number of fully used LUT-FF pairs:       6,977 out of  16,291   42%
+  Number of LUT Flip Flop pairs used:       16,824
+    Number with an unused Flip Flop:         1,817 out of  16,824   10%
+    Number with an unused LUT:               8,561 out of  16,824   50%
+    Number of fully used LUT-FF pairs:       6,446 out of  16,824   38%
     Number of unique control sets:             256
     Number of slice register sites lost
       to control set restrictions:             483 out of 184,304    1%
@@ -388,9 +388,9 @@ Specific Feature Utilization:
 
 Average Fanout of Non-Clock Nets:                2.51
 
-Peak Memory Usage:  593 MB
-Total REAL time to MAP completion:  2 mins 54 secs 
-Total CPU time to MAP completion (all processors):   2 mins 55 secs 
+Peak Memory Usage:  591 MB
+Total REAL time to MAP completion:  2 mins 40 secs 
+Total CPU time to MAP completion (all processors):   2 mins 42 secs 
 
 Mapping completed.
 See MAP report file "optohybrid_top_map.mrp" for details.
