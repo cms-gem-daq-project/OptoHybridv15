@@ -74,16 +74,20 @@ architecture Behavioral of link_tracking is
     signal regs_tx_ready    : std_logic := '0';
     signal regs_tx_done     : std_logic := '0';
     signal regs_tx_data     : std_logic_vector(47 downto 0) := (others => '0');
-
-    signal registers_write  : array32(127 downto 0);
-    signal registers_tri    : std_logic_vector(127 downto 0);
-    signal registers_read   : array32(127 downto 0);
+    
+    signal regs_req_write   : array32(127 downto 0);
+    signal regs_req_tri     : std_logic_vector(127 downto 0);
+    signal regs_req_read    : array32(127 downto 0);
 
     -- Local registers
 
     signal lregs_write      : array32(63 downto 0);
     signal lregs_tri        : std_logic_vector(63 downto 0);
     signal lregs_read       : array32(63 downto 0);
+
+    signal registers_write  : array32(63 downto 0);
+    signal registers_tri    : std_logic_vector(63 downto 0);
+    signal registers_read   : array32(63 downto 0);
 
     -- Counters
 
@@ -92,6 +96,12 @@ architecture Behavioral of link_tracking is
     signal vi2c_tx_counter  : std_logic_vector(31 downto 0) := (others => '0');
     signal regs_rx_counter  : std_logic_vector(31 downto 0) := (others => '0');
     signal regs_tx_counter  : std_logic_vector(31 downto 0) := (others => '0');
+
+    signal rx_error_cnt_res : std_logic := '0';
+    signal vi2c_rx_cnt_res  : std_logic := '0';
+    signal vi2c_tx_cnt_res  : std_logic := '0';
+    signal regs_rx_cnt_res  : std_logic := '0';
+    signal regs_tx_cnt_res  : std_logic := '0';
 
     -- ChipScope signals
 
@@ -184,7 +194,7 @@ begin
     );
     
     --================================--
-    -- Registers 
+    -- Registers requests
     --================================--
     
     registers_core_inst : entity work.registers_core
@@ -196,19 +206,18 @@ begin
         tx_ready_o      => regs_tx_ready,
         tx_done_i       => regs_tx_done,
         tx_data_o       => regs_tx_data,
-        wbus_o          => registers_write,
-        wbus_t          => registers_tri,
-        rbus_i          => registers_read
+        wbus_o          => regs_req_write,
+        wbus_t          => regs_req_tri,
+        rbus_i          => regs_req_read
     );
     
-    registers_read <= gregs_read_i & lregs_read;
+    regs_req_read <= gregs_read_i & lregs_read;
     
-    --================================--
-    -- Global registers & mapping
-    --================================--
+    gregs_write_o <= regs_req_write(127 downto 64);
+    gregs_tri_o <= regs_req_tri(127 downto 64);
     
-    gregs_write_o <= registers_write(127 downto 64);
-    gregs_tri_o <= registers_tri(127 downto 64);
+    lregs_write <= regs_req_write(63 downto 0);
+    lregs_tri <= regs_req_tri(63 downto 0);
     
     --================================--
     -- Local registers & mapping
@@ -219,21 +228,43 @@ begin
     port map(
         fabric_clk_i    => gtp_clk_i,
         reset_i         => reset_i,
-        wbus_i          => lregs_write,
-        wbus_t          => lregs_tri,
-        rbus_o          => lregs_read
+        wbus_i          => registers_write,
+        wbus_t          => registers_tri,
+        rbus_o          => registers_read
     );
-
-    lregs_tri(63 downto 59) <= (others => '1');
-    lregs_write(63) <= vi2c_rx_counter;
-    lregs_write(62) <= vi2c_tx_counter;
-    lregs_write(61) <= regs_rx_counter;
-    lregs_write(60) <= regs_tx_counter;
-    lregs_write(59) <= rx_error_counter;
     
-    lregs_write(58 downto 0) <= registers_write(58 downto 0);
-    lregs_tri(58 downto 0) <= registers_tri(58 downto 0);
-
+    registers_write(63 downto 10) <= lregs_write(63 downto 10);
+    registers_tri(63 downto 10) <= lregs_tri(63 downto 10);
+    
+    lregs_read(63 downto 10) <= registers_read(63 downto 10);
+    
+    -- Counters
+    
+    lregs_read(0) <= rx_error_counter;
+    
+    lregs_read(1) <= (others => '0');
+    rx_error_cnt_res <= lregs_tri(1);
+    
+    lregs_read(2) <= vi2c_rx_counter;
+    
+    lregs_read(3) <= (others => '0');
+    vi2c_rx_cnt_res <= lregs_tri(3);
+    
+    lregs_read(4) <= vi2c_tx_counter;
+    
+    lregs_read(5) <= (others => '0');
+    vi2c_tx_cnt_res <= lregs_tri(5);
+    
+    lregs_read(6) <= regs_rx_counter;
+    
+    lregs_read(7) <= (others => '0');
+    regs_rx_cnt_res <= lregs_tri(7);
+    
+    lregs_read(8) <= regs_tx_counter;
+    
+    lregs_read(9) <= (others => '0');
+    regs_tx_cnt_res <= lregs_tri(9);
+   
     --================================--
     -- Counters
     --================================--

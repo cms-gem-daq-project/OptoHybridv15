@@ -11,23 +11,23 @@ Target Device  : xc6slx150t
 Target Package : fgg676
 Target Speed   : -3
 Mapper Version : spartan6 -- $Revision: 1.55 $
-Mapped Date    : Mon Nov 10 10:02:17 2014
+Mapped Date    : Mon Nov 10 10:48:28 2014
 
 Design Summary
 --------------
 Number of errors:      0
 Number of warnings:   72
 Slice Logic Utilization:
-  Number of Slice Registers:                17,430 out of 184,304    9%
-    Number used as Flip Flops:              17,425
+  Number of Slice Registers:                16,277 out of 184,304    8%
+    Number used as Flip Flops:              16,272
     Number used as Latches:                      5
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                      8,536 out of  92,152    9%
-    Number used as logic:                    7,075 out of  92,152    7%
-      Number using O6 output only:           4,241
-      Number using O5 output only:             370
-      Number using O5 and O6:                2,464
+  Number of Slice LUTs:                      8,112 out of  92,152    8%
+    Number used as logic:                    7,153 out of  92,152    7%
+      Number using O6 output only:           4,215
+      Number using O5 output only:             614
+      Number using O5 and O6:                2,324
       Number used as ROM:                        0
     Number used as Memory:                     102 out of  21,680    1%
       Number used as Dual Port RAM:              0
@@ -36,21 +36,21 @@ Slice Logic Utilization:
         Number using O6 output only:            73
         Number using O5 output only:             0
         Number using O5 and O6:                 29
-    Number used exclusively as route-thrus:  1,359
-      Number with same-slice register load:  1,342
-      Number with same-slice carry load:        17
+    Number used exclusively as route-thrus:    857
+      Number with same-slice register load:    832
+      Number with same-slice carry load:        25
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                 4,909 out of  23,038   21%
-  Number of MUXCYs used:                       568 out of  46,076    1%
-  Number of LUT Flip Flop pairs used:       17,464
-    Number with an unused Flip Flop:         1,625 out of  17,464    9%
-    Number with an unused LUT:               8,928 out of  17,464   51%
-    Number of fully used LUT-FF pairs:       6,911 out of  17,464   39%
-    Number of unique control sets:             251
+  Number of occupied Slices:                 4,869 out of  23,038   21%
+  Number of MUXCYs used:                       824 out of  46,076    1%
+  Number of LUT Flip Flop pairs used:       16,930
+    Number with an unused Flip Flop:         1,791 out of  16,930   10%
+    Number with an unused LUT:               8,818 out of  16,930   52%
+    Number of fully used LUT-FF pairs:       6,321 out of  16,930   37%
+    Number of unique control sets:             246
     Number of slice register sites lost
-      to control set restrictions:             479 out of 184,304    1%
+      to control set restrictions:             488 out of 184,304    1%
 
   A LUT Flip Flop pair for this architecture represents one LUT paired with
   one Flip Flop within a slice.  A control set is a unique combination of
@@ -100,11 +100,11 @@ Specific Feature Utilization:
   Number of STARTUPs:                            0 out of       1    0%
   Number of SUSPEND_SYNCs:                       0 out of       1    0%
 
-Average Fanout of Non-Clock Nets:                2.45
+Average Fanout of Non-Clock Nets:                2.50
 
-Peak Memory Usage:  594 MB
-Total REAL time to MAP completion:  2 mins 57 secs 
-Total CPU time to MAP completion (all processors):   2 mins 59 secs 
+Peak Memory Usage:  592 MB
+Total REAL time to MAP completion:  2 mins 51 secs 
+Total CPU time to MAP completion (all processors):   2 mins 53 secs 
 
 Table of Contents
 -----------------
@@ -247,25 +247,13 @@ WARNING:PhysDesignRules:367 - The signal
    <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/RESET> is incomplete. The
    signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal
-   <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<24>> is incomplete.
-   The signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
    <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<28>> is incomplete.
-   The signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
-   <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<25>> is incomplete.
    The signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal
    <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<29>> is incomplete.
    The signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal
-   <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<26>> is incomplete.
-   The signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
    <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<30>> is incomplete.
-   The signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
-   <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<27>> is incomplete.
    The signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal
    <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<31>> is incomplete.
@@ -281,6 +269,30 @@ WARNING:PhysDesignRules:367 - The signal
    The signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal
    <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<23>> is incomplete.
+   The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<24>> is incomplete.
+   The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<25>> is incomplete.
+   The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<26>> is incomplete.
+   The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<27>> is incomplete.
+   The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<0>> is incomplete.
+   The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<1>> is incomplete.
+   The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<2>> is incomplete.
+   The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<3>> is incomplete.
    The signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal
    <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<16>> is incomplete.
@@ -307,18 +319,6 @@ WARNING:PhysDesignRules:367 - The signal
    <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<15>> is incomplete.
    The signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal
-   <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<8>> is incomplete.
-   The signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
-   <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<9>> is incomplete.
-   The signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
-   <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<10>> is incomplete.
-   The signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
-   <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<11>> is incomplete.
-   The signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
    <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<4>> is incomplete.
    The signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal
@@ -331,16 +331,16 @@ WARNING:PhysDesignRules:367 - The signal
    <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<7>> is incomplete.
    The signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal
-   <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<0>> is incomplete.
+   <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<8>> is incomplete.
    The signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal
-   <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<1>> is incomplete.
+   <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<9>> is incomplete.
    The signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal
-   <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<2>> is incomplete.
+   <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<10>> is incomplete.
    The signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal
-   <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<3>> is incomplete.
+   <link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<11>> is incomplete.
    The signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:2410 - This design is using one or more 9K Block RAMs
    (RAMB8BWER).  9K Block RAM initialization data, both user defined and
@@ -354,7 +354,7 @@ INFO:Map:284 - Map is running with the multi-threading option on. Map currently
    machine load, Map will use 2 processors during this run.
 INFO:Security:56 - Part 'xc6slx150t' is not a WebPack part.
 INFO:LIT:243 - Logical network vfat2_dvalid_i<5> has no load.
-INFO:LIT:395 - The above info message is repeated 517 more times for the
+INFO:LIT:395 - The above info message is repeated 773 more times for the
    following (max. 5 shown):
    vfat2_dvalid_i<4>,
    vfat2_dvalid_i<1>,
@@ -380,7 +380,7 @@ INFO:Pack:1650 - Map created a placed design.
 Section 4 - Removed Logic Summary
 ---------------------------------
  115 block(s) removed
- 222 block(s) optimized away
+ 230 block(s) optimized away
  233 signal(s) removed
 
 Section 5 - Removed Logic
@@ -1181,6 +1181,10 @@ Optimized Block(s):
 TYPE 		BLOCK
 GND 		XST_GND
 VCC 		XST_VCC
+GND 		bc0_counter_inst/XST_GND
+VCC 		bc0_counter_inst/XST_VCC
+GND 		calpulse_counter_inst/XST_GND
+VCC 		calpulse_counter_inst/XST_VCC
 GND 		fpga_clk_pll_inst/XST_GND
 GND 		global_registers_inst/XST_GND
 VCC 		global_registers_inst/XST_VCC
@@ -1622,6 +1626,10 @@ GND 		link_tracking_1_inst/vi2c_rx_counter_inst/XST_GND
 VCC 		link_tracking_1_inst/vi2c_rx_counter_inst/XST_VCC
 GND 		link_tracking_1_inst/vi2c_tx_counter_inst/XST_GND
 VCC 		link_tracking_1_inst/vi2c_tx_counter_inst/XST_VCC
+GND 		lv1a_counter_inst/XST_GND
+VCC 		lv1a_counter_inst/XST_VCC
+GND 		resync_counter_inst/XST_GND
+VCC 		resync_counter_inst/XST_VCC
 
 To enable printing of redundant blocks removed and signals merged, set the
 detailed map report option and rerun map.

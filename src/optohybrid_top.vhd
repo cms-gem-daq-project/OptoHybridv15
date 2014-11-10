@@ -125,6 +125,25 @@ architecture Behavioral of optohybrid_top is
     signal regs_1_write     : array32(63 downto 0);
     signal regs_1_tri       : std_logic_vector(63 downto 0);
     signal regs_1_read      : array32(63 downto 0);
+
+    -- Counters
+
+    signal lv1a_counter     : std_logic_vector(31 downto 0) := (others => '0');
+    signal calpulse_counter : std_logic_vector(31 downto 0) := (others => '0');
+    signal resync_counter   : std_logic_vector(31 downto 0) := (others => '0');
+    signal bc0_counter      : std_logic_vector(31 downto 0) := (others => '0');
+    
+    signal lv1a_cnt_res     : std_logic := '0';
+    signal calpulse_cnt_res : std_logic := '0';
+    signal resync_cnt_res   : std_logic := '0';
+    signal bc0_cnt_res      : std_logic := '0';
+    
+    -- T1 signals
+    
+    signal t1_lv1a          : std_logic := '0';
+    signal t1_calpulse      : std_logic := '0';
+    signal t1_resync        : std_logic := '0';
+    signal t1_bc0           : std_logic := '0';
     
 begin
 
@@ -229,7 +248,7 @@ begin
     );
     
     --================================--
-    -- Global registers & mapping
+    -- Registers & mapping
     --================================--
 
     global_registers_inst : entity work.registers
@@ -247,11 +266,49 @@ begin
     registers_write(62) <= x"89ABCDEF";
     registers_write(61) <= x"01ABED45";
     
-    registers_write(60 downto 0) <= regs_1_write(60 downto 0);
-    registers_tri(60 downto 0) <= regs_1_tri(60 downto 0);
+    registers_write(60 downto 8) <= regs_1_write(60 downto 8);
+    registers_tri(60 downto 8) <= regs_1_tri(60 downto 8);
     
-    regs_1_read <= registers_read;
+    regs_1_read(63 downto 8) <= registers_read(63 downto 8);
     
+    -- T1 operations
+    
+    regs_1_read(0) <= lv1a_counter;
+    t1_lv1a <= regs_1_tri(0);
+    
+    regs_1_read(1) <= (others => '0');
+    lv1a_cnt_res <= regs_1_tri(1);
+    
+    regs_1_read(2) <= calpulse_counter;
+    t1_calpulse <= regs_1_tri(2);
+    
+    regs_1_read(3) <= (others => '0');
+    calpulse_cnt_res <= regs_1_tri(3);
+    
+    regs_1_read(4) <= resync_counter;
+    t1_resync <= regs_1_tri(4);
+    
+    regs_1_read(5) <= (others => '0');
+    resync_cnt_res <= regs_1_tri(5);
+    
+    regs_1_read(6) <= bc0_counter;
+    t1_bc0 <= regs_1_tri(6);
+    
+    regs_1_read(7) <= (others => '0');
+    bc0_cnt_res <= regs_1_tri(7);
+    
+    --================================--
+    -- Counters
+    --================================--
+
+    lv1a_counter_inst : entity work.counter port map(fabric_clk_i => gtp_clk, reset_i => lv1a_cnt_res, en_i => t1_lv1a, data_o => lv1a_counter);
+    
+    calpulse_counter_inst : entity work.counter port map(fabric_clk_i => gtp_clk, reset_i => calpulse_cnt_res, en_i => t1_calpulse, data_o => calpulse_counter);
+    
+    resync_counter_inst : entity work.counter port map(fabric_clk_i => gtp_clk, reset_i => resync_cnt_res, en_i => t1_resync, data_o => resync_counter);
+    
+    bc0_counter_inst : entity work.counter port map(fabric_clk_i => gtp_clk, reset_i => bc0_cnt_res, en_i => t1_bc0, data_o => bc0_counter);
+
     --================================--
     -- T1 handling
     --================================--
@@ -261,9 +318,11 @@ begin
         gtp_clk_i   => gtp_clk,
         vfat2_clk_i => vfat2_clk,
         reset_i     => reset,
-        rx_kchar_i  => rx_kchar(3 downto 2),
-        rx_data_i   => rx_data(31 downto 16),
+        lv1a_i      => t1_lv1a,
+        calpulse_i  => t1_calpulse,
+        resync_i    => t1_resync,
+        bc0_i       => t1_bc0,
         t1_o        => vfat2_t1  
     );
-       
+    
 end Behavioral;

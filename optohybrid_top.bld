@@ -239,6 +239,518 @@ WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<61><1>'
    has no driver
 WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<61><0>'
    has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<7><31>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<7><30>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<7><29>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<7><28>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<7><27>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<7><26>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<7><25>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<7><24>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<7><23>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<7><22>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<7><21>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<7><20>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<7><19>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<7><18>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<7><17>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<7><16>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<7><15>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<7><14>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<7><13>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<7><12>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<7><11>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<7><10>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<7><9>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<7><8>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<7><7>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<7><6>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<7><5>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<7><4>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<7><3>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<7><2>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<7><1>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<7><0>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<6><31>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<6><30>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<6><29>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<6><28>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<6><27>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<6><26>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<6><25>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<6><24>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<6><23>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<6><22>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<6><21>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<6><20>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<6><19>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<6><18>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<6><17>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<6><16>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<6><15>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<6><14>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<6><13>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<6><12>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<6><11>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<6><10>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<6><9>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<6><8>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<6><7>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<6><6>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<6><5>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<6><4>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<6><3>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<6><2>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<6><1>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<6><0>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<5><31>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<5><30>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<5><29>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<5><28>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<5><27>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<5><26>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<5><25>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<5><24>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<5><23>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<5><22>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<5><21>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<5><20>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<5><19>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<5><18>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<5><17>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<5><16>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<5><15>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<5><14>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<5><13>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<5><12>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<5><11>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<5><10>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<5><9>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<5><8>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<5><7>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<5><6>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<5><5>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<5><4>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<5><3>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<5><2>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<5><1>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<5><0>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<4><31>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<4><30>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<4><29>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<4><28>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<4><27>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<4><26>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<4><25>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<4><24>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<4><23>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<4><22>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<4><21>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<4><20>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<4><19>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<4><18>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<4><17>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<4><16>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<4><15>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<4><14>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<4><13>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<4><12>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<4><11>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<4><10>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<4><9>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<4><8>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<4><7>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<4><6>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<4><5>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<4><4>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<4><3>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<4><2>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<4><1>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<4><0>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<3><31>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<3><30>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<3><29>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<3><28>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<3><27>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<3><26>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<3><25>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<3><24>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<3><23>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<3><22>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<3><21>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<3><20>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<3><19>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<3><18>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<3><17>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<3><16>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<3><15>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<3><14>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<3><13>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<3><12>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<3><11>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<3><10>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<3><9>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<3><8>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<3><7>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<3><6>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<3><5>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<3><4>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<3><3>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<3><2>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<3><1>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<3><0>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<2><31>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<2><30>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<2><29>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<2><28>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<2><27>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<2><26>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<2><25>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<2><24>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<2><23>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<2><22>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<2><21>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<2><20>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<2><19>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<2><18>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<2><17>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<2><16>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<2><15>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<2><14>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<2><13>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<2><12>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<2><11>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<2><10>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<2><9>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<2><8>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<2><7>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<2><6>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<2><5>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<2><4>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<2><3>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<2><2>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<2><1>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<2><0>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<1><31>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<1><30>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<1><29>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<1><28>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<1><27>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<1><26>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<1><25>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<1><24>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<1><23>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<1><22>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<1><21>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<1><20>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<1><19>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<1><18>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<1><17>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<1><16>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<1><15>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<1><14>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<1><13>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<1><12>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<1><11>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<1><10>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<1><9>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<1><8>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<1><7>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<1><6>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<1><5>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<1><4>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<1><3>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<1><2>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<1><1>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<1><0>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<0><31>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<0><30>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<0><29>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<0><28>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<0><27>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<0><26>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<0><25>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<0><24>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<0><23>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<0><22>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<0><21>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<0><20>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<0><19>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<0><18>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<0><17>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<0><16>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<0><15>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<0><14>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<0><13>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<0><12>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<0><11>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<0><10>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<0><9>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<0><8>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<0><7>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<0><6>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<0><5>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<0><4>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<0><3>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<0><2>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<0><1>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_write_o<0><0>'
+   has no driver
 WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_tri_o<63>' has no
    driver
 WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/gregs_tri_o<62>' has no
@@ -380,12 +892,12 @@ Partition Implementation Status
 
 NGDBUILD Design Results Summary:
   Number of errors:     0
-  Number of warnings: 141
+  Number of warnings: 397
 
-Total memory usage is 211516 kilobytes
+Total memory usage is 209468 kilobytes
 
 Writing NGD file "optohybrid_top.ngd" ...
-Total REAL time to NGDBUILD completion:  13 sec
-Total CPU time to NGDBUILD completion:   12 sec
+Total REAL time to NGDBUILD completion:  12 sec
+Total CPU time to NGDBUILD completion:   11 sec
 
 Writing NGDBUILD log file "optohybrid_top.bld"...

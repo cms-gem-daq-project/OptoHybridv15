@@ -10,11 +10,6 @@ package user_package is
     constant def_gtp_tracks     : std_logic_vector(7 downto 0) := x"02";  
     constant def_gtp_regs       : std_logic_vector(7 downto 0) := x"03";  
     
-    constant def_gtp_lv1a       : std_logic_vector(7 downto 0) := x"04";  
-    constant def_gtp_calpulse   : std_logic_vector(7 downto 0) := x"05";  
-    constant def_gtp_resync     : std_logic_vector(7 downto 0) := x"06";  
-    constant def_gtp_bc0        : std_logic_vector(7 downto 0) := x"07"; 
-    
     --=== Custom types ==========--
     
     type array192 is array(integer range <>) of std_logic_vector(191 downto 0);
