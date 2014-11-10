@@ -302,11 +302,8 @@ begin
     --================================--
 
     lv1a_counter_inst : entity work.counter port map(fabric_clk_i => gtp_clk, reset_i => lv1a_cnt_res, en_i => t1_lv1a, data_o => lv1a_counter);
-    
     calpulse_counter_inst : entity work.counter port map(fabric_clk_i => gtp_clk, reset_i => calpulse_cnt_res, en_i => t1_calpulse, data_o => calpulse_counter);
-    
     resync_counter_inst : entity work.counter port map(fabric_clk_i => gtp_clk, reset_i => resync_cnt_res, en_i => t1_resync, data_o => resync_counter);
-    
     bc0_counter_inst : entity work.counter port map(fabric_clk_i => gtp_clk, reset_i => bc0_cnt_res, en_i => t1_bc0, data_o => bc0_counter);
 
     --================================--

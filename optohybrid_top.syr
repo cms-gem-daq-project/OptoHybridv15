@@ -250,11 +250,6 @@ Elaborating entity <tracking_readout> (architecture <Behavioral>) from library <
 Elaborating entity <registers_core> (architecture <rtl>) from library <work>.
 
 Elaborating entity <registers> (architecture <Behavioral>) with generics from library <work>.
-WARNING:HDLCompiler:1127 - "\\psf\home\Documents\PhD\Code\OH\src\link_tracking.vhd" Line 246: Assignment to rx_error_cnt_res ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "\\psf\home\Documents\PhD\Code\OH\src\link_tracking.vhd" Line 251: Assignment to vi2c_rx_cnt_res ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "\\psf\home\Documents\PhD\Code\OH\src\link_tracking.vhd" Line 256: Assignment to vi2c_tx_cnt_res ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "\\psf\home\Documents\PhD\Code\OH\src\link_tracking.vhd" Line 261: Assignment to regs_rx_cnt_res ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "\\psf\home\Documents\PhD\Code\OH\src\link_tracking.vhd" Line 266: Assignment to regs_tx_cnt_res ignored, since the identifier is never used
 
 Elaborating entity <counter> (architecture <Behavioral>) from library <work>.
 
@@ -366,28 +361,28 @@ Unit <fpga_clk_pll> synthesized.
 
 Synthesizing Unit <gtp_wrapper>.
     Related source file is "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd".
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 94: Output port <locked_o> of the instance <gtp_pll_tile_0_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 105: Output port <locked_o> of the instance <gtp_pll_tile_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 118: Output port <TILE0_RXLOSSOFSYNC0_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 118: Output port <TILE0_RXLOSSOFSYNC1_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 118: Output port <TILE0_GTPCLKOUT1_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 118: Output port <TILE1_RXLOSSOFSYNC0_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 118: Output port <TILE1_RXLOSSOFSYNC1_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 118: Output port <TILE1_GTPCLKOUT1_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 118: Output port <TILE0_RESETDONE0_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 118: Output port <TILE0_RESETDONE1_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 118: Output port <TILE0_RXBYTEISALIGNED0_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 118: Output port <TILE0_RXBYTEISALIGNED1_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 118: Output port <TILE0_RXRECCLK0_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 118: Output port <TILE0_RXRECCLK1_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 118: Output port <TILE1_PLLLKDET0_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 118: Output port <TILE1_PLLLKDET1_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 118: Output port <TILE1_RESETDONE0_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 118: Output port <TILE1_RESETDONE1_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 118: Output port <TILE1_RXBYTEISALIGNED0_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 118: Output port <TILE1_RXBYTEISALIGNED1_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 118: Output port <TILE1_RXRECCLK0_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 118: Output port <TILE1_RXRECCLK1_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 98: Output port <locked_o> of the instance <gtp_pll_tile_0_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 109: Output port <locked_o> of the instance <gtp_pll_tile_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 129: Output port <TILE0_RXLOSSOFSYNC0_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 129: Output port <TILE0_RXLOSSOFSYNC1_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 129: Output port <TILE0_GTPCLKOUT1_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 129: Output port <TILE1_RXLOSSOFSYNC0_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 129: Output port <TILE1_RXLOSSOFSYNC1_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 129: Output port <TILE1_GTPCLKOUT1_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 129: Output port <TILE0_RESETDONE0_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 129: Output port <TILE0_RESETDONE1_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 129: Output port <TILE0_RXBYTEISALIGNED0_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 129: Output port <TILE0_RXBYTEISALIGNED1_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 129: Output port <TILE0_RXRECCLK0_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 129: Output port <TILE0_RXRECCLK1_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 129: Output port <TILE1_PLLLKDET0_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 129: Output port <TILE1_PLLLKDET1_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 129: Output port <TILE1_RESETDONE0_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 129: Output port <TILE1_RESETDONE1_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 129: Output port <TILE1_RXBYTEISALIGNED0_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 129: Output port <TILE1_RXBYTEISALIGNED1_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 129: Output port <TILE1_RXRECCLK0_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 129: Output port <TILE1_RXRECCLK1_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
     Summary:
 	no macro.
 Unit <gtp_wrapper> synthesized.
@@ -449,7 +444,7 @@ INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\link_tracking.vhd" line 22
 INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\link_tracking.vhd" line 226: Output port <rbus_o<2>> of the instance <registers_inst> is unconnected or connected to loadless signal.
 INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\link_tracking.vhd" line 226: Output port <rbus_o<1>> of the instance <registers_inst> is unconnected or connected to loadless signal.
 INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\link_tracking.vhd" line 226: Output port <rbus_o<0>> of the instance <registers_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\link_tracking.vhd" line 286: Output port <ASYNC_OUT> of the instance <chipscope_vio_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\link_tracking.vhd" line 284: Output port <ASYNC_OUT> of the instance <chipscope_vio_inst> is unconnected or connected to loadless signal.
 WARNING:Xst:653 - Signal <registers_write<9>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
 WARNING:Xst:653 - Signal <registers_write<8>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
 WARNING:Xst:653 - Signal <registers_write<7>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
@@ -797,8 +792,8 @@ Synthesizing Unit <tracking_concentrator>.
     Found 3-bit register for signal <cnt>.
     Found 192-bit register for signal <data_o>.
     Found 1-bit register for signal <en_o>.
-    Found 3-bit adder for signal <cnt[2]_GND_114_o_add_6_OUT> created at line 75.
-    Found 192-bit 8-to-1 multiplexer for signal <cnt[2]_data_i[7][191]_wide_mux_4_OUT> created at line 59.
+    Found 3-bit adder for signal <cnt[2]_GND_114_o_add_9_OUT> created at line 75.
+    Found 192-bit 8-to-1 multiplexer for signal <n0042[191:0]> created at line 57.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred 197 D-type flip-flop(s).
@@ -2442,15 +2437,10 @@ WARNING:Xst:2677 - Node <wbus_o_1_29> of sequential type is unconnected in block
 WARNING:Xst:2677 - Node <wbus_o_1_30> of sequential type is unconnected in block <registers_core_inst>.
 WARNING:Xst:2677 - Node <wbus_o_1_31> of sequential type is unconnected in block <registers_core_inst>.
 WARNING:Xst:2677 - Node <wbus_t_0> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_t_1> of sequential type is unconnected in block <registers_core_inst>.
 WARNING:Xst:2677 - Node <wbus_t_2> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_t_3> of sequential type is unconnected in block <registers_core_inst>.
 WARNING:Xst:2677 - Node <wbus_t_4> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_t_5> of sequential type is unconnected in block <registers_core_inst>.
 WARNING:Xst:2677 - Node <wbus_t_6> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_t_7> of sequential type is unconnected in block <registers_core_inst>.
 WARNING:Xst:2677 - Node <wbus_t_8> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_t_9> of sequential type is unconnected in block <registers_core_inst>.
 WARNING:Xst:2677 - Node <wbus_t_125> of sequential type is unconnected in block <registers_core_inst>.
 WARNING:Xst:2677 - Node <wbus_t_126> of sequential type is unconnected in block <registers_core_inst>.
 WARNING:Xst:2677 - Node <wbus_t_127> of sequential type is unconnected in block <registers_core_inst>.
@@ -3775,8 +3765,8 @@ Unit <u2> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 15501
- Flip-Flops                                            : 15501
+# Registers                                            : 15506
+ Flip-Flops                                            : 15506
 # Shift Registers                                      : 1
  2-bit shift register                                  : 1
 
@@ -3801,15 +3791,15 @@ Top Level Output File Name         : optohybrid_top.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 11353
+# BELS                             : 11364
 #      GND                         : 35
-#      INV                         : 152
+#      INV                         : 157
 #      LUT1                        : 641
 #      LUT2                        : 97
 #      LUT3                        : 4050
 #      LUT4                        : 401
-#      LUT5                        : 1938
-#      LUT6                        : 2263
+#      LUT5                        : 1939
+#      LUT6                        : 2268
 #      MUXCY                       : 654
 #      MUXCY_L                     : 103
 #      MUXF5                       : 2
@@ -3818,11 +3808,11 @@ Primitive and Black Box Usage:
 #      MUXF8                       : 2
 #      VCC                         : 29
 #      XORCY                       : 745
-# FlipFlops/Latches                : 16375
+# FlipFlops/Latches                : 16380
 #      FD                          : 333
 #      FDC                         : 122
 #      FDCE                        : 28
-#      FDE                         : 11823
+#      FDE                         : 11828
 #      FDP                         : 147
 #      FDPE                        : 1
 #      FDR                         : 3769
@@ -3865,17 +3855,17 @@ Selected Device : 6slx150tfgg676-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:           16375  out of  184304     8%  
- Number of Slice LUTs:                 9673  out of  92152    10%  
-    Number used as Logic:              9542  out of  92152    10%  
+ Number of Slice Registers:           16380  out of  184304     8%  
+ Number of Slice LUTs:                 9684  out of  92152    10%  
+    Number used as Logic:              9553  out of  92152    10%  
     Number used as Memory:              131  out of  21680     0%  
        Number used as SRL:              131
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:  19320
-   Number with an unused Flip Flop:    2945  out of  19320    15%  
-   Number with an unused LUT:          9647  out of  19320    49%  
-   Number of fully used LUT-FF pairs:  6728  out of  19320    34%  
+ Number of LUT Flip Flop pairs used:  19330
+   Number with an unused Flip Flop:    2950  out of  19330    15%  
+   Number with an unused LUT:          9646  out of  19330    49%  
+   Number of fully used LUT-FF pairs:  6734  out of  19330    34%  
    Number of unique control sets:       380
 
 IO Utilization: 
@@ -3909,7 +3899,7 @@ Clock Information:
 ----------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+-------+
 Clock Signal                                                                                                                                  | Clock buffer(FF name)                                                                                          | Load  |
 ----------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+-------+
-gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT0_OUT<0>                                                                        | DCM_SP:CLK0                                                                                                    | 12609 |
+gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT0_OUT<0>                                                                        | DCM_SP:CLK0                                                                                                    | 12614 |
 link_tracking_1_inst/vi2c_core_inst/chip_select_2                                                                                             | NONE(link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/wrbit_selected_iic[0]_DLATCH_2_q)| 4     |
 fpga_clk_pll_inst/pll_base_inst/CLKOUT1                                                                                                       | BUFG                                                                                                           | 3422  |
 link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL                                                               | BUFG                                                                                                           | 425   |
@@ -3942,7 +3932,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT0_OUT<0>'
   Clock period: 6.588ns (frequency: 151.787MHz)
-  Total number of paths / destination ports: 93435 / 17720
+  Total number of paths / destination ports: 93825 / 18050
 -------------------------------------------------------------------------
 Delay:               6.588ns (Levels of Logic = 5)
   Source:            link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/i2csda.timer_7 (FF)
@@ -3967,25 +3957,27 @@ Delay:               6.588ns (Levels of Logic = 5)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'fpga_clk_pll_inst/pll_base_inst/CLKOUT1'
-  Clock period: 5.178ns (frequency: 193.112MHz)
-  Total number of paths / destination ports: 33021 / 7001
+  Clock period: 6.424ns (frequency: 155.672MHz)
+  Total number of paths / destination ports: 43057 / 7001
 -------------------------------------------------------------------------
-Delay:               5.178ns (Levels of Logic = 1)
-  Source:            link_tracking_1_inst/tracking_core_inst/track_6_inst/state_FSM_FFd2 (FF)
-  Destination:       link_tracking_1_inst/tracking_core_inst/track_6_inst/data_0 (FF)
+Delay:               6.424ns (Levels of Logic = 3)
+  Source:            link_tracking_1_inst/tracking_core_inst/tracking_concentrator_inst/cnt_1 (FF)
+  Destination:       link_tracking_1_inst/tracking_core_inst/tracking_concentrator_inst/data_o_0 (FF)
   Source Clock:      fpga_clk_pll_inst/pll_base_inst/CLKOUT1 rising
   Destination Clock: fpga_clk_pll_inst/pll_base_inst/CLKOUT1 rising
 
-  Data Path: link_tracking_1_inst/tracking_core_inst/track_6_inst/state_FSM_FFd2 to link_tracking_1_inst/tracking_core_inst/track_6_inst/data_0
+  Data Path: link_tracking_1_inst/tracking_core_inst/tracking_concentrator_inst/cnt_1 to link_tracking_1_inst/tracking_core_inst/tracking_concentrator_inst/data_o_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q             212   0.447   2.161  state_FSM_FFd2 (state_FSM_FFd2)
-     LUT2:I0->O          192   0.203   2.046  _n0295_inv1 (_n0295_inv)
+     FDRE:C->Q           388   0.447   2.443  cnt_1 (cnt_1)
+     LUT6:I0->O            1   0.203   0.000  Mmux_n0042[191:0]_3101 (Mmux_n0042[191:0]_3101)
+     MUXF7:I1->O           2   0.140   0.617  Mmux_n0042[191:0]_2_f7_100 (n0042[191:0]<191>)
+     LUT5:I4->O          193   0.205   2.046  _n0068_inv1 (en_o_rstpot)
      FDE:CE                    0.322          data_o_0
     ----------------------------------------
-    Total                      5.178ns (0.972ns logic, 4.206ns route)
-                                       (18.8% logic, 81.2% route)
+    Total                      6.424ns (1.317ns logic, 5.107ns route)
+                                       (20.5% logic, 79.5% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL'
@@ -4229,7 +4221,7 @@ Clock to Setup on destination clock fpga_clk_pll_inst/pll_base_inst/CLKOUT1
                                                                       | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                                                          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ----------------------------------------------------------------------+---------+---------+---------+---------+
-fpga_clk_pll_inst/pll_base_inst/CLKOUT1                               |    5.178|         |         |         |
+fpga_clk_pll_inst/pll_base_inst/CLKOUT1                               |    6.424|         |         |         |
 gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT0_OUT<0>|    1.507|         |         |         |
 ----------------------------------------------------------------------+---------+---------+---------+---------+
 
@@ -4290,14 +4282,14 @@ gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT0_OUT<0>|    2.020
 =========================================================================
 
 
-Total REAL time to Xst completion: 64.00 secs
-Total CPU time to Xst completion: 64.54 secs
+Total REAL time to Xst completion: 73.00 secs
+Total CPU time to Xst completion: 72.56 secs
  
 --> 
 
-Total memory usage is 320732 kilobytes
+Total memory usage is 318684 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings : 2316 (   0 filtered)
+Number of warnings : 2306 (   0 filtered)
 Number of infos    :   87 (   0 filtered)
 

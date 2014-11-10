@@ -45,7 +45,11 @@ architecture Behavioral of gtp_wrapper is
     signal gtp_userclk2     : std_logic_vector(1 downto 0) := (others => '0');
     
     signal rx_disperr       : std_logic_vector(7 downto 0) := (others => '0'); 
-    signal rx_notintable    : std_logic_vector(7 downto 0) := (others => '0');  
+    signal rx_notintable    : std_logic_vector(7 downto 0) := (others => '0'); 
+    
+    signal rx_isaligned     : std_logic_vector(3 downto 0) := (others => '0'); 
+    signal rx_reset         : std_logic_vector(3 downto 0) := (others => '0');  
+    signal rx_reset_done    : std_logic_vector(3 downto 0) := (others => '0');  
 
 begin
     
@@ -114,6 +118,13 @@ begin
     gtp_pll_reset(1) <= not gtp_pllkdet(1);
     
     ---
+    
+    rx_reset(0) <= reset_i;-- or (rx_reset_done(0) and (not rx_isaligned(0)));
+    rx_reset(1) <= reset_i;-- or (rx_reset_done(1) and (not rx_isaligned(1)));
+    rx_reset(2) <= reset_i;-- or (rx_reset_done(2) and (not rx_isaligned(2)));
+    rx_reset(3) <= reset_i;-- or (rx_reset_done(3) and (not rx_isaligned(3)));
+    
+    ---
 
     gtp_inst : entity work.s6_gtpwizard_v1_11
     generic map(
@@ -129,20 +140,20 @@ begin
     port map(
         TILE0_CLK00_IN                  => gtp_refclk(0),
         TILE0_CLK01_IN                  => gtp_refclk(1),
-        TILE0_GTPRESET0_IN              => reset_i,
-        TILE0_GTPRESET1_IN              => reset_i,
+        TILE0_GTPRESET0_IN              => rx_reset(0),
+        TILE0_GTPRESET1_IN              => rx_reset(1),
         TILE0_PLLLKDET0_OUT             => gtp_pllkdet(0),
         TILE0_PLLLKDET1_OUT             => gtp_pllkdet(1),
-        TILE0_RESETDONE0_OUT            => open,
-        TILE0_RESETDONE1_OUT            => open,
+        TILE0_RESETDONE0_OUT            => rx_reset_done(0),
+        TILE0_RESETDONE1_OUT            => rx_reset_done(1),
         TILE0_RXCHARISK0_OUT            => rx_kchar_o(1 downto 0),
         TILE0_RXCHARISK1_OUT            => rx_kchar_o(3 downto 2),
         TILE0_RXDISPERR0_OUT            => rx_disperr(1 downto 0),
         TILE0_RXDISPERR1_OUT            => rx_disperr(3 downto 2),
         TILE0_RXNOTINTABLE0_OUT         => rx_notintable(1 downto 0),
         TILE0_RXNOTINTABLE1_OUT         => rx_notintable(3 downto 2),
-        TILE0_RXBYTEISALIGNED0_OUT      => open,
-        TILE0_RXBYTEISALIGNED1_OUT      => open,
+        TILE0_RXBYTEISALIGNED0_OUT      => rx_isaligned(0),
+        TILE0_RXBYTEISALIGNED1_OUT      => rx_isaligned(1),
         TILE0_RXENMCOMMAALIGN0_IN       => '1',
         TILE0_RXENMCOMMAALIGN1_IN       => '1',
         TILE0_RXENPCOMMAALIGN0_IN       => '1',
@@ -178,20 +189,20 @@ begin
 
         TILE1_CLK00_IN                  => gtp_refclk(2),
         TILE1_CLK01_IN                  => gtp_refclk(3),
-        TILE1_GTPRESET0_IN              => reset_i,
-        TILE1_GTPRESET1_IN              => reset_i,
+        TILE1_GTPRESET0_IN              => rx_reset(2),
+        TILE1_GTPRESET1_IN              => rx_reset(3),
         TILE1_PLLLKDET0_OUT             => gtp_pllkdet(2),
         TILE1_PLLLKDET1_OUT             => gtp_pllkdet(3),
-        TILE1_RESETDONE0_OUT            => open,
-        TILE1_RESETDONE1_OUT            => open,
+        TILE1_RESETDONE0_OUT            => rx_reset_done(2),
+        TILE1_RESETDONE1_OUT            => rx_reset_done(3),
         TILE1_RXCHARISK0_OUT            => rx_kchar_o(5 downto 4),
         TILE1_RXCHARISK1_OUT            => rx_kchar_o(7 downto 6),
         TILE1_RXDISPERR0_OUT            => rx_disperr(5 downto 4),
         TILE1_RXDISPERR1_OUT            => rx_disperr(7 downto 6),
         TILE1_RXNOTINTABLE0_OUT         => rx_notintable(5 downto 4),
         TILE1_RXNOTINTABLE1_OUT         => rx_notintable(7 downto 6),
-        TILE1_RXBYTEISALIGNED0_OUT      => open,
-        TILE1_RXBYTEISALIGNED1_OUT      => open,
+        TILE1_RXBYTEISALIGNED0_OUT      => rx_isaligned(2),
+        TILE1_RXBYTEISALIGNED1_OUT      => rx_isaligned(3),
         TILE1_RXENMCOMMAALIGN0_IN       => '1',
         TILE1_RXENMCOMMAALIGN1_IN       => '1',
         TILE1_RXENPCOMMAALIGN0_IN       => '1',

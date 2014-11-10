@@ -53,18 +53,18 @@ begin
                     
                 elsif (state = 1) then
                 
-                    -- Reject unformated packets
-                    --if (data_i(cnt)(191 downto 188) = "1010") then
+                    -- Reject empty packets
+                    if (data_i(cnt)(191 downto 188) /= "0000") then
                 
                         data_o <= data_i(cnt);
                     
                         en_o <= '1';
                         
-                    --else
+                    else
                     
-                    --    en_o <= '0';
+                        en_o <= '0';
                         
-                    --end if;
+                    end if;
                     
                     if (cnt = 7) then
                     

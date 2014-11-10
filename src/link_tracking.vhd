@@ -146,7 +146,7 @@ begin
         track_done_o    => track_tx_done,
         track_data_i    => track_tx_data,
         tx_kchar_o      => tx_kchar_o,
-        tx_data_o       => tx_data
+        tx_data_o       => tx_data -- tx_data_o
     );
 
     tx_data_o <= tx_data;
@@ -269,13 +269,11 @@ begin
     -- Counters
     --================================--
 
-    rx_error_counter_inst : entity work.counter port map(fabric_clk_i => gtp_clk_i, reset_i => reset_i, en_i => rx_error_i, data_o => rx_error_counter);
-
-    vi2c_rx_counter_inst : entity work.counter port map(fabric_clk_i => gtp_clk_i, reset_i => reset_i, en_i => vi2c_rx_en, data_o => vi2c_rx_counter);
-    vi2c_tx_counter_inst : entity work.counter port map(fabric_clk_i => gtp_clk_i, reset_i => reset_i, en_i => vi2c_tx_done, data_o => vi2c_tx_counter);
-
-    regs_rx_counter_inst : entity work.counter port map(fabric_clk_i => gtp_clk_i, reset_i => reset_i, en_i => regs_rx_en, data_o => regs_rx_counter);
-    regs_tx_counter_inst : entity work.counter port map(fabric_clk_i => gtp_clk_i, reset_i => reset_i, en_i => regs_tx_done, data_o => regs_tx_counter);
+    rx_error_counter_inst : entity work.counter port map(fabric_clk_i => gtp_clk_i, reset_i => rx_error_cnt_res, en_i => rx_error_i, data_o => rx_error_counter);
+    vi2c_rx_counter_inst : entity work.counter port map(fabric_clk_i => gtp_clk_i, reset_i => vi2c_rx_cnt_res, en_i => vi2c_rx_en, data_o => vi2c_rx_counter);
+    vi2c_tx_counter_inst : entity work.counter port map(fabric_clk_i => gtp_clk_i, reset_i => vi2c_tx_cnt_res, en_i => vi2c_tx_done, data_o => vi2c_tx_counter);
+    regs_rx_counter_inst : entity work.counter port map(fabric_clk_i => gtp_clk_i, reset_i => regs_rx_cnt_res, en_i => regs_rx_en, data_o => regs_rx_counter);
+    regs_tx_counter_inst : entity work.counter port map(fabric_clk_i => gtp_clk_i, reset_i => regs_tx_cnt_res, en_i => regs_tx_done, data_o => regs_tx_counter);
 
     --================================--
     -- ChipScope
