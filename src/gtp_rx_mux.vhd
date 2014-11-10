@@ -88,6 +88,7 @@ begin
                 -- Receive data
                 elsif (state = 1) then
                 
+                    -- This condition allows a fast command to be inserted in the data stream (ignore that packet and resume afterwards)
                     if (rx_kchar_i = "00") then
                 
                         -- Receive data
@@ -102,10 +103,6 @@ begin
                             data_cnt := data_cnt - 1;
                             
                         end if;
-                        
-                    else
-                    
-                        state := 0;
                     
                     end if;
                    

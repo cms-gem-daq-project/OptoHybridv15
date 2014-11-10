@@ -11,7 +11,7 @@ port(
     reset_i     : in std_logic;
     
     en_i        : in std_logic_vector(7 downto 0);
-    data_i      : in array8x192;
+    data_i      : in array192(7 downto 0);
     
     en_o        : out std_logic;
     data_o      : out std_logic_vector(191 downto 0)
@@ -54,17 +54,17 @@ begin
                 elsif (state = 1) then
                 
                     -- Reject unformated packets
-                    if (data_i(cnt)(191 downto 188) = "1010") then
+                    --if (data_i(cnt)(191 downto 188) = "1010") then
                 
                         data_o <= data_i(cnt);
                     
                         en_o <= '1';
                         
-                    else
+                    --else
                     
-                        en_o <= '0';
+                    --    en_o <= '0';
                         
-                    end if;
+                    --end if;
                     
                     if (cnt = 7) then
                     

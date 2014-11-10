@@ -17,8 +17,8 @@ package user_package is
     
     --=== Custom types ==========--
     
-    type array8x192 is array(7 downto 0) of std_logic_vector(191 downto 0);
-    type array128x32 is array(127 downto 0) of std_logic_vector(31 downto 0);
+    type array192 is array(integer range <>) of std_logic_vector(191 downto 0);
+    type array32 is array(integer range <>) of std_logic_vector(31 downto 0);
     
 end user_package;
    

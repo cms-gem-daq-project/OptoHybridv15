@@ -22,6 +22,12 @@ port(
     tx_kchar_o      : out std_logic_vector(1 downto 0);
     tx_data_o       : out std_logic_vector(15 downto 0);
 
+    -- Global registers
+  
+    gregs_write_o   : out array32(63 downto 0);
+    gregs_tri_o     : out std_logic_vector(63 downto 0);
+    gregs_read_i    : in array32(63 downto 0);
+
     -- IIC signals
 
     vfat2_sda_i     : in std_logic_vector(1 downto 0);
@@ -69,12 +75,15 @@ architecture Behavioral of link_tracking is
     signal regs_tx_done     : std_logic := '0';
     signal regs_tx_data     : std_logic_vector(47 downto 0) := (others => '0');
 
-    signal regs_write       : array128x32;
-    signal regs_tri         : std_logic_vector(127 downto 0);
-
-    signal registers_write  : array128x32;
+    signal registers_write  : array32(127 downto 0);
     signal registers_tri    : std_logic_vector(127 downto 0);
-    signal registers_read   : array128x32;
+    signal registers_read   : array32(127 downto 0);
+
+    -- Local registers
+
+    signal lregs_write      : array32(63 downto 0);
+    signal lregs_tri        : std_logic_vector(63 downto 0);
+    signal lregs_read       : array32(63 downto 0);
 
     -- Counters
 
@@ -173,11 +182,11 @@ begin
         vfat2_data_6_i  => vfat2_data_6_i,
         vfat2_data_7_i  => vfat2_data_7_i
     );
-
+    
     --================================--
-    -- Registers & mapping
+    -- Registers 
     --================================--
-
+    
     registers_core_inst : entity work.registers_core
     port map(
         fabric_clk_i    => gtp_clk_i,
@@ -187,29 +196,43 @@ begin
         tx_ready_o      => regs_tx_ready,
         tx_done_i       => regs_tx_done,
         tx_data_o       => regs_tx_data,
-        wbus_o          => regs_write,
-        wbus_t          => regs_tri,
+        wbus_o          => registers_write,
+        wbus_t          => registers_tri,
         rbus_i          => registers_read
     );
+    
+    registers_read <= gregs_read_i & lregs_read;
+    
+    --================================--
+    -- Global registers & mapping
+    --================================--
+    
+    gregs_write_o <= registers_write(127 downto 64);
+    gregs_tri_o <= registers_tri(127 downto 64);
+    
+    --================================--
+    -- Local registers & mapping
+    --================================--
 
     registers_inst : entity work.registers
+    generic map(SIZE => 64)
     port map(
         fabric_clk_i    => gtp_clk_i,
         reset_i         => reset_i,
-        wbus_i          => registers_write,
-        wbus_t          => registers_tri,
-        rbus_o          => registers_read
+        wbus_i          => lregs_write,
+        wbus_t          => lregs_tri,
+        rbus_o          => lregs_read
     );
 
-    registers_tri(127 downto 123) <= (others => '1');
-    registers_write(127) <= vi2c_rx_counter;
-    registers_write(126) <= vi2c_tx_counter;
-    registers_write(125) <= regs_rx_counter;
-    registers_write(124) <= regs_tx_counter;
-    registers_write(123) <= rx_error_counter;
-
-    registers_tri(122 downto 0) <= regs_tri(122 downto 0);
-    registers_write(122 downto 0) <= regs_write(122 downto 0);
+    lregs_tri(63 downto 59) <= (others => '1');
+    lregs_write(63) <= vi2c_rx_counter;
+    lregs_write(62) <= vi2c_tx_counter;
+    lregs_write(61) <= regs_rx_counter;
+    lregs_write(60) <= regs_tx_counter;
+    lregs_write(59) <= rx_error_counter;
+    
+    lregs_write(58 downto 0) <= registers_write(58 downto 0);
+    lregs_tri(58 downto 0) <= registers_tri(58 downto 0);
 
     --================================--
     -- Counters

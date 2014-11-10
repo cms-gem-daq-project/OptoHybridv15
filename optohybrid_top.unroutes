@@ -1,0 +1,114 @@
+Release 14.7 - par P.20131013 (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Mon Nov 10 10:07:01 2014
+
+All signals are completely routed.
+
+WARNING:ParHelpers:362 - There are 14 sourceless signals in this design. This design will not pass the DRC check run by
+   Bitgen.
+
+   cdce_le_o_OBUF
+   cdce_mosi_o_OBUF
+   cdce_sclk_o_OBUF
+   fpga_test_o<0>_OBUF
+   fpga_test_o<1>_OBUF
+   fpga_test_o<2>_OBUF
+   fpga_test_o<3>_OBUF
+   fpga_test_o<4>_OBUF
+   fpga_test_o<5>_OBUF
+   fpga_tx_o_OBUF
+   leds_o<0>_OBUF
+   leds_o<1>_OBUF
+   leds_o<2>_OBUF
+   leds_o<3>_OBUF
+WARNING:ParHelpers:361 - There are 85 loadless signals in this design. This design will cause Bitgen to issue DRC
+   warnings.
+
+   cdce_auxout_i_IBUF
+   cdce_miso_i_IBUF
+   cdce_plllock_i_IBUF
+   fpga_rx_i_IBUF
+   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/RESET
+   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<0>
+   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<10>
+   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<11>
+   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<12>
+   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<13>
+   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<14>
+   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<15>
+   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<16>
+   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<17>
+   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<18>
+   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<19>
+   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<1>
+   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<20>
+   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<21>
+   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<22>
+   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<23>
+   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<24>
+   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<25>
+   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<26>
+   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<27>
+   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<28>
+   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<29>
+   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<2>
+   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<30>
+   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<31>
+   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<3>
+   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<4>
+   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<5>
+   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<6>
+   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<7>
+   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<8>
+   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<9>
+   vfat2_data_10_i<0>_IBUF
+   vfat2_data_10_i<1>_IBUF
+   vfat2_data_10_i<2>_IBUF
+   vfat2_data_10_i<3>_IBUF
+   vfat2_data_10_i<4>_IBUF
+   vfat2_data_10_i<5>_IBUF
+   vfat2_data_10_i<6>_IBUF
+   vfat2_data_10_i<7>_IBUF
+   vfat2_data_11_i<0>_IBUF
+   vfat2_data_11_i<1>_IBUF
+   vfat2_data_11_i<2>_IBUF
+   vfat2_data_11_i<3>_IBUF
+   vfat2_data_11_i<4>_IBUF
+   vfat2_data_11_i<5>_IBUF
+   vfat2_data_11_i<6>_IBUF
+   vfat2_data_11_i<7>_IBUF
+   vfat2_data_12_i<0>_IBUF
+   vfat2_data_12_i<1>_IBUF
+   vfat2_data_12_i<2>_IBUF
+   vfat2_data_12_i<3>_IBUF
+   vfat2_data_12_i<4>_IBUF
+   vfat2_data_12_i<5>_IBUF
+   vfat2_data_12_i<6>_IBUF
+   vfat2_data_12_i<7>_IBUF
+   vfat2_data_13_i<0>_IBUF
+   vfat2_data_13_i<1>_IBUF
+   vfat2_data_13_i<2>_IBUF
+   vfat2_data_13_i<3>_IBUF
+   vfat2_data_13_i<4>_IBUF
+   vfat2_data_13_i<5>_IBUF
+   vfat2_data_13_i<6>_IBUF
+   vfat2_data_13_i<7>_IBUF
+   vfat2_data_8_i<0>_IBUF
+   vfat2_data_8_i<1>_IBUF
+   vfat2_data_8_i<2>_IBUF
+   vfat2_data_8_i<3>_IBUF
+   vfat2_data_8_i<4>_IBUF
+   vfat2_data_8_i<5>_IBUF
+   vfat2_data_8_i<6>_IBUF
+   vfat2_data_8_i<7>_IBUF
+   vfat2_data_9_i<0>_IBUF
+   vfat2_data_9_i<1>_IBUF
+   vfat2_data_9_i<2>_IBUF
+   vfat2_data_9_i<3>_IBUF
+   vfat2_data_9_i<4>_IBUF
+   vfat2_data_9_i<5>_IBUF
+   vfat2_data_9_i<6>_IBUF
+   vfat2_data_9_i<7>_IBUF
+
+

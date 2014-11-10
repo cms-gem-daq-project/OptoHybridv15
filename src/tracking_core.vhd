@@ -32,7 +32,7 @@ end tracking_core;
 architecture Behavioral of tracking_core is
 
     signal track_en     : std_logic_vector(7 downto 0) := (others => '0');
-    signal track_data   : array8x192;
+    signal track_data   : array192(7 downto 0);
     
     signal fifo_wr      : std_logic := '0';
     signal fifo_din     : std_logic_vector(191 downto 0) := (others => '0');

@@ -3,6 +3,7 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 library work;
+use work.user_package.all;
 
 library unisim;
 use unisim.vcomponents.all;
@@ -115,6 +116,16 @@ architecture Behavioral of optohybrid_top is
     signal tx_kchar         : std_logic_vector(7 downto 0) := (others => '0');
     signal tx_data          : std_logic_vector(63 downto 0) := (others => '0');
     
+    -- Registers
+
+    signal registers_write  : array32(63 downto 0);
+    signal registers_tri    : std_logic_vector(63 downto 0);
+    signal registers_read   : array32(63 downto 0);
+    
+    signal regs_1_write     : array32(63 downto 0);
+    signal regs_1_tri       : std_logic_vector(63 downto 0);
+    signal regs_1_read      : array32(63 downto 0);
+    
 begin
 
     -- OptoHybrid reset
@@ -199,6 +210,9 @@ begin
         rx_data_i       => rx_data(31 downto 16),
         tx_kchar_o      => tx_kchar(3 downto 2),
         tx_data_o       => tx_data(31 downto 16),
+        gregs_write_o   => regs_1_write,
+        gregs_tri_o     => regs_1_tri,
+        gregs_read_i    => regs_1_read,
         vfat2_sda_i     => vfat2_sda_i(3 downto 2),
         vfat2_sda_o     => vfat2_sda_o(3 downto 2),
         vfat2_sda_t     => vfat2_sda_t(3 downto 2),
@@ -213,6 +227,30 @@ begin
         vfat2_data_6_i  => vfat2_data_14_i(8),
         vfat2_data_7_i  => vfat2_data_15_i(8)
     );
+    
+    --================================--
+    -- Global registers & mapping
+    --================================--
+
+    global_registers_inst : entity work.registers
+    generic map(SIZE => 64)
+    port map(
+        fabric_clk_i    => gtp_clk,
+        reset_i         => reset,
+        wbus_i          => registers_write,
+        wbus_t          => registers_tri,
+        rbus_o          => registers_read
+    );
+    
+    registers_tri(63 downto 61) <= (others => '1');
+    registers_write(63) <= x"01234567";
+    registers_write(62) <= x"89ABCDEF";
+    registers_write(61) <= x"01ABED45";
+    
+    registers_write(60 downto 0) <= regs_1_write(60 downto 0);
+    registers_tri(60 downto 0) <= regs_1_tri(60 downto 0);
+    
+    regs_1_read <= registers_read;
     
     --================================--
     -- T1 handling

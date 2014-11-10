@@ -18,9 +18,9 @@ port(
     tx_done_i       : in std_logic;
     tx_data_o       : out std_logic_vector(47 downto 0);
 
-    wbus_o          : out array128x32;
+    wbus_o          : out array32(127 downto 0);
     wbus_t          : out std_logic_vector(127 downto 0);
-    rbus_i          : in array128x32
+    rbus_i          : in array32(127 downto 0)
 
 );
 end registers_core;
