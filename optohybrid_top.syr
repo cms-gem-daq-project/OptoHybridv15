@@ -792,8 +792,8 @@ Synthesizing Unit <tracking_concentrator>.
     Found 3-bit register for signal <cnt>.
     Found 192-bit register for signal <data_o>.
     Found 1-bit register for signal <en_o>.
-    Found 3-bit adder for signal <cnt[2]_GND_114_o_add_9_OUT> created at line 75.
-    Found 192-bit 8-to-1 multiplexer for signal <n0042[191:0]> created at line 57.
+    Found 3-bit adder for signal <cnt[2]_GND_114_o_add_11_OUT> created at line 75.
+    Found 192-bit 8-to-1 multiplexer for signal <n0045[191:0]> created at line 57.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred 197 D-type flip-flop(s).
@@ -3971,9 +3971,9 @@ Delay:               6.424ns (Levels of Logic = 3)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FDRE:C->Q           388   0.447   2.443  cnt_1 (cnt_1)
-     LUT6:I0->O            1   0.203   0.000  Mmux_n0042[191:0]_3101 (Mmux_n0042[191:0]_3101)
-     MUXF7:I1->O           2   0.140   0.617  Mmux_n0042[191:0]_2_f7_100 (n0042[191:0]<191>)
-     LUT5:I4->O          193   0.205   2.046  _n0068_inv1 (en_o_rstpot)
+     LUT6:I0->O            1   0.203   0.000  Mmux_n0045[191:0]_3100 (Mmux_n0045[191:0]_3100)
+     MUXF7:I1->O           2   0.140   0.617  Mmux_n0045[191:0]_2_f7_99 (n0045[191:0]<190>)
+     LUT5:I4->O          193   0.205   2.046  _n0072_inv1 (en_o_rstpot)
      FDE:CE                    0.322          data_o_0
     ----------------------------------------
     Total                      6.424ns (1.317ns logic, 5.107ns route)
@@ -4282,12 +4282,12 @@ gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT0_OUT<0>|    2.020
 =========================================================================
 
 
-Total REAL time to Xst completion: 73.00 secs
-Total CPU time to Xst completion: 72.56 secs
+Total REAL time to Xst completion: 67.00 secs
+Total CPU time to Xst completion: 67.33 secs
  
 --> 
 
-Total memory usage is 318684 kilobytes
+Total memory usage is 319708 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings : 2306 (   0 filtered)

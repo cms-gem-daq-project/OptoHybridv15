@@ -54,7 +54,7 @@ begin
                 elsif (state = 1) then
                 
                     -- Reject empty packets
-                    if (data_i(cnt)(191 downto 188) /= "0000") then
+                    if ((data_i(cnt)(191 downto 188) /= "1111") and (data_i(cnt)(191 downto 188) /= "0000")) then
                 
                         data_o <= data_i(cnt);
                     
