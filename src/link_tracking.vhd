@@ -22,11 +22,11 @@ port(
     tx_kchar_o      : out std_logic_vector(1 downto 0);
     tx_data_o       : out std_logic_vector(15 downto 0);
 
-    -- Global registers
+    -- Global requets
   
-    gregs_write_o   : out array32(63 downto 0);
-    gregs_tri_o     : out std_logic_vector(63 downto 0);
-    gregs_read_i    : in array32(63 downto 0);
+    request_write_o : out array32(63 downto 0);
+    request_tri_o   : out std_logic_vector(63 downto 0);
+    request_read_i  : in array32(63 downto 0);
 
     -- IIC signals
 
@@ -55,64 +55,66 @@ architecture Behavioral of link_tracking is
 
     -- VFAT2 I2C signals
 
-    signal vi2c_rx_en       : std_logic := '0';
-    signal vi2c_rx_data     : std_logic_vector(31 downto 0) := (others => '0');
-    signal vi2c_tx_ready    : std_logic := '0';
-    signal vi2c_tx_done     : std_logic := '0';
-    signal vi2c_tx_data     : std_logic_vector(31 downto 0) := (others => '0');
+    signal vi2c_rx_en               : std_logic := '0';
+    signal vi2c_rx_data             : std_logic_vector(31 downto 0) := (others => '0');
+    signal vi2c_tx_ready            : std_logic := '0';
+    signal vi2c_tx_done             : std_logic := '0';
+    signal vi2c_tx_data             : std_logic_vector(31 downto 0) := (others => '0');
 
     -- Tracking signals
 
-    signal track_tx_ready   : std_logic := '0';
-    signal track_tx_done    : std_logic := '0';
-    signal track_tx_data    : std_logic_vector(191 downto 0) := (others => '0');
+    signal track_tx_ready           : std_logic := '0';
+    signal track_tx_done            : std_logic := '0';
+    signal track_tx_data            : std_logic_vector(191 downto 0) := (others => '0');
+
+    -- Registers requests
+
+    signal regs_rx_en               : std_logic := '0';
+    signal regs_rx_data             : std_logic_vector(47 downto 0) := (others => '0');
+    signal regs_tx_ready            : std_logic := '0';
+    signal regs_tx_done             : std_logic := '0';
+    signal regs_tx_data             : std_logic_vector(47 downto 0) := (others => '0');
+    
+    signal regs_req_write           : array32(127 downto 0);
+    signal regs_req_tri             : std_logic_vector(127 downto 0);
+    signal regs_req_read            : array32(127 downto 0);
+
+    -- Local requests
+
+    signal request_write            : array32(63 downto 0) := (others => (others => '0'));
+    signal request_tri              : std_logic_vector(63 downto 0);
+    signal request_read             : array32(63 downto 0) := (others => (others => '0'));
 
     -- Registers
 
-    signal regs_rx_en       : std_logic := '0';
-    signal regs_rx_data     : std_logic_vector(47 downto 0) := (others => '0');
-    signal regs_tx_ready    : std_logic := '0';
-    signal regs_tx_done     : std_logic := '0';
-    signal regs_tx_data     : std_logic_vector(47 downto 0) := (others => '0');
-    
-    signal regs_req_write   : array32(127 downto 0);
-    signal regs_req_tri     : std_logic_vector(127 downto 0);
-    signal regs_req_read    : array32(127 downto 0);
-
-    -- Local registers
-
-    signal lregs_write      : array32(63 downto 0);
-    signal lregs_tri        : std_logic_vector(63 downto 0);
-    signal lregs_read       : array32(63 downto 0);
-
-    signal registers_write  : array32(63 downto 0);
-    signal registers_tri    : std_logic_vector(63 downto 0);
-    signal registers_read   : array32(63 downto 0);
+    signal registers_write          : array32(7 downto 0) := (others => (others => '0'));
+    signal registers_tri            : std_logic_vector(7 downto 0);
+    signal registers_read           : array32(7 downto 0) := (others => (others => '0'));
 
     -- Counters
 
-    signal rx_error_counter : std_logic_vector(31 downto 0) := (others => '0');
-    signal vi2c_rx_counter  : std_logic_vector(31 downto 0) := (others => '0');
-    signal vi2c_tx_counter  : std_logic_vector(31 downto 0) := (others => '0');
-    signal regs_rx_counter  : std_logic_vector(31 downto 0) := (others => '0');
-    signal regs_tx_counter  : std_logic_vector(31 downto 0) := (others => '0');
+    signal rx_error_counter         : std_logic_vector(31 downto 0) := (others => '0');
+    signal vi2c_rx_counter          : std_logic_vector(31 downto 0) := (others => '0');
+    signal vi2c_tx_counter          : std_logic_vector(31 downto 0) := (others => '0');
+    signal regs_rx_counter          : std_logic_vector(31 downto 0) := (others => '0');
+    signal regs_tx_counter          : std_logic_vector(31 downto 0) := (others => '0');
 
-    signal rx_error_cnt_res : std_logic := '0';
-    signal vi2c_rx_cnt_res  : std_logic := '0';
-    signal vi2c_tx_cnt_res  : std_logic := '0';
-    signal regs_rx_cnt_res  : std_logic := '0';
-    signal regs_tx_cnt_res  : std_logic := '0';
+    signal rx_error_counter_reset   : std_logic := '0';
+    signal vi2c_rx_counter_reset    : std_logic := '0';
+    signal vi2c_tx_counter_reset    : std_logic := '0';
+    signal regs_rx_counter_reset    : std_logic := '0';
+    signal regs_tx_counter_reset    : std_logic := '0';
 
     -- ChipScope signals
 
-    signal tx_data          : std_logic_vector(15 downto 0);
+    signal tx_data                  : std_logic_vector(15 downto 0);
 
-    signal cs_icon0         : std_logic_vector(35 downto 0);
-    signal cs_icon1         : std_logic_vector(35 downto 0);
-    signal cs_in            : std_logic_vector(31 downto 0);
-    signal cs_out           : std_logic_vector(31 downto 0);
-    signal cs_ila0          : std_logic_vector(31 downto 0);
-    signal cs_ila1          : std_logic_vector(31 downto 0);
+    signal cs_icon0                 : std_logic_vector(35 downto 0);
+    signal cs_icon1                 : std_logic_vector(35 downto 0);
+    signal cs_in                    : std_logic_vector(31 downto 0);
+    signal cs_out                   : std_logic_vector(31 downto 0);
+    signal cs_ila0                  : std_logic_vector(31 downto 0);
+    signal cs_ila1                  : std_logic_vector(31 downto 0);
 
 begin
 
@@ -211,20 +213,20 @@ begin
         rbus_i          => regs_req_read
     );
     
-    regs_req_read <= gregs_read_i & lregs_read;
+    regs_req_read <= request_read_i & request_read;    -- Global & Local
     
-    gregs_write_o <= regs_req_write(127 downto 64);
-    gregs_tri_o <= regs_req_tri(127 downto 64);
+    request_write_o <= regs_req_write(127 downto 64);   -- Global mapping
+    request_tri_o <= regs_req_tri(127 downto 64);
     
-    lregs_write <= regs_req_write(63 downto 0);
-    lregs_tri <= regs_req_tri(63 downto 0);
+    request_write <= regs_req_write(63 downto 0);       -- Local mapping
+    request_tri <= regs_req_tri(63 downto 0);
     
     --================================--
-    -- Local registers & mapping
+    -- Registers
     --================================--
 
     registers_inst : entity work.registers
-    generic map(SIZE => 64)
+    generic map(SIZE => 8)
     port map(
         fabric_clk_i    => gtp_clk_i,
         reset_i         => reset_i,
@@ -232,48 +234,57 @@ begin
         wbus_t          => registers_tri,
         rbus_o          => registers_read
     );
-    
-    registers_write(63 downto 10) <= lregs_write(63 downto 10);
-    registers_tri(63 downto 10) <= lregs_tri(63 downto 10);
-    
-    lregs_read(63 downto 10) <= registers_read(63 downto 10);
-    
-    -- Counters
-    
-    lregs_read(0) <= rx_error_counter;
-    
-    lregs_read(1) <= (others => '0');
-    rx_error_cnt_res <= lregs_tri(1);
-    
-    lregs_read(2) <= vi2c_rx_counter;
-    
-    lregs_read(3) <= (others => '0');
-    vi2c_rx_cnt_res <= lregs_tri(3);
-    
-    lregs_read(4) <= vi2c_tx_counter;
-    
-    lregs_read(5) <= (others => '0');
-    vi2c_tx_cnt_res <= lregs_tri(5);
-    
-    lregs_read(6) <= regs_rx_counter;
-    
-    lregs_read(7) <= (others => '0');
-    regs_rx_cnt_res <= lregs_tri(7);
-    
-    lregs_read(8) <= regs_tx_counter;
-    
-    lregs_read(9) <= (others => '0');
-    regs_tx_cnt_res <= lregs_tri(9);
    
     --================================--
     -- Counters
     --================================--
 
-    rx_error_counter_inst : entity work.counter port map(fabric_clk_i => gtp_clk_i, reset_i => rx_error_cnt_res, en_i => rx_error_i, data_o => rx_error_counter);
-    vi2c_rx_counter_inst : entity work.counter port map(fabric_clk_i => gtp_clk_i, reset_i => vi2c_rx_cnt_res, en_i => vi2c_rx_en, data_o => vi2c_rx_counter);
-    vi2c_tx_counter_inst : entity work.counter port map(fabric_clk_i => gtp_clk_i, reset_i => vi2c_tx_cnt_res, en_i => vi2c_tx_done, data_o => vi2c_tx_counter);
-    regs_rx_counter_inst : entity work.counter port map(fabric_clk_i => gtp_clk_i, reset_i => regs_rx_cnt_res, en_i => regs_rx_en, data_o => regs_rx_counter);
-    regs_tx_counter_inst : entity work.counter port map(fabric_clk_i => gtp_clk_i, reset_i => regs_tx_cnt_res, en_i => regs_tx_done, data_o => regs_tx_counter);
+    rx_error_counter_inst : entity work.counter port map(fabric_clk_i => gtp_clk_i, reset_i => rx_error_counter_reset, en_i => rx_error_i, data_o => rx_error_counter);
+    vi2c_rx_counter_inst : entity work.counter port map(fabric_clk_i => gtp_clk_i, reset_i => vi2c_rx_counter_reset, en_i => vi2c_rx_en, data_o => vi2c_rx_counter);
+    vi2c_tx_counter_inst : entity work.counter port map(fabric_clk_i => gtp_clk_i, reset_i => vi2c_tx_counter_reset, en_i => vi2c_tx_done, data_o => vi2c_tx_counter);
+    regs_rx_counter_inst : entity work.counter port map(fabric_clk_i => gtp_clk_i, reset_i => regs_rx_counter_reset, en_i => regs_rx_en, data_o => regs_rx_counter);
+    regs_tx_counter_inst : entity work.counter port map(fabric_clk_i => gtp_clk_i, reset_i => regs_tx_counter_reset, en_i => regs_tx_done, data_o => regs_tx_counter);
+     
+    --================================--
+    -- Request & register mapping
+    --================================--
+    
+    -- Counters : 0 to 9
+    
+    request_read(0) <= rx_error_counter;
+    
+    request_read(1) <= (others => '0');
+    rx_error_counter_reset <= request_tri(1);
+    
+    request_read(2) <= vi2c_rx_counter;
+    
+    request_read(3) <= (others => '0');
+    vi2c_rx_counter_reset <= request_tri(3);
+    
+    request_read(4) <= vi2c_tx_counter;
+    
+    request_read(5) <= (others => '0');
+    vi2c_tx_counter_reset <= request_tri(5);
+    
+    request_read(6) <= regs_rx_counter;
+    
+    request_read(7) <= (others => '0');
+    regs_rx_counter_reset <= request_tri(7);
+    
+    request_read(8) <= regs_tx_counter;
+    
+    request_read(9) <= (others => '0');
+    regs_tx_counter_reset <= request_tri(9);
+    
+    -- Writable registers : 10 to 17
+    
+    registers_write(7 downto 0) <= request_write(17 downto 10);
+    registers_tri(7 downto 0) <= request_tri(17 downto 10);
+    request_read(17 downto 10) <= registers_read(7 downto 0);
+
+    -- Other registers : 18 to 63
+    
+    request_read(63 downto 18) <= (others => (others => '0'));
 
     --================================--
     -- ChipScope

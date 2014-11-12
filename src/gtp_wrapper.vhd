@@ -119,10 +119,10 @@ begin
     
     ---
     
-    rx_reset(0) <= reset_i;-- or (rx_reset_done(0) and (not rx_isaligned(0)));
-    rx_reset(1) <= reset_i;-- or (rx_reset_done(1) and (not rx_isaligned(1)));
-    rx_reset(2) <= reset_i;-- or (rx_reset_done(2) and (not rx_isaligned(2)));
-    rx_reset(3) <= reset_i;-- or (rx_reset_done(3) and (not rx_isaligned(3)));
+    rx_reset(0) <= reset_i;
+    rx_reset(1) <= reset_i;
+    rx_reset(2) <= reset_i;
+    rx_reset(3) <= reset_i;
     
     ---
 
