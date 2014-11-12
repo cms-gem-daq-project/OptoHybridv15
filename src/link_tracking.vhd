@@ -249,42 +249,37 @@ begin
     -- Request & register mapping
     --================================--
     
-    -- Counters : 0 to 9
+    -- Counters : 4 downto 0
     
     request_read(0) <= rx_error_counter;
     
-    request_read(1) <= (others => '0');
-    rx_error_counter_reset <= request_tri(1);
+    request_read(1) <= vi2c_rx_counter;
     
-    request_read(2) <= vi2c_rx_counter;
+    request_read(2) <= vi2c_tx_counter;
     
-    request_read(3) <= (others => '0');
-    vi2c_rx_counter_reset <= request_tri(3);
+    request_read(3) <= regs_rx_counter;
     
-    request_read(4) <= vi2c_tx_counter;
+    request_read(4) <= regs_tx_counter;
     
-    request_read(5) <= (others => '0');
-    vi2c_tx_counter_reset <= request_tri(5);
+    -- Counters reset : 9 downto 5
     
-    request_read(6) <= regs_rx_counter;
+    rx_error_counter_reset <= request_tri(5);
     
-    request_read(7) <= (others => '0');
-    regs_rx_counter_reset <= request_tri(7);
+    vi2c_rx_counter_reset <= request_tri(6);
     
-    request_read(8) <= regs_tx_counter;
+    vi2c_tx_counter_reset <= request_tri(7);
     
-    request_read(9) <= (others => '0');
+    regs_rx_counter_reset <= request_tri(8);
+    
     regs_tx_counter_reset <= request_tri(9);
     
-    -- Writable registers : 10 to 17
+    -- Writable registers : 17 downto 10
     
     registers_write(7 downto 0) <= request_write(17 downto 10);
     registers_tri(7 downto 0) <= request_tri(17 downto 10);
     request_read(17 downto 10) <= registers_read(7 downto 0);
 
-    -- Other registers : 18 to 63
-    
-    request_read(63 downto 18) <= (others => (others => '0'));
+    -- Other registers : 63 downto 18
 
     --================================--
     -- ChipScope

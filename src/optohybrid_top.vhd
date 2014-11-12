@@ -131,8 +131,7 @@ architecture Behavioral of optohybrid_top is
     
     -- ADC
     
-    signal adc_write                : array32(1 downto 0) := (others => (others => '0'));
-    signal adc_tri                  : std_logic_vector(1 downto 0) := (others => '0');
+    signal adc_data                 : array32(1 downto 0) := (others => (others => '0'));
 
     -- Registers
 
@@ -279,8 +278,7 @@ begin
         fabric_clk_i    => gtp_clk,
         reset_i         => reset,
         uart_rx_i       => fpga_rx_i,
-        wbus_o          => adc_write,
-        wbus_t          => adc_tri
+        wbus_o          => adc_data
     );
     
     --================================--
@@ -310,51 +308,50 @@ begin
     -- Request & register mapping
     --================================--
     
-    -- T1 operations : 0 to 7
+    -- T1 operations 3 downto 0
     
-    request_read(0) <= lv1a_counter;            -- Read = # of LV1As
-    t1_lv1a <= request_tri(0);                  -- Write = send LV1A
+    t1_lv1a <= request_tri(0);
     
-    request_read(1) <= (others => '0');         
-    lv1a_counter_reset <= request_tri(1);       -- Write = reset LV1A counter
+    t1_calpulse <= request_tri(1);
     
-    request_read(2) <= calpulse_counter;        -- Read = # of Calpulses
-    t1_calpulse <= request_tri(2);              -- Write = send Calpulse
+    t1_resync <= request_tri(2);
     
-    request_read(3) <= (others => '0');
-    calpulse_counter_reset <= request_tri(3);   -- Write = reset Calpulse counter
+    t1_bc0 <= request_tri(3);
     
-    request_read(4) <= resync_counter;          -- Read = # of Resyncs
-    t1_resync <= request_tri(4);                -- Write = send Resync
+    -- T1 counters : 7 downto 3
     
-    request_read(5) <= (others => '0');
-    resync_counter_reset <= request_tri(5);     -- Write = reset Resync counter
+    request_read(4) <= lv1a_counter;
     
-    request_read(6) <= bc0_counter;             -- Read = # of BC0
-    t1_bc0 <= request_tri(6);                   -- Write = send BC0
+    request_read(5) <= calpulse_counter;
     
-    request_read(7) <= (others => '0');
-    bc0_counter_reset <= request_tri(7);        -- Write = reset BC0 counter
+    request_read(6) <= resync_counter;
     
-    -- ADC : 8 & 9
+    request_read(7) <= bc0_counter; 
     
-    registers_tri(1 downto 0) <= adc_tri;
-    registers_write(1 downto 0) <= adc_write;
+    -- T1 counters reset : 11 downto 8
+    
+    lv1a_counter_reset <= request_tri(8);
+    
+    calpulse_counter_reset <= request_tri(9);
+    
+    resync_counter_reset <= request_tri(10); 
+    
+    bc0_counter_reset <= request_tri(11);
+    
+    -- ADC : 13 downto 12
 
-    request_read(9 downto 8) <= registers_read(1 downto 0);
+    request_read(13 downto 12) <= adc_data(1 downto 0);
 
-    -- Fixed register : 10
+    -- Fixed register : 14
     
     request_read(10) <= x"20141210";
     
-    -- Writable registers : 11 to 16
+    -- Writable registers : 22 downto 15
     
-    registers_tri(7 downto 2) <= request_tri(15 downto 10);
-    registers_write(7 downto 2) <= request_write(15 downto 10);
-    request_read(16 downto 11) <= registers_read(7 downto 2);
+    registers_tri(7 downto 0) <= request_tri(22 downto 15);
+    registers_write(7 downto 0) <= request_write(22 downto 15);
+    request_read(22 downto 15) <= registers_read(7 downto 0);
     
-    -- Other registers : 17 to 63
-    
-    request_read(63 downto 17) <= (others => (others => '0'));
+    -- Other registers : 63 downto 25
     
 end Behavioral;

@@ -21,19 +21,19 @@ port(
 end registers;
 
 architecture Behavioral of registers is
+
+    signal registers    : array32((SIZE - 1) downto 0) := (others => (others => '0'));
+    
 begin
 
     process(fabric_clk_i)
-
-        variable registers  : array32((SIZE - 1) downto 0) := (others => (others => '0'));
-
     begin
 
         if (rising_edge(fabric_clk_i)) then
 
             if (reset_i = '1') then
 
-                registers := (others => (others => '0'));
+                registers <= (others => (others => '0'));
 
             else
 
@@ -42,11 +42,9 @@ begin
 
                     if (wbus_t(i) = '1') then
 
-                        registers(i) := wbus_i(i);
+                        registers(i) <= wbus_i(i);
 
                     end if;
-                    
-                    rbus_o(i) <= registers(i);
 
                 end loop;
 
@@ -55,5 +53,7 @@ begin
         end if;
 
     end process;
+    
+    rbus_o <= registers;
 
 end Behavioral;

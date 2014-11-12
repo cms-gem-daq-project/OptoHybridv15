@@ -12,8 +12,7 @@ port(
     
     uart_rx_i       : in std_logic;
 
-    wbus_o          : out array32(1 downto 0);
-    wbus_t          : out std_logic_vector(1 downto 0)
+    wbus_o          : out array32(1 downto 0)
 
 );
 end adc_handler;
@@ -42,8 +41,7 @@ begin
         reset_i         => reset_i,
         uart_en_i       => uart_en,
         uart_data_i     => uart_data,
-        wbus_o          => wbus_o,
-        wbus_t          => wbus_t
+        wbus_o          => wbus_o
     );
 
 end Behavioral;

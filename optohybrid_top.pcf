@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Mon Nov 10 15:29:59 2014
+// Written by: Map P.20131013 on Wed Nov 12 17:51:45 2014
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -3812,21 +3812,21 @@ TIMEGRP clk40MHz = BEL "vfat2_clk_bufg" BEL
         "link_tracking_1_inst/tracking_core_inst/tracking_buffer_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_1"
         BEL
         "link_tracking_1_inst/tracking_core_inst/tracking_buffer_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_d1_0"
-        BEL "t1_handling_inst/clock_bridge_strobes_inst/out_status_0" BEL
-        "t1_handling_inst/clock_bridge_strobes_inst/out_status_1" BEL
-        "t1_handling_inst/clock_bridge_strobes_inst/out_status_2" BEL
-        "t1_handling_inst/clock_bridge_strobes_inst/out_status_3" BEL
-        "t1_handling_inst/clock_bridge_strobes_inst/s_en_o_0" BEL
-        "t1_handling_inst/clock_bridge_strobes_inst/s_en_o_1" BEL
-        "t1_handling_inst/clock_bridge_strobes_inst/s_en_o_2" BEL
-        "t1_handling_inst/clock_bridge_strobes_inst/s_en_o_3" BEL
-        "t1_handling_inst/t1_encoder_inst/data_cnt_0" BEL
-        "t1_handling_inst/t1_encoder_inst/data_cnt_1" BEL
-        "t1_handling_inst/t1_encoder_inst/state_0" BEL
-        "t1_handling_inst/t1_encoder_inst/data_0" BEL
-        "t1_handling_inst/t1_encoder_inst/data_1" BEL
-        "t1_handling_inst/t1_encoder_inst/data_2" BEL
-        "t1_handling_inst/t1_encoder_inst/t1_o" BEL "vfat2_mclk_p_o" BEL
+        BEL "t1_handler_inst/clock_bridge_strobes_inst/out_status_0" BEL
+        "t1_handler_inst/clock_bridge_strobes_inst/out_status_1" BEL
+        "t1_handler_inst/clock_bridge_strobes_inst/out_status_2" BEL
+        "t1_handler_inst/clock_bridge_strobes_inst/out_status_3" BEL
+        "t1_handler_inst/clock_bridge_strobes_inst/s_en_o_0" BEL
+        "t1_handler_inst/clock_bridge_strobes_inst/s_en_o_1" BEL
+        "t1_handler_inst/clock_bridge_strobes_inst/s_en_o_2" BEL
+        "t1_handler_inst/clock_bridge_strobes_inst/s_en_o_3" BEL
+        "t1_handler_inst/t1_encoder_inst/data_cnt_0" BEL
+        "t1_handler_inst/t1_encoder_inst/data_cnt_1" BEL
+        "t1_handler_inst/t1_encoder_inst/state_0" BEL
+        "t1_handler_inst/t1_encoder_inst/data_0" BEL
+        "t1_handler_inst/t1_encoder_inst/data_1" BEL
+        "t1_handler_inst/t1_encoder_inst/data_2" BEL
+        "t1_handler_inst/t1_encoder_inst/t1_o" BEL "vfat2_mclk_p_o" BEL
         "vfat2_mclk_n_o" BEL "cdce_pri_p_o" BEL "cdce_pri_n_o";
 TIMEGRP clk40MHz_0 = BEL "vfat2_clk_bufg" BEL
         "link_tracking_1_inst/tracking_core_inst/track_7_inst/data_0" BEL
@@ -7488,21 +7488,21 @@ TIMEGRP clk40MHz_0 = BEL "vfat2_clk_bufg" BEL
         "link_tracking_1_inst/tracking_core_inst/tracking_buffer_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_1"
         BEL
         "link_tracking_1_inst/tracking_core_inst/tracking_buffer_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_d1_0"
-        BEL "t1_handling_inst/clock_bridge_strobes_inst/out_status_0" BEL
-        "t1_handling_inst/clock_bridge_strobes_inst/out_status_1" BEL
-        "t1_handling_inst/clock_bridge_strobes_inst/out_status_2" BEL
-        "t1_handling_inst/clock_bridge_strobes_inst/out_status_3" BEL
-        "t1_handling_inst/clock_bridge_strobes_inst/s_en_o_0" BEL
-        "t1_handling_inst/clock_bridge_strobes_inst/s_en_o_1" BEL
-        "t1_handling_inst/clock_bridge_strobes_inst/s_en_o_2" BEL
-        "t1_handling_inst/clock_bridge_strobes_inst/s_en_o_3" BEL
-        "t1_handling_inst/t1_encoder_inst/data_cnt_0" BEL
-        "t1_handling_inst/t1_encoder_inst/data_cnt_1" BEL
-        "t1_handling_inst/t1_encoder_inst/state_0" BEL
-        "t1_handling_inst/t1_encoder_inst/data_0" BEL
-        "t1_handling_inst/t1_encoder_inst/data_1" BEL
-        "t1_handling_inst/t1_encoder_inst/data_2" BEL
-        "t1_handling_inst/t1_encoder_inst/t1_o" BEL "vfat2_mclk_p_o" BEL
+        BEL "t1_handler_inst/clock_bridge_strobes_inst/out_status_0" BEL
+        "t1_handler_inst/clock_bridge_strobes_inst/out_status_1" BEL
+        "t1_handler_inst/clock_bridge_strobes_inst/out_status_2" BEL
+        "t1_handler_inst/clock_bridge_strobes_inst/out_status_3" BEL
+        "t1_handler_inst/clock_bridge_strobes_inst/s_en_o_0" BEL
+        "t1_handler_inst/clock_bridge_strobes_inst/s_en_o_1" BEL
+        "t1_handler_inst/clock_bridge_strobes_inst/s_en_o_2" BEL
+        "t1_handler_inst/clock_bridge_strobes_inst/s_en_o_3" BEL
+        "t1_handler_inst/t1_encoder_inst/data_cnt_0" BEL
+        "t1_handler_inst/t1_encoder_inst/data_cnt_1" BEL
+        "t1_handler_inst/t1_encoder_inst/state_0" BEL
+        "t1_handler_inst/t1_encoder_inst/data_0" BEL
+        "t1_handler_inst/t1_encoder_inst/data_1" BEL
+        "t1_handler_inst/t1_encoder_inst/data_2" BEL
+        "t1_handler_inst/t1_encoder_inst/t1_o" BEL "vfat2_mclk_p_o" BEL
         "vfat2_mclk_n_o" BEL "cdce_pri_p_o" BEL "cdce_pri_n_o";
 PIN
         gtp_wrapper_inst/gtp_inst/tile1_s6_gtpwizard_v1_11_i/gtpa1_dual_i_pins<132>

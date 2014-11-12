@@ -13,26 +13,23 @@ port(
     uart_en_i       : in std_logic;
     uart_data_i     : in std_logic_vector(7 downto 0);
 
-    wbus_o          : out array32(1 downto 0);
-    wbus_t          : out std_logic_vector(1 downto 0)
+    wbus_o          : out array32(1 downto 0)
 
 );
 end adc_switch;
 
 architecture Behavioral of adc_switch is
+
+    signal data : array32(1 downto 0) := (others => (others => '0'));
+
 begin
 
     process(fabric_clk_i)
-        
-        variable data   : array32(1 downto 0) := (others => (others => '0'));
-    
     begin
     
         if (rising_edge(fabric_clk_i)) then
         
             if (reset_i = '1') then
-            
-                wbus_t <= (others => '0');
                 
             else
             
@@ -40,37 +37,30 @@ begin
                 
                     if (uart_data_i(7 downto 6) = "00") then
                     
-                        data(0)(5 downto 0) := uart_data_i(5 downto 0);
+                        data(0)(5 downto 0) <= uart_data_i(5 downto 0);
                         
                     elsif (uart_data_i(7 downto 6) = "01") then
                     
-                        data(0)(11 downto 6) := uart_data_i(5 downto 0);
+                        data(0)(11 downto 6) <= uart_data_i(5 downto 0);
                         
                     elsif (uart_data_i(7 downto 6) = "10") then
                     
-                        data(1)(5 downto 0) := uart_data_i(5 downto 0);
+                        data(1)(5 downto 0) <= uart_data_i(5 downto 0);
                         
                     elsif (uart_data_i(7 downto 6) = "11") then
                     
-                        data(1)(11 downto 6) := uart_data_i(5 downto 0);
+                        data(1)(11 downto 6) <= uart_data_i(5 downto 0);
                     
                     end if;
-                    
-                    wbus_t <= (others => '1');
-                    
-                else
-                
-                    wbus_t <= (others => '0');
                 
                 end if;
-                
-                wbus_o <= data;
             
             end if;
         
         end if;
     
     end process;
-
+    
+    wbus_o <= data;
 
 end Behavioral;
