@@ -96,7 +96,7 @@
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.EXCLUDE_FROM_DATA_STORAGE_15">false</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.TRIGGER_PORT_WIDTH_1">32</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.EXCLUDE_FROM_DATA_STORAGE_16">false</spirit:configurableElementValue>
-            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.TRIGGER_PORT_WIDTH_2">8</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.TRIGGER_PORT_WIDTH_2">32</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.TRIGGER_PORT_WIDTH_3">8</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.TRIGGER_PORT_WIDTH_4">8</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.TRIGGER_PORT_WIDTH_5">8</spirit:configurableElementValue>
@@ -127,7 +127,7 @@
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.MATCH_TYPE_8">basic_with_edges</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.MATCH_TYPE_9">basic_with_edges</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.DATA_PORT_WIDTH">0</spirit:configurableElementValue>
-            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.NUMBER_OF_TRIGGER_PORTS">1</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.NUMBER_OF_TRIGGER_PORTS">2</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.USE_RPMS">false</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.MATCH_UNITS_1">1</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.MATCH_UNITS_2">1</spirit:configurableElementValue>
@@ -180,7 +180,7 @@
                   <xilinx:formalVerification>false</xilinx:formalVerification>
                </xilinx:flowOptions>
                <xilinx:simulationOptions>
-                  <xilinx:simulationModel>Behavioral</xilinx:simulationModel>
+                  <xilinx:simulationModel>Structural</xilinx:simulationModel>
                   <xilinx:simulationLanguage>VHDL</xilinx:simulationLanguage>
                   <xilinx:foundationSym>false</xilinx:foundationSym>
                </xilinx:simulationOptions>

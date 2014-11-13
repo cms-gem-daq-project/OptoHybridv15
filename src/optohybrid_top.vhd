@@ -153,8 +153,15 @@ architecture Behavioral of optohybrid_top is
     
 begin
 
+    --================================--
+    -- Global signals
+    --================================--
+
     -- OptoHybrid reset
     reset <= '0';
+    
+    -- LEDS
+    leds_o <= fpga_pll_locked & "00" & cdce_plllock_i;
     
     --================================--
     -- VFAT2 
@@ -190,12 +197,17 @@ begin
     -- External 40 MHz clock to the VFAT2
     vfat2_clk_obufds : obufds port map(i => clk40mhz, o => vfat2_mclk_p_o, ob => vfat2_mclk_n_o);
     
+    --================================--
+    -- CDCE
+    --================================--
+    
     -- CDCE control
     cdce_primary_clk_obufds : obufds port map(i => clk40mhz, o => cdce_pri_p_o, ob => cdce_pri_n_o);
     cdce_ref_o <= '1';
-    cdce_powerdown_o <= '1';
+    cdce_powerdown_o <= fpga_pll_locked;
     cdce_sync_o <= '1';
-       
+    cdce_le_o <= '1'; 
+    
     --================================--
     -- GTP
     --================================--
@@ -310,47 +322,51 @@ begin
     
     -- T1 operations 3 downto 0
     
-    t1_lv1a <= request_tri(0);
+    t1_lv1a <= request_tri(0); -- 0 _ write _ send LV1A
     
-    t1_calpulse <= request_tri(1);
+    t1_calpulse <= request_tri(1); -- 1 _ write _ send Calpulse
     
-    t1_resync <= request_tri(2);
+    t1_resync <= request_tri(2); -- 2 _ write _ send Resync
     
-    t1_bc0 <= request_tri(3);
+    t1_bc0 <= request_tri(3); -- 3 _ write _ send BC0
     
     -- T1 counters : 7 downto 3
     
-    request_read(4) <= lv1a_counter;
+    request_read(4) <= lv1a_counter; -- 4 _ read _ # of LV1As
     
-    request_read(5) <= calpulse_counter;
+    request_read(5) <= calpulse_counter; -- 5 _ read _ # of Calpulses
     
-    request_read(6) <= resync_counter;
+    request_read(6) <= resync_counter; -- 6 _ read _ # of Resyncs
     
-    request_read(7) <= bc0_counter; 
+    request_read(7) <= bc0_counter; -- 7 _ read _ # of BC0s 
     
     -- T1 counters reset : 11 downto 8
     
-    lv1a_counter_reset <= request_tri(8);
+    lv1a_counter_reset <= request_tri(8); -- 8 _ write _ reset LV1A counter
     
-    calpulse_counter_reset <= request_tri(9);
+    calpulse_counter_reset <= request_tri(9); -- 9 _ write _ reset Calpulse counter
     
-    resync_counter_reset <= request_tri(10); 
+    resync_counter_reset <= request_tri(10); -- 10 _ write _ reset Resync counter
     
-    bc0_counter_reset <= request_tri(11);
+    bc0_counter_reset <= request_tri(11); -- 11 _ write _ reset BC0 counter
     
     -- ADC : 13 downto 12
 
-    request_read(13 downto 12) <= adc_data(1 downto 0);
+    request_read(13 downto 12) <= adc_data(1 downto 0); -- 12 & 13 _ read _ ADC values
 
-    -- Fixed register : 14
+    -- Fixed registers : 14
     
-    request_read(10) <= x"20141210";
+    request_read(14) <= x"20141210"; -- 14 _ read _ firmware version
     
-    -- Writable registers : 22 downto 15
+    request_read(15) <= (0 => fpga_pll_locked, others => '0'); -- 15 _ read _ FPGA PLL Locked
     
-    registers_tri(7 downto 0) <= request_tri(22 downto 15);
-    registers_write(7 downto 0) <= request_write(22 downto 15);
-    request_read(22 downto 15) <= registers_read(7 downto 0);
+    request_read(16) <= (0 => cdce_plllock_i, others => '0'); -- 16 _ read _ CDCE Locked
+    
+    -- Writable registers : 24 downto 17
+    
+    registers_tri(7 downto 0) <= request_tri(24 downto 17);
+    registers_write(7 downto 0) <= request_write(24 downto 17);
+    request_read(24 downto 17) <= registers_read(7 downto 0);
     
     -- Other registers : 63 downto 25
     

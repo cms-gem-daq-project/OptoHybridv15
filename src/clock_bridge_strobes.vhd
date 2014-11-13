@@ -1,7 +1,3 @@
---
--- This entity takes care of crossing clock-domains for multiple strobe signals
---
-
 library ieee;
 use ieee.std_logic_1164.all;
 

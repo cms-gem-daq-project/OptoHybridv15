@@ -52,22 +52,35 @@ architecture Behavioral of gtp_wrapper is
     signal rx_reset_done    : std_logic_vector(3 downto 0) := (others => '0');  
 
 begin
+
+    --================================--
+    -- Output signals
+    --================================--
     
-    gtp_clk_o <= gtp_userclk2(0); 
+    gtp_clk_o <= gtp_userclk2(0);
     
     rx_error_o(0) <= rx_disperr(0) or rx_disperr(1) or rx_notintable(0) or rx_notintable(1);
     rx_error_o(1) <= rx_disperr(2) or rx_disperr(3) or rx_notintable(2) or rx_notintable(3);
     rx_error_o(2) <= rx_disperr(4) or rx_disperr(5) or rx_notintable(4) or rx_notintable(5);
     rx_error_o(3) <= rx_disperr(6) or rx_disperr(7) or rx_notintable(6) or rx_notintable(7);
+    
+    --================================--
+    -- Resets
+    --================================--
+    
+--    gtp_link_reset_0_inst : entity work.gtp_link_reset port map(gtp_clk_i => gtp_userclk2(0), reset_i => reset_i, reset_done_i => rx_reset_done(0), isaligned_i => rx_isaligned(0), reset_o => rx_reset(0));
+--    gtp_link_reset_1_inst : entity work.gtp_link_reset port map(gtp_clk_i => gtp_userclk2(0), reset_i => reset_i, reset_done_i => rx_reset_done(1), isaligned_i => rx_isaligned(1), reset_o => rx_reset(1));
+--    gtp_link_reset_2_inst : entity work.gtp_link_reset port map(gtp_clk_i => gtp_userclk2(0), reset_i => reset_i, reset_done_i => rx_reset_done(2), isaligned_i => rx_isaligned(2), reset_o => rx_reset(2));
+--    gtp_link_reset_3_inst : entity work.gtp_link_reset port map(gtp_clk_i => gtp_userclk2(0), reset_i => reset_i, reset_done_i => rx_reset_done(3), isaligned_i => rx_isaligned(3), reset_o => rx_reset(3));
 
-    ---
+    --================================--
+    -- Clocking
+    --================================--
 
     gtp_refclk_0_ibufds : ibufds port map(O => gtp_refclk(0), I => gtp_refclk_p_i(0), IB => gtp_refclk_n_i(0));
     gtp_refclk_1_ibufds : ibufds port map(O => gtp_refclk(1), I => gtp_refclk_p_i(1), IB => gtp_refclk_n_i(1));
     gtp_refclk_2_ibufds : ibufds port map(O => gtp_refclk(2), I => gtp_refclk_p_i(2), IB => gtp_refclk_n_i(2));
     gtp_refclk_3_ibufds : ibufds port map(O => gtp_refclk(3), I => gtp_refclk_p_i(3), IB => gtp_refclk_n_i(3));
-
-    ---
 
     gtp_clk_out_tile_0_bufio2 : bufio2
     generic map(
@@ -93,8 +106,6 @@ begin
         SERDESSTROBE    => open
     );
     
-    ---
-    
     gtp_pll_tile_0_inst : entity work.gtp_pll
     port map(
         clk160MHz_i => gtp_clk_div(0),
@@ -116,16 +127,11 @@ begin
     ); 
     
     gtp_pll_reset(1) <= not gtp_pllkdet(1);
+   
+    --================================--
+    -- GTP
+    --================================--
     
-    ---
-    
-    rx_reset(0) <= reset_i;
-    rx_reset(1) <= reset_i;
-    rx_reset(2) <= reset_i;
-    rx_reset(3) <= reset_i;
-    
-    ---
-
     gtp_inst : entity work.s6_gtpwizard_v1_11
     generic map(
         WRAPPER_SIM_GTPRESET_SPEEDUP    => 0,
