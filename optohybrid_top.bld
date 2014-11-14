@@ -2,7 +2,7 @@ Release 14.7 ngdbuild P.20131013 (nt)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 Command Line: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt\unwrapped\ngdbuild.exe -intstyle
-ise -dd _ngo -sd ipcore_dir -nt timestamp -uc src/gtp.ucf -uc src/timing.ucf -uc
+ise -dd _ngo -sd ipcore_dir -nt timestamp -uc src/timing.ucf -uc src/gtp.ucf -uc
 src/pinout.ucf -p xc6slx150t-fgg676-3 optohybrid_top.ngc optohybrid_top.ngd
 
 Reading NGO file "Z:/Documents/PhD/Code/OH/optohybrid_top.ngc" ...
@@ -32,21 +32,284 @@ Xilinx software updates or new releases.
 Gathering constraint information from source properties...
 Done.
 
-Annotating constraints to design from ucf file "src/gtp.ucf" ...
 Annotating constraints to design from ucf file "src/timing.ucf" ...
+Annotating constraints to design from ucf file "src/gtp.ucf" ...
 Annotating constraints to design from ucf file "src/pinout.ucf" ...
 Resolving constraint associations...
 Checking Constraint Associations...
-INFO:ConstraintSystem:178 - TNM 'fpga_clk', used in period specification
-   'TS_fpga_clk', was traced into PLL_ADV instance PLL_ADV. The following new
-   TNM groups and period specifications were generated at the PLL_ADV output(s):
-    
-   CLKOUT1: <TIMESPEC TS_clk40MHz_0 = PERIOD "clk40MHz_0" TS_fpga_clk / 0.8 HIGH
-   50%>
-
 Done...
 
 Checking expanded design ...
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<3><31>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<3><30>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<3><29>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<3><28>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<3><27>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<3><26>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<3><25>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<3><24>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<3><23>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<3><22>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<3><21>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<3><20>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<3><19>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<3><18>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<3><17>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<3><16>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<3><15>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<3><14>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<3><13>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<3><12>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<3><11>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<3><10>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<3><9>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<3><8>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<3><7>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<3><6>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<3><5>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<3><4>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<3><3>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<3><2>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<3><1>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<3><0>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<2><31>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<2><30>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<2><29>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<2><28>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<2><27>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<2><26>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<2><25>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<2><24>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<2><23>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<2><22>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<2><21>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<2><20>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<2><19>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<2><18>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<2><17>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<2><16>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<2><15>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<2><14>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<2><13>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<2><12>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<2><11>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<2><10>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<2><9>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<2><8>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<2><7>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<2><6>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<2><5>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<2><4>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<2><3>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<2><2>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<2><1>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<2><0>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<1><31>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<1><30>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<1><29>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<1><28>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<1><27>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<1><26>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<1><25>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<1><24>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<1><23>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<1><22>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<1><21>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<1><20>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<1><19>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<1><18>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<1><17>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<1><16>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<1><15>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<1><14>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<1><13>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<1><12>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<1><11>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<1><10>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<1><9>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<1><8>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<1><7>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<1><6>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<1><5>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<1><4>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<1><3>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<1><2>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<1><1>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<1><0>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<0><31>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<0><30>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<0><29>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<0><28>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<0><27>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<0><26>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<0><25>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<0><24>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<0><23>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<0><22>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<0><21>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<0><20>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<0><19>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<0><18>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<0><17>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<0><16>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<0><15>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<0><14>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<0><13>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<0><12>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<0><11>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<0><10>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<0><9>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<0><8>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<0><7>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<0><6>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<0><5>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<0><4>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<0><3>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<0><2>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<0><1>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_write_o<0><0>'
+   has no driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_tri_o<3>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_tri_o<2>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_tri_o<1>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'clock_control_inst/request_tri_o<0>' has no
+   driver
+WARNING:NgdBuild:478 - clock net clock_control_inst/fpga_clk_pll_inst/clk_buf_o
+   with clock driver clock_control_inst/fpga_clk_pll_inst/clkout1_buf drives no
+   clock pins
+WARNING:NgdBuild:478 - clock net clock_control_inst/rec_clk_pll_inst/clk_buf_o
+   with clock driver clock_control_inst/rec_clk_pll_inst/clkout1_buf drives no
+   clock pins
 WARNING:NgdBuild:452 - logical net
    'link_tracking_1_inst/request_write_o<63><31>' has no driver
 WARNING:NgdBuild:452 - logical net
@@ -2480,68 +2743,68 @@ WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/request_write_o<26><1>'
 WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/request_write_o<26><0>'
    has no driver
 WARNING:NgdBuild:452 - logical net
-   'link_tracking_1_inst/request_write_o<25><31>' has no driver
+   'link_tracking_1_inst/request_write_o<17><31>' has no driver
 WARNING:NgdBuild:452 - logical net
-   'link_tracking_1_inst/request_write_o<25><30>' has no driver
+   'link_tracking_1_inst/request_write_o<17><30>' has no driver
 WARNING:NgdBuild:452 - logical net
-   'link_tracking_1_inst/request_write_o<25><29>' has no driver
+   'link_tracking_1_inst/request_write_o<17><29>' has no driver
 WARNING:NgdBuild:452 - logical net
-   'link_tracking_1_inst/request_write_o<25><28>' has no driver
+   'link_tracking_1_inst/request_write_o<17><28>' has no driver
 WARNING:NgdBuild:452 - logical net
-   'link_tracking_1_inst/request_write_o<25><27>' has no driver
+   'link_tracking_1_inst/request_write_o<17><27>' has no driver
 WARNING:NgdBuild:452 - logical net
-   'link_tracking_1_inst/request_write_o<25><26>' has no driver
+   'link_tracking_1_inst/request_write_o<17><26>' has no driver
 WARNING:NgdBuild:452 - logical net
-   'link_tracking_1_inst/request_write_o<25><25>' has no driver
+   'link_tracking_1_inst/request_write_o<17><25>' has no driver
 WARNING:NgdBuild:452 - logical net
-   'link_tracking_1_inst/request_write_o<25><24>' has no driver
+   'link_tracking_1_inst/request_write_o<17><24>' has no driver
 WARNING:NgdBuild:452 - logical net
-   'link_tracking_1_inst/request_write_o<25><23>' has no driver
+   'link_tracking_1_inst/request_write_o<17><23>' has no driver
 WARNING:NgdBuild:452 - logical net
-   'link_tracking_1_inst/request_write_o<25><22>' has no driver
+   'link_tracking_1_inst/request_write_o<17><22>' has no driver
 WARNING:NgdBuild:452 - logical net
-   'link_tracking_1_inst/request_write_o<25><21>' has no driver
+   'link_tracking_1_inst/request_write_o<17><21>' has no driver
 WARNING:NgdBuild:452 - logical net
-   'link_tracking_1_inst/request_write_o<25><20>' has no driver
+   'link_tracking_1_inst/request_write_o<17><20>' has no driver
 WARNING:NgdBuild:452 - logical net
-   'link_tracking_1_inst/request_write_o<25><19>' has no driver
+   'link_tracking_1_inst/request_write_o<17><19>' has no driver
 WARNING:NgdBuild:452 - logical net
-   'link_tracking_1_inst/request_write_o<25><18>' has no driver
+   'link_tracking_1_inst/request_write_o<17><18>' has no driver
 WARNING:NgdBuild:452 - logical net
-   'link_tracking_1_inst/request_write_o<25><17>' has no driver
+   'link_tracking_1_inst/request_write_o<17><17>' has no driver
 WARNING:NgdBuild:452 - logical net
-   'link_tracking_1_inst/request_write_o<25><16>' has no driver
+   'link_tracking_1_inst/request_write_o<17><16>' has no driver
 WARNING:NgdBuild:452 - logical net
-   'link_tracking_1_inst/request_write_o<25><15>' has no driver
+   'link_tracking_1_inst/request_write_o<17><15>' has no driver
 WARNING:NgdBuild:452 - logical net
-   'link_tracking_1_inst/request_write_o<25><14>' has no driver
+   'link_tracking_1_inst/request_write_o<17><14>' has no driver
 WARNING:NgdBuild:452 - logical net
-   'link_tracking_1_inst/request_write_o<25><13>' has no driver
+   'link_tracking_1_inst/request_write_o<17><13>' has no driver
 WARNING:NgdBuild:452 - logical net
-   'link_tracking_1_inst/request_write_o<25><12>' has no driver
+   'link_tracking_1_inst/request_write_o<17><12>' has no driver
 WARNING:NgdBuild:452 - logical net
-   'link_tracking_1_inst/request_write_o<25><11>' has no driver
+   'link_tracking_1_inst/request_write_o<17><11>' has no driver
 WARNING:NgdBuild:452 - logical net
-   'link_tracking_1_inst/request_write_o<25><10>' has no driver
-WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/request_write_o<25><9>'
+   'link_tracking_1_inst/request_write_o<17><10>' has no driver
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/request_write_o<17><9>'
    has no driver
-WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/request_write_o<25><8>'
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/request_write_o<17><8>'
    has no driver
-WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/request_write_o<25><7>'
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/request_write_o<17><7>'
    has no driver
-WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/request_write_o<25><6>'
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/request_write_o<17><6>'
    has no driver
-WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/request_write_o<25><5>'
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/request_write_o<17><5>'
    has no driver
-WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/request_write_o<25><4>'
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/request_write_o<17><4>'
    has no driver
-WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/request_write_o<25><3>'
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/request_write_o<17><3>'
    has no driver
-WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/request_write_o<25><2>'
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/request_write_o<17><2>'
    has no driver
-WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/request_write_o<25><1>'
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/request_write_o<17><1>'
    has no driver
-WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/request_write_o<25><0>'
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/request_write_o<17><0>'
    has no driver
 WARNING:NgdBuild:452 - logical net
    'link_tracking_1_inst/request_write_o<16><31>' has no driver
@@ -3707,7 +3970,7 @@ WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/request_tri_o<27>' has
    no driver
 WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/request_tri_o<26>' has
    no driver
-WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/request_tri_o<25>' has
+WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/request_tri_o<17>' has
    no driver
 WARNING:NgdBuild:452 - logical net 'link_tracking_1_inst/request_tri_o<16>' has
    no driver
@@ -3850,8 +4113,11 @@ WARNING:NgdBuild:452 - logical net
 WARNING:NgdBuild:452 - logical net
    'link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/comple
    ted' has no driver
-WARNING:NgdBuild:478 - clock net fpga_clk_pll_inst/clk100MHz_o with clock driver
-   fpga_clk_pll_inst/clkout1_buf drives no clock pins
+WARNING:NgdBuild:470 - bidirect pad net 'fpga_test_io<5>' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'fpga_test_io<4>' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'fpga_test_io<3>' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'fpga_test_io<2>' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'fpga_test_io<0>' has no legal driver
 
 Partition Implementation Status
 -------------------------------
@@ -3862,12 +4128,12 @@ Partition Implementation Status
 
 NGDBUILD Design Results Summary:
   Number of errors:     0
-  Number of warnings: 1882
+  Number of warnings: 2020
 
-Total memory usage is 184764 kilobytes
+Total memory usage is 183416 kilobytes
 
 Writing NGD file "optohybrid_top.ngd" ...
-Total REAL time to NGDBUILD completion:  13 sec
-Total CPU time to NGDBUILD completion:   8 sec
+Total REAL time to NGDBUILD completion:  11 sec
+Total CPU time to NGDBUILD completion:   7 sec
 
 Writing NGDBUILD log file "optohybrid_top.bld"...

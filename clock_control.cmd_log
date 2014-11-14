@@ -1,0 +1,2 @@
+vhdtdtfi -lib work src/clock_control.vhd -prj OH -o clock_control.spl -module clock_control -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 clock_control.spl Z:/Documents/PhD/Code/OH/clock_control.sym 

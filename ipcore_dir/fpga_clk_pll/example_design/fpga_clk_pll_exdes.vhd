@@ -71,9 +71,9 @@ port
   CLK_IN1           : in  std_logic;
   -- Reset that only drives logic in example design
   COUNTER_RESET     : in  std_logic;
-  CLK_OUT           : out std_logic_vector(3 downto 1) ;
+  CLK_OUT           : out std_logic_vector(2 downto 1) ;
   -- High bits of counters driven by clocks
-  COUNT             : out std_logic_vector(3 downto 1);
+  COUNT             : out std_logic_vector(2 downto 1);
   -- Status and control signals
   LOCKED            : out std_logic
  );
@@ -87,7 +87,7 @@ architecture xilinx of fpga_clk_pll_exdes is
   constant C_W        : integer := 16;
 
   -- Number of counters
-  constant NUM_C      : integer := 3;
+  constant NUM_C      : integer := 2;
   -- Array typedef
   type ctrarr is array (1 to NUM_C) of std_logic_vector(C_W-1 downto 0);
 
@@ -100,6 +100,9 @@ architecture xilinx of fpga_clk_pll_exdes is
   signal   clk_int    : std_logic_vector(NUM_C downto 1);
   signal   clk_n  : std_logic_vector(NUM_C downto 1);
   signal   counter    : ctrarr := (( others => (others => '0')));
+
+  -- Need to buffer input clocks that aren't already buffered
+  signal   clk_in1_buf : std_logic;
   signal rst_sync : std_logic_vector(NUM_C downto 1);
   signal rst_sync_int : std_logic_vector(NUM_C downto 1);
   signal rst_sync_int1 : std_logic_vector(NUM_C downto 1);
@@ -109,11 +112,10 @@ architecture xilinx of fpga_clk_pll_exdes is
 component fpga_clk_pll is
 port
  (-- Clock in ports
-  clk50MHz_i           : in     std_logic;
+  clk_i           : in     std_logic;
   -- Clock out ports
-  clk100MHz_o          : out    std_logic;
-  clk40MHz_o          : out    std_logic;
-  clk160MHz_o          : out    std_logic;
+  clk_buf_o          : out    std_logic;
+  clk_nobuf_o          : out    std_logic;
   -- Status and control signals
   locked_o            : out    std_logic
  );
@@ -144,16 +146,22 @@ begin
 end generate counters_1;
 
 
+  -- Insert BUFGs on all input clocks that don't already have them
+  ----------------------------------------------------------------
+  clkin1_buf : BUFG
+  port map
+   (O => clk_in1_buf,
+    I => CLK_IN1);
+
   -- Instantiation of the clocking network
   ----------------------------------------
   clknetwork : fpga_clk_pll
   port map
    (-- Clock in ports
-    clk50MHz_i            => CLK_IN1,
+    clk_i            => clk_in1_buf,
     -- Clock out ports
-    clk100MHz_o           => clk_int(1),
-    clk40MHz_o           => clk_int(2),
-    clk160MHz_o           => clk_int(3),
+    clk_buf_o           => clk_int(1),
+    clk_nobuf_o           => clk_int(2),
     -- Status and control signals
     locked_o             => locked_int);
 
@@ -180,10 +188,6 @@ end generate counters_1;
   port map
    (O => clk(2),
     I => clk_int(2));
-  clkout3_buf : BUFG
-  port map
-   (O => clk(3),
-    I => clk_int(3));
 
   -- Output clock sampling
   -------------------------------------

@@ -5,77 +5,79 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <DeviceUsageSummary rev="4">
-<DesignStatistics TimeStamp="Thu Nov 13 15:13:28 2014"><group name="NetStatistics">
+<DesignStatistics TimeStamp="Fri Nov 14 16:57:47 2014"><group name="NetStatistics">
 <item name="NumNets_Active" rev="4">
-<attrib name="value" value="8525"/></item>
+<attrib name="value" value="8580"/></item>
 <item name="NumNets_Gnd" rev="4">
 <attrib name="value" value="1"/></item>
 <item name="NumNets_Vcc" rev="4">
 <attrib name="value" value="1"/></item>
 <item name="NumNodesOfType_Active_BOUNCEACROSS" rev="4">
-<attrib name="value" value="205"/></item>
+<attrib name="value" value="136"/></item>
 <item name="NumNodesOfType_Active_BOUNCEIN" rev="4">
-<attrib name="value" value="1208"/></item>
+<attrib name="value" value="1141"/></item>
 <item name="NumNodesOfType_Active_BUFGOUT" rev="4">
-<attrib name="value" value="8"/></item>
+<attrib name="value" value="7"/></item>
 <item name="NumNodesOfType_Active_BUFHINP2OUT" rev="4">
-<attrib name="value" value="42"/></item>
+<attrib name="value" value="44"/></item>
 <item name="NumNodesOfType_Active_BUFIOINP" rev="4">
-<attrib name="value" value="2"/></item>
+<attrib name="value" value="4"/></item>
 <item name="NumNodesOfType_Active_CLKPIN" rev="4">
-<attrib name="value" value="1945"/></item>
+<attrib name="value" value="2055"/></item>
 <item name="NumNodesOfType_Active_CLKPINFEED" rev="4">
-<attrib name="value" value="90"/></item>
+<attrib name="value" value="93"/></item>
 <item name="NumNodesOfType_Active_CNTRLPIN" rev="4">
-<attrib name="value" value="1870"/></item>
+<attrib name="value" value="1988"/></item>
 <item name="NumNodesOfType_Active_DOUBLE" rev="4">
-<attrib name="value" value="12859"/></item>
+<attrib name="value" value="15316"/></item>
 <item name="NumNodesOfType_Active_GENERIC" rev="4">
-<attrib name="value" value="48"/></item>
+<attrib name="value" value="56"/></item>
 <item name="NumNodesOfType_Active_GLOBAL" rev="4">
-<attrib name="value" value="659"/></item>
+<attrib name="value" value="679"/></item>
 <item name="NumNodesOfType_Active_INPUT" rev="4">
-<attrib name="value" value="690"/></item>
+<attrib name="value" value="695"/></item>
 <item name="NumNodesOfType_Active_IOBIN2OUT" rev="4">
-<attrib name="value" value="25"/></item>
+<attrib name="value" value="28"/></item>
 <item name="NumNodesOfType_Active_IOBOUTPUT" rev="4">
-<attrib name="value" value="25"/></item>
+<attrib name="value" value="29"/></item>
 <item name="NumNodesOfType_Active_LUTINPUT" rev="4">
-<attrib name="value" value="18308"/></item>
+<attrib name="value" value="18526"/></item>
 <item name="NumNodesOfType_Active_OUTBOUND" rev="4">
-<attrib name="value" value="8482"/></item>
+<attrib name="value" value="8543"/></item>
 <item name="NumNodesOfType_Active_OUTPUT" rev="4">
-<attrib name="value" value="8394"/></item>
+<attrib name="value" value="8442"/></item>
 <item name="NumNodesOfType_Active_PADINPUT" rev="4">
 <attrib name="value" value="15"/></item>
 <item name="NumNodesOfType_Active_PADOUTPUT" rev="4">
-<attrib name="value" value="17"/></item>
+<attrib name="value" value="18"/></item>
 <item name="NumNodesOfType_Active_PINBOUNCE" rev="4">
-<attrib name="value" value="7843"/></item>
+<attrib name="value" value="7743"/></item>
 <item name="NumNodesOfType_Active_PINFEED" rev="4">
-<attrib name="value" value="20951"/></item>
+<attrib name="value" value="21288"/></item>
+<item name="NumNodesOfType_Active_PINFEED2" rev="4">
+<attrib name="value" value="1"/></item>
 <item name="NumNodesOfType_Active_QUAD" rev="4">
-<attrib name="value" value="12353"/></item>
+<attrib name="value" value="18211"/></item>
 <item name="NumNodesOfType_Active_REGINPUT" rev="4">
-<attrib name="value" value="3748"/></item>
+<attrib name="value" value="3672"/></item>
 <item name="NumNodesOfType_Active_SINGLE" rev="4">
-<attrib name="value" value="14328"/></item>
+<attrib name="value" value="15029"/></item>
 <item name="NumNodesOfType_Gnd_BOUNCEACROSS" rev="4">
 <attrib name="value" value="1"/></item>
 <item name="NumNodesOfType_Gnd_BOUNCEIN" rev="4">
-<attrib name="value" value="179"/></item>
+<attrib name="value" value="175"/></item>
 <item name="NumNodesOfType_Gnd_CLKPIN" rev="4">
-<attrib name="value" value="8"/></item>
+<attrib name="value" value="9"/></item>
 <item name="NumNodesOfType_Gnd_CNTRLPIN" rev="4">
-<attrib name="value" value="5"/></item>
+<attrib name="value" value="7"/></item>
 <item name="NumNodesOfType_Gnd_DOUBLE" rev="4">
-<attrib name="value" value="6"/></item>
+<attrib name="value" value="11"/></item>
 <item name="NumNodesOfType_Gnd_GENERIC" rev="4">
 <attrib name="value" value="12"/></item>
 <item name="NumNodesOfType_Gnd_HGNDOUT" rev="4">
-<attrib name="value" value="90"/></item>
+<attrib name="value" value="94"/></item>
 <item name="NumNodesOfType_Gnd_INPUT" rev="4">
-<attrib name="value" value="700"/></item>
+<attrib name="value" value="696"/></item>
 <item name="NumNodesOfType_Gnd_IOBIN2OUT" rev="4">
 <attrib name="value" value="12"/></item>
 <item name="NumNodesOfType_Gnd_IOBOUTPUT" rev="4">
@@ -83,25 +85,25 @@
 <item name="NumNodesOfType_Gnd_LUTINPUT" rev="4">
 <attrib name="value" value="41"/></item>
 <item name="NumNodesOfType_Gnd_OUTBOUND" rev="4">
-<attrib name="value" value="14"/></item>
+<attrib name="value" value="26"/></item>
 <item name="NumNodesOfType_Gnd_OUTPUT" rev="4">
-<attrib name="value" value="16"/></item>
+<attrib name="value" value="31"/></item>
 <item name="NumNodesOfType_Gnd_PADINPUT" rev="4">
 <attrib name="value" value="12"/></item>
 <item name="NumNodesOfType_Gnd_PINBOUNCE" rev="4">
-<attrib name="value" value="353"/></item>
+<attrib name="value" value="357"/></item>
 <item name="NumNodesOfType_Gnd_PINFEED" rev="4">
 <attrib name="value" value="651"/></item>
 <item name="NumNodesOfType_Gnd_REGINPUT" rev="4">
 <attrib name="value" value="75"/></item>
 <item name="NumNodesOfType_Gnd_SINGLE" rev="4">
-<attrib name="value" value="18"/></item>
+<attrib name="value" value="24"/></item>
 <item name="NumNodesOfType_Vcc_CNTRLPIN" rev="4">
 <attrib name="value" value="12"/></item>
 <item name="NumNodesOfType_Vcc_GENERIC" rev="4">
 <attrib name="value" value="6"/></item>
 <item name="NumNodesOfType_Vcc_HVCCOUT" rev="4">
-<attrib name="value" value="434"/></item>
+<attrib name="value" value="453"/></item>
 <item name="NumNodesOfType_Vcc_INPUT" rev="4">
 <attrib name="value" value="320"/></item>
 <item name="NumNodesOfType_Vcc_IOBIN2OUT" rev="4">
@@ -109,15 +111,15 @@
 <item name="NumNodesOfType_Vcc_IOBOUTPUT" rev="4">
 <attrib name="value" value="6"/></item>
 <item name="NumNodesOfType_Vcc_KVCCOUT" rev="4">
-<attrib name="value" value="77"/></item>
+<attrib name="value" value="76"/></item>
 <item name="NumNodesOfType_Vcc_LUTINPUT" rev="4">
-<attrib name="value" value="1125"/></item>
+<attrib name="value" value="1147"/></item>
 <item name="NumNodesOfType_Vcc_PADINPUT" rev="4">
 <attrib name="value" value="6"/></item>
 <item name="NumNodesOfType_Vcc_PINBOUNCE" rev="4">
 <attrib name="value" value="57"/></item>
 <item name="NumNodesOfType_Vcc_PINFEED" rev="4">
-<attrib name="value" value="1411"/></item>
+<attrib name="value" value="1433"/></item>
 <item name="NumNodesOfType_Vcc_REGINPUT" rev="4">
 <attrib name="value" value="5"/></item>
 </group>
@@ -129,7 +131,7 @@
 <item name="AGG_LOCED_IO" rev="3">
 <attrib name="value" value="91"/></item>
 <item name="AGG_SLICE" rev="3">
-<attrib name="value" value="2232"/></item>
+<attrib name="value" value="2328"/></item>
 <item name="NUM_BONDED_IOB" rev="3">
 <attrib name="value" value="91"/></item>
 <item name="NUM_BONDED_IOBM" rev="3">
@@ -143,21 +145,23 @@
 <item name="NUM_BSCAN" rev="3">
 <attrib name="value" value="1"/></item>
 <item name="NUM_BSFULL" rev="3">
-<attrib name="value" value="3230"/></item>
+<attrib name="value" value="3295"/></item>
 <item name="NUM_BSLUTONLY" rev="3">
-<attrib name="value" value="1003"/></item>
+<attrib name="value" value="1036"/></item>
 <item name="NUM_BSREGONLY" rev="3">
-<attrib name="value" value="3063"/></item>
+<attrib name="value" value="2953"/></item>
 <item name="NUM_BSUSED" rev="3">
-<attrib name="value" value="7296"/></item>
+<attrib name="value" value="7284"/></item>
 <item name="NUM_BUFDS" rev="3">
 <attrib name="value" value="4"/></item>
 <item name="NUM_BUFG" rev="3">
-<attrib name="value" value="8"/></item>
+<attrib name="value" value="7"/></item>
 <item name="NUM_BUFIO2" rev="3">
-<attrib name="value" value="2"/></item>
+<attrib name="value" value="3"/></item>
+<item name="NUM_BUFIO2FB" rev="3">
+<attrib name="value" value="1"/></item>
 <item name="NUM_DCM" rev="3">
-<attrib name="value" value="2"/></item>
+<attrib name="value" value="3"/></item>
 <item name="NUM_GTPA1_DUAL" rev="3">
 <attrib name="value" value="2"/></item>
 <item name="NUM_LOCED_GTPA1_DUAL" rev="3">
@@ -173,57 +177,55 @@
 <item name="NUM_LOCED_OPAD" rev="3">
 <attrib name="value" value="8"/></item>
 <item name="NUM_LOGIC_O5ANDO6" rev="3">
-<attrib name="value" value="464"/></item>
+<attrib name="value" value="476"/></item>
 <item name="NUM_LOGIC_O5ONLY" rev="3">
 <attrib name="value" value="335"/></item>
 <item name="NUM_LOGIC_O6ONLY" rev="3">
-<attrib name="value" value="3113"/></item>
+<attrib name="value" value="3134"/></item>
 <item name="NUM_LUT_RT_DRIVES_CARRY4" rev="3">
 <attrib name="value" value="16"/></item>
 <item name="NUM_LUT_RT_DRIVES_FLOP" rev="3">
-<attrib name="value" value="203"/></item>
+<attrib name="value" value="268"/></item>
 <item name="NUM_LUT_RT_EXO5" rev="3">
-<attrib name="value" value="203"/></item>
+<attrib name="value" value="268"/></item>
 <item name="NUM_LUT_RT_EXO6" rev="3">
 <attrib name="value" value="16"/></item>
 <item name="NUM_LUT_RT_O5" rev="3">
-<attrib name="value" value="7"/></item>
+<attrib name="value" value="17"/></item>
 <item name="NUM_LUT_RT_O6" rev="3">
 <attrib name="value" value="335"/></item>
-<item name="NUM_PLL_ADV" rev="3">
-<attrib name="value" value="1"/></item>
 <item name="NUM_RAMB16BWER" rev="3">
 <attrib name="value" value="4"/></item>
 <item name="NUM_RAMB8BWER" rev="3">
 <attrib name="value" value="6"/></item>
 <item name="NUM_SLICEL" rev="3">
-<attrib name="value" value="356"/></item>
+<attrib name="value" value="355"/></item>
 <item name="NUM_SLICEM" rev="3">
 <attrib name="value" value="32"/></item>
 <item name="NUM_SLICEX" rev="3">
-<attrib name="value" value="1844"/></item>
+<attrib name="value" value="1941"/></item>
 <item name="NUM_SLICE_CARRY4" rev="3">
 <attrib name="value" value="134"/></item>
 <item name="NUM_SLICE_CONTROLSET" rev="3">
-<attrib name="value" value="172"/></item>
+<attrib name="value" value="177"/></item>
 <item name="NUM_SLICE_CYINIT" rev="3">
-<attrib name="value" value="5100"/></item>
+<attrib name="value" value="5220"/></item>
 <item name="NUM_SLICE_F7MUX" rev="3">
 <attrib name="value" value="240"/></item>
 <item name="NUM_SLICE_F8MUX" rev="3">
 <attrib name="value" value="2"/></item>
 <item name="NUM_SLICE_FF" rev="3">
-<attrib name="value" value="6648"/></item>
+<attrib name="value" value="6685"/></item>
 <item name="NUM_SLICE_LATCH" rev="3">
 <attrib name="value" value="5"/></item>
 <item name="NUM_SLICE_UNUSEDCTRL" rev="3">
-<attrib name="value" value="305"/></item>
+<attrib name="value" value="289"/></item>
 <item name="NUM_SRL_O5ANDO6" rev="3">
 <attrib name="value" value="29"/></item>
 <item name="NUM_SRL_O6ONLY" rev="3">
 <attrib name="value" value="73"/></item>
 <item name="NUM_UNUSABLE_FF_BELS" rev="3">
-<attrib name="value" value="480"/></item>
+<attrib name="value" value="515"/></item>
 <item name="Xilinx Core chipscope_icon_v1_06_a, Xilinx CORE Generator 14.7" rev="3">
 <attrib name="value" value="1"/></item>
 <item name="Xilinx Core chipscope_ila_v1_05_a, Xilinx CORE Generator 14.7" rev="3">
@@ -235,20 +237,20 @@
 </group>
 <group name="SiteStatistics">
 <item name="BUFG-BUFGMUX" rev="4">
-<attrib name="value" value="8"/></item>
+<attrib name="value" value="7"/></item>
 <item name="IOB-IOBM" rev="4">
 <attrib name="value" value="39"/></item>
 <item name="IOB-IOBS" rev="4">
 <attrib name="value" value="52"/></item>
 <item name="SLICEL-SLICEM" rev="4">
-<attrib name="value" value="167"/></item>
+<attrib name="value" value="181"/></item>
 <item name="SLICEX-SLICEL" rev="4">
-<attrib name="value" value="451"/></item>
+<attrib name="value" value="477"/></item>
 <item name="SLICEX-SLICEM" rev="4">
-<attrib name="value" value="384"/></item>
+<attrib name="value" value="344"/></item>
 </group>
 </DesignStatistics>
-<DeviceUsage TimeStamp="Thu Nov 13 15:13:28 2014"><group name="SiteSummary">
+<DeviceUsage TimeStamp="Fri Nov 14 16:57:47 2014"><group name="SiteSummary">
 <item name="BSCAN" rev="4">
 <attrib name="total" value="1000000"/><attrib name="used" value="1"/></item>
 <item name="BSCAN_BSCAN" rev="4">
@@ -258,21 +260,25 @@
 <item name="BUFDS_BUFDS" rev="4">
 <attrib name="total" value="1000000"/><attrib name="used" value="4"/></item>
 <item name="BUFG" rev="4">
-<attrib name="total" value="1000000"/><attrib name="used" value="8"/></item>
+<attrib name="total" value="1000000"/><attrib name="used" value="7"/></item>
 <item name="BUFG_BUFG" rev="4">
-<attrib name="total" value="1000000"/><attrib name="used" value="8"/></item>
+<attrib name="total" value="1000000"/><attrib name="used" value="7"/></item>
 <item name="BUFIO2" rev="4">
-<attrib name="total" value="1000000"/><attrib name="used" value="2"/></item>
+<attrib name="total" value="1000000"/><attrib name="used" value="3"/></item>
+<item name="BUFIO2FB" rev="4">
+<attrib name="total" value="1000000"/><attrib name="used" value="1"/></item>
+<item name="BUFIO2FB_BUFIO2FB" rev="4">
+<attrib name="total" value="1000000"/><attrib name="used" value="1"/></item>
 <item name="BUFIO2_BUFIO2" rev="4">
-<attrib name="total" value="1000000"/><attrib name="used" value="2"/></item>
+<attrib name="total" value="1000000"/><attrib name="used" value="3"/></item>
 <item name="CARRY4" rev="4">
 <attrib name="total" value="1000000"/><attrib name="used" value="134"/></item>
 <item name="DCM" rev="4">
-<attrib name="total" value="1000000"/><attrib name="used" value="2"/></item>
+<attrib name="total" value="1000000"/><attrib name="used" value="3"/></item>
 <item name="DCM_DCM" rev="4">
-<attrib name="total" value="1000000"/><attrib name="used" value="2"/></item>
+<attrib name="total" value="1000000"/><attrib name="used" value="3"/></item>
 <item name="FF_SR" rev="4">
-<attrib name="total" value="1000000"/><attrib name="used" value="385"/></item>
+<attrib name="total" value="1000000"/><attrib name="used" value="467"/></item>
 <item name="GTPA1_DUAL" rev="4">
 <attrib name="total" value="1000000"/><attrib name="used" value="2"/></item>
 <item name="GTPA1_DUAL_GTPA1_DUAL" rev="4">
@@ -290,11 +296,11 @@
 <item name="IOBS" rev="4">
 <attrib name="total" value="1000000"/><attrib name="used" value="3"/></item>
 <item name="IOB_IMUX" rev="4">
-<attrib name="total" value="1000000"/><attrib name="used" value="65"/></item>
+<attrib name="total" value="1000000"/><attrib name="used" value="71"/></item>
 <item name="IOB_INBUF" rev="4">
-<attrib name="total" value="1000000"/><attrib name="used" value="65"/></item>
+<attrib name="total" value="1000000"/><attrib name="used" value="71"/></item>
 <item name="IOB_OUTBUF" rev="4">
-<attrib name="total" value="1000000"/><attrib name="used" value="28"/></item>
+<attrib name="total" value="1000000"/><attrib name="used" value="22"/></item>
 <item name="IPAD" rev="4">
 <attrib name="total" value="1000000"/><attrib name="used" value="16"/></item>
 <item name="IPAD_IPAD" rev="4">
@@ -302,9 +308,9 @@
 <item name="IPAD_PAD" rev="4">
 <attrib name="total" value="1000000"/><attrib name="used" value="16"/></item>
 <item name="LUT5" rev="4">
-<attrib name="total" value="1000000"/><attrib name="used" value="1009"/></item>
+<attrib name="total" value="1000000"/><attrib name="used" value="1096"/></item>
 <item name="LUT6" rev="4">
-<attrib name="total" value="1000000"/><attrib name="used" value="3928"/></item>
+<attrib name="total" value="1000000"/><attrib name="used" value="3961"/></item>
 <item name="LUT_OR_MEM5" rev="4">
 <attrib name="total" value="1000000"/><attrib name="used" value="29"/></item>
 <item name="LUT_OR_MEM6" rev="4">
@@ -319,10 +325,6 @@
 <attrib name="total" value="1000000"/><attrib name="used" value="8"/></item>
 <item name="PAD" rev="4">
 <attrib name="total" value="1000000"/><attrib name="used" value="97"/></item>
-<item name="PLL_ADV" rev="4">
-<attrib name="total" value="1000000"/><attrib name="used" value="1"/></item>
-<item name="PLL_ADV_PLL_ADV" rev="4">
-<attrib name="total" value="1000000"/><attrib name="used" value="1"/></item>
 <item name="RAMB16BWER" rev="4">
 <attrib name="total" value="1000000"/><attrib name="used" value="4"/></item>
 <item name="RAMB16BWER_RAMB16BWER" rev="4">
@@ -332,26 +334,26 @@
 <item name="RAMB8BWER_RAMB8BWER" rev="4">
 <attrib name="total" value="1000000"/><attrib name="used" value="6"/></item>
 <item name="REG_SR" rev="4">
-<attrib name="total" value="1000000"/><attrib name="used" value="6268"/></item>
+<attrib name="total" value="1000000"/><attrib name="used" value="6223"/></item>
 <item name="SELMUX2_1" rev="4">
 <attrib name="total" value="1000000"/><attrib name="used" value="242"/></item>
 <item name="SLICEL" rev="4">
-<attrib name="total" value="1000000"/><attrib name="used" value="356"/></item>
+<attrib name="total" value="1000000"/><attrib name="used" value="355"/></item>
 <item name="SLICEM" rev="4">
 <attrib name="total" value="1000000"/><attrib name="used" value="32"/></item>
 <item name="SLICEX" rev="4">
-<attrib name="total" value="1000000"/><attrib name="used" value="1844"/></item>
+<attrib name="total" value="1000000"/><attrib name="used" value="1941"/></item>
 </group>
 </DeviceUsage>
-<ReportConfigData TimeStamp="Thu Nov 13 15:13:28 2014"><group name="REG_SR">
+<ReportConfigData TimeStamp="Fri Nov 14 16:57:47 2014"><group name="REG_SR">
 <item name="CK" rev="4">
-<attrib name="CK" value="6265"/><attrib name="CK_INV" value="3"/></item>
+<attrib name="CK" value="6220"/><attrib name="CK_INV" value="3"/></item>
 <item name="LATCH_OR_FF" rev="4">
-<attrib name="FF" value="6263"/><attrib name="LATCH" value="5"/></item>
+<attrib name="FF" value="6218"/><attrib name="LATCH" value="5"/></item>
 <item name="SRINIT" rev="4">
-<attrib name="SRINIT0" value="6076"/><attrib name="SRINIT1" value="192"/></item>
+<attrib name="SRINIT0" value="6063"/><attrib name="SRINIT1" value="160"/></item>
 <item name="SYNC_ATTR" rev="4">
-<attrib name="ASYNC" value="5273"/><attrib name="SYNC" value="995"/></item>
+<attrib name="ASYNC" value="5219"/><attrib name="SYNC" value="1004"/></item>
 </group>
 <group name="LUT_OR_MEM5">
 <item name="CLK" rev="4">
@@ -375,7 +377,7 @@
 </group>
 <group name="SLICEL">
 <item name="CLK" rev="4">
-<attrib name="CLK" value="311"/><attrib name="CLK_INV" value="0"/></item>
+<attrib name="CLK" value="319"/><attrib name="CLK_INV" value="0"/></item>
 </group>
 <group name="SLICEM">
 <item name="CLK" rev="4">
@@ -383,15 +385,21 @@
 </group>
 <group name="IOB_OUTBUF">
 <item name="DRIVEATTRBOX" rev="4">
-<attrib name="12" value="24"/></item>
+<attrib name="12" value="18"/></item>
 <item name="SLEW" rev="4">
-<attrib name="SLOW" value="24"/></item>
+<attrib name="SLOW" value="18"/></item>
 <item name="SUSPEND" rev="4">
-<attrib name="3STATE" value="28"/></item>
+<attrib name="3STATE" value="22"/></item>
 </group>
 <group name="SLICEX">
 <item name="CLK" rev="4">
-<attrib name="CLK" value="1581"/><attrib name="CLK_INV" value="3"/></item>
+<attrib name="CLK" value="1685"/><attrib name="CLK_INV" value="3"/></item>
+</group>
+<group name="BUFIO2FB_BUFIO2FB">
+<item name="DIVIDE_BYPASS" rev="4">
+<attrib name="TRUE" value="1"/></item>
+<item name="INVERT_INPUTS" rev="4">
+<attrib name="FALSE" value="1"/></item>
 </group>
 <group name="GTPA1_DUAL_GTPA1_DUAL">
 <item name="AC_CAP_DIS_0" rev="4">
@@ -707,21 +715,17 @@
 </group>
 <group name="BUFIO2_BUFIO2">
 <item name="DIVIDE" rev="4">
-<attrib name="1" value="2"/></item>
+<attrib name="1" value="3"/></item>
 <item name="DIVIDE_BYPASS" rev="4">
-<attrib name="TRUE" value="2"/></item>
+<attrib name="TRUE" value="3"/></item>
 <item name="I_INVERT" rev="4">
-<attrib name="FALSE" value="2"/></item>
+<attrib name="FALSE" value="3"/></item>
 </group>
 <group name="BSCAN_BSCAN">
 <item name="JTAG_CHAIN" rev="4">
 <attrib name="1" value="1"/></item>
 <item name="JTAG_TEST" rev="4">
 <attrib name="0" value="1"/></item>
-</group>
-<group name="PLL_ADV">
-<item name="RST" rev="4">
-<attrib name="RST" value="1"/><attrib name="RST_INV" value="0"/></item>
 </group>
 <group name="RAMB16BWER">
 <item name="CLKA" rev="4">
@@ -891,225 +895,55 @@
 <item name="WRITE_MODE_B" rev="4">
 <attrib name="WRITE_FIRST" value="6"/></item>
 </group>
-<group name="PLL_ADV_PLL_ADV">
-<item name="BANDWIDTH" rev="4">
-<attrib name="OPTIMIZED" value="1"/></item>
-<item name="CLK_FEEDBACK" rev="4">
-<attrib name="CLKFBOUT" value="1"/></item>
-<item name="COMPENSATION" rev="4">
-<attrib name="SYSTEM_SYNCHRONOUS" value="1"/></item>
-<item name="PLL_ADD_LEAKAGE" rev="4">
-<attrib name="2" value="1"/></item>
-<item name="PLL_AVDD_COMP_SET" rev="4">
-<attrib name="2" value="1"/></item>
-<item name="PLL_CLAMP_BYPASS" rev="4">
-<attrib name="FALSE" value="1"/></item>
-<item name="PLL_CLAMP_REF_SEL" rev="4">
-<attrib name="1" value="1"/></item>
-<item name="PLL_CLK0MX" rev="4">
-<attrib name="0" value="1"/></item>
-<item name="PLL_CLK1MX" rev="4">
-<attrib name="0" value="1"/></item>
-<item name="PLL_CLK2MX" rev="4">
-<attrib name="0" value="1"/></item>
-<item name="PLL_CLK3MX" rev="4">
-<attrib name="0" value="1"/></item>
-<item name="PLL_CLK4MX" rev="4">
-<attrib name="0" value="1"/></item>
-<item name="PLL_CLK5MX" rev="4">
-<attrib name="0" value="1"/></item>
-<item name="PLL_CLKBURST_CNT" rev="4">
-<attrib name="0" value="1"/></item>
-<item name="PLL_CLKBURST_ENABLE" rev="4">
-<attrib name="TRUE" value="1"/></item>
-<item name="PLL_CLKCNTRL" rev="4">
-<attrib name="0" value="1"/></item>
-<item name="PLL_CLKFBMX" rev="4">
-<attrib name="0" value="1"/></item>
-<item name="PLL_CLKFBOUT2_EDGE" rev="4">
-<attrib name="TRUE" value="1"/></item>
-<item name="PLL_CLKFBOUT2_NOCOUNT" rev="4">
-<attrib name="TRUE" value="1"/></item>
-<item name="PLL_CLKFBOUT_EDGE" rev="4">
-<attrib name="TRUE" value="1"/></item>
-<item name="PLL_CLKFBOUT_EN" rev="4">
-<attrib name="FALSE" value="1"/></item>
-<item name="PLL_CLKFBOUT_NOCOUNT" rev="4">
-<attrib name="TRUE" value="1"/></item>
-<item name="PLL_CLKOUT0_EDGE" rev="4">
-<attrib name="TRUE" value="1"/></item>
-<item name="PLL_CLKOUT0_EN" rev="4">
-<attrib name="FALSE" value="1"/></item>
-<item name="PLL_CLKOUT0_NOCOUNT" rev="4">
-<attrib name="TRUE" value="1"/></item>
-<item name="PLL_CLKOUT1_EDGE" rev="4">
-<attrib name="TRUE" value="1"/></item>
-<item name="PLL_CLKOUT1_EN" rev="4">
-<attrib name="FALSE" value="1"/></item>
-<item name="PLL_CLKOUT1_NOCOUNT" rev="4">
-<attrib name="TRUE" value="1"/></item>
-<item name="PLL_CLKOUT2_EDGE" rev="4">
-<attrib name="TRUE" value="1"/></item>
-<item name="PLL_CLKOUT2_EN" rev="4">
-<attrib name="FALSE" value="1"/></item>
-<item name="PLL_CLKOUT2_NOCOUNT" rev="4">
-<attrib name="TRUE" value="1"/></item>
-<item name="PLL_CLKOUT3_EDGE" rev="4">
-<attrib name="TRUE" value="1"/></item>
-<item name="PLL_CLKOUT3_EN" rev="4">
-<attrib name="FALSE" value="1"/></item>
-<item name="PLL_CLKOUT3_NOCOUNT" rev="4">
-<attrib name="TRUE" value="1"/></item>
-<item name="PLL_CLKOUT4_EDGE" rev="4">
-<attrib name="TRUE" value="1"/></item>
-<item name="PLL_CLKOUT4_EN" rev="4">
-<attrib name="FALSE" value="1"/></item>
-<item name="PLL_CLKOUT4_NOCOUNT" rev="4">
-<attrib name="TRUE" value="1"/></item>
-<item name="PLL_CLKOUT5_EDGE" rev="4">
-<attrib name="TRUE" value="1"/></item>
-<item name="PLL_CLKOUT5_EN" rev="4">
-<attrib name="FALSE" value="1"/></item>
-<item name="PLL_CLKOUT5_NOCOUNT" rev="4">
-<attrib name="TRUE" value="1"/></item>
-<item name="PLL_CLK_LOST_DETECT" rev="4">
-<attrib name="FALSE" value="1"/></item>
-<item name="PLL_CP" rev="4">
-<attrib name="1" value="1"/></item>
-<item name="PLL_CP_BIAS_TRIP_SHIFT" rev="4">
-<attrib name="TRUE" value="1"/></item>
-<item name="PLL_CP_REPL" rev="4">
-<attrib name="1" value="1"/></item>
-<item name="PLL_CP_RES" rev="4">
-<attrib name="0" value="1"/></item>
-<item name="PLL_DIRECT_PATH_CNTRL" rev="4">
-<attrib name="TRUE" value="1"/></item>
-<item name="PLL_DIVCLK_EDGE" rev="4">
-<attrib name="TRUE" value="1"/></item>
-<item name="PLL_DIVCLK_NOCOUNT" rev="4">
-<attrib name="TRUE" value="1"/></item>
-<item name="PLL_DVDD_COMP_SET" rev="4">
-<attrib name="2" value="1"/></item>
-<item name="PLL_EN" rev="4">
-<attrib name="FALSE" value="1"/></item>
-<item name="PLL_EN_DLY" rev="4">
-<attrib name="TRUE" value="1"/></item>
-<item name="PLL_EN_LEAKAGE" rev="4">
-<attrib name="2" value="1"/></item>
-<item name="PLL_EN_TCLK0" rev="4">
-<attrib name="TRUE" value="1"/></item>
-<item name="PLL_EN_TCLK1" rev="4">
-<attrib name="TRUE" value="1"/></item>
-<item name="PLL_EN_TCLK2" rev="4">
-<attrib name="TRUE" value="1"/></item>
-<item name="PLL_EN_TCLK3" rev="4">
-<attrib name="TRUE" value="1"/></item>
-<item name="PLL_EN_VCO0" rev="4">
-<attrib name="FALSE" value="1"/></item>
-<item name="PLL_EN_VCO1" rev="4">
-<attrib name="FALSE" value="1"/></item>
-<item name="PLL_EN_VCO2" rev="4">
-<attrib name="FALSE" value="1"/></item>
-<item name="PLL_EN_VCO3" rev="4">
-<attrib name="FALSE" value="1"/></item>
-<item name="PLL_EN_VCO4" rev="4">
-<attrib name="FALSE" value="1"/></item>
-<item name="PLL_EN_VCO5" rev="4">
-<attrib name="FALSE" value="1"/></item>
-<item name="PLL_EN_VCO6" rev="4">
-<attrib name="FALSE" value="1"/></item>
-<item name="PLL_EN_VCO7" rev="4">
-<attrib name="FALSE" value="1"/></item>
-<item name="PLL_EN_VCO_DIV1" rev="4">
-<attrib name="FALSE" value="1"/></item>
-<item name="PLL_EN_VCO_DIV6" rev="4">
-<attrib name="TRUE" value="1"/></item>
-<item name="PLL_INTFB" rev="4">
-<attrib name="0" value="1"/></item>
-<item name="PLL_IO_CLKSRC" rev="4">
-<attrib name="0" value="1"/></item>
-<item name="PLL_LFHF" rev="4">
-<attrib name="3" value="1"/></item>
-<item name="PLL_LOCK_FB_DLY" rev="4">
-<attrib name="3" value="1"/></item>
-<item name="PLL_LOCK_REF_DLY" rev="4">
-<attrib name="5" value="1"/></item>
-<item name="PLL_MAN_LF_EN" rev="4">
-<attrib name="TRUE" value="1"/></item>
-<item name="PLL_NBTI_EN" rev="4">
-<attrib name="TRUE" value="1"/></item>
-<item name="PLL_PFD_CNTRL" rev="4">
-<attrib name="8" value="1"/></item>
-<item name="PLL_PFD_DLY" rev="4">
-<attrib name="1" value="1"/></item>
-<item name="PLL_PWRD_CFG" rev="4">
-<attrib name="FALSE" value="1"/></item>
-<item name="PLL_REG_INPUT" rev="4">
-<attrib name="TRUE" value="1"/></item>
-<item name="PLL_RES" rev="4">
-<attrib name="1" value="1"/></item>
-<item name="PLL_SEL_SLIPD" rev="4">
-<attrib name="FALSE" value="1"/></item>
-<item name="PLL_SKEW_CNTRL" rev="4">
-<attrib name="0" value="1"/></item>
-<item name="PLL_TEST_IN_WINDOW" rev="4">
-<attrib name="FALSE" value="1"/></item>
-<item name="PLL_VDD_SEL" rev="4">
-<attrib name="0" value="1"/></item>
-<item name="PLL_VLFHIGH_DIS" rev="4">
-<attrib name="TRUE" value="1"/></item>
-<item name="RST" rev="4">
-<attrib name="RST" value="1"/><attrib name="RST_INV" value="0"/></item>
-</group>
 <group name="DCM_DCM">
 <item name="CLKDV_DIVIDE" rev="4">
-<attrib name="2.0" value="2"/></item>
+<attrib name="2.0" value="3"/></item>
 <item name="CLKIN_DIVIDE_BY_2" rev="4">
-<attrib name="FALSE" value="2"/></item>
+<attrib name="FALSE" value="3"/></item>
 <item name="CLKOUT_PHASE_SHIFT" rev="4">
-<attrib name="NONE" value="2"/></item>
+<attrib name="NONE" value="3"/></item>
 <item name="CLK_FEEDBACK" rev="4">
-<attrib name="1X" value="2"/></item>
+<attrib name="1X" value="3"/></item>
 <item name="DESKEW_ADJUST" rev="4">
-<attrib name="5" value="2"/></item>
+<attrib name="5" value="3"/></item>
 <item name="DFS_FREQUENCY_MODE" rev="4">
-<attrib name="LOW" value="2"/></item>
+<attrib name="LOW" value="3"/></item>
 <item name="DLL_FREQUENCY_MODE" rev="4">
-<attrib name="LOW" value="2"/></item>
+<attrib name="LOW" value="3"/></item>
 <item name="DSS_MODE" rev="4">
-<attrib name="NONE" value="2"/></item>
+<attrib name="NONE" value="3"/></item>
 <item name="DUTY_CYCLE_CORRECTION" rev="4">
-<attrib name="TRUE" value="2"/></item>
+<attrib name="TRUE" value="3"/></item>
 <item name="PSCLK" rev="4">
-<attrib name="PSCLK_INV" value="0"/><attrib name="PSCLK" value="2"/></item>
+<attrib name="PSCLK_INV" value="0"/><attrib name="PSCLK" value="3"/></item>
 <item name="PSEN" rev="4">
-<attrib name="PSEN_INV" value="0"/><attrib name="PSEN" value="2"/></item>
+<attrib name="PSEN_INV" value="0"/><attrib name="PSEN" value="3"/></item>
 <item name="PSINCDEC" rev="4">
-<attrib name="PSINCDEC_INV" value="0"/><attrib name="PSINCDEC" value="2"/></item>
+<attrib name="PSINCDEC_INV" value="0"/><attrib name="PSINCDEC" value="3"/></item>
 <item name="RST" rev="4">
-<attrib name="RST" value="0"/><attrib name="RST_INV" value="2"/></item>
+<attrib name="RST" value="1"/><attrib name="RST_INV" value="2"/></item>
 <item name="STARTUP_WAIT" rev="4">
-<attrib name="FALSE" value="2"/></item>
+<attrib name="FALSE" value="3"/></item>
 <item name="VERY_HIGH_FREQUENCY" rev="4">
-<attrib name="FALSE" value="2"/></item>
+<attrib name="FALSE" value="3"/></item>
 </group>
 <group name="FF_SR">
 <item name="CK" rev="4">
-<attrib name="CK" value="385"/><attrib name="CK_INV" value="0"/></item>
+<attrib name="CK" value="467"/><attrib name="CK_INV" value="0"/></item>
 <item name="SRINIT" rev="4">
-<attrib name="SRINIT0" value="352"/><attrib name="SRINIT1" value="33"/></item>
+<attrib name="SRINIT0" value="402"/><attrib name="SRINIT1" value="65"/></item>
 <item name="SYNC_ATTR" rev="4">
-<attrib name="ASYNC" value="376"/><attrib name="SYNC" value="9"/></item>
+<attrib name="ASYNC" value="431"/><attrib name="SYNC" value="36"/></item>
 </group>
 <group name="DCM">
 <item name="PSCLK" rev="4">
-<attrib name="PSCLK_INV" value="0"/><attrib name="PSCLK" value="2"/></item>
+<attrib name="PSCLK_INV" value="0"/><attrib name="PSCLK" value="3"/></item>
 <item name="PSEN" rev="4">
-<attrib name="PSEN_INV" value="0"/><attrib name="PSEN" value="2"/></item>
+<attrib name="PSEN_INV" value="0"/><attrib name="PSEN" value="3"/></item>
 <item name="PSINCDEC" rev="4">
-<attrib name="PSINCDEC_INV" value="0"/><attrib name="PSINCDEC" value="2"/></item>
+<attrib name="PSINCDEC_INV" value="0"/><attrib name="PSINCDEC" value="3"/></item>
 <item name="RST" rev="4">
-<attrib name="RST" value="0"/><attrib name="RST_INV" value="2"/></item>
+<attrib name="RST" value="1"/><attrib name="RST_INV" value="2"/></item>
 </group>
 <group name="GTPA1_DUAL">
 <item name="DCLK" rev="4">
@@ -1136,11 +970,11 @@
 <attrib name="TXUSRCLK21_INV" value="0"/><attrib name="TXUSRCLK21" value="2"/></item>
 </group>
 </ReportConfigData>
-<ReportPinData TimeStamp="Thu Nov 13 15:13:28 2014"><group name="BUFIO2">
+<ReportPinData TimeStamp="Fri Nov 14 16:57:47 2014"><group name="BUFIO2">
 <item name="DIVCLK" rev="4">
-<attrib name="value" value="2"/></item>
+<attrib name="value" value="3"/></item>
 <item name="I" rev="4">
-<attrib name="value" value="2"/></item>
+<attrib name="value" value="3"/></item>
 </group>
 <group name="NULLMUX">
 <item name="0" rev="4">
@@ -1150,15 +984,15 @@
 </group>
 <group name="REG_SR">
 <item name="CE" rev="4">
-<attrib name="value" value="5647"/></item>
+<attrib name="value" value="5613"/></item>
 <item name="CK" rev="4">
-<attrib name="value" value="6268"/></item>
+<attrib name="value" value="6223"/></item>
 <item name="D" rev="4">
-<attrib name="value" value="6268"/></item>
+<attrib name="value" value="6223"/></item>
 <item name="Q" rev="4">
-<attrib name="value" value="6268"/></item>
+<attrib name="value" value="6223"/></item>
 <item name="SR" rev="4">
-<attrib name="value" value="658"/></item>
+<attrib name="value" value="640"/></item>
 </group>
 <group name="BUFDS">
 <item name="I" rev="4">
@@ -1234,31 +1068,31 @@
 </group>
 <group name="SLICEL">
 <item name="A" rev="4">
-<attrib name="value" value="39"/></item>
+<attrib name="value" value="36"/></item>
 <item name="A1" rev="4">
-<attrib name="value" value="7"/></item>
+<attrib name="value" value="4"/></item>
 <item name="A2" rev="4">
-<attrib name="value" value="39"/></item>
+<attrib name="value" value="37"/></item>
 <item name="A3" rev="4">
-<attrib name="value" value="40"/></item>
+<attrib name="value" value="38"/></item>
 <item name="A4" rev="4">
-<attrib name="value" value="141"/></item>
+<attrib name="value" value="139"/></item>
 <item name="A5" rev="4">
-<attrib name="value" value="60"/></item>
+<attrib name="value" value="58"/></item>
 <item name="A6" rev="4">
-<attrib name="value" value="158"/></item>
+<attrib name="value" value="156"/></item>
 <item name="AMUX" rev="4">
-<attrib name="value" value="20"/></item>
+<attrib name="value" value="18"/></item>
 <item name="AQ" rev="4">
-<attrib name="value" value="111"/></item>
+<attrib name="value" value="115"/></item>
 <item name="AX" rev="4">
-<attrib name="value" value="5"/></item>
+<attrib name="value" value="8"/></item>
 <item name="B" rev="4">
 <attrib name="value" value="39"/></item>
 <item name="B1" rev="4">
-<attrib name="value" value="37"/></item>
-<item name="B2" rev="4">
 <attrib name="value" value="38"/></item>
+<item name="B2" rev="4">
+<attrib name="value" value="39"/></item>
 <item name="B3" rev="4">
 <attrib name="value" value="39"/></item>
 <item name="B4" rev="4">
@@ -1270,13 +1104,13 @@
 <item name="BMUX" rev="4">
 <attrib name="value" value="27"/></item>
 <item name="BQ" rev="4">
-<attrib name="value" value="96"/></item>
+<attrib name="value" value="100"/></item>
 <item name="BX" rev="4">
-<attrib name="value" value="3"/></item>
+<attrib name="value" value="7"/></item>
 <item name="C1" rev="4">
-<attrib name="value" value="226"/></item>
+<attrib name="value" value="227"/></item>
 <item name="C2" rev="4">
-<attrib name="value" value="229"/></item>
+<attrib name="value" value="230"/></item>
 <item name="C3" rev="4">
 <attrib name="value" value="233"/></item>
 <item name="C4" rev="4">
@@ -1286,17 +1120,17 @@
 <item name="C6" rev="4">
 <attrib name="value" value="344"/></item>
 <item name="CE" rev="4">
-<attrib name="value" value="301"/></item>
+<attrib name="value" value="308"/></item>
 <item name="CIN" rev="4">
 <attrib name="value" value="95"/></item>
 <item name="CLK" rev="4">
-<attrib name="value" value="311"/></item>
+<attrib name="value" value="319"/></item>
 <item name="CMUX" rev="4">
 <attrib name="value" value="60"/></item>
 <item name="COUT" rev="4">
 <attrib name="value" value="90"/></item>
 <item name="CQ" rev="4">
-<attrib name="value" value="292"/></item>
+<attrib name="value" value="293"/></item>
 <item name="CX" rev="4">
 <attrib name="value" value="233"/></item>
 <item name="D1" rev="4">
@@ -1314,9 +1148,9 @@
 <item name="DMUX" rev="4">
 <attrib name="value" value="23"/></item>
 <item name="DQ" rev="4">
-<attrib name="value" value="89"/></item>
+<attrib name="value" value="91"/></item>
 <item name="DX" rev="4">
-<attrib name="value" value="3"/></item>
+<attrib name="value" value="5"/></item>
 <item name="SR" rev="4">
 <attrib name="value" value="112"/></item>
 </group>
@@ -1324,41 +1158,41 @@
 <item name="A" rev="4">
 <attrib name="value" value="4"/></item>
 <item name="A1" rev="4">
-<attrib name="value" value="28"/></item>
+<attrib name="value" value="27"/></item>
 <item name="A2" rev="4">
-<attrib name="value" value="28"/></item>
+<attrib name="value" value="27"/></item>
 <item name="A3" rev="4">
-<attrib name="value" value="28"/></item>
+<attrib name="value" value="27"/></item>
 <item name="A4" rev="4">
-<attrib name="value" value="28"/></item>
+<attrib name="value" value="27"/></item>
 <item name="A5" rev="4">
-<attrib name="value" value="28"/></item>
+<attrib name="value" value="27"/></item>
 <item name="A6" rev="4">
-<attrib name="value" value="28"/></item>
+<attrib name="value" value="27"/></item>
 <item name="AI" rev="4">
 <attrib name="value" value="12"/></item>
 <item name="AMUX" rev="4">
 <attrib name="value" value="10"/></item>
 <item name="AQ" rev="4">
-<attrib name="value" value="9"/></item>
+<attrib name="value" value="8"/></item>
 <item name="AX" rev="4">
 <attrib name="value" value="23"/></item>
 <item name="B" rev="4">
-<attrib name="value" value="2"/></item>
+<attrib name="value" value="1"/></item>
 <item name="B1" rev="4">
-<attrib name="value" value="25"/></item>
+<attrib name="value" value="24"/></item>
 <item name="B2" rev="4">
-<attrib name="value" value="25"/></item>
+<attrib name="value" value="24"/></item>
 <item name="B3" rev="4">
-<attrib name="value" value="25"/></item>
+<attrib name="value" value="24"/></item>
 <item name="B4" rev="4">
-<attrib name="value" value="25"/></item>
+<attrib name="value" value="24"/></item>
 <item name="B5" rev="4">
-<attrib name="value" value="25"/></item>
+<attrib name="value" value="24"/></item>
 <item name="B6" rev="4">
-<attrib name="value" value="25"/></item>
+<attrib name="value" value="24"/></item>
 <item name="BI" rev="4">
-<attrib name="value" value="9"/></item>
+<attrib name="value" value="8"/></item>
 <item name="BMUX" rev="4">
 <attrib name="value" value="9"/></item>
 <item name="BQ" rev="4">
@@ -1368,21 +1202,21 @@
 <item name="C" rev="4">
 <attrib name="value" value="1"/></item>
 <item name="C1" rev="4">
-<attrib name="value" value="25"/></item>
+<attrib name="value" value="26"/></item>
 <item name="C2" rev="4">
-<attrib name="value" value="25"/></item>
+<attrib name="value" value="26"/></item>
 <item name="C3" rev="4">
-<attrib name="value" value="25"/></item>
+<attrib name="value" value="26"/></item>
 <item name="C4" rev="4">
-<attrib name="value" value="25"/></item>
+<attrib name="value" value="26"/></item>
 <item name="C5" rev="4">
-<attrib name="value" value="25"/></item>
+<attrib name="value" value="26"/></item>
 <item name="C6" rev="4">
-<attrib name="value" value="25"/></item>
+<attrib name="value" value="26"/></item>
 <item name="CE" rev="4">
 <attrib name="value" value="32"/></item>
 <item name="CI" rev="4">
-<attrib name="value" value="10"/></item>
+<attrib name="value" value="11"/></item>
 <item name="CIN" rev="4">
 <attrib name="value" value="6"/></item>
 <item name="CLK" rev="4">
@@ -1392,21 +1226,23 @@
 <item name="COUT" rev="4">
 <attrib name="value" value="11"/></item>
 <item name="CQ" rev="4">
-<attrib name="value" value="10"/></item>
+<attrib name="value" value="11"/></item>
 <item name="CX" rev="4">
-<attrib name="value" value="22"/></item>
+<attrib name="value" value="21"/></item>
+<item name="D" rev="4">
+<attrib name="value" value="1"/></item>
 <item name="D1" rev="4">
-<attrib name="value" value="24"/></item>
+<attrib name="value" value="25"/></item>
 <item name="D2" rev="4">
-<attrib name="value" value="24"/></item>
+<attrib name="value" value="25"/></item>
 <item name="D3" rev="4">
-<attrib name="value" value="24"/></item>
+<attrib name="value" value="25"/></item>
 <item name="D4" rev="4">
-<attrib name="value" value="24"/></item>
+<attrib name="value" value="25"/></item>
 <item name="D5" rev="4">
-<attrib name="value" value="24"/></item>
+<attrib name="value" value="25"/></item>
 <item name="D6" rev="4">
-<attrib name="value" value="24"/></item>
+<attrib name="value" value="25"/></item>
 <item name="DI" rev="4">
 <attrib name="value" value="21"/></item>
 <item name="DMUX" rev="4">
@@ -1414,103 +1250,103 @@
 <item name="DQ" rev="4">
 <attrib name="value" value="10"/></item>
 <item name="DX" rev="4">
-<attrib name="value" value="21"/></item>
+<attrib name="value" value="22"/></item>
 </group>
 <group name="IOB_OUTBUF">
 <item name="IN" rev="4">
-<attrib name="value" value="28"/></item>
+<attrib name="value" value="22"/></item>
 <item name="OUT" rev="4">
-<attrib name="value" value="28"/></item>
+<attrib name="value" value="22"/></item>
 <item name="TRI" rev="4">
 <attrib name="value" value="8"/></item>
 </group>
 <group name="SLICEX">
 <item name="A" rev="4">
-<attrib name="value" value="327"/></item>
+<attrib name="value" value="247"/></item>
 <item name="A1" rev="4">
-<attrib name="value" value="250"/></item>
+<attrib name="value" value="218"/></item>
 <item name="A2" rev="4">
-<attrib name="value" value="711"/></item>
+<attrib name="value" value="658"/></item>
 <item name="A3" rev="4">
-<attrib name="value" value="854"/></item>
+<attrib name="value" value="804"/></item>
 <item name="A4" rev="4">
-<attrib name="value" value="907"/></item>
+<attrib name="value" value="849"/></item>
 <item name="A5" rev="4">
-<attrib name="value" value="957"/></item>
+<attrib name="value" value="876"/></item>
 <item name="A6" rev="4">
-<attrib name="value" value="912"/></item>
+<attrib name="value" value="842"/></item>
 <item name="AMUX" rev="4">
-<attrib name="value" value="163"/></item>
+<attrib name="value" value="183"/></item>
 <item name="AQ" rev="4">
-<attrib name="value" value="1502"/></item>
+<attrib name="value" value="1475"/></item>
 <item name="AX" rev="4">
-<attrib name="value" value="909"/></item>
+<attrib name="value" value="876"/></item>
 <item name="B" rev="4">
-<attrib name="value" value="102"/></item>
+<attrib name="value" value="146"/></item>
 <item name="B1" rev="4">
-<attrib name="value" value="123"/></item>
-<item name="B2" rev="4">
-<attrib name="value" value="559"/></item>
-<item name="B3" rev="4">
-<attrib name="value" value="630"/></item>
-<item name="B4" rev="4">
-<attrib name="value" value="642"/></item>
-<item name="B5" rev="4">
-<attrib name="value" value="700"/></item>
-<item name="B6" rev="4">
-<attrib name="value" value="652"/></item>
-<item name="BMUX" rev="4">
-<attrib name="value" value="106"/></item>
-<item name="BQ" rev="4">
-<attrib name="value" value="1422"/></item>
-<item name="BX" rev="4">
-<attrib name="value" value="872"/></item>
-<item name="C" rev="4">
-<attrib name="value" value="111"/></item>
-<item name="C1" rev="4">
 <attrib name="value" value="139"/></item>
+<item name="B2" rev="4">
+<attrib name="value" value="583"/></item>
+<item name="B3" rev="4">
+<attrib name="value" value="691"/></item>
+<item name="B4" rev="4">
+<attrib name="value" value="718"/></item>
+<item name="B5" rev="4">
+<attrib name="value" value="756"/></item>
+<item name="B6" rev="4">
+<attrib name="value" value="709"/></item>
+<item name="BMUX" rev="4">
+<attrib name="value" value="142"/></item>
+<item name="BQ" rev="4">
+<attrib name="value" value="1411"/></item>
+<item name="BX" rev="4">
+<attrib name="value" value="846"/></item>
+<item name="C" rev="4">
+<attrib name="value" value="162"/></item>
+<item name="C1" rev="4">
+<attrib name="value" value="165"/></item>
 <item name="C2" rev="4">
-<attrib name="value" value="533"/></item>
+<attrib name="value" value="565"/></item>
 <item name="C3" rev="4">
-<attrib name="value" value="601"/></item>
+<attrib name="value" value="655"/></item>
 <item name="C4" rev="4">
-<attrib name="value" value="612"/></item>
+<attrib name="value" value="682"/></item>
 <item name="C5" rev="4">
-<attrib name="value" value="663"/></item>
+<attrib name="value" value="716"/></item>
 <item name="C6" rev="4">
-<attrib name="value" value="615"/></item>
+<attrib name="value" value="669"/></item>
 <item name="CE" rev="4">
-<attrib name="value" value="1324"/></item>
+<attrib name="value" value="1430"/></item>
 <item name="CLK" rev="4">
-<attrib name="value" value="1584"/></item>
+<attrib name="value" value="1688"/></item>
 <item name="CMUX" rev="4">
-<attrib name="value" value="128"/></item>
+<attrib name="value" value="146"/></item>
 <item name="CQ" rev="4">
-<attrib name="value" value="1366"/></item>
+<attrib name="value" value="1363"/></item>
 <item name="CX" rev="4">
-<attrib name="value" value="862"/></item>
+<attrib name="value" value="851"/></item>
 <item name="D" rev="4">
-<attrib name="value" value="241"/></item>
+<attrib name="value" value="234"/></item>
 <item name="D1" rev="4">
-<attrib name="value" value="163"/></item>
+<attrib name="value" value="173"/></item>
 <item name="D2" rev="4">
 <attrib name="value" value="578"/></item>
 <item name="D3" rev="4">
-<attrib name="value" value="696"/></item>
+<attrib name="value" value="699"/></item>
 <item name="D4" rev="4">
-<attrib name="value" value="727"/></item>
+<attrib name="value" value="738"/></item>
 <item name="D5" rev="4">
-<attrib name="value" value="782"/></item>
+<attrib name="value" value="778"/></item>
 <item name="D6" rev="4">
-<attrib name="value" value="739"/></item>
+<attrib name="value" value="733"/></item>
 <item name="DMUX" rev="4">
-<attrib name="value" value="175"/></item>
+<attrib name="value" value="189"/></item>
 <item name="DQ" rev="4">
-<attrib name="value" value="1353"/></item>
+<attrib name="value" value="1338"/></item>
 <item name="DX" rev="4">
-<attrib name="value" value="854"/></item>
+<attrib name="value" value="839"/></item>
 <item name="SR" rev="4">
-<attrib name="value" value="111"/></item>
+<attrib name="value" value="116"/></item>
 </group>
 <group name="BSCAN">
 <item name="DRCK" rev="4">
@@ -1528,9 +1364,15 @@
 </group>
 <group name="BUFG_BUFG">
 <item name="I0" rev="4">
-<attrib name="value" value="8"/></item>
+<attrib name="value" value="7"/></item>
 <item name="O" rev="4">
-<attrib name="value" value="8"/></item>
+<attrib name="value" value="7"/></item>
+</group>
+<group name="BUFIO2FB_BUFIO2FB">
+<item name="I" rev="4">
+<attrib name="value" value="1"/></item>
+<item name="O" rev="4">
+<attrib name="value" value="1"/></item>
 </group>
 <group name="GTPA1_DUAL_GTPA1_DUAL">
 <item name="CLK00" rev="4">
@@ -1612,7 +1454,9 @@
 <item name="GTPCLKFBSEL1WEST1" rev="4">
 <attrib name="value" value="2"/></item>
 <item name="GTPCLKOUT00" rev="4">
-<attrib name="value" value="2"/></item>
+<attrib name="value" value="1"/></item>
+<item name="GTPCLKOUT10" rev="4">
+<attrib name="value" value="1"/></item>
 <item name="GTPRESET0" rev="4">
 <attrib name="value" value="2"/></item>
 <item name="GTPRESET1" rev="4">
@@ -1701,9 +1545,17 @@
 <attrib name="value" value="2"/></item>
 <item name="REFSELDYPLL12" rev="4">
 <attrib name="value" value="2"/></item>
+<item name="RESETDONE0" rev="4">
+<attrib name="value" value="2"/></item>
+<item name="RESETDONE1" rev="4">
+<attrib name="value" value="2"/></item>
 <item name="RXBUFRESET0" rev="4">
 <attrib name="value" value="2"/></item>
 <item name="RXBUFRESET1" rev="4">
+<attrib name="value" value="2"/></item>
+<item name="RXBYTEISALIGNED0" rev="4">
+<attrib name="value" value="2"/></item>
+<item name="RXBYTEISALIGNED1" rev="4">
 <attrib name="value" value="2"/></item>
 <item name="RXCDRRESET0" rev="4">
 <attrib name="value" value="2"/></item>
@@ -2238,11 +2090,17 @@
 <item name="PAD" rev="4">
 <attrib name="value" value="97"/></item>
 </group>
+<group name="BUFIO2FB">
+<item name="I" rev="4">
+<attrib name="value" value="1"/></item>
+<item name="O" rev="4">
+<attrib name="value" value="1"/></item>
+</group>
 <group name="BUFIO2_BUFIO2">
 <item name="DIVCLK" rev="4">
-<attrib name="value" value="2"/></item>
+<attrib name="value" value="3"/></item>
 <item name="I" rev="4">
-<attrib name="value" value="2"/></item>
+<attrib name="value" value="3"/></item>
 </group>
 <group name="BSCAN_BSCAN">
 <item name="DRCK" rev="4">
@@ -2266,23 +2124,9 @@
 </group>
 <group name="IOB_INBUF">
 <item name="OUT" rev="4">
-<attrib name="value" value="65"/></item>
+<attrib name="value" value="71"/></item>
 <item name="PAD" rev="4">
-<attrib name="value" value="65"/></item>
-</group>
-<group name="PLL_ADV">
-<item name="CLKFBIN" rev="4">
-<attrib name="value" value="1"/></item>
-<item name="CLKFBOUT" rev="4">
-<attrib name="value" value="1"/></item>
-<item name="CLKIN1" rev="4">
-<attrib name="value" value="1"/></item>
-<item name="CLKOUT1" rev="4">
-<attrib name="value" value="1"/></item>
-<item name="LOCKED" rev="4">
-<attrib name="value" value="1"/></item>
-<item name="RST" rev="4">
-<attrib name="value" value="1"/></item>
+<attrib name="value" value="71"/></item>
 </group>
 <group name="OPAD">
 <item name="I" rev="4">
@@ -3108,33 +2952,33 @@
 </group>
 <group name="LUT5">
 <item name="A1" rev="4">
-<attrib name="value" value="215"/></item>
+<attrib name="value" value="219"/></item>
 <item name="A2" rev="4">
-<attrib name="value" value="235"/></item>
+<attrib name="value" value="247"/></item>
 <item name="A3" rev="4">
-<attrib name="value" value="359"/></item>
+<attrib name="value" value="371"/></item>
 <item name="A4" rev="4">
-<attrib name="value" value="273"/></item>
+<attrib name="value" value="355"/></item>
 <item name="A5" rev="4">
-<attrib name="value" value="520"/></item>
+<attrib name="value" value="529"/></item>
 <item name="O5" rev="4">
-<attrib name="value" value="1009"/></item>
+<attrib name="value" value="1096"/></item>
 </group>
 <group name="LUT6">
 <item name="A1" rev="4">
-<attrib name="value" value="1094"/></item>
+<attrib name="value" value="1113"/></item>
 <item name="A2" rev="4">
-<attrib name="value" value="2867"/></item>
+<attrib name="value" value="2870"/></item>
 <item name="A3" rev="4">
-<attrib name="value" value="3244"/></item>
+<attrib name="value" value="3311"/></item>
 <item name="A4" rev="4">
-<attrib name="value" value="3805"/></item>
+<attrib name="value" value="3823"/></item>
 <item name="A5" rev="4">
-<attrib name="value" value="3528"/></item>
+<attrib name="value" value="3553"/></item>
 <item name="A6" rev="4">
-<attrib name="value" value="3904"/></item>
+<attrib name="value" value="3937"/></item>
 <item name="O6" rev="4">
-<attrib name="value" value="3928"/></item>
+<attrib name="value" value="3961"/></item>
 </group>
 <group name="RAMB8BWER_RAMB8BWER">
 <item name="ADDRAWRADDR0" rev="4">
@@ -3370,29 +3214,15 @@
 </group>
 <group name="IOB_IMUX">
 <item name="I" rev="4">
-<attrib name="value" value="65"/></item>
+<attrib name="value" value="71"/></item>
 <item name="OUT" rev="4">
-<attrib name="value" value="65"/></item>
-</group>
-<group name="PLL_ADV_PLL_ADV">
-<item name="CLKFBIN" rev="4">
-<attrib name="value" value="1"/></item>
-<item name="CLKFBOUT" rev="4">
-<attrib name="value" value="1"/></item>
-<item name="CLKIN1" rev="4">
-<attrib name="value" value="1"/></item>
-<item name="CLKOUT1" rev="4">
-<attrib name="value" value="1"/></item>
-<item name="LOCKED" rev="4">
-<attrib name="value" value="1"/></item>
-<item name="RST" rev="4">
-<attrib name="value" value="1"/></item>
+<attrib name="value" value="71"/></item>
 </group>
 <group name="IOB">
 <item name="I" rev="4">
-<attrib name="value" value="65"/></item>
+<attrib name="value" value="71"/></item>
 <item name="O" rev="4">
-<attrib name="value" value="28"/></item>
+<attrib name="value" value="22"/></item>
 <item name="PAD" rev="4">
 <attrib name="value" value="91"/></item>
 <item name="T" rev="4">
@@ -3400,21 +3230,25 @@
 </group>
 <group name="DCM_DCM">
 <item name="CLK0" rev="4">
-<attrib name="value" value="2"/></item>
+<attrib name="value" value="3"/></item>
 <item name="CLK2X" rev="4">
 <attrib name="value" value="2"/></item>
 <item name="CLKFB" rev="4">
-<attrib name="value" value="2"/></item>
+<attrib name="value" value="3"/></item>
+<item name="CLKFX" rev="4">
+<attrib name="value" value="1"/></item>
 <item name="CLKIN" rev="4">
-<attrib name="value" value="2"/></item>
+<attrib name="value" value="3"/></item>
+<item name="LOCKED" rev="4">
+<attrib name="value" value="1"/></item>
 <item name="PSCLK" rev="4">
-<attrib name="value" value="2"/></item>
+<attrib name="value" value="3"/></item>
 <item name="PSEN" rev="4">
-<attrib name="value" value="2"/></item>
+<attrib name="value" value="3"/></item>
 <item name="PSINCDEC" rev="4">
-<attrib name="value" value="2"/></item>
+<attrib name="value" value="3"/></item>
 <item name="RST" rev="4">
-<attrib name="value" value="2"/></item>
+<attrib name="value" value="3"/></item>
 </group>
 <group name="HARD0">
 <item name="0" rev="4">
@@ -3426,15 +3260,15 @@
 </group>
 <group name="FF_SR">
 <item name="CE" rev="4">
-<attrib name="value" value="223"/></item>
+<attrib name="value" value="257"/></item>
 <item name="CK" rev="4">
-<attrib name="value" value="385"/></item>
+<attrib name="value" value="467"/></item>
 <item name="D" rev="4">
-<attrib name="value" value="385"/></item>
+<attrib name="value" value="467"/></item>
 <item name="Q" rev="4">
-<attrib name="value" value="385"/></item>
+<attrib name="value" value="467"/></item>
 <item name="SR" rev="4">
-<attrib name="value" value="61"/></item>
+<attrib name="value" value="115"/></item>
 </group>
 <group name="OPAD_PAD">
 <item name="PAD" rev="4">
@@ -3450,27 +3284,31 @@
 </group>
 <group name="BUFG">
 <item name="I0" rev="4">
-<attrib name="value" value="8"/></item>
+<attrib name="value" value="7"/></item>
 <item name="O" rev="4">
-<attrib name="value" value="8"/></item>
+<attrib name="value" value="7"/></item>
 </group>
 <group name="DCM">
 <item name="CLK0" rev="4">
-<attrib name="value" value="2"/></item>
+<attrib name="value" value="3"/></item>
 <item name="CLK2X" rev="4">
 <attrib name="value" value="2"/></item>
 <item name="CLKFB" rev="4">
-<attrib name="value" value="2"/></item>
+<attrib name="value" value="3"/></item>
+<item name="CLKFX" rev="4">
+<attrib name="value" value="1"/></item>
 <item name="CLKIN" rev="4">
-<attrib name="value" value="2"/></item>
+<attrib name="value" value="3"/></item>
+<item name="LOCKED" rev="4">
+<attrib name="value" value="1"/></item>
 <item name="PSCLK" rev="4">
-<attrib name="value" value="2"/></item>
+<attrib name="value" value="3"/></item>
 <item name="PSEN" rev="4">
-<attrib name="value" value="2"/></item>
+<attrib name="value" value="3"/></item>
 <item name="PSINCDEC" rev="4">
-<attrib name="value" value="2"/></item>
+<attrib name="value" value="3"/></item>
 <item name="RST" rev="4">
-<attrib name="value" value="2"/></item>
+<attrib name="value" value="3"/></item>
 </group>
 <group name="GTPA1_DUAL">
 <item name="CLK00" rev="4">
@@ -3552,7 +3390,9 @@
 <item name="GTPCLKFBSEL1WEST1" rev="4">
 <attrib name="value" value="2"/></item>
 <item name="GTPCLKOUT00" rev="4">
-<attrib name="value" value="2"/></item>
+<attrib name="value" value="1"/></item>
+<item name="GTPCLKOUT10" rev="4">
+<attrib name="value" value="1"/></item>
 <item name="GTPRESET0" rev="4">
 <attrib name="value" value="2"/></item>
 <item name="GTPRESET1" rev="4">
@@ -3641,9 +3481,17 @@
 <attrib name="value" value="2"/></item>
 <item name="REFSELDYPLL12" rev="4">
 <attrib name="value" value="2"/></item>
+<item name="RESETDONE0" rev="4">
+<attrib name="value" value="2"/></item>
+<item name="RESETDONE1" rev="4">
+<attrib name="value" value="2"/></item>
 <item name="RXBUFRESET0" rev="4">
 <attrib name="value" value="2"/></item>
 <item name="RXBUFRESET1" rev="4">
+<attrib name="value" value="2"/></item>
+<item name="RXBYTEISALIGNED0" rev="4">
+<attrib name="value" value="2"/></item>
+<item name="RXBYTEISALIGNED1" rev="4">
 <attrib name="value" value="2"/></item>
 <item name="RXCDRRESET0" rev="4">
 <attrib name="value" value="2"/></item>

@@ -17,7 +17,7 @@ port(
     fpga_rx_i           : in std_logic;
     fpga_tx_o           : out std_logic;
     enable_gtp_o        : out std_logic; 
-    fpga_test_o         : out std_logic_vector(5 downto 0);
+    fpga_test_io        : inout std_logic_vector(5 downto 0);
     leds_o              : out std_logic_vector(3 downto 0);
     
     -- CDCE signals
@@ -28,7 +28,7 @@ port(
     cdce_sclk_o         : out std_logic;
     
     cdce_auxout_i       : in std_logic;
-    cdce_plllock_i      : in std_logic;
+    cdce_pll_locked_i   : in std_logic;
     cdce_powerdown_o    : out std_logic;
     cdce_ref_o          : out std_logic;
     cdce_sync_o         : out std_logic;
@@ -89,13 +89,19 @@ end optohybrid_top;
 architecture Behavioral of optohybrid_top is
     
     -- Clocking
-
-    signal fpga_clk                 : std_logic := '0';  
-    signal clk40MHz                 : std_logic := '0';
+    
+    signal fpga_clk                 : std_logic := '0';
+    signal ext_clk                  : std_logic := '0';
     signal vfat2_clk                : std_logic := '0';
     signal gtp_clk                  : std_logic := '0';
+    signal rec_clk                  : std_logic := '0';
     
     signal fpga_pll_locked          : std_logic := '0';
+    signal rec_pll_locked           : std_logic := '0';
+    
+    signal clk_request_write        : array32(3 downto 0) := (others => (others => '0'));
+    signal clk_request_tri          : std_logic_vector(3 downto 0) := (others => '0');
+    signal clk_request_read         : array32(3 downto 0) := (others => (others => '0'));
     
     -- Resets
     
@@ -161,17 +167,17 @@ begin
     reset <= '0';
     
     -- LEDS
-    leds_o <= fpga_pll_locked & "00" & cdce_plllock_i;
+    leds_o <= fpga_pll_locked & '0' & rec_pll_locked & cdce_pll_locked_i;
     
     --================================--
     -- VFAT2 
     --================================--
-  
-    -- T1
-    t1_obufds : obufds port map(i => vfat2_t1, o => vfat2_t1_p_o, ob => vfat2_t1_n_o);
     
     -- Resets 
     vfat2_resets_o <= "11";
+  
+    -- T1
+    t1_obufds : obufds port map(i => vfat2_t1, o => vfat2_t1_p_o, ob => vfat2_t1_n_o);
     
     -- I2C
     vfat2_sda_0_iobuf : iobuf port map (o => vfat2_sda_i(0), io => vfat2_sda_io(0), i => vfat2_sda_o(0), t => vfat2_sda_t(0));    
@@ -184,30 +190,33 @@ begin
     --================================--
     -- Clocking
     --================================--
+
+    -- Exterior clock
+    ext_clk <= fpga_test_io(1);
     
-    -- FPGA clock used to generate the 40 MHz clock to the CDCE and the VFAT2
-    fpga_clk_ibufg : ibufg port map(i => fpga_clk_i, o => fpga_clk);
-    
-    -- PLL used to generate the 40 MHz clock to the CDCE and the VFAT2 
-    fpga_clk_pll_inst : entity work.fpga_clk_pll port map(clk50MHz_i => fpga_clk, clk40MHz_o => clk40MHz, locked_o => fpga_pll_locked);    
-    
-    -- Internal 40 MHz clock
-    vfat2_clk_bufg : bufg port map(i => clk40mhz, o => vfat2_clk);
-    
-    -- External 40 MHz clock to the VFAT2
-    vfat2_clk_obufds : obufds port map(i => clk40mhz, o => vfat2_mclk_p_o, ob => vfat2_mclk_n_o);
-    
-    --================================--
-    -- CDCE
-    --================================--
-    
-    -- CDCE control
-    cdce_primary_clk_obufds : obufds port map(i => clk40mhz, o => cdce_pri_p_o, ob => cdce_pri_n_o);
-    cdce_ref_o <= '1';
-    cdce_powerdown_o <= fpga_pll_locked;
-    cdce_sync_o <= '1';
-    cdce_le_o <= '1'; 
-    
+    clock_control_inst : entity work.clock_control
+    port map(
+        fpga_clk_i          => fpga_clk_i,
+        fpga_clk_o          => fpga_clk,
+        fpga_pll_locked_o   => fpga_pll_locked,
+        ext_clk_i           => ext_clk,
+        vfat2_clk_o         => vfat2_clk,    
+        vfat2_mclk_p_o      => vfat2_mclk_p_o,
+        vfat2_mclk_n_o      => vfat2_mclk_n_o,
+        rec_clk_i           => rec_clk,
+        rec_pll_locked_o    => open,
+        cdce_pri_p_o        => cdce_pri_p_o,
+        cdce_pri_n_o        => cdce_pri_n_o,
+        cdce_pll_locked_i   => cdce_pll_locked_i,
+        cdce_ref_o          => cdce_ref_o,
+        cdce_powerdown_o    => cdce_powerdown_o,
+        cdce_sync_o         => cdce_sync_o,
+        cdce_le_o           => cdce_le_o,
+        request_write_o     => clk_request_write,
+        request_tri_o       => clk_request_tri,
+        request_read_i      => clk_request_read
+    );   
+        
     --================================--
     -- GTP
     --================================--
@@ -218,7 +227,9 @@ begin
     -- GTP wrapper instance to ease the use of the optical links
     gtp_wrapper_inst : entity work.gtp_wrapper
     port map(
+        fpga_clk_i      => fpga_clk,
         gtp_clk_o       => gtp_clk,
+        rec_clk_o       => rec_clk,
         reset_i         => reset,
         rx_error_o      => rx_error,
         rx_kchar_o      => rx_kchar,
@@ -354,20 +365,42 @@ begin
 
     request_read(13 downto 12) <= adc_data(1 downto 0); -- 12 & 13 _ read _ ADC values
 
-    -- Fixed registers : 14
+    -- Fixed registers : 17 downto 14
     
     request_read(14) <= x"20141210"; -- 14 _ read _ firmware version
     
-    request_read(15) <= (0 => fpga_pll_locked, others => '0'); -- 15 _ read _ FPGA PLL Locked
+    request_read(15) <= (0 => fpga_pll_locked, others => '0'); -- 15 _ read _ FPGA PLL locked
     
-    request_read(16) <= (0 => cdce_plllock_i, others => '0'); -- 16 _ read _ CDCE Locked
+    request_read(16) <= (0 => cdce_pll_locked_i, others => '0'); -- 16 _ read _ CDCE Locked
     
-    -- Writable registers : 24 downto 17
+    request_read(17) <= (0 => rec_pll_locked, others => '0'); -- 17 _ read _ GTP recovered clock PLL locked
+
+    -- VFAT2 clock selection : 18
     
-    registers_tri(7 downto 0) <= request_tri(24 downto 17);
-    registers_write(7 downto 0) <= request_write(24 downto 17);
-    request_read(24 downto 17) <= registers_read(7 downto 0);
+    registers_tri(0) <= request_tri(18) or clk_request_tri(0); -- 18 _ read / write _ Select VFAT2 input clock
+    registers_write(0) <= clk_request_write(0) when clk_request_tri(0) = '1' else request_write(18);
+    request_read(18) <= registers_read(0);
+    clk_request_read(0) <= registers_read(0);
     
-    -- Other registers : 63 downto 25
+    -- CDCE clock selection : 19
+    
+    registers_tri(1) <= request_tri(19) or clk_request_tri(1); -- 19 _ read / write _ Select CDCE input clock
+    registers_write(1) <= clk_request_write(1) when clk_request_tri(1) = '1' else request_write(19);
+    request_read(19) <= registers_read(1);
+    clk_request_read(1) <= registers_read(1);
+    
+    -- VFAT2 & CDCE clock fallback : 21 downto 20
+    
+    registers_tri(3 downto 2) <= request_tri(21 downto 20); -- 21 & 20 -- read / write _ Allow automatic fallback of VFAT2 and CDCE clocks
+    registers_write(3 downto 2) <= request_write(21 downto 20);
+    request_read(21 downto 20) <= registers_read(3 downto 2);
+    
+    -- Writable registers : 25 downto 22
+    
+    registers_tri(7 downto 4) <= request_tri(25 downto 22);
+    registers_write(7 downto 4) <= request_write(25 downto 22);
+    request_read(25 downto 22) <= registers_read(7 downto 4);
+    
+    -- Other registers : 63 downto 26
     
 end Behavioral;

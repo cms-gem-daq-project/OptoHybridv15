@@ -54,9 +54,8 @@
 -- "Output    Output      Phase     Duty      Pk-to-Pk        Phase"
 -- "Clock    Freq (MHz) (degrees) Cycle (%) Jitter (ps)  Error (ps)"
 ------------------------------------------------------------------------------
--- CLK_OUT1___100.000______0.000______50.0______217.631____187.995
--- CLK_OUT2____40.000______0.000______50.0______269.132____187.995
--- CLK_OUT3___160.000______0.000______50.0______196.789____187.995
+-- CLK_OUT1____40.000______0.000______50.0______700.000____150.000
+-- CLK_OUT2____40.000______0.000______50.0______700.000____150.000
 --
 ------------------------------------------------------------------------------
 -- "Input Clock   Freq (MHz)    Input Jitter (UI)"
@@ -69,11 +68,10 @@
 component fpga_clk_pll
 port
  (-- Clock in ports
-  clk50MHz_i           : in     std_logic;
+  clk_i           : in     std_logic;
   -- Clock out ports
-  clk100MHz_o          : out    std_logic;
-  clk40MHz_o          : out    std_logic;
-  clk160MHz_o          : out    std_logic;
+  clk_buf_o          : out    std_logic;
+  clk_nobuf_o          : out    std_logic;
   -- Status and control signals
   locked_o            : out    std_logic
  );
@@ -86,11 +84,10 @@ end component;
 your_instance_name : fpga_clk_pll
   port map
    (-- Clock in ports
-    clk50MHz_i => clk50MHz_i,
+    clk_i => clk_i,
     -- Clock out ports
-    clk100MHz_o => clk100MHz_o,
-    clk40MHz_o => clk40MHz_o,
-    clk160MHz_o => clk160MHz_o,
+    clk_buf_o => clk_buf_o,
+    clk_nobuf_o => clk_nobuf_o,
     -- Status and control signals
     locked_o => locked_o);
 -- INST_TAG_END ------ End INSTANTIATION Template ------------
