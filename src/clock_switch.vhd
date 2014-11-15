@@ -41,6 +41,7 @@ begin
     
     vfat2_allow_reset <= request_read_i(2)(0);
     
+    
     cdce_src_select_o <= cdce_src_select;
     
     cdce_usr_select <= request_read_i(1)(0);
@@ -52,71 +53,23 @@ begin
     --================================--
  
     process(fpga_clk_i)
-    
-        variable state  : integer range 0 to 255 := 0;
-    
     begin
     
         if (rising_edge(fpga_clk_i)) then
         
-            if (vfat2_allow_reset = '0') then
+            vfat2_src_select <= vfat2_usr_select;
             
-                request_tri_o(0) <= '0';
-            
-                vfat2_src_select <= vfat2_usr_select;
+            -- Default : using onboard clock to power VFAT2
+            if (vfat2_usr_select = '1') then
                 
-                state := 0;
+                request_write_o(0) <= (0 => '0', others => '1');
+                
+                request_tri_o(0) <= '1';
                 
             else
             
-                -- Default : using onboard clock to power VFAT2
-                if (vfat2_src_select = '0') then
-                    
-                    request_tri_o(0) <= '0';
-                            
-                    -- User requests that we switch to exterior clock
-                    if (vfat2_usr_select = '1') then
-                    
-                        vfat2_src_select <= '1';
-                    
-                    end if;
-                    
-                    state := 0;
-            
-                -- Using external clock to power VFAT2
-                else
+                request_tri_o(0) <= '0';
                 
-                    -- If the VFAT2 clock is used to power the CDCE and that it doesn't lock (bad input clock), reset it after a while
-                    if (cdce_src_select = '0' and cdce_pll_locked_i = '0') then
-                    
-                        if (state = 255) then
-                        
-                            vfat2_src_select <= '0';
-                            
-                            request_write_o(0) <= (others => '0');
-                            
-                            request_tri_o(0) <= '1';
-                            
-                            state := 0;
-                            
-                        else
-                        
-                            request_tri_o(0) <= '0';
-                        
-                            state := state + 1;
-                            
-                        end if;
-                        
-                    else
-                    
-                        request_tri_o(0) <= '0';
-                    
-                        state := 0;
-                        
-                    end if;
-                    
-                end if;
-                    
             end if;
         
         end if;

@@ -10,7 +10,6 @@ library work;
 entity gtp_wrapper is
 port(
 
-    fpga_clk_i      : in std_logic;
     gtp_clk_o       : out std_logic;
     rec_clk_o       : out std_logic;
     reset_i         : in std_logic;
@@ -73,11 +72,8 @@ begin
     -- Resets
     --================================--
     
-    gtp_link_reset_0_inst : entity work.gtp_link_reset port map(fpga_clk_i => fpga_clk_i, reset_i => reset_i, reset_done_i => rx_reset_done(0), isaligned_i => rx_isaligned(0), reset_o => rx_reset(0));
-    gtp_link_reset_1_inst : entity work.gtp_link_reset port map(fpga_clk_i => fpga_clk_i, reset_i => reset_i, reset_done_i => rx_reset_done(1), isaligned_i => rx_isaligned(1), reset_o => rx_reset(1));
-    gtp_link_reset_2_inst : entity work.gtp_link_reset port map(fpga_clk_i => fpga_clk_i, reset_i => reset_i, reset_done_i => rx_reset_done(2), isaligned_i => rx_isaligned(2), reset_o => rx_reset(2));
-    gtp_link_reset_3_inst : entity work.gtp_link_reset port map(fpga_clk_i => fpga_clk_i, reset_i => reset_i, reset_done_i => rx_reset_done(3), isaligned_i => rx_isaligned(3), reset_o => rx_reset(3));
-
+    rx_reset(3 downto 0) <= (others => '0');
+    
     --================================--
     -- Clocking
     --================================--

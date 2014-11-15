@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total CPU time to Xst completion: 0.13 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.12 secs
+Total CPU time to Xst completion: 0.13 secs
  
 --> Reading design: optohybrid_top.prj
 
@@ -180,9 +180,6 @@ Parsing architecture <Behavioral> of entity <gtp_tx_mux>.
 Parsing VHDL file "\\psf\home\Documents\PhD\Code\OH\src\gtp_rx_mux.vhd" into library work
 Parsing entity <gtp_rx_mux>.
 Parsing architecture <Behavioral> of entity <gtp_rx_mux>.
-Parsing VHDL file "\\psf\home\Documents\PhD\Code\OH\src\gtp_link_reset.vhd" into library work
-Parsing entity <gtp_link_reset>.
-Parsing architecture <Behavioral> of entity <gtp_link_reset>.
 Parsing VHDL file "\\psf\home\Documents\PhD\Code\OH\src\counter.vhd" into library work
 Parsing entity <counter>.
 Parsing architecture <Behavioral> of entity <counter>.
@@ -198,6 +195,9 @@ Parsing architecture <Behavioral> of entity <adc_switch>.
 Parsing VHDL file "\\psf\home\Documents\PhD\Code\OH\ipcore_dir\s6_gtpwizard_v1_11.vhd" into library work
 Parsing entity <s6_gtpwizard_v1_11>.
 Parsing architecture <RTL> of entity <s6_gtpwizard_v1_11>.
+Parsing VHDL file "\\psf\home\Documents\PhD\Code\OH\src\trigger_handler.vhd" into library work
+Parsing entity <trigger_handler>.
+Parsing architecture <Behavioral> of entity <trigger_handler>.
 Parsing VHDL file "\\psf\home\Documents\PhD\Code\OH\src\t1_handler.vhd" into library work
 Parsing entity <t1_handler>.
 Parsing architecture <Behavioral> of entity <t1_handler>.
@@ -222,7 +222,8 @@ Parsing architecture <Behavioral> of entity <optohybrid_top>.
 =========================================================================
 
 Elaborating entity <optohybrid_top> (architecture <Behavioral>) from library <work>.
-WARNING:HDLCompiler:871 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" Line 100: Using initial value '0' for rec_pll_locked since it is never assigned
+WARNING:HDLCompiler:871 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" Line 99: Using initial value '0' for rec_pll_locked since it is never assigned
+WARNING:HDLCompiler:871 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" Line 113: Using initial value '0' for ext_sbit since it is never assigned
 
 Elaborating entity <clock_control> (architecture <Behavioral>) from library <work>.
 WARNING:HDLCompiler:871 - "\\psf\home\Documents\PhD\Code\OH\src\clock_control.vhd" Line 63: Using initial value '0' for rec_pll_locked since it is never assigned
@@ -233,12 +234,11 @@ Elaborating entity <rec_clk_pll> (architecture <xilinx>) from library <work>.
 
 Elaborating entity <clock_switch> (architecture <Behavioral>) from library <work>.
 WARNING:HDLCompiler:871 - "\\psf\home\Documents\PhD\Code\OH\src\clock_switch.vhd" Line 28: Using initial value '0' for cdce_src_select since it is never assigned
-WARNING:HDLCompiler:1127 - "\\psf\home\Documents\PhD\Code\OH\src\clock_switch.vhd" Line 46: Assignment to cdce_usr_select ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "\\psf\home\Documents\PhD\Code\OH\src\clock_switch.vhd" Line 48: Assignment to cdce_allow_reset ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "\\psf\home\Documents\PhD\Code\OH\src\clock_switch.vhd" Line 42: Assignment to vfat2_allow_reset ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "\\psf\home\Documents\PhD\Code\OH\src\clock_switch.vhd" Line 47: Assignment to cdce_usr_select ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "\\psf\home\Documents\PhD\Code\OH\src\clock_switch.vhd" Line 49: Assignment to cdce_allow_reset ignored, since the identifier is never used
 
 Elaborating entity <gtp_wrapper> (architecture <Behavioral>) from library <work>.
-
-Elaborating entity <gtp_link_reset> (architecture <Behavioral>) from library <work>.
 
 Elaborating entity <gtp_pll> (architecture <xilinx>) from library <work>.
 
@@ -301,18 +301,20 @@ Elaborating entity <clock_bridge_strobes> (architecture <behavioral>) from libra
 
 Elaborating entity <t1_encoder> (architecture <Behavioral>) from library <work>.
 
+Elaborating entity <trigger_handler> (architecture <Behavioral>) from library <work>.
+
 Elaborating entity <adc_handler> (architecture <Behavioral>) from library <work>.
 
 Elaborating entity <uart_rx> (architecture <Behavioral>) from library <work>.
 
 Elaborating entity <adc_switch> (architecture <Behavioral>) from library <work>.
 WARNING:HDLCompiler:634 - "\\psf\home\Documents\PhD\Code\OH\src\adc_switch.vhd" Line 23: Net <data[1][31]> does not have a driver.
-WARNING:HDLCompiler:634 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" Line 104: Net <clk_request_read[3][31]> does not have a driver.
-WARNING:HDLCompiler:634 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" Line 114: Net <vfat2_sda_o[5]> does not have a driver.
-WARNING:HDLCompiler:634 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" Line 115: Net <vfat2_sda_t[5]> does not have a driver.
-WARNING:HDLCompiler:634 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" Line 122: Net <tx_kchar[7]> does not have a driver.
-WARNING:HDLCompiler:634 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" Line 123: Net <tx_data[63]> does not have a driver.
-WARNING:HDLCompiler:634 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" Line 129: Net <request_read[63][31]> does not have a driver.
+WARNING:HDLCompiler:634 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" Line 103: Net <clk_request_read[3][31]> does not have a driver.
+WARNING:HDLCompiler:634 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" Line 119: Net <vfat2_sda_o[5]> does not have a driver.
+WARNING:HDLCompiler:634 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" Line 120: Net <vfat2_sda_t[5]> does not have a driver.
+WARNING:HDLCompiler:634 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" Line 127: Net <tx_kchar[7]> does not have a driver.
+WARNING:HDLCompiler:634 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" Line 128: Net <tx_data[63]> does not have a driver.
+WARNING:HDLCompiler:634 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" Line 134: Net <request_read[63][31]> does not have a driver.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -320,8 +322,6 @@ WARNING:HDLCompiler:634 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.v
 
 Synthesizing Unit <optohybrid_top>.
     Related source file is "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd".
-WARNING:Xst:647 - Input <fpga_test_io<0:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <fpga_test_io<5:2>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <vfat2_dvalid_i<1:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <vfat2_dvalid_i<5:4>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <vfat2_data_0_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -350,65 +350,66 @@ WARNING:Xst:647 - Input <vfat2_data_22_i> is never used. This port will be prese
 WARNING:Xst:647 - Input <vfat2_data_23_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <cdce_miso_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <cdce_auxout_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 197: Output port <request_write_o<3>> of the instance <clock_control_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 197: Output port <request_write_o<2>> of the instance <clock_control_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 197: Output port <rec_pll_locked_o> of the instance <clock_control_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 251: Output port <request_write_o<63>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 251: Output port <request_write_o<62>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 251: Output port <request_write_o<61>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 251: Output port <request_write_o<60>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 251: Output port <request_write_o<59>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 251: Output port <request_write_o<58>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 251: Output port <request_write_o<57>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 251: Output port <request_write_o<56>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 251: Output port <request_write_o<55>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 251: Output port <request_write_o<54>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 251: Output port <request_write_o<53>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 251: Output port <request_write_o<52>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 251: Output port <request_write_o<51>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 251: Output port <request_write_o<50>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 251: Output port <request_write_o<49>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 251: Output port <request_write_o<48>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 251: Output port <request_write_o<47>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 251: Output port <request_write_o<46>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 251: Output port <request_write_o<45>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 251: Output port <request_write_o<44>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 251: Output port <request_write_o<43>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 251: Output port <request_write_o<42>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 251: Output port <request_write_o<41>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 251: Output port <request_write_o<40>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 251: Output port <request_write_o<39>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 251: Output port <request_write_o<38>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 251: Output port <request_write_o<37>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 251: Output port <request_write_o<36>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 251: Output port <request_write_o<35>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 251: Output port <request_write_o<34>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 251: Output port <request_write_o<33>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 251: Output port <request_write_o<32>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 251: Output port <request_write_o<31>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 251: Output port <request_write_o<30>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 251: Output port <request_write_o<29>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 251: Output port <request_write_o<28>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 251: Output port <request_write_o<27>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 251: Output port <request_write_o<26>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 251: Output port <request_write_o<17>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 251: Output port <request_write_o<16>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 251: Output port <request_write_o<15>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 251: Output port <request_write_o<14>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 251: Output port <request_write_o<13>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 251: Output port <request_write_o<12>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 251: Output port <request_write_o<11>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 251: Output port <request_write_o<10>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 251: Output port <request_write_o<9>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 251: Output port <request_write_o<8>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 251: Output port <request_write_o<7>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 251: Output port <request_write_o<6>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 251: Output port <request_write_o<5>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 251: Output port <request_write_o<4>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 251: Output port <request_write_o<3>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 251: Output port <request_write_o<2>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 251: Output port <request_write_o<1>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 251: Output port <request_write_o<0>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 218: Output port <request_write_o<3>> of the instance <clock_control_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 218: Output port <request_write_o<2>> of the instance <clock_control_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 218: Output port <fpga_clk_o> of the instance <clock_control_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 218: Output port <rec_pll_locked_o> of the instance <clock_control_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 271: Output port <request_write_o<63>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 271: Output port <request_write_o<62>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 271: Output port <request_write_o<61>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 271: Output port <request_write_o<60>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 271: Output port <request_write_o<59>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 271: Output port <request_write_o<58>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 271: Output port <request_write_o<57>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 271: Output port <request_write_o<56>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 271: Output port <request_write_o<55>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 271: Output port <request_write_o<54>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 271: Output port <request_write_o<53>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 271: Output port <request_write_o<52>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 271: Output port <request_write_o<51>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 271: Output port <request_write_o<50>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 271: Output port <request_write_o<49>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 271: Output port <request_write_o<48>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 271: Output port <request_write_o<47>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 271: Output port <request_write_o<46>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 271: Output port <request_write_o<45>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 271: Output port <request_write_o<44>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 271: Output port <request_write_o<43>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 271: Output port <request_write_o<42>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 271: Output port <request_write_o<41>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 271: Output port <request_write_o<40>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 271: Output port <request_write_o<39>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 271: Output port <request_write_o<38>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 271: Output port <request_write_o<37>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 271: Output port <request_write_o<36>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 271: Output port <request_write_o<35>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 271: Output port <request_write_o<34>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 271: Output port <request_write_o<33>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 271: Output port <request_write_o<32>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 271: Output port <request_write_o<31>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 271: Output port <request_write_o<30>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 271: Output port <request_write_o<29>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 271: Output port <request_write_o<28>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 271: Output port <request_write_o<27>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 271: Output port <request_write_o<26>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 271: Output port <request_write_o<17>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 271: Output port <request_write_o<16>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 271: Output port <request_write_o<15>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 271: Output port <request_write_o<14>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 271: Output port <request_write_o<13>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 271: Output port <request_write_o<12>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 271: Output port <request_write_o<11>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 271: Output port <request_write_o<10>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 271: Output port <request_write_o<9>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 271: Output port <request_write_o<8>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 271: Output port <request_write_o<7>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 271: Output port <request_write_o<6>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 271: Output port <request_write_o<5>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 271: Output port <request_write_o<4>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 271: Output port <request_write_o<3>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 271: Output port <request_write_o<2>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 271: Output port <request_write_o<1>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 271: Output port <request_write_o<0>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
 WARNING:Xst:2935 - Signal 'clk_request_read<3>', unconnected in block 'optohybrid_top', is tied to its initial value (00000000000000000000000000000000).
 WARNING:Xst:2935 - Signal 'clk_request_read<2>', unconnected in block 'optohybrid_top', is tied to its initial value (00000000000000000000000000000000).
 WARNING:Xst:2935 - Signal 'vfat2_sda_o<5:4>', unconnected in block 'optohybrid_top', is tied to its initial value (00).
@@ -492,66 +493,49 @@ Unit <rec_clk_pll> synthesized.
 Synthesizing Unit <clock_switch>.
     Related source file is "\\psf\home\Documents\PhD\Code\OH\src\clock_switch.vhd".
 WARNING:Xst:647 - Input <request_read_i<3>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <request_read_i<2><31:1>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <request_read_i<2>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <request_read_i<1>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <request_read_i<0><31:1>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <cdce_pll_locked_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <rec_pll_locked_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:653 - Signal <request_write_o<3>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
 WARNING:Xst:653 - Signal <request_write_o<2>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
 WARNING:Xst:653 - Signal <request_write_o<1>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
 WARNING:Xst:653 - Signal <request_tri_o<3:1>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
-    Found 1-bit register for signal <vfat2_src_select>.
     Found 32-bit register for signal <request_write_o<0>>.
-    WARNING:Xst:2404 -  FFs/Latches <request_tri_o<0><0:0>> (without init value) have a constant value of 0 in block <clock_switch>.
-    WARNING:Xst:2404 -  FFs/Latches <state<7:0>> (without init value) have a constant value of 0 in block <clock_switch>.
+    Found 1-bit register for signal <request_tri_o<0>>.
+    Found 1-bit register for signal <vfat2_src_select>.
     Summary:
-	inferred  33 D-type flip-flop(s).
+	inferred  34 D-type flip-flop(s).
 Unit <clock_switch> synthesized.
 
 Synthesizing Unit <gtp_wrapper>.
     Related source file is "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd".
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 114: Output port <locked_o> of the instance <gtp_pll_tile_0_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 125: Output port <locked_o> of the instance <gtp_pll_tile_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 140: Output port <TILE0_RXLOSSOFSYNC0_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 140: Output port <TILE0_RXLOSSOFSYNC1_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 140: Output port <TILE0_GTPCLKOUT0_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 140: Output port <TILE1_RXLOSSOFSYNC0_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 140: Output port <TILE1_RXLOSSOFSYNC1_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 140: Output port <TILE1_GTPCLKOUT1_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 140: Output port <TILE0_RXRECCLK0_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 140: Output port <TILE1_PLLLKDET0_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 140: Output port <TILE1_PLLLKDET1_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 140: Output port <TILE1_RXRECCLK0_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 140: Output port <TILE1_RXRECCLK1_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
+WARNING:Xst:647 - Input <reset_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 110: Output port <locked_o> of the instance <gtp_pll_tile_0_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 121: Output port <locked_o> of the instance <gtp_pll_tile_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 136: Output port <TILE0_RXLOSSOFSYNC0_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 136: Output port <TILE0_RXLOSSOFSYNC1_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 136: Output port <TILE0_GTPCLKOUT0_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 136: Output port <TILE1_RXLOSSOFSYNC0_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 136: Output port <TILE1_RXLOSSOFSYNC1_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 136: Output port <TILE1_GTPCLKOUT1_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 136: Output port <TILE0_RESETDONE0_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 136: Output port <TILE0_RESETDONE1_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 136: Output port <TILE0_RXBYTEISALIGNED0_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 136: Output port <TILE0_RXBYTEISALIGNED1_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 136: Output port <TILE0_RXRECCLK0_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 136: Output port <TILE1_PLLLKDET0_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 136: Output port <TILE1_PLLLKDET1_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 136: Output port <TILE1_RESETDONE0_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 136: Output port <TILE1_RESETDONE1_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 136: Output port <TILE1_RXBYTEISALIGNED0_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 136: Output port <TILE1_RXBYTEISALIGNED1_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 136: Output port <TILE1_RXRECCLK0_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\gtp_wrapper.vhd" line 136: Output port <TILE1_RXRECCLK1_OUT> of the instance <gtp_inst> is unconnected or connected to loadless signal.
     Summary:
 	no macro.
 Unit <gtp_wrapper> synthesized.
-
-Synthesizing Unit <gtp_link_reset>.
-    Related source file is "\\psf\home\Documents\PhD\Code\OH\src\gtp_link_reset.vhd".
-    Found 2-bit register for signal <state>.
-    Found 11-bit register for signal <counter>.
-    Found 1-bit register for signal <reset_o>.
-    Found finite state machine <FSM_0> for signal <state>.
-    -----------------------------------------------------------------------
-    | States             | 3                                              |
-    | Transitions        | 7                                              |
-    | Inputs             | 3                                              |
-    | Outputs            | 3                                              |
-    | Clock              | fpga_clk_i (rising_edge)                       |
-    | Reset              | reset_i (positive)                             |
-    | Reset type         | synchronous                                    |
-    | Reset State        | 00                                             |
-    | Power Up State     | 00                                             |
-    | Encoding           | auto                                           |
-    | Implementation     | LUT                                            |
-    -----------------------------------------------------------------------
-    Found 11-bit adder for signal <counter[10]_GND_25_o_add_5_OUT> created at line 62.
-    Summary:
-	inferred   1 Adder/Subtractor(s).
-	inferred  12 D-type flip-flop(s).
-	inferred   1 Finite State Machine(s).
-Unit <gtp_link_reset> synthesized.
 
 Synthesizing Unit <gtp_pll>.
     Related source file is "\\psf\home\Documents\PhD\Code\OH\ipcore_dir\gtp_pll.vhd".
@@ -657,7 +641,7 @@ Synthesizing Unit <gtp_rx_mux>.
     Found 32-bit register for signal <vi2c_data_o>.
     Found 48-bit register for signal <regs_data_o>.
     Found 1-bit register for signal <vi2c_en_o>.
-    Found finite state machine <FSM_1> for signal <state>.
+    Found finite state machine <FSM_0> for signal <state>.
     -----------------------------------------------------------------------
     | States             | 3                                              |
     | Transitions        | 8                                              |
@@ -668,8 +652,8 @@ Synthesizing Unit <gtp_rx_mux>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 7-bit subtractor for signal <GND_76_o_GND_76_o_sub_16_OUT<6:0>> created at line 95.
-    Found 4-bit subtractor for signal <GND_76_o_GND_76_o_sub_24_OUT<3:0>> created at line 103.
+    Found 7-bit subtractor for signal <GND_75_o_GND_75_o_sub_16_OUT<6:0>> created at line 95.
+    Found 4-bit subtractor for signal <GND_75_o_GND_75_o_sub_24_OUT<3:0>> created at line 103.
     Summary:
 	inferred   2 Adder/Subtractor(s).
 	inferred 136 D-type flip-flop(s).
@@ -689,7 +673,7 @@ Synthesizing Unit <gtp_tx_mux>.
     Found 192-bit register for signal <data>.
     Found 4-bit register for signal <data_cnt>.
     Found 2-bit register for signal <tx_kchar_o>.
-    Found finite state machine <FSM_2> for signal <state>.
+    Found finite state machine <FSM_1> for signal <state>.
     -----------------------------------------------------------------------
     | States             | 3                                              |
     | Transitions        | 7                                              |
@@ -700,10 +684,10 @@ Synthesizing Unit <gtp_tx_mux>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 9-bit subtractor for signal <GND_77_o_GND_77_o_sub_20_OUT> created at line 156.
-    Found 8-bit adder for signal <kchar_count[7]_GND_77_o_add_2_OUT> created at line 87.
-    Found 4-bit subtractor for signal <GND_77_o_GND_77_o_sub_53_OUT<3:0>> created at line 164.
-    Found 16-bit 4-to-1 multiplexer for signal <GND_77_o_GND_77_o_mux_72_OUT> created at line 52.
+    Found 9-bit subtractor for signal <GND_76_o_GND_76_o_sub_20_OUT> created at line 156.
+    Found 8-bit adder for signal <kchar_count[7]_GND_76_o_add_2_OUT> created at line 87.
+    Found 4-bit subtractor for signal <GND_76_o_GND_76_o_sub_53_OUT<3:0>> created at line 164.
+    Found 16-bit 4-to-1 multiplexer for signal <GND_76_o_GND_76_o_mux_72_OUT> created at line 52.
     Summary:
 	inferred   3 Adder/Subtractor(s).
 	inferred 233 D-type flip-flop(s).
@@ -727,7 +711,7 @@ Synthesizing Unit <vi2c_core>.
     Found 1-bit register for signal <selected_iic>.
     Found 32-bit register for signal <tx_data_o>.
     Found 1-bit register for signal <tx_ready_o>.
-    Found finite state machine <FSM_3> for signal <state>.
+    Found finite state machine <FSM_2> for signal <state>.
     -----------------------------------------------------------------------
     | States             | 7                                              |
     | Transitions        | 11                                             |
@@ -738,7 +722,7 @@ Synthesizing Unit <vi2c_core>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 32x4-bit Read Only RAM for signal <_n0368>
+    Found 32x4-bit Read Only RAM for signal <_n0369>
     Found 8-bit comparator equal for signal <crc_byte[7]_crc_check[7]_equal_14_o> created at line 132
     Summary:
 	inferred   1 RAM(s).
@@ -762,7 +746,7 @@ Synthesizing Unit <vi2c_wrapper>.
     Found 8-bit register for signal <data_o>.
     Found 1-bit register for signal <status_o>.
     Found 1-bit register for signal <en_o>.
-    Found finite state machine <FSM_4> for signal <state>.
+    Found finite state machine <FSM_3> for signal <state>.
     -----------------------------------------------------------------------
     | States             | 8                                              |
     | Transitions        | 14                                             |
@@ -773,7 +757,7 @@ Synthesizing Unit <vi2c_wrapper>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 8-bit subtractor for signal <GND_79_o_GND_79_o_sub_8_OUT<7:0>> created at line 1308.
+    Found 8-bit subtractor for signal <GND_78_o_GND_78_o_sub_8_OUT<7:0>> created at line 1308.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  64 D-type flip-flop(s).
@@ -805,7 +789,7 @@ WARNING:Xst:647 - Input <selected_iic<31:1>> is never used. This port will be pr
     Found 1-bit register for signal <i2cscl.level>.
     Found 1-bit register for signal <i2cscl.clkhasstarted>.
     Found 12-bit register for signal <i2cscl.timer>.
-    Found 1-bit register for signal <en_clk_DFF_352>.
+    Found 1-bit register for signal <en_clk_DFF_340>.
     Found 1-bit register for signal <wrbit>.
     Found 4-bit register for signal <datafsm>.
     Found 1-bit register for signal <completed>.
@@ -816,7 +800,7 @@ WARNING:Xst:647 - Input <selected_iic<31:1>> is never used. This port will be pr
     Found 12-bit register for signal <i2csda.samplingtime>.
     Found 8-bit register for signal <byteread>.
     Found 1-bit register for signal <en>.
-    Found finite state machine <FSM_5> for signal <datafsm>.
+    Found finite state machine <FSM_4> for signal <datafsm>.
     -----------------------------------------------------------------------
     | States             | 9                                              |
     | Transitions        | 25                                             |
@@ -827,23 +811,23 @@ WARNING:Xst:647 - Input <selected_iic<31:1>> is never used. This port will be pr
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 12-bit adder for signal <GND_81_o_GND_81_o_add_58_OUT> created at line 1241.
-    Found 12-bit subtractor for signal <GND_81_o_GND_81_o_sub_4_OUT<11:0>> created at line 1308.
-    Found 12-bit subtractor for signal <GND_81_o_GND_81_o_sub_15_OUT<11:0>> created at line 209.
-    Found 4-bit subtractor for signal <GND_81_o_GND_81_o_sub_80_OUT<3:0>> created at line 320.
-    Found 12-bit subtractor for signal <GND_81_o_GND_81_o_sub_93_OUT<11:0>> created at line 1308.
+    Found 12-bit adder for signal <GND_80_o_GND_80_o_add_58_OUT> created at line 1241.
+    Found 12-bit subtractor for signal <GND_80_o_GND_80_o_sub_4_OUT<11:0>> created at line 1308.
+    Found 12-bit subtractor for signal <GND_80_o_GND_80_o_sub_15_OUT<11:0>> created at line 209.
+    Found 4-bit subtractor for signal <GND_80_o_GND_80_o_sub_80_OUT<3:0>> created at line 320.
+    Found 12-bit subtractor for signal <GND_80_o_GND_80_o_sub_93_OUT<11:0>> created at line 1308.
     Found 1-bit tristate buffer for signal <scl<1>> created at line 125
     Found 1-bit tristate buffer for signal <scl<0>> created at line 125
-WARNING:Xst:737 - Found 1-bit latch for signal <Z_24_o_selected_iic[0]_DLATCH_1_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_23_o_selected_iic[0]_DLATCH_1_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
     Found 1-bit tristate buffer for signal <rdbit> created at line 341
 WARNING:Xst:737 - Found 1-bit latch for signal <wrbit_selected_iic[0]_DLATCH_2_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <Z_24_o_selected_iic[0]_DLATCH_3_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_23_o_selected_iic[0]_DLATCH_3_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
     Found 1-bit tristate buffer for signal <sda_o<1>> created at line 32
 WARNING:Xst:737 - Found 1-bit latch for signal <wrbit_selected_iic[0]_DLATCH_4_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <sda_t<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
     Found 1-bit tristate buffer for signal <sda_o<0>> created at line 32
 WARNING:Xst:737 - Found 1-bit latch for signal <sda_t<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-    Found 12-bit comparator equal for signal <i2csda.timer[11]_GND_81_o_equal_60_o> created at line 276
+    Found 12-bit comparator equal for signal <i2csda.timer[11]_GND_80_o_equal_60_o> created at line 276
     Found 12-bit comparator equal for signal <i2csda.timer[11]_i2csda.samplingtime[11]_equal_73_o> created at line 300
     WARNING:Xst:2404 -  FFs/Latches <scl<1:2>> (without init value) have a constant value of 0 in block <i2c_data>.
     Summary:
@@ -901,7 +885,7 @@ WARNING:Xst:647 - Input <completed> is never used. This port will be preserved a
     Found 3-bit register for signal <main.cnt>.
     Found 8-bit register for signal <bytetowrite>.
     Found 1-bit register for signal <enable_reg>.
-    Found finite state machine <FSM_6> for signal <chopexecfsm>.
+    Found finite state machine <FSM_5> for signal <chopexecfsm>.
     -----------------------------------------------------------------------
     | States             | 3                                              |
     | Transitions        | 6                                              |
@@ -912,7 +896,7 @@ WARNING:Xst:647 - Input <completed> is never used. This port will be preserved a
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found finite state machine <FSM_7> for signal <ctrlfsm>.
+    Found finite state machine <FSM_6> for signal <ctrlfsm>.
     -----------------------------------------------------------------------
     | States             | 16                                             |
     | Transitions        | 84                                             |
@@ -923,11 +907,11 @@ WARNING:Xst:647 - Input <completed> is never used. This port will be preserved a
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 12-bit subtractor for signal <GND_94_o_GND_94_o_sub_11_OUT<11:0>> created at line 1308.
-    Found 3-bit subtractor for signal <GND_94_o_GND_94_o_sub_76_OUT<2:0>> created at line 456.
-    Found 12-bit subtractor for signal <GND_94_o_GND_94_o_sub_104_OUT<11:0>> created at line 1308.
-    Found 1-bit 3-to-1 multiplexer for signal <chopexecfsm[1]_X_36_o_Mux_14_o> created at line 155.
-    Found 4-bit 16-to-1 multiplexer for signal <ctrlfsm[3]_PWR_53_o_wide_mux_92_OUT> created at line 285.
+    Found 12-bit subtractor for signal <GND_93_o_GND_93_o_sub_11_OUT<11:0>> created at line 1308.
+    Found 3-bit subtractor for signal <GND_93_o_GND_93_o_sub_76_OUT<2:0>> created at line 456.
+    Found 12-bit subtractor for signal <GND_93_o_GND_93_o_sub_104_OUT<11:0>> created at line 1308.
+    Found 1-bit 3-to-1 multiplexer for signal <chopexecfsm[1]_X_35_o_Mux_14_o> created at line 155.
+    Found 4-bit 16-to-1 multiplexer for signal <ctrlfsm[3]_PWR_52_o_wide_mux_92_OUT> created at line 285.
     Summary:
 	inferred   3 Adder/Subtractor(s).
 	inferred 127 D-type flip-flop(s).
@@ -950,7 +934,7 @@ Synthesizing Unit <tracking_decoder>.
     Found 8-bit register for signal <data_cnt>.
     Found 192-bit register for signal <data_o>.
     Found 1-bit register for signal <en_o>.
-    Found finite state machine <FSM_8> for signal <state>.
+    Found finite state machine <FSM_7> for signal <state>.
     -----------------------------------------------------------------------
     | States             | 3                                              |
     | Transitions        | 6                                              |
@@ -964,7 +948,7 @@ Synthesizing Unit <tracking_decoder>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 8-bit subtractor for signal <GND_127_o_GND_127_o_sub_7_OUT<7:0>> created at line 69.
+    Found 8-bit subtractor for signal <GND_126_o_GND_126_o_sub_7_OUT<7:0>> created at line 69.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred 393 D-type flip-flop(s).
@@ -978,7 +962,7 @@ Synthesizing Unit <tracking_concentrator>.
     Found 3-bit register for signal <cnt>.
     Found 192-bit register for signal <data_o>.
     Found 1-bit register for signal <en_o>.
-    Found 3-bit adder for signal <cnt[2]_GND_128_o_add_11_OUT> created at line 75.
+    Found 3-bit adder for signal <cnt[2]_GND_127_o_add_11_OUT> created at line 75.
     Found 192-bit 8-to-1 multiplexer for signal <n0045[191:0]> created at line 57.
     Summary:
 	inferred   1 Adder/Subtractor(s).
@@ -994,7 +978,7 @@ Synthesizing Unit <tracking_readout>.
     Found 192-bit register for signal <data>.
     Found 192-bit register for signal <tx_data_o>.
     Found 1-bit register for signal <fifo_read_o>.
-    Found finite state machine <FSM_9> for signal <state>.
+    Found finite state machine <FSM_8> for signal <state>.
     -----------------------------------------------------------------------
     | States             | 4                                              |
     | Transitions        | 7                                              |
@@ -1005,7 +989,7 @@ Synthesizing Unit <tracking_readout>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 2-bit subtractor for signal <GND_130_o_GND_130_o_sub_4_OUT<1:0>> created at line 74.
+    Found 2-bit subtractor for signal <GND_129_o_GND_129_o_sub_4_OUT<1:0>> created at line 74.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred 388 D-type flip-flop(s).
@@ -1151,7 +1135,7 @@ Synthesizing Unit <registers_core>.
     Found 32-bit register for signal <wbus_o<0>>.
     Found 48-bit register for signal <tx_data_o>.
     Found 1-bit register for signal <tx_ready_o>.
-    Found finite state machine <FSM_10> for signal <state>.
+    Found finite state machine <FSM_9> for signal <state>.
     -----------------------------------------------------------------------
     | States             | 6                                              |
     | Transitions        | 9                                              |
@@ -1189,7 +1173,7 @@ Unit <registers> synthesized.
 Synthesizing Unit <counter>.
     Related source file is "\\psf\home\Documents\PhD\Code\OH\src\counter.vhd".
     Found 32-bit register for signal <counter>.
-    Found 32-bit adder for signal <counter[31]_GND_133_o_add_0_OUT> created at line 1241.
+    Found 32-bit adder for signal <counter[31]_GND_132_o_add_0_OUT> created at line 1241.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  32 D-type flip-flop(s).
@@ -1217,13 +1201,23 @@ Synthesizing Unit <t1_encoder>.
     Found 3-bit register for signal <data>.
     Found 2-bit register for signal <data_cnt>.
     Found 1-bit register for signal <t1_o>.
-    Found 2-bit subtractor for signal <GND_139_o_GND_139_o_sub_13_OUT<1:0>> created at line 90.
-    Found 1-bit 3-to-1 multiplexer for signal <data_cnt[1]_X_50_o_Mux_10_o> created at line 82.
+    Found 2-bit subtractor for signal <GND_138_o_GND_138_o_sub_13_OUT<1:0>> created at line 90.
+    Found 1-bit 3-to-1 multiplexer for signal <data_cnt[1]_X_49_o_Mux_10_o> created at line 82.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred   7 D-type flip-flop(s).
 	inferred   4 Multiplexer(s).
 Unit <t1_encoder> synthesized.
+
+Synthesizing Unit <trigger_handler>.
+    Related source file is "\\psf\home\Documents\PhD\Code\OH\src\trigger_handler.vhd".
+    Found 1-bit register for signal <last_ext_trigger>.
+    Found 1-bit register for signal <lv1a_o>.
+    Found 1-bit 4-to-1 multiplexer for signal <GND_139_o_GND_139_o_MUX_1423_o> created at line 31.
+    Summary:
+	inferred   2 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <trigger_handler> synthesized.
 
 Synthesizing Unit <adc_handler>.
     Related source file is "\\psf\home\Documents\PhD\Code\OH\src\adc_handler.vhd".
@@ -1238,7 +1232,7 @@ WARNING:Xst:653 - Signal <data_o> is used but never assigned. This sourceless si
     Found 24-bit register for signal <timer>.
     Found 3-bit register for signal <cnt>.
     Found 1-bit register for signal <en_o>.
-    Found finite state machine <FSM_11> for signal <state>.
+    Found finite state machine <FSM_10> for signal <state>.
     -----------------------------------------------------------------------
     | States             | 3                                              |
     | Transitions        | 7                                              |
@@ -1295,8 +1289,7 @@ HDL Synthesis Report
 Macro Statistics
 # RAMs                                                 : 1
  32x4-bit single-port Read Only RAM                    : 1
-# Adders/Subtractors                                   : 40
- 11-bit adder                                          : 4
+# Adders/Subtractors                                   : 36
  12-bit adder                                          : 1
  12-bit subtractor                                     : 5
  2-bit subtractor                                      : 2
@@ -1309,9 +1302,8 @@ Macro Statistics
  8-bit adder                                           : 1
  8-bit subtractor                                      : 9
  9-bit subtractor                                      : 1
-# Registers                                            : 341
- 1-bit register                                        : 96
- 11-bit register                                       : 4
+# Registers                                            : 336
+ 1-bit register                                        : 95
  12-bit register                                       : 7
  128-bit register                                      : 1
  16-bit register                                       : 1
@@ -1328,9 +1320,10 @@ Macro Statistics
 # Comparators                                          : 4
  12-bit comparator equal                               : 2
  8-bit comparator equal                                : 2
-# Multiplexers                                         : 1996
+# Multiplexers                                         : 1997
  1-bit 2-to-1 multiplexer                              : 1920
  1-bit 3-to-1 multiplexer                              : 2
+ 1-bit 4-to-1 multiplexer                              : 1
  12-bit 2-to-1 multiplexer                             : 26
  128-bit 2-to-1 multiplexer                            : 2
  16-bit 4-to-1 multiplexer                             : 1
@@ -1344,7 +1337,7 @@ Macro Statistics
  8-bit 2-to-1 multiplexer                              : 13
 # Tristates                                            : 5
  1-bit tristate buffer                                 : 5
-# FSMs                                                 : 22
+# FSMs                                                 : 18
 # Xors                                                 : 12
  1-bit xor2                                            : 8
  8-bit xor4                                            : 2
@@ -1364,6 +1357,7 @@ Loading core <chipscope_ila> for timing and area information for instance <chips
 Loading core <chipscope_icon> for timing and area information for instance <chipscope_icon_inst>.
 Loading core <chipscope_vio> for timing and area information for instance <chipscope_vio_inst>.
 Loading core <tracking_fifo> for timing and area information for instance <tracking_buffer_fifo>.
+INFO:Xst:2261 - The FF/Latch <vfat2_src_select> in Unit <clock_switch_inst> is equivalent to the following FF/Latch, which will be removed : <request_tri_o_0> 
 INFO:Xst:2261 - The FF/Latch <data<1>_8> in Unit <adc_switch_inst> is equivalent to the following 2 FFs/Latches, which will be removed : <data<1>_2> <data<0>_8> 
 INFO:Xst:2261 - The FF/Latch <data<1>_9> in Unit <adc_switch_inst> is equivalent to the following 2 FFs/Latches, which will be removed : <data<1>_3> <data<0>_9> 
 INFO:Xst:2261 - The FF/Latch <data<1>_10> in Unit <adc_switch_inst> is equivalent to the following 2 FFs/Latches, which will be removed : <data<1>_4> <data<0>_10> 
@@ -1403,47 +1397,47 @@ WARNING:Xst:1710 - FF/Latch <clkprescaler_reg_3> (without init value) has a cons
 WARNING:Xst:1710 - FF/Latch <clkprescaler_reg_2> (without init value) has a constant value of 0 in block <u2>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <clkprescaler_reg_1> (without init value) has a constant value of 0 in block <u2>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <clkprescaler_reg_0> (without init value) has a constant value of 0 in block <u2>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <Z_24_o_selected_iic[0]_DLATCH_3_q> (without init value) has a constant value of 0 in block <u1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <Z_24_o_selected_iic[0]_DLATCH_1_q> (without init value) has a constant value of 0 in block <u1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Z_23_o_selected_iic[0]_DLATCH_3_q> (without init value) has a constant value of 0 in block <u1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Z_23_o_selected_iic[0]_DLATCH_1_q> (without init value) has a constant value of 0 in block <u1>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <prescaler_11> (without init value) has a constant value of 0 in block <u1>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <prescaler_10> (without init value) has a constant value of 1 in block <u1>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <prescaler_9> (without init value) has a constant value of 1 in block <u1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <request_write_o_0_17> (without init value) has a constant value of 0 in block <clock_switch_inst>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <request_write_o_0_16> (without init value) has a constant value of 0 in block <clock_switch_inst>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <request_write_o_0_15> (without init value) has a constant value of 0 in block <clock_switch_inst>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <request_write_o_0_14> (without init value) has a constant value of 0 in block <clock_switch_inst>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <request_write_o_0_13> (without init value) has a constant value of 0 in block <clock_switch_inst>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <request_write_o_0_12> (without init value) has a constant value of 0 in block <clock_switch_inst>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <request_write_o_0_11> (without init value) has a constant value of 0 in block <clock_switch_inst>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <request_write_o_0_10> (without init value) has a constant value of 0 in block <clock_switch_inst>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <request_write_o_0_9> (without init value) has a constant value of 0 in block <clock_switch_inst>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <request_write_o_0_8> (without init value) has a constant value of 0 in block <clock_switch_inst>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <request_write_o_0_7> (without init value) has a constant value of 0 in block <clock_switch_inst>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <request_write_o_0_6> (without init value) has a constant value of 0 in block <clock_switch_inst>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <request_write_o_0_5> (without init value) has a constant value of 0 in block <clock_switch_inst>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <request_write_o_0_4> (without init value) has a constant value of 0 in block <clock_switch_inst>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <request_write_o_0_3> (without init value) has a constant value of 0 in block <clock_switch_inst>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <request_write_o_0_2> (without init value) has a constant value of 0 in block <clock_switch_inst>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <request_write_o_0_1> (without init value) has a constant value of 0 in block <clock_switch_inst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <request_write_o_0_17> (without init value) has a constant value of 1 in block <clock_switch_inst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <request_write_o_0_16> (without init value) has a constant value of 1 in block <clock_switch_inst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <request_write_o_0_15> (without init value) has a constant value of 1 in block <clock_switch_inst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <request_write_o_0_14> (without init value) has a constant value of 1 in block <clock_switch_inst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <request_write_o_0_13> (without init value) has a constant value of 1 in block <clock_switch_inst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <request_write_o_0_12> (without init value) has a constant value of 1 in block <clock_switch_inst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <request_write_o_0_11> (without init value) has a constant value of 1 in block <clock_switch_inst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <request_write_o_0_10> (without init value) has a constant value of 1 in block <clock_switch_inst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <request_write_o_0_9> (without init value) has a constant value of 1 in block <clock_switch_inst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <request_write_o_0_8> (without init value) has a constant value of 1 in block <clock_switch_inst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <request_write_o_0_7> (without init value) has a constant value of 1 in block <clock_switch_inst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <request_write_o_0_6> (without init value) has a constant value of 1 in block <clock_switch_inst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <request_write_o_0_5> (without init value) has a constant value of 1 in block <clock_switch_inst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <request_write_o_0_4> (without init value) has a constant value of 1 in block <clock_switch_inst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <request_write_o_0_3> (without init value) has a constant value of 1 in block <clock_switch_inst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <request_write_o_0_2> (without init value) has a constant value of 1 in block <clock_switch_inst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <request_write_o_0_1> (without init value) has a constant value of 1 in block <clock_switch_inst>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <request_write_o_0_0> (without init value) has a constant value of 0 in block <clock_switch_inst>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <data<1>_9> has a constant value of 0 in block <adc_switch_inst>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <data<1>_10> has a constant value of 0 in block <adc_switch_inst>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <data<1>_8> has a constant value of 0 in block <adc_switch_inst>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <en_o> (without init value) has a constant value of 0 in block <uart_rx_inst>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <request_write_o_0_31> (without init value) has a constant value of 0 in block <clock_switch_inst>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <request_write_o_0_30> (without init value) has a constant value of 0 in block <clock_switch_inst>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <request_write_o_0_29> (without init value) has a constant value of 0 in block <clock_switch_inst>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <request_write_o_0_28> (without init value) has a constant value of 0 in block <clock_switch_inst>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <request_write_o_0_27> (without init value) has a constant value of 0 in block <clock_switch_inst>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <request_write_o_0_26> (without init value) has a constant value of 0 in block <clock_switch_inst>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <request_write_o_0_25> (without init value) has a constant value of 0 in block <clock_switch_inst>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <request_write_o_0_24> (without init value) has a constant value of 0 in block <clock_switch_inst>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <request_write_o_0_23> (without init value) has a constant value of 0 in block <clock_switch_inst>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <request_write_o_0_22> (without init value) has a constant value of 0 in block <clock_switch_inst>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <request_write_o_0_21> (without init value) has a constant value of 0 in block <clock_switch_inst>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <request_write_o_0_20> (without init value) has a constant value of 0 in block <clock_switch_inst>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <request_write_o_0_19> (without init value) has a constant value of 0 in block <clock_switch_inst>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <request_write_o_0_18> (without init value) has a constant value of 0 in block <clock_switch_inst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <request_write_o_0_31> (without init value) has a constant value of 1 in block <clock_switch_inst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <request_write_o_0_30> (without init value) has a constant value of 1 in block <clock_switch_inst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <request_write_o_0_29> (without init value) has a constant value of 1 in block <clock_switch_inst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <request_write_o_0_28> (without init value) has a constant value of 1 in block <clock_switch_inst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <request_write_o_0_27> (without init value) has a constant value of 1 in block <clock_switch_inst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <request_write_o_0_26> (without init value) has a constant value of 1 in block <clock_switch_inst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <request_write_o_0_25> (without init value) has a constant value of 1 in block <clock_switch_inst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <request_write_o_0_24> (without init value) has a constant value of 1 in block <clock_switch_inst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <request_write_o_0_23> (without init value) has a constant value of 1 in block <clock_switch_inst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <request_write_o_0_22> (without init value) has a constant value of 1 in block <clock_switch_inst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <request_write_o_0_21> (without init value) has a constant value of 1 in block <clock_switch_inst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <request_write_o_0_20> (without init value) has a constant value of 1 in block <clock_switch_inst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <request_write_o_0_19> (without init value) has a constant value of 1 in block <clock_switch_inst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <request_write_o_0_18> (without init value) has a constant value of 1 in block <clock_switch_inst>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:2677 - Node <slaveregister_reg_7> of sequential type is unconnected in block <u2>.
 WARNING:Xst:2677 - Node <slaveaddress_reg_7> of sequential type is unconnected in block <u2>.
 WARNING:Xst:2677 - Node <addr_7> of sequential type is unconnected in block <u2>.
@@ -1488,10 +1482,6 @@ Synthesizing (advanced) Unit <counter>.
 The following registers are absorbed into counter <counter>: 1 register on signal <counter>.
 Unit <counter> synthesized (advanced).
 
-Synthesizing (advanced) Unit <gtp_link_reset>.
-The following registers are absorbed into counter <counter>: 1 register on signal <counter>.
-Unit <gtp_link_reset> synthesized (advanced).
-
 Synthesizing (advanced) Unit <gtp_rx_mux>.
 The following registers are absorbed into counter <data_cnt>: 1 register on signal <data_cnt>.
 Unit <gtp_rx_mux> synthesized (advanced).
@@ -1526,7 +1516,7 @@ The following registers are absorbed into counter <cnt>: 1 register on signal <c
 Unit <uart_rx> synthesized (advanced).
 
 Synthesizing (advanced) Unit <vi2c_core>.
-INFO:Xst:3231 - The small RAM <Mram__n0368> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+INFO:Xst:3231 - The small RAM <Mram__n0369> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
@@ -1554,8 +1544,7 @@ Macro Statistics
  8-bit adder                                           : 1
  8-bit subtractor                                      : 1
  9-bit subtractor                                      : 1
-# Counters                                             : 29
- 11-bit up counter                                     : 4
+# Counters                                             : 25
  12-bit down counter                                   : 1
  2-bit down counter                                    : 1
  24-bit up counter                                     : 1
@@ -1564,14 +1553,15 @@ Macro Statistics
  32-bit up counter                                     : 9
  4-bit down counter                                    : 3
  8-bit down counter                                    : 8
-# Registers                                            : 9323
- Flip-Flops                                            : 9323
+# Registers                                            : 9322
+ Flip-Flops                                            : 9322
 # Comparators                                          : 4
  12-bit comparator equal                               : 2
  8-bit comparator equal                                : 2
-# Multiplexers                                         : 1991
+# Multiplexers                                         : 1992
  1-bit 2-to-1 multiplexer                              : 1922
  1-bit 3-to-1 multiplexer                              : 2
+ 1-bit 4-to-1 multiplexer                              : 1
  12-bit 2-to-1 multiplexer                             : 25
  128-bit 2-to-1 multiplexer                            : 2
  16-bit 4-to-1 multiplexer                             : 1
@@ -1583,7 +1573,7 @@ Macro Statistics
  4-bit 16-to-1 multiplexer                             : 1
  4-bit 2-to-1 multiplexer                              : 13
  8-bit 2-to-1 multiplexer                              : 12
-# FSMs                                                 : 22
+# FSMs                                                 : 18
 # Xors                                                 : 12
  1-bit xor2                                            : 8
  8-bit xor4                                            : 2
@@ -1594,58 +1584,47 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-WARNING:Xst:1710 - FF/Latch <request_write_o_0_31> (without init value) has a constant value of 0 in block <clock_switch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <request_write_o_0_30> (without init value) has a constant value of 0 in block <clock_switch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <request_write_o_0_29> (without init value) has a constant value of 0 in block <clock_switch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <request_write_o_0_28> (without init value) has a constant value of 0 in block <clock_switch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <request_write_o_0_27> (without init value) has a constant value of 0 in block <clock_switch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <request_write_o_0_26> (without init value) has a constant value of 0 in block <clock_switch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <request_write_o_0_25> (without init value) has a constant value of 0 in block <clock_switch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <request_write_o_0_24> (without init value) has a constant value of 0 in block <clock_switch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <request_write_o_0_23> (without init value) has a constant value of 0 in block <clock_switch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <request_write_o_0_22> (without init value) has a constant value of 0 in block <clock_switch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <request_write_o_0_21> (without init value) has a constant value of 0 in block <clock_switch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <request_write_o_0_20> (without init value) has a constant value of 0 in block <clock_switch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <request_write_o_0_19> (without init value) has a constant value of 0 in block <clock_switch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <request_write_o_0_18> (without init value) has a constant value of 0 in block <clock_switch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <request_write_o_0_17> (without init value) has a constant value of 0 in block <clock_switch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <request_write_o_0_16> (without init value) has a constant value of 0 in block <clock_switch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <request_write_o_0_15> (without init value) has a constant value of 0 in block <clock_switch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <request_write_o_0_14> (without init value) has a constant value of 0 in block <clock_switch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <request_write_o_0_13> (without init value) has a constant value of 0 in block <clock_switch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <request_write_o_0_12> (without init value) has a constant value of 0 in block <clock_switch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <request_write_o_0_11> (without init value) has a constant value of 0 in block <clock_switch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <request_write_o_0_10> (without init value) has a constant value of 0 in block <clock_switch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <request_write_o_0_9> (without init value) has a constant value of 0 in block <clock_switch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <request_write_o_0_8> (without init value) has a constant value of 0 in block <clock_switch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <request_write_o_0_7> (without init value) has a constant value of 0 in block <clock_switch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <request_write_o_0_6> (without init value) has a constant value of 0 in block <clock_switch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <request_write_o_0_5> (without init value) has a constant value of 0 in block <clock_switch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <request_write_o_0_4> (without init value) has a constant value of 0 in block <clock_switch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <request_write_o_0_3> (without init value) has a constant value of 0 in block <clock_switch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <request_write_o_0_2> (without init value) has a constant value of 0 in block <clock_switch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <request_write_o_0_1> (without init value) has a constant value of 0 in block <clock_switch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <request_write_o_0_31> (without init value) has a constant value of 1 in block <clock_switch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <request_write_o_0_30> (without init value) has a constant value of 1 in block <clock_switch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <request_write_o_0_29> (without init value) has a constant value of 1 in block <clock_switch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <request_write_o_0_28> (without init value) has a constant value of 1 in block <clock_switch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <request_write_o_0_27> (without init value) has a constant value of 1 in block <clock_switch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <request_write_o_0_26> (without init value) has a constant value of 1 in block <clock_switch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <request_write_o_0_25> (without init value) has a constant value of 1 in block <clock_switch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <request_write_o_0_24> (without init value) has a constant value of 1 in block <clock_switch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <request_write_o_0_23> (without init value) has a constant value of 1 in block <clock_switch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <request_write_o_0_22> (without init value) has a constant value of 1 in block <clock_switch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <request_write_o_0_21> (without init value) has a constant value of 1 in block <clock_switch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <request_write_o_0_20> (without init value) has a constant value of 1 in block <clock_switch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <request_write_o_0_19> (without init value) has a constant value of 1 in block <clock_switch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <request_write_o_0_18> (without init value) has a constant value of 1 in block <clock_switch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <request_write_o_0_17> (without init value) has a constant value of 1 in block <clock_switch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <request_write_o_0_16> (without init value) has a constant value of 1 in block <clock_switch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <request_write_o_0_15> (without init value) has a constant value of 1 in block <clock_switch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <request_write_o_0_14> (without init value) has a constant value of 1 in block <clock_switch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <request_write_o_0_13> (without init value) has a constant value of 1 in block <clock_switch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <request_write_o_0_12> (without init value) has a constant value of 1 in block <clock_switch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <request_write_o_0_11> (without init value) has a constant value of 1 in block <clock_switch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <request_write_o_0_10> (without init value) has a constant value of 1 in block <clock_switch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <request_write_o_0_9> (without init value) has a constant value of 1 in block <clock_switch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <request_write_o_0_8> (without init value) has a constant value of 1 in block <clock_switch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <request_write_o_0_7> (without init value) has a constant value of 1 in block <clock_switch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <request_write_o_0_6> (without init value) has a constant value of 1 in block <clock_switch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <request_write_o_0_5> (without init value) has a constant value of 1 in block <clock_switch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <request_write_o_0_4> (without init value) has a constant value of 1 in block <clock_switch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <request_write_o_0_3> (without init value) has a constant value of 1 in block <clock_switch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <request_write_o_0_2> (without init value) has a constant value of 1 in block <clock_switch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <request_write_o_0_1> (without init value) has a constant value of 1 in block <clock_switch>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <request_write_o_0_0> (without init value) has a constant value of 0 in block <clock_switch>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <en_o> (without init value) has a constant value of 0 in block <uart_rx>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1426 - The value init of the FF/Latch enable hinder the constant cleaning in the block vi2c_wrapper.
    You should achieve better results by setting this init to 1.
 WARNING:Xst:1710 - FF/Latch <status_26> (without init value) has a constant value of 1 in block <i2c_master>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <Z_24_o_selected_iic[0]_DLATCH_1_q> (without init value) has a constant value of 0 in block <i2c_data>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Z_24_o_selected_iic[0]_DLATCH_3_q> (without init value) has a constant value of 0 in block <i2c_data>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Z_23_o_selected_iic[0]_DLATCH_1_q> (without init value) has a constant value of 0 in block <i2c_data>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Z_23_o_selected_iic[0]_DLATCH_3_q> (without init value) has a constant value of 0 in block <i2c_data>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <vfat2_src_select> in Unit <clock_switch> is equivalent to the following FF/Latch, which will be removed : <request_tri_o_0> 
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <gtp_wrapper_inst/gtp_link_reset_0_inst/FSM_0> on signal <state[1:2]> with user encoding.
-Optimizing FSM <gtp_wrapper_inst/gtp_link_reset_1_inst/FSM_0> on signal <state[1:2]> with user encoding.
-Optimizing FSM <gtp_wrapper_inst/gtp_link_reset_2_inst/FSM_0> on signal <state[1:2]> with user encoding.
-Optimizing FSM <gtp_wrapper_inst/gtp_link_reset_3_inst/FSM_0> on signal <state[1:2]> with user encoding.
--------------------
- State | Encoding
--------------------
- 00    | 00
- 01    | 01
- 10    | 10
--------------------
-Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <link_tracking_1_inst/gtp_rx_mux_inst/FSM_1> on signal <state[1:2]> with gray encoding.
+Optimizing FSM <link_tracking_1_inst/gtp_rx_mux_inst/FSM_0> on signal <state[1:2]> with gray encoding.
 -------------------
  State | Encoding
 -------------------
@@ -1654,7 +1633,7 @@ Optimizing FSM <link_tracking_1_inst/gtp_rx_mux_inst/FSM_1> on signal <state[1:2
  10    | 11
 -------------------
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <link_tracking_1_inst/registers_core_inst/FSM_10> on signal <state[1:3]> with user encoding.
+Optimizing FSM <link_tracking_1_inst/registers_core_inst/FSM_9> on signal <state[1:3]> with user encoding.
 -------------------
  State | Encoding
 -------------------
@@ -1666,7 +1645,7 @@ Optimizing FSM <link_tracking_1_inst/registers_core_inst/FSM_10> on signal <stat
  101   | 101
 -------------------
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <link_tracking_1_inst/vi2c_core_inst/FSM_3> on signal <state[1:3]> with user encoding.
+Optimizing FSM <link_tracking_1_inst/vi2c_core_inst/FSM_2> on signal <state[1:3]> with user encoding.
 -------------------
  State | Encoding
 -------------------
@@ -1679,7 +1658,7 @@ Optimizing FSM <link_tracking_1_inst/vi2c_core_inst/FSM_3> on signal <state[1:3]
  110   | 110
 -------------------
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/FSM_4> on signal <state[1:3]> with user encoding.
+Optimizing FSM <link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/FSM_3> on signal <state[1:3]> with user encoding.
 -------------------
  State | Encoding
 -------------------
@@ -1693,7 +1672,7 @@ Optimizing FSM <link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/FSM_4> on 
  110   | 110
 -------------------
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/FSM_5> on signal <datafsm[1:4]> with user encoding.
+Optimizing FSM <link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/FSM_4> on signal <datafsm[1:4]> with user encoding.
 ------------------------------
  State            | Encoding
 ------------------------------
@@ -1708,7 +1687,7 @@ Optimizing FSM <link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master
  sendack          | 1000
 ------------------------------
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/FSM_6> on signal <chopexecfsm[1:2]> with user encoding.
+Optimizing FSM <link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/FSM_5> on signal <chopexecfsm[1:2]> with user encoding.
 -------------------
  State | Encoding
 -------------------
@@ -1717,7 +1696,7 @@ Optimizing FSM <link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master
  b     | 10
 -------------------
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/FSM_7> on signal <ctrlfsm[1:4]> with user encoding.
+Optimizing FSM <link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/FSM_6> on signal <ctrlfsm[1:4]> with user encoding.
 ----------------------------
  State          | Encoding
 ----------------------------
@@ -1739,7 +1718,7 @@ Optimizing FSM <link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master
  req_stop_2     | 1111
 ----------------------------
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <link_tracking_1_inst/tracking_core_inst/tracking_readout_inst/FSM_9> on signal <state[1:2]> with user encoding.
+Optimizing FSM <link_tracking_1_inst/tracking_core_inst/tracking_readout_inst/FSM_8> on signal <state[1:2]> with user encoding.
 -------------------
  State | Encoding
 -------------------
@@ -1749,14 +1728,14 @@ Optimizing FSM <link_tracking_1_inst/tracking_core_inst/tracking_readout_inst/FS
  11    | 11
 -------------------
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <link_tracking_1_inst/tracking_core_inst/track_0_inst/FSM_8> on signal <state[1:2]> with user encoding.
-Optimizing FSM <link_tracking_1_inst/tracking_core_inst/track_1_inst/FSM_8> on signal <state[1:2]> with user encoding.
-Optimizing FSM <link_tracking_1_inst/tracking_core_inst/track_2_inst/FSM_8> on signal <state[1:2]> with user encoding.
-Optimizing FSM <link_tracking_1_inst/tracking_core_inst/track_3_inst/FSM_8> on signal <state[1:2]> with user encoding.
-Optimizing FSM <link_tracking_1_inst/tracking_core_inst/track_4_inst/FSM_8> on signal <state[1:2]> with user encoding.
-Optimizing FSM <link_tracking_1_inst/tracking_core_inst/track_5_inst/FSM_8> on signal <state[1:2]> with user encoding.
-Optimizing FSM <link_tracking_1_inst/tracking_core_inst/track_6_inst/FSM_8> on signal <state[1:2]> with user encoding.
-Optimizing FSM <link_tracking_1_inst/tracking_core_inst/track_7_inst/FSM_8> on signal <state[1:2]> with user encoding.
+Optimizing FSM <link_tracking_1_inst/tracking_core_inst/track_0_inst/FSM_7> on signal <state[1:2]> with user encoding.
+Optimizing FSM <link_tracking_1_inst/tracking_core_inst/track_1_inst/FSM_7> on signal <state[1:2]> with user encoding.
+Optimizing FSM <link_tracking_1_inst/tracking_core_inst/track_2_inst/FSM_7> on signal <state[1:2]> with user encoding.
+Optimizing FSM <link_tracking_1_inst/tracking_core_inst/track_3_inst/FSM_7> on signal <state[1:2]> with user encoding.
+Optimizing FSM <link_tracking_1_inst/tracking_core_inst/track_4_inst/FSM_7> on signal <state[1:2]> with user encoding.
+Optimizing FSM <link_tracking_1_inst/tracking_core_inst/track_5_inst/FSM_7> on signal <state[1:2]> with user encoding.
+Optimizing FSM <link_tracking_1_inst/tracking_core_inst/track_6_inst/FSM_7> on signal <state[1:2]> with user encoding.
+Optimizing FSM <link_tracking_1_inst/tracking_core_inst/track_7_inst/FSM_7> on signal <state[1:2]> with user encoding.
 -------------------
  State | Encoding
 -------------------
@@ -1765,7 +1744,7 @@ Optimizing FSM <link_tracking_1_inst/tracking_core_inst/track_7_inst/FSM_8> on s
  10    | 10
 -------------------
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <link_tracking_1_inst/gtp_tx_mux_inst/FSM_2> on signal <state[1:2]> with gray encoding.
+Optimizing FSM <link_tracking_1_inst/gtp_tx_mux_inst/FSM_1> on signal <state[1:2]> with gray encoding.
 -------------------
  State | Encoding
 -------------------
@@ -1835,8 +1814,6 @@ Optimizing unit <optohybrid_top> ...
 
 Optimizing unit <gtp_wrapper> ...
 
-Optimizing unit <gtp_link_reset> ...
-
 Optimizing unit <clock_control> ...
 
 Optimizing unit <adc_switch> ...
@@ -1866,6 +1843,8 @@ Optimizing unit <gtp_tx_mux> ...
 Optimizing unit <clock_bridge_strobes> ...
 
 Optimizing unit <t1_encoder> ...
+
+Optimizing unit <trigger_handler> ...
 WARNING:Xst:1710 - FF/Latch <prescaler_5> (without init value) has a constant value of 0 in block <u1>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <prescaler_6> (without init value) has a constant value of 1 in block <u1>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <prescaler_7> (without init value) has a constant value of 0 in block <u1>. This FF/Latch will be trimmed during the optimization process.
@@ -5665,13 +5644,620 @@ WARNING:Xst:2677 - Node <error_rdack2> of sequential type is unconnected in bloc
 WARNING:Xst:2677 - Node <error_rdack3> of sequential type is unconnected in block <u2>.
 WARNING:Xst:1290 - Hierarchical block <uart_rx_inst> is unconnected in block <adc_handler_inst>.
    It will be removed from the design.
-WARNING:Xst:1293 - FF/Latch <counter_10> has a constant value of 0 in block <gtp_link_reset_3_inst>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <counter_10> has a constant value of 0 in block <gtp_link_reset_2_inst>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <counter_10> has a constant value of 0 in block <gtp_link_reset_1_inst>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <counter_10> has a constant value of 0 in block <gtp_link_reset_0_inst>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <data_cnt_2> has a constant value of 0 in block <gtp_rx_mux_inst>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <data_cnt_3> has a constant value of 0 in block <gtp_rx_mux_inst>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <i2cscl.timer_10> (without init value) has a constant value of 0 in block <u1>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <i2cscl.timer_11> (without init value) has a constant value of 0 in block <u1>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <main.timer_11> (without init value) has a constant value of 0 in block <u2>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <i2creg.timer_11> (without init value) has a constant value of 0 in block <u2>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <exec> in Unit <u2> is equivalent to the following FF/Latch, which will be removed : <chopexecfsm_FSM_FFd2> 
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block optohybrid_top, actual ratio is 2.
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_i> in Unit <tracking_buffer_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1> in Unit <tracking_buffer_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <tracking_buffer_fifo> is equivalent to the following 2 FFs/Latches : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_1> <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i> in Unit <tracking_buffer_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_i> in Unit <tracking_buffer_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1> in Unit <tracking_buffer_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <tracking_buffer_fifo> is equivalent to the following 2 FFs/Latches : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_1> <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i> in Unit <tracking_buffer_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_i> in Unit <tracking_buffer_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1> in Unit <tracking_buffer_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i> in Unit <tracking_buffer_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <tracking_buffer_fifo> is equivalent to the following 2 FFs/Latches : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_1> <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_i> in Unit <tracking_buffer_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1> in Unit <tracking_buffer_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i> in Unit <tracking_buffer_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <tracking_buffer_fifo> is equivalent to the following 2 FFs/Latches : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_1> <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+
+Final Macro Processing ...
+
+Processing Unit <u2> :
+	Found 2-bit shift register for signal <enable_reg>.
+Unit <u2> processed.
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 5880
+ Flip-Flops                                            : 5880
+# Shift Registers                                      : 1
+ 2-bit shift register                                  : 1
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : optohybrid_top.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 5711
+#      GND                         : 37
+#      INV                         : 148
+#      LUT1                        : 344
+#      LUT2                        : 130
+#      LUT3                        : 334
+#      LUT4                        : 412
+#      LUT5                        : 1941
+#      LUT6                        : 1156
+#      MUXCY                       : 375
+#      MUXCY_L                     : 103
+#      MUXF5                       : 2
+#      MUXF6                       : 1
+#      MUXF7                       : 240
+#      MUXF8                       : 2
+#      VCC                         : 29
+#      XORCY                       : 457
+# FlipFlops/Latches                : 6754
+#      FD                          : 336
+#      FDC                         : 122
+#      FDCE                        : 28
+#      FDE                         : 5111
+#      FDP                         : 147
+#      FDPE                        : 1
+#      FDR                         : 57
+#      FDRE                        : 935
+#      FDS                         : 12
+#      LD                          : 2
+#      LD_1                        : 2
+#      LDC                         : 1
+# RAMS                             : 10
+#      RAMB16BWER                  : 4
+#      RAMB8BWER                   : 6
+# Shift Registers                  : 131
+#      SRL16                       : 64
+#      SRL16E                      : 1
+#      SRLC16E                     : 16
+#      SRLC32E                     : 50
+# Clock Buffers                    : 11
+#      BUFG                        : 11
+# IO Buffers                       : 60
+#      BUFIO2                      : 2
+#      IBUF                        : 21
+#      IBUFDS                      : 4
+#      IBUFG                       : 1
+#      IOBUF                       : 6
+#      OBUF                        : 21
+#      OBUFDS                      : 3
+#      OBUFT                       : 2
+# DCMs                             : 4
+#      DCM_SP                      : 4
+# GigabitIOs                       : 2
+#      GTPA1_DUAL                  : 2
+# Others                           : 1
+#      BSCAN_SPARTAN6              : 1
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx150tfgg676-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:            6754  out of  184304     3%  
+ Number of Slice LUTs:                 4596  out of  92152     4%  
+    Number used as Logic:              4465  out of  92152     4%  
+    Number used as Memory:              131  out of  21680     0%  
+       Number used as SRL:              131
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:   8429
+   Number with an unused Flip Flop:    1675  out of   8429    19%  
+   Number with an unused LUT:          3833  out of   8429    45%  
+   Number of fully used LUT-FF pairs:  2921  out of   8429    34%  
+   Number of unique control sets:       294
+
+IO Utilization: 
+ Number of IOs:                         289
+ Number of bonded IOBs:                  64  out of    396    16%  
+
+Specific Feature Utilization:
+ Number of Block RAM/FIFO:                7  out of    268     2%  
+    Number using Block RAM only:          7
+ Number of BUFG/BUFGCTRLs:               11  out of     16    68%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+----------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+-------+
+Clock Signal                                                                                                                                  | Clock buffer(FF name)                                                                                          | Load  |
+----------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+-------+
+fpga_clk_i                                                                                                                                    | IBUFG                                                                                                          | 1     |
+gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT1_OUT<0>                                                                        | DCM_SP:CLK0                                                                                                    | 2987  |
+link_tracking_1_inst/vi2c_core_inst/chip_select_2                                                                                             | NONE(link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/wrbit_selected_iic[0]_DLATCH_2_q)| 4     |
+clock_control_inst/cdce_clk_muxed(clock_control_inst/Mmux_vfat2_clk_muxed11:O)                                                                | BUFG(*)(link_tracking_1_inst/tracking_core_inst/track_7_inst/data_0)                                           | 3422  |
+link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL                                                               | BUFG                                                                                                           | 425   |
+link_tracking_1_inst/chipscope_icon_inst/CONTROL1<13>(link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[9].U_LCE:O)| NONE(*)(link_tracking_1_inst/chipscope_ila_inst/U0/I_NO_D.U_ILA/U_STAT/U_DIRTY_LDC)                            | 1     |
+link_tracking_1_inst/chipscope_icon_inst/U0/iUPDATE_OUT                                                                                       | NONE(link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/U_iDATA_CMD)                                           | 1     |
+link_tracking_1_inst/request_read_i<0><1>                                                                                                     | NONE(link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/GEN_ASYNC_IN[31].ASYNC_IN_CELL/U_FALLING)                | 64    |
+----------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+-------+
+(*) These 2 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 8.118ns (Maximum Frequency: 123.185MHz)
+   Minimum input arrival time before clock: 7.496ns
+   Maximum output required time after clock: 5.388ns
+   Maximum combinational path delay: 5.296ns
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT1_OUT<0>'
+  Clock period: 6.588ns (frequency: 151.787MHz)
+  Total number of paths / destination ports: 27854 / 5897
+-------------------------------------------------------------------------
+Delay:               6.588ns (Levels of Logic = 5)
+  Source:            link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/i2csda.timer_7 (FF)
+  Destination:       link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/i2csda.byte_0 (FF)
+  Source Clock:      gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT1_OUT<0> rising
+  Destination Clock: gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT1_OUT<0> rising
+
+  Data Path: link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/i2csda.timer_7 to link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/i2csda.byte_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               5   0.447   1.059  i2csda.timer_7 (i2csda.timer_7)
+     LUT5:I0->O            1   0.203   0.580  i2csda.timer[11]_GND_80_o_equal_62_o<11>1_SW0 (N2)
+     LUT6:I5->O           12   0.205   0.909  i2csda.timer[11]_GND_80_o_equal_62_o<11>1 (i2csda.timer[11]_GND_80_o_equal_62_o<11>1)
+     LUT3:I2->O            9   0.205   0.830  i2csda.timer[11]_GND_80_o_equal_62_o<11>2 (i2csda.timer[11]_GND_80_o_equal_62_o)
+     LUT6:I5->O            2   0.205   0.617  _n0390_inv33 (_n0390_inv3)
+     LUT6:I5->O            8   0.205   0.802  _n0390_inv1 (_n0390_inv)
+     FDE:CE                    0.322          i2csda.byte_0
+    ----------------------------------------
+    Total                      6.588ns (1.792ns logic, 4.796ns route)
+                                       (27.2% logic, 72.8% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clock_control_inst/cdce_clk_muxed'
+  Clock period: 6.424ns (frequency: 155.672MHz)
+  Total number of paths / destination ports: 43057 / 7001
+-------------------------------------------------------------------------
+Delay:               6.424ns (Levels of Logic = 3)
+  Source:            link_tracking_1_inst/tracking_core_inst/tracking_concentrator_inst/cnt_1 (FF)
+  Destination:       link_tracking_1_inst/tracking_core_inst/tracking_concentrator_inst/data_o_0 (FF)
+  Source Clock:      clock_control_inst/cdce_clk_muxed rising
+  Destination Clock: clock_control_inst/cdce_clk_muxed rising
+
+  Data Path: link_tracking_1_inst/tracking_core_inst/tracking_concentrator_inst/cnt_1 to link_tracking_1_inst/tracking_core_inst/tracking_concentrator_inst/data_o_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q           388   0.447   2.443  cnt_1 (cnt_1)
+     LUT6:I0->O            1   0.203   0.000  Mmux_n0045[191:0]_3100 (Mmux_n0045[191:0]_3100)
+     MUXF7:I1->O           2   0.140   0.617  Mmux_n0045[191:0]_2_f7_99 (n0045[191:0]<190>)
+     LUT5:I4->O          193   0.205   2.046  _n0072_inv1 (en_o_rstpot)
+     FDE:CE                    0.322          data_o_0
+    ----------------------------------------
+    Total                      6.424ns (1.317ns logic, 5.107ns route)
+                                       (20.5% logic, 79.5% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL'
+  Clock period: 8.118ns (frequency: 123.185MHz)
+  Total number of paths / destination ports: 5753 / 742
+-------------------------------------------------------------------------
+Delay:               8.118ns (Levels of Logic = 6)
+  Source:            link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/U_CMD/G_TARGET[12].I_NE0.U_TARGET (FF)
+  Destination:       link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/U_STATUS/U_TDO (FF)
+  Source Clock:      link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL rising
+  Destination Clock: link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL rising
+
+  Data Path: link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/U_CMD/G_TARGET[12].I_NE0.U_TARGET to link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/U_STATUS/U_TDO
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q            19   0.447   1.319  U0/U_ICON/U_CMD/G_TARGET[12].I_NE0.U_TARGET (U0/U_ICON/iCORE_ID<0>)
+     LUT4:I0->O           32   0.203   1.396  U0/U_ICON/U_CMD/U_CORE_ID_SEL/I4.FI[0].U_LUT (U0/U_ICON/iCORE_ID_SEL<0>)
+     LUT4:I2->O           97   0.203   2.086  U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[1].U_LCE (CONTROL0<5>)
+     end scope: 'link_tracking_1_inst/chipscope_icon_inst:CONTROL0<5>'
+     begin scope: 'link_tracking_1_inst/chipscope_vio_inst:CONTROL<5>'
+     LUT6:I3->O            1   0.205   0.827  U0/I_VIO/U_STATUS/U_SMUX/U_CS_MUX/I4.U_MUX16/Mmux_O25 (U0/I_VIO/U_STATUS/U_SMUX/U_CS_MUX/I4.U_MUX16/Mmux_O24)
+     LUT6:I2->O            1   0.203   0.924  U0/I_VIO/U_STATUS/U_SMUX/U_CS_MUX/I4.U_MUX16/Mmux_O29 (U0/I_VIO/U_STATUS/U_SMUX/U_CS_MUX/I4.U_MUX16/Mmux_O28)
+     LUT5:I0->O            1   0.203   0.000  U0/I_VIO/U_STATUS/U_SMUX/U_CS_MUX/I4.U_MUX16/Mmux_O210 (U0/I_VIO/U_STATUS/TDO_next)
+     FDE:D                     0.102          U0/I_VIO/U_STATUS/U_TDO
+    ----------------------------------------
+    Total                      8.118ns (1.566ns logic, 6.552ns route)
+                                       (19.3% logic, 80.7% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'link_tracking_1_inst/chipscope_icon_inst/U0/iUPDATE_OUT'
+  Clock period: 1.984ns (frequency: 504.007MHz)
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Delay:               1.984ns (Levels of Logic = 1)
+  Source:            link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/U_iDATA_CMD (FF)
+  Destination:       link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/U_iDATA_CMD (FF)
+  Source Clock:      link_tracking_1_inst/chipscope_icon_inst/U0/iUPDATE_OUT rising
+  Destination Clock: link_tracking_1_inst/chipscope_icon_inst/U0/iUPDATE_OUT rising
+
+  Data Path: link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/U_iDATA_CMD to link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/U_iDATA_CMD
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              3   0.447   0.650  U0/U_ICON/U_iDATA_CMD (U0/U_ICON/iDATA_CMD)
+     INV:I->O              1   0.206   0.579  U0/U_ICON/U_iDATA_CMD_n (U0/U_ICON/iDATA_CMD_n)
+     FDC:D                     0.102          U0/U_ICON/U_iDATA_CMD
+    ----------------------------------------
+    Total                      1.984ns (0.755ns logic, 1.229ns route)
+                                       (38.1% logic, 61.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT1_OUT<0>'
+  Total number of paths / destination ports: 150 / 148
+-------------------------------------------------------------------------
+Offset:              5.121ns (Levels of Logic = 3)
+  Source:            link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/I_S6.ISYN.I_USE_SOFTBSCAN_EQ0.U_BS:SHIFT (PAD)
+  Destination:       link_tracking_1_inst/chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[1].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[0].I_IN_RANGE.U_GAND_DLY2 (FF)
+  Destination Clock: gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT1_OUT<0> rising
+
+  Data Path: link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/I_S6.ISYN.I_USE_SOFTBSCAN_EQ0.U_BS:SHIFT to link_tracking_1_inst/chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[1].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[0].I_IN_RANGE.U_GAND_DLY2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+    BSCAN_SPARTAN6:SHIFT    3   0.000   0.651  U0/U_ICON/I_YES_BSCAN.U_BS/I_S6.ISYN.I_USE_SOFTBSCAN_EQ0.U_BS (U0/iSHIFT_OUT)
+     LUT2:I1->O           64   0.205   1.887  U0/U_ICON/U_CTRL_OUT/U_DATA_VALID (U0/U_ICON/U_CTRL_OUT/iDATA_VALID)
+     LUT4:I0->O           80   0.203   1.745  U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[1].U_HCE (CONTROL1<21>)
+     end scope: 'link_tracking_1_inst/chipscope_icon_inst:CONTROL1<21>'
+     begin scope: 'link_tracking_1_inst/chipscope_ila_inst:CONTROL<21>'
+     FDP:PRE                   0.430          U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[1].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[0].I_IN_RANGE.U_GAND_DLY2
+    ----------------------------------------
+    Total                      5.121ns (0.838ns logic, 4.283ns route)
+                                       (16.4% logic, 83.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clock_control_inst/cdce_clk_muxed'
+  Total number of paths / destination ports: 3224 / 3168
+-------------------------------------------------------------------------
+Offset:              5.415ns (Levels of Logic = 4)
+  Source:            vfat2_dvalid_i<3> (PAD)
+  Destination:       link_tracking_1_inst/tracking_core_inst/track_7_inst/data_0 (FF)
+  Destination Clock: clock_control_inst/cdce_clk_muxed rising
+
+  Data Path: vfat2_dvalid_i<3> to link_tracking_1_inst/tracking_core_inst/track_7_inst/data_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            61   1.222   1.621  vfat2_dvalid_i_3_IBUF (vfat2_dvalid_i_3_IBUF)
+     begin scope: 'link_tracking_1_inst:vfat2_dvalid_i<1>'
+     begin scope: 'link_tracking_1_inst/tracking_core_inst:vfat2_dvalid_i<1>'
+     begin scope: 'link_tracking_1_inst/tracking_core_inst/track_7_inst:en_i'
+     LUT3:I2->O          192   0.205   2.046  _n0286_inv1 (_n0286_inv)
+     FDE:CE                    0.322          data_0
+    ----------------------------------------
+    Total                      5.415ns (1.749ns logic, 3.666ns route)
+                                       (32.3% logic, 67.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL'
+  Total number of paths / destination ports: 452 / 410
+-------------------------------------------------------------------------
+Offset:              7.496ns (Levels of Logic = 6)
+  Source:            link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/I_S6.ISYN.I_USE_SOFTBSCAN_EQ0.U_BS:SHIFT (PAD)
+  Destination:       link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/U_STATUS/U_TDO (FF)
+  Destination Clock: link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL rising
+
+  Data Path: link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/I_S6.ISYN.I_USE_SOFTBSCAN_EQ0.U_BS:SHIFT to link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/U_STATUS/U_TDO
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+    BSCAN_SPARTAN6:SHIFT    3   0.000   0.651  U0/U_ICON/I_YES_BSCAN.U_BS/I_S6.ISYN.I_USE_SOFTBSCAN_EQ0.U_BS (U0/iSHIFT_OUT)
+     LUT2:I1->O           64   0.205   1.887  U0/U_ICON/U_CTRL_OUT/U_DATA_VALID (U0/U_ICON/U_CTRL_OUT/iDATA_VALID)
+     LUT4:I0->O           97   0.203   2.086  U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[1].U_LCE (CONTROL0<5>)
+     end scope: 'link_tracking_1_inst/chipscope_icon_inst:CONTROL0<5>'
+     begin scope: 'link_tracking_1_inst/chipscope_vio_inst:CONTROL<5>'
+     LUT6:I3->O            1   0.205   0.827  U0/I_VIO/U_STATUS/U_SMUX/U_CS_MUX/I4.U_MUX16/Mmux_O25 (U0/I_VIO/U_STATUS/U_SMUX/U_CS_MUX/I4.U_MUX16/Mmux_O24)
+     LUT6:I2->O            1   0.203   0.924  U0/I_VIO/U_STATUS/U_SMUX/U_CS_MUX/I4.U_MUX16/Mmux_O29 (U0/I_VIO/U_STATUS/U_SMUX/U_CS_MUX/I4.U_MUX16/Mmux_O28)
+     LUT5:I0->O            1   0.203   0.000  U0/I_VIO/U_STATUS/U_SMUX/U_CS_MUX/I4.U_MUX16/Mmux_O210 (U0/I_VIO/U_STATUS/TDO_next)
+     FDE:D                     0.102          U0/I_VIO/U_STATUS/U_TDO
+    ----------------------------------------
+    Total                      7.496ns (1.121ns logic, 6.375ns route)
+                                       (15.0% logic, 85.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'link_tracking_1_inst/chipscope_icon_inst/U0/iUPDATE_OUT'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              1.831ns (Levels of Logic = 1)
+  Source:            link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/I_S6.ISYN.I_USE_SOFTBSCAN_EQ0.U_BS:SEL (PAD)
+  Destination:       link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/U_iDATA_CMD (FF)
+  Destination Clock: link_tracking_1_inst/chipscope_icon_inst/U0/iUPDATE_OUT rising
+
+  Data Path: link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/I_S6.ISYN.I_USE_SOFTBSCAN_EQ0.U_BS:SEL to link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/U_iDATA_CMD
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+    BSCAN_SPARTAN6:SEL     2   0.000   0.616  U0/U_ICON/I_YES_BSCAN.U_BS/I_S6.ISYN.I_USE_SOFTBSCAN_EQ0.U_BS (U0/U_ICON/iSEL)
+     INV:I->O              1   0.206   0.579  U0/U_ICON/U_iSEL_n (U0/U_ICON/iSEL_n)
+     FDC:CLR                   0.430          U0/U_ICON/U_iDATA_CMD
+    ----------------------------------------
+    Total                      1.831ns (0.636ns logic, 1.195ns route)
+                                       (34.7% logic, 65.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'link_tracking_1_inst/vi2c_core_inst/chip_select_2'
+  Total number of paths / destination ports: 4 / 2
+-------------------------------------------------------------------------
+Offset:              4.433ns (Levels of Logic = 5)
+  Source:            link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/wrbit_selected_iic[0]_DLATCH_2_q (LATCH)
+  Destination:       vfat2_sda_io<3> (PAD)
+  Source Clock:      link_tracking_1_inst/vi2c_core_inst/chip_select_2 falling
+
+  Data Path: link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/wrbit_selected_iic[0]_DLATCH_2_q to vfat2_sda_io<3>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q               1   0.498   0.579  wrbit_selected_iic[0]_DLATCH_2_q (wrbit_selected_iic[0]_DLATCH_2_q)
+     INV:I->O              1   0.206   0.579  sda_o<1>LogicTrst1_INV_0 (sda_o<1>)
+     end scope: 'link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1:sda_o<1>'
+     end scope: 'link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst:sda_o<1>'
+     end scope: 'link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst:sda_o<1>'
+     end scope: 'link_tracking_1_inst/vi2c_core_inst:sda_o<1>'
+     end scope: 'link_tracking_1_inst:vfat2_sda_o<1>'
+     IOBUF:I->IO               2.571          vfat2_sda_3_iobuf (vfat2_sda_io<3>)
+    ----------------------------------------
+    Total                      4.433ns (3.275ns logic, 1.158ns route)
+                                       (73.9% logic, 26.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT1_OUT<0>'
+  Total number of paths / destination ports: 3 / 3
+-------------------------------------------------------------------------
+Offset:              4.419ns (Levels of Logic = 5)
+  Source:            link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/en_clk_DFF_340 (FF)
+  Destination:       vfat2_scl_o<3> (PAD)
+  Source Clock:      gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT1_OUT<0> rising
+
+  Data Path: link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/en_clk_DFF_340 to vfat2_scl_o<3>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              1   0.447   0.579  en_clk_DFF_340 (en_clk_DFF_340)
+     INV:I->O              2   0.206   0.616  en_clk_DFF_340_inv1_INV_0 (en_clk_DFF_340_inv)
+     OBUFT:T->O                2.571          vfat2_scl_o_3_OBUFT (scl<1>)
+     end scope: 'link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1:scl<1>'
+     end scope: 'link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst:scl<1>'
+     end scope: 'link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst:scl_o<1>'
+     end scope: 'link_tracking_1_inst/vi2c_core_inst:scl_o<1>'
+     end scope: 'link_tracking_1_inst:vfat2_scl_o<1>'
+    ----------------------------------------
+    Total                      4.419ns (3.224ns logic, 1.195ns route)
+                                       (73.0% logic, 27.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'fpga_clk_i'
+  Total number of paths / destination ports: 4 / 4
+-------------------------------------------------------------------------
+Offset:              5.388ns (Levels of Logic = 3)
+  Source:            clock_control_inst/clock_switch_inst/vfat2_src_select (FF)
+  Destination:       cdce_pri_p_o (PAD)
+  Source Clock:      fpga_clk_i rising
+
+  Data Path: clock_control_inst/clock_switch_inst/vfat2_src_select to cdce_pri_p_o
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q              34   0.447   1.549  vfat2_src_select (vfat2_src_select)
+     end scope: 'clock_control_inst/clock_switch_inst:vfat2_src_select_o'
+     LUT3:I0->O            2   0.205   0.616  Mmux_vfat2_clk_muxed11 (cdce_clk_muxed)
+     OBUFDS:I->O               2.571          cdce_primary_clk_obufds (cdce_pri_p_o)
+     end scope: 'clock_control_inst:cdce_pri_p_o'
+    ----------------------------------------
+    Total                      5.388ns (3.223ns logic, 2.165ns route)
+                                       (59.8% logic, 40.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clock_control_inst/cdce_clk_muxed'
+  Total number of paths / destination ports: 2 / 2
+-------------------------------------------------------------------------
+Offset:              3.597ns (Levels of Logic = 2)
+  Source:            t1_handler_inst/t1_encoder_inst/t1_o (FF)
+  Destination:       vfat2_t1_p_o (PAD)
+  Source Clock:      clock_control_inst/cdce_clk_muxed rising
+
+  Data Path: t1_handler_inst/t1_encoder_inst/t1_o to vfat2_t1_p_o
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               1   0.447   0.579  t1_o (t1_o)
+     end scope: 't1_handler_inst/t1_encoder_inst:t1_o'
+     end scope: 't1_handler_inst:t1_o'
+     OBUFDS:I->O               2.571          t1_obufds (vfat2_t1_p_o)
+    ----------------------------------------
+    Total                      3.597ns (3.018ns logic, 0.579ns route)
+                                       (83.9% logic, 16.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              0.447ns (Levels of Logic = 0)
+  Source:            link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/U_TDO_reg (FF)
+  Destination:       link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/I_S6.ISYN.I_USE_SOFTBSCAN_EQ0.U_BS:TDO (PAD)
+  Source Clock:      link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL rising
+
+  Data Path: link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/U_TDO_reg to link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/I_S6.ISYN.I_USE_SOFTBSCAN_EQ0.U_BS:TDO
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              0   0.447   0.000  U0/U_ICON/U_TDO_reg (U0/U_ICON/iTDO)
+    BSCAN_SPARTAN6:TDO         0.000          U0/U_ICON/I_YES_BSCAN.U_BS/I_S6.ISYN.I_USE_SOFTBSCAN_EQ0.U_BS
+    ----------------------------------------
+    Total                      0.447ns (0.447ns logic, 0.000ns route)
+                                       (100.0% logic, 0.0% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 5 / 5
+-------------------------------------------------------------------------
+Delay:               5.296ns (Levels of Logic = 4)
+  Source:            fpga_test_io<1> (PAD)
+  Destination:       cdce_pri_p_o (PAD)
+
+  Data Path: fpga_test_io<1> to cdce_pri_p_o
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.222   0.684  fpga_test_io_1_IBUF (fpga_test_io_1_IBUF)
+     begin scope: 'clock_control_inst:ext_clk_i'
+     LUT3:I1->O            2   0.203   0.616  Mmux_vfat2_clk_muxed11 (cdce_clk_muxed)
+     OBUFDS:I->O               2.571          cdce_primary_clk_obufds (cdce_pri_p_o)
+     end scope: 'clock_control_inst:cdce_pri_p_o'
+    ----------------------------------------
+    Total                      5.296ns (3.996ns logic, 1.300ns route)
+                                       (75.5% logic, 24.5% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clock_control_inst/cdce_clk_muxed
+----------------------------------------------------------------------+---------+---------+---------+---------+
+                                                                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                                          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------------------------------------------------------------+---------+---------+---------+---------+
+clock_control_inst/cdce_clk_muxed                                     |    6.424|         |         |         |
+gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT1_OUT<0>|    1.507|         |         |         |
+----------------------------------------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock fpga_clk_i
+----------------------------------------------------------------------+---------+---------+---------+---------+
+                                                                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                                          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------------------------------------------------------------+---------+---------+---------+---------+
+gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT1_OUT<0>|    1.165|         |         |         |
+----------------------------------------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT1_OUT<0>
+-------------------------------------------------------------------------------+---------+---------+---------+---------+
+                                                                               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                                                   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-------------------------------------------------------------------------------+---------+---------+---------+---------+
+clock_control_inst/cdce_clk_muxed                                              |    1.371|         |         |         |
+fpga_clk_i                                                                     |    3.586|         |         |         |
+gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT1_OUT<0>         |    6.588|         |         |         |
+link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL|    5.743|         |         |         |
+-------------------------------------------------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock link_tracking_1_inst/chipscope_icon_inst/CONTROL1<13>
+----------------------------------------------------------------------+---------+---------+---------+---------+
+                                                                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                                          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------------------------------------------------------------+---------+---------+---------+---------+
+gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT1_OUT<0>|         |         |    1.948|         |
+----------------------------------------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL
+-------------------------------------------------------------------------------+---------+---------+---------+---------+
+                                                                               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                                                   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-------------------------------------------------------------------------------+---------+---------+---------+---------+
+gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT1_OUT<0>         |    3.636|         |         |         |
+link_tracking_1_inst/chipscope_icon_inst/CONTROL1<13>                          |         |    4.267|         |         |
+link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL|    8.118|         |         |         |
+link_tracking_1_inst/chipscope_icon_inst/U0/iUPDATE_OUT                        |    2.583|         |         |         |
+link_tracking_1_inst/request_read_i<0><1>                                      |    1.562|    1.562|         |         |
+-------------------------------------------------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock link_tracking_1_inst/chipscope_icon_inst/U0/iUPDATE_OUT
+-------------------------------------------------------+---------+---------+---------+---------+
+                                                       | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                           |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-------------------------------------------------------+---------+---------+---------+---------+
+link_tracking_1_inst/chipscope_icon_inst/U0/iUPDATE_OUT|    1.984|         |         |         |
+-------------------------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock link_tracking_1_inst/request_read_i<0><1>
+-------------------------------------------------------------------------------+---------+---------+---------+---------+
+                                                                               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                                                   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-------------------------------------------------------------------------------+---------+---------+---------+---------+
+link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL|    2.516|         |    2.516|         |
+-------------------------------------------------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock link_tracking_1_inst/vi2c_core_inst/chip_select_2
+----------------------------------------------------------------------+---------+---------+---------+---------+
+                                                                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                                          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------------------------------------------------------------+---------+---------+---------+---------+
+gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT1_OUT<0>|    2.020|         |    2.020|         |
+----------------------------------------------------------------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 49.00 secs
+Total CPU time to Xst completion: 49.02 secs
+ 
+--> 
+
+Total memory usage is 296472 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings : 4167 (   0 filtered)
+Number of infos    :  113 (   0 filtered)
+

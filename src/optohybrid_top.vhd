@@ -2,11 +2,11 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-library work;
-use work.user_package.all;
-
 library unisim;
 use unisim.vcomponents.all;
+
+library work;
+use work.user_package.all;
 
 entity optohybrid_top is
 port(
@@ -88,10 +88,27 @@ end optohybrid_top;
 
 architecture Behavioral of optohybrid_top is
     
+    -- Resets
+    
+    signal reset                    : std_logic := '0';
+    
+    -- External signals through LEMOs
+    
+    signal ext_clk                  : std_logic := '0';
+    signal ext_lv1a                 : std_logic := '0';
+    signal ext_sbit                 : std_logic := '0';
+    
+    -- VFAT2
+    
+    signal vfat2_t1                 : std_logic := '0';
+    
+    signal vfat2_sda_i              : std_logic_vector(5 downto 0) := (others => '0');
+    signal vfat2_sda_o              : std_logic_vector(5 downto 0) := (others => '0');
+    signal vfat2_sda_t              : std_logic_vector(5 downto 0) := (others => '0');
+    
     -- Clocking
     
     signal fpga_clk                 : std_logic := '0';
-    signal ext_clk                  : std_logic := '0';
     signal vfat2_clk                : std_logic := '0';
     signal gtp_clk                  : std_logic := '0';
     signal rec_clk                  : std_logic := '0';
@@ -102,17 +119,6 @@ architecture Behavioral of optohybrid_top is
     signal clk_request_write        : array32(3 downto 0) := (others => (others => '0'));
     signal clk_request_tri          : std_logic_vector(3 downto 0) := (others => '0');
     signal clk_request_read         : array32(3 downto 0) := (others => (others => '0'));
-    
-    -- Resets
-    
-    signal reset                    : std_logic := '0';
-    
-    -- VFAT2
-    
-    signal vfat2_t1                 : std_logic := '0';
-    signal vfat2_sda_i              : std_logic_vector(5 downto 0) := (others => '0');
-    signal vfat2_sda_o              : std_logic_vector(5 downto 0) := (others => '0');
-    signal vfat2_sda_t              : std_logic_vector(5 downto 0) := (others => '0');
     
     -- GTP
     
@@ -130,6 +136,18 @@ architecture Behavioral of optohybrid_top is
     
     -- T1 signals
     
+    signal req_lv1a                 : std_logic := '0';
+    signal req_calpulse             : std_logic := '0';
+    signal req_resync               : std_logic := '0';
+    signal req_bc0                  : std_logic := '0';
+    
+    signal delayed_enable           : std_logic := '0';
+    signal delayed_configuration    : std_logic_vector(31 downto 0) := (others => '0');
+    signal delayed_lv1a             : std_logic := '0';
+    signal delayed_calpulse         : std_logic := '0';
+    
+    signal trigger_configuration    : std_logic_vector(1 downto 0) := (others => '0');
+    
     signal t1_lv1a                  : std_logic := '0';
     signal t1_calpulse              : std_logic := '0';
     signal t1_resync                : std_logic := '0';
@@ -137,7 +155,7 @@ architecture Behavioral of optohybrid_top is
     
     -- ADC
     
-    signal adc_data                 : array32(1 downto 0) := (others => (others => '0'));
+    signal adc_write                : array32(1 downto 0) := (others => (others => '0'));
 
     -- Registers
 
@@ -170,6 +188,19 @@ begin
     leds_o <= fpga_pll_locked & '0' & rec_pll_locked & cdce_pll_locked_i;
     
     --================================--
+    -- External signals
+    --================================--
+    
+    -- Clock
+    ext_clk <= fpga_test_io(1);
+    
+    -- LV1A
+    ext_lv1a_inst : entity work.monostable port map(fabric_clk_i => gtp_clk, en_i => fpga_test_io(3), en_o => ext_lv1a);
+    
+    -- S Bit to TDC
+    fpga_test_io(4) <= ext_sbit;
+    
+    --================================--
     -- VFAT2 
     --================================--
     
@@ -190,9 +221,6 @@ begin
     --================================--
     -- Clocking
     --================================--
-
-    -- Exterior clock
-    ext_clk <= fpga_test_io(1);
     
     clock_control_inst : entity work.clock_control
     port map(
@@ -227,7 +255,6 @@ begin
     -- GTP wrapper instance to ease the use of the optical links
     gtp_wrapper_inst : entity work.gtp_wrapper
     port map(
-        fpga_clk_i      => fpga_clk,
         gtp_clk_o       => gtp_clk,
         rec_clk_o       => rec_clk,
         reset_i         => reset,
@@ -280,6 +307,33 @@ begin
     -- T1 handling
     --================================--
     
+    t1_delayed_inst : entity work.t1_delayed
+    port map(
+        gtp_clk_i   => gtp_clk,
+        reset_i     => reset_i,
+        en_i        => delayed_enable,
+        delay_i     => delayed_configuration, 
+        lv1a_o      => delayed_lv1a,
+        calpulse_o  => delayed_calpulse
+    );
+        
+    trigger_handler_inst : entity work.trigger_handler
+    port map(
+        gtp_clk_i           => gtp_clk,
+        reset_i             => reset,
+        req_trigger_i       => req_lv1a,
+        delayed_trigger_i   => delayed_lv1a,
+        ext_trigger_i       => ext_lv1a,
+        trigger_config_i    => trigger_configuration,
+        lv1a_o              => t1_lv1a
+    );
+    
+    t1_calpulse <= req_calpulse or delayed_calpulse;
+    
+    t1_resync <= req_resync;
+    
+    t1_bc0 <= req_bc0;
+
     t1_handler_inst : entity work.t1_handler 
     port map(
         gtp_clk_i   => gtp_clk,
@@ -291,7 +345,7 @@ begin
         bc0_i       => t1_bc0,
         t1_o        => vfat2_t1  
     );
-    
+  
     --================================--
     -- ADC
     --================================--
@@ -301,7 +355,7 @@ begin
         fabric_clk_i    => gtp_clk,
         reset_i         => reset,
         uart_rx_i       => fpga_rx_i,
-        wbus_o          => adc_data
+        wbus_o          => adc_write
     );
     
     --================================--
@@ -333,13 +387,13 @@ begin
     
     -- T1 operations 3 downto 0
     
-    t1_lv1a <= request_tri(0); -- 0 _ write _ send LV1A
+    req_lv1a <= request_tri(0); -- 0 _ write _ send LV1A
     
-    t1_calpulse <= request_tri(1); -- 1 _ write _ send Calpulse
+    req_calpulse <= request_tri(1); -- 1 _ write _ send Calpulse
     
-    t1_resync <= request_tri(2); -- 2 _ write _ send Resync
+    req_resync <= request_tri(2); -- 2 _ write _ send Resync
     
-    t1_bc0 <= request_tri(3); -- 3 _ write _ send BC0
+    req_bc0 <= request_tri(3); -- 3 _ write _ send BC0
     
     -- T1 counters : 7 downto 3
     
@@ -363,7 +417,7 @@ begin
     
     -- ADC : 13 downto 12
 
-    request_read(13 downto 12) <= adc_data(1 downto 0); -- 12 & 13 _ read _ ADC values
+    request_read(13 downto 12) <= adc_write(1 downto 0); -- 12 & 13 _ read _ ADC values
 
     -- Fixed registers : 17 downto 14
     
@@ -380,6 +434,7 @@ begin
     registers_tri(0) <= request_tri(18) or clk_request_tri(0); -- 18 _ read / write _ Select VFAT2 input clock
     registers_write(0) <= clk_request_write(0) when clk_request_tri(0) = '1' else request_write(18);
     request_read(18) <= registers_read(0);
+    
     clk_request_read(0) <= registers_read(0);
     
     -- CDCE clock selection : 19
@@ -387,6 +442,7 @@ begin
     registers_tri(1) <= request_tri(19) or clk_request_tri(1); -- 19 _ read / write _ Select CDCE input clock
     registers_write(1) <= clk_request_write(1) when clk_request_tri(1) = '1' else request_write(19);
     request_read(19) <= registers_read(1);
+    
     clk_request_read(1) <= registers_read(1);
     
     -- VFAT2 & CDCE clock fallback : 21 downto 20
@@ -395,11 +451,19 @@ begin
     registers_write(3 downto 2) <= request_write(21 downto 20);
     request_read(21 downto 20) <= registers_read(3 downto 2);
     
-    -- Writable registers : 25 downto 22
+    -- Trigger configuration : 22
     
-    registers_tri(7 downto 4) <= request_tri(25 downto 22);
-    registers_write(7 downto 4) <= request_write(25 downto 22);
-    request_read(25 downto 22) <= registers_read(7 downto 4);
+    registers_tri(4) <= request_tri(22); -- 22 -- read / write _ Change the trigger source
+    registers_write(4) <= request_write(22);
+    request_read(22) <= registers_read(4);    
+    
+    trigger_configuration <= registers_read(4)(1 downto 0);
+    
+    -- Writable registers : 25 downto 23
+    
+    registers_tri(7 downto 5) <= request_tri(25 downto 23);
+    registers_write(7 downto 5) <= request_write(25 downto 23);
+    request_read(25 downto 23) <= registers_read(7 downto 5);
     
     -- Other registers : 63 downto 26
     
