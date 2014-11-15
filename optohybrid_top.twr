@@ -37,56 +37,103 @@ Setup/Hold to clock fpga_clk_i
                   |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
 Source            | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
 ------------------+------------+------------+------------+------------+------------------+--------+
-vfat2_data_8_i<8> |    3.796(R)|      SLOW  |   -0.014(R)|      FAST  |vfat2_clk         |   0.000|
-vfat2_data_9_i<8> |    3.764(R)|      SLOW  |    0.242(R)|      FAST  |vfat2_clk         |   0.000|
-vfat2_data_10_i<8>|    3.527(R)|      SLOW  |    0.667(R)|      FAST  |vfat2_clk         |   0.000|
-vfat2_data_11_i<8>|    6.455(R)|      SLOW  |   -0.470(R)|      FAST  |vfat2_clk         |   0.000|
-vfat2_data_12_i<8>|    7.205(R)|      SLOW  |   -1.942(R)|      FAST  |vfat2_clk         |   0.000|
-vfat2_data_13_i<8>|    3.338(R)|      SLOW  |   -0.020(R)|      FAST  |vfat2_clk         |   0.000|
-vfat2_data_14_i<8>|    4.043(R)|      SLOW  |   -0.163(R)|      FAST  |vfat2_clk         |   0.000|
-vfat2_data_15_i<8>|    4.764(R)|      SLOW  |    1.077(R)|      FAST  |vfat2_clk         |   0.000|
-vfat2_dvalid_i<2> |    9.326(R)|      SLOW  |    0.353(R)|      FAST  |vfat2_clk         |   0.000|
-vfat2_dvalid_i<3> |   12.620(R)|      SLOW  |   -0.521(R)|      FAST  |vfat2_clk         |   0.000|
+vfat2_data_8_i<8> |    3.887(R)|      SLOW  |    0.105(R)|      FAST  |vfat2_clk         |   0.000|
+vfat2_data_9_i<8> |    3.737(R)|      SLOW  |    0.557(R)|      FAST  |vfat2_clk         |   0.000|
+vfat2_data_10_i<8>|    2.262(R)|      SLOW  |    1.232(R)|      FAST  |vfat2_clk         |   0.000|
+vfat2_data_11_i<8>|    3.923(R)|      SLOW  |   -0.004(R)|      FAST  |vfat2_clk         |   0.000|
+vfat2_data_12_i<8>|    6.063(R)|      SLOW  |   -0.803(R)|      FAST  |vfat2_clk         |   0.000|
+vfat2_data_13_i<8>|    2.395(R)|      SLOW  |    0.831(R)|      FAST  |vfat2_clk         |   0.000|
+vfat2_data_14_i<8>|    3.017(R)|      SLOW  |    0.852(R)|      FAST  |vfat2_clk         |   0.000|
+vfat2_data_15_i<8>|    4.554(R)|      SLOW  |    0.521(R)|      FAST  |vfat2_clk         |   0.000|
+vfat2_dvalid_i<2> |    5.300(R)|      SLOW  |    0.642(R)|      FAST  |vfat2_clk         |   0.000|
+vfat2_dvalid_i<3> |    8.970(R)|      SLOW  |    0.063(R)|      FAST  |vfat2_clk         |   0.000|
 ------------------+------------+------------+------------+------------+------------------+--------+
 
 Clock fpga_clk_i to Pad
----------------+-----------------+------------+-----------------+------------+------------------+--------+
-               |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
-Destination    |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
----------------+-----------------+------------+-----------------+------------+------------------+--------+
-fpga_test_io<0>|        13.513(R)|      SLOW  |         8.466(R)|      FAST  |vfat2_clk         |   0.000|
-vfat2_t1_n_o   |        16.711(R)|      SLOW  |        10.300(R)|      FAST  |vfat2_clk         |   0.000|
-vfat2_t1_p_o   |        16.669(R)|      SLOW  |        10.284(R)|      FAST  |vfat2_clk         |   0.000|
----------------+-----------------+------------+-----------------+------------+------------------+--------+
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+            |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
+Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+vfat2_t1_n_o|        16.206(R)|      SLOW  |        10.098(R)|      FAST  |vfat2_clk         |   0.000|
+vfat2_t1_p_o|        16.164(R)|      SLOW  |        10.082(R)|      FAST  |vfat2_clk         |   0.000|
+------------+-----------------+------------+-----------------+------------+------------------+--------+
 
 Clock to Setup on destination clock fpga_clk_i
 ---------------+---------+---------+---------+---------+
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-fpga_clk_i     |    5.107|         |         |         |
+fpga_clk_i     |    4.816|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 Pad to Pad
------------------+---------------+---------+
-Source Pad       |Destination Pad|  Delay  |
------------------+---------------+---------+
-cdce_pll_locked_i|leds_o<0>      |   20.359|
-fpga_clk_i       |cdce_pri_n_o   |   15.129|
-fpga_clk_i       |cdce_pri_p_o   |   15.087|
-fpga_clk_i       |vfat2_mclk_n_o |   15.233|
-fpga_clk_i       |vfat2_mclk_p_o |   15.191|
------------------+---------------+---------+
+------------------+---------------+---------+
+Source Pad        |Destination Pad|  Delay  |
+------------------+---------------+---------+
+cdce_pll_locked_i |leds_o<0>      |   20.751|
+fpga_clk_i        |cdce_pri_n_o   |   14.855|
+fpga_clk_i        |cdce_pri_p_o   |   14.813|
+fpga_clk_i        |vfat2_mclk_n_o |   15.521|
+fpga_clk_i        |vfat2_mclk_p_o |   15.479|
+vfat2_data_8_i<0> |fpga_test_io<4>|   15.415|
+vfat2_data_8_i<1> |fpga_test_io<4>|   15.155|
+vfat2_data_8_i<2> |fpga_test_io<4>|   15.664|
+vfat2_data_8_i<3> |fpga_test_io<4>|   15.884|
+vfat2_data_8_i<4> |fpga_test_io<4>|   15.712|
+vfat2_data_8_i<5> |fpga_test_io<4>|   15.497|
+vfat2_data_8_i<6> |fpga_test_io<4>|   20.191|
+vfat2_data_8_i<7> |fpga_test_io<4>|   21.123|
+vfat2_data_9_i<0> |fpga_test_io<4>|   17.440|
+vfat2_data_9_i<1> |fpga_test_io<4>|   16.525|
+vfat2_data_9_i<2> |fpga_test_io<4>|   17.284|
+vfat2_data_9_i<3> |fpga_test_io<4>|   16.718|
+vfat2_data_9_i<4> |fpga_test_io<4>|   16.512|
+vfat2_data_9_i<5> |fpga_test_io<4>|   16.272|
+vfat2_data_9_i<6> |fpga_test_io<4>|   21.164|
+vfat2_data_9_i<7> |fpga_test_io<4>|   21.665|
+vfat2_data_10_i<0>|fpga_test_io<4>|   16.763|
+vfat2_data_10_i<1>|fpga_test_io<4>|   16.323|
+vfat2_data_10_i<2>|fpga_test_io<4>|   15.919|
+vfat2_data_10_i<3>|fpga_test_io<4>|   16.095|
+vfat2_data_10_i<4>|fpga_test_io<4>|   16.326|
+vfat2_data_10_i<5>|fpga_test_io<4>|   16.352|
+vfat2_data_10_i<6>|fpga_test_io<4>|   16.260|
+vfat2_data_10_i<7>|fpga_test_io<4>|   16.117|
+vfat2_data_11_i<0>|fpga_test_io<4>|   15.759|
+vfat2_data_11_i<1>|fpga_test_io<4>|   17.091|
+vfat2_data_11_i<2>|fpga_test_io<4>|   14.503|
+vfat2_data_11_i<3>|fpga_test_io<4>|   14.868|
+vfat2_data_11_i<4>|fpga_test_io<4>|   14.889|
+vfat2_data_11_i<5>|fpga_test_io<4>|   14.659|
+vfat2_data_11_i<6>|fpga_test_io<4>|   14.272|
+vfat2_data_11_i<7>|fpga_test_io<4>|   13.866|
+vfat2_data_12_i<0>|fpga_test_io<4>|   18.236|
+vfat2_data_12_i<1>|fpga_test_io<4>|   18.423|
+vfat2_data_12_i<2>|fpga_test_io<4>|   17.109|
+vfat2_data_12_i<3>|fpga_test_io<4>|   17.800|
+vfat2_data_12_i<4>|fpga_test_io<4>|   17.122|
+vfat2_data_12_i<5>|fpga_test_io<4>|   17.995|
+vfat2_data_12_i<6>|fpga_test_io<4>|   15.576|
+vfat2_data_12_i<7>|fpga_test_io<4>|   15.121|
+vfat2_data_13_i<0>|fpga_test_io<4>|   17.292|
+vfat2_data_13_i<1>|fpga_test_io<4>|   20.390|
+vfat2_data_13_i<2>|fpga_test_io<4>|   17.292|
+vfat2_data_13_i<3>|fpga_test_io<4>|   19.180|
+vfat2_data_13_i<4>|fpga_test_io<4>|   17.279|
+vfat2_data_13_i<5>|fpga_test_io<4>|   17.969|
+vfat2_data_13_i<6>|fpga_test_io<4>|   16.484|
+vfat2_data_13_i<7>|fpga_test_io<4>|   16.872|
+------------------+---------------+---------+
 
 
-Analysis completed Sat Nov 15 15:43:08 2014 
+Analysis completed Sat Nov 15 17:40:12 2014 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 361 MB
+Peak Memory Usage: 363 MB
 
 
 

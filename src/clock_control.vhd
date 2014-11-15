@@ -31,7 +31,7 @@ begin
     
     vfat2_clk_o <= vfat2_clk_fpga_i when request_read_i(0)(0) = '0' else '0';
     
-    cdce_clk_o <= vfat2_clk_fpga_i when request_read_i(1)(0) = '0' else '0';
+    cdce_clk_o <= vfat2_clk_fpga_i when request_read_i(2)(0) = '0' else '0';
 
 end Behavioral;
 

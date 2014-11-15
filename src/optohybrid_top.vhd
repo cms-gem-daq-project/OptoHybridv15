@@ -90,97 +90,107 @@ architecture Behavioral of optohybrid_top is
     
     -- Resets
     
-    signal reset                    : std_logic := '0';
+    signal reset                        : std_logic := '0';
     
     -- External signals through LEMOs
     
-    signal ext_lv1a                 : std_logic := '0';
-    signal ext_sbit                 : std_logic := '0';
+    signal ext_lv1a                     : std_logic := '0';
+    signal sbits_configuration          : std_logic_vector(2 downto 0) := (others => '0');
     
     -- VFAT2
     
-    signal vfat2_t1                 : std_logic := '0';
+    signal vfat2_t1                     : std_logic := '0';
     
-    signal vfat2_sda_i              : std_logic_vector(5 downto 0) := (others => '0');
-    signal vfat2_sda_o              : std_logic_vector(5 downto 0) := (others => '0');
-    signal vfat2_sda_t              : std_logic_vector(5 downto 0) := (others => '0');
+    signal vfat2_sda_i                  : std_logic_vector(5 downto 0) := (others => '0');
+    signal vfat2_sda_o                  : std_logic_vector(5 downto 0) := (others => '0');
+    signal vfat2_sda_t                  : std_logic_vector(5 downto 0) := (others => '0');
     
     -- Clocking
     
-    signal fpga_clk                 : std_logic := '0';
-    signal vfat2_clk_fpga           : std_logic := '0';
-    signal fpga_pll_locked          : std_logic := '0';
+    signal fpga_clk                     : std_logic := '0';
+    signal vfat2_clk_fpga               : std_logic := '0';
+    signal fpga_pll_locked              : std_logic := '0';
     
-    signal vfat2_clk_ext            : std_logic := '0';
+    signal vfat2_clk_ext                : std_logic := '0';
     
-    signal rec_clk                  : std_logic := '0';
-    signal cdce_clk_rec             : std_logic := '0';
-    signal rec_pll_locked           : std_logic := '0';
+    signal rec_clk                      : std_logic := '0';
+    signal cdce_clk_rec                 : std_logic := '0';
+    signal rec_pll_locked               : std_logic := '0';
     
-    signal vfat2_clk_muxed          : std_logic := '0';
-    signal cdce_clk_muxed           : std_logic := '0';
+    signal vfat2_clk_muxed              : std_logic := '0';
+    signal cdce_clk_muxed               : std_logic := '0';
     
-    signal gtp_clk                  : std_logic := '0';
-    signal vfat2_clk                : std_logic := '0';
+    signal gtp_clk                      : std_logic := '0';
+    signal vfat2_clk                    : std_logic := '0';
     
-    signal clk_request_write        : array32(3 downto 0) := (others => (others => '0'));
-    signal clk_request_tri          : std_logic_vector(3 downto 0) := (others => '0');
-    signal clk_request_read         : array32(3 downto 0) := (others => (others => '0'));
+    signal clk_request_write            : array32(3 downto 0) := (others => (others => '0'));
+    signal clk_request_tri              : std_logic_vector(3 downto 0) := (others => '0');
+    signal clk_request_read             : array32(3 downto 0) := (others => (others => '0'));
     
     -- GTP
     
-    signal rx_error                 : std_logic_vector(3 downto 0) := (others => '0');
-    signal rx_kchar                 : std_logic_vector(7 downto 0) := (others => '0');
-    signal rx_data                  : std_logic_vector(63 downto 0) := (others => '0');
-    signal tx_kchar                 : std_logic_vector(7 downto 0) := (others => '0');
-    signal tx_data                  : std_logic_vector(63 downto 0) := (others => '0');
+    signal rx_error                     : std_logic_vector(3 downto 0) := (others => '0');
+    signal rx_kchar                     : std_logic_vector(7 downto 0) := (others => '0');
+    signal rx_data                      : std_logic_vector(63 downto 0) := (others => '0');
+    signal tx_kchar                     : std_logic_vector(7 downto 0) := (others => '0');
+    signal tx_data                      : std_logic_vector(63 downto 0) := (others => '0');
     
     -- Registers requests
     
-    signal request_write            : array32(63 downto 0) := (others => (others => '0'));
-    signal request_tri              : std_logic_vector(63 downto 0);
-    signal request_read             : array32(63 downto 0) := (others => (others => '0'));
+    signal request_write                : array32(63 downto 0) := (others => (others => '0'));
+    signal request_tri                  : std_logic_vector(63 downto 0);
+    signal request_read                 : array32(63 downto 0) := (others => (others => '0'));
     
     -- T1 signals
     
-    signal delayed_enable           : std_logic := '0';
-    signal delayed_configuration    : std_logic_vector(31 downto 0) := (others => '0');
-    signal delayed_lv1a             : std_logic := '0';
-    signal delayed_calpulse         : std_logic := '0';
+    signal delayed_enable               : std_logic := '0';
+    signal delayed_configuration        : std_logic_vector(31 downto 0) := (others => '0');
+    signal delayed_lv1a                 : std_logic := '0';
+    signal delayed_calpulse             : std_logic := '0';
     
-    signal req_lv1a                 : std_logic := '0';
-    signal req_calpulse             : std_logic := '0';
-    signal req_resync               : std_logic := '0';
-    signal req_bc0                  : std_logic := '0';
+    signal req_lv1a                     : std_logic := '0';
+    signal req_calpulse                 : std_logic := '0';
+    signal req_resync                   : std_logic := '0';
+    signal req_bc0                      : std_logic := '0';
     
-    signal trigger_configuration    : std_logic_vector(1 downto 0) := (others => '0');
+    signal trigger_configuration        : std_logic_vector(1 downto 0) := (others => '0');
     
-    signal t1_lv1a                  : std_logic := '0';
-    signal t1_calpulse              : std_logic := '0';
-    signal t1_resync                : std_logic := '0';
-    signal t1_bc0                   : std_logic := '0';
+    signal t1_lv1a                      : std_logic := '0';
+    signal t1_calpulse                  : std_logic := '0';
+    signal t1_resync                    : std_logic := '0';
+    signal t1_bc0                       : std_logic := '0';
     
     -- ADC
     
-    signal adc_write                : array32(1 downto 0) := (others => (others => '0'));
+    signal adc_write                    : array32(1 downto 0) := (others => (others => '0'));
 
     -- Registers
 
-    signal registers_write          : array32(7 downto 0) := (others => (others => '0'));
-    signal registers_tri            : std_logic_vector(7 downto 0);
-    signal registers_read           : array32(7 downto 0) := (others => (others => '0'));
+    signal registers_write              : array32(7 downto 0) := (others => (others => '0'));
+    signal registers_tri                : std_logic_vector(7 downto 0);
+    signal registers_read               : array32(7 downto 0) := (others => (others => '0'));
 
     -- Counters
 
-    signal lv1a_counter             : std_logic_vector(31 downto 0) := (others => '0');
-    signal calpulse_counter         : std_logic_vector(31 downto 0) := (others => '0');
-    signal resync_counter           : std_logic_vector(31 downto 0) := (others => '0');
-    signal bc0_counter              : std_logic_vector(31 downto 0) := (others => '0');
+    signal ext_lv1a_counter             : std_logic_vector(31 downto 0) := (others => '0');
+    signal int_lv1a_counter             : std_logic_vector(31 downto 0) := (others => '0');
+    signal del_lv1a_counter             : std_logic_vector(31 downto 0) := (others => '0');
+    signal lv1a_counter                 : std_logic_vector(31 downto 0) := (others => '0');
+    signal int_calpulse_counter         : std_logic_vector(31 downto 0) := (others => '0');
+    signal del_calpulse_counter         : std_logic_vector(31 downto 0) := (others => '0');
+    signal calpulse_counter             : std_logic_vector(31 downto 0) := (others => '0');
+    signal resync_counter               : std_logic_vector(31 downto 0) := (others => '0');
+    signal bc0_counter                  : std_logic_vector(31 downto 0) := (others => '0');
     
-    signal lv1a_counter_reset       : std_logic := '0';
-    signal calpulse_counter_reset   : std_logic := '0';
-    signal resync_counter_reset     : std_logic := '0';
-    signal bc0_counter_reset        : std_logic := '0';
+    signal ext_lv1a_counter_reset       : std_logic := '0';
+    signal int_lv1a_counter_reset       : std_logic := '0';
+    signal del_lv1a_counter_reset       : std_logic := '0';
+    signal lv1a_counter_reset           : std_logic := '0';
+    signal int_calpulse_counter_reset   : std_logic := '0';
+    signal del_calpulse_counter_reset   : std_logic := '0';
+    signal calpulse_counter_reset       : std_logic := '0';
+    signal resync_counter_reset         : std_logic := '0';
+    signal bc0_counter_reset            : std_logic := '0';
     
 begin
 
@@ -204,12 +214,18 @@ begin
     -- LV1A
     ext_lv1a_inst : entity work.monostable port map(fabric_clk_i => gtp_clk, en_i => fpga_test_io(3), en_o => ext_lv1a);
     
-    -- S Bit to TDC
-    fpga_test_io(4) <= ext_sbit;
-    
-    fpga_test_io(5) <= delayed_lv1a;
-    fpga_test_io(2) <= delayed_calpulse;
-    fpga_test_io(0) <= vfat2_t1;
+    -- S Bits to TDC
+    trigger_sbits_inst : entity work.trigger_sbits
+    port map(
+        vfat2_0_sbits   => vfat2_data_8_i(7 downto 0),
+        vfat2_1_sbits   => vfat2_data_9_i(7 downto 0),
+        vfat2_2_sbits   => vfat2_data_10_i(7 downto 0),
+        vfat2_3_sbits   => vfat2_data_11_i(7 downto 0),
+        vfat2_4_sbits   => vfat2_data_12_i(7 downto 0),
+        vfat2_5_sbits   => vfat2_data_13_i(7 downto 0),
+        sbit_config_i   => sbits_configuration,
+        to_tdc_o        => fpga_test_io(4)
+    );
     
     --================================--
     -- VFAT2 
@@ -400,16 +416,24 @@ begin
     -- Counters registers
     --================================--
 
+    ext_lv1a_counter_inst : entity work.counter port map(fabric_clk_i => gtp_clk, reset_i => ext_lv1a_counter_reset, en_i => ext_lv1a, data_o => ext_lv1a_counter);
+    int_lv1a_counter_inst : entity work.counter port map(fabric_clk_i => gtp_clk, reset_i => int_lv1a_counter_reset, en_i => req_lv1a, data_o => int_lv1a_counter);
+    del_lv1a_counter_inst : entity work.counter port map(fabric_clk_i => gtp_clk, reset_i => del_lv1a_counter_reset, en_i => delayed_lv1a, data_o => del_lv1a_counter);
     lv1a_counter_inst : entity work.counter port map(fabric_clk_i => gtp_clk, reset_i => lv1a_counter_reset, en_i => t1_lv1a, data_o => lv1a_counter);
+    
+    int_calpulse_counter_inst : entity work.counter port map(fabric_clk_i => gtp_clk, reset_i => int_calpulse_counter_reset, en_i => req_calpulse, data_o => int_calpulse_counter);
+    del_calpulse_counter_inst : entity work.counter port map(fabric_clk_i => gtp_clk, reset_i => del_calpulse_counter_reset, en_i => delayed_calpulse, data_o => del_calpulse_counter);
     calpulse_counter_inst : entity work.counter port map(fabric_clk_i => gtp_clk, reset_i => calpulse_counter_reset, en_i => t1_calpulse, data_o => calpulse_counter);
+    
     resync_counter_inst : entity work.counter port map(fabric_clk_i => gtp_clk, reset_i => resync_counter_reset, en_i => t1_resync, data_o => resync_counter);
+    
     bc0_counter_inst : entity work.counter port map(fabric_clk_i => gtp_clk, reset_i => bc0_counter_reset, en_i => t1_bc0, data_o => bc0_counter);
     
     --================================--
     -- Request & register mapping
     --================================--
     
-    -- T1 operations 3 downto 0
+    -- T1 operations : 3 downto 0
     
     req_lv1a <= request_tri(0); -- 0 _ write _ send LV1A
     
@@ -419,87 +443,117 @@ begin
     
     req_bc0 <= request_tri(3); -- 3 _ write _ send BC0
     
-    -- T1 counters : 7 downto 3
+    -- T1 delayed operations : 4
     
-    request_read(4) <= lv1a_counter; -- 4 _ read _ # of LV1As
+    delayed_enable <= request_tri(4); -- 4 -- write _ Send a delayed LV1A and Calpulse signal
+    delayed_configuration <= request_write(4);
     
-    request_read(5) <= calpulse_counter; -- 5 _ read _ # of Calpulses
+    -- Trigger configuration : 5
     
-    request_read(6) <= resync_counter; -- 6 _ read _ # of Resyncs
+    registers_tri(0) <= request_tri(5); -- 5 -- read / write _ Change the trigger source
+    registers_write(0) <= request_write(5);
+    request_read(5) <= registers_read(0);    
     
-    request_read(7) <= bc0_counter; -- 7 _ read _ # of BC0s 
+    trigger_configuration <= registers_read(0)(1 downto 0);
     
-    -- T1 counters reset : 11 downto 8
+    -- S Bits configuration : 6
     
-    lv1a_counter_reset <= request_tri(8); -- 8 _ write _ reset LV1A counter
+    registers_tri(1) <= request_tri(6); -- 6 -- read / write _ Controls the Sbits to send to the TDC
+    registers_write(1) <= request_write(6);
+    request_read(6) <= registers_read(1);    
     
-    calpulse_counter_reset <= request_tri(9); -- 9 _ write _ reset Calpulse counter
+    sbits_configuration <= registers_read(1)(2 downto 0); 
     
-    resync_counter_reset <= request_tri(10); -- 10 _ write _ reset Resync counter
+    -- VFAT2 clock selection : 8 downto 7
     
-    bc0_counter_reset <= request_tri(11); -- 11 _ write _ reset BC0 counter
+    registers_tri(2) <= clk_request_tri(0) or request_tri(7); -- 7 _ read / write _ Select VFAT2 input clock
+    registers_write(2) <= clk_request_write(0) when clk_request_tri(0) = '1' else request_write(7);
+    request_read(7) <= registers_read(2);
     
-    -- ADC : 13 downto 12
+    clk_request_read(0) <= registers_read(2);
+    
+    registers_tri(3) <= request_tri(8); -- 8 -- read / write _ Allow automatic fallback of VFAT2
+    registers_write(3) <= request_write(8);
+    request_read(8) <= registers_read(3);
+    
+    clk_request_read(1) <= registers_read(3);        
+    
+    -- CDCE clock selection : 10 downto 9
+    
+    registers_tri(4) <= clk_request_tri(2) or request_tri(9); -- 9 _ read / write _ Select CDCE input clock
+    registers_write(4) <= clk_request_write(2) when clk_request_tri(2) = '1' else request_write(9);
+    request_read(9) <= registers_read(4);
+    
+    clk_request_read(2) <= registers_read(4);
+    
+    registers_tri(5) <= request_tri(10); -- 10 -- read / write _ Allow automatic fallback of CDCE clocks
+    registers_write(5) <= request_write(10);
+    request_read(10) <= registers_read(5);
+    
+    clk_request_read(3) <= registers_read(5);    
+    
+    -- PLL status : 13 downto 11
+    
+    request_read(11) <= (0 => fpga_pll_locked, others => '0'); -- 11 _ read _ FPGA PLL locked
+    
+    request_read(12) <= (0 => cdce_pll_locked_i, others => '0'); -- 12 _ read _ CDCE Locked
+    
+    request_read(13) <= (0 => rec_pll_locked, others => '0'); -- 13 _ read _ GTP recovered clock PLL locked
+    
+    -- ADC : 15 downto 14
 
-    request_read(13 downto 12) <= adc_write(1 downto 0); -- 12 & 13 _ read _ ADC values
-
-    -- Fixed registers : 17 downto 14
+    request_read(15 downto 14) <= adc_write(1 downto 0); -- 14 & 15 _ read _ ADC values
     
-    request_read(14) <= x"20141210"; -- 14 _ read _ firmware version
+    -- Fixed registers : 16
     
-    request_read(15) <= (0 => fpga_pll_locked, others => '0'); -- 15 _ read _ FPGA PLL locked
+    request_read(16) <= x"20141115"; -- 16 _ read _ firmware version
     
-    request_read(16) <= (0 => cdce_pll_locked_i, others => '0'); -- 16 _ read _ CDCE Locked
+    -- T1 counters : 25 downto 17
     
-    request_read(17) <= (0 => rec_pll_locked, others => '0'); -- 17 _ read _ GTP recovered clock PLL locked
-
-    -- VFAT2 clock selection : 18
+    request_read(17) <= ext_lv1a_counter;
+   
+    request_read(18) <= int_lv1a_counter;
     
-    registers_tri(0) <= request_tri(18) or clk_request_tri(0); -- 18 _ read / write _ Select VFAT2 input clock
-    registers_write(0) <= clk_request_write(0) when clk_request_tri(0) = '1' else request_write(18);
-    request_read(18) <= registers_read(0);
+    request_read(19) <= del_lv1a_counter;
     
-    clk_request_read(0) <= registers_read(0);
+    request_read(20) <= lv1a_counter;
     
-    -- CDCE clock selection : 19
+    request_read(21) <= int_calpulse_counter;
     
-    registers_tri(1) <= request_tri(19) or clk_request_tri(1); -- 19 _ read / write _ Select CDCE input clock
-    registers_write(1) <= clk_request_write(1) when clk_request_tri(1) = '1' else request_write(19);
-    request_read(19) <= registers_read(1);
+    request_read(22) <= del_calpulse_counter;
     
-    clk_request_read(1) <= registers_read(1);
+    request_read(23) <= calpulse_counter;
     
-    -- VFAT2 & CDCE clock fallback : 21 downto 20
+    request_read(24) <= resync_counter;
     
-    registers_tri(3 downto 2) <= request_tri(21 downto 20); -- 21 & 20 -- read / write _ Allow automatic fallback of VFAT2 and CDCE clocks
-    registers_write(3 downto 2) <= request_write(21 downto 20);
-    request_read(21 downto 20) <= registers_read(3 downto 2);
+    request_read(25) <= bc0_counter;
     
-    clk_request_read(3 downto 2) <= registers_read(3 downto 2);
+    -- T1 counters reset : 34 downto 26
     
-    -- Trigger configuration : 22
+    ext_lv1a_counter_reset <= request_tri(26);
     
-    registers_tri(4) <= request_tri(22); -- 22 -- read / write _ Change the trigger source
-    registers_write(4) <= request_write(22);
-    request_read(22) <= registers_read(4);    
+    int_lv1a_counter_reset <= request_tri(27);
     
-    trigger_configuration <= registers_read(4)(1 downto 0);
+    del_lv1a_counter_reset <= request_tri(28);
     
-    -- Delayed LV1A and Calpulse : 23
-
-    registers_tri(5) <= request_tri(23); -- 23 -- write _ Send a delayed LV1A and Calpulse signal
-    registers_write(5) <= request_write(23);
-    request_read(23) <= registers_read(5);       
+    lv1a_counter_reset <= request_tri(29);
     
-    delayed_enable <= request_tri(23);
-    delayed_configuration <= request_write(23);
+    int_calpulse_counter_reset <= request_tri(30);
     
-    -- Writable registers : 25 downto 24
+    del_calpulse_counter_reset <= request_tri(31);
     
-    registers_tri(7 downto 6) <= request_tri(25 downto 24);
-    registers_write(7 downto 6) <= request_write(25 downto 24);
-    request_read(25 downto 24) <= registers_read(7 downto 6);
+    calpulse_counter_reset <= request_tri(32);
     
-    -- Other registers : 63 downto 26
+    resync_counter_reset <= request_tri(33);
+    
+    bc0_counter_reset <= request_tri(34);
+    
+    -- Writable registers : 36 downto 35
+    
+    registers_tri(7 downto 6) <= request_tri(36 downto 35);
+    registers_write(7 downto 6) <= request_write(36 downto 35);
+    request_read(36 downto 35) <= registers_read(7 downto 6);
+    
+    -- Other registers : 63 downto 37
     
 end Behavioral;

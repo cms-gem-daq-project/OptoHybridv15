@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total CPU time to Xst completion: 0.13 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total CPU time to Xst completion: 0.13 secs
  
 --> Reading design: optohybrid_top.prj
 
@@ -192,6 +192,9 @@ Parsing architecture <Behavioral> of entity <adc_switch>.
 Parsing VHDL file "\\psf\home\Documents\PhD\Code\OH\ipcore_dir\s6_gtpwizard_v1_11.vhd" into library work
 Parsing entity <s6_gtpwizard_v1_11>.
 Parsing architecture <RTL> of entity <s6_gtpwizard_v1_11>.
+Parsing VHDL file "\\psf\home\Documents\PhD\Code\OH\src\trigger_sbits.vhd" into library work
+Parsing entity <trigger_sbits>.
+Parsing architecture <Behavioral> of entity <trigger_sbits>.
 Parsing VHDL file "\\psf\home\Documents\PhD\Code\OH\src\trigger_handler.vhd" into library work
 Parsing entity <trigger_handler>.
 Parsing architecture <Behavioral> of entity <trigger_handler>.
@@ -225,9 +228,10 @@ Parsing architecture <Behavioral> of entity <optohybrid_top>.
 =========================================================================
 
 Elaborating entity <optohybrid_top> (architecture <Behavioral>) from library <work>.
-WARNING:HDLCompiler:871 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" Line 98: Using initial value '0' for ext_sbit since it is never assigned
 
 Elaborating entity <monostable> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <trigger_sbits> (architecture <Behavioral>) from library <work>.
 
 Elaborating entity <fpga_clk_pll> (architecture <xilinx>) from library <work>.
 
@@ -309,7 +313,6 @@ Elaborating entity <uart_rx> (architecture <Behavioral>) from library <work>.
 Elaborating entity <adc_switch> (architecture <Behavioral>) from library <work>.
 WARNING:HDLCompiler:634 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" Line 105: Net <vfat2_sda_o[5]> does not have a driver.
 WARNING:HDLCompiler:634 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" Line 106: Net <vfat2_sda_t[5]> does not have a driver.
-WARNING:HDLCompiler:634 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" Line 128: Net <clk_request_read[3][31]> does not have a driver.
 WARNING:HDLCompiler:634 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" Line 135: Net <tx_kchar[7]> does not have a driver.
 WARNING:HDLCompiler:634 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" Line 136: Net <tx_data[63]> does not have a driver.
 WARNING:HDLCompiler:634 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" Line 142: Net <request_read[63][31]> does not have a driver.
@@ -330,12 +333,6 @@ WARNING:Xst:647 - Input <vfat2_data_4_i> is never used. This port will be preser
 WARNING:Xst:647 - Input <vfat2_data_5_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <vfat2_data_6_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <vfat2_data_7_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <vfat2_data_8_i<7:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <vfat2_data_9_i<7:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <vfat2_data_10_i<7:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <vfat2_data_11_i<7:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <vfat2_data_12_i<7:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <vfat2_data_13_i<7:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <vfat2_data_14_i<7:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <vfat2_data_15_i<7:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <vfat2_data_16_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -348,71 +345,68 @@ WARNING:Xst:647 - Input <vfat2_data_22_i> is never used. This port will be prese
 WARNING:Xst:647 - Input <vfat2_data_23_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <cdce_miso_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <cdce_auxout_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 245: Output port <rec_clk_o> of the instance <rec_clk_pll_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 256: Output port <request_write_o<3>> of the instance <clock_control_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 256: Output port <request_write_o<2>> of the instance <clock_control_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<63>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<62>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<61>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<60>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<59>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<58>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<57>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<56>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<55>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<54>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<53>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<52>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<51>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<50>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<49>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<48>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<47>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<46>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<45>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<44>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<43>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<42>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<41>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<40>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<39>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<38>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<37>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<36>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<35>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<34>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<33>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<32>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<31>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<30>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<29>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<28>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<27>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<26>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<17>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<16>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<15>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<14>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<13>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<12>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<11>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<10>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<9>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<8>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<7>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<6>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<5>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<4>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<3>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<2>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<1>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<0>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 261: Output port <rec_clk_o> of the instance <rec_clk_pll_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 272: Output port <request_write_o<3>> of the instance <clock_control_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 272: Output port <request_write_o<1>> of the instance <clock_control_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 318: Output port <request_write_o<63>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 318: Output port <request_write_o<62>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 318: Output port <request_write_o<61>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 318: Output port <request_write_o<60>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 318: Output port <request_write_o<59>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 318: Output port <request_write_o<58>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 318: Output port <request_write_o<57>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 318: Output port <request_write_o<56>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 318: Output port <request_write_o<55>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 318: Output port <request_write_o<54>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 318: Output port <request_write_o<53>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 318: Output port <request_write_o<52>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 318: Output port <request_write_o<51>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 318: Output port <request_write_o<50>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 318: Output port <request_write_o<49>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 318: Output port <request_write_o<48>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 318: Output port <request_write_o<47>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 318: Output port <request_write_o<46>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 318: Output port <request_write_o<45>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 318: Output port <request_write_o<44>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 318: Output port <request_write_o<43>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 318: Output port <request_write_o<42>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 318: Output port <request_write_o<41>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 318: Output port <request_write_o<40>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 318: Output port <request_write_o<39>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 318: Output port <request_write_o<38>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 318: Output port <request_write_o<37>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 318: Output port <request_write_o<34>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 318: Output port <request_write_o<33>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 318: Output port <request_write_o<32>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 318: Output port <request_write_o<31>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 318: Output port <request_write_o<30>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 318: Output port <request_write_o<29>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 318: Output port <request_write_o<28>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 318: Output port <request_write_o<27>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 318: Output port <request_write_o<26>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 318: Output port <request_write_o<25>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 318: Output port <request_write_o<24>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 318: Output port <request_write_o<23>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 318: Output port <request_write_o<22>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 318: Output port <request_write_o<21>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 318: Output port <request_write_o<20>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 318: Output port <request_write_o<19>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 318: Output port <request_write_o<18>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 318: Output port <request_write_o<17>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 318: Output port <request_write_o<16>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 318: Output port <request_write_o<15>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 318: Output port <request_write_o<14>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 318: Output port <request_write_o<13>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 318: Output port <request_write_o<12>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 318: Output port <request_write_o<11>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 318: Output port <request_write_o<3>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 318: Output port <request_write_o<2>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 318: Output port <request_write_o<1>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 318: Output port <request_write_o<0>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
 WARNING:Xst:2935 - Signal 'vfat2_sda_o<5:4>', unconnected in block 'optohybrid_top', is tied to its initial value (00).
 WARNING:Xst:2935 - Signal 'vfat2_sda_o<1:0>', unconnected in block 'optohybrid_top', is tied to its initial value (00).
 WARNING:Xst:2935 - Signal 'vfat2_sda_t<5:4>', unconnected in block 'optohybrid_top', is tied to its initial value (00).
 WARNING:Xst:2935 - Signal 'vfat2_sda_t<1:0>', unconnected in block 'optohybrid_top', is tied to its initial value (00).
-WARNING:Xst:2935 - Signal 'clk_request_read<3>', unconnected in block 'optohybrid_top', is tied to its initial value (00000000000000000000000000000000).
-WARNING:Xst:2935 - Signal 'clk_request_read<2>', unconnected in block 'optohybrid_top', is tied to its initial value (00000000000000000000000000000000).
 WARNING:Xst:2935 - Signal 'tx_kchar<7:4>', unconnected in block 'optohybrid_top', is tied to its initial value (0000).
 WARNING:Xst:2935 - Signal 'tx_kchar<1:0>', unconnected in block 'optohybrid_top', is tied to its initial value (00).
 WARNING:Xst:2935 - Signal 'tx_data<63:32>', unconnected in block 'optohybrid_top', is tied to its initial value (00000000000000000000000000000000).
@@ -444,8 +438,6 @@ WARNING:Xst:2935 - Signal 'request_read<40>', unconnected in block 'optohybrid_t
 WARNING:Xst:2935 - Signal 'request_read<39>', unconnected in block 'optohybrid_top', is tied to its initial value (00000000000000000000000000000000).
 WARNING:Xst:2935 - Signal 'request_read<38>', unconnected in block 'optohybrid_top', is tied to its initial value (00000000000000000000000000000000).
 WARNING:Xst:2935 - Signal 'request_read<37>', unconnected in block 'optohybrid_top', is tied to its initial value (00000000000000000000000000000000).
-WARNING:Xst:2935 - Signal 'request_read<36>', unconnected in block 'optohybrid_top', is tied to its initial value (00000000000000000000000000000000).
-WARNING:Xst:2935 - Signal 'request_read<35>', unconnected in block 'optohybrid_top', is tied to its initial value (00000000000000000000000000000000).
 WARNING:Xst:2935 - Signal 'request_read<34>', unconnected in block 'optohybrid_top', is tied to its initial value (00000000000000000000000000000000).
 WARNING:Xst:2935 - Signal 'request_read<33>', unconnected in block 'optohybrid_top', is tied to its initial value (00000000000000000000000000000000).
 WARNING:Xst:2935 - Signal 'request_read<32>', unconnected in block 'optohybrid_top', is tied to its initial value (00000000000000000000000000000000).
@@ -455,10 +447,7 @@ WARNING:Xst:2935 - Signal 'request_read<29>', unconnected in block 'optohybrid_t
 WARNING:Xst:2935 - Signal 'request_read<28>', unconnected in block 'optohybrid_top', is tied to its initial value (00000000000000000000000000000000).
 WARNING:Xst:2935 - Signal 'request_read<27>', unconnected in block 'optohybrid_top', is tied to its initial value (00000000000000000000000000000000).
 WARNING:Xst:2935 - Signal 'request_read<26>', unconnected in block 'optohybrid_top', is tied to its initial value (00000000000000000000000000000000).
-WARNING:Xst:2935 - Signal 'request_read<11>', unconnected in block 'optohybrid_top', is tied to its initial value (00000000000000000000000000000000).
-WARNING:Xst:2935 - Signal 'request_read<10>', unconnected in block 'optohybrid_top', is tied to its initial value (00000000000000000000000000000000).
-WARNING:Xst:2935 - Signal 'request_read<9>', unconnected in block 'optohybrid_top', is tied to its initial value (00000000000000000000000000000000).
-WARNING:Xst:2935 - Signal 'request_read<8>', unconnected in block 'optohybrid_top', is tied to its initial value (00000000000000000000000000000000).
+WARNING:Xst:2935 - Signal 'request_read<4>', unconnected in block 'optohybrid_top', is tied to its initial value (00000000000000000000000000000000).
 WARNING:Xst:2935 - Signal 'request_read<3>', unconnected in block 'optohybrid_top', is tied to its initial value (00000000000000000000000000000000).
 WARNING:Xst:2935 - Signal 'request_read<2>', unconnected in block 'optohybrid_top', is tied to its initial value (00000000000000000000000000000000).
 WARNING:Xst:2935 - Signal 'request_read<1>', unconnected in block 'optohybrid_top', is tied to its initial value (00000000000000000000000000000000).
@@ -475,6 +464,13 @@ Synthesizing Unit <monostable>.
 	inferred   2 D-type flip-flop(s).
 Unit <monostable> synthesized.
 
+Synthesizing Unit <trigger_sbits>.
+    Related source file is "\\psf\home\Documents\PhD\Code\OH\src\trigger_sbits.vhd".
+    Found 1-bit 7-to-1 multiplexer for signal <to_tdc_o> created at line 16.
+    Summary:
+	inferred   1 Multiplexer(s).
+Unit <trigger_sbits> synthesized.
+
 Synthesizing Unit <fpga_clk_pll>.
     Related source file is "\\psf\home\Documents\PhD\Code\OH\ipcore_dir\fpga_clk_pll.vhd".
     Summary:
@@ -490,8 +486,8 @@ Unit <rec_clk_pll> synthesized.
 Synthesizing Unit <clock_control>.
     Related source file is "\\psf\home\Documents\PhD\Code\OH\src\clock_control.vhd".
 WARNING:Xst:647 - Input <request_read_i<3>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <request_read_i<2>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <request_read_i<1><31:1>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <request_read_i<2><31:1>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <request_read_i<1>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <request_read_i<0><31:1>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <fpga_clk_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <vfat2_clk_ext_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -651,8 +647,8 @@ Synthesizing Unit <gtp_rx_mux>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 7-bit subtractor for signal <GND_74_o_GND_74_o_sub_16_OUT<6:0>> created at line 95.
-    Found 4-bit subtractor for signal <GND_74_o_GND_74_o_sub_24_OUT<3:0>> created at line 103.
+    Found 7-bit subtractor for signal <GND_75_o_GND_75_o_sub_16_OUT<6:0>> created at line 95.
+    Found 4-bit subtractor for signal <GND_75_o_GND_75_o_sub_24_OUT<3:0>> created at line 103.
     Summary:
 	inferred   2 Adder/Subtractor(s).
 	inferred 136 D-type flip-flop(s).
@@ -683,10 +679,10 @@ Synthesizing Unit <gtp_tx_mux>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 9-bit subtractor for signal <GND_75_o_GND_75_o_sub_20_OUT> created at line 156.
-    Found 8-bit adder for signal <kchar_count[7]_GND_75_o_add_2_OUT> created at line 87.
-    Found 4-bit subtractor for signal <GND_75_o_GND_75_o_sub_53_OUT<3:0>> created at line 164.
-    Found 16-bit 4-to-1 multiplexer for signal <GND_75_o_GND_75_o_mux_72_OUT> created at line 52.
+    Found 9-bit subtractor for signal <GND_76_o_GND_76_o_sub_20_OUT> created at line 156.
+    Found 8-bit adder for signal <kchar_count[7]_GND_76_o_add_2_OUT> created at line 87.
+    Found 4-bit subtractor for signal <GND_76_o_GND_76_o_sub_53_OUT<3:0>> created at line 164.
+    Found 16-bit 4-to-1 multiplexer for signal <GND_76_o_GND_76_o_mux_72_OUT> created at line 52.
     Summary:
 	inferred   3 Adder/Subtractor(s).
 	inferred 233 D-type flip-flop(s).
@@ -756,7 +752,7 @@ Synthesizing Unit <vi2c_wrapper>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 8-bit subtractor for signal <GND_77_o_GND_77_o_sub_8_OUT<7:0>> created at line 1308.
+    Found 8-bit subtractor for signal <GND_78_o_GND_78_o_sub_8_OUT<7:0>> created at line 1308.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  64 D-type flip-flop(s).
@@ -810,23 +806,23 @@ WARNING:Xst:647 - Input <selected_iic<31:1>> is never used. This port will be pr
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 12-bit adder for signal <GND_79_o_GND_79_o_add_58_OUT> created at line 1241.
-    Found 12-bit subtractor for signal <GND_79_o_GND_79_o_sub_4_OUT<11:0>> created at line 1308.
-    Found 12-bit subtractor for signal <GND_79_o_GND_79_o_sub_15_OUT<11:0>> created at line 209.
-    Found 4-bit subtractor for signal <GND_79_o_GND_79_o_sub_80_OUT<3:0>> created at line 320.
-    Found 12-bit subtractor for signal <GND_79_o_GND_79_o_sub_93_OUT<11:0>> created at line 1308.
+    Found 12-bit adder for signal <GND_80_o_GND_80_o_add_58_OUT> created at line 1241.
+    Found 12-bit subtractor for signal <GND_80_o_GND_80_o_sub_4_OUT<11:0>> created at line 1308.
+    Found 12-bit subtractor for signal <GND_80_o_GND_80_o_sub_15_OUT<11:0>> created at line 209.
+    Found 4-bit subtractor for signal <GND_80_o_GND_80_o_sub_80_OUT<3:0>> created at line 320.
+    Found 12-bit subtractor for signal <GND_80_o_GND_80_o_sub_93_OUT<11:0>> created at line 1308.
     Found 1-bit tristate buffer for signal <scl<1>> created at line 125
     Found 1-bit tristate buffer for signal <scl<0>> created at line 125
-WARNING:Xst:737 - Found 1-bit latch for signal <Z_23_o_selected_iic[0]_DLATCH_1_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_24_o_selected_iic[0]_DLATCH_1_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
     Found 1-bit tristate buffer for signal <rdbit> created at line 341
 WARNING:Xst:737 - Found 1-bit latch for signal <wrbit_selected_iic[0]_DLATCH_2_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <Z_23_o_selected_iic[0]_DLATCH_3_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <Z_24_o_selected_iic[0]_DLATCH_3_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
     Found 1-bit tristate buffer for signal <sda_o<1>> created at line 32
 WARNING:Xst:737 - Found 1-bit latch for signal <wrbit_selected_iic[0]_DLATCH_4_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <sda_t<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
     Found 1-bit tristate buffer for signal <sda_o<0>> created at line 32
 WARNING:Xst:737 - Found 1-bit latch for signal <sda_t<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-    Found 12-bit comparator equal for signal <i2csda.timer[11]_GND_79_o_equal_60_o> created at line 276
+    Found 12-bit comparator equal for signal <i2csda.timer[11]_GND_80_o_equal_60_o> created at line 276
     Found 12-bit comparator equal for signal <i2csda.timer[11]_i2csda.samplingtime[11]_equal_73_o> created at line 300
     WARNING:Xst:2404 -  FFs/Latches <scl<1:2>> (without init value) have a constant value of 0 in block <i2c_data>.
     Summary:
@@ -906,11 +902,11 @@ WARNING:Xst:647 - Input <completed> is never used. This port will be preserved a
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 12-bit subtractor for signal <GND_92_o_GND_92_o_sub_11_OUT<11:0>> created at line 1308.
-    Found 3-bit subtractor for signal <GND_92_o_GND_92_o_sub_76_OUT<2:0>> created at line 456.
-    Found 12-bit subtractor for signal <GND_92_o_GND_92_o_sub_104_OUT<11:0>> created at line 1308.
-    Found 1-bit 3-to-1 multiplexer for signal <chopexecfsm[1]_X_35_o_Mux_14_o> created at line 155.
-    Found 4-bit 16-to-1 multiplexer for signal <ctrlfsm[3]_PWR_52_o_wide_mux_92_OUT> created at line 285.
+    Found 12-bit subtractor for signal <GND_93_o_GND_93_o_sub_11_OUT<11:0>> created at line 1308.
+    Found 3-bit subtractor for signal <GND_93_o_GND_93_o_sub_76_OUT<2:0>> created at line 456.
+    Found 12-bit subtractor for signal <GND_93_o_GND_93_o_sub_104_OUT<11:0>> created at line 1308.
+    Found 1-bit 3-to-1 multiplexer for signal <chopexecfsm[1]_X_36_o_Mux_14_o> created at line 155.
+    Found 4-bit 16-to-1 multiplexer for signal <ctrlfsm[3]_PWR_53_o_wide_mux_92_OUT> created at line 285.
     Summary:
 	inferred   3 Adder/Subtractor(s).
 	inferred 127 D-type flip-flop(s).
@@ -947,7 +943,7 @@ Synthesizing Unit <tracking_decoder>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 8-bit subtractor for signal <GND_125_o_GND_125_o_sub_7_OUT<7:0>> created at line 69.
+    Found 8-bit subtractor for signal <GND_126_o_GND_126_o_sub_7_OUT<7:0>> created at line 69.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred 393 D-type flip-flop(s).
@@ -961,7 +957,7 @@ Synthesizing Unit <tracking_concentrator>.
     Found 3-bit register for signal <cnt>.
     Found 192-bit register for signal <data_o>.
     Found 1-bit register for signal <en_o>.
-    Found 3-bit adder for signal <cnt[2]_GND_126_o_add_11_OUT> created at line 75.
+    Found 3-bit adder for signal <cnt[2]_GND_127_o_add_11_OUT> created at line 75.
     Found 192-bit 8-to-1 multiplexer for signal <n0045[191:0]> created at line 57.
     Summary:
 	inferred   1 Adder/Subtractor(s).
@@ -988,7 +984,7 @@ Synthesizing Unit <tracking_readout>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 2-bit subtractor for signal <GND_128_o_GND_128_o_sub_4_OUT<1:0>> created at line 74.
+    Found 2-bit subtractor for signal <GND_129_o_GND_129_o_sub_4_OUT<1:0>> created at line 74.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred 388 D-type flip-flop(s).
@@ -1172,7 +1168,7 @@ Unit <registers> synthesized.
 Synthesizing Unit <counter>.
     Related source file is "\\psf\home\Documents\PhD\Code\OH\src\counter.vhd".
     Found 32-bit register for signal <counter>.
-    Found 32-bit adder for signal <counter[31]_GND_131_o_add_0_OUT> created at line 1241.
+    Found 32-bit adder for signal <counter[31]_GND_132_o_add_0_OUT> created at line 1241.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  32 D-type flip-flop(s).
@@ -1196,7 +1192,7 @@ WARNING:Xst:647 - Input <delay_i<31:30>> is never used. This port will be preser
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 32-bit subtractor for signal <GND_135_o_GND_135_o_sub_6_OUT<31:0>> created at line 1308.
+    Found 32-bit subtractor for signal <GND_136_o_GND_136_o_sub_6_OUT<31:0>> created at line 1308.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  34 D-type flip-flop(s).
@@ -1207,7 +1203,7 @@ Unit <t1_delayed> synthesized.
 Synthesizing Unit <trigger_handler>.
     Related source file is "\\psf\home\Documents\PhD\Code\OH\src\trigger_handler.vhd".
     Found 1-bit register for signal <lv1a_o>.
-    Found 1-bit 4-to-1 multiplexer for signal <GND_136_o_GND_136_o_MUX_1407_o> created at line 29.
+    Found 1-bit 4-to-1 multiplexer for signal <GND_137_o_GND_137_o_MUX_1413_o> created at line 29.
     Summary:
 	inferred   1 D-type flip-flop(s).
 	inferred   1 Multiplexer(s).
@@ -1235,8 +1231,8 @@ Synthesizing Unit <t1_encoder>.
     Found 3-bit register for signal <data>.
     Found 2-bit register for signal <data_cnt>.
     Found 1-bit register for signal <t1_o>.
-    Found 2-bit subtractor for signal <GND_139_o_GND_139_o_sub_13_OUT<1:0>> created at line 90.
-    Found 1-bit 3-to-1 multiplexer for signal <data_cnt[1]_X_51_o_Mux_10_o> created at line 82.
+    Found 2-bit subtractor for signal <GND_140_o_GND_140_o_sub_13_OUT<1:0>> created at line 90.
+    Found 1-bit 3-to-1 multiplexer for signal <data_cnt[1]_X_52_o_Mux_10_o> created at line 82.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred   7 D-type flip-flop(s).
@@ -1267,8 +1263,8 @@ WARNING:Xst:653 - Signal <data_o> is used but never assigned. This sourceless si
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 24-bit adder for signal <timer[23]_GND_141_o_add_1_OUT> created at line 1241.
-    Found 3-bit subtractor for signal <GND_141_o_GND_141_o_sub_12_OUT<2:0>> created at line 92.
+    Found 24-bit adder for signal <timer[23]_GND_142_o_add_1_OUT> created at line 1241.
+    Found 3-bit subtractor for signal <GND_142_o_GND_142_o_sub_12_OUT<2:0>> created at line 92.
     Summary:
 	inferred   2 Adder/Subtractor(s).
 	inferred  28 D-type flip-flop(s).
@@ -1292,21 +1288,21 @@ HDL Synthesis Report
 Macro Statistics
 # RAMs                                                 : 1
  32x4-bit single-port Read Only RAM                    : 1
-# Adders/Subtractors                                   : 37
+# Adders/Subtractors                                   : 42
  12-bit adder                                          : 1
  12-bit subtractor                                     : 5
  2-bit subtractor                                      : 2
  24-bit adder                                          : 1
  3-bit adder                                           : 1
  3-bit subtractor                                      : 2
- 32-bit adder                                          : 9
+ 32-bit adder                                          : 14
  32-bit subtractor                                     : 1
  4-bit subtractor                                      : 3
  7-bit subtractor                                      : 1
  8-bit adder                                           : 1
  8-bit subtractor                                      : 9
  9-bit subtractor                                      : 1
-# Registers                                            : 317
+# Registers                                            : 322
  1-bit register                                        : 72
  12-bit register                                       : 7
  128-bit register                                      : 1
@@ -1315,7 +1311,7 @@ Macro Statistics
  2-bit register                                        : 4
  24-bit register                                       : 1
  3-bit register                                        : 5
- 32-bit register                                       : 163
+ 32-bit register                                       : 168
  4-bit register                                        : 8
  48-bit register                                       : 3
  8-bit register                                        : 32
@@ -1324,10 +1320,11 @@ Macro Statistics
 # Comparators                                          : 4
  12-bit comparator equal                               : 2
  8-bit comparator equal                                : 2
-# Multiplexers                                         : 2046
+# Multiplexers                                         : 2047
  1-bit 2-to-1 multiplexer                              : 1968
  1-bit 3-to-1 multiplexer                              : 2
  1-bit 4-to-1 multiplexer                              : 1
+ 1-bit 7-to-1 multiplexer                              : 1
  12-bit 2-to-1 multiplexer                             : 26
  128-bit 2-to-1 multiplexer                            : 2
  16-bit 4-to-1 multiplexer                             : 1
@@ -1361,70 +1358,70 @@ Loading core <chipscope_ila> for timing and area information for instance <chips
 Loading core <chipscope_icon> for timing and area information for instance <chipscope_icon_inst>.
 Loading core <chipscope_vio> for timing and area information for instance <chipscope_vio_inst>.
 Loading core <tracking_fifo> for timing and area information for instance <tracking_buffer_fifo>.
+INFO:Xst:2261 - The FF/Latch <data_1_5> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_1_5> 
+INFO:Xst:2261 - The FF/Latch <data_0_8> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_0_8> 
+INFO:Xst:2261 - The FF/Latch <data_0_4> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_0_4> 
+INFO:Xst:2261 - The FF/Latch <data_0_9> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_0_9> 
 INFO:Xst:2261 - The FF/Latch <data_0_0> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_0_0> 
 INFO:Xst:2261 - The FF/Latch <data_1_3> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_1_3> 
 INFO:Xst:2261 - The FF/Latch <data_0_1> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_0_1> 
-INFO:Xst:2261 - The FF/Latch <data_1_4> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_1_4> 
 INFO:Xst:2261 - The FF/Latch <data_0_11> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_0_11> 
+INFO:Xst:2261 - The FF/Latch <data_0_6> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_0_6> 
 INFO:Xst:2261 - The FF/Latch <data_1_9> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_1_9> 
 INFO:Xst:2261 - The FF/Latch <data_0_2> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_0_2> 
-INFO:Xst:2261 - The FF/Latch <data_1_5> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_1_5> 
 INFO:Xst:2261 - The FF/Latch <data_1_11> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_1_11> 
-INFO:Xst:2261 - The FF/Latch <data_0_8> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_0_8> 
-INFO:Xst:2261 - The FF/Latch <data_0_9> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_0_9> 
-INFO:Xst:2261 - The FF/Latch <data_1_1> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_1_1> 
+INFO:Xst:2261 - The FF/Latch <data_0_7> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_0_7> 
 INFO:Xst:2261 - The FF/Latch <data_0_12> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_0_12> 
 INFO:Xst:2261 - The FF/Latch <data_0_13> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_0_13> 
-INFO:Xst:2261 - The FF/Latch <data_1_2> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_1_2> 
 INFO:Xst:2261 - The FF/Latch <data_0_14> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_0_14> 
-INFO:Xst:2261 - The FF/Latch <data_0_5> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_0_5> 
 INFO:Xst:2261 - The FF/Latch <data_0_15> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_0_15> 
 INFO:Xst:2261 - The FF/Latch <data_0_20> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_0_20> 
 INFO:Xst:2261 - The FF/Latch <data_0_16> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_0_16> 
 INFO:Xst:2261 - The FF/Latch <data_0_21> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_0_21> 
-INFO:Xst:2261 - The FF/Latch <data_0_6> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_0_6> 
+INFO:Xst:2261 - The FF/Latch <data_1_1> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_1_1> 
 INFO:Xst:2261 - The FF/Latch <data_0_17> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_0_17> 
 INFO:Xst:2261 - The FF/Latch <data_0_22> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_0_22> 
-INFO:Xst:2261 - The FF/Latch <data_1_8> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_1_8> 
 INFO:Xst:2261 - The FF/Latch <data_0_18> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_0_18> 
 INFO:Xst:2261 - The FF/Latch <data_0_23> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_0_23> 
-INFO:Xst:2261 - The FF/Latch <data_0_10> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_0_10> 
-INFO:Xst:2261 - The FF/Latch <data_0_7> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_0_7> 
+INFO:Xst:2261 - The FF/Latch <data_1_6> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_1_6> 
+INFO:Xst:2261 - The FF/Latch <data_1_2> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_1_2> 
 INFO:Xst:2261 - The FF/Latch <data_0_19> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_0_19> 
 INFO:Xst:2261 - The FF/Latch <data_0_24> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_0_24> 
-INFO:Xst:2261 - The FF/Latch <data_1_10> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_1_10> 
+INFO:Xst:2261 - The FF/Latch <data_0_5> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_0_5> 
 INFO:Xst:2261 - The FF/Latch <data_1_12> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_1_12> 
 INFO:Xst:2261 - The FF/Latch <data_0_25> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_0_25> 
 INFO:Xst:2261 - The FF/Latch <data_0_30> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_0_30> 
 INFO:Xst:2261 - The FF/Latch <data_1_13> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_1_13> 
+INFO:Xst:2261 - The FF/Latch <data_1_7> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_1_7> 
 INFO:Xst:2261 - The FF/Latch <data_0_26> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_0_26> 
 INFO:Xst:2261 - The FF/Latch <data_0_31> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_0_31> 
 INFO:Xst:2261 - The FF/Latch <data_1_14> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_1_14> 
 INFO:Xst:2261 - The FF/Latch <data_0_27> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_0_27> 
 INFO:Xst:2261 - The FF/Latch <data_1_15> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_1_15> 
 INFO:Xst:2261 - The FF/Latch <data_1_20> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_1_20> 
+INFO:Xst:2261 - The FF/Latch <data_1_8> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_1_8> 
 INFO:Xst:2261 - The FF/Latch <data_0_28> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_0_28> 
-INFO:Xst:2261 - The FF/Latch <data_1_16> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_1_16> 
+INFO:Xst:2261 - The FF/Latch <data_0_10> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_0_10> 
 INFO:Xst:2261 - The FF/Latch <data_1_21> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_1_21> 
+INFO:Xst:2261 - The FF/Latch <data_1_16> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_1_16> 
 INFO:Xst:2261 - The FF/Latch <data_0_29> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_0_29> 
-INFO:Xst:2261 - The FF/Latch <data_1_17> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_1_17> 
+INFO:Xst:2261 - The FF/Latch <data_1_10> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_1_10> 
 INFO:Xst:2261 - The FF/Latch <data_1_22> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_1_22> 
+INFO:Xst:2261 - The FF/Latch <data_1_17> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_1_17> 
 INFO:Xst:2261 - The FF/Latch <data_1_18> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_1_18> 
 INFO:Xst:2261 - The FF/Latch <data_1_23> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_1_23> 
-INFO:Xst:2261 - The FF/Latch <data_1_0> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_1_0> 
 INFO:Xst:2261 - The FF/Latch <data_1_19> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_1_19> 
 INFO:Xst:2261 - The FF/Latch <data_1_24> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_1_24> 
-INFO:Xst:2261 - The FF/Latch <data_0_3> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_0_3> 
-INFO:Xst:2261 - The FF/Latch <data_1_6> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_1_6> 
 INFO:Xst:2261 - The FF/Latch <data_1_25> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_1_25> 
 INFO:Xst:2261 - The FF/Latch <data_1_30> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_1_30> 
 INFO:Xst:2261 - The FF/Latch <data_1_26> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_1_26> 
 INFO:Xst:2261 - The FF/Latch <data_1_31> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_1_31> 
-INFO:Xst:2261 - The FF/Latch <data_0_4> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_0_4> 
-INFO:Xst:2261 - The FF/Latch <data_1_7> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_1_7> 
 INFO:Xst:2261 - The FF/Latch <data_1_27> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_1_27> 
 INFO:Xst:2261 - The FF/Latch <data_1_28> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_1_28> 
+INFO:Xst:2261 - The FF/Latch <data_1_4> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_1_4> 
+INFO:Xst:2261 - The FF/Latch <data_1_0> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_1_0> 
 INFO:Xst:2261 - The FF/Latch <data_1_29> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_1_29> 
+INFO:Xst:2261 - The FF/Latch <data_0_3> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_0_3> 
 WARNING:Xst:1426 - The value init of the FF/Latch enable hinder the constant cleaning in the block vi2c_wrapper_inst.
    You should achieve better results by setting this init to 1.
 WARNING:Xst:1710 - FF/Latch <prescaler_9> (without init value) has a constant value of 1 in block <u1>. This FF/Latch will be trimmed during the optimization process.
@@ -1457,8 +1454,8 @@ WARNING:Xst:1710 - FF/Latch <clkprescaler_reg_3> (without init value) has a cons
 WARNING:Xst:1710 - FF/Latch <clkprescaler_reg_2> (without init value) has a constant value of 0 in block <u2>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <clkprescaler_reg_1> (without init value) has a constant value of 0 in block <u2>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <clkprescaler_reg_0> (without init value) has a constant value of 0 in block <u2>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <Z_23_o_selected_iic[0]_DLATCH_3_q> (without init value) has a constant value of 0 in block <u1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <Z_23_o_selected_iic[0]_DLATCH_1_q> (without init value) has a constant value of 0 in block <u1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Z_24_o_selected_iic[0]_DLATCH_3_q> (without init value) has a constant value of 0 in block <u1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Z_24_o_selected_iic[0]_DLATCH_1_q> (without init value) has a constant value of 0 in block <u1>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <prescaler_11> (without init value) has a constant value of 0 in block <u1>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <prescaler_10> (without init value) has a constant value of 1 in block <u1>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <data_0_27> has a constant value of 0 in block <adc_switch_inst>. This FF/Latch will be trimmed during the optimization process.
@@ -1495,6 +1492,8 @@ WARNING:Xst:1293 - FF/Latch <data_0_31> has a constant value of 0 in block <adc_
 WARNING:Xst:1293 - FF/Latch <data_0_30> has a constant value of 0 in block <adc_switch_inst>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <data_0_29> has a constant value of 0 in block <adc_switch_inst>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <data_0_28> has a constant value of 0 in block <adc_switch_inst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <wbus_o_68_30> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_68_31> of sequential type is unconnected in block <registers_core_inst>.
 WARNING:Xst:2677 - Node <slaveregister_reg_7> of sequential type is unconnected in block <u2>.
 WARNING:Xst:2677 - Node <slaveaddress_reg_7> of sequential type is unconnected in block <u2>.
 WARNING:Xst:2677 - Node <addr_7> of sequential type is unconnected in block <u2>.
@@ -1605,14 +1604,14 @@ Macro Statistics
  8-bit adder                                           : 1
  8-bit subtractor                                      : 1
  9-bit subtractor                                      : 1
-# Counters                                             : 26
+# Counters                                             : 31
  12-bit down counter                                   : 1
  2-bit down counter                                    : 1
  24-bit up counter                                     : 1
  3-bit down counter                                    : 1
  3-bit up counter                                      : 1
  32-bit down counter                                   : 1
- 32-bit up counter                                     : 9
+ 32-bit up counter                                     : 14
  4-bit down counter                                    : 3
  8-bit down counter                                    : 8
 # Registers                                            : 9395
@@ -1620,10 +1619,11 @@ Macro Statistics
 # Comparators                                          : 4
  12-bit comparator equal                               : 2
  8-bit comparator equal                                : 2
-# Multiplexers                                         : 2040
+# Multiplexers                                         : 2041
  1-bit 2-to-1 multiplexer                              : 1970
  1-bit 3-to-1 multiplexer                              : 2
  1-bit 4-to-1 multiplexer                              : 1
+ 1-bit 7-to-1 multiplexer                              : 1
  12-bit 2-to-1 multiplexer                             : 25
  128-bit 2-to-1 multiplexer                            : 2
  16-bit 4-to-1 multiplexer                             : 1
@@ -1730,32 +1730,32 @@ WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <wbus_o_0_31> (witho
 WARNING:Xst:1426 - The value init of the FF/Latch enable hinder the constant cleaning in the block vi2c_wrapper.
    You should achieve better results by setting this init to 1.
 WARNING:Xst:1710 - FF/Latch <status_26> (without init value) has a constant value of 1 in block <i2c_master>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <Z_23_o_selected_iic[0]_DLATCH_1_q> (without init value) has a constant value of 0 in block <i2c_data>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Z_23_o_selected_iic[0]_DLATCH_3_q> (without init value) has a constant value of 0 in block <i2c_data>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Z_24_o_selected_iic[0]_DLATCH_1_q> (without init value) has a constant value of 0 in block <i2c_data>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Z_24_o_selected_iic[0]_DLATCH_3_q> (without init value) has a constant value of 0 in block <i2c_data>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <data_1_5> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <wbus_o_1_5> 
+INFO:Xst:2261 - The FF/Latch <data_0_8> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <wbus_o_0_8> 
+INFO:Xst:2261 - The FF/Latch <data_0_4> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <wbus_o_0_4> 
+INFO:Xst:2261 - The FF/Latch <data_0_9> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <wbus_o_0_9> 
 INFO:Xst:2261 - The FF/Latch <data_0_0> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <wbus_o_0_0> 
 INFO:Xst:2261 - The FF/Latch <data_1_3> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <wbus_o_1_3> 
 INFO:Xst:2261 - The FF/Latch <data_0_1> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <wbus_o_0_1> 
-INFO:Xst:2261 - The FF/Latch <data_1_4> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <wbus_o_1_4> 
 INFO:Xst:2261 - The FF/Latch <data_0_11> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <wbus_o_0_11> 
+INFO:Xst:2261 - The FF/Latch <data_0_6> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <wbus_o_0_6> 
 INFO:Xst:2261 - The FF/Latch <data_1_9> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <wbus_o_1_9> 
 INFO:Xst:2261 - The FF/Latch <data_0_2> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <wbus_o_0_2> 
-INFO:Xst:2261 - The FF/Latch <data_1_5> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <wbus_o_1_5> 
 INFO:Xst:2261 - The FF/Latch <data_1_11> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <wbus_o_1_11> 
-INFO:Xst:2261 - The FF/Latch <data_0_8> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <wbus_o_0_8> 
-INFO:Xst:2261 - The FF/Latch <data_0_9> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <wbus_o_0_9> 
+INFO:Xst:2261 - The FF/Latch <data_0_7> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <wbus_o_0_7> 
 INFO:Xst:2261 - The FF/Latch <data_1_1> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <wbus_o_1_1> 
+INFO:Xst:2261 - The FF/Latch <data_1_6> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <wbus_o_1_6> 
 INFO:Xst:2261 - The FF/Latch <data_1_2> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <wbus_o_1_2> 
 INFO:Xst:2261 - The FF/Latch <data_0_5> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <wbus_o_0_5> 
-INFO:Xst:2261 - The FF/Latch <data_0_6> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <wbus_o_0_6> 
+INFO:Xst:2261 - The FF/Latch <data_1_7> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <wbus_o_1_7> 
 INFO:Xst:2261 - The FF/Latch <data_1_8> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <wbus_o_1_8> 
 INFO:Xst:2261 - The FF/Latch <data_0_10> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <wbus_o_0_10> 
-INFO:Xst:2261 - The FF/Latch <data_0_7> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <wbus_o_0_7> 
 INFO:Xst:2261 - The FF/Latch <data_1_10> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <wbus_o_1_10> 
+INFO:Xst:2261 - The FF/Latch <data_1_4> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <wbus_o_1_4> 
 INFO:Xst:2261 - The FF/Latch <data_1_0> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <wbus_o_1_0> 
 INFO:Xst:2261 - The FF/Latch <data_0_3> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <wbus_o_0_3> 
-INFO:Xst:2261 - The FF/Latch <data_1_6> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <wbus_o_1_6> 
-INFO:Xst:2261 - The FF/Latch <data_0_4> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <wbus_o_0_4> 
-INFO:Xst:2261 - The FF/Latch <data_1_7> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <wbus_o_1_7> 
 Analyzing FSM <MFsm> for best encoding.
 Optimizing FSM <link_tracking_1_inst/gtp_rx_mux_inst/FSM_0> on signal <state[1:2]> with gray encoding.
 -------------------
@@ -1976,6 +1976,8 @@ Optimizing unit <tracking_decoder> ...
 Optimizing unit <tracking_concentrator> ...
 
 Optimizing unit <gtp_tx_mux> ...
+
+Optimizing unit <trigger_sbits> ...
 
 Optimizing unit <t1_delayed> ...
 
@@ -2863,38 +2865,6 @@ WARNING:Xst:2677 - Node <wbus_o_104_28> of sequential type is unconnected in blo
 WARNING:Xst:2677 - Node <wbus_o_104_29> of sequential type is unconnected in block <registers_core_inst>.
 WARNING:Xst:2677 - Node <wbus_o_104_30> of sequential type is unconnected in block <registers_core_inst>.
 WARNING:Xst:2677 - Node <wbus_o_104_31> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_100_0> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_100_1> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_100_2> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_100_3> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_100_4> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_100_5> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_100_6> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_100_7> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_100_8> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_100_9> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_100_10> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_100_11> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_100_12> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_100_13> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_100_14> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_100_15> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_100_16> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_100_17> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_100_18> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_100_19> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_100_20> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_100_21> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_100_22> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_100_23> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_100_24> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_100_25> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_100_26> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_100_27> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_100_28> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_100_29> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_100_30> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_100_31> of sequential type is unconnected in block <registers_core_inst>.
 WARNING:Xst:2677 - Node <wbus_o_102_0> of sequential type is unconnected in block <registers_core_inst>.
 WARNING:Xst:2677 - Node <wbus_o_102_1> of sequential type is unconnected in block <registers_core_inst>.
 WARNING:Xst:2677 - Node <wbus_o_102_2> of sequential type is unconnected in block <registers_core_inst>.
@@ -2991,38 +2961,6 @@ WARNING:Xst:2677 - Node <wbus_o_97_28> of sequential type is unconnected in bloc
 WARNING:Xst:2677 - Node <wbus_o_97_29> of sequential type is unconnected in block <registers_core_inst>.
 WARNING:Xst:2677 - Node <wbus_o_97_30> of sequential type is unconnected in block <registers_core_inst>.
 WARNING:Xst:2677 - Node <wbus_o_97_31> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_99_0> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_99_1> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_99_2> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_99_3> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_99_4> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_99_5> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_99_6> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_99_7> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_99_8> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_99_9> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_99_10> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_99_11> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_99_12> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_99_13> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_99_14> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_99_15> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_99_16> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_99_17> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_99_18> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_99_19> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_99_20> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_99_21> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_99_22> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_99_23> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_99_24> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_99_25> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_99_26> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_99_27> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_99_28> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_99_29> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_99_30> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_99_31> of sequential type is unconnected in block <registers_core_inst>.
 WARNING:Xst:2677 - Node <wbus_o_98_0> of sequential type is unconnected in block <registers_core_inst>.
 WARNING:Xst:2677 - Node <wbus_o_98_1> of sequential type is unconnected in block <registers_core_inst>.
 WARNING:Xst:2677 - Node <wbus_o_98_2> of sequential type is unconnected in block <registers_core_inst>.
@@ -3247,6 +3185,38 @@ WARNING:Xst:2677 - Node <wbus_o_92_28> of sequential type is unconnected in bloc
 WARNING:Xst:2677 - Node <wbus_o_92_29> of sequential type is unconnected in block <registers_core_inst>.
 WARNING:Xst:2677 - Node <wbus_o_92_30> of sequential type is unconnected in block <registers_core_inst>.
 WARNING:Xst:2677 - Node <wbus_o_92_31> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_88_0> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_88_1> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_88_2> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_88_3> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_88_4> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_88_5> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_88_6> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_88_7> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_88_8> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_88_9> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_88_10> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_88_11> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_88_12> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_88_13> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_88_14> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_88_15> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_88_16> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_88_17> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_88_18> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_88_19> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_88_20> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_88_21> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_88_22> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_88_23> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_88_24> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_88_25> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_88_26> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_88_27> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_88_28> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_88_29> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_88_30> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_88_31> of sequential type is unconnected in block <registers_core_inst>.
 WARNING:Xst:2677 - Node <wbus_o_90_0> of sequential type is unconnected in block <registers_core_inst>.
 WARNING:Xst:2677 - Node <wbus_o_90_1> of sequential type is unconnected in block <registers_core_inst>.
 WARNING:Xst:2677 - Node <wbus_o_90_2> of sequential type is unconnected in block <registers_core_inst>.
@@ -3279,6 +3249,230 @@ WARNING:Xst:2677 - Node <wbus_o_90_28> of sequential type is unconnected in bloc
 WARNING:Xst:2677 - Node <wbus_o_90_29> of sequential type is unconnected in block <registers_core_inst>.
 WARNING:Xst:2677 - Node <wbus_o_90_30> of sequential type is unconnected in block <registers_core_inst>.
 WARNING:Xst:2677 - Node <wbus_o_90_31> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_89_0> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_89_1> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_89_2> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_89_3> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_89_4> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_89_5> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_89_6> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_89_7> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_89_8> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_89_9> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_89_10> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_89_11> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_89_12> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_89_13> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_89_14> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_89_15> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_89_16> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_89_17> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_89_18> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_89_19> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_89_20> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_89_21> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_89_22> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_89_23> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_89_24> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_89_25> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_89_26> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_89_27> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_89_28> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_89_29> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_89_30> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_89_31> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_85_0> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_85_1> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_85_2> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_85_3> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_85_4> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_85_5> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_85_6> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_85_7> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_85_8> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_85_9> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_85_10> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_85_11> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_85_12> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_85_13> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_85_14> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_85_15> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_85_16> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_85_17> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_85_18> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_85_19> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_85_20> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_85_21> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_85_22> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_85_23> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_85_24> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_85_25> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_85_26> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_85_27> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_85_28> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_85_29> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_85_30> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_85_31> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_87_0> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_87_1> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_87_2> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_87_3> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_87_4> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_87_5> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_87_6> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_87_7> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_87_8> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_87_9> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_87_10> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_87_11> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_87_12> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_87_13> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_87_14> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_87_15> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_87_16> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_87_17> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_87_18> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_87_19> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_87_20> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_87_21> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_87_22> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_87_23> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_87_24> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_87_25> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_87_26> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_87_27> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_87_28> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_87_29> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_87_30> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_87_31> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_86_0> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_86_1> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_86_2> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_86_3> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_86_4> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_86_5> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_86_6> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_86_7> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_86_8> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_86_9> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_86_10> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_86_11> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_86_12> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_86_13> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_86_14> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_86_15> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_86_16> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_86_17> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_86_18> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_86_19> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_86_20> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_86_21> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_86_22> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_86_23> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_86_24> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_86_25> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_86_26> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_86_27> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_86_28> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_86_29> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_86_30> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_86_31> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_84_0> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_84_1> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_84_2> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_84_3> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_84_4> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_84_5> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_84_6> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_84_7> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_84_8> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_84_9> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_84_10> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_84_11> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_84_12> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_84_13> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_84_14> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_84_15> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_84_16> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_84_17> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_84_18> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_84_19> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_84_20> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_84_21> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_84_22> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_84_23> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_84_24> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_84_25> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_84_26> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_84_27> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_84_28> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_84_29> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_84_30> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_84_31> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_83_0> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_83_1> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_83_2> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_83_3> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_83_4> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_83_5> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_83_6> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_83_7> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_83_8> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_83_9> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_83_10> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_83_11> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_83_12> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_83_13> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_83_14> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_83_15> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_83_16> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_83_17> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_83_18> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_83_19> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_83_20> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_83_21> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_83_22> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_83_23> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_83_24> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_83_25> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_83_26> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_83_27> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_83_28> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_83_29> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_83_30> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_83_31> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_82_0> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_82_1> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_82_2> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_82_3> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_82_4> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_82_5> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_82_6> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_82_7> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_82_8> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_82_9> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_82_10> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_82_11> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_82_12> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_82_13> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_82_14> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_82_15> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_82_16> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_82_17> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_82_18> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_82_19> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_82_20> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_82_21> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_82_22> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_82_23> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_82_24> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_82_25> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_82_26> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_82_27> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_82_28> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_82_29> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_82_30> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_o_82_31> of sequential type is unconnected in block <registers_core_inst>.
 WARNING:Xst:2677 - Node <wbus_o_81_0> of sequential type is unconnected in block <registers_core_inst>.
 WARNING:Xst:2677 - Node <wbus_o_81_1> of sequential type is unconnected in block <registers_core_inst>.
 WARNING:Xst:2677 - Node <wbus_o_81_2> of sequential type is unconnected in block <registers_core_inst>.
@@ -3503,198 +3697,6 @@ WARNING:Xst:2677 - Node <wbus_o_76_28> of sequential type is unconnected in bloc
 WARNING:Xst:2677 - Node <wbus_o_76_29> of sequential type is unconnected in block <registers_core_inst>.
 WARNING:Xst:2677 - Node <wbus_o_76_30> of sequential type is unconnected in block <registers_core_inst>.
 WARNING:Xst:2677 - Node <wbus_o_76_31> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_72_0> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_72_1> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_72_2> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_72_3> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_72_4> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_72_5> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_72_6> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_72_7> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_72_8> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_72_9> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_72_10> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_72_11> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_72_12> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_72_13> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_72_14> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_72_15> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_72_16> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_72_17> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_72_18> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_72_19> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_72_20> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_72_21> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_72_22> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_72_23> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_72_24> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_72_25> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_72_26> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_72_27> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_72_28> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_72_29> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_72_30> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_72_31> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_74_0> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_74_1> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_74_2> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_74_3> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_74_4> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_74_5> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_74_6> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_74_7> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_74_8> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_74_9> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_74_10> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_74_11> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_74_12> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_74_13> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_74_14> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_74_15> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_74_16> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_74_17> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_74_18> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_74_19> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_74_20> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_74_21> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_74_22> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_74_23> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_74_24> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_74_25> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_74_26> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_74_27> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_74_28> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_74_29> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_74_30> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_74_31> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_73_0> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_73_1> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_73_2> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_73_3> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_73_4> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_73_5> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_73_6> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_73_7> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_73_8> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_73_9> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_73_10> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_73_11> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_73_12> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_73_13> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_73_14> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_73_15> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_73_16> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_73_17> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_73_18> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_73_19> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_73_20> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_73_21> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_73_22> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_73_23> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_73_24> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_73_25> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_73_26> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_73_27> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_73_28> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_73_29> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_73_30> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_73_31> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_69_0> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_69_1> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_69_2> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_69_3> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_69_4> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_69_5> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_69_6> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_69_7> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_69_8> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_69_9> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_69_10> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_69_11> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_69_12> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_69_13> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_69_14> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_69_15> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_69_16> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_69_17> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_69_18> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_69_19> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_69_20> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_69_21> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_69_22> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_69_23> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_69_24> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_69_25> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_69_26> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_69_27> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_69_28> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_69_29> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_69_30> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_69_31> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_71_0> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_71_1> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_71_2> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_71_3> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_71_4> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_71_5> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_71_6> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_71_7> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_71_8> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_71_9> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_71_10> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_71_11> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_71_12> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_71_13> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_71_14> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_71_15> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_71_16> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_71_17> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_71_18> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_71_19> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_71_20> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_71_21> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_71_22> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_71_23> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_71_24> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_71_25> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_71_26> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_71_27> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_71_28> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_71_29> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_71_30> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_71_31> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_70_0> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_70_1> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_70_2> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_70_3> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_70_4> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_70_5> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_70_6> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_70_7> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_70_8> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_70_9> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_70_10> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_70_11> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_70_12> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_70_13> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_70_14> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_70_15> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_70_16> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_70_17> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_70_18> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_70_19> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_70_20> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_70_21> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_70_22> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_70_23> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_70_24> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_70_25> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_70_26> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_70_27> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_70_28> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_70_29> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_70_30> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_70_31> of sequential type is unconnected in block <registers_core_inst>.
 WARNING:Xst:2677 - Node <wbus_o_66_0> of sequential type is unconnected in block <registers_core_inst>.
 WARNING:Xst:2677 - Node <wbus_o_66_1> of sequential type is unconnected in block <registers_core_inst>.
 WARNING:Xst:2677 - Node <wbus_o_66_2> of sequential type is unconnected in block <registers_core_inst>.
@@ -3727,36 +3729,6 @@ WARNING:Xst:2677 - Node <wbus_o_66_28> of sequential type is unconnected in bloc
 WARNING:Xst:2677 - Node <wbus_o_66_29> of sequential type is unconnected in block <registers_core_inst>.
 WARNING:Xst:2677 - Node <wbus_o_66_30> of sequential type is unconnected in block <registers_core_inst>.
 WARNING:Xst:2677 - Node <wbus_o_66_31> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_68_0> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_68_1> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_68_2> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_68_3> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_68_4> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_68_5> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_68_6> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_68_7> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_68_8> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_68_9> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_68_10> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_68_11> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_68_12> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_68_13> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_68_14> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_68_15> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_68_16> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_68_17> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_68_18> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_68_19> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_68_20> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_68_21> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_68_22> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_68_23> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_68_24> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_68_25> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_68_26> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_68_27> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_68_28> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_o_68_29> of sequential type is unconnected in block <registers_core_inst>.
 WARNING:Xst:2677 - Node <wbus_o_68_30> of sequential type is unconnected in block <registers_core_inst>.
 WARNING:Xst:2677 - Node <wbus_o_68_31> of sequential type is unconnected in block <registers_core_inst>.
 WARNING:Xst:2677 - Node <wbus_o_67_0> of sequential type is unconnected in block <registers_core_inst>.
@@ -5698,27 +5670,21 @@ WARNING:Xst:2677 - Node <wbus_t_60> of sequential type is unconnected in block <
 WARNING:Xst:2677 - Node <wbus_t_61> of sequential type is unconnected in block <registers_core_inst>.
 WARNING:Xst:2677 - Node <wbus_t_62> of sequential type is unconnected in block <registers_core_inst>.
 WARNING:Xst:2677 - Node <wbus_t_63> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_t_68> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_t_69> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_t_70> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_t_71> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_t_75> of sequential type is unconnected in block <registers_core_inst>.
 WARNING:Xst:2677 - Node <wbus_t_76> of sequential type is unconnected in block <registers_core_inst>.
 WARNING:Xst:2677 - Node <wbus_t_77> of sequential type is unconnected in block <registers_core_inst>.
 WARNING:Xst:2677 - Node <wbus_t_78> of sequential type is unconnected in block <registers_core_inst>.
 WARNING:Xst:2677 - Node <wbus_t_79> of sequential type is unconnected in block <registers_core_inst>.
 WARNING:Xst:2677 - Node <wbus_t_80> of sequential type is unconnected in block <registers_core_inst>.
 WARNING:Xst:2677 - Node <wbus_t_81> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_t_90> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_t_91> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_t_92> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_t_93> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_t_94> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_t_95> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_t_96> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_t_97> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_t_98> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_t_99> of sequential type is unconnected in block <registers_core_inst>.
-WARNING:Xst:2677 - Node <wbus_t_100> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_t_82> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_t_83> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_t_84> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_t_85> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_t_86> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_t_87> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_t_88> of sequential type is unconnected in block <registers_core_inst>.
+WARNING:Xst:2677 - Node <wbus_t_89> of sequential type is unconnected in block <registers_core_inst>.
 WARNING:Xst:2677 - Node <wbus_t_101> of sequential type is unconnected in block <registers_core_inst>.
 WARNING:Xst:2677 - Node <wbus_t_102> of sequential type is unconnected in block <registers_core_inst>.
 WARNING:Xst:2677 - Node <wbus_t_103> of sequential type is unconnected in block <registers_core_inst>.
@@ -5821,8 +5787,8 @@ Unit <u2> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 5916
- Flip-Flops                                            : 5916
+# Registers                                            : 6112
+ Flip-Flops                                            : 6112
 # Shift Registers                                      : 1
  2-bit shift register                                  : 1
 
@@ -5847,32 +5813,32 @@ Top Level Output File Name         : optohybrid_top.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 5789
-#      GND                         : 37
-#      INV                         : 149
-#      LUT1                        : 344
-#      LUT2                        : 104
-#      LUT3                        : 367
-#      LUT4                        : 413
+# BELS                             : 6437
+#      GND                         : 42
+#      INV                         : 154
+#      LUT1                        : 494
+#      LUT2                        : 107
+#      LUT3                        : 368
+#      LUT4                        : 462
 #      LUT5                        : 1941
-#      LUT6                        : 1162
-#      MUXCY                       : 406
+#      LUT6                        : 1277
+#      MUXCY                       : 561
 #      MUXCY_L                     : 103
 #      MUXF5                       : 2
 #      MUXF6                       : 1
 #      MUXF7                       : 240
 #      MUXF8                       : 2
-#      VCC                         : 29
-#      XORCY                       : 489
-# FlipFlops/Latches                : 6790
+#      VCC                         : 34
+#      XORCY                       : 649
+# FlipFlops/Latches                : 6986
 #      FD                          : 340
 #      FDC                         : 122
 #      FDCE                        : 28
-#      FDE                         : 5143
+#      FDE                         : 5179
 #      FDP                         : 147
 #      FDPE                        : 1
 #      FDR                         : 57
-#      FDRE                        : 935
+#      FDRE                        : 1095
 #      FDS                         : 12
 #      LD                          : 2
 #      LD_1                        : 2
@@ -5887,13 +5853,13 @@ Primitive and Black Box Usage:
 #      SRLC32E                     : 50
 # Clock Buffers                    : 10
 #      BUFG                        : 10
-# IO Buffers                       : 61
+# IO Buffers                       : 106
 #      BUFIO2                      : 2
-#      IBUF                        : 20
+#      IBUF                        : 68
 #      IBUFDS                      : 4
 #      IBUFG                       : 1
 #      IOBUF                       : 6
-#      OBUF                        : 23
+#      OBUF                        : 20
 #      OBUFDS                      : 3
 #      OBUFT                       : 2
 # DCMs                             : 4
@@ -5910,22 +5876,22 @@ Selected Device : 6slx150tfgg676-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:            6790  out of  184304     3%  
- Number of Slice LUTs:                 4611  out of  92152     5%  
-    Number used as Logic:              4480  out of  92152     4%  
+ Number of Slice Registers:            6986  out of  184304     3%  
+ Number of Slice LUTs:                 4934  out of  92152     5%  
+    Number used as Logic:              4803  out of  92152     5%  
     Number used as Memory:              131  out of  21680     0%  
        Number used as SRL:              131
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   8443
-   Number with an unused Flip Flop:    1653  out of   8443    19%  
-   Number with an unused LUT:          3832  out of   8443    45%  
-   Number of fully used LUT-FF pairs:  2958  out of   8443    35%  
-   Number of unique control sets:       296
+ Number of LUT Flip Flop pairs used:   8801
+   Number with an unused Flip Flop:    1815  out of   8801    20%  
+   Number with an unused LUT:          3867  out of   8801    43%  
+   Number of fully used LUT-FF pairs:  3119  out of   8801    35%  
+   Number of unique control sets:       302
 
 IO Utilization: 
  Number of IOs:                         289
- Number of bonded IOBs:                  65  out of    396    16%  
+ Number of bonded IOBs:                 110  out of    396    27%  
 
 Specific Feature Utilization:
  Number of Block RAM/FIFO:                7  out of    268     2%  
@@ -5953,7 +5919,7 @@ Clock Information:
 ----------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+-------+
 Clock Signal                                                                                                                                  | Clock buffer(FF name)                                                                                          | Load  |
 ----------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+-------+
-gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT1_OUT<0>                                                                        | DCM_SP:CLK0                                                                                                    | 3024  |
+gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT1_OUT<0>                                                                        | DCM_SP:CLK0                                                                                                    | 3220  |
 link_tracking_1_inst/vi2c_core_inst/chip_select_2                                                                                             | NONE(link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/wrbit_selected_iic[0]_DLATCH_2_q)| 4     |
 clock_control_inst/vfat2_clk_o(clock_control_inst/Mmux_vfat2_clk_o11:O)                                                                       | BUFG(*)(link_tracking_1_inst/tracking_core_inst/track_7_inst/data_0)                                           | 3422  |
 link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL                                                               | BUFG                                                                                                           | 425   |
@@ -5976,8 +5942,8 @@ Speed Grade: -3
 
    Minimum period: 8.118ns (Maximum Frequency: 123.185MHz)
    Minimum input arrival time before clock: 7.496ns
-   Maximum output required time after clock: 4.521ns
-   Maximum combinational path delay: 4.409ns
+   Maximum output required time after clock: 5.877ns
+   Maximum combinational path delay: 7.561ns
 
 Timing Details:
 ---------------
@@ -5986,7 +5952,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT1_OUT<0>'
   Clock period: 6.588ns (frequency: 151.787MHz)
-  Total number of paths / destination ports: 30605 / 5966
+  Total number of paths / destination ports: 34413 / 6518
 -------------------------------------------------------------------------
 Delay:               6.588ns (Levels of Logic = 5)
   Source:            link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/i2csda.timer_7 (FF)
@@ -5999,9 +5965,9 @@ Delay:               6.588ns (Levels of Logic = 5)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FD:C->Q               5   0.447   1.059  i2csda.timer_7 (i2csda.timer_7)
-     LUT5:I0->O            1   0.203   0.580  i2csda.timer[11]_GND_79_o_equal_62_o<11>1_SW0 (N2)
-     LUT6:I5->O           12   0.205   0.909  i2csda.timer[11]_GND_79_o_equal_62_o<11>1 (i2csda.timer[11]_GND_79_o_equal_62_o<11>1)
-     LUT3:I2->O            9   0.205   0.830  i2csda.timer[11]_GND_79_o_equal_62_o<11>2 (i2csda.timer[11]_GND_79_o_equal_62_o)
+     LUT5:I0->O            1   0.203   0.580  i2csda.timer[11]_GND_80_o_equal_62_o<11>1_SW0 (N2)
+     LUT6:I5->O           12   0.205   0.909  i2csda.timer[11]_GND_80_o_equal_62_o<11>1 (i2csda.timer[11]_GND_80_o_equal_62_o<11>1)
+     LUT3:I2->O            9   0.205   0.830  i2csda.timer[11]_GND_80_o_equal_62_o<11>2 (i2csda.timer[11]_GND_80_o_equal_62_o)
      LUT6:I5->O            2   0.205   0.617  _n0390_inv33 (_n0390_inv3)
      LUT6:I5->O            8   0.205   0.802  _n0390_inv1 (_n0390_inv)
      FDE:CE                    0.322          i2csda.byte_0
@@ -6202,47 +6168,48 @@ Offset:              4.433ns (Levels of Logic = 5)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT1_OUT<0>'
-  Total number of paths / destination ports: 8 / 8
+  Total number of paths / destination ports: 12 / 7
 -------------------------------------------------------------------------
-Offset:              4.521ns (Levels of Logic = 4)
-  Source:            global_registers_inst/registers_1_0 (FF)
-  Destination:       cdce_pri_p_o (PAD)
+Offset:              5.877ns (Levels of Logic = 5)
+  Source:            global_registers_inst/registers_1_2 (FF)
+  Destination:       fpga_test_io<4> (PAD)
   Source Clock:      gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT1_OUT<0> rising
 
-  Data Path: global_registers_inst/registers_1_0 to cdce_pri_p_o
+  Data Path: global_registers_inst/registers_1_2 to fpga_test_io<4>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRE:C->Q             2   0.447   0.721  registers_1_0 (registers_1_0)
-     end scope: 'global_registers_inst:rbus_o<1><0>'
-     begin scope: 'clock_control_inst:request_read_i<1><0>'
-     LUT2:I0->O            1   0.203   0.579  Mmux_cdce_clk_o11 (cdce_clk_o)
-     end scope: 'clock_control_inst:cdce_clk_o'
-     OBUFDS:I->O               2.571          cdce_primary_clk_obufds (cdce_pri_p_o)
+     FDRE:C->Q             4   0.447   1.048  registers_1_2 (registers_1_2)
+     end scope: 'global_registers_inst:rbus_o<1><2>'
+     begin scope: 'trigger_sbits_inst:sbit_config_i<2>'
+     LUT6:I0->O            1   0.203   0.827  Mmux_to_tdc_o18 (Mmux_to_tdc_o17)
+     LUT6:I2->O            1   0.203   0.579  Mmux_to_tdc_o113 (to_tdc_o)
+     end scope: 'trigger_sbits_inst:to_tdc_o'
+     OBUF:I->O                 2.571          fpga_test_io_4_OBUF (fpga_test_io<4>)
     ----------------------------------------
-    Total                      4.521ns (3.221ns logic, 1.300ns route)
-                                       (71.2% logic, 28.8% route)
+    Total                      5.877ns (3.424ns logic, 2.453ns route)
+                                       (58.3% logic, 41.7% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clock_control_inst/vfat2_clk_o'
-  Total number of paths / destination ports: 3 / 3
+  Total number of paths / destination ports: 2 / 2
 -------------------------------------------------------------------------
-Offset:              3.634ns (Levels of Logic = 2)
+Offset:              3.597ns (Levels of Logic = 2)
   Source:            t1_handler_inst/t1_encoder_inst/t1_o (FF)
-  Destination:       fpga_test_io<0> (PAD)
+  Destination:       vfat2_t1_p_o (PAD)
   Source Clock:      clock_control_inst/vfat2_clk_o rising
 
-  Data Path: t1_handler_inst/t1_encoder_inst/t1_o to fpga_test_io<0>
+  Data Path: t1_handler_inst/t1_encoder_inst/t1_o to vfat2_t1_p_o
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               2   0.447   0.616  t1_o (t1_o)
+     FD:C->Q               1   0.447   0.579  t1_o (t1_o)
      end scope: 't1_handler_inst/t1_encoder_inst:t1_o'
      end scope: 't1_handler_inst:t1_o'
      OBUFDS:I->O               2.571          t1_obufds (vfat2_t1_p_o)
     ----------------------------------------
-    Total                      3.634ns (3.018ns logic, 0.616ns route)
-                                       (83.0% logic, 17.0% route)
+    Total                      3.597ns (3.018ns logic, 0.579ns route)
+                                       (83.9% logic, 16.1% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL'
@@ -6265,21 +6232,26 @@ Offset:              0.447ns (Levels of Logic = 0)
 
 =========================================================================
 Timing constraint: Default path analysis
-  Total number of paths / destination ports: 1 / 1
+  Total number of paths / destination ports: 49 / 2
 -------------------------------------------------------------------------
-Delay:               4.409ns (Levels of Logic = 2)
-  Source:            cdce_pll_locked_i (PAD)
-  Destination:       leds_o<0> (PAD)
+Delay:               7.561ns (Levels of Logic = 6)
+  Source:            vfat2_data_13_i<4> (PAD)
+  Destination:       fpga_test_io<4> (PAD)
 
-  Data Path: cdce_pll_locked_i to leds_o<0>
+  Data Path: vfat2_data_13_i<4> to fpga_test_io<4>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             2   1.222   0.616  cdce_pll_locked_i_IBUF (leds_o_0_OBUF)
-     OBUF:I->O                 2.571          leds_o_0_OBUF (leds_o<0>)
+     IBUF:I->O             1   1.222   0.944  vfat2_data_13_i_4_IBUF (vfat2_data_13_i_4_IBUF)
+     begin scope: 'trigger_sbits_inst:vfat2_5_sbits<4>'
+     LUT6:I0->O            1   0.203   0.808  Mmux_to_tdc_o15 (Mmux_to_tdc_o14)
+     LUT6:I3->O            1   0.205   0.827  Mmux_to_tdc_o18 (Mmux_to_tdc_o17)
+     LUT6:I2->O            1   0.203   0.579  Mmux_to_tdc_o113 (to_tdc_o)
+     end scope: 'trigger_sbits_inst:to_tdc_o'
+     OBUF:I->O                 2.571          fpga_test_io_4_OBUF (fpga_test_io<4>)
     ----------------------------------------
-    Total                      4.409ns (3.793ns logic, 0.616ns route)
-                                       (86.0% logic, 14.0% route)
+    Total                      7.561ns (4.404ns logic, 3.157ns route)
+                                       (58.2% logic, 41.8% route)
 
 =========================================================================
 
@@ -6352,14 +6324,14 @@ gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT1_OUT<0>|    2.020
 =========================================================================
 
 
-Total REAL time to Xst completion: 47.00 secs
-Total CPU time to Xst completion: 47.13 secs
+Total REAL time to Xst completion: 50.00 secs
+Total CPU time to Xst completion: 49.75 secs
  
 --> 
 
-Total memory usage is 296216 kilobytes
+Total memory usage is 296088 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings : 4207 (   0 filtered)
-Number of infos    :  190 (   0 filtered)
+Number of warnings : 4158 (   0 filtered)
+Number of infos    :  189 (   0 filtered)
 
