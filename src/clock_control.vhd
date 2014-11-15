@@ -13,7 +13,6 @@ port(
     cdce_clk_rec_i      : in std_logic;
     
     fpga_pll_locked_i   : in std_logic;
-    ext_pll_locked_i    : in std_logic;
     rec_pll_locked_i    : in std_logic;
     cdce_pll_locked_i   : in std_logic;
     

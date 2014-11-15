@@ -4,7 +4,7 @@ use ieee.std_logic_1164.all;
 entity trigger_handler is
 port(
 
-    gtp_clk_i           : in std_logic;
+    fabric_clk_i        : in std_logic;
     reset_i             : in std_logic;
 
     req_trigger_i       : in std_logic;
@@ -21,10 +21,10 @@ end trigger_handler;
 architecture Behavioral of trigger_handler is
 begin
 
-    process(gtp_clk_i)
+    process(fabric_clk_i)
     begin
     
-        if (rising_edge(gtp_clk_i)) then
+        if (rising_edge(fabric_clk_i)) then
         
             if (reset_i = '1') then
             

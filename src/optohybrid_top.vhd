@@ -88,12 +88,6 @@ end optohybrid_top;
 
 architecture Behavioral of optohybrid_top is
     
-    -- Aliases
-    
-    signal ext_clk_i                : std_logic := '0';
-    signal ext_lv1a_i               : std_logic := '0';
-    signal rec_clk_i                : std_logic := '0';
-    
     -- Resets
     
     signal reset                    : std_logic := '0';
@@ -117,9 +111,7 @@ architecture Behavioral of optohybrid_top is
     signal vfat2_clk_fpga           : std_logic := '0';
     signal fpga_pll_locked          : std_logic := '0';
     
-    signal ext_clk                  : std_logic := '0';
     signal vfat2_clk_ext            : std_logic := '0';
-    signal ext_pll_locked           : std_logic := '0';
     
     signal rec_clk                  : std_logic := '0';
     signal cdce_clk_rec             : std_logic := '0';
@@ -200,22 +192,24 @@ begin
     reset <= '0';
     
     -- LEDS
-    leds_o <= fpga_pll_locked & ext_pll_locked & rec_pll_locked & cdce_pll_locked_i;
+    leds_o <= fpga_pll_locked & '0' & rec_pll_locked & cdce_pll_locked_i;
     
     --================================--
     -- External signals
     --================================--
    
     -- External clock
-    ext_clk_i <= fpga_test_io(1);
+    vfat2_clk_ext <= fpga_test_io(1);
     
     -- LV1A
-    ext_lv1a_i <= fpga_test_io(3);
-    
-    ext_lv1a_inst : entity work.monostable port map(fabric_clk_i => gtp_clk, en_i => ext_lv1a_i, en_o => ext_lv1a);
+    ext_lv1a_inst : entity work.monostable port map(fabric_clk_i => gtp_clk, en_i => fpga_test_io(3), en_o => ext_lv1a);
     
     -- S Bit to TDC
     fpga_test_io(4) <= ext_sbit;
+    
+    fpga_test_io(5) <= delayed_lv1a;
+    fpga_test_io(2) <= delayed_calpulse;
+    fpga_test_io(0) <= vfat2_t1;
     
     --================================--
     -- VFAT2 
@@ -242,17 +236,13 @@ begin
     -- FPGA clock
     fpga_clk_pll_inst : entity work.fpga_clk_pll port map(fpga_clk_i => fpga_clk_i, fpga_clk_o => fpga_clk, vfat2_clk_fpga_o => vfat2_clk_fpga, fpga_pll_locked_o => fpga_pll_locked);    
     
-    -- External clock
-    --ext_clk_pll_inst : entity work.ext_clk_pll port map(ext_clk_i => ext_clk_i, ext_clk_o => ext_clk, vfat2_clk_ext_o => vfat2_clk_ext, ext_pll_locked_o => ext_pll_locked);
-    vfat2_clk_ext <= ext_clk_i;
-    
     -- VFAT2 clock
     vfat2_buf_clk_inst : bufg port map(i => vfat2_clk_muxed, o => vfat2_clk);
     
     vfat2_clk_obufds : obufds port map(i => vfat2_clk_muxed, o => vfat2_mclk_p_o, ob => vfat2_mclk_n_o);
     
     -- Recovery clock
-    rec_clk_pll_inst : entity work.rec_clk_pll port map(rec_clk_i => rec_clk_i, rec_clk_o => rec_clk, cdce_clk_rec_o => cdce_clk_rec, rec_pll_locked_o => rec_pll_locked);
+    rec_clk_pll_inst : entity work.rec_clk_pll port map(rec_clk_i => rec_clk, rec_clk_o => open, cdce_clk_rec_o => cdce_clk_rec, rec_pll_locked_o => rec_pll_locked);
     
     -- CDCE clock
     cdce_primary_clk_obufds : obufds port map(i => cdce_clk_muxed, o => cdce_pri_p_o, ob => cdce_pri_n_o);
@@ -270,7 +260,6 @@ begin
         vfat2_clk_ext_i     => vfat2_clk_ext,
         cdce_clk_rec_i      => cdce_clk_rec,
         fpga_pll_locked_i   => fpga_pll_locked,
-        ext_pll_locked_i    => ext_pll_locked,
         rec_pll_locked_i    => rec_pll_locked,
         cdce_pll_locked_i   => cdce_pll_locked_i,
         vfat2_clk_o         => vfat2_clk_muxed,
@@ -291,7 +280,7 @@ begin
     gtp_wrapper_inst : entity work.gtp_wrapper
     port map(
         gtp_clk_o       => gtp_clk,
-        rec_clk_o       => rec_clk_i,
+        rec_clk_o       => rec_clk,
         reset_i         => reset,
         rx_error_o      => rx_error,
         rx_kchar_o      => rx_kchar,
@@ -344,17 +333,17 @@ begin
     
     t1_delayed_inst : entity work.t1_delayed
     port map(
-        gtp_clk_i   => gtp_clk,
-        reset_i     => reset,
-        en_i        => delayed_enable,
-        delay_i     => delayed_configuration, 
-        lv1a_o      => delayed_lv1a,
-        calpulse_o  => delayed_calpulse
+        fabric_clk_i    => gtp_clk,
+        reset_i         => reset,
+        en_i            => delayed_enable,
+        delay_i         => delayed_configuration, 
+        lv1a_o          => delayed_lv1a,
+        calpulse_o      => delayed_calpulse
     );
         
     trigger_handler_inst : entity work.trigger_handler
     port map(
-        gtp_clk_i           => gtp_clk,
+        fabric_clk_i        => gtp_clk,
         reset_i             => reset,
         req_trigger_i       => req_lv1a,
         delayed_trigger_i   => delayed_lv1a,
@@ -371,14 +360,14 @@ begin
 
     t1_handler_inst : entity work.t1_handler 
     port map(
-        gtp_clk_i   => gtp_clk,
-        vfat2_clk_i => vfat2_clk,
-        reset_i     => reset,
-        lv1a_i      => t1_lv1a,
-        calpulse_i  => t1_calpulse,
-        resync_i    => t1_resync,
-        bc0_i       => t1_bc0,
-        t1_o        => vfat2_t1  
+        fabric_clk_i    => gtp_clk,
+        vfat2_clk_i     => vfat2_clk,
+        reset_i         => reset,
+        lv1a_i          => t1_lv1a,
+        calpulse_i      => t1_calpulse,
+        resync_i        => t1_resync,
+        bc0_i           => t1_bc0,
+        t1_o            => vfat2_t1  
     );
   
     --================================--
@@ -486,6 +475,8 @@ begin
     registers_write(3 downto 2) <= request_write(21 downto 20);
     request_read(21 downto 20) <= registers_read(3 downto 2);
     
+    clk_request_read(3 downto 2) <= registers_read(3 downto 2);
+    
     -- Trigger configuration : 22
     
     registers_tri(4) <= request_tri(22); -- 22 -- read / write _ Change the trigger source
@@ -494,11 +485,20 @@ begin
     
     trigger_configuration <= registers_read(4)(1 downto 0);
     
-    -- Writable registers : 25 downto 23
+    -- Delayed LV1A and Calpulse : 23
+
+    registers_tri(5) <= request_tri(23); -- 23 -- write _ Send a delayed LV1A and Calpulse signal
+    registers_write(5) <= request_write(23);
+    request_read(23) <= registers_read(5);       
     
-    registers_tri(7 downto 5) <= request_tri(25 downto 23);
-    registers_write(7 downto 5) <= request_write(25 downto 23);
-    request_read(25 downto 23) <= registers_read(7 downto 5);
+    delayed_enable <= request_tri(23);
+    delayed_configuration <= request_write(23);
+    
+    -- Writable registers : 25 downto 24
+    
+    registers_tri(7 downto 6) <= request_tri(25 downto 24);
+    registers_write(7 downto 6) <= request_write(25 downto 24);
+    request_read(25 downto 24) <= registers_read(7 downto 6);
     
     -- Other registers : 63 downto 26
     

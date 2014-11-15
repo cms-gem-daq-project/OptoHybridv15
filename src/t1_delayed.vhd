@@ -5,7 +5,7 @@ use ieee.numeric_std.all;
 entity t1_delayed is
 port(
 
-    gtp_clk_i   : in std_logic;
+    fabric_clk_i   : in std_logic;
     reset_i     : in std_logic;
 
     en_i        : in std_logic;
@@ -20,7 +20,7 @@ end t1_delayed;
 architecture Behavioral of t1_delayed is
 begin
 
-    process(gtp_clk_i)
+    process(fabric_clk_i)
     
         variable state      : integer range 0 to 3;
         
@@ -28,7 +28,7 @@ begin
     
     begin
 
-        if (rising_edge(gtp_clk_i)) then
+        if (rising_edge(fabric_clk_i)) then
 
             if (reset_i = '1') then
 
@@ -46,9 +46,6 @@ begin
             
                     if (en_i = '1') then
                     
-                        counter(31 downto 2) := unsigned(delay_i(29 downto 0));
-                        counter(1 downto 0) := "00";
-                    
                         state := 1;
                         
                     end if;
@@ -56,6 +53,9 @@ begin
                 elsif (state = 1) then
                 
                     lv1a_o <= '1';
+                    
+                    counter(31 downto 2) := unsigned(delay_i(29 downto 0));
+                    counter(1 downto 0) := "00";
                     
                     state := 2;
                 

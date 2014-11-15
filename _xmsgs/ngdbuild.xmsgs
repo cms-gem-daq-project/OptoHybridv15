@@ -5657,16 +5657,7 @@
 <msg type="warning" file="NgdBuild" num="478" delta="old" >clock net <arg fmt="%s" index="1">rec_clk_pll_inst/rec_clk_o</arg> with clock driver <arg fmt="%s" index="2">rec_clk_pll_inst/clkout1_buf</arg> drives no clock pins
 </msg>
 
-<msg type="warning" file="NgdBuild" num="470" delta="new" ><arg fmt="%s" index="1">bidirect</arg> pad net &apos;<arg fmt="%s" index="2">fpga_test_io&lt;1&gt;</arg>&apos; has no legal driver
-</msg>
-
-<msg type="warning" file="NgdBuild" num="470" delta="old" ><arg fmt="%s" index="1">bidirect</arg> pad net &apos;<arg fmt="%s" index="2">fpga_test_io&lt;5&gt;</arg>&apos; has no legal driver
-</msg>
-
-<msg type="warning" file="NgdBuild" num="470" delta="old" ><arg fmt="%s" index="1">bidirect</arg> pad net &apos;<arg fmt="%s" index="2">fpga_test_io&lt;2&gt;</arg>&apos; has no legal driver
-</msg>
-
-<msg type="warning" file="NgdBuild" num="470" delta="old" ><arg fmt="%s" index="1">bidirect</arg> pad net &apos;<arg fmt="%s" index="2">fpga_test_io&lt;0&gt;</arg>&apos; has no legal driver
+<msg type="warning" file="NgdBuild" num="470" delta="old" ><arg fmt="%s" index="1">bidirect</arg> pad net &apos;<arg fmt="%s" index="2">fpga_test_io&lt;1&gt;</arg>&apos; has no legal driver
 </msg>
 
 </messages>

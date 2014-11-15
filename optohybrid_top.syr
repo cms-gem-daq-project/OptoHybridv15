@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.13 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.13 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> Reading design: optohybrid_top.prj
 
@@ -225,10 +225,7 @@ Parsing architecture <Behavioral> of entity <optohybrid_top>.
 =========================================================================
 
 Elaborating entity <optohybrid_top> (architecture <Behavioral>) from library <work>.
-WARNING:HDLCompiler:871 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" Line 104: Using initial value '0' for ext_sbit since it is never assigned
-WARNING:HDLCompiler:871 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" Line 122: Using initial value '0' for ext_pll_locked since it is never assigned
-WARNING:HDLCompiler:871 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" Line 154: Using initial value '0' for delayed_enable since it is never assigned
-WARNING:HDLCompiler:871 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" Line 155: Using initial value "00000000000000000000000000000000" for delayed_configuration since it is never assigned
+WARNING:HDLCompiler:871 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" Line 98: Using initial value '0' for ext_sbit since it is never assigned
 
 Elaborating entity <monostable> (architecture <Behavioral>) from library <work>.
 
@@ -310,12 +307,12 @@ Elaborating entity <adc_handler> (architecture <Behavioral>) from library <work>
 Elaborating entity <uart_rx> (architecture <Behavioral>) from library <work>.
 
 Elaborating entity <adc_switch> (architecture <Behavioral>) from library <work>.
-WARNING:HDLCompiler:634 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" Line 111: Net <vfat2_sda_o[5]> does not have a driver.
-WARNING:HDLCompiler:634 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" Line 112: Net <vfat2_sda_t[5]> does not have a driver.
-WARNING:HDLCompiler:634 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" Line 136: Net <clk_request_read[3][31]> does not have a driver.
-WARNING:HDLCompiler:634 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" Line 143: Net <tx_kchar[7]> does not have a driver.
-WARNING:HDLCompiler:634 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" Line 144: Net <tx_data[63]> does not have a driver.
-WARNING:HDLCompiler:634 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" Line 150: Net <request_read[63][31]> does not have a driver.
+WARNING:HDLCompiler:634 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" Line 105: Net <vfat2_sda_o[5]> does not have a driver.
+WARNING:HDLCompiler:634 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" Line 106: Net <vfat2_sda_t[5]> does not have a driver.
+WARNING:HDLCompiler:634 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" Line 128: Net <clk_request_read[3][31]> does not have a driver.
+WARNING:HDLCompiler:634 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" Line 135: Net <tx_kchar[7]> does not have a driver.
+WARNING:HDLCompiler:634 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" Line 136: Net <tx_data[63]> does not have a driver.
+WARNING:HDLCompiler:634 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" Line 142: Net <request_read[63][31]> does not have a driver.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -351,65 +348,65 @@ WARNING:Xst:647 - Input <vfat2_data_22_i> is never used. This port will be prese
 WARNING:Xst:647 - Input <vfat2_data_23_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <cdce_miso_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <cdce_auxout_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 255: Output port <rec_clk_o> of the instance <rec_clk_pll_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 266: Output port <request_write_o<3>> of the instance <clock_control_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 266: Output port <request_write_o<2>> of the instance <clock_control_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 313: Output port <request_write_o<63>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 313: Output port <request_write_o<62>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 313: Output port <request_write_o<61>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 313: Output port <request_write_o<60>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 313: Output port <request_write_o<59>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 313: Output port <request_write_o<58>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 313: Output port <request_write_o<57>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 313: Output port <request_write_o<56>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 313: Output port <request_write_o<55>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 313: Output port <request_write_o<54>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 313: Output port <request_write_o<53>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 313: Output port <request_write_o<52>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 313: Output port <request_write_o<51>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 313: Output port <request_write_o<50>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 313: Output port <request_write_o<49>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 313: Output port <request_write_o<48>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 313: Output port <request_write_o<47>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 313: Output port <request_write_o<46>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 313: Output port <request_write_o<45>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 313: Output port <request_write_o<44>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 313: Output port <request_write_o<43>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 313: Output port <request_write_o<42>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 313: Output port <request_write_o<41>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 313: Output port <request_write_o<40>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 313: Output port <request_write_o<39>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 313: Output port <request_write_o<38>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 313: Output port <request_write_o<37>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 313: Output port <request_write_o<36>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 313: Output port <request_write_o<35>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 313: Output port <request_write_o<34>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 313: Output port <request_write_o<33>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 313: Output port <request_write_o<32>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 313: Output port <request_write_o<31>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 313: Output port <request_write_o<30>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 313: Output port <request_write_o<29>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 313: Output port <request_write_o<28>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 313: Output port <request_write_o<27>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 313: Output port <request_write_o<26>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 313: Output port <request_write_o<17>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 313: Output port <request_write_o<16>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 313: Output port <request_write_o<15>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 313: Output port <request_write_o<14>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 313: Output port <request_write_o<13>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 313: Output port <request_write_o<12>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 313: Output port <request_write_o<11>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 313: Output port <request_write_o<10>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 313: Output port <request_write_o<9>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 313: Output port <request_write_o<8>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 313: Output port <request_write_o<7>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 313: Output port <request_write_o<6>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 313: Output port <request_write_o<5>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 313: Output port <request_write_o<4>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 313: Output port <request_write_o<3>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 313: Output port <request_write_o<2>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 313: Output port <request_write_o<1>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 313: Output port <request_write_o<0>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 245: Output port <rec_clk_o> of the instance <rec_clk_pll_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 256: Output port <request_write_o<3>> of the instance <clock_control_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 256: Output port <request_write_o<2>> of the instance <clock_control_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<63>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<62>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<61>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<60>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<59>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<58>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<57>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<56>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<55>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<54>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<53>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<52>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<51>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<50>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<49>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<48>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<47>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<46>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<45>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<44>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<43>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<42>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<41>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<40>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<39>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<38>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<37>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<36>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<35>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<34>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<33>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<32>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<31>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<30>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<29>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<28>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<27>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<26>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<17>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<16>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<15>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<14>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<13>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<12>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<11>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<10>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<9>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<8>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<7>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<6>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<5>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<4>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<3>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<2>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<1>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OH\src\optohybrid_top.vhd" line 302: Output port <request_write_o<0>> of the instance <link_tracking_1_inst> is unconnected or connected to loadless signal.
 WARNING:Xst:2935 - Signal 'vfat2_sda_o<5:4>', unconnected in block 'optohybrid_top', is tied to its initial value (00).
 WARNING:Xst:2935 - Signal 'vfat2_sda_o<1:0>', unconnected in block 'optohybrid_top', is tied to its initial value (00).
 WARNING:Xst:2935 - Signal 'vfat2_sda_t<5:4>', unconnected in block 'optohybrid_top', is tied to its initial value (00).
@@ -500,7 +497,6 @@ WARNING:Xst:647 - Input <fpga_clk_i> is never used. This port will be preserved 
 WARNING:Xst:647 - Input <vfat2_clk_ext_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <cdce_clk_rec_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <fpga_pll_locked_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <ext_pll_locked_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <rec_pll_locked_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <cdce_pll_locked_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:653 - Signal <request_write_o<3>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
@@ -655,8 +651,8 @@ Synthesizing Unit <gtp_rx_mux>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 7-bit subtractor for signal <GND_75_o_GND_75_o_sub_16_OUT<6:0>> created at line 95.
-    Found 4-bit subtractor for signal <GND_75_o_GND_75_o_sub_24_OUT<3:0>> created at line 103.
+    Found 7-bit subtractor for signal <GND_74_o_GND_74_o_sub_16_OUT<6:0>> created at line 95.
+    Found 4-bit subtractor for signal <GND_74_o_GND_74_o_sub_24_OUT<3:0>> created at line 103.
     Summary:
 	inferred   2 Adder/Subtractor(s).
 	inferred 136 D-type flip-flop(s).
@@ -687,10 +683,10 @@ Synthesizing Unit <gtp_tx_mux>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 9-bit subtractor for signal <GND_76_o_GND_76_o_sub_20_OUT> created at line 156.
-    Found 8-bit adder for signal <kchar_count[7]_GND_76_o_add_2_OUT> created at line 87.
-    Found 4-bit subtractor for signal <GND_76_o_GND_76_o_sub_53_OUT<3:0>> created at line 164.
-    Found 16-bit 4-to-1 multiplexer for signal <GND_76_o_GND_76_o_mux_72_OUT> created at line 52.
+    Found 9-bit subtractor for signal <GND_75_o_GND_75_o_sub_20_OUT> created at line 156.
+    Found 8-bit adder for signal <kchar_count[7]_GND_75_o_add_2_OUT> created at line 87.
+    Found 4-bit subtractor for signal <GND_75_o_GND_75_o_sub_53_OUT<3:0>> created at line 164.
+    Found 16-bit 4-to-1 multiplexer for signal <GND_75_o_GND_75_o_mux_72_OUT> created at line 52.
     Summary:
 	inferred   3 Adder/Subtractor(s).
 	inferred 233 D-type flip-flop(s).
@@ -760,7 +756,7 @@ Synthesizing Unit <vi2c_wrapper>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 8-bit subtractor for signal <GND_78_o_GND_78_o_sub_8_OUT<7:0>> created at line 1308.
+    Found 8-bit subtractor for signal <GND_77_o_GND_77_o_sub_8_OUT<7:0>> created at line 1308.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  64 D-type flip-flop(s).
@@ -814,11 +810,11 @@ WARNING:Xst:647 - Input <selected_iic<31:1>> is never used. This port will be pr
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 12-bit adder for signal <GND_80_o_GND_80_o_add_58_OUT> created at line 1241.
-    Found 12-bit subtractor for signal <GND_80_o_GND_80_o_sub_4_OUT<11:0>> created at line 1308.
-    Found 12-bit subtractor for signal <GND_80_o_GND_80_o_sub_15_OUT<11:0>> created at line 209.
-    Found 4-bit subtractor for signal <GND_80_o_GND_80_o_sub_80_OUT<3:0>> created at line 320.
-    Found 12-bit subtractor for signal <GND_80_o_GND_80_o_sub_93_OUT<11:0>> created at line 1308.
+    Found 12-bit adder for signal <GND_79_o_GND_79_o_add_58_OUT> created at line 1241.
+    Found 12-bit subtractor for signal <GND_79_o_GND_79_o_sub_4_OUT<11:0>> created at line 1308.
+    Found 12-bit subtractor for signal <GND_79_o_GND_79_o_sub_15_OUT<11:0>> created at line 209.
+    Found 4-bit subtractor for signal <GND_79_o_GND_79_o_sub_80_OUT<3:0>> created at line 320.
+    Found 12-bit subtractor for signal <GND_79_o_GND_79_o_sub_93_OUT<11:0>> created at line 1308.
     Found 1-bit tristate buffer for signal <scl<1>> created at line 125
     Found 1-bit tristate buffer for signal <scl<0>> created at line 125
 WARNING:Xst:737 - Found 1-bit latch for signal <Z_23_o_selected_iic[0]_DLATCH_1_q>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
@@ -830,7 +826,7 @@ WARNING:Xst:737 - Found 1-bit latch for signal <wrbit_selected_iic[0]_DLATCH_4_q
 WARNING:Xst:737 - Found 1-bit latch for signal <sda_t<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
     Found 1-bit tristate buffer for signal <sda_o<0>> created at line 32
 WARNING:Xst:737 - Found 1-bit latch for signal <sda_t<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-    Found 12-bit comparator equal for signal <i2csda.timer[11]_GND_80_o_equal_60_o> created at line 276
+    Found 12-bit comparator equal for signal <i2csda.timer[11]_GND_79_o_equal_60_o> created at line 276
     Found 12-bit comparator equal for signal <i2csda.timer[11]_i2csda.samplingtime[11]_equal_73_o> created at line 300
     WARNING:Xst:2404 -  FFs/Latches <scl<1:2>> (without init value) have a constant value of 0 in block <i2c_data>.
     Summary:
@@ -910,9 +906,9 @@ WARNING:Xst:647 - Input <completed> is never used. This port will be preserved a
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 12-bit subtractor for signal <GND_93_o_GND_93_o_sub_11_OUT<11:0>> created at line 1308.
-    Found 3-bit subtractor for signal <GND_93_o_GND_93_o_sub_76_OUT<2:0>> created at line 456.
-    Found 12-bit subtractor for signal <GND_93_o_GND_93_o_sub_104_OUT<11:0>> created at line 1308.
+    Found 12-bit subtractor for signal <GND_92_o_GND_92_o_sub_11_OUT<11:0>> created at line 1308.
+    Found 3-bit subtractor for signal <GND_92_o_GND_92_o_sub_76_OUT<2:0>> created at line 456.
+    Found 12-bit subtractor for signal <GND_92_o_GND_92_o_sub_104_OUT<11:0>> created at line 1308.
     Found 1-bit 3-to-1 multiplexer for signal <chopexecfsm[1]_X_35_o_Mux_14_o> created at line 155.
     Found 4-bit 16-to-1 multiplexer for signal <ctrlfsm[3]_PWR_52_o_wide_mux_92_OUT> created at line 285.
     Summary:
@@ -951,7 +947,7 @@ Synthesizing Unit <tracking_decoder>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 8-bit subtractor for signal <GND_126_o_GND_126_o_sub_7_OUT<7:0>> created at line 69.
+    Found 8-bit subtractor for signal <GND_125_o_GND_125_o_sub_7_OUT<7:0>> created at line 69.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred 393 D-type flip-flop(s).
@@ -965,7 +961,7 @@ Synthesizing Unit <tracking_concentrator>.
     Found 3-bit register for signal <cnt>.
     Found 192-bit register for signal <data_o>.
     Found 1-bit register for signal <en_o>.
-    Found 3-bit adder for signal <cnt[2]_GND_127_o_add_11_OUT> created at line 75.
+    Found 3-bit adder for signal <cnt[2]_GND_126_o_add_11_OUT> created at line 75.
     Found 192-bit 8-to-1 multiplexer for signal <n0045[191:0]> created at line 57.
     Summary:
 	inferred   1 Adder/Subtractor(s).
@@ -992,7 +988,7 @@ Synthesizing Unit <tracking_readout>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 2-bit subtractor for signal <GND_129_o_GND_129_o_sub_4_OUT<1:0>> created at line 74.
+    Found 2-bit subtractor for signal <GND_128_o_GND_128_o_sub_4_OUT<1:0>> created at line 74.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred 388 D-type flip-flop(s).
@@ -1176,7 +1172,7 @@ Unit <registers> synthesized.
 Synthesizing Unit <counter>.
     Related source file is "\\psf\home\Documents\PhD\Code\OH\src\counter.vhd".
     Found 32-bit register for signal <counter>.
-    Found 32-bit adder for signal <counter[31]_GND_132_o_add_0_OUT> created at line 1241.
+    Found 32-bit adder for signal <counter[31]_GND_131_o_add_0_OUT> created at line 1241.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  32 D-type flip-flop(s).
@@ -1189,29 +1185,29 @@ WARNING:Xst:647 - Input <delay_i<31:30>> is never used. This port will be preser
     Found 2-bit register for signal <state>.
     Found 32-bit register for signal <counter>.
     Found 1-bit register for signal <lv1a_o>.
-INFO:Xst:1799 - State 10 is never reached in FSM <state>.
     Found finite state machine <FSM_10> for signal <state>.
     -----------------------------------------------------------------------
-    | States             | 2                                              |
-    | Transitions        | 1                                              |
-    | Inputs             | 1                                              |
-    | Outputs            | 1                                              |
-    | Clock              | gtp_clk_i (rising_edge)                        |
-    | Reset              | counter[31]_GND_136_o_equal_6_o (positive)       |
-    | Reset type         | synchronous                                    |
-    | Reset State        | 00                                             |
+    | States             | 3                                              |
+    | Transitions        | 5                                              |
+    | Inputs             | 2                                              |
+    | Outputs            | 5                                              |
+    | Clock              | fabric_clk_i (rising_edge)                     |
     | Power Up State     | 00                                             |
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
+    Found 32-bit subtractor for signal <GND_135_o_GND_135_o_sub_6_OUT<31:0>> created at line 1308.
     Summary:
-	no macro.
+	inferred   1 Adder/Subtractor(s).
+	inferred  34 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
 Unit <t1_delayed> synthesized.
 
 Synthesizing Unit <trigger_handler>.
     Related source file is "\\psf\home\Documents\PhD\Code\OH\src\trigger_handler.vhd".
     Found 1-bit register for signal <lv1a_o>.
-    Found 1-bit 4-to-1 multiplexer for signal <GND_170_o_GND_170_o_MUX_1407_o> created at line 29.
+    Found 1-bit 4-to-1 multiplexer for signal <GND_136_o_GND_136_o_MUX_1407_o> created at line 29.
     Summary:
 	inferred   1 D-type flip-flop(s).
 	inferred   1 Multiplexer(s).
@@ -1239,7 +1235,7 @@ Synthesizing Unit <t1_encoder>.
     Found 3-bit register for signal <data>.
     Found 2-bit register for signal <data_cnt>.
     Found 1-bit register for signal <t1_o>.
-    Found 2-bit subtractor for signal <GND_173_o_GND_173_o_sub_13_OUT<1:0>> created at line 90.
+    Found 2-bit subtractor for signal <GND_139_o_GND_139_o_sub_13_OUT<1:0>> created at line 90.
     Found 1-bit 3-to-1 multiplexer for signal <data_cnt[1]_X_51_o_Mux_10_o> created at line 82.
     Summary:
 	inferred   1 Adder/Subtractor(s).
@@ -1271,8 +1267,8 @@ WARNING:Xst:653 - Signal <data_o> is used but never assigned. This sourceless si
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 24-bit adder for signal <timer[23]_GND_175_o_add_1_OUT> created at line 1241.
-    Found 3-bit subtractor for signal <GND_175_o_GND_175_o_sub_12_OUT<2:0>> created at line 92.
+    Found 24-bit adder for signal <timer[23]_GND_141_o_add_1_OUT> created at line 1241.
+    Found 3-bit subtractor for signal <GND_141_o_GND_141_o_sub_12_OUT<2:0>> created at line 92.
     Summary:
 	inferred   2 Adder/Subtractor(s).
 	inferred  28 D-type flip-flop(s).
@@ -1296,7 +1292,7 @@ HDL Synthesis Report
 Macro Statistics
 # RAMs                                                 : 1
  32x4-bit single-port Read Only RAM                    : 1
-# Adders/Subtractors                                   : 36
+# Adders/Subtractors                                   : 37
  12-bit adder                                          : 1
  12-bit subtractor                                     : 5
  2-bit subtractor                                      : 2
@@ -1304,13 +1300,14 @@ Macro Statistics
  3-bit adder                                           : 1
  3-bit subtractor                                      : 2
  32-bit adder                                          : 9
+ 32-bit subtractor                                     : 1
  4-bit subtractor                                      : 3
  7-bit subtractor                                      : 1
  8-bit adder                                           : 1
  8-bit subtractor                                      : 9
  9-bit subtractor                                      : 1
-# Registers                                            : 314
- 1-bit register                                        : 70
+# Registers                                            : 317
+ 1-bit register                                        : 72
  12-bit register                                       : 7
  128-bit register                                      : 1
  16-bit register                                       : 1
@@ -1318,7 +1315,7 @@ Macro Statistics
  2-bit register                                        : 4
  24-bit register                                       : 1
  3-bit register                                        : 5
- 32-bit register                                       : 162
+ 32-bit register                                       : 163
  4-bit register                                        : 8
  48-bit register                                       : 3
  8-bit register                                        : 32
@@ -1327,7 +1324,7 @@ Macro Statistics
 # Comparators                                          : 4
  12-bit comparator equal                               : 2
  8-bit comparator equal                                : 2
-# Multiplexers                                         : 2045
+# Multiplexers                                         : 2046
  1-bit 2-to-1 multiplexer                              : 1968
  1-bit 3-to-1 multiplexer                              : 2
  1-bit 4-to-1 multiplexer                              : 1
@@ -1338,13 +1335,13 @@ Macro Statistics
  2-bit 2-to-1 multiplexer                              : 3
  3-bit 2-to-1 multiplexer                              : 6
  32-bit 128-to-1 multiplexer                           : 1
- 32-bit 2-to-1 multiplexer                             : 4
+ 32-bit 2-to-1 multiplexer                             : 5
  4-bit 16-to-1 multiplexer                             : 1
  4-bit 2-to-1 multiplexer                              : 16
  8-bit 2-to-1 multiplexer                              : 13
 # Tristates                                            : 5
  1-bit tristate buffer                                 : 5
-# FSMs                                                 : 18
+# FSMs                                                 : 19
 # Xors                                                 : 12
  1-bit xor2                                            : 8
  8-bit xor4                                            : 2
@@ -1364,8 +1361,6 @@ Loading core <chipscope_ila> for timing and area information for instance <chips
 Loading core <chipscope_icon> for timing and area information for instance <chipscope_icon_inst>.
 Loading core <chipscope_vio> for timing and area information for instance <chipscope_vio_inst>.
 Loading core <tracking_fifo> for timing and area information for instance <tracking_buffer_fifo>.
-WARNING:Xst:1290 - Hierarchical block <t1_delayed_inst> is unconnected in block <optohybrid_top>.
-   It will be removed from the design.
 INFO:Xst:2261 - The FF/Latch <data_0_0> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_0_0> 
 INFO:Xst:2261 - The FF/Latch <data_1_3> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_1_3> 
 INFO:Xst:2261 - The FF/Latch <data_0_1> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <wbus_o_0_1> 
@@ -1560,6 +1555,10 @@ Synthesizing (advanced) Unit <i2c_data>.
 The following registers are absorbed into counter <i2csda.cnt>: 1 register on signal <i2csda.cnt>.
 Unit <i2c_data> synthesized (advanced).
 
+Synthesizing (advanced) Unit <t1_delayed>.
+The following registers are absorbed into counter <counter>: 1 register on signal <counter>.
+Unit <t1_delayed> synthesized (advanced).
+
 Synthesizing (advanced) Unit <t1_encoder>.
 The following registers are absorbed into counter <data_cnt>: 1 register on signal <data_cnt>.
 Unit <t1_encoder> synthesized (advanced).
@@ -1606,17 +1605,18 @@ Macro Statistics
  8-bit adder                                           : 1
  8-bit subtractor                                      : 1
  9-bit subtractor                                      : 1
-# Counters                                             : 25
+# Counters                                             : 26
  12-bit down counter                                   : 1
  2-bit down counter                                    : 1
  24-bit up counter                                     : 1
  3-bit down counter                                    : 1
  3-bit up counter                                      : 1
+ 32-bit down counter                                   : 1
  32-bit up counter                                     : 9
  4-bit down counter                                    : 3
  8-bit down counter                                    : 8
-# Registers                                            : 9393
- Flip-Flops                                            : 9393
+# Registers                                            : 9395
+ Flip-Flops                                            : 9395
 # Comparators                                          : 4
  12-bit comparator equal                               : 2
  8-bit comparator equal                                : 2
@@ -1635,7 +1635,7 @@ Macro Statistics
  4-bit 16-to-1 multiplexer                             : 1
  4-bit 2-to-1 multiplexer                              : 13
  8-bit 2-to-1 multiplexer                              : 12
-# FSMs                                                 : 18
+# FSMs                                                 : 19
 # Xors                                                 : 12
  1-bit xor2                                            : 8
  8-bit xor4                                            : 2
@@ -1885,6 +1885,15 @@ Optimizing FSM <link_tracking_1_inst/gtp_tx_mux_inst/FSM_1> on signal <state[1:2
  01    | 01
  10    | 11
 -------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <t1_delayed_inst/FSM_10> on signal <state[1:2]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 01    | 01
+ 10    | 10
+-------------------
 WARNING:Xst:1293 - FF/Latch <data_reg_8> has a constant value of 0 in block <vi2c_wrapper>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <data_reg_9> has a constant value of 0 in block <vi2c_wrapper>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <data_reg_10> has a constant value of 0 in block <vi2c_wrapper>. This FF/Latch will be trimmed during the optimization process.
@@ -1932,8 +1941,6 @@ Optimizing unit <registers> ...
 
 Optimizing unit <counter> ...
 
-Optimizing unit <t1_delayed> ...
-
 Optimizing unit <t1_handler> ...
 
 Optimizing unit <rec_clk_pll> ...
@@ -1943,6 +1950,8 @@ Optimizing unit <optohybrid_top> ...
 Optimizing unit <gtp_wrapper> ...
 
 Optimizing unit <adc_switch> ...
+
+Optimizing unit <monostable> ...
 
 Optimizing unit <clock_control> ...
 
@@ -1968,7 +1977,7 @@ Optimizing unit <tracking_concentrator> ...
 
 Optimizing unit <gtp_tx_mux> ...
 
-Optimizing unit <monostable> ...
+Optimizing unit <t1_delayed> ...
 
 Optimizing unit <trigger_handler> ...
 
@@ -5774,8 +5783,6 @@ WARNING:Xst:2677 - Node <error_rdack2> of sequential type is unconnected in bloc
 WARNING:Xst:2677 - Node <error_rdack3> of sequential type is unconnected in block <u2>.
 WARNING:Xst:1290 - Hierarchical block <uart_rx_inst> is unconnected in block <adc_handler_inst>.
    It will be removed from the design.
-WARNING:Xst:1290 - Hierarchical block <t1_delayed_inst> is unconnected in block <optohybrid_top>.
-   It will be removed from the design.
 WARNING:Xst:1293 - FF/Latch <data_cnt_2> has a constant value of 0 in block <gtp_rx_mux_inst>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <data_cnt_3> has a constant value of 0 in block <gtp_rx_mux_inst>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <i2cscl.timer_10> (without init value) has a constant value of 0 in block <u1>. This FF/Latch will be trimmed during the optimization process.
@@ -5814,8 +5821,8 @@ Unit <u2> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 5880
- Flip-Flops                                            : 5880
+# Registers                                            : 5916
+ Flip-Flops                                            : 5916
 # Shift Registers                                      : 1
  2-bit shift register                                  : 1
 
@@ -5840,28 +5847,28 @@ Top Level Output File Name         : optohybrid_top.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 5679
+# BELS                             : 5789
 #      GND                         : 37
-#      INV                         : 148
+#      INV                         : 149
 #      LUT1                        : 344
-#      LUT2                        : 100
-#      LUT3                        : 333
+#      LUT2                        : 104
+#      LUT3                        : 367
 #      LUT4                        : 413
-#      LUT5                        : 1940
-#      LUT6                        : 1156
-#      MUXCY                       : 375
+#      LUT5                        : 1941
+#      LUT6                        : 1162
+#      MUXCY                       : 406
 #      MUXCY_L                     : 103
 #      MUXF5                       : 2
 #      MUXF6                       : 1
 #      MUXF7                       : 240
 #      MUXF8                       : 2
-#      VCC                         : 28
-#      XORCY                       : 457
-# FlipFlops/Latches                : 6754
-#      FD                          : 336
+#      VCC                         : 29
+#      XORCY                       : 489
+# FlipFlops/Latches                : 6790
+#      FD                          : 340
 #      FDC                         : 122
 #      FDCE                        : 28
-#      FDE                         : 5111
+#      FDE                         : 5143
 #      FDP                         : 147
 #      FDPE                        : 1
 #      FDR                         : 57
@@ -5880,13 +5887,13 @@ Primitive and Black Box Usage:
 #      SRLC32E                     : 50
 # Clock Buffers                    : 10
 #      BUFG                        : 10
-# IO Buffers                       : 58
+# IO Buffers                       : 61
 #      BUFIO2                      : 2
 #      IBUF                        : 20
 #      IBUFDS                      : 4
 #      IBUFG                       : 1
 #      IOBUF                       : 6
-#      OBUF                        : 20
+#      OBUF                        : 23
 #      OBUFDS                      : 3
 #      OBUFT                       : 2
 # DCMs                             : 4
@@ -5903,22 +5910,22 @@ Selected Device : 6slx150tfgg676-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:            6754  out of  184304     3%  
- Number of Slice LUTs:                 4565  out of  92152     4%  
-    Number used as Logic:              4434  out of  92152     4%  
+ Number of Slice Registers:            6790  out of  184304     3%  
+ Number of Slice LUTs:                 4611  out of  92152     5%  
+    Number used as Logic:              4480  out of  92152     4%  
     Number used as Memory:              131  out of  21680     0%  
        Number used as SRL:              131
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   8397
-   Number with an unused Flip Flop:    1643  out of   8397    19%  
-   Number with an unused LUT:          3832  out of   8397    45%  
-   Number of fully used LUT-FF pairs:  2922  out of   8397    34%  
-   Number of unique control sets:       294
+ Number of LUT Flip Flop pairs used:   8443
+   Number with an unused Flip Flop:    1653  out of   8443    19%  
+   Number with an unused LUT:          3832  out of   8443    45%  
+   Number of fully used LUT-FF pairs:  2958  out of   8443    35%  
+   Number of unique control sets:       296
 
 IO Utilization: 
  Number of IOs:                         289
- Number of bonded IOBs:                  62  out of    396    15%  
+ Number of bonded IOBs:                  65  out of    396    16%  
 
 Specific Feature Utilization:
  Number of Block RAM/FIFO:                7  out of    268     2%  
@@ -5946,7 +5953,7 @@ Clock Information:
 ----------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+-------+
 Clock Signal                                                                                                                                  | Clock buffer(FF name)                                                                                          | Load  |
 ----------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+-------+
-gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT1_OUT<0>                                                                        | DCM_SP:CLK0                                                                                                    | 2988  |
+gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT1_OUT<0>                                                                        | DCM_SP:CLK0                                                                                                    | 3024  |
 link_tracking_1_inst/vi2c_core_inst/chip_select_2                                                                                             | NONE(link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/wrbit_selected_iic[0]_DLATCH_2_q)| 4     |
 clock_control_inst/vfat2_clk_o(clock_control_inst/Mmux_vfat2_clk_o11:O)                                                                       | BUFG(*)(link_tracking_1_inst/tracking_core_inst/track_7_inst/data_0)                                           | 3422  |
 link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL                                                               | BUFG                                                                                                           | 425   |
@@ -5979,7 +5986,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT1_OUT<0>'
   Clock period: 6.588ns (frequency: 151.787MHz)
-  Total number of paths / destination ports: 27855 / 5898
+  Total number of paths / destination ports: 30605 / 5966
 -------------------------------------------------------------------------
 Delay:               6.588ns (Levels of Logic = 5)
   Source:            link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/i2csda.timer_7 (FF)
@@ -5992,9 +5999,9 @@ Delay:               6.588ns (Levels of Logic = 5)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FD:C->Q               5   0.447   1.059  i2csda.timer_7 (i2csda.timer_7)
-     LUT5:I0->O            1   0.203   0.580  i2csda.timer[11]_GND_80_o_equal_62_o<11>1_SW0 (N2)
-     LUT6:I5->O           12   0.205   0.909  i2csda.timer[11]_GND_80_o_equal_62_o<11>1 (i2csda.timer[11]_GND_80_o_equal_62_o<11>1)
-     LUT3:I2->O            9   0.205   0.830  i2csda.timer[11]_GND_80_o_equal_62_o<11>2 (i2csda.timer[11]_GND_80_o_equal_62_o)
+     LUT5:I0->O            1   0.203   0.580  i2csda.timer[11]_GND_79_o_equal_62_o<11>1_SW0 (N2)
+     LUT6:I5->O           12   0.205   0.909  i2csda.timer[11]_GND_79_o_equal_62_o<11>1 (i2csda.timer[11]_GND_79_o_equal_62_o<11>1)
+     LUT3:I2->O            9   0.205   0.830  i2csda.timer[11]_GND_79_o_equal_62_o<11>2 (i2csda.timer[11]_GND_79_o_equal_62_o)
      LUT6:I5->O            2   0.205   0.617  _n0390_inv33 (_n0390_inv3)
      LUT6:I5->O            8   0.205   0.802  _n0390_inv1 (_n0390_inv)
      FDE:CE                    0.322          i2csda.byte_0
@@ -6195,7 +6202,7 @@ Offset:              4.433ns (Levels of Logic = 5)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT1_OUT<0>'
-  Total number of paths / destination ports: 6 / 6
+  Total number of paths / destination ports: 8 / 8
 -------------------------------------------------------------------------
 Offset:              4.521ns (Levels of Logic = 4)
   Source:            global_registers_inst/registers_1_0 (FF)
@@ -6218,24 +6225,24 @@ Offset:              4.521ns (Levels of Logic = 4)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clock_control_inst/vfat2_clk_o'
-  Total number of paths / destination ports: 2 / 2
+  Total number of paths / destination ports: 3 / 3
 -------------------------------------------------------------------------
-Offset:              3.597ns (Levels of Logic = 2)
+Offset:              3.634ns (Levels of Logic = 2)
   Source:            t1_handler_inst/t1_encoder_inst/t1_o (FF)
-  Destination:       vfat2_t1_p_o (PAD)
+  Destination:       fpga_test_io<0> (PAD)
   Source Clock:      clock_control_inst/vfat2_clk_o rising
 
-  Data Path: t1_handler_inst/t1_encoder_inst/t1_o to vfat2_t1_p_o
+  Data Path: t1_handler_inst/t1_encoder_inst/t1_o to fpga_test_io<0>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               1   0.447   0.579  t1_o (t1_o)
+     FD:C->Q               2   0.447   0.616  t1_o (t1_o)
      end scope: 't1_handler_inst/t1_encoder_inst:t1_o'
      end scope: 't1_handler_inst:t1_o'
      OBUFDS:I->O               2.571          t1_obufds (vfat2_t1_p_o)
     ----------------------------------------
-    Total                      3.597ns (3.018ns logic, 0.579ns route)
-                                       (83.9% logic, 16.1% route)
+    Total                      3.634ns (3.018ns logic, 0.616ns route)
+                                       (83.0% logic, 17.0% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'link_tracking_1_inst/chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL'
@@ -6345,14 +6352,14 @@ gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/GTPCLKOUT1_OUT<0>|    2.020
 =========================================================================
 
 
-Total REAL time to Xst completion: 48.00 secs
-Total CPU time to Xst completion: 47.91 secs
+Total REAL time to Xst completion: 47.00 secs
+Total CPU time to Xst completion: 47.13 secs
  
 --> 
 
-Total memory usage is 295256 kilobytes
+Total memory usage is 296216 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings : 4213 (   0 filtered)
-Number of infos    :  191 (   0 filtered)
+Number of warnings : 4207 (   0 filtered)
+Number of infos    :  190 (   0 filtered)
 

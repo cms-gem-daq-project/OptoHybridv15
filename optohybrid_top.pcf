@@ -1,8 +1,12 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Sat Nov 15 14:39:05 2014
+// Written by: Map P.20131013 on Sat Nov 15 15:40:56 2014
 //! **************************************************************************
 
 SCHEMATIC START;
+COMP "gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/gtpa1_dual_i"
+        LOCATE = SITE "GTPA1_DUAL_X0Y1" LEVEL 1;
+COMP "gtp_wrapper_inst/gtp_inst/tile1_s6_gtpwizard_v1_11_i/gtpa1_dual_i"
+        LOCATE = SITE "GTPA1_DUAL_X1Y1" LEVEL 1;
 COMP "enable_gtp_o" LOCATE = SITE "AA23" LEVEL 1;
 COMP "cdce_le_o" LOCATE = SITE "L10" LEVEL 1;
 COMP "cdce_pll_locked_i" LOCATE = SITE "J7" LEVEL 1;
@@ -118,9 +122,5 @@ COMP "vfat2_data_9_i<5>" LOCATE = SITE "AA25" LEVEL 1;
 COMP "vfat2_data_9_i<6>" LOCATE = SITE "AA26" LEVEL 1;
 COMP "vfat2_data_9_i<7>" LOCATE = SITE "Y26" LEVEL 1;
 COMP "vfat2_data_9_i<8>" LOCATE = SITE "W25" LEVEL 1;
-COMP "gtp_wrapper_inst/gtp_inst/tile0_s6_gtpwizard_v1_11_i/gtpa1_dual_i"
-        LOCATE = SITE "GTPA1_DUAL_X0Y1" LEVEL 1;
-COMP "gtp_wrapper_inst/gtp_inst/tile1_s6_gtpwizard_v1_11_i/gtpa1_dual_i"
-        LOCATE = SITE "GTPA1_DUAL_X1Y1" LEVEL 1;
 SCHEMATIC END;
 
