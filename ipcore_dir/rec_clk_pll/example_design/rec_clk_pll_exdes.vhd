@@ -100,9 +100,6 @@ architecture xilinx of rec_clk_pll_exdes is
   signal   clk_int    : std_logic_vector(NUM_C downto 1);
   signal   clk_n  : std_logic_vector(NUM_C downto 1);
   signal   counter    : ctrarr := (( others => (others => '0')));
-
-  -- Need to buffer input clocks that aren't already buffered
-  signal   clk_in1_buf : std_logic;
   signal rst_sync : std_logic_vector(NUM_C downto 1);
   signal rst_sync_int : std_logic_vector(NUM_C downto 1);
   signal rst_sync_int1 : std_logic_vector(NUM_C downto 1);
@@ -112,12 +109,12 @@ architecture xilinx of rec_clk_pll_exdes is
 component rec_clk_pll is
 port
  (-- Clock in ports
-  clk_i           : in     std_logic;
+  rec_clk_i           : in     std_logic;
   -- Clock out ports
-  clk_buf_o          : out    std_logic;
-  clk_nobuf_o          : out    std_logic;
+  rec_clk_o          : out    std_logic;
+  cdce_clk_rec_o          : out    std_logic;
   -- Status and control signals
-  locked_o            : out    std_logic
+  rec_pll_locked_o            : out    std_logic
  );
 end component;
 
@@ -146,24 +143,17 @@ begin
 end generate counters_1;
 
 
-  -- Insert BUFGs on all input clocks that don't already have them
-  ----------------------------------------------------------------
-  clkin1_buf : BUFG
-  port map
-   (O => clk_in1_buf,
-    I => CLK_IN1);
-
   -- Instantiation of the clocking network
   ----------------------------------------
   clknetwork : rec_clk_pll
   port map
    (-- Clock in ports
-    clk_i            => clk_in1_buf,
+    rec_clk_i            => CLK_IN1,
     -- Clock out ports
-    clk_buf_o           => clk_int(1),
-    clk_nobuf_o           => clk_int(2),
+    rec_clk_o           => clk_int(1),
+    cdce_clk_rec_o           => clk_int(2),
     -- Status and control signals
-    locked_o             => locked_int);
+    rec_pll_locked_o             => locked_int);
 
   gen_outclk_oddr: 
   for clk_out_pins in 1 to NUM_C generate 

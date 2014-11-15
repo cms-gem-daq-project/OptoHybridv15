@@ -88,13 +88,18 @@ end optohybrid_top;
 
 architecture Behavioral of optohybrid_top is
     
+    -- Aliases
+    
+    signal ext_clk_i                : std_logic := '0';
+    signal ext_lv1a_i               : std_logic := '0';
+    signal rec_clk_i                : std_logic := '0';
+    
     -- Resets
     
     signal reset                    : std_logic := '0';
     
     -- External signals through LEMOs
     
-    signal ext_clk                  : std_logic := '0';
     signal ext_lv1a                 : std_logic := '0';
     signal ext_sbit                 : std_logic := '0';
     
@@ -109,12 +114,22 @@ architecture Behavioral of optohybrid_top is
     -- Clocking
     
     signal fpga_clk                 : std_logic := '0';
-    signal vfat2_clk                : std_logic := '0';
-    signal gtp_clk                  : std_logic := '0';
-    signal rec_clk                  : std_logic := '0';
-    
+    signal vfat2_clk_fpga           : std_logic := '0';
     signal fpga_pll_locked          : std_logic := '0';
+    
+    signal ext_clk                  : std_logic := '0';
+    signal vfat2_clk_ext            : std_logic := '0';
+    signal ext_pll_locked           : std_logic := '0';
+    
+    signal rec_clk                  : std_logic := '0';
+    signal cdce_clk_rec             : std_logic := '0';
     signal rec_pll_locked           : std_logic := '0';
+    
+    signal vfat2_clk_muxed          : std_logic := '0';
+    signal cdce_clk_muxed           : std_logic := '0';
+    
+    signal gtp_clk                  : std_logic := '0';
+    signal vfat2_clk                : std_logic := '0';
     
     signal clk_request_write        : array32(3 downto 0) := (others => (others => '0'));
     signal clk_request_tri          : std_logic_vector(3 downto 0) := (others => '0');
@@ -136,15 +151,15 @@ architecture Behavioral of optohybrid_top is
     
     -- T1 signals
     
-    signal req_lv1a                 : std_logic := '0';
-    signal req_calpulse             : std_logic := '0';
-    signal req_resync               : std_logic := '0';
-    signal req_bc0                  : std_logic := '0';
-    
     signal delayed_enable           : std_logic := '0';
     signal delayed_configuration    : std_logic_vector(31 downto 0) := (others => '0');
     signal delayed_lv1a             : std_logic := '0';
     signal delayed_calpulse         : std_logic := '0';
+    
+    signal req_lv1a                 : std_logic := '0';
+    signal req_calpulse             : std_logic := '0';
+    signal req_resync               : std_logic := '0';
+    signal req_bc0                  : std_logic := '0';
     
     signal trigger_configuration    : std_logic_vector(1 downto 0) := (others => '0');
     
@@ -185,17 +200,19 @@ begin
     reset <= '0';
     
     -- LEDS
-    leds_o <= fpga_pll_locked & '0' & rec_pll_locked & cdce_pll_locked_i;
+    leds_o <= fpga_pll_locked & ext_pll_locked & rec_pll_locked & cdce_pll_locked_i;
     
     --================================--
     -- External signals
     --================================--
-    
-    -- Clock
-    ext_clk <= fpga_test_io(1);
+   
+    -- External clock
+    ext_clk_i <= fpga_test_io(1);
     
     -- LV1A
-    ext_lv1a_inst : entity work.monostable port map(fabric_clk_i => gtp_clk, en_i => fpga_test_io(3), en_o => ext_lv1a);
+    ext_lv1a_i <= fpga_test_io(3);
+    
+    ext_lv1a_inst : entity work.monostable port map(fabric_clk_i => gtp_clk, en_i => ext_lv1a_i, en_o => ext_lv1a);
     
     -- S Bit to TDC
     fpga_test_io(4) <= ext_sbit;
@@ -222,27 +239,45 @@ begin
     -- Clocking
     --================================--
     
+    -- FPGA clock
+    fpga_clk_pll_inst : entity work.fpga_clk_pll port map(fpga_clk_i => fpga_clk_i, fpga_clk_o => fpga_clk, vfat2_clk_fpga_o => vfat2_clk_fpga, fpga_pll_locked_o => fpga_pll_locked);    
+    
+    -- External clock
+    --ext_clk_pll_inst : entity work.ext_clk_pll port map(ext_clk_i => ext_clk_i, ext_clk_o => ext_clk, vfat2_clk_ext_o => vfat2_clk_ext, ext_pll_locked_o => ext_pll_locked);
+    vfat2_clk_ext <= ext_clk_i;
+    
+    -- VFAT2 clock
+    vfat2_buf_clk_inst : bufg port map(i => vfat2_clk_muxed, o => vfat2_clk);
+    
+    vfat2_clk_obufds : obufds port map(i => vfat2_clk_muxed, o => vfat2_mclk_p_o, ob => vfat2_mclk_n_o);
+    
+    -- Recovery clock
+    rec_clk_pll_inst : entity work.rec_clk_pll port map(rec_clk_i => rec_clk_i, rec_clk_o => rec_clk, cdce_clk_rec_o => cdce_clk_rec, rec_pll_locked_o => rec_pll_locked);
+    
+    -- CDCE clock
+    cdce_primary_clk_obufds : obufds port map(i => cdce_clk_muxed, o => cdce_pri_p_o, ob => cdce_pri_n_o);
+    
+    cdce_ref_o <= '1';
+    cdce_powerdown_o <= fpga_pll_locked;
+    cdce_sync_o <= '1';
+    cdce_le_o <= '1';     
+    
+    -- Clock switching
     clock_control_inst : entity work.clock_control
     port map(
-        fpga_clk_i          => fpga_clk_i,
-        fpga_clk_o          => fpga_clk,
-        fpga_pll_locked_o   => fpga_pll_locked,
-        ext_clk_i           => ext_clk,
-        vfat2_clk_o         => vfat2_clk,    
-        vfat2_mclk_p_o      => vfat2_mclk_p_o,
-        vfat2_mclk_n_o      => vfat2_mclk_n_o,
-        rec_clk_i           => rec_clk,
-        rec_pll_locked_o    => open,
-        cdce_pri_p_o        => cdce_pri_p_o,
-        cdce_pri_n_o        => cdce_pri_n_o,
+        fpga_clk_i          => fpga_clk, 
+        vfat2_clk_fpga_i    => vfat2_clk_fpga,
+        vfat2_clk_ext_i     => vfat2_clk_ext,
+        cdce_clk_rec_i      => cdce_clk_rec,
+        fpga_pll_locked_i   => fpga_pll_locked,
+        ext_pll_locked_i    => ext_pll_locked,
+        rec_pll_locked_i    => rec_pll_locked,
         cdce_pll_locked_i   => cdce_pll_locked_i,
-        cdce_ref_o          => cdce_ref_o,
-        cdce_powerdown_o    => cdce_powerdown_o,
-        cdce_sync_o         => cdce_sync_o,
-        cdce_le_o           => cdce_le_o,
+        vfat2_clk_o         => vfat2_clk_muxed,
+        cdce_clk_o          => cdce_clk_muxed,
         request_write_o     => clk_request_write,
         request_tri_o       => clk_request_tri,
-        request_read_i      => clk_request_read
+        request_read_i      => clk_request_read 
     );   
         
     --================================--
@@ -256,7 +291,7 @@ begin
     gtp_wrapper_inst : entity work.gtp_wrapper
     port map(
         gtp_clk_o       => gtp_clk,
-        rec_clk_o       => rec_clk,
+        rec_clk_o       => rec_clk_i,
         reset_i         => reset,
         rx_error_o      => rx_error,
         rx_kchar_o      => rx_kchar,
@@ -310,7 +345,7 @@ begin
     t1_delayed_inst : entity work.t1_delayed
     port map(
         gtp_clk_i   => gtp_clk,
-        reset_i     => reset_i,
+        reset_i     => reset,
         en_i        => delayed_enable,
         delay_i     => delayed_configuration, 
         lv1a_o      => delayed_lv1a,

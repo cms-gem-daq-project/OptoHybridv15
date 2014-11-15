@@ -75,12 +75,12 @@ use unisim.vcomponents.all;
 entity rec_clk_pll is
 port
  (-- Clock in ports
-  clk_i           : in     std_logic;
+  rec_clk_i           : in     std_logic;
   -- Clock out ports
-  clk_buf_o          : out    std_logic;
-  clk_nobuf_o          : out    std_logic;
+  rec_clk_o          : out    std_logic;
+  cdce_clk_rec_o          : out    std_logic;
   -- Status and control signals
-  locked_o            : out    std_logic
+  rec_pll_locked_o            : out    std_logic
  );
 end rec_clk_pll;
 
@@ -101,7 +101,10 @@ begin
 
   -- Input buffering
   --------------------------------------
-  clkin1 <= clk_i;
+  clkin1_buf : BUFG
+  port map
+   (O => clkin1,
+    I => rec_clk_i);
 
 
   -- Clocking primitive
@@ -148,7 +151,7 @@ begin
    -- Unused pin, tie low
     DSSEN                 => '0');
 
-  locked_o                <= locked_internal;
+  rec_pll_locked_o                <= locked_internal;
 
 
 
@@ -162,11 +165,11 @@ begin
 
   clkout1_buf : BUFG
   port map
-   (O   => clk_buf_o,
+   (O   => rec_clk_o,
     I   => clkfx);
 
 
 
-  clk_nobuf_o <= clkfx;
+  cdce_clk_rec_o <= clkfx;
 
 end xilinx;

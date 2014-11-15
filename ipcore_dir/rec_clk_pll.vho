@@ -68,12 +68,12 @@
 component rec_clk_pll
 port
  (-- Clock in ports
-  clk_i           : in     std_logic;
+  rec_clk_i           : in     std_logic;
   -- Clock out ports
-  clk_buf_o          : out    std_logic;
-  clk_nobuf_o          : out    std_logic;
+  rec_clk_o          : out    std_logic;
+  cdce_clk_rec_o          : out    std_logic;
   -- Status and control signals
-  locked_o            : out    std_logic
+  rec_pll_locked_o            : out    std_logic
  );
 end component;
 
@@ -84,10 +84,10 @@ end component;
 your_instance_name : rec_clk_pll
   port map
    (-- Clock in ports
-    clk_i => clk_i,
+    rec_clk_i => rec_clk_i,
     -- Clock out ports
-    clk_buf_o => clk_buf_o,
-    clk_nobuf_o => clk_nobuf_o,
+    rec_clk_o => rec_clk_o,
+    cdce_clk_rec_o => cdce_clk_rec_o,
     -- Status and control signals
-    locked_o => locked_o);
+    rec_pll_locked_o => rec_pll_locked_o);
 -- INST_TAG_END ------ End INSTANTIATION Template ------------

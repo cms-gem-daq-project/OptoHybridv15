@@ -1,7 +1,7 @@
 ##############################################################
 #
 # Xilinx Core Generator version 14.7
-# Date: Fri Nov 14 12:37:27 2014
+# Date: Sat Nov 15 13:10:48 2014
 #
 ##############################################################
 #
@@ -41,9 +41,9 @@ SELECT Clocking_Wizard xilinx.com:ip:clk_wiz:3.6
 # BEGIN Parameters
 CSET calc_done=DONE
 CSET clk_in_sel_port=CLK_IN_SEL
-CSET clk_out1_port=clk_buf_o
+CSET clk_out1_port=rec_clk_o
 CSET clk_out1_use_fine_ps_gui=false
-CSET clk_out2_port=clk_nobuf_o
+CSET clk_out2_port=cdce_clk_rec_o
 CSET clk_out2_use_fine_ps_gui=false
 CSET clk_out3_port=CLK_OUT3
 CSET clk_out3_use_fine_ps_gui=false
@@ -146,7 +146,7 @@ CSET in_jitter_units=Units_UI
 CSET input_clk_stopped_port=INPUT_CLK_STOPPED
 CSET jitter_options=UI
 CSET jitter_sel=No_Jitter
-CSET locked_port=locked_o
+CSET locked_port=rec_pll_locked_o
 CSET mmcm_bandwidth=OPTIMIZED
 CSET mmcm_clkfbout_mult_f=4.000
 CSET mmcm_clkfbout_phase=0.000
@@ -225,8 +225,8 @@ CSET pll_ref_jitter=0.010
 CSET power_down_port=POWER_DOWN
 CSET prim_in_freq=320.000
 CSET prim_in_jitter=0.010
-CSET prim_source=No_buffer
-CSET primary_port=clk_i
+CSET prim_source=Global_buffer
+CSET primary_port=rec_clk_i
 CSET primitive=MMCM
 CSET primtype_sel=PLL_BASE
 CSET psclk_port=PSCLK
@@ -266,4 +266,4 @@ CSET use_status=false
 MISC pkg_timestamp=2012-05-10T12:44:55Z
 # END Extra information
 GENERATE
-# CRC:  8e6c760
+# CRC: b357d9e8

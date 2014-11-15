@@ -55,7 +55,7 @@
 -- "Output    Output      Phase     Duty      Pk-to-Pk        Phase"
 -- "Clock    Freq (MHz) (degrees) Cycle (%) Jitter (ps)  Error (ps)"
 ------------------------------------------------------------------------------
--- CLK_OUT1____40.000______0.000______50.0______700.000____150.000
+-- CLK_OUT1____50.000______0.000______50.0______200.000____150.000
 -- CLK_OUT2____40.000______0.000______50.0______700.000____150.000
 --
 ------------------------------------------------------------------------------
@@ -75,12 +75,12 @@ use unisim.vcomponents.all;
 entity fpga_clk_pll is
 port
  (-- Clock in ports
-  clk_i           : in     std_logic;
+  fpga_clk_i           : in     std_logic;
   -- Clock out ports
-  clk_buf_o          : out    std_logic;
-  clk_nobuf_o          : out    std_logic;
+  fpga_clk_o          : out    std_logic;
+  vfat2_clk_fpga_o          : out    std_logic;
   -- Status and control signals
-  locked_o            : out    std_logic
+  fpga_pll_locked_o            : out    std_logic
  );
 end fpga_clk_pll;
 
@@ -90,6 +90,7 @@ architecture xilinx of fpga_clk_pll is
 	  -- Input clock buffering / unused connectors
   signal clkin1            : std_logic;
   -- Output clock buffering
+  signal clk_out1_internal : std_logic;
   signal clkfb             : std_logic;
   signal clk0              : std_logic;
   signal clkfx             : std_logic;
@@ -101,7 +102,10 @@ begin
 
   -- Input buffering
   --------------------------------------
-  clkin1 <= clk_i;
+  clkin1_buf : IBUFG
+  port map
+   (O => clkin1,
+    I => fpga_clk_i);
 
 
   -- Clocking primitive
@@ -148,25 +152,23 @@ begin
    -- Unused pin, tie low
     DSSEN                 => '0');
 
-  locked_o                <= locked_internal;
+  fpga_pll_locked_o                <= locked_internal;
 
 
 
   -- Output buffering
   -------------------------------------
-  clkf_buf : BUFG
-  port map
-   (O => clkfb,
-    I => clk0);
+  clkfb <= clk_out1_internal;
 
 
   clkout1_buf : BUFG
   port map
-   (O   => clk_buf_o,
-    I   => clkfx);
+   (O   => clk_out1_internal,
+    I   => clk0);
 
 
+  fpga_clk_o <= clk_out1_internal;
 
-  clk_nobuf_o <= clkfx;
+  vfat2_clk_fpga_o <= clkfx;
 
 end xilinx;
