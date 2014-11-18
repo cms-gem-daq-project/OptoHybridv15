@@ -107,7 +107,7 @@ begin
         SERDESSTROBE    => open
     );
     
-    gtp_pll_tile_0_inst : entity work.gtp_pll
+    gtp_clk_pll_tile_0_inst : entity work.gtp_clk_pll
     port map(
         clk160MHz_i => gtp_clk_div(0),
         reset_i     => gtp_pll_reset(0),
@@ -118,7 +118,7 @@ begin
     
     gtp_pll_reset(0) <= not gtp_pllkdet(0);
     
-    gtp_pll_tile_1_inst : entity work.gtp_pll
+    gtp_clk_pll_tile_1_inst : entity work.gtp_clk_pll
     port map(
         clk160MHz_i => gtp_clk_div(1),
         reset_i     => gtp_pll_reset(1),
@@ -133,7 +133,7 @@ begin
     -- GTP
     --================================--
     
-    gtp_inst : entity work.s6_gtpwizard_v1_11
+    gtp_inst : entity work.gtp
     generic map(
         WRAPPER_SIM_GTPRESET_SPEEDUP    => 0,
         WRAPPER_CLK25_DIVIDER_0         => 10,

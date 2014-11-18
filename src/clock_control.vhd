@@ -19,9 +19,13 @@ port(
     vfat2_clk_o         : out std_logic;
     cdce_clk_o          : out std_logic;
    
-    request_write_o     : out array32(3 downto 0);
-    request_tri_o       : out std_logic_vector(3 downto 0);
-    request_read_i      : in array32(3 downto 0)
+    vfat2_src_select_i  : in std_logic;
+    vfat2_fallback_i    : in std_logic;
+    vfat2_reset_src_o   : out std_logic;
+    
+    cdce_src_select_i   : in std_logic_vector(1 downto 0);
+    cdce_fallback_i     : in std_logic;
+    cdce_reset_src_o    : out std_logic
 
 );
 end clock_control;
@@ -29,9 +33,12 @@ end clock_control;
 architecture Behavioral of clock_control is
 begin 
     
-    vfat2_clk_o <= vfat2_clk_fpga_i when request_read_i(0)(0) = '0' else '0';
+    vfat2_clk_o <= vfat2_clk_fpga_i when vfat2_src_select_i = '0' else vfat2_clk_ext_i;
     
-    cdce_clk_o <= vfat2_clk_fpga_i when request_read_i(2)(0) = '0' else '0';
+    cdce_clk_o <= vfat2_clk_fpga_i when cdce_src_select_i = "00" else 
+                  vfat2_clk_ext_i when cdce_src_select_i = "01" else 
+                  cdce_clk_rec_i when cdce_src_select_i = "10" else
+                  vfat2_clk_fpga_i;
 
 end Behavioral;
 

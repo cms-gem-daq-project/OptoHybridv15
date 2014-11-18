@@ -1,0 +1,28 @@
+Command line:
+   sim_link_tracking_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  54428
+
+Tue Nov 18 13:33:16 2014
+
+
+ Elaboration Time: 0.202801 sec
+
+ Current Memory Usage: 688.615 Meg
+
+ Total Signals          : 1495
+ Total Nets             : 24125
+ Total Signal Drivers   : 606
+ Total Blocks           : 92
+ Total Primitive Blocks : 60
+ Total Processes        : 264
+ Total Traceable Variables  : 684
+ Total Scalar Nets and Variables : 25458
+
+ Total Simulation Time: 0.873605 sec
+
+ Current Memory Usage: 1003.71 Meg
+
+Tue Nov 18 13:34:08 2014
+

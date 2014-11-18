@@ -13,7 +13,8 @@ port(
     uart_en_i       : in std_logic;
     uart_data_i     : in std_logic_vector(7 downto 0);
 
-    wbus_o          : out array32(1 downto 0)
+    voltage_o       : out std_logic_vector(31 downto 0);
+    current_o       : out std_logic_vector(31 downto 0)
 
 );
 end adc_switch;
@@ -23,7 +24,9 @@ begin
 
     process(fabric_clk_i)
 
-        variable data   : array32(1 downto 0) := (others => (others => '0'));
+        variable voltage    : std_logic_vector(31 downto 0) := (others => '0');
+        
+        variable current    : std_logic_vector(31 downto 0) := (others => '0');
     
     begin
     
@@ -31,7 +34,9 @@ begin
         
             if (reset_i = '1') then
                 
-                data := (others => (others => '0'));
+                voltage := (others => '0');
+                
+                current := (others => '0');
 
             else
             
@@ -39,25 +44,27 @@ begin
                 
                     if (uart_data_i(7 downto 6) = "00") then
                     
-                        data(0)(5 downto 0) := uart_data_i(5 downto 0);
+                        voltage(5 downto 0) := uart_data_i(5 downto 0);
                         
                     elsif (uart_data_i(7 downto 6) = "01") then
                     
-                        data(0)(11 downto 6) := uart_data_i(5 downto 0);
+                        voltage(11 downto 6) := uart_data_i(5 downto 0);
                         
                     elsif (uart_data_i(7 downto 6) = "10") then
                     
-                        data(1)(5 downto 0) := uart_data_i(5 downto 0);
+                        current(5 downto 0) := uart_data_i(5 downto 0);
                         
                     elsif (uart_data_i(7 downto 6) = "11") then
                     
-                        data(1)(11 downto 6) := uart_data_i(5 downto 0);
+                        current(11 downto 6) := uart_data_i(5 downto 0);
                     
                     end if;
                 
                 end if;
     
-                wbus_o <= data;
+                voltage_o <= voltage;
+                
+                current_o <= current;
             
             end if;
         
