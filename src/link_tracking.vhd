@@ -104,17 +104,6 @@ architecture Behavioral of link_tracking is
     signal regs_rx_counter_reset    : std_logic := '0';
     signal regs_tx_counter_reset    : std_logic := '0';
 
-    -- ChipScope signals
-
-    signal tx_data                  : std_logic_vector(15 downto 0);
-
-    signal cs_icon0                 : std_logic_vector(35 downto 0);
-    signal cs_icon1                 : std_logic_vector(35 downto 0);
-    signal cs_in                    : std_logic_vector(31 downto 0);
-    signal cs_out                   : std_logic_vector(31 downto 0);
-    signal cs_ila0                  : std_logic_vector(31 downto 0);
-    signal cs_ila1                  : std_logic_vector(31 downto 0);
-
 begin
 
     --================================--
@@ -147,10 +136,8 @@ begin
         track_done_o    => track_tx_done,
         track_data_i    => track_tx_data,
         tx_kchar_o      => tx_kchar_o,
-        tx_data_o       => tx_data -- tx_data_o
+        tx_data_o       => tx_data_o
     );
-
-    tx_data_o <= tx_data;
 
     --================================--
     -- VFAT2 I2C
@@ -261,18 +248,5 @@ begin
     regs_tx_counter_reset <= request_tri(9);
 
     -- Other registers : 63 downto 18
-
-    --================================--
-    -- ChipScope
-    --================================--
-
-    chipscope_icon_inst : entity work.chipscope_icon port map (CONTROL0 => cs_icon0, CONTROL1 => cs_icon1);
-
-    chipscope_vio_inst : entity work.chipscope_vio port map (CONTROL => cs_icon0, ASYNC_IN => cs_in, ASYNC_OUT => cs_out);
-
-    chipscope_ila_inst : entity work.chipscope_ila port map (CONTROL => cs_icon1, CLK => gtp_clk_i, TRIG0 => cs_ila0, TRIG1 => cs_ila1);
-
-    cs_ila0 <= tx_data & rx_data_i;
-    cs_ila1 <= x"000000" & track_tx_done & track_tx_ready & vfat2_data_4_i & vfat2_data_3_i & vfat2_data_1_i & vfat2_data_0_i & vfat2_dvalid_i(1) & vfat2_dvalid_i(0);
-
+    
 end Behavioral;

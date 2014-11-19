@@ -23,7 +23,7 @@ begin
     
         variable state  : integer range 0 to 3 := 0;
         
-        variable timer  : unsigned(23 downto 0) := (others => '0');
+        variable timer  : unsigned(15 downto 0) := (others => '0');
         
         variable exec   : std_logic := '0';
         
@@ -96,7 +96,7 @@ begin
                     end if;
                     
                 -- End of the signal
-                elsif (state = 9) then
+                elsif (state = 2) then
                 
                     data_o <= data;
    

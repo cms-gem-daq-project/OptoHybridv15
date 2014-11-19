@@ -1,7 +1,7 @@
 Release 14.7 - par P.20131013 (nt)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Tue Nov 18 12:11:55 2014
+Wed Nov 19 13:55:29 2014
 
 All signals are completely routed.
 
@@ -11,47 +11,46 @@ WARNING:ParHelpers:362 - There are 3 sourceless signals in this design. This des
    cdce_mosi_o_OBUF
    cdce_sclk_o_OBUF
    fpga_tx_o_OBUF
-WARNING:ParHelpers:361 - There are 39 loadless signals in this design. This design will cause Bitgen to issue DRC
+WARNING:ParHelpers:361 - There are 38 loadless signals in this design. This design will cause Bitgen to issue DRC
    warnings.
 
+   adc_handler_inst/chipscope_vio_inst/U0/I_VIO/RESET
+   adc_handler_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<0>
+   adc_handler_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<10>
+   adc_handler_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<11>
+   adc_handler_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<12>
+   adc_handler_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<13>
+   adc_handler_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<14>
+   adc_handler_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<15>
+   adc_handler_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<16>
+   adc_handler_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<17>
+   adc_handler_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<18>
+   adc_handler_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<19>
+   adc_handler_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<1>
+   adc_handler_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<20>
+   adc_handler_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<21>
+   adc_handler_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<22>
+   adc_handler_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<23>
+   adc_handler_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<24>
+   adc_handler_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<25>
+   adc_handler_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<26>
+   adc_handler_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<27>
+   adc_handler_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<28>
+   adc_handler_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<29>
+   adc_handler_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<2>
+   adc_handler_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<30>
+   adc_handler_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<31>
+   adc_handler_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<3>
+   adc_handler_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<4>
+   adc_handler_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<5>
+   adc_handler_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<6>
+   adc_handler_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<7>
+   adc_handler_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<8>
+   adc_handler_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<9>
    cdce_auxout_i_IBUF
    cdce_miso_i_IBUF
-   fpga_rx_i_IBUF
    fpga_test_io<0>_IBUF
    fpga_test_io<2>_IBUF
    fpga_test_io<5>_IBUF
-   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/RESET
-   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<0>
-   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<10>
-   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<11>
-   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<12>
-   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<13>
-   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<14>
-   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<15>
-   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<16>
-   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<17>
-   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<18>
-   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<19>
-   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<1>
-   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<20>
-   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<21>
-   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<22>
-   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<23>
-   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<24>
-   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<25>
-   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<26>
-   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<27>
-   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<28>
-   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<29>
-   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<2>
-   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<30>
-   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<31>
-   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<3>
-   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<4>
-   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<5>
-   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<6>
-   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<7>
-   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<8>
-   link_tracking_1_inst/chipscope_vio_inst/U0/I_VIO/UPDATE<9>
 
 
