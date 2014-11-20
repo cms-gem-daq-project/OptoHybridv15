@@ -478,17 +478,19 @@ Unit <rec_clk_pll> synthesized.
 
 Synthesizing Unit <clock_control>.
     Related source file is "\\psf\home\Documents\PhD\Code\OptoHybrid\src\clock_control.vhd".
-WARNING:Xst:647 - Input <fpga_clk_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <fpga_pll_locked_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <rec_pll_locked_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <cdce_pll_locked_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <vfat2_fallback_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <cdce_fallback_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:653 - Signal <vfat2_reset_src_o> is used but never assigned. This sourceless signal will be automatically connected to value GND.
-WARNING:Xst:653 - Signal <cdce_reset_src_o> is used but never assigned. This sourceless signal will be automatically connected to value GND.
-    Found 1-bit 4-to-1 multiplexer for signal <cdce_clk_o> created at line 20.
+    Found 3-bit register for signal <vfat2_count>.
+    Found 1-bit register for signal <last_vfat2>.
+    Found 11-bit register for signal <cdce_count>.
+    Found 1-bit register for signal <cdce_reset_src>.
+    Found 1-bit register for signal <vfat2_reset_src>.
+    Found 3-bit adder for signal <vfat2_count[2]_GND_22_o_add_4_OUT> created at line 83.
+    Found 11-bit adder for signal <cdce_count[10]_GND_22_o_add_10_OUT> created at line 137.
     Summary:
-	inferred   2 Multiplexer(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred  17 D-type flip-flop(s).
+	inferred   7 Multiplexer(s).
 Unit <clock_control> synthesized.
 
 Synthesizing Unit <gtp_wrapper>.
@@ -774,7 +776,7 @@ Synthesizing Unit <vi2c_core>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 32x4-bit Read Only RAM for signal <_n0368>
+    Found 32x4-bit Read Only RAM for signal <_n0369>
     Found 8-bit comparator equal for signal <crc_byte[7]_crc_check[7]_equal_14_o> created at line 132
     Summary:
 	inferred   1 RAM(s).
@@ -841,7 +843,7 @@ WARNING:Xst:647 - Input <selected_iic<31:1>> is never used. This port will be pr
     Found 1-bit register for signal <i2cscl.level>.
     Found 1-bit register for signal <i2cscl.clkhasstarted>.
     Found 12-bit register for signal <i2cscl.timer>.
-    Found 1-bit register for signal <en_clk_DFF_372>.
+    Found 1-bit register for signal <en_clk_DFF_386>.
     Found 1-bit register for signal <wrbit>.
     Found 4-bit register for signal <datafsm>.
     Found 1-bit register for signal <completed>.
@@ -1323,7 +1325,7 @@ Unit <t1_delayed> synthesized.
 Synthesizing Unit <trigger_handler>.
     Related source file is "\\psf\home\Documents\PhD\Code\OptoHybrid\src\trigger_handler.vhd".
     Found 1-bit register for signal <lv1a_o>.
-    Found 1-bit 4-to-1 multiplexer for signal <GND_135_o_GND_135_o_MUX_1643_o> created at line 29.
+    Found 1-bit 4-to-1 multiplexer for signal <GND_135_o_GND_135_o_MUX_1659_o> created at line 29.
     Summary:
 	inferred   1 D-type flip-flop(s).
 	inferred   1 Multiplexer(s).
@@ -1418,12 +1420,13 @@ HDL Synthesis Report
 Macro Statistics
 # RAMs                                                 : 1
  32x4-bit single-port Read Only RAM                    : 1
-# Adders/Subtractors                                   : 42
+# Adders/Subtractors                                   : 44
+ 11-bit adder                                          : 1
  12-bit adder                                          : 1
  12-bit subtractor                                     : 5
  16-bit adder                                          : 1
  2-bit subtractor                                      : 1
- 3-bit adder                                           : 1
+ 3-bit adder                                           : 2
  3-bit subtractor                                      : 2
  32-bit adder                                          : 15
  32-bit subtractor                                     : 1
@@ -1432,15 +1435,16 @@ Macro Statistics
  8-bit adder                                           : 1
  8-bit subtractor                                      : 9
  9-bit subtractor                                      : 1
-# Registers                                            : 345
- 1-bit register                                        : 86
+# Registers                                            : 350
+ 1-bit register                                        : 89
+ 11-bit register                                       : 1
  12-bit register                                       : 7
  128-bit register                                      : 1
  16-bit register                                       : 3
  192-bit register                                      : 24
  2-bit register                                        : 4
  224-bit register                                      : 4
- 3-bit register                                        : 5
+ 3-bit register                                        : 6
  32-bit register                                       : 166
  4-bit register                                        : 5
  48-bit register                                       : 4
@@ -1451,19 +1455,20 @@ Macro Statistics
 # Comparators                                          : 4
  12-bit comparator equal                               : 2
  8-bit comparator equal                                : 2
-# Multiplexers                                         : 2058
- 1-bit 2-to-1 multiplexer                              : 1963
+# Multiplexers                                         : 2063
+ 1-bit 2-to-1 multiplexer                              : 1967
  1-bit 3-to-1 multiplexer                              : 2
- 1-bit 4-to-1 multiplexer                              : 2
+ 1-bit 4-to-1 multiplexer                              : 1
  1-bit 7-to-1 multiplexer                              : 1
  1-bit 8-to-1 multiplexer                              : 1
+ 11-bit 2-to-1 multiplexer                             : 1
  12-bit 2-to-1 multiplexer                             : 26
  128-bit 2-to-1 multiplexer                            : 2
  16-bit 2-to-1 multiplexer                             : 2
  16-bit 4-to-1 multiplexer                             : 2
  192-bit 8-to-1 multiplexer                            : 1
  2-bit 2-to-1 multiplexer                              : 2
- 3-bit 2-to-1 multiplexer                              : 7
+ 3-bit 2-to-1 multiplexer                              : 8
  32-bit 128-to-1 multiplexer                           : 1
  32-bit 2-to-1 multiplexer                             : 16
  4-bit 16-to-1 multiplexer                             : 1
@@ -1472,8 +1477,8 @@ Macro Statistics
 # Tristates                                            : 5
  1-bit tristate buffer                                 : 5
 # FSMs                                                 : 21
-# Xors                                                 : 5
- 1-bit xor2                                            : 1
+# Xors                                                 : 6
+ 1-bit xor2                                            : 2
  8-bit xor4                                            : 2
  8-bit xor6                                            : 2
 
@@ -1493,7 +1498,6 @@ Loading core <chipscope_icon> for timing and area information for instance <chip
 Loading core <chipscope_vio> for timing and area information for instance <chipscope_vio_inst>.
 Loading core <tracking_bx_fifo> for timing and area information for instance <tracking_bx_fifo_inst>.
 Loading core <tracking_data_fifo> for timing and area information for instance <tracking_data_fifo_inst>.
-INFO:Xst:2261 - The FF/Latch <current_2> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <current_o_2> 
 INFO:Xst:2261 - The FF/Latch <current_15> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <current_o_15> 
 INFO:Xst:2261 - The FF/Latch <current_20> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <current_o_20> 
 INFO:Xst:2261 - The FF/Latch <voltage_19> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <voltage_o_19> 
@@ -1502,17 +1506,17 @@ INFO:Xst:2261 - The FF/Latch <current_16> in Unit <adc_switch_inst> is equivalen
 INFO:Xst:2261 - The FF/Latch <current_21> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <current_o_21> 
 INFO:Xst:2261 - The FF/Latch <voltage_25> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <voltage_o_25> 
 INFO:Xst:2261 - The FF/Latch <voltage_30> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <voltage_o_30> 
-INFO:Xst:2261 - The FF/Latch <current_3> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <current_o_3> 
-INFO:Xst:2261 - The FF/Latch <current_22> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <current_o_22> 
 INFO:Xst:2261 - The FF/Latch <current_17> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <current_o_17> 
+INFO:Xst:2261 - The FF/Latch <current_22> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <current_o_22> 
 INFO:Xst:2261 - The FF/Latch <voltage_26> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <voltage_o_26> 
 INFO:Xst:2261 - The FF/Latch <voltage_31> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <voltage_o_31> 
-INFO:Xst:2261 - The FF/Latch <current_9> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <current_o_9> 
 INFO:Xst:2261 - The FF/Latch <current_18> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <current_o_18> 
 INFO:Xst:2261 - The FF/Latch <current_23> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <current_o_23> 
 INFO:Xst:2261 - The FF/Latch <voltage_27> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <voltage_o_27> 
+INFO:Xst:2261 - The FF/Latch <current_0> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <current_o_0> 
 INFO:Xst:2261 - The FF/Latch <current_19> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <current_o_19> 
 INFO:Xst:2261 - The FF/Latch <current_24> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <current_o_24> 
+INFO:Xst:2261 - The FF/Latch <current_6> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <current_o_6> 
 INFO:Xst:2261 - The FF/Latch <voltage_28> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <voltage_o_28> 
 INFO:Xst:2261 - The FF/Latch <current_25> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <current_o_25> 
 INFO:Xst:2261 - The FF/Latch <current_30> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <current_o_30> 
@@ -1520,43 +1524,44 @@ INFO:Xst:2261 - The FF/Latch <voltage_29> in Unit <adc_switch_inst> is equivalen
 INFO:Xst:2261 - The FF/Latch <current_26> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <current_o_26> 
 INFO:Xst:2261 - The FF/Latch <current_31> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <current_o_31> 
 INFO:Xst:2261 - The FF/Latch <current_27> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <current_o_27> 
-INFO:Xst:2261 - The FF/Latch <voltage_6> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <voltage_o_6> 
 INFO:Xst:2261 - The FF/Latch <current_28> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <current_o_28> 
-INFO:Xst:2261 - The FF/Latch <current_10> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <current_o_10> 
-INFO:Xst:2261 - The FF/Latch <current_29> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <current_o_29> 
-INFO:Xst:2261 - The FF/Latch <voltage_7> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <voltage_o_7> 
-INFO:Xst:2261 - The FF/Latch <current_6> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <current_o_6> 
-INFO:Xst:2261 - The FF/Latch <current_7> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <current_o_7> 
 INFO:Xst:2261 - The FF/Latch <voltage_3> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <voltage_o_3> 
-INFO:Xst:2261 - The FF/Latch <current_8> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <current_o_8> 
+INFO:Xst:2261 - The FF/Latch <current_29> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <current_o_29> 
 INFO:Xst:2261 - The FF/Latch <current_11> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <current_o_11> 
+INFO:Xst:2261 - The FF/Latch <voltage_8> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <voltage_o_8> 
 INFO:Xst:2261 - The FF/Latch <voltage_4> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <voltage_o_4> 
 INFO:Xst:2261 - The FF/Latch <voltage_9> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <voltage_o_9> 
-INFO:Xst:2261 - The FF/Latch <voltage_5> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <voltage_o_5> 
 INFO:Xst:2261 - The FF/Latch <voltage_11> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <voltage_o_11> 
 INFO:Xst:2261 - The FF/Latch <current_4> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <current_o_4> 
-INFO:Xst:2261 - The FF/Latch <current_0> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <current_o_0> 
+INFO:Xst:2261 - The FF/Latch <current_9> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <current_o_9> 
 INFO:Xst:2261 - The FF/Latch <voltage_0> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <voltage_o_0> 
 INFO:Xst:2261 - The FF/Latch <current_5> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <current_o_5> 
 INFO:Xst:2261 - The FF/Latch <voltage_1> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <voltage_o_1> 
+INFO:Xst:2261 - The FF/Latch <voltage_6> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <voltage_o_6> 
 INFO:Xst:2261 - The FF/Latch <voltage_2> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <voltage_o_2> 
+INFO:Xst:2261 - The FF/Latch <current_10> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <current_o_10> 
+INFO:Xst:2261 - The FF/Latch <voltage_7> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <voltage_o_7> 
+INFO:Xst:2261 - The FF/Latch <current_1> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <current_o_1> 
+INFO:Xst:2261 - The FF/Latch <voltage_10> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <voltage_o_10> 
+INFO:Xst:2261 - The FF/Latch <current_2> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <current_o_2> 
+INFO:Xst:2261 - The FF/Latch <current_7> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <current_o_7> 
+INFO:Xst:2261 - The FF/Latch <current_3> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <current_o_3> 
 INFO:Xst:2261 - The FF/Latch <voltage_12> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <voltage_o_12> 
-INFO:Xst:2261 - The FF/Latch <voltage_8> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <voltage_o_8> 
 INFO:Xst:2261 - The FF/Latch <voltage_13> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <voltage_o_13> 
+INFO:Xst:2261 - The FF/Latch <current_8> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <current_o_8> 
 INFO:Xst:2261 - The FF/Latch <voltage_14> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <voltage_o_14> 
 INFO:Xst:2261 - The FF/Latch <voltage_15> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <voltage_o_15> 
 INFO:Xst:2261 - The FF/Latch <voltage_20> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <voltage_o_20> 
 INFO:Xst:2261 - The FF/Latch <current_12> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <current_o_12> 
-INFO:Xst:2261 - The FF/Latch <current_1> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <current_o_1> 
-INFO:Xst:2261 - The FF/Latch <voltage_21> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <voltage_o_21> 
 INFO:Xst:2261 - The FF/Latch <voltage_16> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <voltage_o_16> 
+INFO:Xst:2261 - The FF/Latch <voltage_21> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <voltage_o_21> 
 INFO:Xst:2261 - The FF/Latch <current_13> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <current_o_13> 
 INFO:Xst:2261 - The FF/Latch <voltage_17> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <voltage_o_17> 
 INFO:Xst:2261 - The FF/Latch <voltage_22> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <voltage_o_22> 
-INFO:Xst:2261 - The FF/Latch <voltage_10> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <voltage_o_10> 
 INFO:Xst:2261 - The FF/Latch <current_14> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <current_o_14> 
-INFO:Xst:2261 - The FF/Latch <voltage_18> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <voltage_o_18> 
+INFO:Xst:2261 - The FF/Latch <voltage_5> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <voltage_o_5> 
 INFO:Xst:2261 - The FF/Latch <voltage_23> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <voltage_o_23> 
+INFO:Xst:2261 - The FF/Latch <voltage_18> in Unit <adc_switch_inst> is equivalent to the following FF/Latch, which will be removed : <voltage_o_18> 
 INFO:Xst:2261 - The FF/Latch <data_6> in Unit <link_trigger_inst> is equivalent to the following 9 FFs/Latches, which will be removed : <data_7> <data_8> <data_9> <data_10> <data_11> <data_12> <data_13> <data_14> <data_15> 
 INFO:Xst:2261 - The FF/Latch <reg_10> in Unit <trigger_configuration_reg> is equivalent to the following FF/Latch, which will be removed : <rbus_o_10> 
 INFO:Xst:2261 - The FF/Latch <reg_11> in Unit <trigger_configuration_reg> is equivalent to the following FF/Latch, which will be removed : <rbus_o_11> 
@@ -1865,6 +1870,11 @@ WARNING:Xst:2677 - Node <data_reg_29> of sequential type is unconnected in block
 WARNING:Xst:2677 - Node <data_reg_30> of sequential type is unconnected in block <vi2c_wrapper_inst>.
 WARNING:Xst:2677 - Node <data_reg_31> of sequential type is unconnected in block <vi2c_wrapper_inst>.
 
+Synthesizing (advanced) Unit <clock_control>.
+The following registers are absorbed into counter <vfat2_count>: 1 register on signal <vfat2_count>.
+The following registers are absorbed into counter <cdce_count>: 1 register on signal <cdce_count>.
+Unit <clock_control> synthesized (advanced).
+
 Synthesizing (advanced) Unit <counter>.
 The following registers are absorbed into counter <counter>: 1 register on signal <counter>.
 Unit <counter> synthesized (advanced).
@@ -1906,7 +1916,7 @@ The following registers are absorbed into counter <cnt>: 1 register on signal <c
 Unit <uart_rx> synthesized (advanced).
 
 Synthesizing (advanced) Unit <vi2c_core>.
-INFO:Xst:3231 - The small RAM <Mram__n0368> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+INFO:Xst:3231 - The small RAM <Mram__n0369> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
@@ -1934,24 +1944,25 @@ Macro Statistics
  8-bit adder                                           : 1
  8-bit subtractor                                      : 1
  9-bit subtractor                                      : 1
-# Counters                                             : 31
+# Counters                                             : 33
+ 11-bit up counter                                     : 1
  12-bit down counter                                   : 1
  2-bit down counter                                    : 1
  3-bit down counter                                    : 1
- 3-bit up counter                                      : 1
+ 3-bit up counter                                      : 2
  32-bit down counter                                   : 1
  32-bit up counter                                     : 15
  4-bit down counter                                    : 3
  8-bit down counter                                    : 8
-# Registers                                            : 11075
- Flip-Flops                                            : 11075
+# Registers                                            : 11078
+ Flip-Flops                                            : 11078
 # Comparators                                          : 4
  12-bit comparator equal                               : 2
  8-bit comparator equal                                : 2
-# Multiplexers                                         : 2056
- 1-bit 2-to-1 multiplexer                              : 1969
+# Multiplexers                                         : 2059
+ 1-bit 2-to-1 multiplexer                              : 1973
  1-bit 3-to-1 multiplexer                              : 2
- 1-bit 4-to-1 multiplexer                              : 2
+ 1-bit 4-to-1 multiplexer                              : 1
  1-bit 7-to-1 multiplexer                              : 1
  1-bit 8-to-1 multiplexer                              : 1
  12-bit 2-to-1 multiplexer                             : 25
@@ -1967,8 +1978,8 @@ Macro Statistics
  4-bit 2-to-1 multiplexer                              : 13
  8-bit 2-to-1 multiplexer                              : 12
 # FSMs                                                 : 21
-# Xors                                                 : 5
- 1-bit xor2                                            : 1
+# Xors                                                 : 6
+ 1-bit xor2                                            : 2
  8-bit xor4                                            : 2
  8-bit xor6                                            : 2
 
@@ -2073,30 +2084,30 @@ WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <data_13> has a cons
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <data_14> has a constant value of 0 in block <link_trigger>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <data_15> has a constant value of 0 in block <link_trigger>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tx_kchar_o_1> (without init value) has a constant value of 0 in block <link_trigger>. This FF/Latch will be trimmed during the optimization process.
-INFO:Xst:2261 - The FF/Latch <current_2> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <current_o_2> 
-INFO:Xst:2261 - The FF/Latch <current_3> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <current_o_3> 
-INFO:Xst:2261 - The FF/Latch <current_9> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <current_o_9> 
-INFO:Xst:2261 - The FF/Latch <voltage_6> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <voltage_o_6> 
-INFO:Xst:2261 - The FF/Latch <current_10> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <current_o_10> 
-INFO:Xst:2261 - The FF/Latch <voltage_7> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <voltage_o_7> 
+INFO:Xst:2261 - The FF/Latch <current_0> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <current_o_0> 
 INFO:Xst:2261 - The FF/Latch <current_6> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <current_o_6> 
-INFO:Xst:2261 - The FF/Latch <current_7> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <current_o_7> 
 INFO:Xst:2261 - The FF/Latch <voltage_3> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <voltage_o_3> 
-INFO:Xst:2261 - The FF/Latch <current_8> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <current_o_8> 
 INFO:Xst:2261 - The FF/Latch <current_11> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <current_o_11> 
+INFO:Xst:2261 - The FF/Latch <voltage_8> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <voltage_o_8> 
 INFO:Xst:2261 - The FF/Latch <voltage_4> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <voltage_o_4> 
 INFO:Xst:2261 - The FF/Latch <voltage_9> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <voltage_o_9> 
-INFO:Xst:2261 - The FF/Latch <voltage_5> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <voltage_o_5> 
 INFO:Xst:2261 - The FF/Latch <voltage_11> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <voltage_o_11> 
 INFO:Xst:2261 - The FF/Latch <current_4> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <current_o_4> 
-INFO:Xst:2261 - The FF/Latch <current_0> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <current_o_0> 
+INFO:Xst:2261 - The FF/Latch <current_9> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <current_o_9> 
 INFO:Xst:2261 - The FF/Latch <voltage_0> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <voltage_o_0> 
 INFO:Xst:2261 - The FF/Latch <current_5> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <current_o_5> 
 INFO:Xst:2261 - The FF/Latch <voltage_1> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <voltage_o_1> 
+INFO:Xst:2261 - The FF/Latch <voltage_6> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <voltage_o_6> 
 INFO:Xst:2261 - The FF/Latch <voltage_2> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <voltage_o_2> 
-INFO:Xst:2261 - The FF/Latch <voltage_8> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <voltage_o_8> 
+INFO:Xst:2261 - The FF/Latch <current_10> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <current_o_10> 
+INFO:Xst:2261 - The FF/Latch <voltage_7> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <voltage_o_7> 
 INFO:Xst:2261 - The FF/Latch <current_1> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <current_o_1> 
 INFO:Xst:2261 - The FF/Latch <voltage_10> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <voltage_o_10> 
+INFO:Xst:2261 - The FF/Latch <current_2> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <current_o_2> 
+INFO:Xst:2261 - The FF/Latch <current_7> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <current_o_7> 
+INFO:Xst:2261 - The FF/Latch <current_3> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <current_o_3> 
+INFO:Xst:2261 - The FF/Latch <current_8> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <current_o_8> 
+INFO:Xst:2261 - The FF/Latch <voltage_5> in Unit <adc_switch> is equivalent to the following FF/Latch, which will be removed : <voltage_o_5> 
 INFO:Xst:2261 - The FF/Latch <reg_10> in Unit <reg> is equivalent to the following FF/Latch, which will be removed : <rbus_o_10> 
 INFO:Xst:2261 - The FF/Latch <reg_11> in Unit <reg> is equivalent to the following FF/Latch, which will be removed : <rbus_o_11> 
 INFO:Xst:2261 - The FF/Latch <reg_12> in Unit <reg> is equivalent to the following FF/Latch, which will be removed : <rbus_o_12> 
@@ -6557,8 +6568,8 @@ Unit <u2> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 7280
- Flip-Flops                                            : 7280
+# Registers                                            : 7297
+ Flip-Flops                                            : 7297
 # Shift Registers                                      : 1
  2-bit shift register                                  : 1
 
@@ -6583,31 +6594,31 @@ Top Level Output File Name         : optohybrid_top.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 6918
-#      GND                         : 49
+# BELS                             : 6960
+#      GND                         : 50
 #      INV                         : 159
 #      LUT1                        : 538
-#      LUT2                        : 193
-#      LUT3                        : 603
-#      LUT4                        : 492
+#      LUT2                        : 195
+#      LUT3                        : 551
+#      LUT4                        : 558
 #      LUT5                        : 417
-#      LUT6                        : 2776
-#      MUXCY                       : 606
+#      LUT6                        : 2780
+#      MUXCY                       : 616
 #      MUXCY_L                     : 103
 #      MUXF5                       : 2
 #      MUXF6                       : 1
 #      MUXF7                       : 245
 #      MUXF8                       : 2
 #      VCC                         : 36
-#      XORCY                       : 696
-# FlipFlops/Latches                : 8314
-#      FD                          : 610
+#      XORCY                       : 707
+# FlipFlops/Latches                : 8331
+#      FD                          : 611
 #      FDC                         : 205
 #      FDCE                        : 82
 #      FDE                         : 6562
 #      FDP                         : 159
 #      FDPE                        : 6
-#      FDR                         : 61
+#      FDR                         : 77
 #      FDRE                        : 612
 #      FDS                         : 12
 #      LD                          : 2
@@ -6646,18 +6657,18 @@ Selected Device : 6slx150tfgg676-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:            8314  out of  184304     4%  
- Number of Slice LUTs:                 5309  out of  92152     5%  
-    Number used as Logic:              5178  out of  92152     5%  
+ Number of Slice Registers:            8331  out of  184304     4%  
+ Number of Slice LUTs:                 5329  out of  92152     5%  
+    Number used as Logic:              5198  out of  92152     5%  
     Number used as Memory:              131  out of  21680     0%  
        Number used as SRL:              131
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:  10088
-   Number with an unused Flip Flop:    1774  out of  10088    17%  
-   Number with an unused LUT:          4779  out of  10088    47%  
-   Number of fully used LUT-FF pairs:  3535  out of  10088    35%  
-   Number of unique control sets:       307
+ Number of LUT Flip Flop pairs used:  10109
+   Number with an unused Flip Flop:    1778  out of  10109    17%  
+   Number with an unused LUT:          4780  out of  10109    47%  
+   Number of fully used LUT-FF pairs:  3551  out of  10109    35%  
+   Number of unique control sets:       310
 
 IO Utilization: 
  Number of IOs:                         289
@@ -6690,6 +6701,7 @@ Clock Information:
 Clock Signal                                                                                        | Clock buffer(FF name)                                                                                          | Load  |
 ----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+-------+
 gtp_wrapper_inst/gtp_inst/tile0_gtp_i/GTPCLKOUT1_OUT<0>                                             | DCM_SP:CLK0                                                                                                    | 2898  |
+fpga_clk_i                                                                                          | DCM_SP:CLK0                                                                                                    | 17    |
 clock_control_inst/vfat2_clk_o(clock_control_inst/Mmux_vfat2_clk_o11:O)                             | BUFG(*)(link_tracking_1_inst/tracking_core_inst/track_7_inst/data_0)                                           | 5076  |
 link_tracking_1_inst/vi2c_core_inst/chip_select_2                                                   | NONE(link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/wrbit_selected_iic[0]_DLATCH_2_q)| 4     |
 chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL                                          | BUFG                                                                                                           | 425   |
@@ -6744,6 +6756,41 @@ Delay:               6.613ns (Levels of Logic = 5)
     ----------------------------------------
     Total                      6.613ns (1.792ns logic, 4.821ns route)
                                        (27.1% logic, 72.9% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'fpga_clk_i'
+  Clock period: 4.420ns (frequency: 226.229MHz)
+  Total number of paths / destination ports: 936 / 16
+-------------------------------------------------------------------------
+Delay:               4.420ns (Levels of Logic = 14)
+  Source:            clock_control_inst/cdce_count_5 (FF)
+  Destination:       clock_control_inst/cdce_count_10 (FF)
+  Source Clock:      fpga_clk_i rising
+  Destination Clock: fpga_clk_i rising
+
+  Data Path: clock_control_inst/cdce_count_5 to clock_control_inst/cdce_count_10
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              2   0.447   0.981  cdce_count_5 (cdce_count_5)
+     LUT6:I0->O            2   0.203   0.617  PWR_12_o_cdce_count[10]_equal_10_o<10>_SW0 (N01)
+     LUT6:I5->O           12   0.205   1.137  PWR_12_o_cdce_count[10]_equal_10_o<10> (PWR_12_o_cdce_count[10]_equal_10_o)
+     LUT3:I0->O            1   0.205   0.000  Mcount_cdce_count_lut<0> (Mcount_cdce_count_lut<0>)
+     MUXCY:S->O            1   0.172   0.000  Mcount_cdce_count_cy<0> (Mcount_cdce_count_cy<0>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_cdce_count_cy<1> (Mcount_cdce_count_cy<1>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_cdce_count_cy<2> (Mcount_cdce_count_cy<2>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_cdce_count_cy<3> (Mcount_cdce_count_cy<3>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_cdce_count_cy<4> (Mcount_cdce_count_cy<4>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_cdce_count_cy<5> (Mcount_cdce_count_cy<5>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_cdce_count_cy<6> (Mcount_cdce_count_cy<6>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_cdce_count_cy<7> (Mcount_cdce_count_cy<7>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_cdce_count_cy<8> (Mcount_cdce_count_cy<8>)
+     MUXCY:CI->O           0   0.019   0.000  Mcount_cdce_count_cy<9> (Mcount_cdce_count_cy<9>)
+     XORCY:CI->O           1   0.180   0.000  Mcount_cdce_count_xor<10> (Mcount_cdce_count10)
+     FDR:D                     0.102          cdce_count_10
+    ----------------------------------------
+    Total                      4.420ns (1.685ns logic, 2.735ns route)
+                                       (38.1% logic, 61.9% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clock_control_inst/vfat2_clk_o'
@@ -6841,6 +6888,27 @@ Offset:              5.121ns (Levels of Logic = 3)
     ----------------------------------------
     Total                      5.121ns (0.838ns logic, 4.283ns route)
                                        (16.4% logic, 83.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'fpga_clk_i'
+  Total number of paths / destination ports: 16 / 16
+-------------------------------------------------------------------------
+Offset:              3.518ns (Levels of Logic = 3)
+  Source:            cdce_pll_locked_i (PAD)
+  Destination:       clock_control_inst/cdce_reset_src (FF)
+  Destination Clock: fpga_clk_i rising
+
+  Data Path: cdce_pll_locked_i to clock_control_inst/cdce_reset_src
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             3   1.222   0.755  cdce_pll_locked_i_IBUF (leds_o_0_OBUF)
+     begin scope: 'clock_control_inst:cdce_pll_locked_i'
+     LUT2:I0->O           12   0.203   0.908  Mcount_cdce_count_val1 (Mcount_cdce_count_val)
+     FDR:R                     0.430          cdce_count_0
+    ----------------------------------------
+    Total                      3.518ns (1.855ns logic, 1.663ns route)
+                                       (52.7% logic, 47.3% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clock_control_inst/vfat2_clk_o'
@@ -6961,6 +7029,27 @@ Offset:              5.909ns (Levels of Logic = 5)
                                        (57.9% logic, 42.1% route)
 
 =========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'fpga_clk_i'
+  Total number of paths / destination ports: 4 / 4
+-------------------------------------------------------------------------
+Offset:              5.336ns (Levels of Logic = 3)
+  Source:            clock_control_inst/cdce_reset_src (FF)
+  Destination:       cdce_pri_p_o (PAD)
+  Source Clock:      fpga_clk_i rising
+
+  Data Path: clock_control_inst/cdce_reset_src to cdce_pri_p_o
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q             33   0.447   1.534  cdce_reset_src (cdce_reset_src)
+     LUT6:I3->O            1   0.205   0.579  Mmux_cdce_clk_o11 (cdce_clk_o)
+     end scope: 'clock_control_inst:cdce_clk_o'
+     OBUFDS:I->O               2.571          cdce_primary_clk_obufds (cdce_pri_p_o)
+    ----------------------------------------
+    Total                      5.336ns (3.223ns logic, 2.113ns route)
+                                       (60.4% logic, 39.6% route)
+
+=========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clock_control_inst/vfat2_clk_o'
   Total number of paths / destination ports: 2 / 2
 -------------------------------------------------------------------------
@@ -7065,6 +7154,15 @@ clock_control_inst/vfat2_clk_o                         |    6.176|         |    
 gtp_wrapper_inst/gtp_inst/tile0_gtp_i/GTPCLKOUT1_OUT<0>|    1.507|         |         |         |
 -------------------------------------------------------+---------+---------+---------+---------+
 
+Clock to Setup on destination clock fpga_clk_i
+-------------------------------------------------------+---------+---------+---------+---------+
+                                                       | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                           |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-------------------------------------------------------+---------+---------+---------+---------+
+fpga_clk_i                                             |    4.420|         |         |         |
+gtp_wrapper_inst/gtp_inst/tile0_gtp_i/GTPCLKOUT1_OUT<0>|    2.641|         |         |         |
+-------------------------------------------------------+---------+---------+---------+---------+
+
 Clock to Setup on destination clock gtp_wrapper_inst/gtp_inst/tile0_gtp_i/GTPCLKOUT1_OUT<0>
 ----------------------------------------------------------+---------+---------+---------+---------+
                                                           | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
@@ -7072,6 +7170,7 @@ Source Clock                                              |Dest:Rise|Dest:Rise|D
 ----------------------------------------------------------+---------+---------+---------+---------+
 chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL|    5.743|         |         |         |
 clock_control_inst/vfat2_clk_o                            |    3.020|         |         |         |
+fpga_clk_i                                                |    2.305|         |         |         |
 gtp_wrapper_inst/gtp_inst/tile0_gtp_i/GTPCLKOUT1_OUT<0>   |    6.613|         |         |         |
 ----------------------------------------------------------+---------+---------+---------+---------+
 
@@ -7094,14 +7193,14 @@ gtp_wrapper_inst/gtp_inst/tile0_gtp_i/GTPCLKOUT1_OUT<0>|    2.020|         |    
 =========================================================================
 
 
-Total REAL time to Xst completion: 54.00 secs
-Total CPU time to Xst completion: 54.40 secs
+Total REAL time to Xst completion: 48.00 secs
+Total CPU time to Xst completion: 48.53 secs
  
 --> 
 
-Total memory usage is 299672 kilobytes
+Total memory usage is 297804 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings : 4522 (   0 filtered)
+Number of warnings : 4516 (   0 filtered)
 Number of infos    :  505 (   0 filtered)
 
