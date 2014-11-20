@@ -197,6 +197,15 @@ architecture Behavioral of optohybrid_top is
     signal bc0_counter_reset            : std_logic := '0';
     signal bx_counter_reset             : std_logic := '0';
     
+    -- ChipScope signals
+
+    signal cs_icon0                 : std_logic_vector(35 downto 0);
+    signal cs_icon1                 : std_logic_vector(35 downto 0);
+    signal cs_in                    : std_logic_vector(31 downto 0);
+    signal cs_out                   : std_logic_vector(31 downto 0);
+    signal cs_ila0                  : std_logic_vector(31 downto 0);
+    signal cs_ila1                  : std_logic_vector(31 downto 0);
+    
 begin
 
     --================================--
@@ -554,7 +563,7 @@ begin
     
     -- Fixed registers : 23 -- read _ firmware version
     
-    request_read(23) <= x"20141117"; 
+    request_read(23) <= x"20141120"; 
     
     -- Reserved : 25 downto 24
     
@@ -616,5 +625,18 @@ begin
     
     
     -- Other registers : 63 downto 48
+
+    --================================--
+    -- ChipScope
+    --================================--
+
+    chipscope_icon_inst : entity work.chipscope_icon port map (CONTROL0 => cs_icon0, CONTROL1 => cs_icon1);
+
+    chipscope_vio_inst : entity work.chipscope_vio port map (CONTROL => cs_icon0, ASYNC_IN => cs_in, ASYNC_OUT => cs_out);
+
+    chipscope_ila_inst : entity work.chipscope_ila port map (CONTROL => cs_icon1, CLK => gtp_clk, TRIG0 => cs_ila0, TRIG1 => cs_ila1);
+
+    cs_ila0 <= tx_data(31 downto 16) & rx_data(31 downto 16);
+    cs_ila1 <= x"0000" & x"00" & "000000" & vfat2_data_8_i(8) & vfat2_dvalid_i(2);
     
 end Behavioral;

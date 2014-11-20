@@ -24,16 +24,6 @@ architecture Behavioral of adc_handler is
     
     signal uart_en      : std_logic := '0';
     signal uart_data    : std_logic_vector(7 downto 0) := (others => '0');
-
-
-    -- ChipScope signals
-
-    signal cs_icon0                 : std_logic_vector(35 downto 0);
-    signal cs_icon1                 : std_logic_vector(35 downto 0);
-    signal cs_in                    : std_logic_vector(31 downto 0);
-    signal cs_out                   : std_logic_vector(31 downto 0);
-    signal cs_ila0                  : std_logic_vector(31 downto 0);
-    signal cs_ila1                  : std_logic_vector(31 downto 0);
     
 begin
 
@@ -55,18 +45,5 @@ begin
         voltage_o       => voltage_o,
         current_o       => current_o
     );
-
-    --================================--
-    -- ChipScope
-    --================================--
-
-    chipscope_icon_inst : entity work.chipscope_icon port map (CONTROL0 => cs_icon0, CONTROL1 => cs_icon1);
-
-    chipscope_vio_inst : entity work.chipscope_vio port map (CONTROL => cs_icon0, ASYNC_IN => cs_in, ASYNC_OUT => cs_out);
-
-    chipscope_ila_inst : entity work.chipscope_ila port map (CONTROL => cs_icon1, CLK => fabric_clk_i, TRIG0 => cs_ila0, TRIG1 => cs_ila1);
-
-    cs_ila0 <= (others => '0');
-    cs_ila1 <= x"0000" & uart_data & "0000000" & uart_en;
 
 end Behavioral;

@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "//psf/Home/Documents/PhD/Code/OH/src/counter.vhd";
+static const char *ng0 = "//psf/Home/Documents/PhD/Code/OptoHybrid/src/counter.vhd";
 extern char *IEEE_P_2592010699;
 extern char *IEEE_P_1242562249;
 
@@ -96,7 +96,7 @@ LAB5:    xsi_set_current_line(30, ng0);
 LAB8:    xsi_set_current_line(36, ng0);
     t1 = (t0 + 960U);
     t4 = *((char **)t1);
-    t1 = (t0 + 3380U);
+    t1 = (t0 + 3452U);
     t7 = ieee_p_1242562249_sub_1919365254_1035706684(IEEE_P_1242562249, t13, t4, t1, 1);
     t8 = (t13 + 12U);
     t14 = *((unsigned int *)t8);

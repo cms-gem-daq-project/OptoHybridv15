@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "//psf/Home/Documents/PhD/Code/OH/src/vi2c_wrapper.vhd";
+static const char *ng0 = "//psf/Home/Documents/PhD/Code/OptoHybrid/src/vi2c_wrapper.vhd";
 extern char *IEEE_P_2592010699;
 extern char *IEEE_P_1242562249;
 
@@ -262,7 +262,7 @@ LAB14:    xsi_set_current_line(99, ng0);
     t13 = (t12 * 1U);
     t14 = (0 + t13);
     t1 = (t4 + t14);
-    t7 = (t0 + 8124);
+    t7 = (t0 + 8396);
     t5 = 1;
     if (4U == 4U)
         goto LAB19;
@@ -296,9 +296,9 @@ LAB18:    xsi_set_current_line(112, ng0);
     t1 = (t0 + 2832U);
     t3 = *((char **)t1);
     t4 = ((IEEE_P_2592010699) + 2332);
-    t7 = (t0 + 7904U);
+    t7 = (t0 + 8176U);
     t1 = xsi_base_array_concat(t1, t23, t4, (char)99, (unsigned char)2, (char)97, t3, t7, (char)101);
-    t8 = (t0 + 8128);
+    t8 = (t0 + 8400);
     t16 = ((IEEE_P_2592010699) + 2332);
     t17 = (t25 + 0U);
     t18 = (t17 + 0U);
@@ -341,7 +341,7 @@ LAB28:    t18 = (t0 + 4160);
     xsi_set_current_line(116, ng0);
     t1 = (t0 + 2900U);
     t3 = *((char **)t1);
-    t1 = (t0 + 7920U);
+    t1 = (t0 + 8192U);
     t4 = ieee_p_1242562249_sub_1919437128_1035706684(IEEE_P_1242562249, t23, t3, t1, 16);
     t7 = (t0 + 4160);
     t8 = (t7 + 32U);
@@ -386,7 +386,7 @@ LAB16:    xsi_set_current_line(101, ng0);
     t1 = (t0 + 2832U);
     t3 = *((char **)t1);
     t4 = ((IEEE_P_2592010699) + 2332);
-    t7 = (t0 + 7904U);
+    t7 = (t0 + 8176U);
     t1 = xsi_base_array_concat(t1, t23, t4, (char)99, (unsigned char)2, (char)97, t3, t7, (char)101);
     t8 = (t0 + 2900U);
     t9 = *((char **)t8);
@@ -675,9 +675,9 @@ LAB48:    xsi_set_current_line(179, ng0);
     t1 = (t0 + 2832U);
     t3 = *((char **)t1);
     t4 = ((IEEE_P_2592010699) + 2332);
-    t7 = (t0 + 7904U);
+    t7 = (t0 + 8176U);
     t1 = xsi_base_array_concat(t1, t23, t4, (char)99, (unsigned char)2, (char)97, t3, t7, (char)101);
-    t8 = (t0 + 8132);
+    t8 = (t0 + 8404);
     t16 = ((IEEE_P_2592010699) + 2332);
     t17 = (t25 + 0U);
     t18 = (t17 + 0U);
@@ -784,7 +784,7 @@ static void work_a_0645111738_3212880686_p_1(char *t0)
 
 LAB0:    xsi_set_current_line(248, ng0);
 
-LAB3:    t1 = (t0 + 8136);
+LAB3:    t1 = (t0 + 8408);
     t3 = (t0 + 2524U);
     t4 = *((char **)t3);
     t5 = *((unsigned char *)t4);

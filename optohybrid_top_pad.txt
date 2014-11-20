@@ -1,7 +1,7 @@
 Release 14.7 - par P.20131013 (nt)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Wed Nov 19 13:55:28 2014
+Thu Nov 20 14:45:46 2014
 
 
 INFO: The IO information is provided in three file formats as part of the Place and Route (PAR) process.  These formats are:
@@ -458,7 +458,7 @@ Pinout by Pin Number:
 |L20       |                  |IOBM     |IO_L27P_5                    |UNUSED   |           |5             |          |         |           |         |         |          |           |                |
 |L21       |                  |IOBS     |IO_L27N_5                    |UNUSED   |           |5             |          |         |           |         |         |          |           |                |
 |L22       |                  |         |VCCAUX                       |         |           |              |          |         |           |         |2.5      |          |           |                |
-|L23       |vfat2_data_15_i<8>|IOB      |IO_L29P_A23_M1A13_1          |INPUT    |LVCMOS25*  |1             |          |         |           |NONE     |         |UNLOCATED |NO         |NONE            |
+|L23       |                  |IOBM     |IO_L29P_A23_M1A13_1          |UNUSED   |           |1             |          |         |           |         |         |          |           |                |
 |L24       |vfat2_data_12_i<4>|IOB      |IO_L29N_A22_M1A14_1          |INPUT    |LVCMOS33   |1             |          |         |           |NONE     |         |LOCATED   |NO         |NONE            |
 |L25       |vfat2_data_11_i<4>|IOB      |IO_L24P_M5DQ12_5             |INPUT    |LVCMOS33   |5             |          |         |           |NONE     |         |LOCATED   |NO         |NONE            |
 |L26       |vfat2_data_11_i<3>|IOB      |IO_L24N_M5DQ13_5             |INPUT    |LVCMOS33   |5             |          |         |           |NONE     |         |LOCATED   |NO         |NONE            |
@@ -534,7 +534,7 @@ Pinout by Pin Number:
 |P18       |                  |         |VCCO_1                       |         |           |1             |          |         |           |         |3.30     |          |           |                |
 |P19       |                  |IOBS     |IO_L32N_A16_M1A9_1           |UNUSED   |           |1             |          |         |           |         |         |          |           |                |
 |P20       |                  |         |GND                          |         |           |              |          |         |           |         |         |          |           |                |
-|P21       |                  |IOBM     |IO_L35P_A11_M1A7_1           |UNUSED   |           |1             |          |         |           |         |         |          |           |                |
+|P21       |vfat2_data_15_i<8>|IOB      |IO_L35P_A11_M1A7_1           |INPUT    |LVCMOS25*  |1             |          |         |           |NONE     |         |UNLOCATED |NO         |NONE            |
 |P22       |                  |IOBS     |IO_L35N_A10_M1A2_1           |UNUSED   |           |1             |          |         |           |         |         |          |           |                |
 |P23       |                  |         |VCCO_1                       |         |           |1             |          |         |           |         |3.30     |          |           |                |
 |P24       |vfat2_data_12_i<1>|IOB      |IO_L37P_A7_M1A0_1            |INPUT    |LVCMOS33   |1             |          |         |           |NONE     |         |LOCATED   |NO         |NONE            |

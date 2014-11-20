@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "//psf/Home/Documents/PhD/Code/OH/src/i2c_master.vhd";
+static const char *ng0 = "//psf/Home/Documents/PhD/Code/OptoHybrid/src/i2c_master.vhd";
 extern char *IEEE_P_2592010699;
 
 

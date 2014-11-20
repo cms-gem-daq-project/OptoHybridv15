@@ -1,5 +1,5 @@
 ISim log file
-Running: Z:\Documents\PhD\Code\OH\sim_link_tracking_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb Z:/Documents/PhD/Code/OH/sim_link_tracking_isim_beh.wdb 
+Running: Z:\Documents\PhD\Code\OptoHybrid\sim_link_tracking_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb Z:/Documents/PhD/Code/OptoHybrid/sim_link_tracking_isim_beh.wdb 
 ISim P.20131013 (signature 0x8ef4fb42)
 ----------------------------------------------------------------------
 WARNING:Security:42 - Your software subscription period has lapsed. Your current version of Xilinx tools will continue to function, but you no longer qualify for Xilinx software updates or new releases.
