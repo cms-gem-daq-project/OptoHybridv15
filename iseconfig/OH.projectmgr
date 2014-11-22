@@ -22,21 +22,23 @@
          <ClosedNode>/optohybrid_top - Behavioral Z:|Documents|PhD|Code|OH|src|optohybrid_top.vhd/resets_inst - resets - Behavioral</ClosedNode>
          <ClosedNode>/optohybrid_top - Behavioral Z:|Documents|PhD|Code|OH|src|optohybrid_top.vhd/t1_handler_inst - t1_handler - Behavioral</ClosedNode>
          <ClosedNode>/optohybrid_top - Behavioral Z:|Documents|PhD|Code|OH|src|optohybrid_top.vhd/t1_handling_inst - t1_handling - Behavioral</ClosedNode>
+         <ClosedNode>/optohybrid_top - Behavioral Z:|Documents|PhD|Code|OptoHybrid|src|optohybrid_top.vhd</ClosedNode>
          <ClosedNode>/optohybrid_top - Behavioral Z:|Documents|PhD|Code|OptoHybrid|src|optohybrid_top.vhd/gtp_wrapper_inst - gtp_wrapper - Behavioral</ClosedNode>
          <ClosedNode>/optohybrid_top - Behavioral Z:|Documents|PhD|Code|OptoHybrid|src|optohybrid_top.vhd/link_tracking_1_inst - link_tracking - Behavioral</ClosedNode>
          <ClosedNode>/optohybrid_top - Behavioral Z:|Documents|PhD|Code|OptoHybrid|src|optohybrid_top.vhd/t1_handler_inst - t1_handler - Behavioral</ClosedNode>
          <ClosedNode>/s6_gtpwizard_v1_11_top - RTL Z:|Documents|PhD|Code|OH|ipcore_dir|s6_gtpwizard_v1_11|example_design|s6_gtpwizard_v1_11_top.vhd/s6_gtpwizard_v1_11_i - s6_gtpwizard_v1_11 - RTL</ClosedNode>
          <ClosedNode>/s6_gtpwizard_v1_11_top - RTL Z:|Documents|PhD|Code|OH|src|gtp_wrapper.vhd/s6_gtpwizard_v1_11_i - s6_gtpwizard_v1_11 - RTL</ClosedNode>
+         <ClosedNode>/tb_adc - behavior Z:|Documents|PhD|Code|OptoHybrid|src|sim|tb_adc.vhd</ClosedNode>
          <ClosedNode>/vi2c_core - Behavioral Z:|Documents|PhD|Code|OH|src|vi2c_core.vhd</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>link_trigger_inst - link_trigger - Behavioral (Z:/Documents/PhD/Code/OptoHybrid/src/link_trigger.vhd)</SelectedItem>
+         <SelectedItem>optohybrid_top - Behavioral (Z:/Documents/PhD/Code/OptoHybrid/src/optohybrid_top.vhd)</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000149000000020000000000000000000000000200000064ffffffff000000810000000300000002000001490000000100000003000000000000000100000003</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000000da000000020000000000000000000000000200000064ffffffff000000810000000300000002000000da0000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>link_trigger_inst - link_trigger - Behavioral (Z:/Documents/PhD/Code/OptoHybrid/src/link_trigger.vhd)</CurrentItem>
+      <CurrentItem>optohybrid_top - Behavioral (Z:/Documents/PhD/Code/OptoHybrid/src/optohybrid_top.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="DESUT_VHDL_ARCHITECTURE" guiview="Process" >
       <ClosedNodes>
@@ -127,7 +129,7 @@
       <CurrentItem/>
    </ItemView>
    <SourceProcessView>000000ff0000000000000002000001940000013f01000000040100000002</SourceProcessView>
-   <CurrentView>Implementation</CurrentView>
+   <CurrentView>Behavioral Simulation</CurrentView>
    <ItemView engineview="BehavioralSim" guiview="Source" compilemode="AutoCompile" >
       <ClosedNodes>
          <ClosedNodesVersion>2</ClosedNodesVersion>
@@ -138,23 +140,28 @@
          <ClosedNode>/optohybrid_top - Behavioral Z:|Documents|PhD|Code|OH|src|optohybrid_top.vhd/link_tracking_1_inst - link_tracking - Behavioral/vi2c_core_inst - vi2c_core - Behavioral</ClosedNode>
          <ClosedNode>/optohybrid_top - Behavioral Z:|Documents|PhD|Code|OH|src|optohybrid_top.vhd/t1_handler_inst - t1_handler - Behavioral</ClosedNode>
          <ClosedNode>/optohybrid_top - Behavioral Z:|Documents|PhD|Code|OH|src|optohybrid_top.vhd/t1_handling_inst - t1_handling - Behavioral</ClosedNode>
+         <ClosedNode>/optohybrid_top - Behavioral Z:|Documents|PhD|Code|OptoHybrid|src|optohybrid_top.vhd</ClosedNode>
          <ClosedNode>/sim_link_tracking - behavior Z:|Documents|PhD|Code|OH|src|sim|sim_link_tracking.vhd</ClosedNode>
          <ClosedNode>/sim_link_tracking - behavior Z:|Documents|PhD|Code|OH|src|sim|sim_link_tracking.vhd/uut - link_tracking - Behavioral/tracking_core_inst - tracking_core - Behavioral</ClosedNode>
          <ClosedNode>/sim_link_tracking - behavior Z:|Documents|PhD|Code|OH|src|sim|sim_link_tracking.vhd/uut - link_tracking - Behavioral/vi2c_core_inst - vi2c_core - Behavioral</ClosedNode>
+         <ClosedNode>/sim_link_tracking - behavior Z:|Documents|PhD|Code|OptoHybrid|src|sim|sim_link_tracking.vhd</ClosedNode>
          <ClosedNode>/sim_tracking_core - behavior Z:|Documents|PhD|Code|OH|src|sim|sim_link_tracking.vhd</ClosedNode>
          <ClosedNode>/sim_tracking_core - behavior Z:|Documents|PhD|Code|OH|src|sim|sim_tracking_core.vhd</ClosedNode>
+         <ClosedNode>/sim_tracking_core - behavior Z:|Documents|PhD|Code|OptoHybrid|src|sim|sim_tracking_core.vhd</ClosedNode>
          <ClosedNode>/sim_tracking_decoder - behavior Z:|Documents|PhD|Code|OH|src|sim|sim_tracking_decoder.vhd</ClosedNode>
+         <ClosedNode>/sim_tracking_decoder - behavior Z:|Documents|PhD|Code|OptoHybrid|src|sim|sim_tracking_decoder.vhd</ClosedNode>
+         <ClosedNode>/tb_adc - behavior Z:|Documents|PhD|Code|OptoHybrid|src|sim|tb_adc.vhd</ClosedNode>
          <ClosedNode>/testbench - behavior Z:|Documents|PhD|Code|OH|src|sim|sim_link_tracking.vhd</ClosedNode>
          <ClosedNode>/testbench - behavior Z:|Documents|PhD|Code|OH|src|sim|sim_tracking_core.vhd</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>sim_link_tracking - behavior (Z:/Documents/PhD/Code/OH/src/sim/sim_link_tracking.vhd)</SelectedItem>
+         <SelectedItem>tb_adc - behavior (Z:/Documents/PhD/Code/OptoHybrid/src/sim/tb_adc.vhd)</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000000e0000000020000000000000000000000000200000064ffffffff000000810000000300000002000000e00000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>sim_link_tracking - behavior (Z:/Documents/PhD/Code/OH/src/sim/sim_link_tracking.vhd)</CurrentItem>
+      <CurrentItem>tb_adc - behavior (Z:/Documents/PhD/Code/OptoHybrid/src/sim/tb_adc.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="" guiview="Process" >
       <ClosedNodes>
@@ -162,13 +169,13 @@
          <ClosedNode>Design Utilities</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem/>
+         <SelectedItem></SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000152000000010000000100000000000000000000000064ffffffff000000810000000000000001000001520000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem/>
+      <CurrentItem></CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="DESUT_VHDL_ARCHITECTURE" guiview="Process" >
       <ClosedNodes>

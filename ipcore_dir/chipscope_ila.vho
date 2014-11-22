@@ -8,7 +8,7 @@
 -- \   \   \/     Version    : 14.7
 --  \   \         Application: Xilinx CORE Generator
 --  /   /         Filename   : chipscope_ila.vho
--- /___/   /\     Timestamp  : Sat Nov 08 16:12:51 Central Europe Standard Time 2014
+-- /___/   /\     Timestamp  : Sat Nov 22 11:17:40 Central Europe Standard Time 2014
 -- \   \  /  \
 --  \___\/\___\
 --
@@ -23,7 +23,9 @@ component chipscope_ila
     CONTROL : INOUT STD_LOGIC_VECTOR(35 DOWNTO 0);
     CLK : IN STD_LOGIC;
     TRIG0 : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-    TRIG1 : IN STD_LOGIC_VECTOR(31 DOWNTO 0));
+    TRIG1 : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+    TRIG2 : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+    TRIG3 : IN STD_LOGIC_VECTOR(31 DOWNTO 0));
 
 end component;
 
@@ -37,6 +39,8 @@ your_instance_name : chipscope_ila
     CONTROL => CONTROL,
     CLK => CLK,
     TRIG0 => TRIG0,
-    TRIG1 => TRIG1);
+    TRIG1 => TRIG1,
+    TRIG2 => TRIG2,
+    TRIG3 => TRIG3);
 
 -- INST_TAG_END ------ End INSTANTIATION Template ------------

@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Thu Nov 20 17:15:43 2014
+// Written by: Map P.20131013 on Sat Nov 22 13:58:31 2014
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -7143,23 +7143,22 @@ TIMEGRP vfat2_clk_ext = BEL "vfat2_buf_clk_inst" BEL
         "link_tracking_1_inst/tracking_core_inst/tracking_data_fifo_inst/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].wr_stg_inst/Q_reg_1"
         BEL
         "link_tracking_1_inst/tracking_core_inst/tracking_data_fifo_inst/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].wr_stg_inst/Q_reg_0"
-        BEL "link_trigger_inst/status" BEL "link_trigger_inst/orbits_0" BEL
-        "link_trigger_inst/orbits_1" BEL "link_trigger_inst/orbits_2" BEL
-        "link_trigger_inst/orbits_3" BEL "link_trigger_inst/orbits_4" BEL
-        "link_trigger_inst/orbits_5" BEL "t1_handler_inst/bc0_inst/s_en_o" BEL
-        "t1_handler_inst/bc0_inst/ack" BEL
-        "t1_handler_inst/resync_inst/s_en_o" BEL
+        BEL "link_trigger_inst/orbits_0" BEL "link_trigger_inst/orbits_1" BEL
+        "link_trigger_inst/orbits_2" BEL "link_trigger_inst/orbits_3" BEL
+        "link_trigger_inst/orbits_4" BEL "link_trigger_inst/orbits_5" BEL
+        "t1_handler_inst/bc0_inst/s_en_o" BEL "t1_handler_inst/bc0_inst/ack"
+        BEL "t1_handler_inst/resync_inst/s_en_o" BEL
         "t1_handler_inst/resync_inst/ack" BEL
         "t1_handler_inst/calpulse_inst/s_en_o" BEL
         "t1_handler_inst/calpulse_inst/ack" BEL
         "t1_handler_inst/lv1a_inst/s_en_o" BEL "t1_handler_inst/lv1a_inst/ack"
-        BEL "t1_handler_inst/t1_encoder_inst/state_0" BEL
+        BEL "t1_handler_inst/t1_encoder_inst/data_cnt_0" BEL
+        "t1_handler_inst/t1_encoder_inst/data_cnt_1" BEL
+        "t1_handler_inst/t1_encoder_inst/state_0" BEL
         "t1_handler_inst/t1_encoder_inst/data_0" BEL
         "t1_handler_inst/t1_encoder_inst/data_1" BEL
         "t1_handler_inst/t1_encoder_inst/data_2" BEL
-        "t1_handler_inst/t1_encoder_inst/data_cnt_1" BEL
-        "t1_handler_inst/t1_encoder_inst/t1_o" BEL
-        "t1_handler_inst/t1_encoder_inst/data_cnt_0" BEL "vfat2_mclk_p_o" BEL
+        "t1_handler_inst/t1_encoder_inst/t1_o" BEL "vfat2_mclk_p_o" BEL
         "vfat2_mclk_n_o" BEL "cdce_pri_p_o" BEL "cdce_pri_n_o";
 TIMEGRP vfat2_clk_fpga = BEL "vfat2_buf_clk_inst" BEL
         "link_tracking_1_inst/tracking_core_inst/track_7_inst/data_0" BEL
@@ -14139,23 +14138,22 @@ TIMEGRP vfat2_clk_fpga = BEL "vfat2_buf_clk_inst" BEL
         "link_tracking_1_inst/tracking_core_inst/tracking_data_fifo_inst/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].wr_stg_inst/Q_reg_1"
         BEL
         "link_tracking_1_inst/tracking_core_inst/tracking_data_fifo_inst/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].wr_stg_inst/Q_reg_0"
-        BEL "link_trigger_inst/status" BEL "link_trigger_inst/orbits_0" BEL
-        "link_trigger_inst/orbits_1" BEL "link_trigger_inst/orbits_2" BEL
-        "link_trigger_inst/orbits_3" BEL "link_trigger_inst/orbits_4" BEL
-        "link_trigger_inst/orbits_5" BEL "t1_handler_inst/bc0_inst/s_en_o" BEL
-        "t1_handler_inst/bc0_inst/ack" BEL
-        "t1_handler_inst/resync_inst/s_en_o" BEL
+        BEL "link_trigger_inst/orbits_0" BEL "link_trigger_inst/orbits_1" BEL
+        "link_trigger_inst/orbits_2" BEL "link_trigger_inst/orbits_3" BEL
+        "link_trigger_inst/orbits_4" BEL "link_trigger_inst/orbits_5" BEL
+        "t1_handler_inst/bc0_inst/s_en_o" BEL "t1_handler_inst/bc0_inst/ack"
+        BEL "t1_handler_inst/resync_inst/s_en_o" BEL
         "t1_handler_inst/resync_inst/ack" BEL
         "t1_handler_inst/calpulse_inst/s_en_o" BEL
         "t1_handler_inst/calpulse_inst/ack" BEL
         "t1_handler_inst/lv1a_inst/s_en_o" BEL "t1_handler_inst/lv1a_inst/ack"
-        BEL "t1_handler_inst/t1_encoder_inst/state_0" BEL
+        BEL "t1_handler_inst/t1_encoder_inst/data_cnt_0" BEL
+        "t1_handler_inst/t1_encoder_inst/data_cnt_1" BEL
+        "t1_handler_inst/t1_encoder_inst/state_0" BEL
         "t1_handler_inst/t1_encoder_inst/data_0" BEL
         "t1_handler_inst/t1_encoder_inst/data_1" BEL
         "t1_handler_inst/t1_encoder_inst/data_2" BEL
-        "t1_handler_inst/t1_encoder_inst/data_cnt_1" BEL
-        "t1_handler_inst/t1_encoder_inst/t1_o" BEL
-        "t1_handler_inst/t1_encoder_inst/data_cnt_0" BEL "vfat2_mclk_p_o" BEL
+        "t1_handler_inst/t1_encoder_inst/t1_o" BEL "vfat2_mclk_p_o" BEL
         "vfat2_mclk_n_o" BEL "cdce_pri_p_o" BEL "cdce_pri_n_o";
 TIMEGRP vfat2_clk_muxed = BEL "vfat2_buf_clk_inst" BEL
         "link_tracking_1_inst/tracking_core_inst/track_7_inst/data_0" BEL
@@ -21135,53 +21133,52 @@ TIMEGRP vfat2_clk_muxed = BEL "vfat2_buf_clk_inst" BEL
         "link_tracking_1_inst/tracking_core_inst/tracking_data_fifo_inst/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].wr_stg_inst/Q_reg_1"
         BEL
         "link_tracking_1_inst/tracking_core_inst/tracking_data_fifo_inst/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].wr_stg_inst/Q_reg_0"
-        BEL "link_trigger_inst/status" BEL "link_trigger_inst/orbits_0" BEL
-        "link_trigger_inst/orbits_1" BEL "link_trigger_inst/orbits_2" BEL
-        "link_trigger_inst/orbits_3" BEL "link_trigger_inst/orbits_4" BEL
-        "link_trigger_inst/orbits_5" BEL "t1_handler_inst/bc0_inst/s_en_o" BEL
-        "t1_handler_inst/bc0_inst/ack" BEL
-        "t1_handler_inst/resync_inst/s_en_o" BEL
+        BEL "link_trigger_inst/orbits_0" BEL "link_trigger_inst/orbits_1" BEL
+        "link_trigger_inst/orbits_2" BEL "link_trigger_inst/orbits_3" BEL
+        "link_trigger_inst/orbits_4" BEL "link_trigger_inst/orbits_5" BEL
+        "t1_handler_inst/bc0_inst/s_en_o" BEL "t1_handler_inst/bc0_inst/ack"
+        BEL "t1_handler_inst/resync_inst/s_en_o" BEL
         "t1_handler_inst/resync_inst/ack" BEL
         "t1_handler_inst/calpulse_inst/s_en_o" BEL
         "t1_handler_inst/calpulse_inst/ack" BEL
         "t1_handler_inst/lv1a_inst/s_en_o" BEL "t1_handler_inst/lv1a_inst/ack"
-        BEL "t1_handler_inst/t1_encoder_inst/state_0" BEL
+        BEL "t1_handler_inst/t1_encoder_inst/data_cnt_0" BEL
+        "t1_handler_inst/t1_encoder_inst/data_cnt_1" BEL
+        "t1_handler_inst/t1_encoder_inst/state_0" BEL
         "t1_handler_inst/t1_encoder_inst/data_0" BEL
         "t1_handler_inst/t1_encoder_inst/data_1" BEL
         "t1_handler_inst/t1_encoder_inst/data_2" BEL
-        "t1_handler_inst/t1_encoder_inst/data_cnt_1" BEL
-        "t1_handler_inst/t1_encoder_inst/t1_o" BEL
-        "t1_handler_inst/t1_encoder_inst/data_cnt_0" BEL "vfat2_mclk_p_o" BEL
+        "t1_handler_inst/t1_encoder_inst/t1_o" BEL "vfat2_mclk_p_o" BEL
         "vfat2_mclk_n_o";
-PIN gtp_wrapper_inst/gtp_inst/tile1_gtp_i/gtpa1_dual_i_pins<132> = BEL
+PIN gtp_wrapper_inst/gtp_inst/tile1_gtp_i/gtpa1_dual_i_pins<148> = BEL
         "gtp_wrapper_inst/gtp_inst/tile1_gtp_i/gtpa1_dual_i" PINNAME
         RXUSRCLK0;
-PIN gtp_wrapper_inst/gtp_inst/tile1_gtp_i/gtpa1_dual_i_pins<133> = BEL
+PIN gtp_wrapper_inst/gtp_inst/tile1_gtp_i/gtpa1_dual_i_pins<149> = BEL
         "gtp_wrapper_inst/gtp_inst/tile1_gtp_i/gtpa1_dual_i" PINNAME
         RXUSRCLK1;
-PIN gtp_wrapper_inst/gtp_inst/tile1_gtp_i/gtpa1_dual_i_pins<320> = BEL
+PIN gtp_wrapper_inst/gtp_inst/tile1_gtp_i/gtpa1_dual_i_pins<336> = BEL
         "gtp_wrapper_inst/gtp_inst/tile1_gtp_i/gtpa1_dual_i" PINNAME
         TXUSRCLK0;
-PIN gtp_wrapper_inst/gtp_inst/tile1_gtp_i/gtpa1_dual_i_pins<321> = BEL
+PIN gtp_wrapper_inst/gtp_inst/tile1_gtp_i/gtpa1_dual_i_pins<337> = BEL
         "gtp_wrapper_inst/gtp_inst/tile1_gtp_i/gtpa1_dual_i" PINNAME
         TXUSRCLK1;
 TIMEGRP gtp_userclk01 = PIN
-        "gtp_wrapper_inst/gtp_inst/tile1_gtp_i/gtpa1_dual_i_pins<132>" PIN
-        "gtp_wrapper_inst/gtp_inst/tile1_gtp_i/gtpa1_dual_i_pins<133>" PIN
-        "gtp_wrapper_inst/gtp_inst/tile1_gtp_i/gtpa1_dual_i_pins<320>" PIN
-        "gtp_wrapper_inst/gtp_inst/tile1_gtp_i/gtpa1_dual_i_pins<321>" PIN
-        "gtp_wrapper_inst/gtp_inst/tile1_gtp_i/gtpa1_dual_i_pins<132>" PIN
-        "gtp_wrapper_inst/gtp_inst/tile1_gtp_i/gtpa1_dual_i_pins<133>" PIN
-        "gtp_wrapper_inst/gtp_inst/tile1_gtp_i/gtpa1_dual_i_pins<320>" PIN
-        "gtp_wrapper_inst/gtp_inst/tile1_gtp_i/gtpa1_dual_i_pins<321>" PIN
-        "gtp_wrapper_inst/gtp_inst/tile1_gtp_i/gtpa1_dual_i_pins<132>" PIN
-        "gtp_wrapper_inst/gtp_inst/tile1_gtp_i/gtpa1_dual_i_pins<133>" PIN
-        "gtp_wrapper_inst/gtp_inst/tile1_gtp_i/gtpa1_dual_i_pins<320>" PIN
-        "gtp_wrapper_inst/gtp_inst/tile1_gtp_i/gtpa1_dual_i_pins<321>" PIN
-        "gtp_wrapper_inst/gtp_inst/tile1_gtp_i/gtpa1_dual_i_pins<132>" PIN
-        "gtp_wrapper_inst/gtp_inst/tile1_gtp_i/gtpa1_dual_i_pins<133>" PIN
-        "gtp_wrapper_inst/gtp_inst/tile1_gtp_i/gtpa1_dual_i_pins<320>" PIN
-        "gtp_wrapper_inst/gtp_inst/tile1_gtp_i/gtpa1_dual_i_pins<321>";
+        "gtp_wrapper_inst/gtp_inst/tile1_gtp_i/gtpa1_dual_i_pins<148>" PIN
+        "gtp_wrapper_inst/gtp_inst/tile1_gtp_i/gtpa1_dual_i_pins<149>" PIN
+        "gtp_wrapper_inst/gtp_inst/tile1_gtp_i/gtpa1_dual_i_pins<336>" PIN
+        "gtp_wrapper_inst/gtp_inst/tile1_gtp_i/gtpa1_dual_i_pins<337>" PIN
+        "gtp_wrapper_inst/gtp_inst/tile1_gtp_i/gtpa1_dual_i_pins<148>" PIN
+        "gtp_wrapper_inst/gtp_inst/tile1_gtp_i/gtpa1_dual_i_pins<149>" PIN
+        "gtp_wrapper_inst/gtp_inst/tile1_gtp_i/gtpa1_dual_i_pins<336>" PIN
+        "gtp_wrapper_inst/gtp_inst/tile1_gtp_i/gtpa1_dual_i_pins<337>" PIN
+        "gtp_wrapper_inst/gtp_inst/tile1_gtp_i/gtpa1_dual_i_pins<148>" PIN
+        "gtp_wrapper_inst/gtp_inst/tile1_gtp_i/gtpa1_dual_i_pins<149>" PIN
+        "gtp_wrapper_inst/gtp_inst/tile1_gtp_i/gtpa1_dual_i_pins<336>" PIN
+        "gtp_wrapper_inst/gtp_inst/tile1_gtp_i/gtpa1_dual_i_pins<337>" PIN
+        "gtp_wrapper_inst/gtp_inst/tile1_gtp_i/gtpa1_dual_i_pins<148>" PIN
+        "gtp_wrapper_inst/gtp_inst/tile1_gtp_i/gtpa1_dual_i_pins<149>" PIN
+        "gtp_wrapper_inst/gtp_inst/tile1_gtp_i/gtpa1_dual_i_pins<336>" PIN
+        "gtp_wrapper_inst/gtp_inst/tile1_gtp_i/gtpa1_dual_i_pins<337>";
 PIN gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<157> = BEL
         "gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i" PINNAME
         RXUSRCLK0;
@@ -21266,6 +21263,11 @@ PIN
         "link_tracking_1_inst/tracking_core_inst/tracking_data_fifo_inst/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[6].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram"
         PINNAME CLKBRDCLK;
 PIN
+        chipscope_ila_inst/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_S6.U_CS_BRAM_CASCADE_S6/I_DEPTH_LTEQ_16K.U_SBRAM_0/I_B9KGT0.u_ramb9/U_RAMB9_pins<27>
+        = BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_S6.U_CS_BRAM_CASCADE_S6/I_DEPTH_LTEQ_16K.U_SBRAM_0/I_B9KGT0.u_ramb9/U_RAMB9"
+        PINNAME CLKBRDCLK;
+PIN
         chipscope_ila_inst/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_S6.U_CS_BRAM_CASCADE_S6/I_DEPTH_LTEQ_16K.U_SBRAM_0/I_B18KGT0.G_RAMB18[0].u_ramb18/U_RAMB18_pins<29>
         = BEL
         "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_S6.U_CS_BRAM_CASCADE_S6/I_DEPTH_LTEQ_16K.U_SBRAM_0/I_B18KGT0.G_RAMB18[0].u_ramb18/U_RAMB18"
@@ -21284,6 +21286,21 @@ PIN
         chipscope_ila_inst/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_S6.U_CS_BRAM_CASCADE_S6/I_DEPTH_LTEQ_16K.U_SBRAM_0/I_B18KGT0.G_RAMB18[3].u_ramb18/U_RAMB18_pins<29>
         = BEL
         "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_S6.U_CS_BRAM_CASCADE_S6/I_DEPTH_LTEQ_16K.U_SBRAM_0/I_B18KGT0.G_RAMB18[3].u_ramb18/U_RAMB18"
+        PINNAME CLKB;
+PIN
+        chipscope_ila_inst/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_S6.U_CS_BRAM_CASCADE_S6/I_DEPTH_LTEQ_16K.U_SBRAM_0/I_B18KGT0.G_RAMB18[4].u_ramb18/U_RAMB18_pins<29>
+        = BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_S6.U_CS_BRAM_CASCADE_S6/I_DEPTH_LTEQ_16K.U_SBRAM_0/I_B18KGT0.G_RAMB18[4].u_ramb18/U_RAMB18"
+        PINNAME CLKB;
+PIN
+        chipscope_ila_inst/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_S6.U_CS_BRAM_CASCADE_S6/I_DEPTH_LTEQ_16K.U_SBRAM_0/I_B18KGT0.G_RAMB18[5].u_ramb18/U_RAMB18_pins<29>
+        = BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_S6.U_CS_BRAM_CASCADE_S6/I_DEPTH_LTEQ_16K.U_SBRAM_0/I_B18KGT0.G_RAMB18[5].u_ramb18/U_RAMB18"
+        PINNAME CLKB;
+PIN
+        chipscope_ila_inst/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_S6.U_CS_BRAM_CASCADE_S6/I_DEPTH_LTEQ_16K.U_SBRAM_0/I_B18KGT0.G_RAMB18[6].u_ramb18/U_RAMB18_pins<29>
+        = BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_S6.U_CS_BRAM_CASCADE_S6/I_DEPTH_LTEQ_16K.U_SBRAM_0/I_B18KGT0.G_RAMB18[6].u_ramb18/U_RAMB18"
         PINNAME CLKB;
 TIMEGRP gtp_clk = PIN
         "gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<159>" PIN
@@ -21335,10 +21352,10 @@ TIMEGRP gtp_clk = PIN
         "adc_handler_inst/uart_rx_inst/timer_13" BEL
         "adc_handler_inst/uart_rx_inst/timer_14" BEL
         "adc_handler_inst/uart_rx_inst/state_FSM_FFd2" BEL
-        "adc_handler_inst/uart_rx_inst/state_FSM_FFd1" BEL
         "adc_handler_inst/uart_rx_inst/cnt_0" BEL
         "adc_handler_inst/uart_rx_inst/cnt_1" BEL
         "adc_handler_inst/uart_rx_inst/cnt_2" BEL
+        "adc_handler_inst/uart_rx_inst/state_FSM_FFd1" BEL
         "adc_handler_inst/uart_rx_inst/en_o" BEL
         "adc_handler_inst/adc_switch_inst/current_0" BEL
         "adc_handler_inst/adc_switch_inst/current_1" BEL
@@ -21346,25 +21363,37 @@ TIMEGRP gtp_clk = PIN
         "adc_handler_inst/adc_switch_inst/current_3" BEL
         "adc_handler_inst/adc_switch_inst/current_4" BEL
         "adc_handler_inst/adc_switch_inst/current_5" BEL
-        "adc_handler_inst/adc_switch_inst/current_6" BEL
-        "adc_handler_inst/adc_switch_inst/current_7" BEL
-        "adc_handler_inst/adc_switch_inst/current_8" BEL
-        "adc_handler_inst/adc_switch_inst/current_9" BEL
-        "adc_handler_inst/adc_switch_inst/current_10" BEL
-        "adc_handler_inst/adc_switch_inst/current_11" BEL
         "adc_handler_inst/adc_switch_inst/voltage_0" BEL
         "adc_handler_inst/adc_switch_inst/voltage_1" BEL
         "adc_handler_inst/adc_switch_inst/voltage_2" BEL
         "adc_handler_inst/adc_switch_inst/voltage_3" BEL
         "adc_handler_inst/adc_switch_inst/voltage_4" BEL
         "adc_handler_inst/adc_switch_inst/voltage_5" BEL
-        "adc_handler_inst/adc_switch_inst/voltage_6" BEL
-        "adc_handler_inst/adc_switch_inst/voltage_7" BEL
-        "adc_handler_inst/adc_switch_inst/voltage_8" BEL
-        "adc_handler_inst/adc_switch_inst/voltage_9" BEL
-        "adc_handler_inst/adc_switch_inst/voltage_10" BEL
-        "adc_handler_inst/adc_switch_inst/voltage_11" BEL "ext_lv1a_inst/last"
-        BEL "ext_lv1a_inst/en_o" BEL
+        "adc_handler_inst/adc_switch_inst/voltage_o_0" BEL
+        "adc_handler_inst/adc_switch_inst/voltage_o_1" BEL
+        "adc_handler_inst/adc_switch_inst/voltage_o_2" BEL
+        "adc_handler_inst/adc_switch_inst/voltage_o_3" BEL
+        "adc_handler_inst/adc_switch_inst/voltage_o_4" BEL
+        "adc_handler_inst/adc_switch_inst/voltage_o_5" BEL
+        "adc_handler_inst/adc_switch_inst/voltage_o_6" BEL
+        "adc_handler_inst/adc_switch_inst/voltage_o_7" BEL
+        "adc_handler_inst/adc_switch_inst/voltage_o_8" BEL
+        "adc_handler_inst/adc_switch_inst/voltage_o_9" BEL
+        "adc_handler_inst/adc_switch_inst/voltage_o_10" BEL
+        "adc_handler_inst/adc_switch_inst/voltage_o_11" BEL
+        "adc_handler_inst/adc_switch_inst/current_o_0" BEL
+        "adc_handler_inst/adc_switch_inst/current_o_1" BEL
+        "adc_handler_inst/adc_switch_inst/current_o_2" BEL
+        "adc_handler_inst/adc_switch_inst/current_o_3" BEL
+        "adc_handler_inst/adc_switch_inst/current_o_4" BEL
+        "adc_handler_inst/adc_switch_inst/current_o_5" BEL
+        "adc_handler_inst/adc_switch_inst/current_o_6" BEL
+        "adc_handler_inst/adc_switch_inst/current_o_7" BEL
+        "adc_handler_inst/adc_switch_inst/current_o_8" BEL
+        "adc_handler_inst/adc_switch_inst/current_o_9" BEL
+        "adc_handler_inst/adc_switch_inst/current_o_10" BEL
+        "adc_handler_inst/adc_switch_inst/current_o_11" BEL
+        "ext_lv1a_inst/last" BEL "ext_lv1a_inst/en_o" BEL
         "link_tracking_1_inst/gtp_rx_mux_inst/selected_core_0" BEL
         "link_tracking_1_inst/gtp_rx_mux_inst/selected_core_1" BEL
         "link_tracking_1_inst/gtp_rx_mux_inst/data_0" BEL
@@ -24167,59 +24196,58 @@ TIMEGRP gtp_clk = PIN
         "ext_lv1a_counter_inst/counter_28" BEL
         "ext_lv1a_counter_inst/counter_29" BEL
         "ext_lv1a_counter_inst/counter_30" BEL
-        "ext_lv1a_counter_inst/counter_31" BEL "link_trigger_inst/last_status"
-        BEL "link_trigger_inst/data_0" BEL "link_trigger_inst/data_1" BEL
-        "link_trigger_inst/data_2" BEL "link_trigger_inst/data_3" BEL
-        "link_trigger_inst/data_4" BEL "link_trigger_inst/data_5" BEL
-        "link_trigger_inst/data_16" BEL "link_trigger_inst/data_17" BEL
-        "link_trigger_inst/data_18" BEL "link_trigger_inst/data_19" BEL
-        "link_trigger_inst/data_20" BEL "link_trigger_inst/data_21" BEL
-        "link_trigger_inst/data_22" BEL "link_trigger_inst/data_23" BEL
-        "link_trigger_inst/data_24" BEL "link_trigger_inst/data_25" BEL
-        "link_trigger_inst/data_26" BEL "link_trigger_inst/data_27" BEL
-        "link_trigger_inst/data_28" BEL "link_trigger_inst/data_29" BEL
-        "link_trigger_inst/data_30" BEL "link_trigger_inst/data_31" BEL
-        "link_trigger_inst/data_32" BEL "link_trigger_inst/data_33" BEL
-        "link_trigger_inst/data_34" BEL "link_trigger_inst/data_35" BEL
-        "link_trigger_inst/data_36" BEL "link_trigger_inst/data_37" BEL
-        "link_trigger_inst/data_38" BEL "link_trigger_inst/data_39" BEL
-        "link_trigger_inst/data_40" BEL "link_trigger_inst/data_41" BEL
-        "link_trigger_inst/data_42" BEL "link_trigger_inst/data_43" BEL
-        "link_trigger_inst/data_44" BEL "link_trigger_inst/data_45" BEL
-        "link_trigger_inst/tx_data_o_0" BEL "link_trigger_inst/tx_data_o_1"
-        BEL "link_trigger_inst/tx_data_o_2" BEL
-        "link_trigger_inst/tx_data_o_3" BEL "link_trigger_inst/tx_data_o_4"
-        BEL "link_trigger_inst/tx_data_o_5" BEL
-        "link_trigger_inst/tx_data_o_6" BEL "link_trigger_inst/tx_data_o_7"
-        BEL "link_trigger_inst/tx_data_o_8" BEL
-        "link_trigger_inst/tx_data_o_9" BEL "link_trigger_inst/tx_data_o_10"
-        BEL "link_trigger_inst/tx_data_o_11" BEL
-        "link_trigger_inst/tx_data_o_12" BEL "link_trigger_inst/tx_data_o_13"
-        BEL "link_trigger_inst/tx_data_o_14" BEL
-        "link_trigger_inst/tx_data_o_15" BEL
+        "ext_lv1a_counter_inst/counter_31" BEL "link_trigger_inst/data_0" BEL
+        "link_trigger_inst/data_1" BEL "link_trigger_inst/data_2" BEL
+        "link_trigger_inst/data_3" BEL "link_trigger_inst/data_4" BEL
+        "link_trigger_inst/data_5" BEL "link_trigger_inst/data_16" BEL
+        "link_trigger_inst/data_17" BEL "link_trigger_inst/data_18" BEL
+        "link_trigger_inst/data_19" BEL "link_trigger_inst/data_20" BEL
+        "link_trigger_inst/data_21" BEL "link_trigger_inst/data_22" BEL
+        "link_trigger_inst/data_23" BEL "link_trigger_inst/data_24" BEL
+        "link_trigger_inst/data_25" BEL "link_trigger_inst/data_26" BEL
+        "link_trigger_inst/data_27" BEL "link_trigger_inst/data_28" BEL
+        "link_trigger_inst/data_29" BEL "link_trigger_inst/data_30" BEL
+        "link_trigger_inst/data_31" BEL "link_trigger_inst/data_32" BEL
+        "link_trigger_inst/data_33" BEL "link_trigger_inst/data_34" BEL
+        "link_trigger_inst/data_35" BEL "link_trigger_inst/data_36" BEL
+        "link_trigger_inst/data_37" BEL "link_trigger_inst/data_38" BEL
+        "link_trigger_inst/data_39" BEL "link_trigger_inst/data_40" BEL
+        "link_trigger_inst/data_41" BEL "link_trigger_inst/data_42" BEL
+        "link_trigger_inst/data_43" BEL "link_trigger_inst/data_44" BEL
+        "link_trigger_inst/data_45" BEL "link_trigger_inst/tx_data_o_0" BEL
+        "link_trigger_inst/tx_data_o_1" BEL "link_trigger_inst/tx_data_o_2"
+        BEL "link_trigger_inst/tx_data_o_3" BEL
+        "link_trigger_inst/tx_data_o_4" BEL "link_trigger_inst/tx_data_o_5"
+        BEL "link_trigger_inst/tx_data_o_6" BEL
+        "link_trigger_inst/tx_data_o_7" BEL "link_trigger_inst/tx_data_o_8"
+        BEL "link_trigger_inst/tx_data_o_9" BEL
+        "link_trigger_inst/tx_data_o_10" BEL "link_trigger_inst/tx_data_o_11"
+        BEL "link_trigger_inst/tx_data_o_12" BEL
+        "link_trigger_inst/tx_data_o_13" BEL "link_trigger_inst/tx_data_o_14"
+        BEL "link_trigger_inst/tx_data_o_15" BEL
         "link_trigger_inst/state_FSM_FFd2" BEL
         "link_trigger_inst/state_FSM_FFd1" BEL
-        "link_trigger_inst/tx_kchar_o_0" BEL "t1_delayed_inst/counter_0" BEL
-        "t1_delayed_inst/counter_1" BEL "t1_delayed_inst/counter_2" BEL
-        "t1_delayed_inst/counter_3" BEL "t1_delayed_inst/counter_4" BEL
-        "t1_delayed_inst/counter_5" BEL "t1_delayed_inst/counter_6" BEL
-        "t1_delayed_inst/counter_7" BEL "t1_delayed_inst/counter_8" BEL
-        "t1_delayed_inst/counter_9" BEL "t1_delayed_inst/counter_10" BEL
-        "t1_delayed_inst/counter_11" BEL "t1_delayed_inst/counter_12" BEL
-        "t1_delayed_inst/counter_13" BEL "t1_delayed_inst/counter_14" BEL
-        "t1_delayed_inst/counter_15" BEL "t1_delayed_inst/counter_16" BEL
-        "t1_delayed_inst/counter_17" BEL "t1_delayed_inst/counter_18" BEL
-        "t1_delayed_inst/counter_19" BEL "t1_delayed_inst/counter_20" BEL
-        "t1_delayed_inst/counter_21" BEL "t1_delayed_inst/counter_22" BEL
-        "t1_delayed_inst/counter_23" BEL "t1_delayed_inst/counter_24" BEL
-        "t1_delayed_inst/counter_25" BEL "t1_delayed_inst/counter_26" BEL
-        "t1_delayed_inst/counter_27" BEL "t1_delayed_inst/counter_28" BEL
-        "t1_delayed_inst/counter_29" BEL "t1_delayed_inst/counter_30" BEL
-        "t1_delayed_inst/counter_31" BEL "t1_delayed_inst/state_FSM_FFd2" BEL
-        "t1_delayed_inst/state_FSM_FFd1" BEL "t1_delayed_inst/calpulse_o" BEL
-        "t1_delayed_inst/lv1a_o" BEL "trigger_handler_inst/lv1a_o" BEL
-        "t1_handler_inst/bc0_inst/strobe" BEL
-        "t1_handler_inst/resync_inst/strobe" BEL
+        "link_trigger_inst/state_FSM_FFd4" BEL "link_trigger_inst/tx_kchar_o"
+        BEL "t1_delayed_inst/counter_0" BEL "t1_delayed_inst/counter_1" BEL
+        "t1_delayed_inst/counter_2" BEL "t1_delayed_inst/counter_3" BEL
+        "t1_delayed_inst/counter_4" BEL "t1_delayed_inst/counter_5" BEL
+        "t1_delayed_inst/counter_6" BEL "t1_delayed_inst/counter_7" BEL
+        "t1_delayed_inst/counter_8" BEL "t1_delayed_inst/counter_9" BEL
+        "t1_delayed_inst/counter_10" BEL "t1_delayed_inst/counter_11" BEL
+        "t1_delayed_inst/counter_12" BEL "t1_delayed_inst/counter_13" BEL
+        "t1_delayed_inst/counter_14" BEL "t1_delayed_inst/counter_15" BEL
+        "t1_delayed_inst/counter_16" BEL "t1_delayed_inst/counter_17" BEL
+        "t1_delayed_inst/counter_18" BEL "t1_delayed_inst/counter_19" BEL
+        "t1_delayed_inst/counter_20" BEL "t1_delayed_inst/counter_21" BEL
+        "t1_delayed_inst/counter_22" BEL "t1_delayed_inst/counter_23" BEL
+        "t1_delayed_inst/counter_24" BEL "t1_delayed_inst/counter_25" BEL
+        "t1_delayed_inst/counter_26" BEL "t1_delayed_inst/counter_27" BEL
+        "t1_delayed_inst/counter_28" BEL "t1_delayed_inst/counter_29" BEL
+        "t1_delayed_inst/counter_30" BEL "t1_delayed_inst/counter_31" BEL
+        "t1_delayed_inst/state_FSM_FFd2" BEL "t1_delayed_inst/state_FSM_FFd1"
+        BEL "t1_delayed_inst/calpulse_o" BEL "t1_delayed_inst/lv1a_o" BEL
+        "trigger_handler_inst/lv1a_o" BEL "t1_handler_inst/bc0_inst/strobe"
+        BEL "t1_handler_inst/resync_inst/strobe" BEL
         "t1_handler_inst/calpulse_inst/strobe" BEL
         "t1_handler_inst/lv1a_inst/strobe" BEL "cdce_fallback_reg/reg_0" BEL
         "cdce_fallback_reg/reg_1" BEL "cdce_fallback_reg/reg_2" BEL
@@ -24337,6 +24365,37 @@ TIMEGRP gtp_clk = PIN
         "trigger_configuration_reg/reg_29" BEL
         "trigger_configuration_reg/reg_30" BEL
         "trigger_configuration_reg/reg_31" BEL
+        "chipscope_vio_inst/U0/I_VIO/GEN_UPDATE_OUT[48].UPDATE_CELL/GEN_CLK.USER_REG"
+        BEL
+        "chipscope_vio_inst/U0/I_VIO/GEN_UPDATE_OUT[49].UPDATE_CELL/GEN_CLK.USER_REG"
+        BEL
+        "chipscope_vio_inst/U0/I_VIO/GEN_UPDATE_OUT[50].UPDATE_CELL/GEN_CLK.USER_REG"
+        BEL
+        "chipscope_vio_inst/U0/I_VIO/GEN_UPDATE_OUT[51].UPDATE_CELL/GEN_CLK.USER_REG"
+        BEL
+        "chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[16].SYNC_OUT_CELL/USER_REG"
+        BEL
+        "chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[17].SYNC_OUT_CELL/USER_REG"
+        BEL
+        "chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[18].SYNC_OUT_CELL/USER_REG"
+        BEL
+        "chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[19].SYNC_OUT_CELL/USER_REG"
+        BEL
+        "chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT_ADDR.SYNC_OUT_ADDR/DLY1_REG"
+        BEL
+        "chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT_ADDR.SYNC_OUT_ADDR/DLY2_REG"
+        BEL "chipscope_vio_inst/U0/I_VIO/GEN_TRANS.U_ARM/U_DOUT" BEL
+        "chipscope_vio_inst/U0/I_VIO/GEN_TRANS.U_ARM/U_RFDRE" BEL
+        "chipscope_vio_inst/U0/I_VIO/GEN_TRANS.U_ARM/U_GEN_DELAY[1].U_FD" BEL
+        "chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT_ADDR.SYNC_OUT_ADDR/COUNT/G[0].U_FDRE"
+        BEL
+        "chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT_ADDR.SYNC_OUT_ADDR/COUNT/G[1].U_FDRE"
+        BEL
+        "chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT_ADDR.SYNC_OUT_ADDR/COUNT/G[2].U_FDRE"
+        BEL
+        "chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT_ADDR.SYNC_OUT_ADDR/COUNT/G[3].U_FDRE"
+        BEL "chipscope_vio_inst/U0/I_VIO/GEN_TRANS.U_ARM/U_DOUT0" BEL
+        "chipscope_vio_inst/U0/I_VIO/GEN_TRANS.U_ARM/U_DOUT1" BEL
         "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TC/I_TSEQ_NEQ2.U_TC_EQUATION/I_SRLT_NE_1.I_NMU_1_TO_4.U_TCL/I_OUTREG.U_DOUT"
         BEL
         "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TC/I_STORAGE_QUAL.U_STORAGE_QUAL/I_SRLT_NE_1.I_NMU_1_TO_4.U_TCL/I_OUTREG.U_DOUT"
@@ -24350,7 +24409,139 @@ TIMEGRP gtp_clk = PIN
         "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/I_MC_NO.U_NO_MC_REG"
         BEL
         "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[1].U_M/I_MC_NO.U_NO_MC_REG"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/I_MC_NO.U_NO_MC_REG"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/I_MC_NO.U_NO_MC_REG"
         BEL "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/F_NO_TCMC.U_FDR" BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[127].I_SRLT_NE_0.DLY9/SRL16E"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[126].I_SRLT_NE_0.DLY9/SRL16E"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[125].I_SRLT_NE_0.DLY9/SRL16E"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[124].I_SRLT_NE_0.DLY9/SRL16E"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[123].I_SRLT_NE_0.DLY9/SRL16E"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[122].I_SRLT_NE_0.DLY9/SRL16E"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[121].I_SRLT_NE_0.DLY9/SRL16E"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[120].I_SRLT_NE_0.DLY9/SRL16E"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[119].I_SRLT_NE_0.DLY9/SRL16E"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[118].I_SRLT_NE_0.DLY9/SRL16E"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[117].I_SRLT_NE_0.DLY9/SRL16E"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[116].I_SRLT_NE_0.DLY9/SRL16E"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[115].I_SRLT_NE_0.DLY9/SRL16E"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[114].I_SRLT_NE_0.DLY9/SRL16E"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[113].I_SRLT_NE_0.DLY9/SRL16E"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[112].I_SRLT_NE_0.DLY9/SRL16E"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[111].I_SRLT_NE_0.DLY9/SRL16E"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[110].I_SRLT_NE_0.DLY9/SRL16E"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[109].I_SRLT_NE_0.DLY9/SRL16E"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[108].I_SRLT_NE_0.DLY9/SRL16E"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[107].I_SRLT_NE_0.DLY9/SRL16E"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[106].I_SRLT_NE_0.DLY9/SRL16E"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[105].I_SRLT_NE_0.DLY9/SRL16E"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[104].I_SRLT_NE_0.DLY9/SRL16E"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[103].I_SRLT_NE_0.DLY9/SRL16E"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[102].I_SRLT_NE_0.DLY9/SRL16E"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[101].I_SRLT_NE_0.DLY9/SRL16E"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[100].I_SRLT_NE_0.DLY9/SRL16E"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[99].I_SRLT_NE_0.DLY9/SRL16E"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[98].I_SRLT_NE_0.DLY9/SRL16E"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[97].I_SRLT_NE_0.DLY9/SRL16E"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[96].I_SRLT_NE_0.DLY9/SRL16E"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[95].I_SRLT_NE_0.DLY9/SRL16E"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[94].I_SRLT_NE_0.DLY9/SRL16E"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[93].I_SRLT_NE_0.DLY9/SRL16E"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[92].I_SRLT_NE_0.DLY9/SRL16E"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[91].I_SRLT_NE_0.DLY9/SRL16E"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[90].I_SRLT_NE_0.DLY9/SRL16E"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[89].I_SRLT_NE_0.DLY9/SRL16E"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[88].I_SRLT_NE_0.DLY9/SRL16E"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[87].I_SRLT_NE_0.DLY9/SRL16E"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[86].I_SRLT_NE_0.DLY9/SRL16E"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[85].I_SRLT_NE_0.DLY9/SRL16E"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[84].I_SRLT_NE_0.DLY9/SRL16E"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[83].I_SRLT_NE_0.DLY9/SRL16E"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[82].I_SRLT_NE_0.DLY9/SRL16E"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[81].I_SRLT_NE_0.DLY9/SRL16E"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[80].I_SRLT_NE_0.DLY9/SRL16E"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[79].I_SRLT_NE_0.DLY9/SRL16E"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[78].I_SRLT_NE_0.DLY9/SRL16E"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[77].I_SRLT_NE_0.DLY9/SRL16E"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[76].I_SRLT_NE_0.DLY9/SRL16E"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[75].I_SRLT_NE_0.DLY9/SRL16E"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[74].I_SRLT_NE_0.DLY9/SRL16E"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[73].I_SRLT_NE_0.DLY9/SRL16E"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[72].I_SRLT_NE_0.DLY9/SRL16E"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[71].I_SRLT_NE_0.DLY9/SRL16E"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[70].I_SRLT_NE_0.DLY9/SRL16E"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[69].I_SRLT_NE_0.DLY9/SRL16E"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[68].I_SRLT_NE_0.DLY9/SRL16E"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[67].I_SRLT_NE_0.DLY9/SRL16E"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[66].I_SRLT_NE_0.DLY9/SRL16E"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[65].I_SRLT_NE_0.DLY9/SRL16E"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[64].I_SRLT_NE_0.DLY9/SRL16E"
+        BEL
         "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[63].I_SRLT_NE_0.DLY9/SRL16E"
         BEL
         "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[62].I_SRLT_NE_0.DLY9/SRL16E"
@@ -24478,6 +24669,134 @@ TIMEGRP gtp_clk = PIN
         "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[1].I_SRLT_NE_0.DLY9/SRL16E"
         BEL
         "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[0].I_SRLT_NE_0.DLY9/SRL16E"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[127].I_SRLT_NE_0.FF"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[126].I_SRLT_NE_0.FF"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[125].I_SRLT_NE_0.FF"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[124].I_SRLT_NE_0.FF"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[123].I_SRLT_NE_0.FF"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[122].I_SRLT_NE_0.FF"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[121].I_SRLT_NE_0.FF"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[120].I_SRLT_NE_0.FF"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[119].I_SRLT_NE_0.FF"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[118].I_SRLT_NE_0.FF"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[117].I_SRLT_NE_0.FF"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[116].I_SRLT_NE_0.FF"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[115].I_SRLT_NE_0.FF"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[114].I_SRLT_NE_0.FF"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[113].I_SRLT_NE_0.FF"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[112].I_SRLT_NE_0.FF"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[111].I_SRLT_NE_0.FF"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[110].I_SRLT_NE_0.FF"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[109].I_SRLT_NE_0.FF"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[108].I_SRLT_NE_0.FF"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[107].I_SRLT_NE_0.FF"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[106].I_SRLT_NE_0.FF"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[105].I_SRLT_NE_0.FF"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[104].I_SRLT_NE_0.FF"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[103].I_SRLT_NE_0.FF"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[102].I_SRLT_NE_0.FF"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[101].I_SRLT_NE_0.FF"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[100].I_SRLT_NE_0.FF"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[99].I_SRLT_NE_0.FF"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[98].I_SRLT_NE_0.FF"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[97].I_SRLT_NE_0.FF"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[96].I_SRLT_NE_0.FF"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[95].I_SRLT_NE_0.FF"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[94].I_SRLT_NE_0.FF"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[93].I_SRLT_NE_0.FF"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[92].I_SRLT_NE_0.FF"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[91].I_SRLT_NE_0.FF"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[90].I_SRLT_NE_0.FF"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[89].I_SRLT_NE_0.FF"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[88].I_SRLT_NE_0.FF"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[87].I_SRLT_NE_0.FF"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[86].I_SRLT_NE_0.FF"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[85].I_SRLT_NE_0.FF"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[84].I_SRLT_NE_0.FF"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[83].I_SRLT_NE_0.FF"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[82].I_SRLT_NE_0.FF"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[81].I_SRLT_NE_0.FF"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[80].I_SRLT_NE_0.FF"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[79].I_SRLT_NE_0.FF"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[78].I_SRLT_NE_0.FF"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[77].I_SRLT_NE_0.FF"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[76].I_SRLT_NE_0.FF"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[75].I_SRLT_NE_0.FF"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[74].I_SRLT_NE_0.FF"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[73].I_SRLT_NE_0.FF"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[72].I_SRLT_NE_0.FF"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[71].I_SRLT_NE_0.FF"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[70].I_SRLT_NE_0.FF"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[69].I_SRLT_NE_0.FF"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[68].I_SRLT_NE_0.FF"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[67].I_SRLT_NE_0.FF"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[66].I_SRLT_NE_0.FF"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[65].I_SRLT_NE_0.FF"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[64].I_SRLT_NE_0.FF"
         BEL
         "chipscope_ila_inst/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[63].I_SRLT_NE_0.FF"
         BEL
@@ -24610,6 +24929,10 @@ TIMEGRP gtp_clk = PIN
         "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[3].U_GAND_SRL_SLICE_NO_RPM/I_IS_TERMINATION_SLICE_NE0.I_USE_OUTPUT_REG_NE0.U_OREG"
         BEL
         "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[1].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[3].U_GAND_SRL_SLICE_NO_RPM/I_IS_TERMINATION_SLICE_NE0.I_USE_OUTPUT_REG_NE0.U_OREG"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[3].U_GAND_SRL_SLICE_NO_RPM/I_IS_TERMINATION_SLICE_NE0.I_USE_OUTPUT_REG_NE0.U_OREG"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[3].U_GAND_SRL_SLICE_NO_RPM/I_IS_TERMINATION_SLICE_NE0.I_USE_OUTPUT_REG_NE0.U_OREG"
         BEL "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_STAT/U_DSL1/U_DOUT" BEL
         "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_STAT/U_DSL1/U_RFDRE" BEL
         "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_STAT/U_DSL1/U_GEN_DELAY[1].U_FD"
@@ -24750,10 +25073,78 @@ TIMEGRP gtp_clk = PIN
         "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_STAT/U_FULL" BEL
         "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_STAT/U_TRIGGER" BEL
         "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_STAT/U_ARM" BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_OREG.I_YES_OREG.U_OREG"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_OREG.I_YES_OREG.U_OREG"
+        BEL
         "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[1].U_M/U_MU/I_OREG.I_YES_OREG.U_OREG"
         BEL
         "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_OREG.I_YES_OREG.U_OREG"
-        BEL "chipscope_ila_inst/U0/I_TQ1.G_TW[31].U_TQ" BEL
+        BEL "chipscope_ila_inst/U0/I_TQ3.G_TW[31].U_TQ" BEL
+        "chipscope_ila_inst/U0/I_TQ3.G_TW[30].U_TQ" BEL
+        "chipscope_ila_inst/U0/I_TQ3.G_TW[29].U_TQ" BEL
+        "chipscope_ila_inst/U0/I_TQ3.G_TW[28].U_TQ" BEL
+        "chipscope_ila_inst/U0/I_TQ3.G_TW[27].U_TQ" BEL
+        "chipscope_ila_inst/U0/I_TQ3.G_TW[26].U_TQ" BEL
+        "chipscope_ila_inst/U0/I_TQ3.G_TW[25].U_TQ" BEL
+        "chipscope_ila_inst/U0/I_TQ3.G_TW[24].U_TQ" BEL
+        "chipscope_ila_inst/U0/I_TQ3.G_TW[23].U_TQ" BEL
+        "chipscope_ila_inst/U0/I_TQ3.G_TW[22].U_TQ" BEL
+        "chipscope_ila_inst/U0/I_TQ3.G_TW[21].U_TQ" BEL
+        "chipscope_ila_inst/U0/I_TQ3.G_TW[20].U_TQ" BEL
+        "chipscope_ila_inst/U0/I_TQ3.G_TW[19].U_TQ" BEL
+        "chipscope_ila_inst/U0/I_TQ3.G_TW[18].U_TQ" BEL
+        "chipscope_ila_inst/U0/I_TQ3.G_TW[17].U_TQ" BEL
+        "chipscope_ila_inst/U0/I_TQ3.G_TW[16].U_TQ" BEL
+        "chipscope_ila_inst/U0/I_TQ3.G_TW[15].U_TQ" BEL
+        "chipscope_ila_inst/U0/I_TQ3.G_TW[14].U_TQ" BEL
+        "chipscope_ila_inst/U0/I_TQ3.G_TW[13].U_TQ" BEL
+        "chipscope_ila_inst/U0/I_TQ3.G_TW[12].U_TQ" BEL
+        "chipscope_ila_inst/U0/I_TQ3.G_TW[11].U_TQ" BEL
+        "chipscope_ila_inst/U0/I_TQ3.G_TW[10].U_TQ" BEL
+        "chipscope_ila_inst/U0/I_TQ3.G_TW[9].U_TQ" BEL
+        "chipscope_ila_inst/U0/I_TQ3.G_TW[8].U_TQ" BEL
+        "chipscope_ila_inst/U0/I_TQ3.G_TW[7].U_TQ" BEL
+        "chipscope_ila_inst/U0/I_TQ3.G_TW[6].U_TQ" BEL
+        "chipscope_ila_inst/U0/I_TQ3.G_TW[5].U_TQ" BEL
+        "chipscope_ila_inst/U0/I_TQ3.G_TW[4].U_TQ" BEL
+        "chipscope_ila_inst/U0/I_TQ3.G_TW[3].U_TQ" BEL
+        "chipscope_ila_inst/U0/I_TQ3.G_TW[2].U_TQ" BEL
+        "chipscope_ila_inst/U0/I_TQ3.G_TW[1].U_TQ" BEL
+        "chipscope_ila_inst/U0/I_TQ3.G_TW[0].U_TQ" BEL
+        "chipscope_ila_inst/U0/I_TQ2.G_TW[31].U_TQ" BEL
+        "chipscope_ila_inst/U0/I_TQ2.G_TW[30].U_TQ" BEL
+        "chipscope_ila_inst/U0/I_TQ2.G_TW[29].U_TQ" BEL
+        "chipscope_ila_inst/U0/I_TQ2.G_TW[28].U_TQ" BEL
+        "chipscope_ila_inst/U0/I_TQ2.G_TW[27].U_TQ" BEL
+        "chipscope_ila_inst/U0/I_TQ2.G_TW[26].U_TQ" BEL
+        "chipscope_ila_inst/U0/I_TQ2.G_TW[25].U_TQ" BEL
+        "chipscope_ila_inst/U0/I_TQ2.G_TW[24].U_TQ" BEL
+        "chipscope_ila_inst/U0/I_TQ2.G_TW[23].U_TQ" BEL
+        "chipscope_ila_inst/U0/I_TQ2.G_TW[22].U_TQ" BEL
+        "chipscope_ila_inst/U0/I_TQ2.G_TW[21].U_TQ" BEL
+        "chipscope_ila_inst/U0/I_TQ2.G_TW[20].U_TQ" BEL
+        "chipscope_ila_inst/U0/I_TQ2.G_TW[19].U_TQ" BEL
+        "chipscope_ila_inst/U0/I_TQ2.G_TW[18].U_TQ" BEL
+        "chipscope_ila_inst/U0/I_TQ2.G_TW[17].U_TQ" BEL
+        "chipscope_ila_inst/U0/I_TQ2.G_TW[16].U_TQ" BEL
+        "chipscope_ila_inst/U0/I_TQ2.G_TW[15].U_TQ" BEL
+        "chipscope_ila_inst/U0/I_TQ2.G_TW[14].U_TQ" BEL
+        "chipscope_ila_inst/U0/I_TQ2.G_TW[13].U_TQ" BEL
+        "chipscope_ila_inst/U0/I_TQ2.G_TW[12].U_TQ" BEL
+        "chipscope_ila_inst/U0/I_TQ2.G_TW[11].U_TQ" BEL
+        "chipscope_ila_inst/U0/I_TQ2.G_TW[10].U_TQ" BEL
+        "chipscope_ila_inst/U0/I_TQ2.G_TW[9].U_TQ" BEL
+        "chipscope_ila_inst/U0/I_TQ2.G_TW[8].U_TQ" BEL
+        "chipscope_ila_inst/U0/I_TQ2.G_TW[7].U_TQ" BEL
+        "chipscope_ila_inst/U0/I_TQ2.G_TW[6].U_TQ" BEL
+        "chipscope_ila_inst/U0/I_TQ2.G_TW[5].U_TQ" BEL
+        "chipscope_ila_inst/U0/I_TQ2.G_TW[4].U_TQ" BEL
+        "chipscope_ila_inst/U0/I_TQ2.G_TW[3].U_TQ" BEL
+        "chipscope_ila_inst/U0/I_TQ2.G_TW[2].U_TQ" BEL
+        "chipscope_ila_inst/U0/I_TQ2.G_TW[1].U_TQ" BEL
+        "chipscope_ila_inst/U0/I_TQ2.G_TW[0].U_TQ" BEL
+        "chipscope_ila_inst/U0/I_TQ1.G_TW[31].U_TQ" BEL
         "chipscope_ila_inst/U0/I_TQ1.G_TW[30].U_TQ" BEL
         "chipscope_ila_inst/U0/I_TQ1.G_TW[29].U_TQ" BEL
         "chipscope_ila_inst/U0/I_TQ1.G_TW[28].U_TQ" BEL
@@ -24817,6 +25208,262 @@ TIMEGRP gtp_clk = PIN
         "chipscope_ila_inst/U0/I_TQ0.G_TW[2].U_TQ" BEL
         "chipscope_ila_inst/U0/I_TQ0.G_TW[1].U_TQ" BEL
         "chipscope_ila_inst/U0/I_TQ0.G_TW[0].U_TQ" BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[0].I_IN_RANGE.U_GAND_DLY2"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[1].I_IN_RANGE.U_GAND_DLY2"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[2].I_IN_RANGE.U_GAND_DLY2"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[3].I_IN_RANGE.U_GAND_DLY2"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[4].I_IN_RANGE.U_GAND_DLY2"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[5].I_IN_RANGE.U_GAND_DLY2"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[6].I_IN_RANGE.U_GAND_DLY2"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[7].I_IN_RANGE.U_GAND_DLY2"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[8].I_IN_RANGE.U_GAND_DLY2"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[9].I_IN_RANGE.U_GAND_DLY2"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[10].I_IN_RANGE.U_GAND_DLY2"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[11].I_IN_RANGE.U_GAND_DLY2"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[12].I_IN_RANGE.U_GAND_DLY2"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[13].I_IN_RANGE.U_GAND_DLY2"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[14].I_IN_RANGE.U_GAND_DLY2"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[15].I_IN_RANGE.U_GAND_DLY2"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[16].I_IN_RANGE.U_GAND_DLY2"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[17].I_IN_RANGE.U_GAND_DLY2"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[18].I_IN_RANGE.U_GAND_DLY2"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[19].I_IN_RANGE.U_GAND_DLY2"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[20].I_IN_RANGE.U_GAND_DLY2"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[21].I_IN_RANGE.U_GAND_DLY2"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[22].I_IN_RANGE.U_GAND_DLY2"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[23].I_IN_RANGE.U_GAND_DLY2"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[24].I_IN_RANGE.U_GAND_DLY2"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[25].I_IN_RANGE.U_GAND_DLY2"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[26].I_IN_RANGE.U_GAND_DLY2"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[27].I_IN_RANGE.U_GAND_DLY2"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[28].I_IN_RANGE.U_GAND_DLY2"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[29].I_IN_RANGE.U_GAND_DLY2"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[30].I_IN_RANGE.U_GAND_DLY2"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[31].I_IN_RANGE.U_GAND_DLY2"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[0].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[1].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[2].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[3].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[4].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[5].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[6].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[7].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[8].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[9].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[10].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[11].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[12].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[13].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[14].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[15].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[16].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[17].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[18].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[19].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[20].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[21].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[22].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[23].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[24].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[25].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[26].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[27].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[28].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[29].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[30].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[3].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[31].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[0].I_IN_RANGE.U_GAND_DLY2"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[1].I_IN_RANGE.U_GAND_DLY2"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[2].I_IN_RANGE.U_GAND_DLY2"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[3].I_IN_RANGE.U_GAND_DLY2"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[4].I_IN_RANGE.U_GAND_DLY2"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[5].I_IN_RANGE.U_GAND_DLY2"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[6].I_IN_RANGE.U_GAND_DLY2"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[7].I_IN_RANGE.U_GAND_DLY2"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[8].I_IN_RANGE.U_GAND_DLY2"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[9].I_IN_RANGE.U_GAND_DLY2"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[10].I_IN_RANGE.U_GAND_DLY2"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[11].I_IN_RANGE.U_GAND_DLY2"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[12].I_IN_RANGE.U_GAND_DLY2"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[13].I_IN_RANGE.U_GAND_DLY2"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[14].I_IN_RANGE.U_GAND_DLY2"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[15].I_IN_RANGE.U_GAND_DLY2"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[16].I_IN_RANGE.U_GAND_DLY2"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[17].I_IN_RANGE.U_GAND_DLY2"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[18].I_IN_RANGE.U_GAND_DLY2"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[19].I_IN_RANGE.U_GAND_DLY2"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[20].I_IN_RANGE.U_GAND_DLY2"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[21].I_IN_RANGE.U_GAND_DLY2"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[22].I_IN_RANGE.U_GAND_DLY2"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[23].I_IN_RANGE.U_GAND_DLY2"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[24].I_IN_RANGE.U_GAND_DLY2"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[25].I_IN_RANGE.U_GAND_DLY2"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[26].I_IN_RANGE.U_GAND_DLY2"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[27].I_IN_RANGE.U_GAND_DLY2"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[28].I_IN_RANGE.U_GAND_DLY2"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[29].I_IN_RANGE.U_GAND_DLY2"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[30].I_IN_RANGE.U_GAND_DLY2"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[31].I_IN_RANGE.U_GAND_DLY2"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[0].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[1].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[2].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[3].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[4].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[5].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[6].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[7].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[8].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[9].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[10].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[11].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[12].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[13].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[14].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[15].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[16].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[17].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[18].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[19].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[20].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[21].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[22].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[23].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[24].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[25].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[26].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[27].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[28].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[29].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[30].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1"
+        BEL
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[2].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[31].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1"
+        BEL
         "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[1].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[0].I_IN_RANGE.U_GAND_DLY2"
         BEL
         "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[1].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[1].I_IN_RANGE.U_GAND_DLY2"
@@ -25080,13 +25727,21 @@ TIMEGRP gtp_clk = PIN
         "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_RST/U_HALT_XFER/U_DOUT0" BEL
         "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_RST/U_ARM_XFER/U_DOUT1" BEL
         "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_RST/U_ARM_XFER/U_DOUT0" PIN
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_S6.U_CS_BRAM_CASCADE_S6/I_DEPTH_LTEQ_16K.U_SBRAM_0/I_B9KGT0.u_ramb9/U_RAMB9_pins<27>"
+        PIN
         "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_S6.U_CS_BRAM_CASCADE_S6/I_DEPTH_LTEQ_16K.U_SBRAM_0/I_B18KGT0.G_RAMB18[0].u_ramb18/U_RAMB18_pins<29>"
         PIN
         "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_S6.U_CS_BRAM_CASCADE_S6/I_DEPTH_LTEQ_16K.U_SBRAM_0/I_B18KGT0.G_RAMB18[1].u_ramb18/U_RAMB18_pins<29>"
         PIN
         "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_S6.U_CS_BRAM_CASCADE_S6/I_DEPTH_LTEQ_16K.U_SBRAM_0/I_B18KGT0.G_RAMB18[2].u_ramb18/U_RAMB18_pins<29>"
         PIN
-        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_S6.U_CS_BRAM_CASCADE_S6/I_DEPTH_LTEQ_16K.U_SBRAM_0/I_B18KGT0.G_RAMB18[3].u_ramb18/U_RAMB18_pins<29>";
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_S6.U_CS_BRAM_CASCADE_S6/I_DEPTH_LTEQ_16K.U_SBRAM_0/I_B18KGT0.G_RAMB18[3].u_ramb18/U_RAMB18_pins<29>"
+        PIN
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_S6.U_CS_BRAM_CASCADE_S6/I_DEPTH_LTEQ_16K.U_SBRAM_0/I_B18KGT0.G_RAMB18[4].u_ramb18/U_RAMB18_pins<29>"
+        PIN
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_S6.U_CS_BRAM_CASCADE_S6/I_DEPTH_LTEQ_16K.U_SBRAM_0/I_B18KGT0.G_RAMB18[5].u_ramb18/U_RAMB18_pins<29>"
+        PIN
+        "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_S6.U_CS_BRAM_CASCADE_S6/I_DEPTH_LTEQ_16K.U_SBRAM_0/I_B18KGT0.G_RAMB18[6].u_ramb18/U_RAMB18_pins<29>";
 PIN SP6_INS_BUFIO2FB_DCM_ML_BUFIO2FB_1_pins<1> = BEL
         "SP6_INS_BUFIO2FB_DCM_ML_BUFIO2FB_1" PINNAME O;
 PIN fpga_clk_pll_inst/dcm_sp_inst_pins<1> = BEL
@@ -32088,23 +32743,22 @@ TIMEGRP vfat2_clk = BEL
         "link_tracking_1_inst/tracking_core_inst/tracking_data_fifo_inst/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].wr_stg_inst/Q_reg_1"
         BEL
         "link_tracking_1_inst/tracking_core_inst/tracking_data_fifo_inst/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].wr_stg_inst/Q_reg_0"
-        BEL "link_trigger_inst/status" BEL "link_trigger_inst/orbits_0" BEL
-        "link_trigger_inst/orbits_1" BEL "link_trigger_inst/orbits_2" BEL
-        "link_trigger_inst/orbits_3" BEL "link_trigger_inst/orbits_4" BEL
-        "link_trigger_inst/orbits_5" BEL "t1_handler_inst/bc0_inst/s_en_o" BEL
-        "t1_handler_inst/bc0_inst/ack" BEL
-        "t1_handler_inst/resync_inst/s_en_o" BEL
+        BEL "link_trigger_inst/orbits_0" BEL "link_trigger_inst/orbits_1" BEL
+        "link_trigger_inst/orbits_2" BEL "link_trigger_inst/orbits_3" BEL
+        "link_trigger_inst/orbits_4" BEL "link_trigger_inst/orbits_5" BEL
+        "t1_handler_inst/bc0_inst/s_en_o" BEL "t1_handler_inst/bc0_inst/ack"
+        BEL "t1_handler_inst/resync_inst/s_en_o" BEL
         "t1_handler_inst/resync_inst/ack" BEL
         "t1_handler_inst/calpulse_inst/s_en_o" BEL
         "t1_handler_inst/calpulse_inst/ack" BEL
         "t1_handler_inst/lv1a_inst/s_en_o" BEL "t1_handler_inst/lv1a_inst/ack"
-        BEL "t1_handler_inst/t1_encoder_inst/state_0" BEL
+        BEL "t1_handler_inst/t1_encoder_inst/data_cnt_0" BEL
+        "t1_handler_inst/t1_encoder_inst/data_cnt_1" BEL
+        "t1_handler_inst/t1_encoder_inst/state_0" BEL
         "t1_handler_inst/t1_encoder_inst/data_0" BEL
         "t1_handler_inst/t1_encoder_inst/data_1" BEL
         "t1_handler_inst/t1_encoder_inst/data_2" BEL
-        "t1_handler_inst/t1_encoder_inst/data_cnt_1" BEL
-        "t1_handler_inst/t1_encoder_inst/t1_o" BEL
-        "t1_handler_inst/t1_encoder_inst/data_cnt_0";
+        "t1_handler_inst/t1_encoder_inst/t1_o";
 PIN rec_clk_pll_inst/dcm_sp_inst_pins<3> = BEL "rec_clk_pll_inst/dcm_sp_inst"
         PINNAME CLKIN;
 TIMEGRP rec_clk = BEL "rec_clk_pll_inst/clkin1_buf" PIN

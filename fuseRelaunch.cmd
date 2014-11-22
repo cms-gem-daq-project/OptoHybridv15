@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "secureip" -o "Z:/Documents/PhD/Code/OptoHybrid/sim_link_tracking_isim_beh.exe" -prj "Z:/Documents/PhD/Code/OptoHybrid/sim_link_tracking_beh.prj" "work.sim_link_tracking" 
+-intstyle "ise" -incremental -lib "secureip" -o "Z:/Documents/PhD/Code/OptoHybrid/tb_adc_isim_beh.exe" -prj "Z:/Documents/PhD/Code/OptoHybrid/tb_adc_beh.prj" "work.tb_adc" 

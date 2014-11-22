@@ -1,4 +1,5 @@
 # Output products list for <chipscope_vio>
+_xmsgs\pn_parser.xmsgs
 chipscope_vio.asy
 chipscope_vio.cdc
 chipscope_vio.constraints\chipscope_vio.ucf

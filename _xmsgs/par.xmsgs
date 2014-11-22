@@ -31,43 +31,31 @@
 <msg type="warning" file="Par" num="288" delta="old" >The signal <arg fmt="%s" index="1">fpga_test_io&lt;5&gt;_IBUF</arg> has no load.  PAR will not attempt to route this signal.
 </msg>
 
+<msg type="warning" file="Par" num="288" delta="old" >The signal <arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[29].SYNC_OUT_CELL/out_temp</arg> has no load.  PAR will not attempt to route this signal.
+</msg>
+
+<msg type="warning" file="Par" num="288" delta="old" >The signal <arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[30].SYNC_OUT_CELL/out_temp</arg> has no load.  PAR will not attempt to route this signal.
+</msg>
+
+<msg type="warning" file="Par" num="288" delta="old" >The signal <arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[28].SYNC_OUT_CELL/out_temp</arg> has no load.  PAR will not attempt to route this signal.
+</msg>
+
+<msg type="warning" file="Par" num="288" delta="old" >The signal <arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[27].SYNC_OUT_CELL/out_temp</arg> has no load.  PAR will not attempt to route this signal.
+</msg>
+
+<msg type="warning" file="Par" num="288" delta="old" >The signal <arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_UPDATE_OUT[63].UPDATE_CELL/out_temp</arg> has no load.  PAR will not attempt to route this signal.
+</msg>
+
+<msg type="warning" file="Par" num="288" delta="old" >The signal <arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[25].SYNC_OUT_CELL/out_temp</arg> has no load.  PAR will not attempt to route this signal.
+</msg>
+
+<msg type="warning" file="Par" num="288" delta="old" >The signal <arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[26].SYNC_OUT_CELL/out_temp</arg> has no load.  PAR will not attempt to route this signal.
+</msg>
+
+<msg type="warning" file="Par" num="288" delta="old" >The signal <arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[24].SYNC_OUT_CELL/out_temp</arg> has no load.  PAR will not attempt to route this signal.
+</msg>
+
 <msg type="warning" file="Par" num="288" delta="old" >The signal <arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/RESET</arg> has no load.  PAR will not attempt to route this signal.
-</msg>
-
-<msg type="warning" file="Par" num="288" delta="old" >The signal <arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;0&gt;</arg> has no load.  PAR will not attempt to route this signal.
-</msg>
-
-<msg type="warning" file="Par" num="288" delta="old" >The signal <arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;1&gt;</arg> has no load.  PAR will not attempt to route this signal.
-</msg>
-
-<msg type="warning" file="Par" num="288" delta="old" >The signal <arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;2&gt;</arg> has no load.  PAR will not attempt to route this signal.
-</msg>
-
-<msg type="warning" file="Par" num="288" delta="old" >The signal <arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;3&gt;</arg> has no load.  PAR will not attempt to route this signal.
-</msg>
-
-<msg type="warning" file="Par" num="288" delta="old" >The signal <arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;4&gt;</arg> has no load.  PAR will not attempt to route this signal.
-</msg>
-
-<msg type="warning" file="Par" num="288" delta="old" >The signal <arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;5&gt;</arg> has no load.  PAR will not attempt to route this signal.
-</msg>
-
-<msg type="warning" file="Par" num="288" delta="old" >The signal <arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;6&gt;</arg> has no load.  PAR will not attempt to route this signal.
-</msg>
-
-<msg type="warning" file="Par" num="288" delta="old" >The signal <arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;7&gt;</arg> has no load.  PAR will not attempt to route this signal.
-</msg>
-
-<msg type="warning" file="Par" num="288" delta="old" >The signal <arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;8&gt;</arg> has no load.  PAR will not attempt to route this signal.
-</msg>
-
-<msg type="warning" file="Par" num="288" delta="old" >The signal <arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;9&gt;</arg> has no load.  PAR will not attempt to route this signal.
-</msg>
-
-<msg type="warning" file="Par" num="288" delta="old" >The signal <arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;10&gt;</arg> has no load.  PAR will not attempt to route this signal.
-</msg>
-
-<msg type="warning" file="Par" num="288" delta="old" >The signal <arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;11&gt;</arg> has no load.  PAR will not attempt to route this signal.
 </msg>
 
 <msg type="warning" file="Par" num="288" delta="old" >The signal <arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;12&gt;</arg> has no load.  PAR will not attempt to route this signal.
@@ -82,52 +70,64 @@
 <msg type="warning" file="Par" num="288" delta="old" >The signal <arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;15&gt;</arg> has no load.  PAR will not attempt to route this signal.
 </msg>
 
-<msg type="warning" file="Par" num="288" delta="old" >The signal <arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;16&gt;</arg> has no load.  PAR will not attempt to route this signal.
+<msg type="warning" file="Par" num="288" delta="old" >The signal <arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;8&gt;</arg> has no load.  PAR will not attempt to route this signal.
 </msg>
 
-<msg type="warning" file="Par" num="288" delta="old" >The signal <arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;17&gt;</arg> has no load.  PAR will not attempt to route this signal.
+<msg type="warning" file="Par" num="288" delta="old" >The signal <arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;9&gt;</arg> has no load.  PAR will not attempt to route this signal.
 </msg>
 
-<msg type="warning" file="Par" num="288" delta="old" >The signal <arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;18&gt;</arg> has no load.  PAR will not attempt to route this signal.
+<msg type="warning" file="Par" num="288" delta="old" >The signal <arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;10&gt;</arg> has no load.  PAR will not attempt to route this signal.
 </msg>
 
-<msg type="warning" file="Par" num="288" delta="old" >The signal <arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;19&gt;</arg> has no load.  PAR will not attempt to route this signal.
+<msg type="warning" file="Par" num="288" delta="old" >The signal <arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;11&gt;</arg> has no load.  PAR will not attempt to route this signal.
 </msg>
 
-<msg type="warning" file="Par" num="288" delta="old" >The signal <arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;28&gt;</arg> has no load.  PAR will not attempt to route this signal.
+<msg type="warning" file="Par" num="288" delta="old" >The signal <arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;4&gt;</arg> has no load.  PAR will not attempt to route this signal.
 </msg>
 
-<msg type="warning" file="Par" num="288" delta="old" >The signal <arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;29&gt;</arg> has no load.  PAR will not attempt to route this signal.
+<msg type="warning" file="Par" num="288" delta="old" >The signal <arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;5&gt;</arg> has no load.  PAR will not attempt to route this signal.
 </msg>
 
-<msg type="warning" file="Par" num="288" delta="old" >The signal <arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;30&gt;</arg> has no load.  PAR will not attempt to route this signal.
+<msg type="warning" file="Par" num="288" delta="old" >The signal <arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;6&gt;</arg> has no load.  PAR will not attempt to route this signal.
 </msg>
 
-<msg type="warning" file="Par" num="288" delta="old" >The signal <arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;31&gt;</arg> has no load.  PAR will not attempt to route this signal.
+<msg type="warning" file="Par" num="288" delta="old" >The signal <arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;7&gt;</arg> has no load.  PAR will not attempt to route this signal.
 </msg>
 
-<msg type="warning" file="Par" num="288" delta="old" >The signal <arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;20&gt;</arg> has no load.  PAR will not attempt to route this signal.
+<msg type="warning" file="Par" num="288" delta="old" >The signal <arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[31].SYNC_OUT_CELL/out_temp</arg> has no load.  PAR will not attempt to route this signal.
 </msg>
 
-<msg type="warning" file="Par" num="288" delta="old" >The signal <arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;21&gt;</arg> has no load.  PAR will not attempt to route this signal.
+<msg type="warning" file="Par" num="288" delta="old" >The signal <arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[21].SYNC_OUT_CELL/out_temp</arg> has no load.  PAR will not attempt to route this signal.
 </msg>
 
-<msg type="warning" file="Par" num="288" delta="old" >The signal <arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;22&gt;</arg> has no load.  PAR will not attempt to route this signal.
+<msg type="warning" file="Par" num="288" delta="old" >The signal <arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;0&gt;</arg> has no load.  PAR will not attempt to route this signal.
 </msg>
 
-<msg type="warning" file="Par" num="288" delta="old" >The signal <arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;23&gt;</arg> has no load.  PAR will not attempt to route this signal.
+<msg type="warning" file="Par" num="288" delta="old" >The signal <arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;1&gt;</arg> has no load.  PAR will not attempt to route this signal.
 </msg>
 
-<msg type="warning" file="Par" num="288" delta="old" >The signal <arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;24&gt;</arg> has no load.  PAR will not attempt to route this signal.
+<msg type="warning" file="Par" num="288" delta="old" >The signal <arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;2&gt;</arg> has no load.  PAR will not attempt to route this signal.
 </msg>
 
-<msg type="warning" file="Par" num="288" delta="old" >The signal <arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;25&gt;</arg> has no load.  PAR will not attempt to route this signal.
+<msg type="warning" file="Par" num="288" delta="old" >The signal <arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;3&gt;</arg> has no load.  PAR will not attempt to route this signal.
 </msg>
 
-<msg type="warning" file="Par" num="288" delta="old" >The signal <arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;26&gt;</arg> has no load.  PAR will not attempt to route this signal.
+<msg type="warning" file="Par" num="288" delta="old" >The signal <arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[22].SYNC_OUT_CELL/out_temp</arg> has no load.  PAR will not attempt to route this signal.
 </msg>
 
-<msg type="warning" file="Par" num="288" delta="old" >The signal <arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;27&gt;</arg> has no load.  PAR will not attempt to route this signal.
+<msg type="warning" file="Par" num="288" delta="old" >The signal <arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[20].SYNC_OUT_CELL/out_temp</arg> has no load.  PAR will not attempt to route this signal.
+</msg>
+
+<msg type="warning" file="Par" num="288" delta="old" >The signal <arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[23].SYNC_OUT_CELL/out_temp</arg> has no load.  PAR will not attempt to route this signal.
+</msg>
+
+<msg type="warning" file="Par" num="468" delta="old" >Your design did not meet timing.  The following are some suggestions to assist you to meet timing in your design.
+
+Review the timing report using Timing Analyzer (In ISE select &quot;Post-Place &amp;
+Route Static Timing Report&quot;). Go to the failing constraint(s) and evaluate the failing paths for each constraint.
+
+Try the Design Goal and Strategies for Timing Performance(In ISE select Project -&gt; Design Goals &amp; Strategies) to ensure the best options are set in the tools for timing closure.
+
 </msg>
 
 <msg type="info" file="Timing" num="2761" delta="old" >N/A entries in the Constraints List may indicate that the constraint is not analyzed due to the following: No paths covered by this constraint; Other constraints intersect with this constraint; or This constraint was disabled by a Path Tracing Control. Please run the Timespec Interaction Report (TSI) via command line (trce tsi) or Timing Analyzer GUI.</msg>
@@ -136,11 +136,11 @@
 
 </msg>
 
-<msg type="warning" file="ParHelpers" num="361" delta="old" >There are <arg fmt="%d" index="1">38</arg> loadless signals in this design. This design will cause Bitgen to issue DRC warnings.
+<msg type="warning" file="ParHelpers" num="361" delta="new" >There are <arg fmt="%d" index="1">35</arg> loadless signals in this design. This design will cause Bitgen to issue DRC warnings.
 
 </msg>
 
-<msg type="warning" file="Par" num="283" delta="old" >There are <arg fmt="%d" index="1">38</arg> loadless signals in this design. This design will cause Bitgen to issue DRC warnings.
+<msg type="warning" file="Par" num="283" delta="new" >There are <arg fmt="%d" index="1">35</arg> loadless signals in this design. This design will cause Bitgen to issue DRC warnings.
 
 </msg>
 

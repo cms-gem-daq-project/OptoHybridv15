@@ -1,0 +1,5 @@
+vhdl work "src/user_package.vhd"
+vhdl work "src/uart_rx.vhd"
+vhdl work "src/adc_switch.vhd"
+vhdl work "src/adc_handler.vhd"
+vhdl work "src/sim/tb_adc.vhd"

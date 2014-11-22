@@ -19,6 +19,11 @@ Creates an implementation netlist:
    * chipscope_vio.xdc
    * chipscope_vio_xmdf.tcl
 
+Creates an HDL instantiation template:
+   Creates an HDL instantiation template for the IP.
+
+   * chipscope_vio.vho
+
 IP Symbol Generator:
    Generate an IP symbol based on the current project options'.
 
@@ -27,6 +32,7 @@ IP Symbol Generator:
 Generate ISE subproject:
    Create an ISE subproject for use when including this core in ISE designs
 
+   * _xmsgs/pn_parser.xmsgs
    * chipscope_vio.gise
    * chipscope_vio.xise
 
