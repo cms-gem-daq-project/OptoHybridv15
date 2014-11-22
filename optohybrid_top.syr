@@ -3,14 +3,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Reading design: optohybrid_top.prj
 
@@ -328,6 +328,8 @@ WARNING:HDLCompiler:634 - "\\psf\home\Documents\PhD\Code\OptoHybrid\src\optohybr
 WARNING:HDLCompiler:634 - "\\psf\home\Documents\PhD\Code\OptoHybrid\src\optohybrid_top.vhd" Line 139: Net <tx_kchar[5]> does not have a driver.
 WARNING:HDLCompiler:634 - "\\psf\home\Documents\PhD\Code\OptoHybrid\src\optohybrid_top.vhd" Line 140: Net <tx_data[47]> does not have a driver.
 WARNING:HDLCompiler:634 - "\\psf\home\Documents\PhD\Code\OptoHybrid\src\optohybrid_top.vhd" Line 146: Net <request_read[63][31]> does not have a driver.
+WARNING:HDLCompiler:634 - "\\psf\home\Documents\PhD\Code\OptoHybrid\src\optohybrid_top.vhd" Line 213: Net <cs_ila2[31]> does not have a driver.
+WARNING:HDLCompiler:634 - "\\psf\home\Documents\PhD\Code\OptoHybrid\src\optohybrid_top.vhd" Line 214: Net <cs_ila3[31]> does not have a driver.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -335,6 +337,7 @@ WARNING:HDLCompiler:634 - "\\psf\home\Documents\PhD\Code\OptoHybrid\src\optohybr
 
 Synthesizing Unit <optohybrid_top>.
     Related source file is "\\psf\home\Documents\PhD\Code\OptoHybrid\src\optohybrid_top.vhd".
+WARNING:Xst:647 - Input <vfat2_dvalid_i<1:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <vfat2_dvalid_i<5:4>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <vfat2_data_0_i<8:8>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <vfat2_data_1_i<8:8>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -451,6 +454,8 @@ WARNING:Xst:2935 - Signal 'request_read<3>', unconnected in block 'optohybrid_to
 WARNING:Xst:2935 - Signal 'request_read<2>', unconnected in block 'optohybrid_top', is tied to its initial value (00000000000000000000000000000000).
 WARNING:Xst:2935 - Signal 'request_read<1>', unconnected in block 'optohybrid_top', is tied to its initial value (00000000000000000000000000000000).
 WARNING:Xst:2935 - Signal 'request_read<0>', unconnected in block 'optohybrid_top', is tied to its initial value (00000000000000000000000000000000).
+WARNING:Xst:653 - Signal <cs_ila2> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <cs_ila3> is used but never assigned. This sourceless signal will be automatically connected to value GND.
     Summary:
 	no macro.
 Unit <optohybrid_top> synthesized.
@@ -6626,9 +6631,9 @@ Primitive and Black Box Usage:
 #      SRLC32E                     : 74
 # Clock Buffers                    : 10
 #      BUFG                        : 10
-# IO Buffers                       : 110
+# IO Buffers                       : 108
 #      BUFIO2                      : 2
-#      IBUF                        : 72
+#      IBUF                        : 70
 #      IBUFDS                      : 4
 #      IBUFG                       : 1
 #      IOBUF                       : 6
@@ -6664,7 +6669,7 @@ Slice Logic Distribution:
 
 IO Utilization: 
  Number of IOs:                         289
- Number of bonded IOBs:                 114  out of    396    28%  
+ Number of bonded IOBs:                 112  out of    396    28%  
 
 Specific Feature Utilization:
  Number of Block RAM/FIFO:               12  out of    268     4%  
@@ -6726,7 +6731,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'gtp_wrapper_inst/gtp_inst/tile0_gtp_i/GTPCLKOUT1_OUT<0>'
   Clock period: 6.869ns (frequency: 145.578MHz)
-  Total number of paths / destination ports: 33125 / 6325
+  Total number of paths / destination ports: 33118 / 6319
 -------------------------------------------------------------------------
 Delay:               6.869ns (Levels of Logic = 6)
   Source:            link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/i2csda.timer_6 (FF)
@@ -6861,7 +6866,7 @@ Delay:               1.984ns (Levels of Logic = 1)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'gtp_wrapper_inst/gtp_inst/tile0_gtp_i/GTPCLKOUT1_OUT<0>'
-  Total number of paths / destination ports: 312 / 310
+  Total number of paths / destination ports: 304 / 302
 -------------------------------------------------------------------------
 Offset:              5.357ns (Levels of Logic = 4)
   Source:            chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/I_S6.ISYN.I_USE_SOFTBSCAN_EQ0.U_BS:SHIFT (PAD)
@@ -7187,14 +7192,14 @@ gtp_wrapper_inst/gtp_inst/tile0_gtp_i/GTPCLKOUT1_OUT<0>|    2.020|         |    
 =========================================================================
 
 
-Total REAL time to Xst completion: 59.00 secs
-Total CPU time to Xst completion: 58.98 secs
+Total REAL time to Xst completion: 55.00 secs
+Total CPU time to Xst completion: 55.07 secs
  
 --> 
 
-Total memory usage is 299596 kilobytes
+Total memory usage is 298636 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings : 4565 (   0 filtered)
+Number of warnings : 4570 (   0 filtered)
 Number of infos    :  450 (   0 filtered)
 

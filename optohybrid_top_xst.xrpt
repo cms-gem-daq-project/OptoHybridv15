@@ -5,7 +5,7 @@
     The structure and the elements are likely to change over the next few releases.
     This means code written to parse this file will need to be revisited each subsequent release.-->
 
-  <application stringID="Xst" timeStamp="Sat Nov 22 13:54:41 2014">
+  <application stringID="Xst" timeStamp="Sat Nov 22 18:29:38 2014">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
@@ -232,8 +232,8 @@
         <item dataType="int" stringID="XST_CLOCK_BUFFERS" value="10">
           <item dataType="int" label="-bufg" stringID="XST_BUFG" value="10"/>
         </item>
-        <item dataType="int" stringID="XST_IO_BUFFERS" value="110">
-          <item dataType="int" stringID="XST_IBUF" value="72"/>
+        <item dataType="int" stringID="XST_IO_BUFFERS" value="108">
+          <item dataType="int" stringID="XST_IBUF" value="70"/>
           <item dataType="int" stringID="XST_IBUFG" value="1"/>
           <item dataType="int" label="-iobuf" stringID="XST_IOBUF" value="6"/>
           <item dataType="int" stringID="XST_OBUF" value="20"/>
@@ -258,7 +258,7 @@
       <item AVAILABLE="10631" dataType="int" label="Number of fully used LUT-FF pairs" stringID="XST_NUMBER_OF_FULLY_USED_LUTFF_PAIRS" value="3653"/>
       <item dataType="int" label="Number of unique control sets" stringID="XST_NUMBER_OF_UNIQUE_CONTROL_SETS" value="387"/>
       <item dataType="int" label="Number of IOs" stringID="XST_NUMBER_OF_IOS" value="289"/>
-      <item AVAILABLE="396" dataType="int" label="Number of bonded IOBs" stringID="XST_NUMBER_OF_BONDED_IOBS" value="114"/>
+      <item AVAILABLE="396" dataType="int" label="Number of bonded IOBs" stringID="XST_NUMBER_OF_BONDED_IOBS" value="112"/>
       <item AVAILABLE="268" dataType="int" label="Number of Block RAM/FIFO" stringID="XST_NUMBER_OF_BLOCK_RAMFIFO" value="12"/>
       <item dataType="int" label="Number using Block RAM only" stringID="XST_NUMBER_USING_BLOCK_RAM_ONLY" value="12"/>
       <item AVAILABLE="16" dataType="int" label="Number of BUFG/BUFGCTRLs" stringID="XST_NUMBER_OF_BUFGBUFGCTRLS" value="10"/>
@@ -268,7 +268,7 @@
     </section>
     <section stringID="XST_ERRORS_STATISTICS">
       <item dataType="int" filtered="0" stringID="XST_NUMBER_OF_ERRORS" value="0"/>
-      <item dataType="int" filtered="0" stringID="XST_NUMBER_OF_WARNINGS" value="4565"/>
+      <item dataType="int" filtered="0" stringID="XST_NUMBER_OF_WARNINGS" value="4570"/>
       <item dataType="int" filtered="0" stringID="XST_NUMBER_OF_INFOS" value="450"/>
     </section>
   </application>

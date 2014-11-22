@@ -34,8 +34,8 @@ NET "cdce_pll_locked_i"     LOC = J7 | IOSTANDARD = LVCMOS33;
 NET "cdce_powerdown_o"      LOC = G4 | IOSTANDARD = LVCMOS33;
 NET "cdce_ref_o"            LOC = J9 | IOSTANDARD = LVCMOS33;
 NET "cdce_sync_o"           LOC = H6 | IOSTANDARD = LVCMOS33;
-NET "cdce_pri_p_o"          LOC = B12 | IOSTANDARD = LVDS_25;
-NET "cdce_pri_n_o"          LOC = A12 | IOSTANDARD = LVDS_25;
+NET "cdce_pri_p_o"          LOC = B12 | IOSTANDARD = LVDS_33;
+NET "cdce_pri_n_o"          LOC = A12 | IOSTANDARD = LVDS_33;
 
 #
 # IIC
@@ -46,14 +46,14 @@ NET "cdce_pri_n_o"          LOC = A12 | IOSTANDARD = LVDS_25;
 # VFAT2 signals
 #
 
-NET "vfat2_resets_o<0>"     LOC = E18 | IOSTANDARD = LVCMOS25;
-NET "vfat2_resets_o<1>"     LOC = F18 | IOSTANDARD = LVCMOS25;
+NET "vfat2_resets_o<0>"     LOC = E18 | IOSTANDARD = LVCMOS33;
+NET "vfat2_resets_o<1>"     LOC = F18 | IOSTANDARD = LVCMOS33;
 
-NET "vfat2_mclk_p_o"        LOC = E13 | IOSTANDARD = LVDS_25;
-NET "vfat2_mclk_n_o"        LOC = D13 | IOSTANDARD = LVDS_25;
+NET "vfat2_mclk_p_o"        LOC = E13 | IOSTANDARD = LVDS_33; # LVDS_25 
+NET "vfat2_mclk_n_o"        LOC = D13 | IOSTANDARD = LVDS_33; # LVDS_25 
 
-NET "vfat2_t1_p_o"          LOC = J16 | IOSTANDARD = LVDS_25;
-NET "vfat2_t1_n_o"          LOC = J17 | IOSTANDARD = LVDS_25;
+NET "vfat2_t1_p_o"          LOC = J16 | IOSTANDARD = LVDS_33; # LVDS_25 
+NET "vfat2_t1_n_o"          LOC = J17 | IOSTANDARD = LVDS_33; # LVDS_25 
 
 NET "vfat2_scl_o<2>"        LOC = B23 | IOSTANDARD = I2C;
 NET "vfat2_scl_o<3>"        LOC = D22 | IOSTANDARD = I2C;

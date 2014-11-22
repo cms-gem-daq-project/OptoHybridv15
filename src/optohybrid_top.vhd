@@ -571,7 +571,7 @@ begin
     
     -- Fixed registers : 23 -- read _ firmware version
     
-    request_read(23) <= x"20141121"; 
+    request_read(23) <= x"20141122"; 
     
     -- Reserved : 25 downto 24
     
@@ -649,12 +649,12 @@ begin
     cs_ila0 <= tx_data(31 downto 16) & rx_data(31 downto 16);
     cs_ila1 <= tx_data(63 downto 48) & rx_data(63 downto 48);
     
-    cs_ila2 <= (0 => vfat2_dvalid_i(0), 1 => vfat2_dvalid_i(1),
-                2 => vfat2_data_8_i(8), 3 => vfat2_data_9_i(8), 4 => vfat2_data_10_i(8), 5 => vfat2_data_11_i(8), 6 => vfat2_data_12_i(8), 7 => vfat2_data_13_i(8),
-                others => '0');
-                
-    cs_ila3 <= (0 => ext_lv1a, 1 => req_lv1a, 2 => t1_lv1a, 3 => '0',
-                4 => t1_calpulse, 5 => t1_resync, 6 => t1_bc0, 7 => '0',
-                others => '0');
+--    cs_ila2 <= (0 => vfat2_dvalid_i(0), 1 => vfat2_dvalid_i(1),
+--                2 => vfat2_data_8_i(8), 3 => vfat2_data_9_i(8), 4 => vfat2_data_10_i(8), 5 => vfat2_data_11_i(8), 6 => vfat2_data_12_i(8), 7 => vfat2_data_13_i(8),
+--                others => '0');
+--                
+--    cs_ila3 <= (0 => ext_lv1a, 1 => req_lv1a, 2 => t1_lv1a, 3 => '0',
+--                4 => t1_calpulse, 5 => t1_resync, 6 => t1_bc0, 7 => '0',
+--                others => '0');
     
 end Behavioral;
