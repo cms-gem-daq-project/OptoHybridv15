@@ -9,7 +9,8 @@ library work;
 
 entity gtp_wrapper is
 port(
-
+    
+    fpga_clk_i      : in std_logic;
     gtp_clk_o       : out std_logic;
     rec_clk_o       : out std_logic;
     reset_i         : in std_logic;
@@ -50,6 +51,7 @@ architecture Behavioral of gtp_wrapper is
     signal rx_disperr       : std_logic_vector(7 downto 0) := (others => '0'); 
     signal rx_notintable    : std_logic_vector(7 downto 0) := (others => '0'); 
     
+    signal local_reset      : std_logic := '0';
     signal rx_isaligned     : std_logic_vector(3 downto 0) := (others => '0'); 
     signal rx_reset         : std_logic_vector(3 downto 0) := (others => '0');  
     signal rx_reset_done    : std_logic_vector(3 downto 0) := (others => '0');  
@@ -73,10 +75,12 @@ begin
     -- Resets
     --================================--
     
-    rx_reset(0) <= gtp_reset_i(0) or reset_i;
-    rx_reset(1) <= gtp_reset_i(1) or reset_i;
-    rx_reset(2) <= gtp_reset_i(2) or reset_i;
-    rx_reset(3) <= gtp_reset_i(3) or reset_i;
+    rx_reset(0) <= gtp_reset_i(0) or reset_i or local_reset;
+    rx_reset(1) <= gtp_reset_i(1) or reset_i or local_reset;
+    rx_reset(2) <= gtp_reset_i(2) or reset_i or local_reset;
+    rx_reset(3) <= gtp_reset_i(3) or reset_i or local_reset;
+    
+    gtp_link_reset_inst : entity work.gtp_link_reset port map(fpga_clk_i => fpga_clk_i, reset_o => local_reset);
     
     --================================--
     -- Clocking

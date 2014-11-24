@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Sat Nov 22 18:33:28 2014
+// Written by: Map P.20131013 on Mon Nov 24 07:17:18 2014
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -21150,6 +21150,41 @@ TIMEGRP vfat2_clk_muxed = BEL "vfat2_buf_clk_inst" BEL
         "t1_handler_inst/t1_encoder_inst/data_2" BEL
         "t1_handler_inst/t1_encoder_inst/t1_o" BEL "vfat2_mclk_p_o" BEL
         "vfat2_mclk_n_o";
+PIN SP6_INS_BUFIO2FB_DCM_ML_BUFIO2FB_1_pins<1> = BEL
+        "SP6_INS_BUFIO2FB_DCM_ML_BUFIO2FB_1" PINNAME O;
+PIN fpga_clk_pll_inst/dcm_sp_inst_pins<1> = BEL
+        "fpga_clk_pll_inst/dcm_sp_inst" PINNAME CLKFB;
+TIMEGRP fpga_clk = BEL "gtp_wrapper_inst/gtp_link_reset_inst/counter_0" BEL
+        "gtp_wrapper_inst/gtp_link_reset_inst/counter_1" BEL
+        "gtp_wrapper_inst/gtp_link_reset_inst/counter_2" BEL
+        "gtp_wrapper_inst/gtp_link_reset_inst/counter_3" BEL
+        "gtp_wrapper_inst/gtp_link_reset_inst/counter_4" BEL
+        "gtp_wrapper_inst/gtp_link_reset_inst/counter_5" BEL
+        "gtp_wrapper_inst/gtp_link_reset_inst/counter_6" BEL
+        "gtp_wrapper_inst/gtp_link_reset_inst/counter_7" BEL
+        "gtp_wrapper_inst/gtp_link_reset_inst/counter_8" BEL
+        "gtp_wrapper_inst/gtp_link_reset_inst/counter_9" BEL
+        "gtp_wrapper_inst/gtp_link_reset_inst/state_0" BEL
+        "gtp_wrapper_inst/gtp_link_reset_inst/reset_o" BEL
+        "clock_control_inst/vfat2_reset_src" BEL
+        "clock_control_inst/last_vfat2" BEL
+        "clock_control_inst/cdce_reset_src" BEL
+        "clock_control_inst/vfat2_count_1" BEL
+        "clock_control_inst/vfat2_count_0" BEL
+        "clock_control_inst/vfat2_count_2" BEL
+        "clock_control_inst/cdce_count_0" BEL
+        "clock_control_inst/cdce_count_3" BEL
+        "clock_control_inst/cdce_count_1" BEL
+        "clock_control_inst/cdce_count_2" BEL
+        "clock_control_inst/cdce_count_4" BEL
+        "clock_control_inst/cdce_count_5" BEL
+        "clock_control_inst/cdce_count_8" BEL
+        "clock_control_inst/cdce_count_6" BEL
+        "clock_control_inst/cdce_count_7" BEL
+        "clock_control_inst/cdce_count_9" BEL
+        "clock_control_inst/cdce_count_10" PIN
+        "SP6_INS_BUFIO2FB_DCM_ML_BUFIO2FB_1_pins<1>" PIN
+        "fpga_clk_pll_inst/dcm_sp_inst_pins<1>";
 PIN gtp_wrapper_inst/gtp_inst/tile1_gtp_i/gtpa1_dual_i_pins<148> = BEL
         "gtp_wrapper_inst/gtp_inst/tile1_gtp_i/gtpa1_dual_i" PINNAME
         RXUSRCLK0;
@@ -23235,7 +23270,7 @@ TIMEGRP gtp_clk = PIN
         BEL
         "link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/en"
         BEL
-        "link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/en_clk_DFF_386"
+        "link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/en_clk_DFF_388"
         BEL
         "link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/i2cscl.timer_0"
         BEL
@@ -25742,29 +25777,6 @@ TIMEGRP gtp_clk = PIN
         "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_S6.U_CS_BRAM_CASCADE_S6/I_DEPTH_LTEQ_16K.U_SBRAM_0/I_B18KGT0.G_RAMB18[5].u_ramb18/U_RAMB18_pins<29>"
         PIN
         "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_S6.U_CS_BRAM_CASCADE_S6/I_DEPTH_LTEQ_16K.U_SBRAM_0/I_B18KGT0.G_RAMB18[6].u_ramb18/U_RAMB18_pins<29>";
-PIN SP6_INS_BUFIO2FB_DCM_ML_BUFIO2FB_1_pins<1> = BEL
-        "SP6_INS_BUFIO2FB_DCM_ML_BUFIO2FB_1" PINNAME O;
-PIN fpga_clk_pll_inst/dcm_sp_inst_pins<1> = BEL
-        "fpga_clk_pll_inst/dcm_sp_inst" PINNAME CLKFB;
-TIMEGRP fpga_clk = BEL "clock_control_inst/vfat2_reset_src" BEL
-        "clock_control_inst/last_vfat2" BEL
-        "clock_control_inst/cdce_reset_src" BEL
-        "clock_control_inst/vfat2_count_1" BEL
-        "clock_control_inst/vfat2_count_0" BEL
-        "clock_control_inst/vfat2_count_2" BEL
-        "clock_control_inst/cdce_count_0" BEL
-        "clock_control_inst/cdce_count_3" BEL
-        "clock_control_inst/cdce_count_1" BEL
-        "clock_control_inst/cdce_count_2" BEL
-        "clock_control_inst/cdce_count_4" BEL
-        "clock_control_inst/cdce_count_5" BEL
-        "clock_control_inst/cdce_count_8" BEL
-        "clock_control_inst/cdce_count_6" BEL
-        "clock_control_inst/cdce_count_7" BEL
-        "clock_control_inst/cdce_count_9" BEL
-        "clock_control_inst/cdce_count_10" PIN
-        "SP6_INS_BUFIO2FB_DCM_ML_BUFIO2FB_1_pins<1>" PIN
-        "fpga_clk_pll_inst/dcm_sp_inst_pins<1>";
 TIMEGRP vfat2_clk = BEL
         "link_tracking_1_inst/tracking_core_inst/track_7_inst/data_0" BEL
         "link_tracking_1_inst/tracking_core_inst/track_7_inst/data_1" BEL
