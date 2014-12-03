@@ -1,7 +1,7 @@
-Release 14.7 - par P.20131013 (nt)
+Release 14.7 - par P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Mon Nov 24 07:19:13 2014
+Wed Dec 03 16:49:41 2014
 
 All signals are completely routed.
 
@@ -11,12 +11,11 @@ WARNING:ParHelpers:362 - There are 3 sourceless signals in this design. This des
    cdce_mosi_o_OBUF
    cdce_sclk_o_OBUF
    fpga_tx_o_OBUF
-WARNING:ParHelpers:361 - There are 35 loadless signals in this design. This design will cause Bitgen to issue DRC
+WARNING:ParHelpers:361 - There are 34 loadless signals in this design. This design will cause Bitgen to issue DRC
    warnings.
 
    cdce_auxout_i_IBUF
    cdce_miso_i_IBUF
-   chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[20].SYNC_OUT_CELL/out_temp
    chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[21].SYNC_OUT_CELL/out_temp
    chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[22].SYNC_OUT_CELL/out_temp
    chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[23].SYNC_OUT_CELL/out_temp

@@ -5747,9 +5747,6 @@
 <msg type="warning" file="NgdBuild" num="452" delta="old" ><arg fmt="%s" index="1">logical</arg> net &apos;<arg fmt="%s" index="2">link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/completed</arg>&apos; has no driver
 </msg>
 
-<msg type="warning" file="NgdBuild" num="478" delta="old" >clock net <arg fmt="%s" index="1">rec_clk_pll_inst/rec_clk_o</arg> with clock driver <arg fmt="%s" index="2">rec_clk_pll_inst/clkout1_buf</arg> drives no clock pins
-</msg>
-
 <msg type="warning" file="NgdBuild" num="470" delta="old" ><arg fmt="%s" index="1">bidirect</arg> pad net &apos;<arg fmt="%s" index="2">fpga_test_io&lt;5&gt;</arg>&apos; has no legal driver
 </msg>
 

@@ -12,7 +12,6 @@ port(
     
     fpga_clk_i      : in std_logic;
     gtp_clk_o       : out std_logic;
-    rec_clk_o       : out std_logic;
     reset_i         : in std_logic;
     gtp_reset_i     : in std_logic_vector(3 downto 0);
     
@@ -63,8 +62,6 @@ begin
     --================================--
     
     gtp_clk_o <= gtp_userclk2(0);
-    
-    rec_clk_o <= gtp_recclk(1);
     
     rx_error_o(0) <= rx_disperr(0) or rx_disperr(1) or rx_notintable(0) or rx_notintable(1);
     rx_error_o(1) <= rx_disperr(2) or rx_disperr(3) or rx_notintable(2) or rx_notintable(3);

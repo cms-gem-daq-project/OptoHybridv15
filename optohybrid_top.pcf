@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Mon Nov 24 07:17:18 2014
+// Written by: Map P.20131013 on Wed Dec 03 16:47:52 2014
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -163,10 +163,14 @@ PIN
         "link_tracking_1_inst/tracking_core_inst/tracking_data_fifo_inst/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[6].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram"
         PINNAME CLKAWRCLK;
 TIMEGRP vfat2_clk_ext = BEL "vfat2_buf_clk_inst" BEL
-        "clock_control_inst/last_vfat2" BEL "clock_control_inst/vfat2_count_1"
-        BEL "clock_control_inst/vfat2_count_0" BEL
+        "clock_control_inst/vfat2_count_0" BEL
+        "clock_control_inst/vfat2_count_1" BEL
         "clock_control_inst/vfat2_count_2" BEL
-        "link_tracking_1_inst/tracking_core_inst/track_7_inst/data_0" BEL
+        "clock_control_inst/vfat2_count_3" BEL
+        "clock_control_inst/vfat2_count_6" BEL
+        "clock_control_inst/vfat2_count_4" BEL
+        "clock_control_inst/vfat2_count_5" BEL "clock_control_inst/last_vfat2"
+        BEL "link_tracking_1_inst/tracking_core_inst/track_7_inst/data_0" BEL
         "link_tracking_1_inst/tracking_core_inst/track_7_inst/data_1" BEL
         "link_tracking_1_inst/tracking_core_inst/track_7_inst/data_2" BEL
         "link_tracking_1_inst/tracking_core_inst/track_7_inst/data_3" BEL
@@ -21166,23 +21170,27 @@ TIMEGRP fpga_clk = BEL "gtp_wrapper_inst/gtp_link_reset_inst/counter_0" BEL
         "gtp_wrapper_inst/gtp_link_reset_inst/counter_9" BEL
         "gtp_wrapper_inst/gtp_link_reset_inst/state_0" BEL
         "gtp_wrapper_inst/gtp_link_reset_inst/reset_o" BEL
-        "clock_control_inst/vfat2_reset_src" BEL
-        "clock_control_inst/last_vfat2" BEL
-        "clock_control_inst/cdce_reset_src" BEL
-        "clock_control_inst/vfat2_count_1" BEL
         "clock_control_inst/vfat2_count_0" BEL
+        "clock_control_inst/vfat2_count_1" BEL
         "clock_control_inst/vfat2_count_2" BEL
+        "clock_control_inst/vfat2_count_3" BEL
+        "clock_control_inst/vfat2_count_6" BEL
+        "clock_control_inst/vfat2_count_4" BEL
+        "clock_control_inst/vfat2_count_5" BEL
         "clock_control_inst/cdce_count_0" BEL
-        "clock_control_inst/cdce_count_3" BEL
         "clock_control_inst/cdce_count_1" BEL
         "clock_control_inst/cdce_count_2" BEL
-        "clock_control_inst/cdce_count_4" BEL
         "clock_control_inst/cdce_count_5" BEL
+        "clock_control_inst/cdce_count_3" BEL
+        "clock_control_inst/cdce_count_4" BEL
         "clock_control_inst/cdce_count_8" BEL
         "clock_control_inst/cdce_count_6" BEL
         "clock_control_inst/cdce_count_7" BEL
+        "clock_control_inst/cdce_count_11" BEL
         "clock_control_inst/cdce_count_9" BEL
-        "clock_control_inst/cdce_count_10" PIN
+        "clock_control_inst/cdce_count_10" BEL "clock_control_inst/last_vfat2"
+        BEL "clock_control_inst/cdce_reset_src" BEL
+        "clock_control_inst/vfat2_reset_src" PIN
         "SP6_INS_BUFIO2FB_DCM_ML_BUFIO2FB_1_pins<1>" PIN
         "fpga_clk_pll_inst/dcm_sp_inst_pins<1>";
 PIN gtp_wrapper_inst/gtp_inst/tile1_gtp_i/gtpa1_dual_i_pins<148> = BEL
@@ -21214,45 +21222,45 @@ TIMEGRP gtp_userclk01 = PIN
         "gtp_wrapper_inst/gtp_inst/tile1_gtp_i/gtpa1_dual_i_pins<149>" PIN
         "gtp_wrapper_inst/gtp_inst/tile1_gtp_i/gtpa1_dual_i_pins<336>" PIN
         "gtp_wrapper_inst/gtp_inst/tile1_gtp_i/gtpa1_dual_i_pins<337>";
-PIN gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<157> = BEL
+PIN gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<156> = BEL
         "gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i" PINNAME
         RXUSRCLK0;
-PIN gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<158> = BEL
+PIN gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<157> = BEL
         "gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i" PINNAME
         RXUSRCLK1;
-PIN gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<345> = BEL
+PIN gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<344> = BEL
         "gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i" PINNAME
         TXUSRCLK0;
-PIN gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<346> = BEL
+PIN gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<345> = BEL
         "gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i" PINNAME
         TXUSRCLK1;
 TIMEGRP gtp_userclk00 = PIN
+        "gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<156>" PIN
         "gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<157>" PIN
-        "gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<158>" PIN
+        "gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<344>" PIN
         "gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<345>" PIN
-        "gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<346>" PIN
+        "gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<156>" PIN
         "gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<157>" PIN
-        "gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<158>" PIN
+        "gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<344>" PIN
         "gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<345>" PIN
-        "gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<346>" PIN
+        "gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<156>" PIN
         "gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<157>" PIN
-        "gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<158>" PIN
+        "gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<344>" PIN
         "gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<345>" PIN
-        "gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<346>" PIN
+        "gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<156>" PIN
         "gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<157>" PIN
-        "gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<158>" PIN
-        "gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<345>" PIN
-        "gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<346>";
-PIN gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<159> = BEL
+        "gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<344>" PIN
+        "gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<345>";
+PIN gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<158> = BEL
         "gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i" PINNAME
         RXUSRCLK20;
-PIN gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<160> = BEL
+PIN gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<159> = BEL
         "gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i" PINNAME
         RXUSRCLK21;
-PIN gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<347> = BEL
+PIN gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<346> = BEL
         "gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i" PINNAME
         TXUSRCLK20;
-PIN gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<348> = BEL
+PIN gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<347> = BEL
         "gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i" PINNAME
         TXUSRCLK21;
 PIN gtp_wrapper_inst/gtp_clk_pll_tile_0_inst/dcm_sp_inst_pins<2> = BEL
@@ -21338,22 +21346,22 @@ PIN
         "chipscope_ila_inst/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_S6.U_CS_BRAM_CASCADE_S6/I_DEPTH_LTEQ_16K.U_SBRAM_0/I_B18KGT0.G_RAMB18[6].u_ramb18/U_RAMB18"
         PINNAME CLKB;
 TIMEGRP gtp_clk = PIN
+        "gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<158>" PIN
         "gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<159>" PIN
-        "gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<160>" PIN
+        "gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<346>" PIN
         "gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<347>" PIN
-        "gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<348>" PIN
+        "gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<158>" PIN
         "gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<159>" PIN
-        "gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<160>" PIN
+        "gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<346>" PIN
         "gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<347>" PIN
-        "gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<348>" PIN
+        "gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<158>" PIN
         "gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<159>" PIN
-        "gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<160>" PIN
+        "gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<346>" PIN
         "gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<347>" PIN
-        "gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<348>" PIN
+        "gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<158>" PIN
         "gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<159>" PIN
-        "gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<160>" PIN
+        "gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<346>" PIN
         "gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<347>" PIN
-        "gtp_wrapper_inst/gtp_inst/tile0_gtp_i/gtpa1_dual_i_pins<348>" PIN
         "gtp_wrapper_inst/gtp_clk_pll_tile_0_inst/dcm_sp_inst_pins<2>" BEL
         "adc_handler_inst/uart_rx_inst/data_0" BEL
         "adc_handler_inst/uart_rx_inst/data_1" BEL
@@ -23270,7 +23278,7 @@ TIMEGRP gtp_clk = PIN
         BEL
         "link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/en"
         BEL
-        "link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/en_clk_DFF_388"
+        "link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/en_clk_DFF_395"
         BEL
         "link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/i2cscl.timer_0"
         BEL
@@ -24408,6 +24416,8 @@ TIMEGRP gtp_clk = PIN
         BEL
         "chipscope_vio_inst/U0/I_VIO/GEN_UPDATE_OUT[51].UPDATE_CELL/GEN_CLK.USER_REG"
         BEL
+        "chipscope_vio_inst/U0/I_VIO/GEN_UPDATE_OUT[52].UPDATE_CELL/GEN_CLK.USER_REG"
+        BEL
         "chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[16].SYNC_OUT_CELL/USER_REG"
         BEL
         "chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[17].SYNC_OUT_CELL/USER_REG"
@@ -24415,6 +24425,8 @@ TIMEGRP gtp_clk = PIN
         "chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[18].SYNC_OUT_CELL/USER_REG"
         BEL
         "chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[19].SYNC_OUT_CELL/USER_REG"
+        BEL
+        "chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[20].SYNC_OUT_CELL/USER_REG"
         BEL
         "chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT_ADDR.SYNC_OUT_ADDR/DLY1_REG"
         BEL
@@ -32771,18 +32783,11 @@ TIMEGRP vfat2_clk = BEL
         "t1_handler_inst/t1_encoder_inst/data_1" BEL
         "t1_handler_inst/t1_encoder_inst/data_2" BEL
         "t1_handler_inst/t1_encoder_inst/t1_o";
-PIN rec_clk_pll_inst/dcm_sp_inst_pins<3> = BEL "rec_clk_pll_inst/dcm_sp_inst"
-        PINNAME CLKIN;
-TIMEGRP rec_clk = BEL "rec_clk_pll_inst/clkin1_buf" PIN
-        "rec_clk_pll_inst/dcm_sp_inst_pins<3>";
-TIMEGRP cdce_clk_rec = BEL "cdce_pri_p_o" BEL "cdce_pri_n_o";
 TIMEGRP cdce_clk_muxed = BEL "cdce_pri_p_o" BEL "cdce_pri_n_o";
 TS_fpga_clk = PERIOD TIMEGRP "fpga_clk" 20 ns HIGH 50%;
 TS_vfat2_clk_ext = PERIOD TIMEGRP "vfat2_clk_ext" 25 ns HIGH 50%;
 TS_vfat2_clk_fpga = PERIOD TIMEGRP "vfat2_clk_fpga" 25 ns HIGH 50%;
 TS_vfat2_clk_muxed = PERIOD TIMEGRP "vfat2_clk_muxed" 25 ns HIGH 50%;
-TS_rec_clk = PERIOD TIMEGRP "rec_clk" 3.125 ns HIGH 50%;
-TS_cdce_clk_rec = PERIOD TIMEGRP "cdce_clk_rec" 25 ns HIGH 50%;
 TS_cdce_clk_muxed = PERIOD TIMEGRP "cdce_clk_muxed" 25 ns HIGH 50%;
 TS_gtp_clk = PERIOD TIMEGRP "gtp_clk" 6.25 ns HIGH 50%;
 TS_vfat2_clk = PERIOD TIMEGRP "vfat2_clk" 25 ns HIGH 50%;

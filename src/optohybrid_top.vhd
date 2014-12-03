@@ -108,13 +108,11 @@ architecture Behavioral of optohybrid_top is
     
     -- Clocking
     
+    signal clock_reset                  : std_logic := '0';
+    
     signal fpga_clk                     : std_logic := '0';
     signal vfat2_clk_fpga               : std_logic := '0';
     signal fpga_pll_locked              : std_logic := '0';
-    
-    signal rec_clk                      : std_logic := '0';
-    signal cdce_clk_rec                 : std_logic := '0';
-    signal rec_pll_locked               : std_logic := '0';
     
     signal vfat2_clk_muxed              : std_logic := '0';
     signal cdce_clk_muxed               : std_logic := '0';
@@ -223,7 +221,7 @@ begin
     reset <= '0';
     
     -- LEDS
-    leds_o <= fpga_pll_locked & '0' & rec_pll_locked & cdce_pll_locked_i;
+    leds_o <= fpga_pll_locked & '0' & '0' & cdce_pll_locked_i;
     
     --================================--
     -- External signals
@@ -268,9 +266,6 @@ begin
     
     vfat2_clk_obufds : obufds port map(i => vfat2_clk_muxed, o => vfat2_mclk_p_o, ob => vfat2_mclk_n_o);
     
-    -- Recovery clock
-    rec_clk_pll_inst : entity work.rec_clk_pll port map(rec_clk_i => rec_clk, rec_clk_o => open, cdce_clk_rec_o => cdce_clk_rec, rec_pll_locked_o => rec_pll_locked);
-    
     -- CDCE clock
     cdce_primary_clk_obufds : obufds port map(i => cdce_clk_muxed, o => cdce_pri_p_o, ob => cdce_pri_n_o);
     
@@ -282,12 +277,11 @@ begin
     -- Clock switching
     clock_control_inst : entity work.clock_control
     port map(
+        clock_reset_i       => clock_reset,
         fpga_clk_i          => fpga_clk, 
         vfat2_clk_fpga_i    => vfat2_clk_fpga,
         vfat2_clk_ext_i     => vfat2_clk_ext,
-        cdce_clk_rec_i      => cdce_clk_rec,
         fpga_pll_locked_i   => fpga_pll_locked,
-        rec_pll_locked_i    => rec_pll_locked,
         cdce_pll_locked_i   => cdce_pll_locked_i,
         vfat2_clk_o         => vfat2_clk_muxed,
         cdce_clk_o          => cdce_clk_muxed,
@@ -311,7 +305,6 @@ begin
     port map(
         fpga_clk_i      => fpga_clk,
         gtp_clk_o       => gtp_clk,
-        rec_clk_o       => rec_clk,
         reset_i         => reset,
         gtp_reset_i     => gtp_reset,
         rx_error_o      => rx_error,
@@ -556,11 +549,9 @@ begin
    
     request_read(16) <= (0 => cdce_pll_locked_i, others => '0'); -- read _ CDCE Locked
     
-    request_read(17) <= (0 => rec_pll_locked, others => '0'); -- read _ GTP recovered clock PLL locked
-    
     -- Reserved : 20 downto 18 
     
-    request_read(20 downto 18) <= (others => (others => '0'));
+    request_read(20 downto 17) <= (others => (others => '0'));
     
     
     
@@ -572,7 +563,7 @@ begin
     
     -- Fixed registers : 23 -- read _ firmware version
     
-    request_read(23) <= x"20141124"; 
+    request_read(23) <= x"20141126"; 
     
     -- Reserved : 25 downto 24
     
@@ -644,14 +635,17 @@ begin
     chipscope_vio_inst : entity work.chipscope_vio port map (CONTROL => cs_icon0, CLK => gtp_clk, ASYNC_IN => cs_async_in, ASYNC_OUT => cs_async_out, SYNC_IN => cs_sync_in, SYNC_OUT => cs_sync_out);
 
     gtp_reset <= cs_sync_out(3 downto 0);
+    
+    clock_reset <= cs_sync_out(4);
 
     chipscope_ila_inst : entity work.chipscope_ila port map (CONTROL => cs_icon1, CLK => gtp_clk, TRIG0 => cs_ila0, TRIG1 => cs_ila1, TRIG2 => cs_ila2, TRIG3 => cs_ila3);
 
     cs_ila0 <= tx_data(31 downto 16) & rx_data(31 downto 16);
     cs_ila1 <= tx_data(63 downto 48) & rx_data(63 downto 48);
     
-    cs_ila2 <= (0 => vfat2_dvalid_i(0), 1 => vfat2_dvalid_i(1),
+    cs_ila2 <= (0 => vfat2_dvalid_i(2), 1 => vfat2_dvalid_i(3),
                 2 => vfat2_data_8_i(8), 3 => vfat2_data_9_i(8), 4 => vfat2_data_10_i(8), 5 => vfat2_data_11_i(8), 6 => vfat2_data_12_i(8), 7 => vfat2_data_13_i(8),
+                8 => vfat2_src_select, 9 => vfat2_fallback, 10 => cdce_src_select(0), 11 => cdce_fallback, 12 => fpga_pll_locked, 13 => cdce_pll_locked_i,
                 others => '0');
                 
     cs_ila3 <= (0 => ext_lv1a, 1 => req_lv1a, 2 => t1_lv1a, 3 => '0',
