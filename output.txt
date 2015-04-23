@@ -1,13 +1,9 @@
-Storage Target: SPI Flash Single FPGA
-64M
+Storage Target: BPI Flash Single FPGA
+Storage Family: Virtex6
+xcf128x       [16M]
 FF
-OH_Flash
-Z:\Documents\PhD\Code\OptoHybrid/
+OH.mcs
+C:/Users/tlenzi/Desktop
 
 MCS
-No
-/Code/WebDAQ
-
-MCS
-x8
 No

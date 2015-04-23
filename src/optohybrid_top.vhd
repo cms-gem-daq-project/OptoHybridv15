@@ -1,3 +1,23 @@
+----------------------------------------------------------------------------------
+-- Company:        IIHE - ULB
+-- Engineer:       Thomas Lenzi (thomas.lenzi@cern.ch)
+-- 
+-- Create Date:    13:13:21 03/12/2015 
+-- Design Name:    OptoHybrid v2
+-- Module Name:    optohybrid_top - Behavioral 
+-- Project Name:   OptoHybrid v2
+-- Target Devices: xc6vlx130t-1ff1156
+-- Tool versions:  ISE  P.20131013
+-- Description: 
+--
+-- Dependencies: 
+--
+-- Revision: 
+-- Revision 0.01 - File Created
+-- Additional Comments: 
+--
+----------------------------------------------------------------------------------
+
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
@@ -6,120 +26,226 @@ library unisim;
 use unisim.vcomponents.all;
 
 library work;
+use work.vfat2_pkg.all;
 use work.user_package.all;
 
 entity optohybrid_top is
 port(
 
-    -- OptoHybrid signals
+    --== VFAT2s Control ==--
+    
+    vfat2_mclk_p_o          : out std_logic_vector(2 downto 0);
+    vfat2_mclk_n_o          : out std_logic_vector(2 downto 0);
+    
+    vfat2_resb_o            : out std_logic_vector(2 downto 0);
+    vfat2_resh_o            : out std_logic_vector(2 downto 0);
+    
+    vfat2_t1_p_o            : out std_logic_vector(2 downto 0);
+    vfat2_t1_n_o            : out std_logic_vector(2 downto 0);
+    
+    vfat2_scl_o             : out std_logic_vector(5 downto 0);
+    vfat2_sda_io            : inout std_logic_vector(5 downto 0);
+    
+    vfat2_data_valid_p_i    : in std_logic_vector(5 downto 0);
+    vfat2_data_valid_n_i    : in std_logic_vector(5 downto 0);
+    
+    --== VFAT2s Data ==--
+    
+    vfat2_0_sbits_p_i       : in std_logic_vector(7 downto 0);
+    vfat2_0_sbits_n_i       : in std_logic_vector(7 downto 0);
+    vfat2_0_data_out_p_i    : in std_logic;
+    vfat2_0_data_out_n_i    : in std_logic;
 
-    fpga_clk_i          : in std_logic;
-    fpga_rx_i           : in std_logic;
-    fpga_tx_o           : out std_logic;
-    enable_gtp_o        : out std_logic; 
-    fpga_test_io        : inout std_logic_vector(5 downto 0);
-    leds_o              : out std_logic_vector(3 downto 0);
-    
-    -- CDCE signals
-    
-    cdce_le_o           : out std_logic;
-    cdce_miso_i         : in std_logic;
-    cdce_mosi_o         : out std_logic;
-    cdce_sclk_o         : out std_logic;
-    
-    cdce_auxout_i       : in std_logic;
-    cdce_pll_locked_i   : in std_logic;
-    cdce_powerdown_o    : out std_logic;
-    cdce_ref_o          : out std_logic;
-    cdce_sync_o         : out std_logic;
-    cdce_pri_p_o        : out std_logic;
-    cdce_pri_n_o        : out std_logic;
-    
-    -- VFAT2 common lines
-    
-    vfat2_resets_o      : out std_logic_vector(1 downto 0);
-    vfat2_mclk_p_o      : out std_logic;
-    vfat2_mclk_n_o      : out std_logic;
-    vfat2_t1_p_o        : out std_logic;
-    vfat2_t1_n_o        : out std_logic;
-    vfat2_sda_io        : inout std_logic_vector(5 downto 0);
-    vfat2_scl_o         : inout std_logic_vector(5 downto 0);
-    vfat2_dvalid_i      : in std_logic_vector(5 downto 0);
+    vfat2_1_sbits_p_i       : in std_logic_vector(7 downto 0);
+    vfat2_1_sbits_n_i       : in std_logic_vector(7 downto 0);
+    vfat2_1_data_out_p_i    : in std_logic;
+    vfat2_1_data_out_n_i    : in std_logic;
 
-    -- VFAT2 signal lines
+    vfat2_2_sbits_p_i       : in std_logic_vector(7 downto 0);
+    vfat2_2_sbits_n_i       : in std_logic_vector(7 downto 0);
+    vfat2_2_data_out_p_i    : in std_logic;
+    vfat2_2_data_out_n_i    : in std_logic;
+
+    vfat2_3_sbits_p_i       : in std_logic_vector(7 downto 0);
+    vfat2_3_sbits_n_i       : in std_logic_vector(7 downto 0);
+    vfat2_3_data_out_p_i    : in std_logic;
+    vfat2_3_data_out_n_i    : in std_logic;
+
+    vfat2_4_sbits_p_i       : in std_logic_vector(7 downto 0);
+    vfat2_4_sbits_n_i       : in std_logic_vector(7 downto 0);
+    vfat2_4_data_out_p_i    : in std_logic;
+    vfat2_4_data_out_n_i    : in std_logic;
+
+    vfat2_5_sbits_p_i       : in std_logic_vector(7 downto 0);
+    vfat2_5_sbits_n_i       : in std_logic_vector(7 downto 0);
+    vfat2_5_data_out_p_i    : in std_logic;
+    vfat2_5_data_out_n_i    : in std_logic;
+
+    vfat2_6_sbits_p_i       : in std_logic_vector(7 downto 0);
+    vfat2_6_sbits_n_i       : in std_logic_vector(7 downto 0);
+    vfat2_6_data_out_p_i    : in std_logic;
+    vfat2_6_data_out_n_i    : in std_logic;
+
+    vfat2_7_sbits_p_i       : in std_logic_vector(7 downto 0);
+    vfat2_7_sbits_n_i       : in std_logic_vector(7 downto 0);
+    vfat2_7_data_out_p_i    : in std_logic;
+    vfat2_7_data_out_n_i    : in std_logic;
+
+    vfat2_8_sbits_p_i       : in std_logic_vector(7 downto 0);
+    vfat2_8_sbits_n_i       : in std_logic_vector(7 downto 0);
+    vfat2_8_data_out_p_i    : in std_logic;
+    vfat2_8_data_out_n_i    : in std_logic;
+
+    vfat2_9_sbits_p_i       : in std_logic_vector(7 downto 0);
+    vfat2_9_sbits_n_i       : in std_logic_vector(7 downto 0);
+    vfat2_9_data_out_p_i    : in std_logic;
+    vfat2_9_data_out_n_i    : in std_logic;
+
+    vfat2_10_sbits_p_i      : in std_logic_vector(7 downto 0);
+    vfat2_10_sbits_n_i      : in std_logic_vector(7 downto 0);
+    vfat2_10_data_out_p_i   : in std_logic;
+    vfat2_10_data_out_n_i   : in std_logic;
     
-    vfat2_data_0_i      : in std_logic_vector(8 downto 0); -- 7 downto 0 = S bits, 8 = data_out (tracking)
-    vfat2_data_1_i      : in std_logic_vector(8 downto 0);
-    vfat2_data_2_i      : in std_logic_vector(8 downto 0);
-    vfat2_data_3_i      : in std_logic_vector(8 downto 0);
-    vfat2_data_4_i      : in std_logic_vector(8 downto 0);
-    vfat2_data_5_i      : in std_logic_vector(8 downto 0);
-    vfat2_data_6_i      : in std_logic_vector(8 downto 0);
-    vfat2_data_7_i      : in std_logic_vector(8 downto 0);
-    vfat2_data_8_i      : in std_logic_vector(8 downto 0); 
-    vfat2_data_9_i      : in std_logic_vector(8 downto 0);
-    vfat2_data_10_i     : in std_logic_vector(8 downto 0);
-    vfat2_data_11_i     : in std_logic_vector(8 downto 0);
-    vfat2_data_12_i     : in std_logic_vector(8 downto 0);
-    vfat2_data_13_i     : in std_logic_vector(8 downto 0);
-    vfat2_data_14_i     : in std_logic_vector(8 downto 0);
-    vfat2_data_15_i     : in std_logic_vector(8 downto 0);
-    vfat2_data_16_i     : in std_logic_vector(8 downto 0);
-    vfat2_data_17_i     : in std_logic_vector(8 downto 0);
-    vfat2_data_18_i     : in std_logic_vector(8 downto 0);
-    vfat2_data_19_i     : in std_logic_vector(8 downto 0);
-    vfat2_data_20_i     : in std_logic_vector(8 downto 0);
-    vfat2_data_21_i     : in std_logic_vector(8 downto 0);
-    vfat2_data_22_i     : in std_logic_vector(8 downto 0);
-    vfat2_data_23_i     : in std_logic_vector(8 downto 0);
+    vfat2_11_sbits_p_i      : in std_logic_vector(7 downto 0);
+    vfat2_11_sbits_n_i      : in std_logic_vector(7 downto 0);
+    vfat2_11_data_out_p_i   : in std_logic;
+    vfat2_11_data_out_n_i   : in std_logic;
+
+    vfat2_12_sbits_p_i      : in std_logic_vector(7 downto 0);
+    vfat2_12_sbits_n_i      : in std_logic_vector(7 downto 0);
+    vfat2_12_data_out_p_i   : in std_logic;
+    vfat2_12_data_out_n_i   : in std_logic;
+
+    vfat2_13_sbits_p_i      : in std_logic_vector(7 downto 0);
+    vfat2_13_sbits_n_i      : in std_logic_vector(7 downto 0);
+    vfat2_13_data_out_p_i   : in std_logic;
+    vfat2_13_data_out_n_i   : in std_logic;
+
+    vfat2_14_sbits_p_i      : in std_logic_vector(7 downto 0);
+    vfat2_14_sbits_n_i      : in std_logic_vector(7 downto 0);
+    vfat2_14_data_out_p_i   : in std_logic;
+    vfat2_14_data_out_n_i   : in std_logic;
+
+    vfat2_15_sbits_p_i      : in std_logic_vector(7 downto 0);
+    vfat2_15_sbits_n_i      : in std_logic_vector(7 downto 0);
+    vfat2_15_data_out_p_i   : in std_logic;
+    vfat2_15_data_out_n_i   : in std_logic;
+
+    vfat2_16_sbits_p_i      : in std_logic_vector(7 downto 0);
+    vfat2_16_sbits_n_i      : in std_logic_vector(7 downto 0);
+    vfat2_16_data_out_p_i   : in std_logic;
+    vfat2_16_data_out_n_i   : in std_logic;
+
+    vfat2_17_sbits_p_i      : in std_logic_vector(7 downto 0);
+    vfat2_17_sbits_n_i      : in std_logic_vector(7 downto 0);
+    vfat2_17_data_out_p_i   : in std_logic;
+    vfat2_17_data_out_n_i   : in std_logic;
+
+    vfat2_18_sbits_p_i      : in std_logic_vector(7 downto 0);
+    vfat2_18_sbits_n_i      : in std_logic_vector(7 downto 0);
+    vfat2_18_data_out_p_i   : in std_logic;
+    vfat2_18_data_out_n_i   : in std_logic;
+
+    vfat2_19_sbits_p_i      : in std_logic_vector(7 downto 0);
+    vfat2_19_sbits_n_i      : in std_logic_vector(7 downto 0);
+    vfat2_19_data_out_p_i   : in std_logic;
+    vfat2_19_data_out_n_i   : in std_logic;
+
+    vfat2_20_sbits_p_i      : in std_logic_vector(7 downto 0);
+    vfat2_20_sbits_n_i      : in std_logic_vector(7 downto 0);
+    vfat2_20_data_out_p_i   : in std_logic;
+    vfat2_20_data_out_n_i   : in std_logic;
+
+    vfat2_21_sbits_p_i      : in std_logic_vector(7 downto 0);
+    vfat2_21_sbits_n_i      : in std_logic_vector(7 downto 0);
+    vfat2_21_data_out_p_i   : in std_logic;
+    vfat2_21_data_out_n_i   : in std_logic;
+
+    vfat2_22_sbits_p_i      : in std_logic_vector(7 downto 0);
+    vfat2_22_sbits_n_i      : in std_logic_vector(7 downto 0);
+    vfat2_22_data_out_p_i   : in std_logic;
+    vfat2_22_data_out_n_i   : in std_logic;
+
+    vfat2_23_sbits_p_i      : in std_logic_vector(7 downto 0);
+    vfat2_23_sbits_n_i      : in std_logic_vector(7 downto 0);
+    vfat2_23_data_out_p_i   : in std_logic;
+    vfat2_23_data_out_n_i   : in std_logic;
     
-    -- GTP signals
+    --== Clocking ==--
     
-    rx_p_i              : in std_logic_vector(3 downto 0);
-    rx_n_i              : in std_logic_vector(3 downto 0);
-    tx_p_o              : out std_logic_vector(3 downto 0);
-    tx_n_o              : out std_logic_vector(3 downto 0);
+    clk_50MHz_i             : in std_logic;
+
+    cdce_ref_o              : out std_logic;
+    cdce_pwrdown_o          : out std_logic;
+    cdce_sync_o             : out std_logic;
+    cdce_locked_i           : in std_logic;
+    cdce_le_o               : out std_logic;
+    cdce_clk_p_i            : in std_logic;
+    cdce_clk_n_i            : in std_logic;
+    cdce_pri_p_o            : out std_logic;
+    cdce_pri_n_o            : out std_logic;
     
-    gtp_refclk_p_i      : in std_logic_vector(3 downto 0);
-    gtp_refclk_n_i      : in std_logic_vector(3 downto 0)
+    --== GTX ==--
     
+    mgt_112_clk0_p_i        : in std_logic;
+    mgt_112_clk0_n_i        : in std_logic;
+    
+    mgt_112_rx_p_i          : in std_logic_vector(3 downto 0);
+    mgt_112_rx_n_i          : in std_logic_vector(3 downto 0);
+    mgt_112_tx_p_o          : out std_logic_vector(3 downto 0);
+    mgt_112_tx_n_o          : out std_logic_vector(3 downto 0);
+    
+    tmds_d_p_io             : in std_logic_vector(1 downto 0)
+
 );
 end optohybrid_top;
 
 architecture Behavioral of optohybrid_top is
+
+    --== Global ==--
     
-    -- Resets
+    signal reset                : std_logic;
+
+    --== VFAT2 signals ==--
+
+    signal vfat2_mclk           : std_logic; 
+    signal vfat2_reset          : std_logic; 
+    signal vfat2_t1             : std_logic; 
+    signal vfat2_scl            : std_logic_vector(5 downto 0); 
+    signal vfat2_sda_out        : std_logic_vector(5 downto 0); 
+    signal vfat2_sda_in         : std_logic_vector(5 downto 0); 
+    signal vfat2_sda_tri        : std_logic_vector(5 downto 0); 
+    signal vfat2_data_valid     : std_logic_vector(5 downto 0); 
+    signal vfat2_data           : vfat2s_data_t(23 downto 0);
     
-    signal reset                        : std_logic := '0';
+    --== Clocking ==--
     
-    -- External signals through LEMOs
+    signal clk_50MHz            : std_logic;
+    signal clk_40MHz            : std_logic;
+    signal clk_160MHz           : std_logic;
+    signal clk_40MHz_ext        : std_logic;
+    signal clk_160MHz_ext       : std_logic;
+    signal gtx_ref_clk          : std_logic;
+    signal pll_locked           : std_logic;
+    
+    --== GTX ==--
+    
+    signal gtp_reset            : std_logic_vector(3 downto 0) := (others => '0');
+    signal gtx_clk              : std_logic := '0';
+    signal rx_error             : std_logic_vector(3 downto 0);
+    signal rx_kchar             : std_logic_vector(7 downto 0);
+    signal rx_data              : std_logic_vector(63 downto 0);
+    signal tx_kchar             : std_logic_vector(7 downto 0);
+    signal tx_data              : std_logic_vector(63 downto 0);    
+    
+    --== Old ==--
     
     signal vfat2_clk_ext                : std_logic := '0';
     signal ext_lv1a                     : std_logic := '0';
     signal ext_sbits                    : std_logic := '0';
     
-    -- VFAT2
-    
-    signal vfat2_t1                     : std_logic := '0';
-    
-    signal vfat2_sda_i                  : std_logic_vector(5 downto 0) := (others => '0');
-    signal vfat2_sda_o                  : std_logic_vector(5 downto 0) := (others => '0');
-    signal vfat2_sda_t                  : std_logic_vector(5 downto 0) := (others => '0');
-    
     -- Clocking
-    
-    signal clock_reset                  : std_logic := '0';
-    
-    signal fpga_clk                     : std_logic := '0';
-    signal vfat2_clk_fpga               : std_logic := '0';
-    signal fpga_pll_locked              : std_logic := '0';
-    
-    signal vfat2_clk_muxed              : std_logic := '0';
-    signal cdce_clk_muxed               : std_logic := '0';
-    
-    signal gtp_clk                      : std_logic := '0';
-    signal vfat2_clk                    : std_logic := '0';
-    
+   
     signal vfat2_src_select             : std_logic := '0';
     signal vfat2_fallback               : std_logic := '0';
     signal vfat2_reset_src              : std_logic := '0';
@@ -127,16 +253,7 @@ architecture Behavioral of optohybrid_top is
     signal cdce_src_select              : std_logic_vector(1 downto 0) := (others => '0');
     signal cdce_fallback                : std_logic := '0';
     signal cdce_reset_src               : std_logic := '0';
-    
-    -- GTP
-    
-    signal gtp_reset                    : std_logic_vector(3 downto 0) := (others => '0');
-    signal rx_error                     : std_logic_vector(3 downto 0) := (others => '0');
-    signal rx_kchar                     : std_logic_vector(7 downto 0) := (others => '0');
-    signal rx_data                      : std_logic_vector(63 downto 0) := (others => '0');
-    signal tx_kchar                     : std_logic_vector(7 downto 0) := (others => '0');
-    signal tx_data                      : std_logic_vector(63 downto 0) := (others => '0');
-    
+ 
     -- Registers requests
     
     signal request_write                : array32(63 downto 0) := (others => (others => '0'));
@@ -211,213 +328,296 @@ architecture Behavioral of optohybrid_top is
     signal cs_ila2                  : std_logic_vector(31 downto 0);
     signal cs_ila3                  : std_logic_vector(31 downto 0);
     
+    signal clock_mux                : std_logic_vector(1 downto 0);
+    signal gtx_clk_muxed            : std_logic;
+    
 begin
 
-    --================================--
-    -- Global signals
-    --================================--
-
-    -- OptoHybrid reset
     reset <= '0';
+
+    --== VFAT2 buffers ==--
     
-    -- LEDS
-    leds_o <= fpga_pll_locked & '0' & '0' & cdce_pll_locked_i;
+    vfat2_buffers_inst : entity work.vfat2_buffers
+    port map(
+        --
+        vfat2_mclk_p_o          => vfat2_mclk_p_o,
+        vfat2_mclk_n_o          => vfat2_mclk_n_o,
+        vfat2_resb_o            => vfat2_resb_o,
+        vfat2_resh_o            => vfat2_resh_o,
+        vfat2_t1_p_o            => vfat2_t1_p_o,
+        vfat2_t1_n_o            => vfat2_t1_n_o,
+        vfat2_scl_o             => vfat2_scl_o,
+        vfat2_sda_io            => vfat2_sda_io,
+        vfat2_data_valid_p_i    => vfat2_data_valid_p_i,
+        vfat2_data_valid_n_i    => vfat2_data_valid_n_i,
+        --
+        vfat2_mclk_i            => vfat2_mclk,
+        vfat2_reset_i           => vfat2_reset,
+        vfat2_t1_i              => vfat2_t1,
+        vfat2_scl_i             => vfat2_scl,
+        vfat2_sda_i             => vfat2_sda_out,
+        vfat2_sda_o             => vfat2_sda_in, 
+        vfat2_sda_t             => vfat2_sda_tri,
+        vfat2_data_valid_o      => vfat2_data_valid,
+        --
+        vfat2_0_sbits_p_i		=> vfat2_0_sbits_p_i,
+        vfat2_0_sbits_n_i		=> vfat2_0_sbits_p_i,
+        vfat2_0_data_out_p_i	=> vfat2_0_data_out_p_i,
+        vfat2_0_data_out_n_i	=> vfat2_0_data_out_n_i,
+        vfat2_1_sbits_p_i		=> vfat2_1_sbits_p_i,
+        vfat2_1_sbits_n_i		=> vfat2_1_sbits_p_i,
+        vfat2_1_data_out_p_i	=> vfat2_1_data_out_p_i,
+        vfat2_1_data_out_n_i	=> vfat2_1_data_out_n_i,
+        vfat2_2_sbits_p_i		=> vfat2_2_sbits_p_i,
+        vfat2_2_sbits_n_i		=> vfat2_2_sbits_p_i,
+        vfat2_2_data_out_p_i	=> vfat2_2_data_out_p_i,
+        vfat2_2_data_out_n_i	=> vfat2_2_data_out_n_i,
+        vfat2_3_sbits_p_i		=> vfat2_3_sbits_p_i,
+        vfat2_3_sbits_n_i		=> vfat2_3_sbits_p_i,
+        vfat2_3_data_out_p_i	=> vfat2_3_data_out_p_i,
+        vfat2_3_data_out_n_i	=> vfat2_3_data_out_n_i,
+        vfat2_4_sbits_p_i		=> vfat2_4_sbits_p_i,
+        vfat2_4_sbits_n_i		=> vfat2_4_sbits_p_i,
+        vfat2_4_data_out_p_i	=> vfat2_4_data_out_p_i,
+        vfat2_4_data_out_n_i	=> vfat2_4_data_out_n_i,
+        vfat2_5_sbits_p_i		=> vfat2_5_sbits_p_i,
+        vfat2_5_sbits_n_i		=> vfat2_5_sbits_p_i,
+        vfat2_5_data_out_p_i	=> vfat2_5_data_out_p_i,
+        vfat2_5_data_out_n_i	=> vfat2_5_data_out_n_i,
+        vfat2_6_sbits_p_i		=> vfat2_6_sbits_p_i,
+        vfat2_6_sbits_n_i		=> vfat2_6_sbits_p_i,
+        vfat2_6_data_out_p_i	=> vfat2_6_data_out_p_i,
+        vfat2_6_data_out_n_i	=> vfat2_6_data_out_n_i,
+        vfat2_7_sbits_p_i		=> vfat2_7_sbits_p_i,
+        vfat2_7_sbits_n_i		=> vfat2_7_sbits_p_i,
+        vfat2_7_data_out_p_i	=> vfat2_7_data_out_p_i,
+        vfat2_7_data_out_n_i	=> vfat2_7_data_out_n_i,
+        vfat2_8_sbits_p_i		=> vfat2_8_sbits_p_i,
+        vfat2_8_sbits_n_i		=> vfat2_8_sbits_p_i,
+        vfat2_8_data_out_p_i	=> vfat2_8_data_out_p_i,
+        vfat2_8_data_out_n_i	=> vfat2_8_data_out_n_i,
+        vfat2_9_sbits_p_i		=> vfat2_9_sbits_p_i,
+        vfat2_9_sbits_n_i		=> vfat2_9_sbits_p_i,
+        vfat2_9_data_out_p_i	=> vfat2_9_data_out_p_i,
+        vfat2_9_data_out_n_i	=> vfat2_9_data_out_n_i,
+        vfat2_10_sbits_p_i		=> vfat2_10_sbits_p_i,
+        vfat2_10_sbits_n_i		=> vfat2_10_sbits_p_i,
+        vfat2_10_data_out_p_i	=> vfat2_10_data_out_p_i,
+        vfat2_10_data_out_n_i	=> vfat2_10_data_out_n_i,
+        vfat2_11_sbits_p_i		=> vfat2_11_sbits_p_i,
+        vfat2_11_sbits_n_i		=> vfat2_11_sbits_p_i,
+        vfat2_11_data_out_p_i	=> vfat2_11_data_out_p_i,
+        vfat2_11_data_out_n_i	=> vfat2_11_data_out_n_i,
+        vfat2_12_sbits_p_i		=> vfat2_12_sbits_p_i,
+        vfat2_12_sbits_n_i		=> vfat2_12_sbits_p_i,
+        vfat2_12_data_out_p_i	=> vfat2_12_data_out_p_i,
+        vfat2_12_data_out_n_i	=> vfat2_12_data_out_n_i,
+        vfat2_13_sbits_p_i		=> vfat2_13_sbits_p_i,
+        vfat2_13_sbits_n_i		=> vfat2_13_sbits_p_i,
+        vfat2_13_data_out_p_i	=> vfat2_13_data_out_p_i,
+        vfat2_13_data_out_n_i	=> vfat2_13_data_out_n_i,
+        vfat2_14_sbits_p_i		=> vfat2_14_sbits_p_i,
+        vfat2_14_sbits_n_i		=> vfat2_14_sbits_p_i,
+        vfat2_14_data_out_p_i	=> vfat2_14_data_out_p_i,
+        vfat2_14_data_out_n_i	=> vfat2_14_data_out_n_i,
+        vfat2_15_sbits_p_i		=> vfat2_15_sbits_p_i,
+        vfat2_15_sbits_n_i		=> vfat2_15_sbits_p_i,
+        vfat2_15_data_out_p_i	=> vfat2_15_data_out_p_i,
+        vfat2_15_data_out_n_i	=> vfat2_15_data_out_n_i,
+        vfat2_16_sbits_p_i		=> vfat2_16_sbits_p_i,
+        vfat2_16_sbits_n_i		=> vfat2_16_sbits_p_i,
+        vfat2_16_data_out_p_i	=> vfat2_16_data_out_p_i,
+        vfat2_16_data_out_n_i	=> vfat2_16_data_out_n_i,
+        vfat2_17_sbits_p_i		=> vfat2_17_sbits_p_i,
+        vfat2_17_sbits_n_i		=> vfat2_17_sbits_p_i,
+        vfat2_17_data_out_p_i	=> vfat2_17_data_out_p_i,
+        vfat2_17_data_out_n_i	=> vfat2_17_data_out_n_i,
+        vfat2_18_sbits_p_i		=> vfat2_18_sbits_p_i,
+        vfat2_18_sbits_n_i		=> vfat2_18_sbits_p_i,
+        vfat2_18_data_out_p_i	=> vfat2_18_data_out_p_i,
+        vfat2_18_data_out_n_i	=> vfat2_18_data_out_n_i,
+        vfat2_19_sbits_p_i		=> vfat2_19_sbits_p_i,
+        vfat2_19_sbits_n_i		=> vfat2_19_sbits_p_i,
+        vfat2_19_data_out_p_i	=> vfat2_19_data_out_p_i,
+        vfat2_19_data_out_n_i	=> vfat2_19_data_out_n_i,
+        vfat2_20_sbits_p_i		=> vfat2_20_sbits_p_i,
+        vfat2_20_sbits_n_i		=> vfat2_20_sbits_p_i,
+        vfat2_20_data_out_p_i	=> vfat2_20_data_out_p_i,
+        vfat2_20_data_out_n_i	=> vfat2_20_data_out_n_i,
+        vfat2_21_sbits_p_i		=> vfat2_21_sbits_p_i,
+        vfat2_21_sbits_n_i		=> vfat2_21_sbits_p_i,
+        vfat2_21_data_out_p_i	=> vfat2_21_data_out_p_i,
+        vfat2_21_data_out_n_i	=> vfat2_21_data_out_n_i,
+        vfat2_22_sbits_p_i		=> vfat2_22_sbits_p_i,
+        vfat2_22_sbits_n_i		=> vfat2_22_sbits_p_i,
+        vfat2_22_data_out_p_i	=> vfat2_22_data_out_p_i,
+        vfat2_22_data_out_n_i	=> vfat2_22_data_out_n_i,
+        vfat2_23_sbits_p_i		=> vfat2_23_sbits_p_i,
+        vfat2_23_sbits_n_i		=> vfat2_23_sbits_p_i,
+        vfat2_23_data_out_p_i	=> vfat2_23_data_out_p_i,
+        vfat2_23_data_out_n_i	=> vfat2_23_data_out_n_i,
+        --
+        vfat2s_data_o           => vfat2_data
+    );
     
-    --================================--
-    -- External signals
-    --================================--
+    --== Clocking & Reset : PLL & CDCE & VFAT2 ==--
+    
+    pll_inst : entity work.clk_wiz_v3_6
+    port map(
+        clk_50Mhz_i     => clk_50Mhz_i,
+        clk_50Mhz_o     => clk_50Mhz,
+        clk_40Mhz_o     => clk_40Mhz,
+        clk_160Mhz_o    => clk_160Mhz,
+        pll_locked_o    => pll_locked
+    );    
+    
+    pll_ext : entity work.ext_pll
+    port map(
+        clk_40MHz_i     => tmds_d_p_io(0), 
+        clk_40MHz_o     => clk_40MHz_ext,
+        clk_160MHz_o    => clk_160MHz_ext,
+        locked_o        => open
+    );    
+    
+    vfat2_mclk <= clk_40MHz;
+    gtx_ref_clk <= clk_160MHz;
    
-    -- External clock
-    ext_clk_ibuf : ibuf port map(i => fpga_test_io(1), o => vfat2_clk_ext);
-    
-    -- LV1A
-    ext_lv1a_inst : entity work.monostable port map(fabric_clk_i => gtp_clk, en_i => fpga_test_io(3), en_o => ext_lv1a);
-    
-    -- S Bits to TDC
-    fpga_test_io(4) <= ext_sbits;
-    
-    --================================--
-    -- VFAT2 
-    --================================--
-    
-    -- Resets 
-    vfat2_resets_o <= "11";
-  
-    -- T1
-    t1_obufds : obufds port map(i => vfat2_t1, o => vfat2_t1_p_o, ob => vfat2_t1_n_o);
-    
-    -- I2C
-    vfat2_sda_0_iobuf : iobuf port map (o => vfat2_sda_i(0), io => vfat2_sda_io(0), i => vfat2_sda_o(0), t => vfat2_sda_t(0));    
-    vfat2_sda_1_iobuf : iobuf port map (o => vfat2_sda_i(1), io => vfat2_sda_io(1), i => vfat2_sda_o(1), t => vfat2_sda_t(1));    
-    vfat2_sda_2_iobuf : iobuf port map (o => vfat2_sda_i(2), io => vfat2_sda_io(2), i => vfat2_sda_o(2), t => vfat2_sda_t(2));    
-    vfat2_sda_3_iobuf : iobuf port map (o => vfat2_sda_i(3), io => vfat2_sda_io(3), i => vfat2_sda_o(3), t => vfat2_sda_t(3));    
-    vfat2_sda_4_iobuf : iobuf port map (o => vfat2_sda_i(4), io => vfat2_sda_io(4), i => vfat2_sda_o(4), t => vfat2_sda_t(4));    
-    vfat2_sda_5_iobuf : iobuf port map (o => vfat2_sda_i(5), io => vfat2_sda_io(5), i => vfat2_sda_o(5), t => vfat2_sda_t(5));
-    
-    --================================--
-    -- Clocking
-    --================================--
-    
-    -- FPGA clock
-    fpga_clk_pll_inst : entity work.fpga_clk_pll port map(fpga_clk_i => fpga_clk_i, fpga_clk_o => fpga_clk, vfat2_clk_fpga_o => vfat2_clk_fpga, fpga_pll_locked_o => fpga_pll_locked);    
-    
-    -- VFAT2 clock
-    vfat2_buf_clk_inst : bufg port map(i => vfat2_clk_muxed, o => vfat2_clk);
-    
-    vfat2_clk_obufds : obufds port map(i => vfat2_clk_muxed, o => vfat2_mclk_p_o, ob => vfat2_mclk_n_o);
-    
-    -- CDCE clock
-    cdce_primary_clk_obufds : obufds port map(i => cdce_clk_muxed, o => cdce_pri_p_o, ob => cdce_pri_n_o);
+    cdce_primary_clk_obufds : obufds port map(i => clk_40MHz_ext, o => cdce_pri_p_o, ob => cdce_pri_n_o);
     
     cdce_ref_o <= '1';
-    cdce_powerdown_o <= fpga_pll_locked;
+    cdce_pwrdown_o <= pll_locked;
     cdce_sync_o <= '1';
-    cdce_le_o <= '1';     
-    
-    -- Clock switching
-    clock_control_inst : entity work.clock_control
-    port map(
-        clock_reset_i       => clock_reset,
-        fpga_clk_i          => fpga_clk, 
-        vfat2_clk_fpga_i    => vfat2_clk_fpga,
-        vfat2_clk_ext_i     => vfat2_clk_ext,
-        fpga_pll_locked_i   => fpga_pll_locked,
-        cdce_pll_locked_i   => cdce_pll_locked_i,
-        vfat2_clk_o         => vfat2_clk_muxed,
-        cdce_clk_o          => cdce_clk_muxed,
-        vfat2_src_select_i  => vfat2_src_select,
-        vfat2_fallback_i    => vfat2_fallback,
-        vfat2_reset_src_o   => vfat2_reset_src,
-        cdce_src_select_i   => cdce_src_select,
-        cdce_fallback_i     => cdce_fallback,
-        cdce_reset_src_o    => cdce_reset_src
-    );   
-        
-    --================================--
-    -- GTP
-    --================================--
+    cdce_le_o <= '1';        
+                  
+    vfat2_reset <= reset;
 
-    -- Enable the GTP
-    enable_gtp_o <= '1';
+    --== GTX ==--
     
-    -- GTP wrapper instance to ease the use of the optical links
-    gtp_wrapper_inst : entity work.gtp_wrapper
+    gtx_clk_inst : ibufds_gtxe1 port map(o => open, odiv2 => open, ceb => '0', i => mgt_112_clk0_p_i, ib => mgt_112_clk0_n_i);  
+    
+    gtx_wrapper_inst : entity work.gtx_wrapper
     port map(
-        fpga_clk_i      => fpga_clk,
-        gtp_clk_o       => gtp_clk,
-        reset_i         => reset,
-        gtp_reset_i     => gtp_reset,
+        gtx_clk_o       => gtx_clk,
+        reset_i         => gtp_reset(0),
         rx_error_o      => rx_error,
         rx_kchar_o      => rx_kchar,
         rx_data_o       => rx_data,
+        rx_n_i          => mgt_112_rx_n_i,
+        rx_p_i          => mgt_112_rx_p_i,
         tx_kchar_i      => tx_kchar,
         tx_data_i       => tx_data,
-        rx_n_i          => rx_n_i,
-        rx_p_i          => rx_p_i,
-        tx_n_o          => tx_n_o,
-        tx_p_o          => tx_p_o,
-        gtp_refclk_n_i  => gtp_refclk_n_i,
-        gtp_refclk_p_i  => gtp_refclk_p_i
-    );   
+        tx_n_o          => mgt_112_tx_n_o,
+        tx_p_o          => mgt_112_tx_p_o,
+        gtx_clk         => gtx_ref_clk
+    );
     
-    --================================--
-    -- Tracking Link
-    --================================--
+    --== Links ==--
     
     link_tracking_1_inst : entity work.link_tracking
     port map(
-        gtp_clk_i       => gtp_clk,
-        vfat2_clk_i     => vfat2_clk,
+        gtp_clk_i       => gtx_clk,
+        vfat2_clk_i     => vfat2_mclk,
         reset_i         => reset,
-        rx_error_i      => rx_error(1),
-        rx_kchar_i      => rx_kchar(3 downto 2),
-        rx_data_i       => rx_data(31 downto 16),
-        tx_kchar_o      => tx_kchar(3 downto 2),
-        tx_data_o       => tx_data(31 downto 16),
+        rx_error_i      => rx_error(0),
+        rx_kchar_i      => rx_kchar(1 downto 0),
+        rx_data_i       => rx_data(15 downto 0),
+        tx_kchar_o      => tx_kchar(1 downto 0),
+        tx_data_o       => tx_data(15 downto 0),
         request_write_o => request_write,
         request_tri_o   => request_tri,
         request_read_i  => request_read,
         lv1a_sent_i     => t1_lv1a,
         bx_counter_i    => bx_counter,
-        vfat2_sda_i     => vfat2_sda_i(3 downto 2),
-        vfat2_sda_o     => vfat2_sda_o(3 downto 2),
-        vfat2_sda_t     => vfat2_sda_t(3 downto 2),
-        vfat2_scl_o     => vfat2_scl_o(3 downto 2),
-        vfat2_dvalid_i  => vfat2_dvalid_i(3 downto 2),
-        vfat2_data_0_i  => vfat2_data_8_i(8),
-        vfat2_data_1_i  => vfat2_data_9_i(8),
-        vfat2_data_2_i  => vfat2_data_10_i(8),
-        vfat2_data_3_i  => vfat2_data_11_i(8),
-        vfat2_data_4_i  => vfat2_data_12_i(8),
-        vfat2_data_5_i  => vfat2_data_13_i(8),
-        vfat2_data_6_i  => vfat2_data_14_i(8),
-        vfat2_data_7_i  => vfat2_data_15_i(8)
+        vfat2_sda_i     => vfat2_sda_in(1 downto 0),
+        vfat2_sda_o     => vfat2_sda_out(1 downto 0),
+        vfat2_sda_t     => vfat2_sda_tri(1 downto 0),
+        vfat2_scl_o     => vfat2_scl(1 downto 0),
+        vfat2_dvalid_i  => vfat2_data_valid(1 downto 0),
+        vfat2_data_0_i  => vfat2_data(0).data(8),
+        vfat2_data_1_i  => vfat2_data(1).data(8),
+        vfat2_data_2_i  => vfat2_data(2).data(8),
+        vfat2_data_3_i  => vfat2_data(3).data(8),
+        vfat2_data_4_i  => vfat2_data(4).data(8),
+        vfat2_data_5_i  => vfat2_data(5).data(8),
+        vfat2_data_6_i  => vfat2_data(6).data(8),
+        vfat2_data_7_i  => vfat2_data(7).data(8)
     );
     
-    --================================--
-    -- Trigger Link : simplified version for Test Beam
-    --================================--
-    
-    link_trigger_inst : entity work.link_trigger
+    link_tracking_0_inst : entity work.link_tracking
     port map(
-        gtp_clk_i       => gtp_clk,
-        vfat2_clk_i     => vfat2_clk,
+        gtp_clk_i       => gtx_clk,
+        vfat2_clk_i     => vfat2_mclk,
         reset_i         => reset,
         rx_error_i      => rx_error(3),
-        rx_kchar_i      => rx_kchar(7 downto 6),
-        rx_data_i       => rx_data(63 downto 48),
-        tx_kchar_o      => tx_kchar(7 downto 6),
-        tx_data_o       => tx_data(63 downto 48),
+        rx_kchar_i      => rx_kchar(5 downto 4),
+        rx_data_i       => rx_data(47 downto 32),
+        tx_kchar_o      => tx_kchar(5 downto 4),
+        tx_data_o       => tx_data(47 downto 32),
+        request_write_o => open,
+        request_tri_o   => open,
+        request_read_i  => request_read,
+        lv1a_sent_i     => t1_lv1a,
         bx_counter_i    => bx_counter,
-        vfat2_data_0_i  => vfat2_data_0_i(7 downto 0),
-        vfat2_data_1_i  => vfat2_data_1_i(7 downto 0),
-        vfat2_data_2_i  => vfat2_data_2_i(7 downto 0),
-        vfat2_data_3_i  => vfat2_data_3_i(7 downto 0),
-        vfat2_data_4_i  => vfat2_data_4_i(7 downto 0),
-        vfat2_data_5_i  => vfat2_data_5_i(7 downto 0),
-        vfat2_data_6_i  => vfat2_data_6_i(7 downto 0),
-        vfat2_data_7_i  => vfat2_data_7_i(7 downto 0),
-        vfat2_data_8_i  => vfat2_data_8_i(7 downto 0),
-        vfat2_data_9_i  => vfat2_data_9_i(7 downto 0),
-        vfat2_data_10_i => vfat2_data_10_i(7 downto 0),
-        vfat2_data_11_i => vfat2_data_11_i(7 downto 0),
-        vfat2_data_12_i => vfat2_data_12_i(7 downto 0),
-        vfat2_data_13_i => vfat2_data_13_i(7 downto 0),
-        vfat2_data_14_i => vfat2_data_14_i(7 downto 0),
-        vfat2_data_15_i => vfat2_data_15_i(7 downto 0),
-        vfat2_data_16_i => vfat2_data_16_i(7 downto 0),
-        vfat2_data_17_i => vfat2_data_17_i(7 downto 0),
-        vfat2_data_18_i => vfat2_data_18_i(7 downto 0),
-        vfat2_data_19_i => vfat2_data_19_i(7 downto 0),
-        vfat2_data_20_i => vfat2_data_20_i(7 downto 0),
-        vfat2_data_21_i => vfat2_data_21_i(7 downto 0),
-        vfat2_data_22_i => vfat2_data_22_i(7 downto 0),
-        vfat2_data_23_i => vfat2_data_23_i(7 downto 0)
-    );
-        
-    --================================--
-    -- SBits : for Test Beam only
-    --================================--
+        vfat2_sda_i     => vfat2_sda_in(3 downto 2),
+        vfat2_sda_o     => vfat2_sda_out(3 downto 2),
+        vfat2_sda_t     => vfat2_sda_tri(3 downto 2),
+        vfat2_scl_o     => vfat2_scl(3 downto 2),
+        vfat2_dvalid_i  => vfat2_data_valid(3 downto 2),
+        vfat2_data_0_i  => vfat2_data(8).data(8),
+        vfat2_data_1_i  => vfat2_data(9).data(8),
+        vfat2_data_2_i  => vfat2_data(10).data(8),
+        vfat2_data_3_i  => vfat2_data(11).data(8),
+        vfat2_data_4_i  => vfat2_data(12).data(8),
+        vfat2_data_5_i  => vfat2_data(13).data(8),
+        vfat2_data_6_i  => vfat2_data(14).data(8),
+        vfat2_data_7_i  => vfat2_data(15).data(8)
+    );    
     
-    trigger_sbits_inst : entity work.trigger_sbits
-    port map(
-        vfat2_0_sbits   => vfat2_data_8_i(7 downto 0),
-        vfat2_1_sbits   => vfat2_data_9_i(7 downto 0),
-        vfat2_2_sbits   => vfat2_data_10_i(7 downto 0),
-        vfat2_3_sbits   => vfat2_data_11_i(7 downto 0),
-        vfat2_4_sbits   => vfat2_data_12_i(7 downto 0),
-        vfat2_5_sbits   => vfat2_data_13_i(7 downto 0),
-        sbit_config_i   => sbits_configuration,
-        to_tdc_o        => ext_sbits
-    );
-    
+--    link_trigger_inst : entity work.link_trigger
+--    port map(
+--        gtp_clk_i       => gtx_clk,
+--        vfat2_clk_i     => clk_40Mhz,
+--        reset_i         => reset,
+--        rx_error_i      => rx_error(3),
+--        rx_kchar_i      => rx_kchar(5 downto 4),
+--        rx_data_i       => rx_data(47 downto 32),
+--        tx_kchar_o      => tx_kchar(5 downto 4),
+--        tx_data_o       => tx_data(47 downto 32),
+--        bx_counter_i    => bx_counter,
+--        vfat2_data_0_i  => vfat2_data(0).data(7 downto 0),
+--        vfat2_data_1_i  => vfat2_data(1).data(7 downto 0),
+--        vfat2_data_2_i  => vfat2_data(2).data(7 downto 0),
+--        vfat2_data_3_i  => vfat2_data(3).data(7 downto 0),
+--        vfat2_data_4_i  => vfat2_data(4).data(7 downto 0),
+--        vfat2_data_5_i  => vfat2_data(5).data(7 downto 0),
+--        vfat2_data_6_i  => vfat2_data(6).data(7 downto 0),
+--        vfat2_data_7_i  => vfat2_data(7).data(7 downto 0),
+--        vfat2_data_8_i  => vfat2_data(8).data(7 downto 0),
+--        vfat2_data_9_i  => vfat2_data(9).data(7 downto 0),
+--        vfat2_data_10_i => vfat2_data(10).data(7 downto 0),
+--        vfat2_data_11_i => vfat2_data(11).data(7 downto 0),
+--        vfat2_data_12_i => vfat2_data(12).data(7 downto 0),
+--        vfat2_data_13_i => vfat2_data(13).data(7 downto 0),
+--        vfat2_data_14_i => vfat2_data(14).data(7 downto 0),
+--        vfat2_data_15_i => vfat2_data(15).data(7 downto 0),
+--        vfat2_data_16_i => vfat2_data(16).data(7 downto 0),
+--        vfat2_data_17_i => vfat2_data(17).data(7 downto 0),
+--        vfat2_data_18_i => vfat2_data(18).data(7 downto 0),
+--        vfat2_data_19_i => vfat2_data(19).data(7 downto 0),
+--        vfat2_data_20_i => vfat2_data(20).data(7 downto 0),
+--        vfat2_data_21_i => vfat2_data(21).data(7 downto 0),
+--        vfat2_data_22_i => vfat2_data(22).data(7 downto 0),
+--        vfat2_data_23_i => vfat2_data(23).data(7 downto 0)
+--    );    
+
+
     --================================--
     -- T1 handling
     --================================--
     
     t1_delayed_inst : entity work.t1_delayed
     port map(
-        fabric_clk_i    => gtp_clk,
+        fabric_clk_i    => gtx_clk,
         reset_i         => reset,
         en_i            => delayed_enable,
         delay_i         => delayed_configuration, 
@@ -427,11 +627,11 @@ begin
         
     trigger_handler_inst : entity work.trigger_handler
     port map(
-        fabric_clk_i        => gtp_clk,
+        fabric_clk_i        => gtx_clk,
         reset_i             => reset,
         req_trigger_i       => req_lv1a,
         delayed_trigger_i   => delayed_lv1a,
-        ext_trigger_i       => ext_lv1a,
+        ext_trigger_i       => '0',
         trigger_config_i    => trigger_configuration,
         lv1a_o              => t1_lv1a
     );
@@ -444,8 +644,8 @@ begin
 
     t1_handler_inst : entity work.t1_handler 
     port map(
-        fabric_clk_i    => gtp_clk,
-        vfat2_clk_i     => vfat2_clk,
+        fabric_clk_i    => gtx_clk,
+        vfat2_clk_i     => clk_40MHz,
         reset_i         => reset,
         lv1a_i          => t1_lv1a,
         calpulse_i      => t1_calpulse,
@@ -453,38 +653,25 @@ begin
         bc0_i           => t1_bc0,
         t1_o            => vfat2_t1  
     );
-  
-    --================================--
-    -- ADC
-    --================================--
-    
-    adc_handler_inst : entity work.adc_handler
-    port map(
-        fabric_clk_i    => gtp_clk,
-        reset_i         => reset,
-        uart_rx_i       => fpga_rx_i,
-        voltage_o       => adc_voltage_value,
-        current_o       => adc_current_value
-    );
     
     --================================--
     -- Counters registers
     --================================--
 
-    ext_lv1a_counter_inst : entity work.counter port map(fabric_clk_i => gtp_clk, reset_i => ext_lv1a_counter_reset, en_i => ext_lv1a, data_o => ext_lv1a_counter);
-    int_lv1a_counter_inst : entity work.counter port map(fabric_clk_i => gtp_clk, reset_i => int_lv1a_counter_reset, en_i => req_lv1a, data_o => int_lv1a_counter);
-    del_lv1a_counter_inst : entity work.counter port map(fabric_clk_i => gtp_clk, reset_i => del_lv1a_counter_reset, en_i => delayed_lv1a, data_o => del_lv1a_counter);
-    lv1a_counter_inst : entity work.counter port map(fabric_clk_i => gtp_clk, reset_i => lv1a_counter_reset, en_i => t1_lv1a, data_o => lv1a_counter);
+    ext_lv1a_counter_inst : entity work.counter port map(fabric_clk_i => gtx_clk, reset_i => ext_lv1a_counter_reset, en_i => '0', data_o => ext_lv1a_counter);
+    int_lv1a_counter_inst : entity work.counter port map(fabric_clk_i => gtx_clk, reset_i => int_lv1a_counter_reset, en_i => req_lv1a, data_o => int_lv1a_counter);
+    del_lv1a_counter_inst : entity work.counter port map(fabric_clk_i => gtx_clk, reset_i => del_lv1a_counter_reset, en_i => delayed_lv1a, data_o => del_lv1a_counter);
+    lv1a_counter_inst : entity work.counter port map(fabric_clk_i => gtx_clk, reset_i => lv1a_counter_reset, en_i => t1_lv1a, data_o => lv1a_counter);
     
-    int_calpulse_counter_inst : entity work.counter port map(fabric_clk_i => gtp_clk, reset_i => int_calpulse_counter_reset, en_i => req_calpulse, data_o => int_calpulse_counter);
-    del_calpulse_counter_inst : entity work.counter port map(fabric_clk_i => gtp_clk, reset_i => del_calpulse_counter_reset, en_i => delayed_calpulse, data_o => del_calpulse_counter);
-    calpulse_counter_inst : entity work.counter port map(fabric_clk_i => gtp_clk, reset_i => calpulse_counter_reset, en_i => t1_calpulse, data_o => calpulse_counter);
+    int_calpulse_counter_inst : entity work.counter port map(fabric_clk_i => gtx_clk, reset_i => int_calpulse_counter_reset, en_i => req_calpulse, data_o => int_calpulse_counter);
+    del_calpulse_counter_inst : entity work.counter port map(fabric_clk_i => gtx_clk, reset_i => del_calpulse_counter_reset, en_i => delayed_calpulse, data_o => del_calpulse_counter);
+    calpulse_counter_inst : entity work.counter port map(fabric_clk_i => gtx_clk, reset_i => calpulse_counter_reset, en_i => t1_calpulse, data_o => calpulse_counter);
     
-    resync_counter_inst : entity work.counter port map(fabric_clk_i => gtp_clk, reset_i => resync_counter_reset, en_i => t1_resync, data_o => resync_counter);
+    resync_counter_inst : entity work.counter port map(fabric_clk_i => gtx_clk, reset_i => resync_counter_reset, en_i => t1_resync, data_o => resync_counter);
     
-    bc0_counter_inst : entity work.counter port map(fabric_clk_i => gtp_clk, reset_i => bc0_counter_reset, en_i => t1_bc0, data_o => bc0_counter);
+    bc0_counter_inst : entity work.counter port map(fabric_clk_i => gtx_clk, reset_i => bc0_counter_reset, en_i => t1_bc0, data_o => bc0_counter);
     
-    bx_counter_inst : entity work.counter port map(fabric_clk_i => gtp_clk, reset_i => bx_counter_reset, en_i => '1', data_o => bx_x4_counter);
+    bx_counter_inst : entity work.counter port map(fabric_clk_i => gtx_clk, reset_i => bx_counter_reset, en_i => '1', data_o => bx_x4_counter);
     bx_counter <= "00" & bx_x4_counter(31 downto 2);
         
 
@@ -513,12 +700,12 @@ begin
     
     -- Trigger configuration : 5 -- read / write _ Change the trigger source
 
-    trigger_configuration_reg : entity work.reg port map(fabric_clk_i => gtp_clk, reset_i => reset, wbus_i => request_write(5), wbus_t => request_tri(5), rbus_o => request_read(5));        
+    trigger_configuration_reg : entity work.reg port map(fabric_clk_i => gtx_clk, reset_i => reset, wbus_i => request_write(5), wbus_t => request_tri(5), rbus_o => request_read(5));        
     trigger_configuration <= request_read(5)(1 downto 0);
 
     -- S Bits configuration : 6 -- read / write _ Controls the Sbits to send to the TDC
     
-    sbits_configuration_reg : entity work.reg port map(fabric_clk_i => gtp_clk, reset_i => reset, wbus_i => request_write(6), wbus_t => request_tri(6), rbus_o => request_read(6));        
+    sbits_configuration_reg : entity work.reg port map(fabric_clk_i => gtx_clk, reset_i => reset, wbus_i => request_write(6), wbus_t => request_tri(6), rbus_o => request_read(6));        
     sbits_configuration <= request_read(6)(2 downto 0); 
    
     -- Reserved : 10 downto 7 
@@ -529,25 +716,25 @@ begin
 
     -- VFAT2 clock selection : 12 downto 11
    
-    vfat2_clk_reg : entity work.reg port map(fabric_clk_i => gtp_clk, reset_i => vfat2_reset_src, wbus_i => request_write(11), wbus_t => request_tri(11), rbus_o => request_read(11));         
+    vfat2_clk_reg : entity work.reg port map(fabric_clk_i => gtx_clk, reset_i => vfat2_reset_src, wbus_i => request_write(11), wbus_t => request_tri(11), rbus_o => request_read(11));         
     vfat2_src_select <= request_read(11)(0); -- 11 -- read / write _ Select VFAT2 input clock
     
-    vfat2_fallback_reg : entity work.reg port map(fabric_clk_i => gtp_clk, reset_i => reset, wbus_i => request_write(12), wbus_t => request_tri(12), rbus_o => request_read(12));        
+    vfat2_fallback_reg : entity work.reg port map(fabric_clk_i => gtx_clk, reset_i => reset, wbus_i => request_write(12), wbus_t => request_tri(12), rbus_o => request_read(12));        
     vfat2_fallback <= request_read(12)(0); -- 12 -- read / write _ Allow automatic fallback of VFAT2         
     
     -- CDCE clock selection : 14 downto 13
     
-    cdce_clk_reg : entity work.reg port map(fabric_clk_i => gtp_clk, reset_i => cdce_reset_src, wbus_i => request_write(13), wbus_t => request_tri(13), rbus_o => request_read(13));        
+    cdce_clk_reg : entity work.reg port map(fabric_clk_i => gtx_clk, reset_i => cdce_reset_src, wbus_i => request_write(13), wbus_t => request_tri(13), rbus_o => request_read(13));        
     cdce_src_select <= request_read(13)(1 downto 0); -- 13 _ read / write _ Select CDCE input clock
 
-    cdce_fallback_reg : entity work.reg port map(fabric_clk_i => gtp_clk, reset_i => reset, wbus_i => request_write(14), wbus_t => request_tri(14), rbus_o => request_read(14));        
+    cdce_fallback_reg : entity work.reg port map(fabric_clk_i => gtx_clk, reset_i => reset, wbus_i => request_write(14), wbus_t => request_tri(14), rbus_o => request_read(14));        
     cdce_fallback <= request_read(14)(0); -- 14 -- read / write _ Allow automatic fallback of CDCE clocks    
     
     -- PLL status : 17 downto 15
     
-    request_read(15) <= (0 => fpga_pll_locked, others => '0'); -- read _ FPGA PLL locked
+    request_read(15) <= (0 => pll_locked, others => '0'); -- read _ FPGA PLL locked
    
-    request_read(16) <= (0 => cdce_pll_locked_i, others => '0'); -- read _ CDCE Locked
+    request_read(16) <= (0 => cdce_locked_i, others => '0'); -- read _ CDCE Locked
     
     -- Reserved : 20 downto 18 
     
@@ -563,7 +750,7 @@ begin
     
     -- Fixed registers : 23 -- read _ firmware version
     
-    request_read(23) <= x"20141126"; 
+    request_read(23) <= x"AA150523"; 
     
     -- Reserved : 25 downto 24
     
@@ -632,24 +819,50 @@ begin
 
     chipscope_icon_inst : entity work.chipscope_icon port map (CONTROL0 => cs_icon0, CONTROL1 => cs_icon1);
 
-    chipscope_vio_inst : entity work.chipscope_vio port map (CONTROL => cs_icon0, CLK => gtp_clk, ASYNC_IN => cs_async_in, ASYNC_OUT => cs_async_out, SYNC_IN => cs_sync_in, SYNC_OUT => cs_sync_out);
+    chipscope_vio_inst : entity work.chipscope_vio port map (CONTROL => cs_icon0, CLK => gtx_clk, ASYNC_IN => cs_async_in, ASYNC_OUT => cs_async_out, SYNC_IN => cs_sync_in, SYNC_OUT => cs_sync_out);
 
     gtp_reset <= cs_sync_out(3 downto 0);
-    
-    clock_reset <= cs_sync_out(4);
 
-    chipscope_ila_inst : entity work.chipscope_ila port map (CONTROL => cs_icon1, CLK => gtp_clk, TRIG0 => cs_ila0, TRIG1 => cs_ila1, TRIG2 => cs_ila2, TRIG3 => cs_ila3);
+    chipscope_ila_inst : entity work.chipscope_ila port map (CONTROL => cs_icon1, CLK => gtx_clk, TRIG0 => cs_ila0, TRIG1 => cs_ila1, TRIG2 => cs_ila2, TRIG3 => cs_ila3);
 
-    cs_ila0 <= tx_data(31 downto 16) & rx_data(31 downto 16);
-    cs_ila1 <= tx_data(63 downto 48) & rx_data(63 downto 48);
+    cs_ila0 <= tx_data(15 downto 0) & rx_data(15 downto 0);
+    cs_ila1 <= tx_data(47 downto 32) & rx_data(47 downto 32);
     
-    cs_ila2 <= (0 => vfat2_dvalid_i(2), 1 => vfat2_dvalid_i(3),
-                2 => vfat2_data_8_i(8), 3 => vfat2_data_9_i(8), 4 => vfat2_data_10_i(8), 5 => vfat2_data_11_i(8), 6 => vfat2_data_12_i(8), 7 => vfat2_data_13_i(8),
-                8 => vfat2_src_select, 9 => vfat2_fallback, 10 => cdce_src_select(0), 11 => cdce_fallback, 12 => fpga_pll_locked, 13 => cdce_pll_locked_i,
+    cs_ila2 <= (0 => vfat2_data_valid(0), 
+                1 => vfat2_data_valid(1),
+                2 => vfat2_data_valid(2),
+                3 => vfat2_data_valid(3),
+                4 => vfat2_data_valid(4),
+                5 => vfat2_data_valid(5),
+                6 => vfat2_data(0).data(8), 
+                7 => vfat2_data(1).data(8), 
+                8 => vfat2_data(2).data(8),
+                9 => vfat2_data(3).data(8),
+                10 => vfat2_data(4).data(8),
+                11 => vfat2_data(5).data(8),
+                12 => vfat2_data(6).data(8),
+                13 => vfat2_data(7).data(8),
+                14 => vfat2_data(8).data(8),
+                15 => vfat2_data(9).data(8),
+                16 => vfat2_data(10).data(8),
+                17 => vfat2_data(11).data(8),
+                18 => vfat2_data(12).data(8),
+                19 => vfat2_data(13).data(8),
+                20 => vfat2_data(14).data(8),
+                21 => vfat2_data(15).data(8),
+                22 => vfat2_data(16).data(8),
+                23 => vfat2_data(17).data(8),
+                24 => vfat2_data(18).data(8),
+                25 => vfat2_data(19).data(8),
+                26 => vfat2_data(20).data(8),
+                27 => vfat2_data(21).data(8),
+                28 => vfat2_data(22).data(8),
+                29 => vfat2_data(23).data(8),
                 others => '0');
                 
     cs_ila3 <= (0 => ext_lv1a, 1 => req_lv1a, 2 => t1_lv1a, 3 => '0',
                 4 => t1_calpulse, 5 => t1_resync, 6 => t1_bc0, 7 => '0',
                 others => '0');
-    
+
 end Behavioral;
+
