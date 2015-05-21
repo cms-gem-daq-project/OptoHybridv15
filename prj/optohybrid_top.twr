@@ -32,76 +32,76 @@ Data Sheet report:
 -----------------
 All values displayed in nanoseconds (ns)
 
-Setup/Hold to clock clk_50MHz_i
+Setup/Hold to clock tmds_d_p_io<0>
 ---------------------+------------+------------+------------+------------+------------------+--------+
                      |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
 Source               | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
 ---------------------+------------+------------+------------+------------+------------------+--------+
-vfat2_8_data_out_n_i |    7.345(R)|      SLOW  |   -1.740(R)|      FAST  |clk_40MHz         |   0.000|
-vfat2_8_data_out_p_i |    7.345(R)|      SLOW  |   -1.740(R)|      FAST  |clk_40MHz         |   0.000|
-vfat2_9_data_out_n_i |    6.065(R)|      SLOW  |   -1.546(R)|      FAST  |clk_40MHz         |   0.000|
-vfat2_9_data_out_p_i |    6.065(R)|      SLOW  |   -1.546(R)|      FAST  |clk_40MHz         |   0.000|
-vfat2_10_data_out_n_i|    7.202(R)|      SLOW  |   -1.888(R)|      FAST  |clk_40MHz         |   0.000|
-vfat2_10_data_out_p_i|    7.202(R)|      SLOW  |   -1.888(R)|      FAST  |clk_40MHz         |   0.000|
-vfat2_11_data_out_n_i|    8.772(R)|      SLOW  |   -2.796(R)|      FAST  |clk_40MHz         |   0.000|
-vfat2_11_data_out_p_i|    8.772(R)|      SLOW  |   -2.796(R)|      FAST  |clk_40MHz         |   0.000|
-vfat2_12_data_out_n_i|    8.281(R)|      SLOW  |   -2.607(R)|      FAST  |clk_40MHz         |   0.000|
-vfat2_12_data_out_p_i|    8.281(R)|      SLOW  |   -2.607(R)|      FAST  |clk_40MHz         |   0.000|
-vfat2_13_data_out_n_i|    9.099(R)|      SLOW  |   -2.647(R)|      FAST  |clk_40MHz         |   0.000|
-vfat2_13_data_out_p_i|    9.099(R)|      SLOW  |   -2.647(R)|      FAST  |clk_40MHz         |   0.000|
-vfat2_14_data_out_n_i|    8.188(R)|      SLOW  |   -1.822(R)|      FAST  |clk_40MHz         |   0.000|
-vfat2_14_data_out_p_i|    8.188(R)|      SLOW  |   -1.822(R)|      FAST  |clk_40MHz         |   0.000|
-vfat2_15_data_out_n_i|    8.851(R)|      SLOW  |   -3.103(R)|      FAST  |clk_40MHz         |   0.000|
-vfat2_15_data_out_p_i|    8.851(R)|      SLOW  |   -3.103(R)|      FAST  |clk_40MHz         |   0.000|
-vfat2_16_data_out_n_i|    8.611(R)|      SLOW  |   -2.272(R)|      FAST  |clk_40MHz         |   0.000|
-vfat2_16_data_out_p_i|    8.611(R)|      SLOW  |   -2.272(R)|      FAST  |clk_40MHz         |   0.000|
-vfat2_17_data_out_n_i|    7.611(R)|      SLOW  |   -1.910(R)|      FAST  |clk_40MHz         |   0.000|
-vfat2_17_data_out_p_i|    7.611(R)|      SLOW  |   -1.910(R)|      FAST  |clk_40MHz         |   0.000|
-vfat2_18_data_out_n_i|    8.414(R)|      SLOW  |   -2.291(R)|      FAST  |clk_40MHz         |   0.000|
-vfat2_18_data_out_p_i|    8.414(R)|      SLOW  |   -2.291(R)|      FAST  |clk_40MHz         |   0.000|
-vfat2_19_data_out_n_i|    9.744(R)|      SLOW  |   -2.280(R)|      FAST  |clk_40MHz         |   0.000|
-vfat2_19_data_out_p_i|    9.744(R)|      SLOW  |   -2.280(R)|      FAST  |clk_40MHz         |   0.000|
-vfat2_20_data_out_n_i|   11.246(R)|      SLOW  |   -2.994(R)|      FAST  |clk_40MHz         |   0.000|
-vfat2_20_data_out_p_i|   11.246(R)|      SLOW  |   -2.994(R)|      FAST  |clk_40MHz         |   0.000|
-vfat2_21_data_out_n_i|    9.557(R)|      SLOW  |   -2.372(R)|      FAST  |clk_40MHz         |   0.000|
-vfat2_21_data_out_p_i|    9.557(R)|      SLOW  |   -2.372(R)|      FAST  |clk_40MHz         |   0.000|
-vfat2_22_data_out_n_i|    9.161(R)|      SLOW  |   -2.512(R)|      FAST  |clk_40MHz         |   0.000|
-vfat2_22_data_out_p_i|    9.161(R)|      SLOW  |   -2.512(R)|      FAST  |clk_40MHz         |   0.000|
-vfat2_23_data_out_n_i|    8.232(R)|      SLOW  |   -1.284(R)|      FAST  |clk_40MHz         |   0.000|
-vfat2_23_data_out_p_i|    8.232(R)|      SLOW  |   -1.284(R)|      FAST  |clk_40MHz         |   0.000|
+vfat2_0_data_out_n_i |    7.101(R)|      SLOW  |   -1.597(R)|      FAST  |clk_40MHz_ext     |   0.000|
+vfat2_0_data_out_p_i |    7.101(R)|      SLOW  |   -1.597(R)|      FAST  |clk_40MHz_ext     |   0.000|
+vfat2_1_data_out_n_i |    8.896(R)|      SLOW  |   -1.760(R)|      FAST  |clk_40MHz_ext     |   0.000|
+vfat2_1_data_out_p_i |    8.896(R)|      SLOW  |   -1.760(R)|      FAST  |clk_40MHz_ext     |   0.000|
+vfat2_2_data_out_n_i |    7.972(R)|      SLOW  |   -2.123(R)|      FAST  |clk_40MHz_ext     |   0.000|
+vfat2_2_data_out_p_i |    7.972(R)|      SLOW  |   -2.123(R)|      FAST  |clk_40MHz_ext     |   0.000|
+vfat2_3_data_out_n_i |   10.787(R)|      SLOW  |   -2.654(R)|      FAST  |clk_40MHz_ext     |   0.000|
+vfat2_3_data_out_p_i |   10.787(R)|      SLOW  |   -2.654(R)|      FAST  |clk_40MHz_ext     |   0.000|
+vfat2_4_data_out_n_i |    9.597(R)|      SLOW  |   -2.250(R)|      FAST  |clk_40MHz_ext     |   0.000|
+vfat2_4_data_out_p_i |    9.597(R)|      SLOW  |   -2.250(R)|      FAST  |clk_40MHz_ext     |   0.000|
+vfat2_5_data_out_n_i |    8.254(R)|      SLOW  |   -2.059(R)|      FAST  |clk_40MHz_ext     |   0.000|
+vfat2_5_data_out_p_i |    8.254(R)|      SLOW  |   -2.059(R)|      FAST  |clk_40MHz_ext     |   0.000|
+vfat2_6_data_out_n_i |    8.489(R)|      SLOW  |   -1.734(R)|      FAST  |clk_40MHz_ext     |   0.000|
+vfat2_6_data_out_p_i |    8.489(R)|      SLOW  |   -1.734(R)|      FAST  |clk_40MHz_ext     |   0.000|
+vfat2_7_data_out_n_i |    9.464(R)|      SLOW  |   -1.807(R)|      FAST  |clk_40MHz_ext     |   0.000|
+vfat2_7_data_out_p_i |    9.464(R)|      SLOW  |   -1.807(R)|      FAST  |clk_40MHz_ext     |   0.000|
+vfat2_8_data_out_n_i |    6.085(R)|      SLOW  |   -1.786(R)|      FAST  |clk_40MHz_ext     |   0.000|
+vfat2_8_data_out_p_i |    6.085(R)|      SLOW  |   -1.786(R)|      FAST  |clk_40MHz_ext     |   0.000|
+vfat2_9_data_out_n_i |    6.547(R)|      SLOW  |   -1.644(R)|      FAST  |clk_40MHz_ext     |   0.000|
+vfat2_9_data_out_p_i |    6.547(R)|      SLOW  |   -1.644(R)|      FAST  |clk_40MHz_ext     |   0.000|
+vfat2_10_data_out_n_i|    7.209(R)|      SLOW  |   -1.827(R)|      FAST  |clk_40MHz_ext     |   0.000|
+vfat2_10_data_out_p_i|    7.209(R)|      SLOW  |   -1.827(R)|      FAST  |clk_40MHz_ext     |   0.000|
+vfat2_11_data_out_n_i|   10.351(R)|      SLOW  |   -3.077(R)|      FAST  |clk_40MHz_ext     |   0.000|
+vfat2_11_data_out_p_i|   10.351(R)|      SLOW  |   -3.077(R)|      FAST  |clk_40MHz_ext     |   0.000|
+vfat2_12_data_out_n_i|    9.776(R)|      SLOW  |   -2.518(R)|      FAST  |clk_40MHz_ext     |   0.000|
+vfat2_12_data_out_p_i|    9.776(R)|      SLOW  |   -2.518(R)|      FAST  |clk_40MHz_ext     |   0.000|
+vfat2_13_data_out_n_i|    9.482(R)|      SLOW  |   -2.847(R)|      FAST  |clk_40MHz_ext     |   0.000|
+vfat2_13_data_out_p_i|    9.482(R)|      SLOW  |   -2.847(R)|      FAST  |clk_40MHz_ext     |   0.000|
+vfat2_14_data_out_n_i|    7.123(R)|      SLOW  |   -1.705(R)|      FAST  |clk_40MHz_ext     |   0.000|
+vfat2_14_data_out_p_i|    7.123(R)|      SLOW  |   -1.705(R)|      FAST  |clk_40MHz_ext     |   0.000|
+vfat2_15_data_out_n_i|    9.365(R)|      SLOW  |   -3.129(R)|      FAST  |clk_40MHz_ext     |   0.000|
+vfat2_15_data_out_p_i|    9.365(R)|      SLOW  |   -3.129(R)|      FAST  |clk_40MHz_ext     |   0.000|
 ---------------------+------------+------------+------------+------------+------------------+--------+
 
-Clock clk_50MHz_i to Pad
+Clock tmds_d_p_io<0> to Pad
 -----------------+-----------------+------------+-----------------+------------+------------------+--------+
                  |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
 Destination      |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
 -----------------+-----------------+------------+-----------------+------------+------------------+--------+
-vfat2_mclk_n_o<0>|         2.026(R)|      SLOW  |         0.853(R)|      FAST  |clk_40MHz         |   0.000|
-                 |         2.026(F)|      SLOW  |         0.853(F)|      FAST  |clk_40MHz         |   0.000|
-vfat2_mclk_n_o<1>|         1.862(R)|      SLOW  |         0.815(R)|      FAST  |clk_40MHz         |   0.000|
-                 |         1.862(F)|      SLOW  |         0.815(F)|      FAST  |clk_40MHz         |   0.000|
-vfat2_mclk_n_o<2>|         1.945(R)|      SLOW  |         0.823(R)|      FAST  |clk_40MHz         |   0.000|
-                 |         1.945(F)|      SLOW  |         0.823(F)|      FAST  |clk_40MHz         |   0.000|
-vfat2_mclk_p_o<0>|         2.025(R)|      SLOW  |         0.852(R)|      FAST  |clk_40MHz         |   0.000|
-                 |         2.025(F)|      SLOW  |         0.852(F)|      FAST  |clk_40MHz         |   0.000|
-vfat2_mclk_p_o<1>|         1.861(R)|      SLOW  |         0.814(R)|      FAST  |clk_40MHz         |   0.000|
-                 |         1.861(F)|      SLOW  |         0.814(F)|      FAST  |clk_40MHz         |   0.000|
-vfat2_mclk_p_o<2>|         1.944(R)|      SLOW  |         0.822(R)|      FAST  |clk_40MHz         |   0.000|
-                 |         1.944(F)|      SLOW  |         0.822(F)|      FAST  |clk_40MHz         |   0.000|
-vfat2_t1_n_o<0>  |         6.639(R)|      SLOW  |         3.092(R)|      FAST  |clk_40MHz         |   0.000|
-vfat2_t1_n_o<1>  |         6.404(R)|      SLOW  |         3.018(R)|      FAST  |clk_40MHz         |   0.000|
-vfat2_t1_n_o<2>  |         7.355(R)|      SLOW  |         3.575(R)|      FAST  |clk_40MHz         |   0.000|
-vfat2_t1_p_o<0>  |         6.638(R)|      SLOW  |         3.091(R)|      FAST  |clk_40MHz         |   0.000|
-vfat2_t1_p_o<1>  |         6.403(R)|      SLOW  |         3.017(R)|      FAST  |clk_40MHz         |   0.000|
-vfat2_t1_p_o<2>  |         7.354(R)|      SLOW  |         3.574(R)|      FAST  |clk_40MHz         |   0.000|
+vfat2_mclk_n_o<0>|         1.820(R)|      SLOW  |         0.732(R)|      FAST  |clk_40MHz_ext     |   0.000|
+                 |         1.820(F)|      SLOW  |         0.732(F)|      FAST  |clk_40MHz_ext     |   0.000|
+vfat2_mclk_n_o<1>|         1.656(R)|      SLOW  |         0.694(R)|      FAST  |clk_40MHz_ext     |   0.000|
+                 |         1.656(F)|      SLOW  |         0.694(F)|      FAST  |clk_40MHz_ext     |   0.000|
+vfat2_mclk_n_o<2>|         1.739(R)|      SLOW  |         0.702(R)|      FAST  |clk_40MHz_ext     |   0.000|
+                 |         1.739(F)|      SLOW  |         0.702(F)|      FAST  |clk_40MHz_ext     |   0.000|
+vfat2_mclk_p_o<0>|         1.819(R)|      SLOW  |         0.731(R)|      FAST  |clk_40MHz_ext     |   0.000|
+                 |         1.819(F)|      SLOW  |         0.731(F)|      FAST  |clk_40MHz_ext     |   0.000|
+vfat2_mclk_p_o<1>|         1.655(R)|      SLOW  |         0.693(R)|      FAST  |clk_40MHz_ext     |   0.000|
+                 |         1.655(F)|      SLOW  |         0.693(F)|      FAST  |clk_40MHz_ext     |   0.000|
+vfat2_mclk_p_o<2>|         1.738(R)|      SLOW  |         0.701(R)|      FAST  |clk_40MHz_ext     |   0.000|
+                 |         1.738(F)|      SLOW  |         0.701(F)|      FAST  |clk_40MHz_ext     |   0.000|
+vfat2_t1_n_o<0>  |         7.511(R)|      SLOW  |         3.742(R)|      FAST  |clk_40MHz_ext     |   0.000|
+vfat2_t1_n_o<1>  |         6.957(R)|      SLOW  |         3.352(R)|      FAST  |clk_40MHz_ext     |   0.000|
+vfat2_t1_n_o<2>  |         8.841(R)|      SLOW  |         4.510(R)|      FAST  |clk_40MHz_ext     |   0.000|
+vfat2_t1_p_o<0>  |         7.510(R)|      SLOW  |         3.741(R)|      FAST  |clk_40MHz_ext     |   0.000|
+vfat2_t1_p_o<1>  |         6.956(R)|      SLOW  |         3.351(R)|      FAST  |clk_40MHz_ext     |   0.000|
+vfat2_t1_p_o<2>  |         8.840(R)|      SLOW  |         4.509(R)|      FAST  |clk_40MHz_ext     |   0.000|
 -----------------+-----------------+------------+-----------------+------------+------------------+--------+
 
-Clock to Setup on destination clock clk_50MHz_i
+Clock to Setup on destination clock tmds_d_p_io<0>
 ---------------+---------+---------+---------+---------+
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk_50MHz_i    |    7.855|         |         |         |
+tmds_d_p_io<0> |   11.286|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 Pad to Pad
@@ -113,14 +113,14 @@ tmds_d_p_io<0> |cdce_pri_p_o   |    2.350|
 ---------------+---------------+---------+
 
 
-Analysis completed Thu Apr 23 10:13:23 2015 
+Analysis completed Thu May 21 09:13:38 2015 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 744 MB
+Peak Memory Usage: 749 MB
 
 
 

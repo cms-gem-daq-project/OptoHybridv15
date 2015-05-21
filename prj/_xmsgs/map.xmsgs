@@ -8,7 +8,7 @@
 <msg type="info" file="LIT" num="243" delta="old" >Logical network <arg fmt="%s" index="1">cs_icon1&lt;35&gt;</arg> has no load.
 </msg>
 
-<msg type="info" file="LIT" num="395" delta="old" >The above <arg fmt="%s" index="1">info</arg> message is repeated <arg fmt="%d" index="2">255</arg> more times for the following (max. 5 shown):
+<msg type="info" file="LIT" num="395" delta="old" >The above <arg fmt="%s" index="1">info</arg> message is repeated <arg fmt="%d" index="2">256</arg> more times for the following (max. 5 shown):
 <arg fmt="%s" index="3">cs_icon1&lt;34&gt;,
 cs_icon1&lt;33&gt;,
 cs_icon1&lt;32&gt;,
@@ -647,16 +647,16 @@ To see the details of these <arg fmt="%s" index="4">info</arg> messages, please 
 <msg type="info" file="LIT" num="244" delta="old" >All of the single ended outputs in this design are using slew rate limited output drivers. The delay on speed critical single ended outputs can be dramatically reduced by designating them as fast outputs.
 </msg>
 
-<msg type="warning" file="Pack" num="2515" delta="old" >The LUT-1 inverter &quot;<arg fmt="%s" index="1">link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/scl&lt;1&gt;1_INV_0</arg>&quot; failed to join the OLOGIC comp matched to output buffer &quot;<arg fmt="%s" index="2">vfat2_buffers_inst/vfat2_scl_0_obuf_inst</arg>&quot;.  This may result in suboptimal timing.  <arg fmt="%z" index="3">The LUT-1 inverter link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/scl&lt;1&gt;1_INV_0 drives multiple loads.</arg>
+<msg type="warning" file="Pack" num="2515" delta="new" >The LUT-1 inverter &quot;<arg fmt="%s" index="1">link_tracking_0_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/scl&lt;1&gt;1_INV_0</arg>&quot; failed to join the OLOGIC comp matched to output buffer &quot;<arg fmt="%s" index="2">vfat2_buffers_inst/vfat2_scl_0_obuf_inst</arg>&quot;.  This may result in suboptimal timing.  <arg fmt="%z" index="3">The LUT-1 inverter link_tracking_0_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/scl&lt;1&gt;1_INV_0 drives multiple loads.</arg>
 </msg>
 
-<msg type="warning" file="Pack" num="2515" delta="old" >The LUT-1 inverter &quot;<arg fmt="%s" index="1">link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/scl&lt;1&gt;1_INV_0</arg>&quot; failed to join the OLOGIC comp matched to output buffer &quot;<arg fmt="%s" index="2">vfat2_buffers_inst/vfat2_scl_1_obuf_inst</arg>&quot;.  This may result in suboptimal timing.  <arg fmt="%z" index="3">The LUT-1 inverter link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/scl&lt;1&gt;1_INV_0 drives multiple loads.</arg>
+<msg type="warning" file="Pack" num="2515" delta="new" >The LUT-1 inverter &quot;<arg fmt="%s" index="1">link_tracking_0_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/scl&lt;1&gt;1_INV_0</arg>&quot; failed to join the OLOGIC comp matched to output buffer &quot;<arg fmt="%s" index="2">vfat2_buffers_inst/vfat2_scl_1_obuf_inst</arg>&quot;.  This may result in suboptimal timing.  <arg fmt="%z" index="3">The LUT-1 inverter link_tracking_0_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/scl&lt;1&gt;1_INV_0 drives multiple loads.</arg>
 </msg>
 
-<msg type="warning" file="Pack" num="2515" delta="old" >The LUT-1 inverter &quot;<arg fmt="%s" index="1">link_tracking_0_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/scl&lt;1&gt;1_INV_0</arg>&quot; failed to join the OLOGIC comp matched to output buffer &quot;<arg fmt="%s" index="2">vfat2_buffers_inst/vfat2_scl_2_obuf_inst</arg>&quot;.  This may result in suboptimal timing.  <arg fmt="%z" index="3">The LUT-1 inverter link_tracking_0_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/scl&lt;1&gt;1_INV_0 drives multiple loads.</arg>
+<msg type="warning" file="Pack" num="2515" delta="new" >The LUT-1 inverter &quot;<arg fmt="%s" index="1">link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/scl&lt;1&gt;1_INV_0</arg>&quot; failed to join the OLOGIC comp matched to output buffer &quot;<arg fmt="%s" index="2">vfat2_buffers_inst/vfat2_scl_2_obuf_inst</arg>&quot;.  This may result in suboptimal timing.  <arg fmt="%z" index="3">The LUT-1 inverter link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/scl&lt;1&gt;1_INV_0 drives multiple loads.</arg>
 </msg>
 
-<msg type="warning" file="Pack" num="2515" delta="old" >The LUT-1 inverter &quot;<arg fmt="%s" index="1">link_tracking_0_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/scl&lt;1&gt;1_INV_0</arg>&quot; failed to join the OLOGIC comp matched to output buffer &quot;<arg fmt="%s" index="2">vfat2_buffers_inst/vfat2_scl_3_obuf_inst</arg>&quot;.  This may result in suboptimal timing.  <arg fmt="%z" index="3">The LUT-1 inverter link_tracking_0_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/scl&lt;1&gt;1_INV_0 drives multiple loads.</arg>
+<msg type="warning" file="Pack" num="2515" delta="new" >The LUT-1 inverter &quot;<arg fmt="%s" index="1">link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/scl&lt;1&gt;1_INV_0</arg>&quot; failed to join the OLOGIC comp matched to output buffer &quot;<arg fmt="%s" index="2">vfat2_buffers_inst/vfat2_scl_3_obuf_inst</arg>&quot;.  This may result in suboptimal timing.  <arg fmt="%z" index="3">The LUT-1 inverter link_tracking_1_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/scl&lt;1&gt;1_INV_0 drives multiple loads.</arg>
 </msg>
 
 <msg type="warning" file="Pack" num="2515" delta="old" >The LUT-1 inverter &quot;<arg fmt="%s" index="1">vfat2_buffers_inst/vfat2_t1&lt;2&gt;1_INV_0</arg>&quot; failed to join the OLOGIC comp matched to output buffer &quot;<arg fmt="%s" index="2">vfat2_buffers_inst/vfat2_t1_0_obufds_inst/OBUFDS</arg>&quot;.  This may result in suboptimal timing.  <arg fmt="%z" index="3">The LUT-1 inverter vfat2_buffers_inst/vfat2_t1&lt;2&gt;1_INV_0 drives multiple loads.</arg>
@@ -686,16 +686,7 @@ To see the details of these <arg fmt="%s" index="4">info</arg> messages, please 
 <msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/RESET</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
 </msg>
 
-<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;12&gt;</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
-</msg>
-
-<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;13&gt;</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
-</msg>
-
-<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;14&gt;</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
-</msg>
-
-<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;15&gt;</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[17].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
 </msg>
 
 <msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;8&gt;</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
@@ -710,6 +701,21 @@ To see the details of these <arg fmt="%s" index="4">info</arg> messages, please 
 <msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;11&gt;</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
 </msg>
 
+<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_UPDATE_OUT[63].UPDATE_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;12&gt;</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;13&gt;</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;14&gt;</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;15&gt;</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
 <msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;4&gt;</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
 </msg>
 
@@ -720,12 +726,6 @@ To see the details of these <arg fmt="%s" index="4">info</arg> messages, please 
 </msg>
 
 <msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;7&gt;</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
-</msg>
-
-<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[17].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
-</msg>
-
-<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_UPDATE_OUT[63].UPDATE_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
 </msg>
 
 <msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;0&gt;</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
@@ -746,10 +746,13 @@ To see the details of these <arg fmt="%s" index="4">info</arg> messages, please 
 <msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[18].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
 </msg>
 
+<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[20].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
 <msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[19].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
 </msg>
 
-<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[30].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[24].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
 </msg>
 
 <msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[23].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
@@ -758,25 +761,22 @@ To see the details of these <arg fmt="%s" index="4">info</arg> messages, please 
 <msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[22].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
 </msg>
 
-<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[27].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[21].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
 </msg>
 
 <msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[29].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
 </msg>
 
-<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[28].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
-</msg>
-
-<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[21].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
-</msg>
-
-<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[20].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
-</msg>
-
-<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[24].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[30].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
 </msg>
 
 <msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[25].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[27].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[28].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
 </msg>
 
 <msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[26].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.

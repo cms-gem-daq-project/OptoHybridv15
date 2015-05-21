@@ -256,6 +256,12 @@ architecture Behavioral of optohybrid_top is
  
     -- Registers requests
     
+    signal request_write_0              : array32(63 downto 0) := (others => (others => '0'));
+    signal request_tri_0                : std_logic_vector(63 downto 0);
+    
+    signal request_write_1              : array32(63 downto 0) := (others => (others => '0'));
+    signal request_tri_1                : std_logic_vector(63 downto 0);
+    
     signal request_write                : array32(63 downto 0) := (others => (others => '0'));
     signal request_tri                  : std_logic_vector(63 downto 0);
     signal request_read                 : array32(63 downto 0) := (others => (others => '0'));
@@ -462,25 +468,25 @@ begin
     
     --== Clocking & Reset : PLL & CDCE & VFAT2 ==--
     
-    pll_inst : entity work.clk_wiz_v3_6
-    port map(
-        clk_50Mhz_i     => clk_50Mhz_i,
-        clk_50Mhz_o     => clk_50Mhz,
-        clk_40Mhz_o     => clk_40Mhz,
-        clk_160Mhz_o    => clk_160Mhz,
-        pll_locked_o    => pll_locked
-    );    
+--    pll_inst : entity work.clk_wiz_v3_6
+--    port map(
+--        clk_50Mhz_i     => clk_50Mhz_i,
+--        clk_50Mhz_o     => clk_50Mhz,
+--        clk_40Mhz_o     => clk_40Mhz,
+--        clk_160Mhz_o    => clk_160Mhz,
+--        pll_locked_o    => pll_locked
+--    );    
     
     pll_ext : entity work.ext_pll
     port map(
         clk_40MHz_i     => tmds_d_p_io(0), 
         clk_40MHz_o     => clk_40MHz_ext,
         clk_160MHz_o    => clk_160MHz_ext,
-        locked_o        => open
+        locked_o        => pll_locked
     );    
     
-    vfat2_mclk <= clk_40MHz;
-    gtx_ref_clk <= clk_160MHz;
+    vfat2_mclk <= clk_40MHz_ext;
+    gtx_ref_clk <= clk_160MHz_ext;
    
     cdce_primary_clk_obufds : obufds port map(i => clk_40MHz_ext, o => cdce_pri_p_o, ob => cdce_pri_n_o);
     
@@ -513,7 +519,7 @@ begin
     
     --== Links ==--
     
-    link_tracking_1_inst : entity work.link_tracking
+    link_tracking_0_inst : entity work.link_tracking
     port map(
         gtp_clk_i       => gtx_clk,
         vfat2_clk_i     => vfat2_mclk,
@@ -523,8 +529,8 @@ begin
         rx_data_i       => rx_data(15 downto 0),
         tx_kchar_o      => tx_kchar(1 downto 0),
         tx_data_o       => tx_data(15 downto 0),
-        request_write_o => request_write,
-        request_tri_o   => request_tri,
+        request_write_o => request_write_0,
+        request_tri_o   => request_tri_0,
         request_read_i  => request_read,
         lv1a_sent_i     => t1_lv1a,
         bx_counter_i    => bx_counter,
@@ -543,7 +549,7 @@ begin
         vfat2_data_7_i  => vfat2_data(7).data(8)
     );
     
-    link_tracking_0_inst : entity work.link_tracking
+    link_tracking_1_inst : entity work.link_tracking
     port map(
         gtp_clk_i       => gtx_clk,
         vfat2_clk_i     => vfat2_mclk,
@@ -553,8 +559,8 @@ begin
         rx_data_i       => rx_data(47 downto 32),
         tx_kchar_o      => tx_kchar(5 downto 4),
         tx_data_o       => tx_data(47 downto 32),
-        request_write_o => open,
-        request_tri_o   => open,
+        request_write_o => request_write_1,
+        request_tri_o   => request_tri_1,
         request_read_i  => request_read,
         lv1a_sent_i     => t1_lv1a,
         bx_counter_i    => bx_counter,
@@ -572,6 +578,12 @@ begin
         vfat2_data_6_i  => vfat2_data(14).data(8),
         vfat2_data_7_i  => vfat2_data(15).data(8)
     );    
+    
+    requests: for I in 0 to 63 generate
+    begin
+        request_tri(I) <= request_tri_0(I) or request_tri_1(I);
+        request_write(I) <= request_write_0(I) when request_tri_0(I) = '1' else request_write_1(I);
+    end generate;
     
 --    link_trigger_inst : entity work.link_trigger
 --    port map(
@@ -645,7 +657,7 @@ begin
     t1_handler_inst : entity work.t1_handler 
     port map(
         fabric_clk_i    => gtx_clk,
-        vfat2_clk_i     => clk_40MHz,
+        vfat2_clk_i     => vfat2_mclk,
         reset_i         => reset,
         lv1a_i          => t1_lv1a,
         calpulse_i      => t1_calpulse,
@@ -750,7 +762,7 @@ begin
     
     -- Fixed registers : 23 -- read _ firmware version
     
-    request_read(23) <= x"AA150523"; 
+    request_read(23) <= x"AA150520"; 
     
     -- Reserved : 25 downto 24
     
