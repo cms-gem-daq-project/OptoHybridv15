@@ -1,0 +1,5 @@
+# This file constraints the clocking signals
+
+## Single ended clocks
+
+NET "clk_50MHz_i"       LOC = J9; # L14_P

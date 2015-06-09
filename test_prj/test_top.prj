@@ -1,0 +1,7 @@
+vhdl work "ipcore_dir/clk_wiz_v3_6.vhd"
+vhdl work "ipcore_dir/test_icon.vhd"
+vhdl work "ipcore_dir/test_ila.vhd"
+vhdl work "../src/packages/vfat2_pkg.vhd"
+vhdl work "tests/vfat2_buffers.vhd"
+vhdl work "../src/old/user_package.vhd"
+vhdl work "tests/test_top.vhd"

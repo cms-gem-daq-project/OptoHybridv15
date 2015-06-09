@@ -1,0 +1,17 @@
+# Output products list for <test_ila>
+test_ila.asy
+test_ila.cdc
+test_ila.constraints\test_ila.ucf
+test_ila.constraints\test_ila.xdc
+test_ila.gise
+test_ila.ncf
+test_ila.ngc
+test_ila.ucf
+test_ila.vhd
+test_ila.vho
+test_ila.xco
+test_ila.xdc
+test_ila.xise
+test_ila_flist.txt
+test_ila_readme.txt
+test_ila_xmdf.tcl

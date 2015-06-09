@@ -1,10 +1,49 @@
 INFO:sim:172 - Generating IP...
-WARNING:sim:100 - The Simulation File Type <Behavioral> is not valid for this
-   core. Overriding with File Type <structural>.
 Applying current project options...
 Finished applying current project options.
-Customizing IP...
-Release 14.7 - Xilinx CORE Generator IP GUI Launcher P.20131013 (nt64)
-Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
-Cancelled Customization.
-Wrote CGP file for project 'chipscope_ila'.
+WARNING:sim - A core named 'ext_pll' already exists in the project. Output
+   products for this core may be overwritten.
+Resolving generics for 'ext_pll'...
+WARNING:sim - A core named 'ext_pll' already exists in the project. Output
+   products for this core may be overwritten.
+Applying external generics to 'ext_pll'...
+Delivering associated files for 'ext_pll'...
+WARNING:sim - Component clk_wiz_v3_6 does not have a valid model name for VHDL
+   synthesis
+Delivering EJava files for 'ext_pll'...
+Delivered 3 files into directory
+Z:/Documents/PhD/Code/OptoHybrid_v1.5/prj/ipcore_dir/tmp/_cg/ext_pll
+Delivered 1 file into directory
+Z:/Documents/PhD/Code/OptoHybrid_v1.5/prj/ipcore_dir/tmp/_cg/ext_pll
+Generating ASY schematic symbol...
+Loading device for application Rf_Device from file '6vlx130t.nph' in environment
+C:\Xilinx\14.7\ISE_DS\ISE\.
+INFO:sim:949 - Finished generation of ASY schematic symbol.
+Generating SYM schematic symbol for 'ext_pll'...
+Generating ISE project...
+XCO file found: ext_pll.xco
+XMDF file found: ext_pll_xmdf.tcl
+Adding Z:/Documents/PhD/Code/OptoHybrid_v1.5/prj/ipcore_dir/tmp/_cg/ext_pll.asy
+-view all -origin_type imported
+Adding Z:/Documents/PhD/Code/OptoHybrid_v1.5/prj/ipcore_dir/tmp/_cg/ext_pll.ucf
+-view all -origin_type created
+Adding Z:/Documents/PhD/Code/OptoHybrid_v1.5/prj/ipcore_dir/tmp/_cg/ext_pll.vhd
+-view all -origin_type created
+INFO:HDLCompiler:1061 - Parsing VHDL file
+   "Z:/Documents/PhD/Code/OptoHybrid_v1.5/prj/ipcore_dir/tmp/_cg/ext_pll.vhd"
+   into library work
+INFO:ProjectMgmt - Parsing design hierarchy completed successfully.
+Adding Z:/Documents/PhD/Code/OptoHybrid_v1.5/prj/ipcore_dir/tmp/_cg/ext_pll.vho
+-view all -origin_type imported
+INFO:TclTasksC:2116 - The automatic calculation of top has been turned-off.
+   Please set the new top explicitly by running the "project set top" command.
+   To re-calculate the new top automatically, set the "Auto Implementation Top"
+   property to true.
+Top level has been set to "/ext_pll"
+Generating README file...
+Generating FLIST file...
+INFO:sim:948 - Finished FLIST file generation.
+Launching README viewer...
+Moving files to output directory...
+Finished moving files to output directory
+Wrote CGP file for project 'ext_pll'.

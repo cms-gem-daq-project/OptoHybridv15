@@ -2,6 +2,7 @@
 _xmsgs\pn_parser.xmsgs
 ext_pll.asy
 ext_pll.gise
+ext_pll.sym
 ext_pll.ucf
 ext_pll.vhd
 ext_pll.vho

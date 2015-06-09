@@ -1,0 +1,18 @@
+# Output products list for <ila_vfat>
+_xmsgs\pn_parser.xmsgs
+ila_vfat.asy
+ila_vfat.cdc
+ila_vfat.constraints\ila_vfat.ucf
+ila_vfat.constraints\ila_vfat.xdc
+ila_vfat.gise
+ila_vfat.ncf
+ila_vfat.ngc
+ila_vfat.ucf
+ila_vfat.vhd
+ila_vfat.vho
+ila_vfat.xco
+ila_vfat.xdc
+ila_vfat.xise
+ila_vfat_flist.txt
+ila_vfat_readme.txt
+ila_vfat_xmdf.tcl

@@ -1,4 +1,3 @@
-vhdl work "ipcore_dir/clk_wiz_v3_6.vhd"
 vhdl work "ipcore_dir/tracking_bx_fifo.vhd"
 vhdl work "ipcore_dir/tracking_data_fifo.vhd"
 vhdl work "ipcore_dir/chipscope_icon.vhd"
