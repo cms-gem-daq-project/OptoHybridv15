@@ -1,0 +1,15 @@
+# Output products list for <test_icon>
+test_icon.asy
+test_icon.constraints\test_icon.ucf
+test_icon.constraints\test_icon.xdc
+test_icon.gise
+test_icon.ngc
+test_icon.ucf
+test_icon.vhd
+test_icon.vho
+test_icon.xco
+test_icon.xdc
+test_icon.xise
+test_icon_flist.txt
+test_icon_readme.txt
+test_icon_xmdf.tcl

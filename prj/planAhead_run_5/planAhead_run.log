@@ -1,0 +1,210 @@
+
+****** PlanAhead v14.7 (64-bit)
+  **** Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
+    ** Copyright 1986-1999, 2001-2013 Xilinx, Inc. All Rights Reserved.
+
+INFO: [Common 17-78] Attempting to get a license: PlanAhead
+INFO: [Common 17-290] Got license for PlanAhead
+INFO: [Common 17-86] Your PlanAhead license expires in -518 day(s)
+INFO: [Device 21-36] Loading parts and site information from C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/arch.xml
+Parsing RTL primitives file [C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+Finished parsing RTL primitives file [C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+start_gui
+source Z:/Documents/PhD/Code/OptoHybrid_v1.5/prj/pa.fromHdl.tcl
+# create_project -name OptoHybrid_v1_5 -dir "Z:/Documents/PhD/Code/OptoHybrid_v1.5/prj/planAhead_run_5" -part xc6vlx130tff1156-1
+create_project: Time (s): elapsed = 00:00:07 . Memory (MB): peak = 397.453 ; gain = 60.309
+# set_param project.pinAheadLayout yes
+# set srcset [get_property srcset [current_run -impl]]
+# set_property target_constrs_file "Z:/Documents/PhD/Code/OptoHybrid_v1.5/src/ucf/vfat2.ucf" [current_fileset -constrset]
+Adding file 'Z:/Documents/PhD/Code/OptoHybrid_v1.5/src/ucf/vfat2.ucf' to fileset 'constrs_1'
+# set hdlfile [add_files [list {ipcore_dir/tracking_bx_fifo.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {ipcore_dir/tracking_data_fifo.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {ipcore_dir/chipscope_icon.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {ipcore_dir/chipscope_ila.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {ipcore_dir/chipscope_vio.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {ipcore_dir/ext_pll.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {../src/old/i2c_data.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {../src/old/i2c_ctrl.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {../src/old/user_package.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {../src/old/i2c_master.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {../src/old/vi2c_wrapper.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {../src/old/tracking_readout.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {../src/old/tracking_decoder.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {../src/old/tracking_concentrator.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {../src/packages/vfat2_pkg.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {../src/old/vi2c_core.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {../src/old/tracking_core.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {../src/old/t1_encoder.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {../src/old/registers_core.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {../src/old/gtp_tx_mux.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {../src/old/gtp_rx_mux.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {../src/old/counter.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {../src/old/clock_bridge_strobes.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {ipcore_dir/gtx_gtx.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {../src/system/vfat2_buffers.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {../src/system/gtx.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {../src/old/trigger_handler.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {../src/old/t1_handler.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {../src/old/t1_delayed.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {../src/old/registers.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {../src/old/link_tracking.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {../src/optohybrid_top.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set_property top optohybrid_top $srcset
+# add_files [list {Z:/Documents/PhD/Code/OptoHybrid_v1.5/src/ucf/vfat2.ucf}] -fileset [get_property constrset [current_run]]
+# add_files [list {Z:/Documents/PhD/Code/OptoHybrid_v1.5/src/ucf/clocking.ucf}] -fileset [get_property constrset [current_run]]
+# add_files [list {Z:/Documents/PhD/Code/OptoHybrid_v1.5/src/ucf/gtx.ucf}] -fileset [get_property constrset [current_run]]
+# add_files [list {ipcore_dir/chipscope_icon.ncf}] -fileset [get_property constrset [current_run]]
+# add_files [list {ipcore_dir/chipscope_ila.ncf}] -fileset [get_property constrset [current_run]]
+# add_files [list {ipcore_dir/chipscope_vio.ncf}] -fileset [get_property constrset [current_run]]
+# add_files [list {ipcore_dir/icon_system.ncf}] -fileset [get_property constrset [current_run]]
+# add_files [list {ipcore_dir/ila_vfat.ncf}] -fileset [get_property constrset [current_run]]
+# add_files [list {ipcore_dir/tracking_bx_fifo.ncf}] -fileset [get_property constrset [current_run]]
+# add_files [list {ipcore_dir/tracking_data_fifo.ncf}] -fileset [get_property constrset [current_run]]
+# add_files [list {ipcore_dir/vio_system.ncf}] -fileset [get_property constrset [current_run]]
+# open_rtl_design -part xc6vlx130tff1156-1
+Using Verific elaboration
+Parsing VHDL file "C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/lib/synplify/synattr.vhd" into library synplify
+Parsing VHDL file "C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/lib/synplify/synattr.vhd" into library synplify
+Parsing VHDL file "Z:/Documents/PhD/Code/OptoHybrid_v1.5/src/old/i2c_data.vhd" into library work
+Parsing VHDL file "Z:/Documents/PhD/Code/OptoHybrid_v1.5/src/old/i2c_ctrl.vhd" into library work
+Parsing VHDL file "Z:/Documents/PhD/Code/OptoHybrid_v1.5/src/old/user_package.vhd" into library work
+Parsing VHDL file "Z:/Documents/PhD/Code/OptoHybrid_v1.5/src/old/i2c_master.vhd" into library work
+Parsing VHDL file "Z:/Documents/PhD/Code/OptoHybrid_v1.5/src/old/vi2c_wrapper.vhd" into library work
+Parsing VHDL file "Z:/Documents/PhD/Code/OptoHybrid_v1.5/src/old/tracking_readout.vhd" into library work
+Parsing VHDL file "Z:/Documents/PhD/Code/OptoHybrid_v1.5/src/old/tracking_decoder.vhd" into library work
+Parsing VHDL file "Z:/Documents/PhD/Code/OptoHybrid_v1.5/src/old/tracking_concentrator.vhd" into library work
+Parsing VHDL file "Z:/Documents/PhD/Code/OptoHybrid_v1.5/prj/ipcore_dir/tracking_data_fifo.vhd" into library work
+Parsing VHDL file "Z:/Documents/PhD/Code/OptoHybrid_v1.5/prj/ipcore_dir/tracking_bx_fifo.vhd" into library work
+Parsing VHDL file "Z:/Documents/PhD/Code/OptoHybrid_v1.5/src/packages/vfat2_pkg.vhd" into library work
+Parsing VHDL file "Z:/Documents/PhD/Code/OptoHybrid_v1.5/src/old/vi2c_core.vhd" into library work
+Parsing VHDL file "Z:/Documents/PhD/Code/OptoHybrid_v1.5/src/old/tracking_core.vhd" into library work
+Parsing VHDL file "Z:/Documents/PhD/Code/OptoHybrid_v1.5/src/old/t1_encoder.vhd" into library work
+Parsing VHDL file "Z:/Documents/PhD/Code/OptoHybrid_v1.5/src/old/registers_core.vhd" into library work
+Parsing VHDL file "Z:/Documents/PhD/Code/OptoHybrid_v1.5/src/old/gtp_tx_mux.vhd" into library work
+Parsing VHDL file "Z:/Documents/PhD/Code/OptoHybrid_v1.5/src/old/gtp_rx_mux.vhd" into library work
+Parsing VHDL file "Z:/Documents/PhD/Code/OptoHybrid_v1.5/src/old/counter.vhd" into library work
+Parsing VHDL file "Z:/Documents/PhD/Code/OptoHybrid_v1.5/src/old/clock_bridge_strobes.vhd" into library work
+Parsing VHDL file "Z:/Documents/PhD/Code/OptoHybrid_v1.5/prj/ipcore_dir/gtx_gtx.vhd" into library work
+Parsing VHDL file "Z:/Documents/PhD/Code/OptoHybrid_v1.5/src/system/vfat2_buffers.vhd" into library work
+WARNING: [HDL 9-946] Actual for formal port i is neither a static name nor a globally static expression [Z:/Documents/PhD/Code/OptoHybrid_v1.5/src/system/vfat2_buffers.vhd:345]
+WARNING: [HDL 9-946] Actual for formal port i is neither a static name nor a globally static expression [Z:/Documents/PhD/Code/OptoHybrid_v1.5/src/system/vfat2_buffers.vhd:356]
+WARNING: [HDL 9-946] Actual for formal port i is neither a static name nor a globally static expression [Z:/Documents/PhD/Code/OptoHybrid_v1.5/src/system/vfat2_buffers.vhd:368]
+WARNING: [HDL 9-946] Actual for formal port i is neither a static name nor a globally static expression [Z:/Documents/PhD/Code/OptoHybrid_v1.5/src/system/vfat2_buffers.vhd:379]
+Parsing VHDL file "Z:/Documents/PhD/Code/OptoHybrid_v1.5/src/system/gtx.vhd" into library work
+Parsing VHDL file "Z:/Documents/PhD/Code/OptoHybrid_v1.5/src/old/trigger_handler.vhd" into library work
+Parsing VHDL file "Z:/Documents/PhD/Code/OptoHybrid_v1.5/src/old/t1_handler.vhd" into library work
+Parsing VHDL file "Z:/Documents/PhD/Code/OptoHybrid_v1.5/src/old/t1_delayed.vhd" into library work
+Parsing VHDL file "Z:/Documents/PhD/Code/OptoHybrid_v1.5/src/old/registers.vhd" into library work
+Parsing VHDL file "Z:/Documents/PhD/Code/OptoHybrid_v1.5/src/old/link_tracking.vhd" into library work
+Parsing VHDL file "Z:/Documents/PhD/Code/OptoHybrid_v1.5/prj/ipcore_dir/ext_pll.vhd" into library work
+Parsing VHDL file "Z:/Documents/PhD/Code/OptoHybrid_v1.5/prj/ipcore_dir/chipscope_vio.vhd" into library work
+Parsing VHDL file "Z:/Documents/PhD/Code/OptoHybrid_v1.5/prj/ipcore_dir/chipscope_ila.vhd" into library work
+Parsing VHDL file "Z:/Documents/PhD/Code/OptoHybrid_v1.5/prj/ipcore_dir/chipscope_icon.vhd" into library work
+Parsing VHDL file "Z:/Documents/PhD/Code/OptoHybrid_v1.5/src/optohybrid_top.vhd" into library work
+CRITICAL WARNING: [EDIF 20-96] Could not resolve non-primitive black box cell 'tracking_bx_fifo' instantiated as 'tracking_bx_fifo_inst' [Z:/Documents/PhD/Code/OptoHybrid_v1.5/src/old/tracking_core.vhd:58]
+Resolution: File names need to match cell names: an EDIF definition will be found in tracking_bx_fifo.edf; an HDL definition may be placed in any Verilog/VHDL file.
+CRITICAL WARNING: [EDIF 20-96] Could not resolve non-primitive black box cell 'tracking_data_fifo' instantiated as 'tracking_data_fifo_inst' [Z:/Documents/PhD/Code/OptoHybrid_v1.5/src/old/tracking_core.vhd:108]
+Resolution: File names need to match cell names: an EDIF definition will be found in tracking_data_fifo.edf; an HDL definition may be placed in any Verilog/VHDL file.
+CRITICAL WARNING: [EDIF 20-96] Could not resolve non-primitive black box cell 'chipscope_icon' instantiated as 'chipscope_icon_inst' [Z:/Documents/PhD/Code/OptoHybrid_v1.5/src/optohybrid_top.vhd:836]
+Resolution: File names need to match cell names: an EDIF definition will be found in chipscope_icon.edf; an HDL definition may be placed in any Verilog/VHDL file.
+CRITICAL WARNING: [EDIF 20-96] Could not resolve non-primitive black box cell 'chipscope_vio' instantiated as 'chipscope_vio_inst' [Z:/Documents/PhD/Code/OptoHybrid_v1.5/src/optohybrid_top.vhd:838]
+Resolution: File names need to match cell names: an EDIF definition will be found in chipscope_vio.edf; an HDL definition may be placed in any Verilog/VHDL file.
+CRITICAL WARNING: [EDIF 20-96] Could not resolve non-primitive black box cell 'chipscope_ila' instantiated as 'chipscope_ila_inst' [Z:/Documents/PhD/Code/OptoHybrid_v1.5/src/optohybrid_top.vhd:842]
+Resolution: File names need to match cell names: an EDIF definition will be found in chipscope_ila.edf; an HDL definition may be placed in any Verilog/VHDL file.
+INFO: [Netlist 29-17] Analyzing 6 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+Loading clock regions from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/virtex6/virtex6lxt/xc6vlx130t/ClockRegion.xml
+Loading clock buffers from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/virtex6/virtex6lxt/xc6vlx130t/ClockBuffers.xml
+Loading clock placement rules from C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/virtex6/ClockPlacerRules.xml
+Loading clock capable ios from C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/virtex6/ClockCapableIOBs.xml
+Loading package pin functions from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/virtex6/PinFunctions.xml...
+Loading package from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/virtex6/virtex6lxt/xc6vlx130t/ff1156/Package.xml
+Loading io standards from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\./parts/xilinx/virtex6/IOStandards.xml
+Loading device configuration modes from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/virtex6/ConfigModes.xml
+Loading list of drcs for the architecture : C:/Xilinx/14.7/ISE_DS/PlanAhead/data\./parts/xilinx/virtex6/drc.xml
+Parsing UCF File [Z:/Documents/PhD/Code/OptoHybrid_v1.5/src/ucf/vfat2.ucf]
+CRITICAL WARNING: [Constraints 18-5] Cannot loc terminal 'vfat2_mclk_p_o[0]' at site L18, DP Positive pin polarity mismatch [Z:/Documents/PhD/Code/OptoHybrid_v1.5/src/ucf/vfat2.ucf:8]
+CRITICAL WARNING: [Constraints 18-5] Cannot loc terminal 'vfat2_mclk_n_o[0]' at site M18, DP Negative pin polarity mismatch [Z:/Documents/PhD/Code/OptoHybrid_v1.5/src/ucf/vfat2.ucf:9]
+Finished Parsing UCF File [Z:/Documents/PhD/Code/OptoHybrid_v1.5/src/ucf/vfat2.ucf]
+Parsing UCF File [Z:/Documents/PhD/Code/OptoHybrid_v1.5/src/ucf/clocking.ucf]
+Finished Parsing UCF File [Z:/Documents/PhD/Code/OptoHybrid_v1.5/src/ucf/clocking.ucf]
+Parsing UCF File [Z:/Documents/PhD/Code/OptoHybrid_v1.5/src/ucf/gtx.ucf]
+CRITICAL WARNING: [Constraints 18-5] Cannot loc terminal 'mgt_112_clk0_p_i' at site AK6, Illegal to place instance gtx_clk_inst on site AK6 [Z:/Documents/PhD/Code/OptoHybrid_v1.5/src/ucf/gtx.ucf:710]
+CRITICAL WARNING: [Constraints 18-5] Cannot loc terminal 'mgt_112_clk0_n_i' at site AK5, Illegal to place instance gtx_clk_inst on site AK6 [Z:/Documents/PhD/Code/OptoHybrid_v1.5/src/ucf/gtx.ucf:711]
+Finished Parsing UCF File [Z:/Documents/PhD/Code/OptoHybrid_v1.5/src/ucf/gtx.ucf]
+INFO: [Designutils 20-20] Invalid constraints found, use command 'write_ucf -constraints invalid <file>' to save all the invalid constraints to a file
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 6 instances were transformed.
+  IOBUF => IOBUF (OBUFT, IBUF): 6 instances
+
+Phase 0 | Netlist Checksum: 986c4a72
+open_rtl_design: Time (s): elapsed = 00:00:44 . Memory (MB): peak = 779.004 ; gain = 377.887
+update_compile_order -fileset sim_1
+exit
+ERROR: [Common 17-39] 'stop_gui' failed due to earlier errors.
+INFO: [Common 17-206] Exiting PlanAhead at Tue Jun 02 11:36:47 2015...
+INFO: [Common 17-83] Releasing license: PlanAhead
