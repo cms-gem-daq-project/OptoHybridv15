@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> Reading design: optohybrid_top.prj
 
@@ -896,8 +896,8 @@ WARNING:Xst:647 - Input <en_i> is never used. This port will be preserved and le
     Found finite state machine <FSM_7> for signal <state>.
     -----------------------------------------------------------------------
     | States             | 4                                              |
-    | Transitions        | 8                                              |
-    | Inputs             | 4                                              |
+    | Transitions        | 10                                             |
+    | Inputs             | 6                                              |
     | Outputs            | 3                                              |
     | Clock              | vfat2_clk_i (rising_edge)                      |
     | Reset              | reset_i (positive)                             |
@@ -10151,92 +10151,164 @@ WARNING:Xst:2677 - Node <link_tracking_2_inst/vi2c_core_inst/vi2c_wrapper_inst/i
 WARNING:Xst:2677 - Node <link_tracking_2_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/ctrlfsmprev_2> of sequential type is unconnected in block <optohybrid_top>.
 WARNING:Xst:2677 - Node <link_tracking_2_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/ctrlfsmprev_1> of sequential type is unconnected in block <optohybrid_top>.
 WARNING:Xst:2677 - Node <link_tracking_2_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/ctrlfsmprev_0> of sequential type is unconnected in block <optohybrid_top>.
-WARNING:Xst:1710 - FF/Latch <link_tracking_2_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/i2creg.timer_11> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <link_tracking_0_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/i2creg.timer_11> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <link_tracking_2_inst/tracking_core_inst/track_0_inst/data_o_188> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <link_tracking_2_inst/tracking_core_inst/track_0_inst/data_o_190> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <link_tracking_2_inst/tracking_core_inst/track_1_inst/data_o_188> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <link_tracking_2_inst/tracking_core_inst/track_1_inst/data_o_190> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <link_tracking_2_inst/tracking_core_inst/track_2_inst/data_o_188> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <link_tracking_2_inst/tracking_core_inst/track_2_inst/data_o_190> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <link_tracking_2_inst/tracking_core_inst/track_3_inst/data_o_188> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <link_tracking_2_inst/tracking_core_inst/track_4_inst/data_o_188> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <link_tracking_2_inst/tracking_core_inst/track_4_inst/data_o_190> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <link_tracking_2_inst/tracking_core_inst/track_5_inst/data_o_188> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <link_tracking_2_inst/tracking_core_inst/track_5_inst/data_o_190> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <link_tracking_2_inst/tracking_core_inst/track_6_inst/data_o_188> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <link_tracking_2_inst/tracking_core_inst/track_7_inst/data_o_188> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <link_tracking_2_inst/tracking_core_inst/track_7_inst/data_o_173> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <link_tracking_2_inst/tracking_core_inst/track_7_inst/data_o_172> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <link_tracking_2_inst/tracking_core_inst/track_7_inst/data_o_156> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <link_tracking_2_inst/tracking_core_inst/track_6_inst/data_o_190> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <link_tracking_0_inst/tracking_core_inst/track_7_inst/data_o_190> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <link_tracking_2_inst/tracking_core_inst/track_6_inst/data_o_188> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <link_tracking_2_inst/tracking_core_inst/track_6_inst/data_o_173> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <link_tracking_2_inst/tracking_core_inst/track_6_inst/data_o_172> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <link_tracking_2_inst/tracking_core_inst/track_5_inst/data_o_188> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <link_tracking_2_inst/tracking_core_inst/track_5_inst/data_o_173> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <link_tracking_2_inst/tracking_core_inst/track_5_inst/data_o_172> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <link_tracking_2_inst/tracking_core_inst/track_4_inst/data_o_190> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <link_tracking_2_inst/tracking_core_inst/track_4_inst/data_o_188> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <link_tracking_2_inst/tracking_core_inst/track_4_inst/data_o_172> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <link_tracking_2_inst/tracking_core_inst/track_4_inst/data_o_156> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <link_tracking_2_inst/tracking_core_inst/track_3_inst/data_o_188> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <link_tracking_2_inst/tracking_core_inst/track_3_inst/data_o_173> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <link_tracking_2_inst/tracking_core_inst/track_2_inst/data_o_190> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <link_tracking_2_inst/tracking_core_inst/track_2_inst/data_o_188> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <link_tracking_2_inst/tracking_core_inst/track_2_inst/data_o_172> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <link_tracking_2_inst/tracking_core_inst/track_1_inst/data_o_190> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <link_tracking_2_inst/tracking_core_inst/track_1_inst/data_o_188> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <link_tracking_2_inst/tracking_core_inst/track_1_inst/data_o_173> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <link_tracking_2_inst/tracking_core_inst/track_1_inst/data_o_172> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <link_tracking_2_inst/tracking_core_inst/track_0_inst/data_o_190> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <link_tracking_2_inst/tracking_core_inst/track_0_inst/data_o_188> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <link_tracking_2_inst/tracking_core_inst/track_0_inst/data_o_173> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <link_tracking_2_inst/tracking_core_inst/track_0_inst/data_o_172> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <link_tracking_0_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/i2creg.timer_11> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <link_tracking_2_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/i2creg.timer_11> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <link_tracking_0_inst/tracking_core_inst/track_7_inst/data_o_188> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <link_tracking_0_inst/tracking_core_inst/track_7_inst/data_o_173> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <link_tracking_0_inst/tracking_core_inst/track_7_inst/data_o_172> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <link_tracking_0_inst/tracking_core_inst/track_6_inst/data_o_190> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <link_tracking_0_inst/tracking_core_inst/track_6_inst/data_o_188> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <link_tracking_0_inst/tracking_core_inst/track_6_inst/data_o_173> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <link_tracking_0_inst/tracking_core_inst/track_6_inst/data_o_172> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <link_tracking_0_inst/tracking_core_inst/track_5_inst/data_o_190> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <link_tracking_0_inst/tracking_core_inst/track_5_inst/data_o_188> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <link_tracking_0_inst/tracking_core_inst/track_5_inst/data_o_173> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <link_tracking_0_inst/tracking_core_inst/track_5_inst/data_o_172> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <link_tracking_0_inst/tracking_core_inst/track_5_inst/data_o_156> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <link_tracking_0_inst/tracking_core_inst/track_4_inst/data_o_190> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <link_tracking_0_inst/tracking_core_inst/track_4_inst/data_o_188> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <link_tracking_0_inst/tracking_core_inst/track_3_inst/data_o_190> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <link_tracking_2_inst/tracking_core_inst/track_7_inst/data_o_188> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <link_tracking_0_inst/tracking_core_inst/track_4_inst/data_o_173> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <link_tracking_2_inst/tracking_core_inst/track_7_inst/data_o_190> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <link_tracking_0_inst/tracking_core_inst/track_0_inst/data_o_172> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <link_tracking_0_inst/tracking_core_inst/track_0_inst/data_o_173> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <link_tracking_0_inst/tracking_core_inst/track_0_inst/data_o_188> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <link_tracking_0_inst/tracking_core_inst/track_0_inst/data_o_190> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <link_tracking_0_inst/tracking_core_inst/track_3_inst/data_o_188> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <link_tracking_0_inst/tracking_core_inst/track_2_inst/data_o_188> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <link_tracking_0_inst/tracking_core_inst/track_1_inst/data_o_172> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <link_tracking_0_inst/tracking_core_inst/track_1_inst/data_o_188> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <link_tracking_0_inst/tracking_core_inst/track_1_inst/data_o_190> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_6_188> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_6_190> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_7_188> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_7_190> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_5_188> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_5_190> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_4_188> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_4_190> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_1_188> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_1_190> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_3_188> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_2_188> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_2_190> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <link_tracking_0_inst/tracking_core_inst/track_3_inst/data_o_190> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <link_tracking_0_inst/tracking_core_inst/track_3_inst/data_o_188> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <link_tracking_0_inst/tracking_core_inst/track_3_inst/data_o_173> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <link_tracking_0_inst/tracking_core_inst/track_3_inst/data_o_172> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <link_tracking_0_inst/tracking_core_inst/track_2_inst/data_o_172> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <link_tracking_0_inst/tracking_core_inst/track_2_inst/data_o_173> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <link_tracking_0_inst/tracking_core_inst/track_2_inst/data_o_188> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <link_tracking_0_inst/tracking_core_inst/track_2_inst/data_o_190> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_0_190> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_0_188> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_0_173> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_0_172> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_2_190> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_2_188> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_2_172> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_3_188> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_3_173> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_1_190> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_1_188> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_1_173> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_1_172> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_4_190> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_4_188> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_4_172> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_4_156> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_5_188> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_5_173> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_5_172> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_7_190> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_7_188> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_7_173> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_7_172> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_7_156> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_6_190> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_6_188> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_6_173> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_6_172> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_0_190> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_0_188> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_0_173> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_0_172> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_2_190> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_2_188> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_2_173> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_2_172> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_3_190> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_3_188> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_3_173> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_3_172> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_1_190> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_1_188> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_1_172> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_4_190> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_4_188> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_4_173> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_5_190> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_5_188> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_7_190> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_5_173> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_5_172> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_5_156> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_7_188> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_7_173> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_7_172> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_6_190> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_6_188> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_0_190> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_6_173> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_6_172> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_o_188> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_o_188> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
 INFO:Xst:2261 - The FF/Latch <link_tracking_2_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/chopexecfsm_FSM_FFd2> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <link_tracking_2_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/exec> 
-INFO:Xst:2261 - The FF/Latch <link_tracking_2_inst/tracking_core_inst/track_3_inst/data_o_191> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <link_tracking_2_inst/tracking_core_inst/track_3_inst/data_o_189> 
+INFO:Xst:2261 - The FF/Latch <link_tracking_0_inst/tracking_core_inst/track_3_inst/data_o_175> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <link_tracking_0_inst/tracking_core_inst/track_3_inst/data_o_174> 
+INFO:Xst:2261 - The FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_6_175> in Unit <optohybrid_top> is equivalent to the following 3 FFs/Latches, which will be removed : <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_6_174> <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_6_159> <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_6_157> 
+INFO:Xst:2261 - The FF/Latch <link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_1_175> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_1_158> 
+INFO:Xst:2261 - The FF/Latch <link_tracking_0_inst/tracking_core_inst/track_0_inst/data_o_175> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <link_tracking_0_inst/tracking_core_inst/track_0_inst/data_o_174> 
 INFO:Xst:2261 - The FF/Latch <link_tracking_0_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/enable_reg> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <link_tracking_2_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/enable_reg> 
+INFO:Xst:2261 - The FF/Latch <link_tracking_2_inst/tracking_core_inst/track_1_inst/data_o_175> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <link_tracking_2_inst/tracking_core_inst/track_1_inst/data_o_158> 
+INFO:Xst:2261 - The FF/Latch <link_tracking_0_inst/tracking_core_inst/track_1_inst/data_o_189> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <link_tracking_0_inst/tracking_core_inst/track_1_inst/data_o_174> 
+INFO:Xst:2261 - The FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_3_175> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_3_174> 
+INFO:Xst:2261 - The FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_7_189> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_7_174> 
+INFO:Xst:2261 - The FF/Latch <link_tracking_0_inst/tracking_core_inst/track_6_inst/data_o_175> in Unit <optohybrid_top> is equivalent to the following 3 FFs/Latches, which will be removed : <link_tracking_0_inst/tracking_core_inst/track_6_inst/data_o_174> <link_tracking_0_inst/tracking_core_inst/track_6_inst/data_o_159> <link_tracking_0_inst/tracking_core_inst/track_6_inst/data_o_157> 
 INFO:Xst:2261 - The FF/Latch <link_tracking_0_inst/vi2c_core_inst/vi2c_wrapper_inst/enable> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <link_tracking_2_inst/vi2c_core_inst/vi2c_wrapper_inst/enable> 
-INFO:Xst:2261 - The FF/Latch <link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_3_191> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_3_189> 
 INFO:Xst:2261 - The FF/Latch <link_tracking_0_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/main.timer_10> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <link_tracking_2_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/main.timer_10> 
-INFO:Xst:2261 - The FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_4_191> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_4_189> 
+INFO:Xst:2261 - The FF/Latch <link_tracking_0_inst/tracking_core_inst/track_7_inst/data_o_189> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <link_tracking_0_inst/tracking_core_inst/track_7_inst/data_o_174> 
 INFO:Xst:2261 - The FF/Latch <link_tracking_0_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/main.timer_11> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <link_tracking_2_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/main.timer_11> 
+INFO:Xst:2261 - The FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_0_175> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_0_174> 
+INFO:Xst:2261 - The FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_4_189> in Unit <optohybrid_top> is equivalent to the following 4 FFs/Latches, which will be removed : <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_4_175> <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_4_174> <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_4_159> <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_4_157> 
 INFO:Xst:2261 - The FF/Latch <link_tracking_0_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/main.timer_0> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <link_tracking_2_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/main.timer_0> 
 INFO:Xst:2261 - The FF/Latch <link_tracking_0_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/main.timer_1> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <link_tracking_2_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/main.timer_1> 
 INFO:Xst:2261 - The FF/Latch <link_tracking_0_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/main.timer_2> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <link_tracking_2_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/main.timer_2> 
 INFO:Xst:2261 - The FF/Latch <link_tracking_0_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/main.timer_3> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <link_tracking_2_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/main.timer_3> 
-INFO:Xst:2261 - The FF/Latch <link_tracking_0_inst/tracking_core_inst/track_4_inst/data_o_191> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <link_tracking_0_inst/tracking_core_inst/track_4_inst/data_o_189> 
 INFO:Xst:2261 - The FF/Latch <link_tracking_0_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/main.timer_4> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <link_tracking_2_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/main.timer_4> 
 INFO:Xst:2261 - The FF/Latch <link_tracking_0_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/main.timer_5> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <link_tracking_2_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/main.timer_5> 
 INFO:Xst:2261 - The FF/Latch <link_tracking_0_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/main.timer_6> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <link_tracking_2_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/main.timer_6> 
+INFO:Xst:2261 - The FF/Latch <link_tracking_0_inst/tracking_core_inst/track_4_inst/data_o_189> in Unit <optohybrid_top> is equivalent to the following 4 FFs/Latches, which will be removed : <link_tracking_0_inst/tracking_core_inst/track_4_inst/data_o_175> <link_tracking_0_inst/tracking_core_inst/track_4_inst/data_o_174> <link_tracking_0_inst/tracking_core_inst/track_4_inst/data_o_159> <link_tracking_0_inst/tracking_core_inst/track_4_inst/data_o_157> 
 INFO:Xst:2261 - The FF/Latch <link_tracking_0_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/main.timer_7> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <link_tracking_2_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/main.timer_7> 
 INFO:Xst:2261 - The FF/Latch <link_tracking_0_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/main.timer_8> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <link_tracking_2_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/main.timer_8> 
 INFO:Xst:2261 - The FF/Latch <link_tracking_0_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/main.timer_9> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <link_tracking_2_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/main.timer_9> 
+INFO:Xst:2261 - The FF/Latch <link_tracking_0_inst/tracking_core_inst/track_5_inst/data_o_175> in Unit <optohybrid_top> is equivalent to the following 2 FFs/Latches, which will be removed : <link_tracking_0_inst/tracking_core_inst/track_5_inst/data_o_174> <link_tracking_0_inst/tracking_core_inst/track_5_inst/data_o_157> 
+INFO:Xst:2261 - The FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_5_175> in Unit <optohybrid_top> is equivalent to the following 2 FFs/Latches, which will be removed : <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_5_174> <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_5_157> 
+INFO:Xst:2261 - The FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_1_189> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_1_174> 
 INFO:Xst:2261 - The FF/Latch <link_tracking_0_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/en> in Unit <optohybrid_top> is equivalent to the following 3 FFs/Latches, which will be removed : <link_tracking_2_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/en> <link_tracking_0_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/reg_in.ff> <link_tracking_2_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/reg_in.ff> 
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block optohybrid_top, actual ratio is 28.
+Found area constraint ratio of 100 (+ 5) on block optohybrid_top, actual ratio is 27.
 INFO:Xst:2260 - The FF/Latch <U0/I_VIO/GEN_SYNC_IN[26].SYNC_IN_CELL/sync_f_edge/U_DOUT0> in Unit <chipscope_vio_inst> is equivalent to the following 2 FFs/Latches : <U0/I_VIO/GEN_SYNC_IN[26].SYNC_IN_CELL/sync_r_edge/U_DOUT0> <U0/I_VIO/GEN_SYNC_IN[26].SYNC_IN_CELL/USER_CLK_REG> 
 INFO:Xst:2260 - The FF/Latch <U0/I_VIO/GEN_SYNC_IN[27].SYNC_IN_CELL/sync_f_edge/U_DOUT0> in Unit <chipscope_vio_inst> is equivalent to the following 2 FFs/Latches : <U0/I_VIO/GEN_SYNC_IN[27].SYNC_IN_CELL/sync_r_edge/U_DOUT0> <U0/I_VIO/GEN_SYNC_IN[27].SYNC_IN_CELL/USER_CLK_REG> 
 INFO:Xst:2260 - The FF/Latch <U0/I_VIO/GEN_SYNC_IN[28].SYNC_IN_CELL/sync_f_edge/U_DOUT0> in Unit <chipscope_vio_inst> is equivalent to the following 2 FFs/Latches : <U0/I_VIO/GEN_SYNC_IN[28].SYNC_IN_CELL/sync_r_edge/U_DOUT0> <U0/I_VIO/GEN_SYNC_IN[28].SYNC_IN_CELL/USER_CLK_REG> 
@@ -10312,8 +10384,8 @@ Unit <optohybrid_top> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 13738
- Flip-Flops                                            : 13738
+# Registers                                            : 13654
+ Flip-Flops                                            : 13654
 # Shift Registers                                      : 1
  2-bit shift register                                  : 1
 
@@ -10338,15 +10410,15 @@ Top Level Output File Name         : optohybrid_top.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 11440
+# BELS                             : 11471
 #      GND                         : 35
-#      INV                         : 177
+#      INV                         : 176
 #      LUT1                        : 670
-#      LUT2                        : 343
-#      LUT3                        : 929
-#      LUT4                        : 728
-#      LUT5                        : 1084
-#      LUT6                        : 5097
+#      LUT2                        : 358
+#      LUT3                        : 920
+#      LUT4                        : 730
+#      LUT5                        : 1085
+#      LUT6                        : 5120
 #      MUXCY                       : 807
 #      MUXCY_L                     : 148
 #      MUXF5                       : 2
@@ -10355,11 +10427,11 @@ Primitive and Black Box Usage:
 #      MUXF8                       : 2
 #      VCC                         : 24
 #      XORCY                       : 924
-# FlipFlops/Latches                : 15464
+# FlipFlops/Latches                : 15380
 #      FD                          : 646
 #      FDC                         : 339
 #      FDCE                        : 150
-#      FDE                         : 12964
+#      FDE                         : 12880
 #      FDP                         : 317
 #      FDPE                        : 12
 #      FDR                         : 160
@@ -10401,17 +10473,17 @@ Selected Device : 6vlx130tff1156-1
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:           15460  out of  160000     9%  
- Number of Slice LUTs:                 9271  out of  80000    11%  
-    Number used as Logic:              9028  out of  80000    11%  
+ Number of Slice Registers:           15376  out of  160000     9%  
+ Number of Slice LUTs:                 9302  out of  80000    11%  
+    Number used as Logic:              9059  out of  80000    11%  
     Number used as Memory:              243  out of  27840     0%  
        Number used as SRL:              243
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:  18029
-   Number with an unused Flip Flop:    2569  out of  18029    14%  
-   Number with an unused LUT:          8758  out of  18029    48%  
-   Number of fully used LUT-FF pairs:  6702  out of  18029    37%  
+ Number of LUT Flip Flop pairs used:  17982
+   Number with an unused Flip Flop:    2606  out of  17982    14%  
+   Number with an unused LUT:          8680  out of  17982    48%  
+   Number of fully used LUT-FF pairs:  6696  out of  17982    37%  
    Number of unique control sets:       447
 
 IO Utilization: 
@@ -10446,7 +10518,7 @@ Clock Information:
 Clock Signal                                                                                        | Clock buffer(FF name)                                                                 | Load  |
 ----------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------+-------+
 gtx_wrapper_inst/gtx0_tx_out_clk                                                                    | BUFG                                                                                  | 5038  |
-clk_50MHz_i                                                                                         | MMCM_ADV:CLKOUT1                                                                      | 10156 |
+clk_50MHz_i                                                                                         | MMCM_ADV:CLKOUT1                                                                      | 10072 |
 link_tracking_0_inst/vi2c_core_inst/chip_select_2                                                   | NONE(link_tracking_0_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/sda_t_1)| 4     |
 link_tracking_2_inst/vi2c_core_inst/chip_select_2                                                   | NONE(link_tracking_2_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/sda_t_1)| 4     |
 chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL                                          | BUFG                                                                                  | 467   |
@@ -10472,8 +10544,8 @@ chipscope_ila_inst/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_R
 chipscope_ila_inst/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_V6.U_CS_BRAM_CASCADE_V6/I_DEPTH_LTEQ_32K.U_SBRAM_0/I_B36KGT0.G_RAMB36[1].u_ramb36/U_RAMB36/N0(chipscope_ila_inst/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_V6.U_CS_BRAM_CASCADE_V6/I_DEPTH_LTEQ_32K.U_SBRAM_0/I_B36KGT0.G_RAMB36[1].u_ramb36/U_RAMB36/XST_GND:G)                                         | NONE(chipscope_ila_inst/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_V6.U_CS_BRAM_CASCADE_V6/I_DEPTH_LTEQ_32K.U_SBRAM_0/I_B36KGT0.G_RAMB36[1].u_ramb36/U_RAMB36/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_V6.U_CS_BRAM_CASCADE_V6/I_DEPTH_LTEQ_32K.U_SBRAM_0/I_B36KGT0.G_RAMB36[1].u_ramb36/U_RAMB36)| 72    |
 chipscope_ila_inst/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_V6.U_CS_BRAM_CASCADE_V6/I_DEPTH_LTEQ_32K.U_SBRAM_0/I_B36KGT0.G_RAMB36[2].u_ramb36/U_RAMB36/N0(chipscope_ila_inst/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_V6.U_CS_BRAM_CASCADE_V6/I_DEPTH_LTEQ_32K.U_SBRAM_0/I_B36KGT0.G_RAMB36[2].u_ramb36/U_RAMB36/XST_GND:G)                                         | NONE(chipscope_ila_inst/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_V6.U_CS_BRAM_CASCADE_V6/I_DEPTH_LTEQ_32K.U_SBRAM_0/I_B36KGT0.G_RAMB36[2].u_ramb36/U_RAMB36/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_V6.U_CS_BRAM_CASCADE_V6/I_DEPTH_LTEQ_32K.U_SBRAM_0/I_B36KGT0.G_RAMB36[2].u_ramb36/U_RAMB36)| 72    |
 chipscope_ila_inst/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_V6.U_CS_BRAM_CASCADE_V6/I_DEPTH_LTEQ_32K.U_SBRAM_0/I_B36KGT0.G_RAMB36[3].u_ramb36/U_RAMB36/N0(chipscope_ila_inst/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_V6.U_CS_BRAM_CASCADE_V6/I_DEPTH_LTEQ_32K.U_SBRAM_0/I_B36KGT0.G_RAMB36[3].u_ramb36/U_RAMB36/XST_GND:G)                                         | NONE(chipscope_ila_inst/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_V6.U_CS_BRAM_CASCADE_V6/I_DEPTH_LTEQ_32K.U_SBRAM_0/I_B36KGT0.G_RAMB36[3].u_ramb36/U_RAMB36/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_V6.U_CS_BRAM_CASCADE_V6/I_DEPTH_LTEQ_32K.U_SBRAM_0/I_B36KGT0.G_RAMB36[3].u_ramb36/U_RAMB36)| 72    |
-chipscope_ila_inst/U0/I_NO_D.U_ILA/U_STAT/U_ECR_glue_set(chipscope_ila_inst/XST_VCC:P)                                                                                                                                                                                                                                                                                                                                | NONE(chipscope_ila_inst/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_V6.U_CS_BRAM_CASCADE_V6/I_DEPTH_LTEQ_32K.U_SBRAM_0/I_B36KGT0.G_RAMB36[1].u_ramb36/U_RAMB36/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_V6.U_CS_BRAM_CASCADE_V6/I_DEPTH_LTEQ_32K.U_SBRAM_0/I_B36KGT0.G_RAMB36[1].u_ramb36/U_RAMB36)| 16    |
-link_tracking_0_inst/tracking_core_inst/tracking_data_fifo_inst/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/DBITERR(link_tracking_0_inst/tracking_core_inst/tracking_data_fifo_inst/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/XST_GND:G)| NONE(link_tracking_0_inst/tracking_core_inst/tracking_data_fifo_inst/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram)                                                                                        | 12    |
+chipscope_ila_inst/U0/I_NO_D.U_ILA/U_STAT/U_ECR_glue_set(chipscope_ila_inst/XST_VCC:P)                                                                                                                                                                                                                                                                                                                                | NONE(chipscope_ila_inst/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_V6.U_CS_BRAM_CASCADE_V6/I_DEPTH_LTEQ_32K.U_SBRAM_0/I_B36KGT0.G_RAMB36[3].u_ramb36/U_RAMB36/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_V6.U_CS_BRAM_CASCADE_V6/I_DEPTH_LTEQ_32K.U_SBRAM_0/I_B36KGT0.G_RAMB36[3].u_ramb36/U_RAMB36)| 16    |
+link_tracking_0_inst/tracking_core_inst/tracking_data_fifo_inst/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/DBITERR(link_tracking_0_inst/tracking_core_inst/tracking_data_fifo_inst/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/XST_GND:G)| NONE(link_tracking_0_inst/tracking_core_inst/tracking_data_fifo_inst/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[2].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram)                                                                                        | 12    |
 link_tracking_2_inst/tracking_core_inst/tracking_data_fifo_inst/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/DBITERR(link_tracking_2_inst/tracking_core_inst/tracking_data_fifo_inst/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/XST_GND:G)| NONE(link_tracking_2_inst/tracking_core_inst/tracking_data_fifo_inst/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[3].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram)                                                                                        | 12    |
 link_tracking_0_inst/tracking_core_inst/tracking_bx_fifo_inst/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/ram_wr_en(link_tracking_0_inst/tracking_core_inst/tracking_bx_fifo_inst/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/ram_wr_en_i1:O)                                                                                                                                                    | NONE(link_tracking_0_inst/tracking_core_inst/tracking_bx_fifo_inst/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM18.ram)                                                                                          | 8     |
 link_tracking_0_inst/tracking_core_inst/tracking_data_fifo_inst/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/ram_wr_en(link_tracking_0_inst/tracking_core_inst/tracking_data_fifo_inst/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/ram_wr_en_i1:O)                                                                                                                                                | NONE(link_tracking_0_inst/tracking_core_inst/tracking_data_fifo_inst/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM18.ram)                                                                                        | 8     |
@@ -10497,7 +10569,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'gtx_wrapper_inst/gtx0_tx_out_clk'
   Clock period: 4.595ns (frequency: 217.628MHz)
-  Total number of paths / destination ports: 50661 / 9192
+  Total number of paths / destination ports: 50669 / 9192
 -------------------------------------------------------------------------
 Delay:               4.595ns (Levels of Logic = 5)
   Source:            link_tracking_2_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/i2csda.timer_9 (FF)
@@ -10522,10 +10594,10 @@ Delay:               4.595ns (Levels of Logic = 5)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk_50MHz_i'
-  Clock period: 2.568ns (frequency: 389.334MHz)
-  Total number of paths / destination ports: 112321 / 20460
+  Clock period: 2.568ns (frequency: 389.387MHz)
+  Total number of paths / destination ports: 111853 / 20292
 -------------------------------------------------------------------------
-Delay:               3.211ns (Levels of Logic = 3)
+Delay:               3.210ns (Levels of Logic = 3)
   Source:            link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/cnt_1 (FF)
   Destination:       link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_o_223 (FF)
   Source Clock:      clk_50MHz_i rising 0.8X
@@ -10535,13 +10607,13 @@ Delay:               3.211ns (Levels of Logic = 3)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDE:C->Q            387   0.375   1.008  link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/cnt_1 (link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/cnt_1)
+     FDE:C->Q            385   0.375   1.008  link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/cnt_1 (link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/cnt_1)
      LUT6:I0->O            1   0.068   0.000  link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/Mmux_cnt[2]_en[7]_Mux_20_o_3 (link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/Mmux_cnt[2]_en[7]_Mux_20_o_3)
      MUXF7:I1->O           2   0.248   0.587  link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/Mmux_cnt[2]_en[7]_Mux_20_o_2_f7 (link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/cnt[2]_en[7]_Mux_20_o)
      LUT3:I0->O          223   0.068   0.593  link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/_n0277_inv1 (link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/_n0277_inv)
      FDE:CE                    0.263          link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_o_0
     ----------------------------------------
-    Total                      3.211ns (1.022ns logic, 2.189ns route)
+    Total                      3.210ns (1.022ns logic, 2.188ns route)
                                        (31.8% logic, 68.2% route)
 
 =========================================================================
@@ -10626,18 +10698,18 @@ Timing constraint: Default OFFSET IN BEFORE for Clock 'clk_50MHz_i'
   Total number of paths / destination ports: 6464 / 3232
 -------------------------------------------------------------------------
 Offset:              1.568ns (Levels of Logic = 3)
-  Source:            vfat2_6_data_out_p_i (PAD)
-  Destination:       link_tracking_0_inst/tracking_core_inst/track_6_inst/data_190 (FF)
+  Source:            vfat2_7_data_out_p_i (PAD)
+  Destination:       link_tracking_0_inst/tracking_core_inst/track_7_inst/data_190 (FF)
   Destination Clock: clk_50MHz_i rising 0.8X
 
-  Data Path: vfat2_6_data_out_p_i to link_tracking_0_inst/tracking_core_inst/track_6_inst/data_190
+  Data Path: vfat2_7_data_out_p_i to link_tracking_0_inst/tracking_core_inst/track_7_inst/data_190
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUFDS:I->O          13   0.003   0.855  vfat2_buffers_inst/vfat2_6_data_out_ibufds_inst (vfat2_buffers_inst/vfat2_6_data_out)
-     LUT6:I1->O           24   0.068   0.563  link_tracking_0_inst/tracking_core_inst/track_6_inst/_n0265<102>21 (link_tracking_0_inst/tracking_core_inst/track_6_inst/_n0265<102>2)
-     LUT6:I5->O            1   0.068   0.000  link_tracking_0_inst/tracking_core_inst/track_6_inst/_n0265<6>1 (link_tracking_0_inst/tracking_core_inst/track_6_inst/_n0265<6>)
-     FDE:D                     0.011          link_tracking_0_inst/tracking_core_inst/track_6_inst/data_6
+     IBUFDS:I->O          13   0.003   0.855  vfat2_buffers_inst/vfat2_7_data_out_ibufds_inst (vfat2_buffers_inst/vfat2_7_data_out)
+     LUT6:I1->O           24   0.068   0.563  link_tracking_0_inst/tracking_core_inst/track_7_inst/_n0270<102>21 (link_tracking_0_inst/tracking_core_inst/track_7_inst/_n0270<102>2)
+     LUT6:I5->O            1   0.068   0.000  link_tracking_0_inst/tracking_core_inst/track_7_inst/_n0270<6>1 (link_tracking_0_inst/tracking_core_inst/track_7_inst/_n0270<6>)
+     FDE:D                     0.011          link_tracking_0_inst/tracking_core_inst/track_7_inst/data_6
     ----------------------------------------
     Total                      1.568ns (0.150ns logic, 1.418ns route)
                                        (9.6% logic, 90.4% route)
@@ -10825,7 +10897,7 @@ Clock to Setup on destination clock clk_50MHz_i
                                 | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                    |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 --------------------------------+---------+---------+---------+---------+
-clk_50MHz_i                     |    3.211|         |         |         |
+clk_50MHz_i                     |    3.210|         |         |         |
 gtx_wrapper_inst/gtx0_tx_out_clk|    1.508|         |         |         |
 --------------------------------+---------+---------+---------+---------+
 
@@ -10866,14 +10938,14 @@ gtx_wrapper_inst/gtx0_tx_out_clk|    1.292|         |    1.292|         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 84.00 secs
-Total CPU time to Xst completion: 84.89 secs
+Total REAL time to Xst completion: 88.00 secs
+Total CPU time to Xst completion: 88.81 secs
  
 --> 
 
-Total memory usage is 489656 kilobytes
+Total memory usage is 490488 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings : 8507 (   0 filtered)
-Number of infos    :  450 (   0 filtered)
+Number of warnings : 8567 (   0 filtered)
+Number of infos    :  462 (   0 filtered)
 

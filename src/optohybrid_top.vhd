@@ -762,7 +762,7 @@ begin
     
     -- Fixed registers : 23 -- read _ firmware version
     
-    request_read(23) <= x"AA150609"; 
+    request_read(23) <= x"BB150609"; 
     
     -- Reserved : 25 downto 24
     

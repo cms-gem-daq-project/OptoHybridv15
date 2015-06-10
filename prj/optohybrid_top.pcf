@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Wed Jun 10 11:38:20 2015
+// Written by: Map P.20131013 on Wed Jun 10 14:26:45 2015
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -109,7 +109,7 @@ COMP "gtx_wrapper_inst/gtx_2_inst/gtxe1_i" LOCATE = SITE "GTXE1_X0Y2" LEVEL 1;
 COMP "gtx_wrapper_inst/gtx_1_inst/gtxe1_i" LOCATE = SITE "GTXE1_X0Y1" LEVEL 1;
 COMP "gtx_wrapper_inst/gtx_0_inst/gtxe1_i" LOCATE = SITE "GTXE1_X0Y0" LEVEL 1;
 COMP "gtx_wrapper_inst/gtx_3_inst/gtxe1_i" LOCATE = SITE "GTXE1_X0Y3" LEVEL 1;
-PIN MMCM_PHASE_CALIBRATION_ML_LUT2_8_pins<3> = BEL
+PIN MMCM_PHASE_CALIBRATION_ML_LUT2_8_pins<2> = BEL
         "MMCM_PHASE_CALIBRATION_ML_LUT2_8" PINNAME O6;
 PIN MMCM_PHASE_CALIBRATION_ML_FDCPE_I0_7_pins<2> = BEL
         "MMCM_PHASE_CALIBRATION_ML_FDCPE_I0_7" PINNAME Q;
@@ -119,7 +119,7 @@ PIN MMCM_PHASE_CALIBRATION_ML_FDCPE_I0_5_pins<2> = BEL
         "MMCM_PHASE_CALIBRATION_ML_FDCPE_I0_5" PINNAME Q;
 PIN MMCM_PHASE_CALIBRATION_ML_LDCPE_I0_4_pins<0> = BEL
         "MMCM_PHASE_CALIBRATION_ML_LDCPE_I0_4" PINNAME CK;
-PIN "MMCM_PHASE_CALIBRATION_ML_LUT2_8_pins<3>" TIG;
+PIN "MMCM_PHASE_CALIBRATION_ML_LUT2_8_pins<2>" TIG;
 PIN "MMCM_PHASE_CALIBRATION_ML_FDCPE_I0_7_pins<2>" TIG;
 PIN "MMCM_PHASE_CALIBRATION_ML_FDCPE_I0_6_pins<2>" TIG;
 PIN "MMCM_PHASE_CALIBRATION_ML_FDCPE_I0_5_pins<2>" TIG;

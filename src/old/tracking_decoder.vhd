@@ -73,7 +73,7 @@ begin
                 -- Check data
                 elsif (state = 2) then
                 
-                    if (data(191 downto 188) = "1010") then
+                    if (data(191 downto 188) = "1010" and data(175 downto 172) = "1100" and data(159 downto 156) = "1110") then
                     
                         state := 3;
                         
