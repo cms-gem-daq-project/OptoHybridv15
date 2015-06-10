@@ -641,7 +641,7 @@ begin
         o   => vfat2_data_valid(4)
     );
 
-    vfat2_data_valid_o(4) <= vfat2_data_valid(4);
+    vfat2_data_valid_o(4) <= not vfat2_data_valid(4);
 
 
     vfat2_data_valid_1_ibufds_inst : ibufds
@@ -669,7 +669,7 @@ begin
         o   => vfat2_data_valid(2)
     );
 
-    vfat2_data_valid_o(2) <= vfat2_data_valid(2);
+    vfat2_data_valid_o(2) <= not vfat2_data_valid(2);
 
 
     vfat2_data_valid_3_ibufds_inst : ibufds
@@ -697,7 +697,7 @@ begin
         o   => vfat2_data_valid(0)
     );
 
-    vfat2_data_valid_o(0) <= not vfat2_data_valid(0);
+    vfat2_data_valid_o(0) <= vfat2_data_valid(0);
 
 
     --== VFAT2 20 signals ==--

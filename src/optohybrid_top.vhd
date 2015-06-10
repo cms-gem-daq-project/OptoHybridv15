@@ -334,9 +334,6 @@ architecture Behavioral of optohybrid_top is
     signal cs_ila2                  : std_logic_vector(31 downto 0);
     signal cs_ila3                  : std_logic_vector(31 downto 0);
     
-    signal clock_mux                : std_logic_vector(1 downto 0);
-    signal gtx_clk_muxed            : std_logic;
-    
 begin
 
     reset <= '0';
@@ -367,99 +364,99 @@ begin
         vfat2_data_valid_o      => vfat2_data_valid,
         --
         vfat2_0_sbits_p_i		=> vfat2_0_sbits_p_i,
-        vfat2_0_sbits_n_i		=> vfat2_0_sbits_p_i,
+        vfat2_0_sbits_n_i		=> vfat2_0_sbits_n_i,
         vfat2_0_data_out_p_i	=> vfat2_0_data_out_p_i,
         vfat2_0_data_out_n_i	=> vfat2_0_data_out_n_i,
         vfat2_1_sbits_p_i		=> vfat2_1_sbits_p_i,
-        vfat2_1_sbits_n_i		=> vfat2_1_sbits_p_i,
+        vfat2_1_sbits_n_i		=> vfat2_1_sbits_n_i,
         vfat2_1_data_out_p_i	=> vfat2_1_data_out_p_i,
         vfat2_1_data_out_n_i	=> vfat2_1_data_out_n_i,
         vfat2_2_sbits_p_i		=> vfat2_2_sbits_p_i,
-        vfat2_2_sbits_n_i		=> vfat2_2_sbits_p_i,
+        vfat2_2_sbits_n_i		=> vfat2_2_sbits_n_i,
         vfat2_2_data_out_p_i	=> vfat2_2_data_out_p_i,
         vfat2_2_data_out_n_i	=> vfat2_2_data_out_n_i,
         vfat2_3_sbits_p_i		=> vfat2_3_sbits_p_i,
-        vfat2_3_sbits_n_i		=> vfat2_3_sbits_p_i,
+        vfat2_3_sbits_n_i		=> vfat2_3_sbits_n_i,
         vfat2_3_data_out_p_i	=> vfat2_3_data_out_p_i,
         vfat2_3_data_out_n_i	=> vfat2_3_data_out_n_i,
         vfat2_4_sbits_p_i		=> vfat2_4_sbits_p_i,
-        vfat2_4_sbits_n_i		=> vfat2_4_sbits_p_i,
+        vfat2_4_sbits_n_i		=> vfat2_4_sbits_n_i,
         vfat2_4_data_out_p_i	=> vfat2_4_data_out_p_i,
         vfat2_4_data_out_n_i	=> vfat2_4_data_out_n_i,
         vfat2_5_sbits_p_i		=> vfat2_5_sbits_p_i,
-        vfat2_5_sbits_n_i		=> vfat2_5_sbits_p_i,
+        vfat2_5_sbits_n_i		=> vfat2_5_sbits_n_i,
         vfat2_5_data_out_p_i	=> vfat2_5_data_out_p_i,
         vfat2_5_data_out_n_i	=> vfat2_5_data_out_n_i,
         vfat2_6_sbits_p_i		=> vfat2_6_sbits_p_i,
-        vfat2_6_sbits_n_i		=> vfat2_6_sbits_p_i,
+        vfat2_6_sbits_n_i		=> vfat2_6_sbits_n_i,
         vfat2_6_data_out_p_i	=> vfat2_6_data_out_p_i,
         vfat2_6_data_out_n_i	=> vfat2_6_data_out_n_i,
         vfat2_7_sbits_p_i		=> vfat2_7_sbits_p_i,
-        vfat2_7_sbits_n_i		=> vfat2_7_sbits_p_i,
+        vfat2_7_sbits_n_i		=> vfat2_7_sbits_n_i,
         vfat2_7_data_out_p_i	=> vfat2_7_data_out_p_i,
         vfat2_7_data_out_n_i	=> vfat2_7_data_out_n_i,
         vfat2_8_sbits_p_i		=> vfat2_8_sbits_p_i,
-        vfat2_8_sbits_n_i		=> vfat2_8_sbits_p_i,
+        vfat2_8_sbits_n_i		=> vfat2_8_sbits_n_i,
         vfat2_8_data_out_p_i	=> vfat2_8_data_out_p_i,
         vfat2_8_data_out_n_i	=> vfat2_8_data_out_n_i,
         vfat2_9_sbits_p_i		=> vfat2_9_sbits_p_i,
-        vfat2_9_sbits_n_i		=> vfat2_9_sbits_p_i,
+        vfat2_9_sbits_n_i		=> vfat2_9_sbits_n_i,
         vfat2_9_data_out_p_i	=> vfat2_9_data_out_p_i,
         vfat2_9_data_out_n_i	=> vfat2_9_data_out_n_i,
         vfat2_10_sbits_p_i		=> vfat2_10_sbits_p_i,
-        vfat2_10_sbits_n_i		=> vfat2_10_sbits_p_i,
+        vfat2_10_sbits_n_i		=> vfat2_10_sbits_n_i,
         vfat2_10_data_out_p_i	=> vfat2_10_data_out_p_i,
         vfat2_10_data_out_n_i	=> vfat2_10_data_out_n_i,
         vfat2_11_sbits_p_i		=> vfat2_11_sbits_p_i,
-        vfat2_11_sbits_n_i		=> vfat2_11_sbits_p_i,
+        vfat2_11_sbits_n_i		=> vfat2_11_sbits_n_i,
         vfat2_11_data_out_p_i	=> vfat2_11_data_out_p_i,
         vfat2_11_data_out_n_i	=> vfat2_11_data_out_n_i,
         vfat2_12_sbits_p_i		=> vfat2_12_sbits_p_i,
-        vfat2_12_sbits_n_i		=> vfat2_12_sbits_p_i,
+        vfat2_12_sbits_n_i		=> vfat2_12_sbits_n_i,
         vfat2_12_data_out_p_i	=> vfat2_12_data_out_p_i,
         vfat2_12_data_out_n_i	=> vfat2_12_data_out_n_i,
         vfat2_13_sbits_p_i		=> vfat2_13_sbits_p_i,
-        vfat2_13_sbits_n_i		=> vfat2_13_sbits_p_i,
+        vfat2_13_sbits_n_i		=> vfat2_13_sbits_n_i,
         vfat2_13_data_out_p_i	=> vfat2_13_data_out_p_i,
         vfat2_13_data_out_n_i	=> vfat2_13_data_out_n_i,
         vfat2_14_sbits_p_i		=> vfat2_14_sbits_p_i,
-        vfat2_14_sbits_n_i		=> vfat2_14_sbits_p_i,
+        vfat2_14_sbits_n_i		=> vfat2_14_sbits_n_i,
         vfat2_14_data_out_p_i	=> vfat2_14_data_out_p_i,
         vfat2_14_data_out_n_i	=> vfat2_14_data_out_n_i,
         vfat2_15_sbits_p_i		=> vfat2_15_sbits_p_i,
-        vfat2_15_sbits_n_i		=> vfat2_15_sbits_p_i,
+        vfat2_15_sbits_n_i		=> vfat2_15_sbits_n_i,
         vfat2_15_data_out_p_i	=> vfat2_15_data_out_p_i,
         vfat2_15_data_out_n_i	=> vfat2_15_data_out_n_i,
         vfat2_16_sbits_p_i		=> vfat2_16_sbits_p_i,
-        vfat2_16_sbits_n_i		=> vfat2_16_sbits_p_i,
+        vfat2_16_sbits_n_i		=> vfat2_16_sbits_n_i,
         vfat2_16_data_out_p_i	=> vfat2_16_data_out_p_i,
         vfat2_16_data_out_n_i	=> vfat2_16_data_out_n_i,
         vfat2_17_sbits_p_i		=> vfat2_17_sbits_p_i,
-        vfat2_17_sbits_n_i		=> vfat2_17_sbits_p_i,
+        vfat2_17_sbits_n_i		=> vfat2_17_sbits_n_i,
         vfat2_17_data_out_p_i	=> vfat2_17_data_out_p_i,
         vfat2_17_data_out_n_i	=> vfat2_17_data_out_n_i,
         vfat2_18_sbits_p_i		=> vfat2_18_sbits_p_i,
-        vfat2_18_sbits_n_i		=> vfat2_18_sbits_p_i,
+        vfat2_18_sbits_n_i		=> vfat2_18_sbits_n_i,
         vfat2_18_data_out_p_i	=> vfat2_18_data_out_p_i,
         vfat2_18_data_out_n_i	=> vfat2_18_data_out_n_i,
         vfat2_19_sbits_p_i		=> vfat2_19_sbits_p_i,
-        vfat2_19_sbits_n_i		=> vfat2_19_sbits_p_i,
+        vfat2_19_sbits_n_i		=> vfat2_19_sbits_n_i,
         vfat2_19_data_out_p_i	=> vfat2_19_data_out_p_i,
         vfat2_19_data_out_n_i	=> vfat2_19_data_out_n_i,
         vfat2_20_sbits_p_i		=> vfat2_20_sbits_p_i,
-        vfat2_20_sbits_n_i		=> vfat2_20_sbits_p_i,
+        vfat2_20_sbits_n_i		=> vfat2_20_sbits_n_i,
         vfat2_20_data_out_p_i	=> vfat2_20_data_out_p_i,
         vfat2_20_data_out_n_i	=> vfat2_20_data_out_n_i,
         vfat2_21_sbits_p_i		=> vfat2_21_sbits_p_i,
-        vfat2_21_sbits_n_i		=> vfat2_21_sbits_p_i,
+        vfat2_21_sbits_n_i		=> vfat2_21_sbits_n_i,
         vfat2_21_data_out_p_i	=> vfat2_21_data_out_p_i,
         vfat2_21_data_out_n_i	=> vfat2_21_data_out_n_i,
         vfat2_22_sbits_p_i		=> vfat2_22_sbits_p_i,
-        vfat2_22_sbits_n_i		=> vfat2_22_sbits_p_i,
+        vfat2_22_sbits_n_i		=> vfat2_22_sbits_n_i,
         vfat2_22_data_out_p_i	=> vfat2_22_data_out_p_i,
         vfat2_22_data_out_n_i	=> vfat2_22_data_out_n_i,
         vfat2_23_sbits_p_i		=> vfat2_23_sbits_p_i,
-        vfat2_23_sbits_n_i		=> vfat2_23_sbits_p_i,
+        vfat2_23_sbits_n_i		=> vfat2_23_sbits_n_i,
         vfat2_23_data_out_p_i	=> vfat2_23_data_out_p_i,
         vfat2_23_data_out_n_i	=> vfat2_23_data_out_n_i,
         --
@@ -468,27 +465,30 @@ begin
     
     --== Clocking & Reset : PLL & CDCE & VFAT2 ==--
     
---    pll_inst : entity work.clk_wiz_v3_6
---    port map(
---        clk_50Mhz_i     => clk_50Mhz_i,
---        clk_50Mhz_o     => clk_50Mhz,
---        clk_40Mhz_o     => clk_40Mhz,
---        clk_160Mhz_o    => clk_160Mhz,
---        pll_locked_o    => pll_locked
---    );    
-    
-    pll_ext : entity work.ext_pll
+    pll_inst : entity work.clk_wiz_v3_6
     port map(
-        clk_40MHz_i     => tmds_d_p_io(0), 
-        clk_40MHz_o     => clk_40MHz_ext,
-        clk_160MHz_o    => clk_160MHz_ext,
-        locked_o        => pll_locked
+        clk_50Mhz_i     => clk_50Mhz_i,
+        clk_50Mhz_o     => clk_50Mhz,
+        clk_40Mhz_o     => clk_40Mhz,
+        clk_160Mhz_o    => clk_160Mhz,
+        pll_locked_o    => pll_locked
     );    
     
-    vfat2_mclk <= clk_40MHz_ext;
-    gtx_ref_clk <= clk_160MHz_ext;
+--    pll_ext : entity work.ext_pll
+--    port map(
+--        clk_40MHz_i     => tmds_d_p_io(0), 
+--        clk_40MHz_o     => clk_40MHz_ext,
+--        clk_160MHz_o    => clk_160MHz_ext,
+--        locked_o        => pll_locked
+--    );    
+    
+--    vfat2_mclk <= clk_40MHz_ext;
+--    gtx_ref_clk <= clk_160MHz_ext;
+
+    vfat2_mclk <= clk_40MHz;
+    gtx_ref_clk <= clk_160MHz;
    
-    cdce_primary_clk_obufds : obufds port map(i => clk_40MHz_ext, o => cdce_pri_p_o, ob => cdce_pri_n_o);
+    cdce_primary_clk_obufds : obufds port map(i => vfat2_mclk, o => cdce_pri_p_o, ob => cdce_pri_n_o);
     
     cdce_ref_o <= '1';
     cdce_pwrdown_o <= pll_locked;
@@ -539,17 +539,17 @@ begin
         vfat2_sda_t     => vfat2_sda_tri(1 downto 0),
         vfat2_scl_o     => vfat2_scl(1 downto 0),
         vfat2_dvalid_i  => vfat2_data_valid(1 downto 0),
-        vfat2_data_0_i  => vfat2_data(0).data(8),
-        vfat2_data_1_i  => vfat2_data(1).data(8),
-        vfat2_data_2_i  => vfat2_data(2).data(8),
-        vfat2_data_3_i  => vfat2_data(3).data(8),
-        vfat2_data_4_i  => vfat2_data(4).data(8),
-        vfat2_data_5_i  => vfat2_data(5).data(8),
-        vfat2_data_6_i  => vfat2_data(6).data(8),
-        vfat2_data_7_i  => vfat2_data(7).data(8)
+        vfat2_data_0_i  => vfat2_data(0).data_out,
+        vfat2_data_1_i  => vfat2_data(1).data_out,
+        vfat2_data_2_i  => vfat2_data(2).data_out,
+        vfat2_data_3_i  => vfat2_data(3).data_out,
+        vfat2_data_4_i  => vfat2_data(4).data_out,
+        vfat2_data_5_i  => vfat2_data(5).data_out,
+        vfat2_data_6_i  => vfat2_data(6).data_out,
+        vfat2_data_7_i  => vfat2_data(7).data_out
     );
     
-    link_tracking_1_inst : entity work.link_tracking
+    link_tracking_2_inst : entity work.link_tracking
     port map(
         gtp_clk_i       => gtx_clk,
         vfat2_clk_i     => vfat2_mclk,
@@ -564,19 +564,19 @@ begin
         request_read_i  => request_read,
         lv1a_sent_i     => t1_lv1a,
         bx_counter_i    => bx_counter,
-        vfat2_sda_i     => vfat2_sda_in(3 downto 2),
-        vfat2_sda_o     => vfat2_sda_out(3 downto 2),
-        vfat2_sda_t     => vfat2_sda_tri(3 downto 2),
-        vfat2_scl_o     => vfat2_scl(3 downto 2),
-        vfat2_dvalid_i  => vfat2_data_valid(3 downto 2),
-        vfat2_data_0_i  => vfat2_data(8).data(8),
-        vfat2_data_1_i  => vfat2_data(9).data(8),
-        vfat2_data_2_i  => vfat2_data(10).data(8),
-        vfat2_data_3_i  => vfat2_data(11).data(8),
-        vfat2_data_4_i  => vfat2_data(12).data(8),
-        vfat2_data_5_i  => vfat2_data(13).data(8),
-        vfat2_data_6_i  => vfat2_data(14).data(8),
-        vfat2_data_7_i  => vfat2_data(15).data(8)
+        vfat2_sda_i     => vfat2_sda_in(5 downto 4),
+        vfat2_sda_o     => vfat2_sda_out(5 downto 4),
+        vfat2_sda_t     => vfat2_sda_tri(5 downto 4),
+        vfat2_scl_o     => vfat2_scl(5 downto 4),
+        vfat2_dvalid_i  => vfat2_data_valid(5 downto 4),
+        vfat2_data_0_i  => vfat2_data(16).data_out,
+        vfat2_data_1_i  => vfat2_data(17).data_out,
+        vfat2_data_2_i  => vfat2_data(18).data_out,
+        vfat2_data_3_i  => vfat2_data(19).data_out,
+        vfat2_data_4_i  => vfat2_data(20).data_out,
+        vfat2_data_5_i  => vfat2_data(21).data_out,
+        vfat2_data_6_i  => vfat2_data(22).data_out,
+        vfat2_data_7_i  => vfat2_data(23).data_out
     );    
     
     requests: for I in 0 to 63 generate
@@ -588,7 +588,7 @@ begin
 --    link_trigger_inst : entity work.link_trigger
 --    port map(
 --        gtp_clk_i       => gtx_clk,
---        vfat2_clk_i     => clk_40Mhz,
+--        vfat2_clk_i     => vfat2_mclk,
 --        reset_i         => reset,
 --        rx_error_i      => rx_error(3),
 --        rx_kchar_i      => rx_kchar(5 downto 4),
@@ -762,7 +762,7 @@ begin
     
     -- Fixed registers : 23 -- read _ firmware version
     
-    request_read(23) <= x"AA150520"; 
+    request_read(23) <= x"AA150609"; 
     
     -- Reserved : 25 downto 24
     
@@ -846,30 +846,30 @@ begin
                 3 => vfat2_data_valid(3),
                 4 => vfat2_data_valid(4),
                 5 => vfat2_data_valid(5),
-                6 => vfat2_data(0).data(8), 
-                7 => vfat2_data(1).data(8), 
-                8 => vfat2_data(2).data(8),
-                9 => vfat2_data(3).data(8),
-                10 => vfat2_data(4).data(8),
-                11 => vfat2_data(5).data(8),
-                12 => vfat2_data(6).data(8),
-                13 => vfat2_data(7).data(8),
-                14 => vfat2_data(8).data(8),
-                15 => vfat2_data(9).data(8),
-                16 => vfat2_data(10).data(8),
-                17 => vfat2_data(11).data(8),
-                18 => vfat2_data(12).data(8),
-                19 => vfat2_data(13).data(8),
-                20 => vfat2_data(14).data(8),
-                21 => vfat2_data(15).data(8),
-                22 => vfat2_data(16).data(8),
-                23 => vfat2_data(17).data(8),
-                24 => vfat2_data(18).data(8),
-                25 => vfat2_data(19).data(8),
-                26 => vfat2_data(20).data(8),
-                27 => vfat2_data(21).data(8),
-                28 => vfat2_data(22).data(8),
-                29 => vfat2_data(23).data(8),
+                6 => vfat2_data(0).data_out, 
+                7 => vfat2_data(1).data_out, 
+                8 => vfat2_data(2).data_out,
+                9 => vfat2_data(3).data_out,
+                10 => vfat2_data(4).data_out,
+                11 => vfat2_data(5).data_out,
+                12 => vfat2_data(6).data_out,
+                13 => vfat2_data(7).data_out,
+                14 => vfat2_data(8).data_out,
+                15 => vfat2_data(9).data_out,
+                16 => vfat2_data(10).data_out,
+                17 => vfat2_data(11).data_out,
+                18 => vfat2_data(12).data_out,
+                19 => vfat2_data(13).data_out,
+                20 => vfat2_data(14).data_out,
+                21 => vfat2_data(15).data_out,
+                22 => vfat2_data(16).data_out,
+                23 => vfat2_data(17).data_out,
+                24 => vfat2_data(18).data_out,
+                25 => vfat2_data(19).data_out,
+                26 => vfat2_data(20).data_out,
+                27 => vfat2_data(21).data_out,
+                28 => vfat2_data(22).data_out,
+                29 => vfat2_data(23).data_out,
                 others => '0');
                 
     cs_ila3 <= (0 => ext_lv1a, 1 => req_lv1a, 2 => t1_lv1a, 3 => '0',

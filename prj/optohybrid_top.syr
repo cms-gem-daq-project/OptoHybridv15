@@ -108,6 +108,9 @@ Cores Search Directories           : {"ipcore_dir"  }
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
+Parsing VHDL file "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\prj\ipcore_dir\clk_wiz_v3_6.vhd" into library work
+Parsing entity <clk_wiz_v3_6>.
+Parsing architecture <xilinx> of entity <clk_wiz_v3_6>.
 Parsing VHDL file "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\prj\ipcore_dir\tracking_bx_fifo.vhd" into library work
 Parsing entity <tracking_bx_fifo>.
 Parsing architecture <tracking_bx_fifo_a> of entity <tracking_bx_fifo>.
@@ -123,9 +126,6 @@ Parsing architecture <chipscope_ila_a> of entity <chipscope_ila>.
 Parsing VHDL file "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\prj\ipcore_dir\chipscope_vio.vhd" into library work
 Parsing entity <chipscope_vio>.
 Parsing architecture <chipscope_vio_a> of entity <chipscope_vio>.
-Parsing VHDL file "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\prj\ipcore_dir\ext_pll.vhd" into library work
-Parsing entity <ext_pll>.
-Parsing architecture <xilinx> of entity <ext_pll>.
 Parsing VHDL file "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\old\i2c_data.vhd" into library work
 Parsing entity <i2c_data>.
 Parsing architecture <behave> of entity <i2c_data>.
@@ -226,7 +226,7 @@ WARNING:HDLCompiler:871 - "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\opt
 
 Elaborating entity <vfat2_buffers> (architecture <Behavioral>) from library <work>.
 
-Elaborating entity <ext_pll> (architecture <xilinx>) from library <work>.
+Elaborating entity <clk_wiz_v3_6> (architecture <xilinx>) from library <work>.
 
 Elaborating entity <gtx_wrapper> (architecture <Behavioral>) from library <work>.
 
@@ -280,11 +280,11 @@ Elaborating entity <clock_bridge_strobes> (architecture <behavioral>) from libra
 Elaborating entity <t1_encoder> (architecture <Behavioral>) from library <work>.
 
 Elaborating entity <reg> (architecture <Behavioral>) from library <work>.
-WARNING:HDLCompiler:1127 - "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" Line 723: Assignment to sbits_configuration ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" Line 734: Assignment to vfat2_src_select ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" Line 737: Assignment to vfat2_fallback ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" Line 742: Assignment to cdce_src_select ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" Line 745: Assignment to cdce_fallback ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" Line 721: Assignment to sbits_configuration ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" Line 732: Assignment to vfat2_src_select ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" Line 735: Assignment to vfat2_fallback ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" Line 740: Assignment to cdce_src_select ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" Line 743: Assignment to cdce_fallback ignored, since the identifier is never used
 
 Elaborating entity <chipscope_icon> (architecture <chipscope_icon_a>) from library <work>.
 
@@ -304,35 +304,35 @@ WARNING:HDLCompiler:634 - "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\opt
 
 Synthesizing Unit <optohybrid_top>.
     Related source file is "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd".
-WARNING:Xst:647 - Input <tmds_d_p_io<1:1>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <clk_50MHz_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <tmds_d_p_io> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <cdce_clk_p_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <cdce_clk_n_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" line 346: Output port <vfat2s_data_o[23]_sbits> of the instance <vfat2_buffers_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" line 346: Output port <vfat2s_data_o[22]_sbits> of the instance <vfat2_buffers_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" line 346: Output port <vfat2s_data_o[21]_sbits> of the instance <vfat2_buffers_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" line 346: Output port <vfat2s_data_o[20]_sbits> of the instance <vfat2_buffers_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" line 346: Output port <vfat2s_data_o[19]_sbits> of the instance <vfat2_buffers_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" line 346: Output port <vfat2s_data_o[18]_sbits> of the instance <vfat2_buffers_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" line 346: Output port <vfat2s_data_o[17]_sbits> of the instance <vfat2_buffers_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" line 346: Output port <vfat2s_data_o[16]_sbits> of the instance <vfat2_buffers_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" line 346: Output port <vfat2s_data_o[15]_sbits> of the instance <vfat2_buffers_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" line 346: Output port <vfat2s_data_o[14]_sbits> of the instance <vfat2_buffers_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" line 346: Output port <vfat2s_data_o[13]_sbits> of the instance <vfat2_buffers_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" line 346: Output port <vfat2s_data_o[12]_sbits> of the instance <vfat2_buffers_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" line 346: Output port <vfat2s_data_o[11]_sbits> of the instance <vfat2_buffers_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" line 346: Output port <vfat2s_data_o[10]_sbits> of the instance <vfat2_buffers_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" line 346: Output port <vfat2s_data_o[9]_sbits> of the instance <vfat2_buffers_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" line 346: Output port <vfat2s_data_o[8]_sbits> of the instance <vfat2_buffers_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" line 346: Output port <vfat2s_data_o[7]_sbits> of the instance <vfat2_buffers_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" line 346: Output port <vfat2s_data_o[6]_sbits> of the instance <vfat2_buffers_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" line 346: Output port <vfat2s_data_o[5]_sbits> of the instance <vfat2_buffers_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" line 346: Output port <vfat2s_data_o[4]_sbits> of the instance <vfat2_buffers_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" line 346: Output port <vfat2s_data_o[3]_sbits> of the instance <vfat2_buffers_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" line 346: Output port <vfat2s_data_o[2]_sbits> of the instance <vfat2_buffers_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" line 346: Output port <vfat2s_data_o[1]_sbits> of the instance <vfat2_buffers_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" line 346: Output port <vfat2s_data_o[0]_sbits> of the instance <vfat2_buffers_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" line 836: Output port <ASYNC_OUT> of the instance <chipscope_vio_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" line 343: Output port <vfat2s_data_o[23]_sbits> of the instance <vfat2_buffers_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" line 343: Output port <vfat2s_data_o[22]_sbits> of the instance <vfat2_buffers_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" line 343: Output port <vfat2s_data_o[21]_sbits> of the instance <vfat2_buffers_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" line 343: Output port <vfat2s_data_o[20]_sbits> of the instance <vfat2_buffers_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" line 343: Output port <vfat2s_data_o[19]_sbits> of the instance <vfat2_buffers_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" line 343: Output port <vfat2s_data_o[18]_sbits> of the instance <vfat2_buffers_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" line 343: Output port <vfat2s_data_o[17]_sbits> of the instance <vfat2_buffers_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" line 343: Output port <vfat2s_data_o[16]_sbits> of the instance <vfat2_buffers_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" line 343: Output port <vfat2s_data_o[15]_sbits> of the instance <vfat2_buffers_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" line 343: Output port <vfat2s_data_o[14]_sbits> of the instance <vfat2_buffers_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" line 343: Output port <vfat2s_data_o[13]_sbits> of the instance <vfat2_buffers_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" line 343: Output port <vfat2s_data_o[12]_sbits> of the instance <vfat2_buffers_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" line 343: Output port <vfat2s_data_o[11]_sbits> of the instance <vfat2_buffers_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" line 343: Output port <vfat2s_data_o[10]_sbits> of the instance <vfat2_buffers_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" line 343: Output port <vfat2s_data_o[9]_sbits> of the instance <vfat2_buffers_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" line 343: Output port <vfat2s_data_o[8]_sbits> of the instance <vfat2_buffers_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" line 343: Output port <vfat2s_data_o[7]_sbits> of the instance <vfat2_buffers_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" line 343: Output port <vfat2s_data_o[6]_sbits> of the instance <vfat2_buffers_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" line 343: Output port <vfat2s_data_o[5]_sbits> of the instance <vfat2_buffers_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" line 343: Output port <vfat2s_data_o[4]_sbits> of the instance <vfat2_buffers_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" line 343: Output port <vfat2s_data_o[3]_sbits> of the instance <vfat2_buffers_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" line 343: Output port <vfat2s_data_o[2]_sbits> of the instance <vfat2_buffers_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" line 343: Output port <vfat2s_data_o[1]_sbits> of the instance <vfat2_buffers_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" line 343: Output port <vfat2s_data_o[0]_sbits> of the instance <vfat2_buffers_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" line 468: Output port <clk_50Mhz_o> of the instance <pll_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" line 834: Output port <ASYNC_OUT> of the instance <chipscope_vio_inst> is unconnected or connected to loadless signal.
 WARNING:Xst:653 - Signal <vfat2_scl<3:2>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
 WARNING:Xst:653 - Signal <vfat2_sda_out<3:2>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
 WARNING:Xst:653 - Signal <vfat2_sda_tri<3:2>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
@@ -380,11 +380,11 @@ Synthesizing Unit <vfat2_buffers>.
 	no macro.
 Unit <vfat2_buffers> synthesized.
 
-Synthesizing Unit <ext_pll>.
-    Related source file is "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\prj\ipcore_dir\ext_pll.vhd".
+Synthesizing Unit <clk_wiz_v3_6>.
+    Related source file is "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\prj\ipcore_dir\clk_wiz_v3_6.vhd".
     Summary:
 	no macro.
-Unit <ext_pll> synthesized.
+Unit <clk_wiz_v3_6> synthesized.
 
 Synthesizing Unit <gtx_wrapper>.
     Related source file is "\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\system\gtx.vhd".
@@ -10170,9 +10170,10 @@ WARNING:Xst:1710 - FF/Latch <link_tracking_0_inst/tracking_core_inst/track_7_ins
 WARNING:Xst:1710 - FF/Latch <link_tracking_0_inst/tracking_core_inst/track_7_inst/data_o_188> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <link_tracking_0_inst/tracking_core_inst/track_6_inst/data_o_190> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <link_tracking_0_inst/tracking_core_inst/track_6_inst/data_o_188> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <link_tracking_0_inst/tracking_core_inst/track_5_inst/data_o_190> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <link_tracking_0_inst/tracking_core_inst/track_5_inst/data_o_188> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <link_tracking_0_inst/tracking_core_inst/track_4_inst/data_o_190> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <link_tracking_0_inst/tracking_core_inst/track_4_inst/data_o_188> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <link_tracking_0_inst/tracking_core_inst/track_3_inst/data_o_190> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <link_tracking_2_inst/tracking_core_inst/track_7_inst/data_o_188> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <link_tracking_2_inst/tracking_core_inst/track_7_inst/data_o_190> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <link_tracking_0_inst/tracking_core_inst/track_0_inst/data_o_188> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
@@ -10195,46 +10196,42 @@ WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_2_ins
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_2_188> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_2_190> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_0_188> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_0_190> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_6_188> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_6_190> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_7_188> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_7_190> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_5_188> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_4_188> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_4_190> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_1_188> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_1_190> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_3_188> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_2_188> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_0_188> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_0_190> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_0_188> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_2_188> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_3_190> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_3_188> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_1_190> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_1_188> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_4_188> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_5_190> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_5_188> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_7_190> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_7_188> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_6_190> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_6_188> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_0_190> has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_o_188> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_o_188> (without init value) has a constant value of 0 in block <optohybrid_top>. This FF/Latch will be trimmed during the optimization process.
 INFO:Xst:2261 - The FF/Latch <link_tracking_2_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/chopexecfsm_FSM_FFd2> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <link_tracking_2_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/exec> 
-INFO:Xst:2261 - The FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_6_191> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_6_189> 
-INFO:Xst:2261 - The FF/Latch <link_tracking_0_inst/tracking_core_inst/track_0_inst/data_o_191> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <link_tracking_0_inst/tracking_core_inst/track_0_inst/data_o_189> 
-INFO:Xst:2261 - The FF/Latch <link_tracking_2_inst/tracking_core_inst/track_0_inst/data_o_191> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <link_tracking_2_inst/tracking_core_inst/track_0_inst/data_o_189> 
+INFO:Xst:2261 - The FF/Latch <link_tracking_2_inst/tracking_core_inst/track_3_inst/data_o_191> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <link_tracking_2_inst/tracking_core_inst/track_3_inst/data_o_189> 
 INFO:Xst:2261 - The FF/Latch <link_tracking_0_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/enable_reg> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <link_tracking_2_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/enable_reg> 
-INFO:Xst:2261 - The FF/Latch <link_tracking_0_inst/tracking_core_inst/track_1_inst/data_o_191> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <link_tracking_0_inst/tracking_core_inst/track_1_inst/data_o_189> 
 INFO:Xst:2261 - The FF/Latch <link_tracking_0_inst/vi2c_core_inst/vi2c_wrapper_inst/enable> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <link_tracking_2_inst/vi2c_core_inst/vi2c_wrapper_inst/enable> 
-INFO:Xst:2261 - The FF/Latch <link_tracking_0_inst/tracking_core_inst/track_6_inst/data_o_191> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <link_tracking_0_inst/tracking_core_inst/track_6_inst/data_o_189> 
+INFO:Xst:2261 - The FF/Latch <link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_3_191> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_3_189> 
 INFO:Xst:2261 - The FF/Latch <link_tracking_0_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/main.timer_10> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <link_tracking_2_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/main.timer_10> 
+INFO:Xst:2261 - The FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_4_191> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_4_189> 
 INFO:Xst:2261 - The FF/Latch <link_tracking_0_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/main.timer_11> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <link_tracking_2_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/main.timer_11> 
-INFO:Xst:2261 - The FF/Latch <link_tracking_0_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/chopexecfsm_FSM_FFd2> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <link_tracking_0_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/exec> 
-INFO:Xst:2261 - The FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_0_191> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_0_189> 
 INFO:Xst:2261 - The FF/Latch <link_tracking_0_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/main.timer_0> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <link_tracking_2_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/main.timer_0> 
 INFO:Xst:2261 - The FF/Latch <link_tracking_0_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/main.timer_1> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <link_tracking_2_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/main.timer_1> 
 INFO:Xst:2261 - The FF/Latch <link_tracking_0_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/main.timer_2> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <link_tracking_2_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/main.timer_2> 
 INFO:Xst:2261 - The FF/Latch <link_tracking_0_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/main.timer_3> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <link_tracking_2_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/main.timer_3> 
+INFO:Xst:2261 - The FF/Latch <link_tracking_0_inst/tracking_core_inst/track_4_inst/data_o_191> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <link_tracking_0_inst/tracking_core_inst/track_4_inst/data_o_189> 
 INFO:Xst:2261 - The FF/Latch <link_tracking_0_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/main.timer_4> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <link_tracking_2_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/main.timer_4> 
 INFO:Xst:2261 - The FF/Latch <link_tracking_0_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/main.timer_5> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <link_tracking_2_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/main.timer_5> 
 INFO:Xst:2261 - The FF/Latch <link_tracking_0_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/main.timer_6> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <link_tracking_2_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/main.timer_6> 
 INFO:Xst:2261 - The FF/Latch <link_tracking_0_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/main.timer_7> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <link_tracking_2_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/main.timer_7> 
 INFO:Xst:2261 - The FF/Latch <link_tracking_0_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/main.timer_8> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <link_tracking_2_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/main.timer_8> 
 INFO:Xst:2261 - The FF/Latch <link_tracking_0_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/main.timer_9> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <link_tracking_2_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/main.timer_9> 
-INFO:Xst:2261 - The FF/Latch <link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_0_191> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_0_189> 
-INFO:Xst:2261 - The FF/Latch <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_1_191> in Unit <optohybrid_top> is equivalent to the following FF/Latch, which will be removed : <link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_1_189> 
 INFO:Xst:2261 - The FF/Latch <link_tracking_0_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/en> in Unit <optohybrid_top> is equivalent to the following 3 FFs/Latches, which will be removed : <link_tracking_2_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/en> <link_tracking_0_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/reg_in.ff> <link_tracking_2_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/reg_in.ff> 
 
 Mapping all equations...
@@ -10315,8 +10312,8 @@ Unit <optohybrid_top> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 13735
- Flip-Flops                                            : 13735
+# Registers                                            : 13738
+ Flip-Flops                                            : 13738
 # Shift Registers                                      : 1
  2-bit shift register                                  : 1
 
@@ -10341,28 +10338,28 @@ Top Level Output File Name         : optohybrid_top.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 11417
+# BELS                             : 11440
 #      GND                         : 35
-#      INV                         : 176
+#      INV                         : 177
 #      LUT1                        : 670
-#      LUT2                        : 341
-#      LUT3                        : 910
-#      LUT4                        : 729
-#      LUT5                        : 1083
-#      LUT6                        : 5098
+#      LUT2                        : 343
+#      LUT3                        : 929
+#      LUT4                        : 728
+#      LUT5                        : 1084
+#      LUT6                        : 5097
 #      MUXCY                       : 807
 #      MUXCY_L                     : 148
 #      MUXF5                       : 2
 #      MUXF6                       : 1
-#      MUXF7                       : 467
+#      MUXF7                       : 469
 #      MUXF8                       : 2
 #      VCC                         : 24
 #      XORCY                       : 924
-# FlipFlops/Latches                : 15461
-#      FD                          : 645
+# FlipFlops/Latches                : 15464
+#      FD                          : 646
 #      FDC                         : 339
 #      FDCE                        : 150
-#      FDE                         : 12962
+#      FDE                         : 12964
 #      FDP                         : 317
 #      FDPE                        : 12
 #      FDR                         : 160
@@ -10381,8 +10378,8 @@ Primitive and Black Box Usage:
 #      SRL16E                      : 1
 #      SRLC16E                     : 21
 #      SRLC32E                     : 93
-# Clock Buffers                    : 5
-#      BUFG                        : 5
+# Clock Buffers                    : 6
+#      BUFG                        : 6
 # IO Buffers                       : 272
 #      IBUF                        : 11
 #      IBUFDS                      : 222
@@ -10404,17 +10401,17 @@ Selected Device : 6vlx130tff1156-1
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:           15457  out of  160000     9%  
- Number of Slice LUTs:                 9250  out of  80000    11%  
-    Number used as Logic:              9007  out of  80000    11%  
+ Number of Slice Registers:           15460  out of  160000     9%  
+ Number of Slice LUTs:                 9271  out of  80000    11%  
+    Number used as Logic:              9028  out of  80000    11%  
     Number used as Memory:              243  out of  27840     0%  
        Number used as SRL:              243
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:  18008
-   Number with an unused Flip Flop:    2551  out of  18008    14%  
-   Number with an unused LUT:          8758  out of  18008    48%  
-   Number of fully used LUT-FF pairs:  6699  out of  18008    37%  
+ Number of LUT Flip Flop pairs used:  18029
+   Number with an unused Flip Flop:    2569  out of  18029    14%  
+   Number with an unused LUT:          8758  out of  18029    48%  
+   Number of fully used LUT-FF pairs:  6702  out of  18029    37%  
    Number of unique control sets:       447
 
 IO Utilization: 
@@ -10425,7 +10422,7 @@ IO Utilization:
 Specific Feature Utilization:
  Number of Block RAM/FIFO:               12  out of    264     4%  
     Number using Block RAM only:         12
- Number of BUFG/BUFGCTRLs:                5  out of     32    15%  
+ Number of BUFG/BUFGCTRLs:                6  out of     32    18%  
 
 ---------------------------
 Partition Resource Summary:
@@ -10448,8 +10445,8 @@ Clock Information:
 ----------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------+-------+
 Clock Signal                                                                                        | Clock buffer(FF name)                                                                 | Load  |
 ----------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------+-------+
-gtx_wrapper_inst/gtx0_tx_out_clk                                                                    | BUFG                                                                                  | 5037  |
-tmds_d_p_io<0>                                                                                      | MMCM_ADV:CLKOUT0                                                                      | 10154 |
+gtx_wrapper_inst/gtx0_tx_out_clk                                                                    | BUFG                                                                                  | 5038  |
+clk_50MHz_i                                                                                         | MMCM_ADV:CLKOUT1                                                                      | 10156 |
 link_tracking_0_inst/vi2c_core_inst/chip_select_2                                                   | NONE(link_tracking_0_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/sda_t_1)| 4     |
 link_tracking_2_inst/vi2c_core_inst/chip_select_2                                                   | NONE(link_tracking_2_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/sda_t_1)| 4     |
 chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL                                          | BUFG                                                                                  | 467   |
@@ -10475,9 +10472,9 @@ chipscope_ila_inst/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_R
 chipscope_ila_inst/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_V6.U_CS_BRAM_CASCADE_V6/I_DEPTH_LTEQ_32K.U_SBRAM_0/I_B36KGT0.G_RAMB36[1].u_ramb36/U_RAMB36/N0(chipscope_ila_inst/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_V6.U_CS_BRAM_CASCADE_V6/I_DEPTH_LTEQ_32K.U_SBRAM_0/I_B36KGT0.G_RAMB36[1].u_ramb36/U_RAMB36/XST_GND:G)                                         | NONE(chipscope_ila_inst/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_V6.U_CS_BRAM_CASCADE_V6/I_DEPTH_LTEQ_32K.U_SBRAM_0/I_B36KGT0.G_RAMB36[1].u_ramb36/U_RAMB36/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_V6.U_CS_BRAM_CASCADE_V6/I_DEPTH_LTEQ_32K.U_SBRAM_0/I_B36KGT0.G_RAMB36[1].u_ramb36/U_RAMB36)| 72    |
 chipscope_ila_inst/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_V6.U_CS_BRAM_CASCADE_V6/I_DEPTH_LTEQ_32K.U_SBRAM_0/I_B36KGT0.G_RAMB36[2].u_ramb36/U_RAMB36/N0(chipscope_ila_inst/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_V6.U_CS_BRAM_CASCADE_V6/I_DEPTH_LTEQ_32K.U_SBRAM_0/I_B36KGT0.G_RAMB36[2].u_ramb36/U_RAMB36/XST_GND:G)                                         | NONE(chipscope_ila_inst/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_V6.U_CS_BRAM_CASCADE_V6/I_DEPTH_LTEQ_32K.U_SBRAM_0/I_B36KGT0.G_RAMB36[2].u_ramb36/U_RAMB36/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_V6.U_CS_BRAM_CASCADE_V6/I_DEPTH_LTEQ_32K.U_SBRAM_0/I_B36KGT0.G_RAMB36[2].u_ramb36/U_RAMB36)| 72    |
 chipscope_ila_inst/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_V6.U_CS_BRAM_CASCADE_V6/I_DEPTH_LTEQ_32K.U_SBRAM_0/I_B36KGT0.G_RAMB36[3].u_ramb36/U_RAMB36/N0(chipscope_ila_inst/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_V6.U_CS_BRAM_CASCADE_V6/I_DEPTH_LTEQ_32K.U_SBRAM_0/I_B36KGT0.G_RAMB36[3].u_ramb36/U_RAMB36/XST_GND:G)                                         | NONE(chipscope_ila_inst/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_V6.U_CS_BRAM_CASCADE_V6/I_DEPTH_LTEQ_32K.U_SBRAM_0/I_B36KGT0.G_RAMB36[3].u_ramb36/U_RAMB36/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_V6.U_CS_BRAM_CASCADE_V6/I_DEPTH_LTEQ_32K.U_SBRAM_0/I_B36KGT0.G_RAMB36[3].u_ramb36/U_RAMB36)| 72    |
-chipscope_ila_inst/U0/I_NO_D.U_ILA/U_STAT/U_ECR_glue_set(chipscope_ila_inst/XST_VCC:P)                                                                                                                                                                                                                                                                                                                                | NONE(chipscope_ila_inst/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_V6.U_CS_BRAM_CASCADE_V6/I_DEPTH_LTEQ_32K.U_SBRAM_0/I_B36KGT0.G_RAMB36[2].u_ramb36/U_RAMB36/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_V6.U_CS_BRAM_CASCADE_V6/I_DEPTH_LTEQ_32K.U_SBRAM_0/I_B36KGT0.G_RAMB36[2].u_ramb36/U_RAMB36)| 16    |
+chipscope_ila_inst/U0/I_NO_D.U_ILA/U_STAT/U_ECR_glue_set(chipscope_ila_inst/XST_VCC:P)                                                                                                                                                                                                                                                                                                                                | NONE(chipscope_ila_inst/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_V6.U_CS_BRAM_CASCADE_V6/I_DEPTH_LTEQ_32K.U_SBRAM_0/I_B36KGT0.G_RAMB36[1].u_ramb36/U_RAMB36/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_V6.U_CS_BRAM_CASCADE_V6/I_DEPTH_LTEQ_32K.U_SBRAM_0/I_B36KGT0.G_RAMB36[1].u_ramb36/U_RAMB36)| 16    |
 link_tracking_0_inst/tracking_core_inst/tracking_data_fifo_inst/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/DBITERR(link_tracking_0_inst/tracking_core_inst/tracking_data_fifo_inst/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/XST_GND:G)| NONE(link_tracking_0_inst/tracking_core_inst/tracking_data_fifo_inst/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram)                                                                                        | 12    |
-link_tracking_2_inst/tracking_core_inst/tracking_data_fifo_inst/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/DBITERR(link_tracking_2_inst/tracking_core_inst/tracking_data_fifo_inst/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/XST_GND:G)| NONE(link_tracking_2_inst/tracking_core_inst/tracking_data_fifo_inst/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[2].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram)                                                                                        | 12    |
+link_tracking_2_inst/tracking_core_inst/tracking_data_fifo_inst/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/DBITERR(link_tracking_2_inst/tracking_core_inst/tracking_data_fifo_inst/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/XST_GND:G)| NONE(link_tracking_2_inst/tracking_core_inst/tracking_data_fifo_inst/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[3].ram.r/v6_noinit.ram/SDP.WIDE_PRIM36.ram)                                                                                        | 12    |
 link_tracking_0_inst/tracking_core_inst/tracking_bx_fifo_inst/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/ram_wr_en(link_tracking_0_inst/tracking_core_inst/tracking_bx_fifo_inst/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/ram_wr_en_i1:O)                                                                                                                                                    | NONE(link_tracking_0_inst/tracking_core_inst/tracking_bx_fifo_inst/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM18.ram)                                                                                          | 8     |
 link_tracking_0_inst/tracking_core_inst/tracking_data_fifo_inst/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/ram_wr_en(link_tracking_0_inst/tracking_core_inst/tracking_data_fifo_inst/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/ram_wr_en_i1:O)                                                                                                                                                | NONE(link_tracking_0_inst/tracking_core_inst/tracking_data_fifo_inst/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM18.ram)                                                                                        | 8     |
 link_tracking_2_inst/tracking_core_inst/tracking_bx_fifo_inst/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/ram_wr_en(link_tracking_2_inst/tracking_core_inst/tracking_bx_fifo_inst/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/ram_wr_en_i1:O)                                                                                                                                                    | NONE(link_tracking_2_inst/tracking_core_inst/tracking_bx_fifo_inst/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/SDP.WIDE_PRIM18.ram)                                                                                          | 8     |
@@ -10500,7 +10497,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'gtx_wrapper_inst/gtx0_tx_out_clk'
   Clock period: 4.595ns (frequency: 217.628MHz)
-  Total number of paths / destination ports: 50608 / 9191
+  Total number of paths / destination ports: 50661 / 9192
 -------------------------------------------------------------------------
 Delay:               4.595ns (Levels of Logic = 5)
   Source:            link_tracking_2_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/i2csda.timer_9 (FF)
@@ -10524,15 +10521,15 @@ Delay:               4.595ns (Levels of Logic = 5)
                                        (21.3% logic, 78.7% route)
 
 =========================================================================
-Timing constraint: Default period analysis for Clock 'tmds_d_p_io<0>'
-  Clock period: 3.211ns (frequency: 311.467MHz)
-  Total number of paths / destination ports: 112308 / 20456
+Timing constraint: Default period analysis for Clock 'clk_50MHz_i'
+  Clock period: 2.568ns (frequency: 389.334MHz)
+  Total number of paths / destination ports: 112321 / 20460
 -------------------------------------------------------------------------
 Delay:               3.211ns (Levels of Logic = 3)
   Source:            link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/cnt_1 (FF)
   Destination:       link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_o_223 (FF)
-  Source Clock:      tmds_d_p_io<0> rising
-  Destination Clock: tmds_d_p_io<0> rising
+  Source Clock:      clk_50MHz_i rising 0.8X
+  Destination Clock: clk_50MHz_i rising 0.8X
 
   Data Path: link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/cnt_1 to link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_o_223
                                 Gate     Net
@@ -10625,22 +10622,22 @@ Offset:              2.828ns (Levels of Logic = 4)
                                        (22.6% logic, 77.4% route)
 
 =========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'tmds_d_p_io<0>'
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk_50MHz_i'
   Total number of paths / destination ports: 6464 / 3232
 -------------------------------------------------------------------------
 Offset:              1.568ns (Levels of Logic = 3)
-  Source:            vfat2_7_data_out_p_i (PAD)
-  Destination:       link_tracking_0_inst/tracking_core_inst/track_7_inst/data_190 (FF)
-  Destination Clock: tmds_d_p_io<0> rising
+  Source:            vfat2_6_data_out_p_i (PAD)
+  Destination:       link_tracking_0_inst/tracking_core_inst/track_6_inst/data_190 (FF)
+  Destination Clock: clk_50MHz_i rising 0.8X
 
-  Data Path: vfat2_7_data_out_p_i to link_tracking_0_inst/tracking_core_inst/track_7_inst/data_190
+  Data Path: vfat2_6_data_out_p_i to link_tracking_0_inst/tracking_core_inst/track_6_inst/data_190
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUFDS:I->O          13   0.003   0.855  vfat2_buffers_inst/vfat2_7_data_out_ibufds_inst (vfat2_buffers_inst/vfat2_7_data_out)
-     LUT6:I1->O           24   0.068   0.563  link_tracking_0_inst/tracking_core_inst/track_7_inst/_n0265<102>21 (link_tracking_0_inst/tracking_core_inst/track_7_inst/_n0265<102>2)
-     LUT6:I5->O            1   0.068   0.000  link_tracking_0_inst/tracking_core_inst/track_7_inst/_n0265<6>1 (link_tracking_0_inst/tracking_core_inst/track_7_inst/_n0265<6>)
-     FDE:D                     0.011          link_tracking_0_inst/tracking_core_inst/track_7_inst/data_6
+     IBUFDS:I->O          13   0.003   0.855  vfat2_buffers_inst/vfat2_6_data_out_ibufds_inst (vfat2_buffers_inst/vfat2_6_data_out)
+     LUT6:I1->O           24   0.068   0.563  link_tracking_0_inst/tracking_core_inst/track_6_inst/_n0265<102>21 (link_tracking_0_inst/tracking_core_inst/track_6_inst/_n0265<102>2)
+     LUT6:I5->O            1   0.068   0.000  link_tracking_0_inst/tracking_core_inst/track_6_inst/_n0265<6>1 (link_tracking_0_inst/tracking_core_inst/track_6_inst/_n0265<6>)
+     FDE:D                     0.011          link_tracking_0_inst/tracking_core_inst/track_6_inst/data_6
     ----------------------------------------
     Total                      1.568ns (0.150ns logic, 1.418ns route)
                                        (9.6% logic, 90.4% route)
@@ -10692,13 +10689,13 @@ Offset:              1.324ns (Levels of Logic = 1)
                                        (39.3% logic, 60.7% route)
 
 =========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'tmds_d_p_io<0>'
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_50MHz_i'
   Total number of paths / destination ports: 12 / 12
 -------------------------------------------------------------------------
 Offset:              1.276ns (Levels of Logic = 2)
   Source:            t1_handler_inst/t1_encoder_inst/t1_o (FF)
   Destination:       vfat2_t1_p_o<2> (PAD)
-  Source Clock:      tmds_d_p_io<0> rising
+  Source Clock:      clk_50MHz_i rising 0.8X
 
   Data Path: t1_handler_inst/t1_encoder_inst/t1_o to vfat2_t1_p_o<2>
                                 Gate     Net
@@ -10706,7 +10703,7 @@ Offset:              1.276ns (Levels of Logic = 2)
     ----------------------------------------  ------------
      FD:C->Q               1   0.375   0.399  t1_handler_inst/t1_encoder_inst/t1_o (t1_handler_inst/t1_encoder_inst/t1_o)
      INV:I->O              3   0.086   0.413  vfat2_buffers_inst/vfat2_t1<2>1_INV_0 (vfat2_buffers_inst/vfat2_t1<2>)
-     OBUFDS:I->O               0.003          vfat2_buffers_inst/vfat2_t1_0_obufds_inst (vfat2_t1_p_o<0>)
+     OBUFDS:I->O               0.003          vfat2_buffers_inst/vfat2_t1_2_obufds_inst (vfat2_t1_p_o<2>)
     ----------------------------------------
     Total                      1.276ns (0.464ns logic, 0.812ns route)
                                        (36.4% logic, 63.6% route)
@@ -10823,6 +10820,15 @@ Source Clock                      |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 chipscope_icon_inst/U0/iUPDATE_OUT|    1.284|         |         |         |
 ----------------------------------+---------+---------+---------+---------+
 
+Clock to Setup on destination clock clk_50MHz_i
+--------------------------------+---------+---------+---------+---------+
+                                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                    |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+--------------------------------+---------+---------+---------+---------+
+clk_50MHz_i                     |    3.211|         |         |         |
+gtx_wrapper_inst/gtx0_tx_out_clk|    1.508|         |         |         |
+--------------------------------+---------+---------+---------+---------+
+
 Clock to Setup on destination clock ext_lv1a_counter<0>
 ----------------------------------------------------------+---------+---------+---------+---------+
                                                           | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
@@ -10837,8 +10843,8 @@ Clock to Setup on destination clock gtx_wrapper_inst/gtx0_tx_out_clk
 Source Clock                                              |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ----------------------------------------------------------+---------+---------+---------+---------+
 chipscope_icon_inst/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL|    3.375|         |         |         |
+clk_50MHz_i                                               |    1.481|         |         |         |
 gtx_wrapper_inst/gtx0_tx_out_clk                          |    4.595|         |         |         |
-tmds_d_p_io<0>                                            |    1.481|         |         |         |
 ----------------------------------------------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock link_tracking_0_inst/vi2c_core_inst/chip_select_2
@@ -10857,26 +10863,17 @@ Source Clock                    |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 gtx_wrapper_inst/gtx0_tx_out_clk|    1.292|         |    1.292|         |
 --------------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock tmds_d_p_io<0>
---------------------------------+---------+---------+---------+---------+
-                                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                    |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
---------------------------------+---------+---------+---------+---------+
-gtx_wrapper_inst/gtx0_tx_out_clk|    1.508|         |         |         |
-tmds_d_p_io<0>                  |    3.211|         |         |         |
---------------------------------+---------+---------+---------+---------+
-
 =========================================================================
 
 
-Total REAL time to Xst completion: 87.00 secs
-Total CPU time to Xst completion: 87.08 secs
+Total REAL time to Xst completion: 84.00 secs
+Total CPU time to Xst completion: 84.89 secs
  
 --> 
 
-Total memory usage is 493896 kilobytes
+Total memory usage is 489656 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings : 8506 (   0 filtered)
-Number of infos    :  454 (   0 filtered)
+Number of warnings : 8507 (   0 filtered)
+Number of infos    :  450 (   0 filtered)
 

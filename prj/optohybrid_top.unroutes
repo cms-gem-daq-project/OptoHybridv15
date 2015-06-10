@@ -1,7 +1,7 @@
 Release 14.7 - par P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Mon Jun 08 14:52:45 2015
+Wed Jun 10 11:39:48 2015
 
 All signals are completely routed.
 
@@ -43,7 +43,7 @@ WARNING:ParHelpers:361 - There are 37 loadless signals in this design. This desi
    chipscope_vio_inst/U0/I_VIO/UPDATE<7>
    chipscope_vio_inst/U0/I_VIO/UPDATE<8>
    chipscope_vio_inst/U0/I_VIO/UPDATE<9>
-   clk_50MHz_i_IBUF
+   tmds_d_p_io<0>_IBUF
    tmds_d_p_io<1>_IBUF
 
 

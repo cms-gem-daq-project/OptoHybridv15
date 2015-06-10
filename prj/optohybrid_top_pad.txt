@@ -1,7 +1,7 @@
 Release 14.7 - par P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Mon Jun 08 14:52:43 2015
+Wed Jun 10 11:39:46 2015
 
 
 INFO: The IO information is provided in three file formats as part of the Place and Route (PAR) process.  These formats are:
@@ -78,8 +78,8 @@ Pinout by Pin Number:
 |AA22      |                       |         |VCCAUX                    |         |           |              |          |         |           |         |2.5      |          |           |                |
 |AA23      |                       |IOBM     |IO_L16P_RS0_24            |UNUSED   |           |24            |          |         |           |         |         |          |           |                |
 |AA24      |                       |IOBS     |IO_L14N_VREF_FOE_B_MOSI_24|UNUSED   |           |24            |          |         |           |         |         |          |           |                |
-|AA25      |vfat2_data_valid_p_i<2>|IOB      |IO_L6P_13                 |INPUT    |LVDS_25    |13            |          |         |           |NONE     |         |LOCATED   |NO         |DIFF_TERM       |
-|AA26      |vfat2_data_valid_p_i<4>|IOB      |IO_L17P_13                |INPUT    |LVDS_25    |13            |          |         |           |NONE     |         |LOCATED   |NO         |DIFF_TERM       |
+|AA25      |vfat2_scl_o<2>         |IOB      |IO_L6P_13                 |OUTPUT   |LVCMOS25*  |13            |12        |SLOW     |           |         |         |LOCATED   |NO         |NONE            |
+|AA26      |vfat2_scl_o<4>         |IOB      |IO_L17P_13                |OUTPUT   |LVCMOS25*  |13            |12        |SLOW     |           |         |         |LOCATED   |NO         |NONE            |
 |AA27      |                       |         |GND                       |         |           |              |          |         |           |         |         |          |           |                |
 |AA28      |                       |IOBM     |IO_L7P_13                 |UNUSED   |           |13            |          |         |           |         |         |          |           |                |
 |AA29      |                       |IOBS     |IO_L7N_13                 |UNUSED   |           |13            |          |         |           |         |         |          |           |                |
@@ -113,8 +113,8 @@ Pinout by Pin Number:
 |AB23      |                       |IOBS     |IO_L16N_CSO_B_24          |UNUSED   |           |24            |          |         |           |         |         |          |           |                |
 |AB24      |                       |         |GND                       |         |           |              |          |         |           |         |         |          |           |                |
 |AB25      |                       |IOBM     |IO_L19P_13                |UNUSED   |           |13            |          |         |           |         |         |          |           |                |
-|AB26      |vfat2_data_valid_n_i<4>|IOB      |IO_L17N_13                |         |LVDS_25    |13            |          |         |           |         |         |LOCATED   |NO         |DIFF_TERM       |
-|AB27      |vfat2_sda_io<4>        |IOB      |IO_L15P_13                |BIDIR    |LVCMOS25*  |13            |12        |SLOW     |           |NONE     |         |LOCATED   |YES        |NONE            |
+|AB26      |vfat2_sda_io<4>        |IOB      |IO_L17N_13                |BIDIR    |LVCMOS25*  |13            |12        |SLOW     |           |NONE     |         |LOCATED   |YES        |NONE            |
+|AB27      |vfat2_data_valid_p_i<4>|IOB      |IO_L15P_13                |INPUT    |LVDS_25    |13            |          |         |           |NONE     |         |LOCATED   |NO         |DIFF_TERM       |
 |AB28      |                       |IOBM     |IO_L13P_13                |UNUSED   |           |13            |          |         |           |         |         |          |           |                |
 |AB29      |                       |         |VCCO_13                   |         |           |13            |          |         |           |         |2.50     |          |           |                |
 |AB30      |                       |IOBM     |IO_L3P_13                 |UNUSED   |           |13            |          |         |           |         |         |          |           |                |
@@ -148,7 +148,7 @@ Pinout by Pin Number:
 |AC24      |                       |IOBS     |IO_L18N_24                |UNUSED   |           |24            |          |         |           |         |         |          |           |                |
 |AC25      |                       |IOBS     |IO_L19N_13                |UNUSED   |           |13            |          |         |           |         |         |          |           |                |
 |AC26      |                       |         |VCCO_13                   |         |           |13            |          |         |           |         |2.50     |          |           |                |
-|AC27      |vfat2_scl_o<4>         |IOB      |IO_L15N_13                |OUTPUT   |LVCMOS25*  |13            |12        |SLOW     |           |         |         |LOCATED   |NO         |NONE            |
+|AC27      |vfat2_data_valid_n_i<4>|IOB      |IO_L15N_13                |         |LVDS_25    |13            |          |         |           |         |         |LOCATED   |NO         |DIFF_TERM       |
 |AC28      |                       |IOBS     |IO_L13N_13                |UNUSED   |           |13            |          |         |           |         |         |          |           |                |
 |AC29      |                       |IOBS     |IO_L11N_SRCC_13           |UNUSED   |           |13            |          |         |           |         |         |          |           |                |
 |AC30      |                       |IOBS     |IO_L9N_MRCC_13            |UNUSED   |           |13            |          |         |           |         |         |          |           |                |
@@ -1098,7 +1098,7 @@ Pinout by Pin Number:
 |V22       |                       |         |GND                       |         |           |              |          |         |           |         |         |          |           |                |
 |V23       |                       |IOBS     |IO_L10N_MRCC_24           |UNUSED   |           |24            |          |         |           |         |         |          |           |                |
 |V24       |                       |IOBM     |IO_L12P_D3_24             |UNUSED   |           |24            |          |         |           |         |         |          |           |                |
-|V25       |vfat2_data_valid_n_i<0>|IOB      |IO_L18N_14                |         |LVDS_25    |14            |          |         |           |         |         |LOCATED   |NO         |DIFF_TERM       |
+|V25       |vfat2_scl_o<0>         |IOB      |IO_L18N_14                |OUTPUT   |LVCMOS25*  |14            |12        |SLOW     |           |         |         |LOCATED   |NO         |NONE            |
 |V26       |                       |         |GND                       |         |           |              |          |         |           |         |         |          |           |                |
 |V27       |vfat2_8_data_out_n_i   |IOB      |IO_L11N_SRCC_14           |         |LVDS_25    |14            |          |         |           |         |         |LOCATED   |NO         |DIFF_TERM       |
 |V28       |vfat2_8_data_out_p_i   |IOB      |IO_L11P_SRCC_14           |INPUT    |LVDS_25    |14            |          |         |           |NONE     |         |LOCATED   |NO         |DIFF_TERM       |
@@ -1132,9 +1132,9 @@ Pinout by Pin Number:
 |W22       |                       |         |VCCAUX                    |         |           |              |          |         |           |         |2.5      |          |           |                |
 |W23       |                       |         |GND                       |         |           |              |          |         |           |         |         |          |           |                |
 |W24       |                       |IOBS     |IO_L12N_D2_FS2_24         |UNUSED   |           |24            |          |         |           |         |         |          |           |                |
-|W25       |vfat2_data_valid_p_i<0>|IOB      |IO_L18P_14                |INPUT    |LVDS_25    |14            |          |         |           |NONE     |         |LOCATED   |NO         |DIFF_TERM       |
-|W26       |vfat2_sda_io<0>        |IOB      |IO_L19N_14                |BIDIR    |LVCMOS25*  |14            |12        |SLOW     |           |NONE     |         |LOCATED   |YES        |NONE            |
-|W27       |vfat2_scl_o<0>         |IOB      |IO_L19P_14                |OUTPUT   |LVCMOS25*  |14            |12        |SLOW     |           |         |         |LOCATED   |NO         |NONE            |
+|W25       |vfat2_sda_io<0>        |IOB      |IO_L18P_14                |BIDIR    |LVCMOS25*  |14            |12        |SLOW     |           |NONE     |         |LOCATED   |YES        |NONE            |
+|W26       |vfat2_data_valid_n_i<0>|IOB      |IO_L19N_14                |         |LVDS_25    |14            |          |         |           |         |         |LOCATED   |NO         |DIFF_TERM       |
+|W27       |vfat2_data_valid_p_i<0>|IOB      |IO_L19P_14                |INPUT    |LVDS_25    |14            |          |         |           |NONE     |         |LOCATED   |NO         |DIFF_TERM       |
 |W28       |                       |         |VCCO_14                   |         |           |14            |          |         |           |         |2.50     |          |           |                |
 |W29       |                       |IOBM     |IO_L15P_14                |UNUSED   |           |14            |          |         |           |         |         |          |           |                |
 |W30       |                       |IOBS     |IO_L9N_MRCC_14            |UNUSED   |           |14            |          |         |           |         |         |          |           |                |
@@ -1167,9 +1167,9 @@ Pinout by Pin Number:
 |Y23       |                       |         |VCCAUX                    |         |           |              |          |         |           |         |2.5      |          |           |                |
 |Y24       |                       |IOBM     |IO_L14P_FCS_B_24          |UNUSED   |           |24            |          |         |           |         |         |          |           |                |
 |Y25       |                       |         |VCCO_24                   |         |           |24            |          |         |           |         |2.50     |          |           |                |
-|Y26       |vfat2_data_valid_n_i<2>|IOB      |IO_L6N_13                 |         |LVDS_25    |13            |          |         |           |         |         |LOCATED   |NO         |DIFF_TERM       |
-|Y27       |vfat2_scl_o<2>         |IOB      |IO_L17N_14                |OUTPUT   |LVCMOS25*  |14            |12        |SLOW     |           |         |         |LOCATED   |NO         |NONE            |
-|Y28       |vfat2_sda_io<2>        |IOB      |IO_L17P_14                |TRISTATE |LVCMOS25*  |14            |12        |SLOW     |           |         |         |LOCATED   |NO         |NONE            |
+|Y26       |vfat2_sda_io<2>        |IOB      |IO_L6N_13                 |TRISTATE |LVCMOS25*  |13            |12        |SLOW     |           |         |         |LOCATED   |NO         |NONE            |
+|Y27       |vfat2_data_valid_n_i<2>|IOB      |IO_L17N_14                |         |LVDS_25    |14            |          |         |           |         |         |LOCATED   |NO         |DIFF_TERM       |
+|Y28       |vfat2_data_valid_p_i<2>|IOB      |IO_L17P_14                |INPUT    |LVDS_25    |14            |          |         |           |NONE     |         |LOCATED   |NO         |DIFF_TERM       |
 |Y29       |                       |IOBS     |IO_L15N_14                |UNUSED   |           |14            |          |         |           |         |         |          |           |                |
 |Y30       |                       |         |GND                       |         |           |              |          |         |           |         |         |          |           |                |
 |Y31       |                       |IOBS     |IO_L13N_14                |UNUSED   |           |14            |          |         |           |         |         |          |           |                |

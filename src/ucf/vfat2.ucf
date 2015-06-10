@@ -38,38 +38,38 @@ NET "vfat2_t1_n_o<1>"           LOC = K17;
 ## I2Cs
 
 NET "vfat2_scl_o<5>"            LOC = AC17; # J12_N
-NET "vfat2_scl_o<4>"            LOC = AC27; # G16_N
+NET "vfat2_scl_o<4>"            LOC = AA26; # G18_P
 NET "vfat2_scl_o<1>"            LOC = K21; # I17_P
-NET "vfat2_scl_o<2>"            LOC = Y27; # H18_N
+NET "vfat2_scl_o<2>"            LOC = AA25; # G7_P
 NET "vfat2_scl_o<3>"            LOC = J21; # I5_N
-NET "vfat2_scl_o<0>"            LOC = W27; # H20_P
+NET "vfat2_scl_o<0>"            LOC = V25; # H19_N
 
 NET "vfat2_sda_io<5>"           LOC = AC18; # J12_P
-NET "vfat2_sda_io<4>"           LOC = AB27; # G16_P
+NET "vfat2_sda_io<4>"           LOC = AB26; # G18_N
 NET "vfat2_sda_io<1>"           LOC = K22; # I17_N
-NET "vfat2_sda_io<2>"           LOC = Y28; # H18_P
+NET "vfat2_sda_io<2>"           LOC = Y26; # G7_N
 NET "vfat2_sda_io<3>"           LOC = J20; # I5_P
-NET "vfat2_sda_io<0>"           LOC = W26; # H20_N
+NET "vfat2_sda_io<0>"           LOC = W25; # H19_P
 
 ## DataValids
 
 NET "vfat2_data_valid_p_i<5>"   LOC = AH23; # D12
 NET "vfat2_data_valid_n_i<5>"   LOC = AH24;
 
-NET "vfat2_data_valid_p_i<4>"   LOC = AA26; # G18
-NET "vfat2_data_valid_n_i<4>"   LOC = AB26;
+NET "vfat2_data_valid_p_i<4>"   LOC = AB27; # G16
+NET "vfat2_data_valid_n_i<4>"   LOC = AC27;
 
 NET "vfat2_data_valid_p_i<1>"   LOC = J26; # A2
 NET "vfat2_data_valid_n_i<1>"   LOC = J27;
 
-NET "vfat2_data_valid_p_i<2>"   LOC = AA25; # G7
-NET "vfat2_data_valid_n_i<2>"   LOC = Y26;
+NET "vfat2_data_valid_p_i<2>"   LOC = Y28; # H18
+NET "vfat2_data_valid_n_i<2>"   LOC = Y27;
 
 NET "vfat2_data_valid_p_i<3>"   LOC = K16; # M10
 NET "vfat2_data_valid_n_i<3>"   LOC = L16;
 
-NET "vfat2_data_valid_p_i<0>"   LOC = W25; # H19
-NET "vfat2_data_valid_n_i<0>"   LOC = V25;
+NET "vfat2_data_valid_p_i<0>"   LOC = W27; # H20
+NET "vfat2_data_valid_n_i<0>"   LOC = W26;
 
 ## VFAT2 20
 
