@@ -59,19 +59,19 @@
 <msg type="warning" file="HDLCompiler" num="634" delta="old" >"\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\old\link_tracking.vhd" Line 91: Net &lt;<arg fmt="%s" index="1">request_read[63][31]</arg>&gt; does not have a driver.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" Line 723: Assignment to <arg fmt="%s" index="1">sbits_configuration</arg> ignored, since the identifier is never used
+<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" Line 721: Assignment to <arg fmt="%s" index="1">sbits_configuration</arg> ignored, since the identifier is never used
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" Line 734: Assignment to <arg fmt="%s" index="1">vfat2_src_select</arg> ignored, since the identifier is never used
+<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" Line 732: Assignment to <arg fmt="%s" index="1">vfat2_src_select</arg> ignored, since the identifier is never used
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" Line 737: Assignment to <arg fmt="%s" index="1">vfat2_fallback</arg> ignored, since the identifier is never used
+<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" Line 735: Assignment to <arg fmt="%s" index="1">vfat2_fallback</arg> ignored, since the identifier is never used
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" Line 742: Assignment to <arg fmt="%s" index="1">cdce_src_select</arg> ignored, since the identifier is never used
+<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" Line 740: Assignment to <arg fmt="%s" index="1">cdce_src_select</arg> ignored, since the identifier is never used
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" Line 745: Assignment to <arg fmt="%s" index="1">cdce_fallback</arg> ignored, since the identifier is never used
+<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" Line 743: Assignment to <arg fmt="%s" index="1">cdce_fallback</arg> ignored, since the identifier is never used
 </msg>
 
 <msg type="warning" file="HDLCompiler" num="634" delta="old" >"\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" Line 214: Net &lt;<arg fmt="%s" index="1">vfat2_scl[3]</arg>&gt; does not have a driver.
@@ -92,10 +92,7 @@
 <msg type="warning" file="HDLCompiler" num="634" delta="old" >"\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd" Line 267: Net &lt;<arg fmt="%s" index="1">request_read[63][31]</arg>&gt; does not have a driver.
 </msg>
 
-<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">tmds_d_p_io&lt;1:1&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-</msg>
-
-<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">clk_50MHz_i</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">tmds_d_p_io</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 </msg>
 
 <msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">cdce_clk_p_i</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -104,79 +101,82 @@
 <msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">cdce_clk_n_i</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd</arg>&quot; line <arg fmt="%s" index="2">346</arg>: Output port &lt;<arg fmt="%s" index="3">vfat2s_data_o[23]_sbits</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">vfat2_buffers_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd</arg>&quot; line <arg fmt="%s" index="2">343</arg>: Output port &lt;<arg fmt="%s" index="3">vfat2s_data_o[23]_sbits</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">vfat2_buffers_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd</arg>&quot; line <arg fmt="%s" index="2">346</arg>: Output port &lt;<arg fmt="%s" index="3">vfat2s_data_o[22]_sbits</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">vfat2_buffers_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd</arg>&quot; line <arg fmt="%s" index="2">343</arg>: Output port &lt;<arg fmt="%s" index="3">vfat2s_data_o[22]_sbits</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">vfat2_buffers_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd</arg>&quot; line <arg fmt="%s" index="2">346</arg>: Output port &lt;<arg fmt="%s" index="3">vfat2s_data_o[21]_sbits</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">vfat2_buffers_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd</arg>&quot; line <arg fmt="%s" index="2">343</arg>: Output port &lt;<arg fmt="%s" index="3">vfat2s_data_o[21]_sbits</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">vfat2_buffers_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd</arg>&quot; line <arg fmt="%s" index="2">346</arg>: Output port &lt;<arg fmt="%s" index="3">vfat2s_data_o[20]_sbits</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">vfat2_buffers_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd</arg>&quot; line <arg fmt="%s" index="2">343</arg>: Output port &lt;<arg fmt="%s" index="3">vfat2s_data_o[20]_sbits</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">vfat2_buffers_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd</arg>&quot; line <arg fmt="%s" index="2">346</arg>: Output port &lt;<arg fmt="%s" index="3">vfat2s_data_o[19]_sbits</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">vfat2_buffers_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd</arg>&quot; line <arg fmt="%s" index="2">343</arg>: Output port &lt;<arg fmt="%s" index="3">vfat2s_data_o[19]_sbits</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">vfat2_buffers_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd</arg>&quot; line <arg fmt="%s" index="2">346</arg>: Output port &lt;<arg fmt="%s" index="3">vfat2s_data_o[18]_sbits</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">vfat2_buffers_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd</arg>&quot; line <arg fmt="%s" index="2">343</arg>: Output port &lt;<arg fmt="%s" index="3">vfat2s_data_o[18]_sbits</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">vfat2_buffers_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd</arg>&quot; line <arg fmt="%s" index="2">346</arg>: Output port &lt;<arg fmt="%s" index="3">vfat2s_data_o[17]_sbits</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">vfat2_buffers_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd</arg>&quot; line <arg fmt="%s" index="2">343</arg>: Output port &lt;<arg fmt="%s" index="3">vfat2s_data_o[17]_sbits</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">vfat2_buffers_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd</arg>&quot; line <arg fmt="%s" index="2">346</arg>: Output port &lt;<arg fmt="%s" index="3">vfat2s_data_o[16]_sbits</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">vfat2_buffers_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd</arg>&quot; line <arg fmt="%s" index="2">343</arg>: Output port &lt;<arg fmt="%s" index="3">vfat2s_data_o[16]_sbits</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">vfat2_buffers_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd</arg>&quot; line <arg fmt="%s" index="2">346</arg>: Output port &lt;<arg fmt="%s" index="3">vfat2s_data_o[15]_sbits</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">vfat2_buffers_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd</arg>&quot; line <arg fmt="%s" index="2">343</arg>: Output port &lt;<arg fmt="%s" index="3">vfat2s_data_o[15]_sbits</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">vfat2_buffers_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd</arg>&quot; line <arg fmt="%s" index="2">346</arg>: Output port &lt;<arg fmt="%s" index="3">vfat2s_data_o[14]_sbits</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">vfat2_buffers_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd</arg>&quot; line <arg fmt="%s" index="2">343</arg>: Output port &lt;<arg fmt="%s" index="3">vfat2s_data_o[14]_sbits</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">vfat2_buffers_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd</arg>&quot; line <arg fmt="%s" index="2">346</arg>: Output port &lt;<arg fmt="%s" index="3">vfat2s_data_o[13]_sbits</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">vfat2_buffers_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd</arg>&quot; line <arg fmt="%s" index="2">343</arg>: Output port &lt;<arg fmt="%s" index="3">vfat2s_data_o[13]_sbits</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">vfat2_buffers_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd</arg>&quot; line <arg fmt="%s" index="2">346</arg>: Output port &lt;<arg fmt="%s" index="3">vfat2s_data_o[12]_sbits</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">vfat2_buffers_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd</arg>&quot; line <arg fmt="%s" index="2">343</arg>: Output port &lt;<arg fmt="%s" index="3">vfat2s_data_o[12]_sbits</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">vfat2_buffers_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd</arg>&quot; line <arg fmt="%s" index="2">346</arg>: Output port &lt;<arg fmt="%s" index="3">vfat2s_data_o[11]_sbits</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">vfat2_buffers_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd</arg>&quot; line <arg fmt="%s" index="2">343</arg>: Output port &lt;<arg fmt="%s" index="3">vfat2s_data_o[11]_sbits</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">vfat2_buffers_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd</arg>&quot; line <arg fmt="%s" index="2">346</arg>: Output port &lt;<arg fmt="%s" index="3">vfat2s_data_o[10]_sbits</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">vfat2_buffers_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd</arg>&quot; line <arg fmt="%s" index="2">343</arg>: Output port &lt;<arg fmt="%s" index="3">vfat2s_data_o[10]_sbits</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">vfat2_buffers_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd</arg>&quot; line <arg fmt="%s" index="2">346</arg>: Output port &lt;<arg fmt="%s" index="3">vfat2s_data_o[9]_sbits</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">vfat2_buffers_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd</arg>&quot; line <arg fmt="%s" index="2">343</arg>: Output port &lt;<arg fmt="%s" index="3">vfat2s_data_o[9]_sbits</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">vfat2_buffers_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd</arg>&quot; line <arg fmt="%s" index="2">346</arg>: Output port &lt;<arg fmt="%s" index="3">vfat2s_data_o[8]_sbits</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">vfat2_buffers_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd</arg>&quot; line <arg fmt="%s" index="2">343</arg>: Output port &lt;<arg fmt="%s" index="3">vfat2s_data_o[8]_sbits</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">vfat2_buffers_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd</arg>&quot; line <arg fmt="%s" index="2">346</arg>: Output port &lt;<arg fmt="%s" index="3">vfat2s_data_o[7]_sbits</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">vfat2_buffers_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd</arg>&quot; line <arg fmt="%s" index="2">343</arg>: Output port &lt;<arg fmt="%s" index="3">vfat2s_data_o[7]_sbits</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">vfat2_buffers_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd</arg>&quot; line <arg fmt="%s" index="2">346</arg>: Output port &lt;<arg fmt="%s" index="3">vfat2s_data_o[6]_sbits</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">vfat2_buffers_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd</arg>&quot; line <arg fmt="%s" index="2">343</arg>: Output port &lt;<arg fmt="%s" index="3">vfat2s_data_o[6]_sbits</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">vfat2_buffers_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd</arg>&quot; line <arg fmt="%s" index="2">346</arg>: Output port &lt;<arg fmt="%s" index="3">vfat2s_data_o[5]_sbits</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">vfat2_buffers_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd</arg>&quot; line <arg fmt="%s" index="2">343</arg>: Output port &lt;<arg fmt="%s" index="3">vfat2s_data_o[5]_sbits</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">vfat2_buffers_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd</arg>&quot; line <arg fmt="%s" index="2">346</arg>: Output port &lt;<arg fmt="%s" index="3">vfat2s_data_o[4]_sbits</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">vfat2_buffers_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd</arg>&quot; line <arg fmt="%s" index="2">343</arg>: Output port &lt;<arg fmt="%s" index="3">vfat2s_data_o[4]_sbits</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">vfat2_buffers_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd</arg>&quot; line <arg fmt="%s" index="2">346</arg>: Output port &lt;<arg fmt="%s" index="3">vfat2s_data_o[3]_sbits</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">vfat2_buffers_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd</arg>&quot; line <arg fmt="%s" index="2">343</arg>: Output port &lt;<arg fmt="%s" index="3">vfat2s_data_o[3]_sbits</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">vfat2_buffers_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd</arg>&quot; line <arg fmt="%s" index="2">346</arg>: Output port &lt;<arg fmt="%s" index="3">vfat2s_data_o[2]_sbits</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">vfat2_buffers_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd</arg>&quot; line <arg fmt="%s" index="2">343</arg>: Output port &lt;<arg fmt="%s" index="3">vfat2s_data_o[2]_sbits</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">vfat2_buffers_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd</arg>&quot; line <arg fmt="%s" index="2">346</arg>: Output port &lt;<arg fmt="%s" index="3">vfat2s_data_o[1]_sbits</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">vfat2_buffers_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd</arg>&quot; line <arg fmt="%s" index="2">343</arg>: Output port &lt;<arg fmt="%s" index="3">vfat2s_data_o[1]_sbits</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">vfat2_buffers_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd</arg>&quot; line <arg fmt="%s" index="2">346</arg>: Output port &lt;<arg fmt="%s" index="3">vfat2s_data_o[0]_sbits</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">vfat2_buffers_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd</arg>&quot; line <arg fmt="%s" index="2">343</arg>: Output port &lt;<arg fmt="%s" index="3">vfat2s_data_o[0]_sbits</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">vfat2_buffers_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd</arg>&quot; line <arg fmt="%s" index="2">836</arg>: Output port &lt;<arg fmt="%s" index="3">ASYNC_OUT</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">chipscope_vio_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd</arg>&quot; line <arg fmt="%s" index="2">468</arg>: Output port &lt;<arg fmt="%s" index="3">clk_50Mhz_o</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">pll_inst</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">\\psf\home\Documents\PhD\Code\OptoHybrid_v1.5\src\optohybrid_top.vhd</arg>&quot; line <arg fmt="%s" index="2">834</arg>: Output port &lt;<arg fmt="%s" index="3">ASYNC_OUT</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">chipscope_vio_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
 <msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">vfat2_scl&lt;3:2&gt;</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
@@ -26439,55 +26439,103 @@ You should achieve better results by setting this init to <arg fmt="%i" index="3
 <msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">link_tracking_2_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/ctrlfsmprev_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">optohybrid_top</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/i2creg.timer_11</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/track_7_inst/data_o_188</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/i2creg.timer_11</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/track_7_inst/data_o_173</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/track_0_inst/data_o_188</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/track_7_inst/data_o_172</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/track_0_inst/data_o_190</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/track_1_inst/data_o_188</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/track_1_inst/data_o_190</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/track_2_inst/data_o_188</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/track_2_inst/data_o_190</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/track_3_inst/data_o_188</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/track_4_inst/data_o_188</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/track_4_inst/data_o_190</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/track_5_inst/data_o_188</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/track_5_inst/data_o_190</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/track_6_inst/data_o_188</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1710" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/track_7_inst/data_o_156</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
 <msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/track_6_inst/data_o_190</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/track_7_inst/data_o_190</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/track_6_inst/data_o_188</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/track_6_inst/data_o_173</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/track_6_inst/data_o_172</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/track_5_inst/data_o_188</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/track_5_inst/data_o_173</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/track_5_inst/data_o_172</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/track_4_inst/data_o_190</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/track_4_inst/data_o_188</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/track_4_inst/data_o_172</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/track_4_inst/data_o_156</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/track_3_inst/data_o_188</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/track_3_inst/data_o_173</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/track_2_inst/data_o_190</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/track_2_inst/data_o_188</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/track_2_inst/data_o_172</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/track_1_inst/data_o_190</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/track_1_inst/data_o_188</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/track_1_inst/data_o_173</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/track_1_inst/data_o_172</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/track_0_inst/data_o_190</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/track_0_inst/data_o_188</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/track_0_inst/data_o_173</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/track_0_inst/data_o_172</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/i2creg.timer_11</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/i2creg.timer_11</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
 <msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/track_7_inst/data_o_188</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/track_7_inst/data_o_173</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/track_7_inst/data_o_172</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
 <msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/track_6_inst/data_o_190</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
@@ -26496,7 +26544,25 @@ You should achieve better results by setting this init to <arg fmt="%i" index="3
 <msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/track_6_inst/data_o_188</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/track_6_inst/data_o_173</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/track_6_inst/data_o_172</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/track_5_inst/data_o_190</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
 <msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/track_5_inst/data_o_188</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/track_5_inst/data_o_173</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/track_5_inst/data_o_172</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/track_5_inst/data_o_156</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
 <msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/track_4_inst/data_o_190</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
@@ -26505,10 +26571,16 @@ You should achieve better results by setting this init to <arg fmt="%i" index="3
 <msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/track_4_inst/data_o_188</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/track_7_inst/data_o_188</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/track_4_inst/data_o_173</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
 <msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/track_7_inst/data_o_190</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/track_0_inst/data_o_172</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/track_0_inst/data_o_173</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
 <msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/track_0_inst/data_o_188</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
@@ -26517,10 +26589,7 @@ You should achieve better results by setting this init to <arg fmt="%i" index="3
 <msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/track_0_inst/data_o_190</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/track_3_inst/data_o_188</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/track_2_inst/data_o_188</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1710" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/track_1_inst/data_o_172</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
 <msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/track_1_inst/data_o_188</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
@@ -26529,88 +26598,205 @@ You should achieve better results by setting this init to <arg fmt="%i" index="3
 <msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/track_1_inst/data_o_190</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_6_188</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/track_3_inst/data_o_190</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_6_190</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/track_3_inst/data_o_188</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_7_188</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1710" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/track_3_inst/data_o_173</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_7_190</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/track_3_inst/data_o_172</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_5_188</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/track_2_inst/data_o_172</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_5_190</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/track_2_inst/data_o_173</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_4_188</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/track_2_inst/data_o_188</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_4_190</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_1_188</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_1_190</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_3_188</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_2_188</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_2_190</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_0_188</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/track_2_inst/data_o_190</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
 <msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_0_190</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_6_188</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_0_188</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_6_190</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_0_173</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_7_188</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_0_172</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_7_190</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_2_190</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_5_188</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_2_188</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_4_188</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_2_172</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_4_190</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_3_188</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_1_188</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_3_173</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_1_190</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_1_190</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_3_188</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_1_188</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_2_188</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_1_173</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_1_172</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_4_190</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_4_188</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_4_172</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_4_156</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_5_188</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_5_173</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_5_172</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_7_190</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_7_188</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_7_173</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_7_172</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_7_156</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_6_190</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_6_188</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_6_173</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_6_172</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_0_190</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
 <msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_0_188</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_0_190</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_0_173</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_0_172</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_2_190</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_2_188</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_2_173</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_2_172</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_3_190</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_3_188</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_3_173</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_3_172</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_1_190</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_1_188</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_1_172</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_4_190</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_4_188</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_4_173</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_5_190</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_5_188</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_5_173</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_5_172</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_5_156</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_7_188</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_7_173</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_7_172</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_6_190</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_6_188</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_6_173</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_6_172</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
 <msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_o_188</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">optohybrid_top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
@@ -26622,37 +26808,52 @@ You should achieve better results by setting this init to <arg fmt="%i" index="3
 <msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/chopexecfsm_FSM_FFd2</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">optohybrid_top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;link_tracking_2_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/exec&gt; </arg>
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_6_191</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">optohybrid_top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_6_189&gt; </arg>
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/track_3_inst/data_o_175</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">optohybrid_top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;link_tracking_0_inst/tracking_core_inst/track_3_inst/data_o_174&gt; </arg>
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/track_0_inst/data_o_191</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">optohybrid_top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;link_tracking_0_inst/tracking_core_inst/track_0_inst/data_o_189&gt; </arg>
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_6_175</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">optohybrid_top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">3 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_6_174&gt; &lt;link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_6_159&gt; &lt;link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_6_157&gt; </arg>
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/track_0_inst/data_o_191</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">optohybrid_top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;link_tracking_2_inst/tracking_core_inst/track_0_inst/data_o_189&gt; </arg>
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_1_175</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">optohybrid_top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_1_158&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/track_0_inst/data_o_175</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">optohybrid_top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;link_tracking_0_inst/tracking_core_inst/track_0_inst/data_o_174&gt; </arg>
 </msg>
 
 <msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/enable_reg</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">optohybrid_top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;link_tracking_2_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/enable_reg&gt; </arg>
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/track_1_inst/data_o_191</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">optohybrid_top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;link_tracking_0_inst/tracking_core_inst/track_1_inst/data_o_189&gt; </arg>
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/track_1_inst/data_o_175</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">optohybrid_top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;link_tracking_2_inst/tracking_core_inst/track_1_inst/data_o_158&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/track_1_inst/data_o_189</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">optohybrid_top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;link_tracking_0_inst/tracking_core_inst/track_1_inst/data_o_174&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_3_175</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">optohybrid_top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_3_174&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_7_189</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">optohybrid_top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_7_174&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/track_6_inst/data_o_175</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">optohybrid_top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">3 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;link_tracking_0_inst/tracking_core_inst/track_6_inst/data_o_174&gt; &lt;link_tracking_0_inst/tracking_core_inst/track_6_inst/data_o_159&gt; &lt;link_tracking_0_inst/tracking_core_inst/track_6_inst/data_o_157&gt; </arg>
 </msg>
 
 <msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/vi2c_core_inst/vi2c_wrapper_inst/enable</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">optohybrid_top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;link_tracking_2_inst/vi2c_core_inst/vi2c_wrapper_inst/enable&gt; </arg>
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/track_6_inst/data_o_191</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">optohybrid_top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;link_tracking_0_inst/tracking_core_inst/track_6_inst/data_o_189&gt; </arg>
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/main.timer_10</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">optohybrid_top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;link_tracking_2_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/main.timer_10&gt; </arg>
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/main.timer_10</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">optohybrid_top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;link_tracking_2_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/main.timer_10&gt; </arg>
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/track_7_inst/data_o_189</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">optohybrid_top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;link_tracking_0_inst/tracking_core_inst/track_7_inst/data_o_174&gt; </arg>
 </msg>
 
 <msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/main.timer_11</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">optohybrid_top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;link_tracking_2_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/main.timer_11&gt; </arg>
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/chopexecfsm_FSM_FFd2</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">optohybrid_top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;link_tracking_0_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/exec&gt; </arg>
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_0_175</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">optohybrid_top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_0_174&gt; </arg>
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_0_191</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">optohybrid_top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_0_189&gt; </arg>
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_4_189</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">optohybrid_top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">4 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_4_175&gt; &lt;link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_4_174&gt; &lt;link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_4_159&gt; &lt;link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_4_157&gt; </arg>
 </msg>
 
 <msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/main.timer_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">optohybrid_top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;link_tracking_2_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/main.timer_0&gt; </arg>
@@ -26676,6 +26877,9 @@ You should achieve better results by setting this init to <arg fmt="%i" index="3
 <msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/main.timer_6</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">optohybrid_top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;link_tracking_2_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/main.timer_6&gt; </arg>
 </msg>
 
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/track_4_inst/data_o_189</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">optohybrid_top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">4 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;link_tracking_0_inst/tracking_core_inst/track_4_inst/data_o_175&gt; &lt;link_tracking_0_inst/tracking_core_inst/track_4_inst/data_o_174&gt; &lt;link_tracking_0_inst/tracking_core_inst/track_4_inst/data_o_159&gt; &lt;link_tracking_0_inst/tracking_core_inst/track_4_inst/data_o_157&gt; </arg>
+</msg>
+
 <msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/main.timer_7</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">optohybrid_top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;link_tracking_2_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/main.timer_7&gt; </arg>
 </msg>
 
@@ -26685,10 +26889,13 @@ You should achieve better results by setting this init to <arg fmt="%i" index="3
 <msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/main.timer_9</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">optohybrid_top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;link_tracking_2_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/main.timer_9&gt; </arg>
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_0_191</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">optohybrid_top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;link_tracking_2_inst/tracking_core_inst/tracking_concentrator_inst/data_0_189&gt; </arg>
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/track_5_inst/data_o_175</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">optohybrid_top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">2 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;link_tracking_0_inst/tracking_core_inst/track_5_inst/data_o_174&gt; &lt;link_tracking_0_inst/tracking_core_inst/track_5_inst/data_o_157&gt; </arg>
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_1_191</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">optohybrid_top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_1_189&gt; </arg>
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_5_175</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">optohybrid_top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">2 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_5_174&gt; &lt;link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_5_157&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_1_189</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">optohybrid_top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;link_tracking_0_inst/tracking_core_inst/tracking_concentrator_inst/data_1_174&gt; </arg>
 </msg>
 
 <msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">link_tracking_0_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/en</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">optohybrid_top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">3 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;link_tracking_2_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u1/en&gt; &lt;link_tracking_0_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/reg_in.ff&gt; &lt;link_tracking_2_inst/vi2c_core_inst/vi2c_wrapper_inst/i2c_master_inst/u2/reg_in.ff&gt; </arg>
