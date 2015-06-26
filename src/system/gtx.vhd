@@ -24,7 +24,7 @@ port(
     tx_n_o          : out std_logic_vector(3 downto 0);
     tx_p_o          : out std_logic_vector(3 downto 0);
 
-    gtx_clk      : in std_logic
+    gtx_clk      	  : in std_logic
     
 );
 end gtx_wrapper;

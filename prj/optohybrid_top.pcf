@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Wed Jun 10 14:26:45 2015
+// Written by: Map P.20131013 on Thu Jun 25 11:05:41 2015
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -105,10 +105,10 @@ COMP "vfat2_t1_p_o<1>" LOCATE = SITE "K18" LEVEL 1;
 COMP "vfat2_t1_p_o<2>" LOCATE = SITE "AG20" LEVEL 1;
 COMP "vfat2_2_data_out_n_i" LOCATE = SITE "H30" LEVEL 1;
 COMP "vfat2_2_data_out_p_i" LOCATE = SITE "G31" LEVEL 1;
-COMP "gtx_wrapper_inst/gtx_2_inst/gtxe1_i" LOCATE = SITE "GTXE1_X0Y2" LEVEL 1;
-COMP "gtx_wrapper_inst/gtx_1_inst/gtxe1_i" LOCATE = SITE "GTXE1_X0Y1" LEVEL 1;
+COMP "gtx_wrapper_inst/gtx_2_inst/gtxe1_i" LOCATE = SITE "GTXE1_X0Y4" LEVEL 1;
+COMP "gtx_wrapper_inst/gtx_1_inst/gtxe1_i" LOCATE = SITE "GTXE1_X0Y2" LEVEL 1;
 COMP "gtx_wrapper_inst/gtx_0_inst/gtxe1_i" LOCATE = SITE "GTXE1_X0Y0" LEVEL 1;
-COMP "gtx_wrapper_inst/gtx_3_inst/gtxe1_i" LOCATE = SITE "GTXE1_X0Y3" LEVEL 1;
+COMP "gtx_wrapper_inst/gtx_3_inst/gtxe1_i" LOCATE = SITE "GTXE1_X0Y6" LEVEL 1;
 PIN MMCM_PHASE_CALIBRATION_ML_LUT2_8_pins<2> = BEL
         "MMCM_PHASE_CALIBRATION_ML_LUT2_8" PINNAME O6;
 PIN MMCM_PHASE_CALIBRATION_ML_FDCPE_I0_7_pins<2> = BEL

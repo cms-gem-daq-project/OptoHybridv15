@@ -1,7 +1,7 @@
 Release 14.7 - par P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Wed Jun 10 14:28:17 2015
+Thu Jun 25 11:07:33 2015
 
 
 INFO: The IO information is provided in three file formats as part of the Place and Route (PAR) process.  These formats are:
@@ -156,8 +156,8 @@ Pinout by Pin Number:
 |AC32      |                       |IOBS     |IO_L12N_VRP_13            |UNUSED   |           |13            |          |         |           |         |         |          |           |                |
 |AC33      |                       |IOBM     |IO_L4P_13                 |UNUSED   |           |13            |          |         |           |         |         |          |           |                |
 |AC34      |                       |IOBS     |IO_L2N_13                 |UNUSED   |           |13            |          |         |           |         |         |          |           |                |
-|AD1       |                       |OPAD     |MGTTXP2_113               |UNUSED   |           |              |          |         |           |         |         |          |           |                |
-|AD2       |                       |OPAD     |MGTTXN2_113               |UNUSED   |           |              |          |         |           |         |         |          |           |                |
+|AD1       |mgt_112_tx_p_o<3>      |OPAD     |MGTTXP2_113               |         |           |              |          |         |           |         |         |          |NO         |                |
+|AD2       |mgt_112_tx_n_o<3>      |OPAD     |MGTTXN2_113               |         |           |              |          |         |           |         |         |          |NO         |                |
 |AD3       |                       |         |MGTAVTT_S                 |         |           |              |          |         |           |         |         |          |           |                |
 |AD4       |                       |         |GND                       |         |           |              |          |         |           |         |         |          |           |                |
 |AD5       |                       |IPAD     |MGTREFCLK0N_113           |UNUSED   |           |              |          |         |           |         |         |          |           |                |
@@ -192,8 +192,8 @@ Pinout by Pin Number:
 |AD34      |                       |IOBM     |IO_L2P_13                 |UNUSED   |           |13            |          |         |           |         |         |          |           |                |
 |AE1       |                       |         |GND                       |         |           |              |          |         |           |         |         |          |           |                |
 |AE2       |                       |         |GND                       |         |           |              |          |         |           |         |         |          |           |                |
-|AE3       |                       |IPAD     |MGTRXP2_113               |UNUSED   |           |              |          |         |           |         |         |          |           |                |
-|AE4       |                       |IPAD     |MGTRXN2_113               |UNUSED   |           |              |          |         |           |         |         |          |           |                |
+|AE3       |mgt_112_rx_p_i<3>      |IPAD     |MGTRXP2_113               |         |           |              |          |         |           |         |         |          |NO         |                |
+|AE4       |mgt_112_rx_n_i<3>      |IPAD     |MGTRXN2_113               |         |           |              |          |         |           |         |         |          |NO         |                |
 |AE5       |                       |         |GND                       |         |           |              |          |         |           |         |         |          |           |                |
 |AE6       |                       |         |MGTAVCC_S                 |         |           |              |          |         |           |         |         |          |           |                |
 |AE7       |                       |         |GND                       |         |           |              |          |         |           |         |         |          |           |                |
@@ -260,8 +260,8 @@ Pinout by Pin Number:
 |AF34      |                       |IOBS     |IO_L8N_SRCC_13            |UNUSED   |           |13            |          |         |           |         |         |          |           |                |
 |AG1       |                       |         |GND                       |         |           |              |          |         |           |         |         |          |           |                |
 |AG2       |                       |         |MGTAVTT_S                 |         |           |              |          |         |           |         |         |          |           |                |
-|AG3       |                       |IPAD     |MGTRXP0_113               |UNUSED   |           |              |          |         |           |         |         |          |           |                |
-|AG4       |                       |IPAD     |MGTRXN0_113               |UNUSED   |           |              |          |         |           |         |         |          |           |                |
+|AG3       |mgt_112_rx_p_i<2>      |IPAD     |MGTRXP0_113               |         |           |              |          |         |           |         |         |          |NO         |                |
+|AG4       |mgt_112_rx_n_i<2>      |IPAD     |MGTRXN0_113               |         |           |              |          |         |           |         |         |          |NO         |                |
 |AG5       |                       |         |GND                       |         |           |              |          |         |           |         |         |          |           |                |
 |AG6       |                       |         |MGTAVCC_S                 |         |           |              |          |         |           |         |         |          |           |                |
 |AG7       |                       |         |GND                       |         |           |              |          |         |           |         |         |          |           |                |
@@ -292,8 +292,8 @@ Pinout by Pin Number:
 |AG32      |                       |IOBS     |IO_L16N_13                |UNUSED   |           |13            |          |         |           |         |         |          |           |                |
 |AG33      |                       |IOBM     |IO_L16P_13                |UNUSED   |           |13            |          |         |           |         |         |          |           |                |
 |AG34      |                       |         |VCCO_12                   |         |           |12            |          |         |           |         |any******|          |           |                |
-|AH1       |                       |OPAD     |MGTTXP0_113               |UNUSED   |           |              |          |         |           |         |         |          |           |                |
-|AH2       |                       |OPAD     |MGTTXN0_113               |UNUSED   |           |              |          |         |           |         |         |          |           |                |
+|AH1       |mgt_112_tx_p_o<2>      |OPAD     |MGTTXP0_113               |         |           |              |          |         |           |         |         |          |NO         |                |
+|AH2       |mgt_112_tx_n_o<2>      |OPAD     |MGTTXN0_113               |         |           |              |          |         |           |         |         |          |NO         |                |
 |AH3       |                       |         |MGTAVTT_S                 |         |           |              |          |         |           |         |         |          |           |                |
 |AH4       |                       |         |GND                       |         |           |              |          |         |           |         |         |          |           |                |
 |AH5       |                       |IPAD     |MGTREFCLK1N_112           |UNUSED   |           |              |          |         |           |         |         |          |           |                |
@@ -328,8 +328,8 @@ Pinout by Pin Number:
 |AH34      |                       |IOBS     |IO_L4N_VREF_12            |UNUSED   |           |12            |          |         |           |         |         |          |           |                |
 |AJ1       |                       |         |GND                       |         |           |              |          |         |           |         |         |          |           |                |
 |AJ2       |                       |         |GND                       |         |           |              |          |         |           |         |         |          |           |                |
-|AJ3       |mgt_112_rx_p_i<3>      |IPAD     |MGTRXP3_112               |         |           |              |          |         |           |         |         |          |NO         |                |
-|AJ4       |mgt_112_rx_n_i<3>      |IPAD     |MGTRXN3_112               |         |           |              |          |         |           |         |         |          |NO         |                |
+|AJ3       |                       |IPAD     |MGTRXP3_112               |UNUSED   |           |              |          |         |           |         |         |          |           |                |
+|AJ4       |                       |IPAD     |MGTRXN3_112               |UNUSED   |           |              |          |         |           |         |         |          |           |                |
 |AJ5       |                       |         |GND                       |         |           |              |          |         |           |         |         |          |           |                |
 |AJ6       |                       |         |MGTAVCC_S                 |         |           |              |          |         |           |         |         |          |           |                |
 |AJ7       |                       |         |GND                       |         |           |              |          |         |           |         |         |          |           |                |
@@ -360,8 +360,8 @@ Pinout by Pin Number:
 |AJ32      |                       |IOBS     |IO_L12N_VRP_12            |UNUSED   |           |12            |          |         |           |         |         |          |           |                |
 |AJ33      |                       |         |GND                       |         |           |              |          |         |           |         |         |          |           |                |
 |AJ34      |                       |IOBM     |IO_L4P_12                 |UNUSED   |           |12            |          |         |           |         |         |          |           |                |
-|AK1       |mgt_112_tx_p_o<3>      |OPAD     |MGTTXP3_112               |         |           |              |          |         |           |         |         |          |NO         |                |
-|AK2       |mgt_112_tx_n_o<3>      |OPAD     |MGTTXN3_112               |         |           |              |          |         |           |         |         |          |NO         |                |
+|AK1       |                       |OPAD     |MGTTXP3_112               |UNUSED   |           |              |          |         |           |         |         |          |           |                |
+|AK2       |                       |OPAD     |MGTTXN3_112               |UNUSED   |           |              |          |         |           |         |         |          |           |                |
 |AK3       |                       |         |GND                       |         |           |              |          |         |           |         |         |          |           |                |
 |AK4       |                       |         |GND                       |         |           |              |          |         |           |         |         |          |           |                |
 |AK5       |                       |IPAD     |MGTREFCLK0N_112           |UNUSED   |           |              |          |         |           |         |         |          |           |                |
@@ -396,8 +396,8 @@ Pinout by Pin Number:
 |AK34      |                       |IOBS     |IO_L6N_12                 |UNUSED   |           |12            |          |         |           |         |         |          |           |                |
 |AL1       |                       |         |GND                       |         |           |              |          |         |           |         |         |          |           |                |
 |AL2       |                       |         |MGTAVTT_S                 |         |           |              |          |         |           |         |         |          |           |                |
-|AL3       |mgt_112_rx_p_i<2>      |IPAD     |MGTRXP2_112               |         |           |              |          |         |           |         |         |          |NO         |                |
-|AL4       |mgt_112_rx_n_i<2>      |IPAD     |MGTRXN2_112               |         |           |              |          |         |           |         |         |          |NO         |                |
+|AL3       |mgt_112_rx_p_i<1>      |IPAD     |MGTRXP2_112               |         |           |              |          |         |           |         |         |          |NO         |                |
+|AL4       |mgt_112_rx_n_i<1>      |IPAD     |MGTRXN2_112               |         |           |              |          |         |           |         |         |          |NO         |                |
 |AL5       |                       |         |GND                       |         |           |              |          |         |           |         |         |          |           |                |
 |AL6       |                       |         |MGTAVCC_S                 |         |           |              |          |         |           |         |         |          |           |                |
 |AL7       |                       |         |GND                       |         |           |              |          |         |           |         |         |          |           |                |
@@ -428,12 +428,12 @@ Pinout by Pin Number:
 |AL32      |                       |         |VCCO_12                   |         |           |12            |          |         |           |         |any******|          |           |                |
 |AL33      |                       |IOBS     |IO_L16N_12                |UNUSED   |           |12            |          |         |           |         |         |          |           |                |
 |AL34      |                       |IOBM     |IO_L6P_12                 |UNUSED   |           |12            |          |         |           |         |         |          |           |                |
-|AM1       |mgt_112_tx_p_o<2>      |OPAD     |MGTTXP2_112               |         |           |              |          |         |           |         |         |          |NO         |                |
-|AM2       |mgt_112_tx_n_o<2>      |OPAD     |MGTTXN2_112               |         |           |              |          |         |           |         |         |          |NO         |                |
+|AM1       |mgt_112_tx_p_o<1>      |OPAD     |MGTTXP2_112               |         |           |              |          |         |           |         |         |          |NO         |                |
+|AM2       |mgt_112_tx_n_o<1>      |OPAD     |MGTTXN2_112               |         |           |              |          |         |           |         |         |          |NO         |                |
 |AM3       |                       |         |MGTAVTT_S                 |         |           |              |          |         |           |         |         |          |           |                |
 |AM4       |                       |         |GND                       |         |           |              |          |         |           |         |         |          |           |                |
-|AM5       |mgt_112_rx_p_i<1>      |IPAD     |MGTRXP1_112               |         |           |              |          |         |           |         |         |          |NO         |                |
-|AM6       |mgt_112_rx_n_i<1>      |IPAD     |MGTRXN1_112               |         |           |              |          |         |           |         |         |          |NO         |                |
+|AM5       |                       |IPAD     |MGTRXP1_112               |UNUSED   |           |              |          |         |           |         |         |          |           |                |
+|AM6       |                       |IPAD     |MGTRXN1_112               |UNUSED   |           |              |          |         |           |         |         |          |           |                |
 |AM7       |                       |         |GND                       |         |           |              |          |         |           |         |         |          |           |                |
 |AM8       |                       |         |GND                       |         |           |              |          |         |           |         |         |          |           |                |
 |AM9       |                       |         |VCCO_34                   |         |           |34            |          |         |           |         |2.50     |          |           |                |
@@ -464,8 +464,8 @@ Pinout by Pin Number:
 |AM34      |                       |         |GND                       |         |           |              |          |         |           |         |         |          |           |                |
 |AN1       |                       |         |GND                       |         |           |              |          |         |           |         |         |          |           |                |
 |AN2       |                       |         |GND                       |         |           |              |          |         |           |         |         |          |           |                |
-|AN3       |mgt_112_tx_p_o<1>      |OPAD     |MGTTXP1_112               |         |           |              |          |         |           |         |         |          |NO         |                |
-|AN4       |mgt_112_tx_n_o<1>      |OPAD     |MGTTXN1_112               |         |           |              |          |         |           |         |         |          |NO         |                |
+|AN3       |                       |OPAD     |MGTTXP1_112               |UNUSED   |           |              |          |         |           |         |         |          |           |                |
+|AN4       |                       |OPAD     |MGTTXN1_112               |UNUSED   |           |              |          |         |           |         |         |          |           |                |
 |AN5       |                       |         |GND                       |         |           |              |          |         |           |         |         |          |           |                |
 |AN6       |                       |         |MGTAVCC_S                 |         |           |              |          |         |           |         |         |          |           |                |
 |AN7       |                       |         |MGTRREF_115               |         |           |              |          |         |           |         |         |          |           |                |
@@ -787,7 +787,7 @@ Pinout by Pin Number:
 |J17       |                       |IOBM     |IO_L14P_36                |UNUSED   |           |36            |          |         |           |         |         |          |           |                |
 |J18       |                       |         |VCCO_36                   |         |           |36            |          |         |           |         |2.50     |          |           |                |
 |J19       |vfat2_mclk_n_o<1>      |IOBS     |IO_L6N_36                 |OUTPUT   |LVDS_25    |36            |          |         |           |         |         |LOCATED   |NO         |NONE            |
-|J20       |vfat2_sda_io<3>        |IOB      |IO_L4P_26                 |TRISTATE |LVCMOS25*  |26            |12        |SLOW     |           |         |         |LOCATED   |NO         |NONE            |
+|J20       |vfat2_sda_io<3>        |IOB      |IO_L4P_26                 |BIDIR    |LVCMOS25*  |26            |12        |SLOW     |           |NONE     |         |LOCATED   |YES        |NONE            |
 |J21       |vfat2_scl_o<3>         |IOB      |IO_L4N_VREF_26            |OUTPUT   |LVCMOS25*  |26            |12        |SLOW     |           |         |         |LOCATED   |NO         |NONE            |
 |J22       |                       |IOBS     |IO_L14N_VREF_26           |UNUSED   |           |26            |          |         |           |         |         |          |           |                |
 |J23       |                       |         |GND                       |         |           |              |          |         |           |         |         |          |           |                |
@@ -1167,7 +1167,7 @@ Pinout by Pin Number:
 |Y23       |                       |         |VCCAUX                    |         |           |              |          |         |           |         |2.5      |          |           |                |
 |Y24       |                       |IOBM     |IO_L14P_FCS_B_24          |UNUSED   |           |24            |          |         |           |         |         |          |           |                |
 |Y25       |                       |         |VCCO_24                   |         |           |24            |          |         |           |         |2.50     |          |           |                |
-|Y26       |vfat2_sda_io<2>        |IOB      |IO_L6N_13                 |TRISTATE |LVCMOS25*  |13            |12        |SLOW     |           |         |         |LOCATED   |NO         |NONE            |
+|Y26       |vfat2_sda_io<2>        |IOB      |IO_L6N_13                 |BIDIR    |LVCMOS25*  |13            |12        |SLOW     |           |NONE     |         |LOCATED   |YES        |NONE            |
 |Y27       |vfat2_data_valid_n_i<2>|IOB      |IO_L17N_14                |         |LVDS_25    |14            |          |         |           |         |         |LOCATED   |NO         |DIFF_TERM       |
 |Y28       |vfat2_data_valid_p_i<2>|IOB      |IO_L17P_14                |INPUT    |LVDS_25    |14            |          |         |           |NONE     |         |LOCATED   |NO         |DIFF_TERM       |
 |Y29       |                       |IOBS     |IO_L15N_14                |UNUSED   |           |14            |          |         |           |         |         |          |           |                |
