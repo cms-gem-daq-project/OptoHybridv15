@@ -262,6 +262,9 @@ architecture Behavioral of optohybrid_top is
     signal request_write_1              : array32(63 downto 0) := (others => (others => '0'));
     signal request_tri_1                : std_logic_vector(63 downto 0);
     
+    signal request_write_2              : array32(63 downto 0) := (others => (others => '0'));
+    signal request_tri_2                : std_logic_vector(63 downto 0);
+    
     signal request_write                : array32(63 downto 0) := (others => (others => '0'));
     signal request_tri                  : std_logic_vector(63 downto 0);
     signal request_read                 : array32(63 downto 0) := (others => (others => '0'));
@@ -333,6 +336,8 @@ architecture Behavioral of optohybrid_top is
     signal cs_ila1                  : std_logic_vector(31 downto 0);
     signal cs_ila2                  : std_logic_vector(31 downto 0);
     signal cs_ila3                  : std_logic_vector(31 downto 0);
+	 
+	 signal gtx_clk_select				: std_logic;
     
 begin
 
@@ -474,17 +479,6 @@ begin
         pll_locked_o    => pll_locked
     );    
     
---    pll_ext : entity work.ext_pll
---    port map(
---        clk_40MHz_i     => tmds_d_p_io(0), 
---        clk_40MHz_o     => clk_40MHz_ext,
---        clk_160MHz_o    => clk_160MHz_ext,
---        locked_o        => pll_locked
---    );    
-    
---    vfat2_mclk <= clk_40MHz_ext;
---    gtx_ref_clk <= clk_160MHz_ext;
-
     vfat2_mclk <= clk_40MHz;
     gtx_ref_clk <= clk_160MHz;
    
@@ -501,21 +495,21 @@ begin
     
     gtx_clk_inst : ibufds_gtxe1 port map(o => open, odiv2 => open, ceb => '0', i => mgt_112_clk0_p_i, ib => mgt_112_clk0_n_i);  
     
-    gtx_wrapper_inst : entity work.gtx_wrapper
-    port map(
-        gtx_clk_o       => gtx_clk,
-        reset_i         => gtp_reset(0),
-        rx_error_o      => rx_error,
-        rx_kchar_o      => rx_kchar,
-        rx_data_o       => rx_data,
-        rx_n_i          => mgt_112_rx_n_i,
-        rx_p_i          => mgt_112_rx_p_i,
-        tx_kchar_i      => tx_kchar,
-        tx_data_i       => tx_data,
-        tx_n_o          => mgt_112_tx_n_o,
-        tx_p_o          => mgt_112_tx_p_o,
-        gtx_clk         => gtx_ref_clk
-    );
+	gtx_wrapper_inst : entity work.gtx_wrapper
+	port map(
+		gtx_clk_o       => gtx_clk,
+		reset_i         => gtp_reset(0),
+		rx_error_o      => rx_error,
+		rx_kchar_o      => rx_kchar,
+		rx_data_o       => rx_data,
+		rx_n_i          => mgt_112_rx_n_i,
+		rx_p_i          => mgt_112_rx_p_i,
+		tx_kchar_i      => tx_kchar,
+		tx_data_i       => tx_data,
+		tx_n_o          => mgt_112_tx_n_o,
+		tx_p_o          => mgt_112_tx_p_o,
+		gtx_clk         => gtx_ref_clk
+	);
     
     --== Links ==--
     
@@ -549,6 +543,36 @@ begin
         vfat2_data_7_i  => vfat2_data(7).data_out
     );
     
+    link_tracking_1_inst : entity work.link_tracking
+    port map(
+        gtp_clk_i       => gtx_clk,
+        vfat2_clk_i     => vfat2_mclk,
+        reset_i         => reset,
+        rx_error_i      => rx_error(1),
+        rx_kchar_i      => rx_kchar(3 downto 2),
+        rx_data_i       => rx_data(31 downto 16),
+        tx_kchar_o      => tx_kchar(3 downto 2),
+        tx_data_o       => tx_data(31 downto 16),
+        request_write_o => request_write_1,
+        request_tri_o   => request_tri_1,
+        request_read_i  => request_read,
+        lv1a_sent_i     => t1_lv1a,
+        bx_counter_i    => bx_counter,
+        vfat2_sda_i     => vfat2_sda_in(3 downto 2),
+        vfat2_sda_o     => vfat2_sda_out(3 downto 2),
+        vfat2_sda_t     => vfat2_sda_tri(3 downto 2),
+        vfat2_scl_o     => vfat2_scl(3 downto 2),
+        vfat2_dvalid_i  => vfat2_data_valid(3 downto 2),
+        vfat2_data_0_i  => vfat2_data(8).data_out,
+        vfat2_data_1_i  => vfat2_data(9).data_out,
+        vfat2_data_2_i  => vfat2_data(10).data_out,
+        vfat2_data_3_i  => vfat2_data(11).data_out,
+        vfat2_data_4_i  => vfat2_data(12).data_out,
+        vfat2_data_5_i  => vfat2_data(13).data_out,
+        vfat2_data_6_i  => vfat2_data(14).data_out,
+        vfat2_data_7_i  => vfat2_data(15).data_out
+    );    
+    
     link_tracking_2_inst : entity work.link_tracking
     port map(
         gtp_clk_i       => gtx_clk,
@@ -559,8 +583,8 @@ begin
         rx_data_i       => rx_data(47 downto 32),
         tx_kchar_o      => tx_kchar(5 downto 4),
         tx_data_o       => tx_data(47 downto 32),
-        request_write_o => request_write_1,
-        request_tri_o   => request_tri_1,
+        request_write_o => request_write_2,
+        request_tri_o   => request_tri_2,
         request_read_i  => request_read,
         lv1a_sent_i     => t1_lv1a,
         bx_counter_i    => bx_counter,
@@ -581,8 +605,10 @@ begin
     
     requests: for I in 0 to 63 generate
     begin
-        request_tri(I) <= request_tri_0(I) or request_tri_1(I);
-        request_write(I) <= request_write_0(I) when request_tri_0(I) = '1' else request_write_1(I);
+        request_tri(I) <= request_tri_0(I) or request_tri_1(I) or request_tri_2(I);
+        request_write(I) <= request_write_0(I) when request_tri_0(I) = '1' else 
+                            request_write_1(I) when request_tri_1(I) = '1' else 
+                            request_write_2(I);
     end generate;
     
 --    link_trigger_inst : entity work.link_trigger
@@ -762,7 +788,7 @@ begin
     
     -- Fixed registers : 23 -- read _ firmware version
     
-    request_read(23) <= x"BB150609"; 
+    request_read(23) <= x"AA150623"; 
     
     -- Reserved : 25 downto 24
     
