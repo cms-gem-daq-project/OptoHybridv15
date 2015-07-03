@@ -1,7 +1,7 @@
 ##############################################################
 #
 # Xilinx Core Generator version 14.7
-# Date: Thu Apr 16 07:33:44 2015
+# Date: Fri Jul 03 12:13:47 2015
 #
 ##############################################################
 #
@@ -30,7 +30,7 @@ SET foundationsym = false
 SET implementationfiletype = Ngc
 SET package = ff1156
 SET removerpms = false
-SET simulationfiles = Behavioral
+SET simulationfiles = Structural
 SET speedgrade = -1
 SET verilogsim = false
 SET vhdlsim = true
@@ -113,7 +113,7 @@ CSET match_units_7=1
 CSET match_units_8=1
 CSET match_units_9=1
 CSET max_sequence_levels=1
-CSET number_of_trigger_ports=4
+CSET number_of_trigger_ports=5
 CSET sample_data_depth=1024
 CSET sample_on=Rising
 CSET trigger_port_width_1=32
@@ -127,7 +127,7 @@ CSET trigger_port_width_16=8
 CSET trigger_port_width_2=32
 CSET trigger_port_width_3=32
 CSET trigger_port_width_4=32
-CSET trigger_port_width_5=32
+CSET trigger_port_width_5=192
 CSET trigger_port_width_6=32
 CSET trigger_port_width_7=8
 CSET trigger_port_width_8=8
@@ -138,4 +138,4 @@ CSET use_rpms=false
 MISC pkg_timestamp=2013-10-13T14:13:15Z
 # END Extra information
 GENERATE
-# CRC: 8486e794
+# CRC: 8a24516f
