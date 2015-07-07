@@ -1,7 +1,7 @@
 Release 14.7 par P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-THOMAS-LENZI-PC::  Thu Jun 25 11:05:52 2015
+THOMAS-LENZI-PC::  Fri Jul 03 14:37:20 2015
 
 par -w -intstyle ise -ol high -mt off optohybrid_top_map.ncd optohybrid_top.ncd
 optohybrid_top.pcf 
@@ -35,35 +35,35 @@ Device speed data version:  "PRODUCTION 1.17 2013-10-13".
 Device Utilization Summary:
 
 Slice Logic Utilization:
-  Number of Slice Registers:                21,902 out of 160,000   13%
-    Number used as Flip Flops:              21,894
+  Number of Slice Registers:                22,678 out of 160,000   14%
+    Number used as Flip Flops:              22,670
     Number used as Latches:                      8
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                     13,724 out of  80,000   17%
-    Number used as logic:                   11,813 out of  80,000   14%
-      Number using O6 output only:           9,416
+  Number of Slice LUTs:                     15,129 out of  80,000   18%
+    Number used as logic:                   11,938 out of  80,000   14%
+      Number using O6 output only:           9,537
       Number using O5 output only:             794
-      Number using O5 and O6:                1,603
+      Number using O5 and O6:                1,607
       Number used as ROM:                        0
-    Number used as Memory:                     185 out of  27,840    1%
+    Number used as Memory:                     391 out of  27,840    1%
       Number used as Dual Port RAM:              0
       Number used as Single Port RAM:            0
-      Number used as Shift Register:           185
-        Number using O6 output only:           127
-        Number using O5 output only:             0
-        Number using O5 and O6:                 58
-    Number used exclusively as route-thrus:  1,726
-      Number with same-slice register load:  1,693
+      Number used as Shift Register:           391
+        Number using O6 output only:           246
+        Number using O5 output only:             1
+        Number using O5 and O6:                144
+    Number used exclusively as route-thrus:  2,800
+      Number with same-slice register load:  2,767
       Number with same-slice carry load:        33
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                 6,601 out of  20,000   33%
-  Number of LUT Flip Flop pairs used:       22,691
-    Number with an unused Flip Flop:         2,897 out of  22,691   12%
-    Number with an unused LUT:               8,967 out of  22,691   39%
-    Number of fully used LUT-FF pairs:      10,827 out of  22,691   47%
+  Number of occupied Slices:                 6,335 out of  20,000   31%
+  Number of LUT Flip Flop pairs used:       22,195
+    Number with an unused Flip Flop:         2,788 out of  22,195   12%
+    Number with an unused LUT:               7,066 out of  22,195   31%
+    Number of fully used LUT-FF pairs:      12,341 out of  22,195   55%
     Number of slice register sites lost
       to control set restrictions:               0 out of 160,000    0%
 
@@ -76,8 +76,8 @@ Slice Logic Distribution:
   over-mapped for a non-BRAM resource or if placement fails.
 
 IO Utilization:
-  Number of bonded IOBs:                       102 out of     600   17%
-    Number of LOCed IOBs:                      102 out of     102  100%
+  Number of bonded IOBs:                       486 out of     600   81%
+    Number of LOCed IOBs:                      486 out of     486  100%
     IOB Flip Flops:                              3
     IOB Latches:                                 6
     IOB Master Pads:                             7
@@ -86,8 +86,8 @@ IO Utilization:
     Number of bonded OPADs:                      8
 
 Specific Feature Utilization:
-  Number of RAMB36E1/FIFO36E1s:                 13 out of     264    4%
-    Number using RAMB36E1 only:                 13
+  Number of RAMB36E1/FIFO36E1s:                 18 out of     264    6%
+    Number using RAMB36E1 only:                 18
     Number using FIFO36E1 only:                  0
   Number of RAMB18E1/FIFO18E1s:                  6 out of     528    1%
     Number using RAMB18E1 only:                  6
@@ -123,88 +123,88 @@ Specific Feature Utilization:
 Overall effort level (-ol):   High 
 Router effort level (-rl):    High 
 
-Starting initial Timing Analysis.  REAL time: 14 secs 
-Finished initial Timing Analysis.  REAL time: 14 secs 
+Starting initial Timing Analysis.  REAL time: 15 secs 
+Finished initial Timing Analysis.  REAL time: 15 secs 
 
 WARNING:Par:288 - The signal cdce_clk_n_i_IBUF has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal cdce_clk_p_i_IBUF has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal tmds_d_p_io<0>_IBUF has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal tmds_d_p_io<1>_IBUF has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[28].SYNC_OUT_CELL/out_temp has no load.  PAR will not attempt to route
-   this signal.
+WARNING:Par:288 - The signal chipscope_vio_inst/U0/I_VIO/RESET has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[20].SYNC_OUT_CELL/out_temp has no load.  PAR will not attempt to route
    this signal.
-WARNING:Par:288 - The signal chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[30].SYNC_OUT_CELL/out_temp has no load.  PAR will not attempt to route
-   this signal.
-WARNING:Par:288 - The signal chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[22].SYNC_OUT_CELL/out_temp has no load.  PAR will not attempt to route
-   this signal.
-WARNING:Par:288 - The signal chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[21].SYNC_OUT_CELL/out_temp has no load.  PAR will not attempt to route
-   this signal.
-WARNING:Par:288 - The signal chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[29].SYNC_OUT_CELL/out_temp has no load.  PAR will not attempt to route
-   this signal.
-WARNING:Par:288 - The signal chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[23].SYNC_OUT_CELL/out_temp has no load.  PAR will not attempt to route
+WARNING:Par:288 - The signal chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[28].SYNC_OUT_CELL/out_temp has no load.  PAR will not attempt to route
    this signal.
 WARNING:Par:288 - The signal chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[19].SYNC_OUT_CELL/out_temp has no load.  PAR will not attempt to route
    this signal.
-WARNING:Par:288 - The signal chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[31].SYNC_OUT_CELL/out_temp has no load.  PAR will not attempt to route
+WARNING:Par:288 - The signal chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[18].SYNC_OUT_CELL/out_temp has no load.  PAR will not attempt to route
+   this signal.
+WARNING:Par:288 - The signal chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[17].SYNC_OUT_CELL/out_temp has no load.  PAR will not attempt to route
+   this signal.
+WARNING:Par:288 - The signal chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[21].SYNC_OUT_CELL/out_temp has no load.  PAR will not attempt to route
    this signal.
 WARNING:Par:288 - The signal chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[27].SYNC_OUT_CELL/out_temp has no load.  PAR will not attempt to route
    this signal.
-WARNING:Par:288 - The signal chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[18].SYNC_OUT_CELL/out_temp has no load.  PAR will not attempt to route
+WARNING:Par:288 - The signal chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[29].SYNC_OUT_CELL/out_temp has no load.  PAR will not attempt to route
+   this signal.
+WARNING:Par:288 - The signal chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[30].SYNC_OUT_CELL/out_temp has no load.  PAR will not attempt to route
+   this signal.
+WARNING:Par:288 - The signal chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[26].SYNC_OUT_CELL/out_temp has no load.  PAR will not attempt to route
+   this signal.
+WARNING:Par:288 - The signal chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[22].SYNC_OUT_CELL/out_temp has no load.  PAR will not attempt to route
+   this signal.
+WARNING:Par:288 - The signal chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[23].SYNC_OUT_CELL/out_temp has no load.  PAR will not attempt to route
+   this signal.
+WARNING:Par:288 - The signal chipscope_vio_inst/U0/I_VIO/UPDATE<8> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal chipscope_vio_inst/U0/I_VIO/UPDATE<9> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal chipscope_vio_inst/U0/I_VIO/UPDATE<10> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal chipscope_vio_inst/U0/I_VIO/UPDATE<11> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal chipscope_vio_inst/U0/I_VIO/UPDATE<12> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal chipscope_vio_inst/U0/I_VIO/UPDATE<13> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal chipscope_vio_inst/U0/I_VIO/UPDATE<14> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal chipscope_vio_inst/U0/I_VIO/UPDATE<15> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[25].SYNC_OUT_CELL/out_temp has no load.  PAR will not attempt to route
+   this signal.
+WARNING:Par:288 - The signal chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[24].SYNC_OUT_CELL/out_temp has no load.  PAR will not attempt to route
+   this signal.
+WARNING:Par:288 - The signal chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[31].SYNC_OUT_CELL/out_temp has no load.  PAR will not attempt to route
    this signal.
 WARNING:Par:288 - The signal chipscope_vio_inst/U0/I_VIO/UPDATE<0> has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal chipscope_vio_inst/U0/I_VIO/UPDATE<1> has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal chipscope_vio_inst/U0/I_VIO/UPDATE<2> has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal chipscope_vio_inst/U0/I_VIO/UPDATE<3> has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[26].SYNC_OUT_CELL/out_temp has no load.  PAR will not attempt to route
-   this signal.
-WARNING:Par:288 - The signal chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[17].SYNC_OUT_CELL/out_temp has no load.  PAR will not attempt to route
-   this signal.
-WARNING:Par:288 - The signal chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[25].SYNC_OUT_CELL/out_temp has no load.  PAR will not attempt to route
+WARNING:Par:288 - The signal chipscope_vio_inst/U0/I_VIO/GEN_UPDATE_OUT[63].UPDATE_CELL/out_temp has no load.  PAR will not attempt to route
    this signal.
 WARNING:Par:288 - The signal chipscope_vio_inst/U0/I_VIO/UPDATE<4> has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal chipscope_vio_inst/U0/I_VIO/UPDATE<5> has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal chipscope_vio_inst/U0/I_VIO/UPDATE<6> has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal chipscope_vio_inst/U0/I_VIO/UPDATE<7> has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal chipscope_vio_inst/U0/I_VIO/UPDATE<8> has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal chipscope_vio_inst/U0/I_VIO/UPDATE<9> has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal chipscope_vio_inst/U0/I_VIO/UPDATE<10> has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal chipscope_vio_inst/U0/I_VIO/UPDATE<11> has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[24].SYNC_OUT_CELL/out_temp has no load.  PAR will not attempt to route
-   this signal.
-WARNING:Par:288 - The signal chipscope_vio_inst/U0/I_VIO/UPDATE<12> has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal chipscope_vio_inst/U0/I_VIO/UPDATE<13> has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal chipscope_vio_inst/U0/I_VIO/UPDATE<14> has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal chipscope_vio_inst/U0/I_VIO/UPDATE<15> has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal chipscope_vio_inst/U0/I_VIO/GEN_UPDATE_OUT[63].UPDATE_CELL/out_temp has no load.  PAR will not attempt to route
-   this signal.
-WARNING:Par:288 - The signal chipscope_vio_inst/U0/I_VIO/RESET has no load.  PAR will not attempt to route this signal.
 Starting Router
 
 
-Phase  1  : 97628 unrouted;      REAL time: 17 secs 
+Phase  1  : 100673 unrouted;      REAL time: 18 secs 
 
-Phase  2  : 87064 unrouted;      REAL time: 25 secs 
+Phase  2  : 88772 unrouted;      REAL time: 27 secs 
 
-Phase  3  : 33514 unrouted;      REAL time: 1 mins 
+Phase  3  : 35765 unrouted;      REAL time: 1 mins 8 secs 
 
-Phase  4  : 33514 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 1 mins 5 secs 
+Phase  4  : 35765 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 1 mins 13 secs 
 
 Updating file: optohybrid_top.ncd with current fully routed design.
 
-Phase  5  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 1 mins 27 secs 
+Phase  5  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 1 mins 38 secs 
 
-Phase  6  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 1 mins 27 secs 
+Phase  6  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 1 mins 38 secs 
 
-Phase  7  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 1 mins 27 secs 
+Phase  7  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 1 mins 38 secs 
 
-Phase  8  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 1 mins 27 secs 
+Phase  8  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 1 mins 38 secs 
 
-Phase  9  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 1 mins 27 secs 
+Phase  9  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 1 mins 38 secs 
 
-Phase 10  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 1 mins 27 secs 
-Total REAL time to Router completion: 1 mins 27 secs 
-Total CPU time to Router completion: 1 mins 26 secs 
+Phase 10  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 1 mins 39 secs 
+Total REAL time to Router completion: 1 mins 39 secs 
+Total CPU time to Router completion: 1 mins 38 secs 
 
 Partition Implementation Status
 -------------------------------
@@ -222,40 +222,40 @@ Generating Clock Report
 +---------------------+--------------+------+------+------------+-------------+
 |        Clock Net    |   Resource   |Locked|Fanout|Net Skew(ns)|Max Delay(ns)|
 +---------------------+--------------+------+------+------------+-------------+
-|           clk_40MHz | BUFGCTRL_X0Y0| No   | 4077 |  0.418     |  1.914      |
+|             gtx_clk | BUFGCTRL_X0Y3| No   | 1856 |  0.645     |  2.159      |
 +---------------------+--------------+------+------+------------+-------------+
-|             gtx_clk | BUFGCTRL_X0Y3| No   | 1730 |  0.648     |  2.159      |
+|           clk_40MHz | BUFGCTRL_X0Y0| No   | 3856 |  0.416     |  1.912      |
 +---------------------+--------------+------+------+------------+-------------+
-|         cs_icon0<0> |BUFGCTRL_X0Y31| No   |  150 |  0.290     |  1.821      |
+|         cs_icon0<0> |BUFGCTRL_X0Y31| No   |  198 |  0.280     |  1.783      |
 +---------------------+--------------+------+------+------------+-------------+
 |          clk_160MHz | BUFGCTRL_X0Y1| No   |    8 |  0.127     |  2.158      |
 +---------------------+--------------+------+------+------------+-------------+
-|link_tracking_2_inst |              |      |      |            |             |
+|link_tracking_0_inst |              |      |      |            |             |
 |/vi2c_core_inst/chip |              |      |      |            |             |
-|           _select_2 |         Local|      |    5 |  3.477     |  3.940      |
+|           _select_2 |         Local|      |    5 |  3.226     |  6.536      |
 +---------------------+--------------+------+------+------------+-------------+
 |link_tracking_1_inst |              |      |      |            |             |
 |/vi2c_core_inst/chip |              |      |      |            |             |
-|           _select_2 |         Local|      |    5 |  3.845     |  6.695      |
+|           _select_2 |         Local|      |    5 |  3.624     |  6.347      |
 +---------------------+--------------+------+------+------------+-------------+
-|link_tracking_0_inst |              |      |      |            |             |
+|link_tracking_2_inst |              |      |      |            |             |
 |/vi2c_core_inst/chip |              |      |      |            |             |
-|           _select_2 |         Local|      |    5 |  3.364     |  6.643      |
-+---------------------+--------------+------+------+------------+-------------+
-|MMCM_PHASE_CALIBRATI |              |      |      |            |             |
-|ON_ML_LUT2_8_ML_NEW_ |              |      |      |            |             |
-|                 CLK |         Local|      |    3 |  0.379     |  0.729      |
-+---------------------+--------------+------+------+------------+-------------+
-|pll_inst/mmcm_adv_in |              |      |      |            |             |
-|        st_ML_NEW_I1 |         Local|      |    3 |  0.000     |  1.482      |
+|           _select_2 |         Local|      |    5 |  3.879     |  5.615      |
 +---------------------+--------------+------+------+------------+-------------+
 |chipscope_icon_inst/ |              |      |      |            |             |
-|      U0/iUPDATE_OUT |         Local|      |    1 |  0.000     |  1.291      |
+|      U0/iUPDATE_OUT |         Local|      |    1 |  0.000     |  0.727      |
 +---------------------+--------------+------+------+------------+-------------+
 |pll_inst/mmcm_adv_in |              |      |      |            |             |
-|       st_ML_NEW_OUT |         Local|      |    2 |  0.000     |  0.236      |
+|        st_ML_NEW_I1 |         Local|      |    3 |  0.000     |  2.023      |
 +---------------------+--------------+------+------+------------+-------------+
-|        cs_icon1<13> |         Local|      |    4 |  0.000     |  0.403      |
+|pll_inst/mmcm_adv_in |              |      |      |            |             |
+|       st_ML_NEW_OUT |         Local|      |    2 |  0.000     |  0.364      |
++---------------------+--------------+------+------+------------+-------------+
+|MMCM_PHASE_CALIBRATI |              |      |      |            |             |
+|ON_ML_LUT2_13_ML_NEW |              |      |      |            |             |
+|                _CLK |         Local|      |    3 |  0.111     |  0.461      |
++---------------------+--------------+------+------+------------+-------------+
+|        cs_icon1<13> |         Local|      |    4 |  0.000     |  0.236      |
 +---------------------+--------------+------+------+------------+-------------+
 
 * Net Skew is the difference between the minimum and maximum routing
@@ -276,10 +276,10 @@ All signals are completely routed.
 
 WARNING:Par:283 - There are 37 loadless signals in this design. This design will cause Bitgen to issue DRC warnings.
 
-Total REAL time to PAR completion: 1 mins 43 secs 
-Total CPU time to PAR completion: 1 mins 40 secs 
+Total REAL time to PAR completion: 1 mins 55 secs 
+Total CPU time to PAR completion: 1 mins 53 secs 
 
-Peak Memory Usage:  811 MB
+Peak Memory Usage:  823 MB
 
 Placer: Placement generated during map.
 Routing: Completed - No errors found.

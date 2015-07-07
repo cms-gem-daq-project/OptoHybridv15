@@ -336,6 +336,7 @@ architecture Behavioral of optohybrid_top is
     signal cs_ila1                  : std_logic_vector(31 downto 0);
     signal cs_ila2                  : std_logic_vector(31 downto 0);
     signal cs_ila3                  : std_logic_vector(31 downto 0);
+    signal cs_ila4                  : std_logic_vector(191 downto 0);
 	 
 	 signal gtx_clk_select				: std_logic;
     
@@ -861,7 +862,7 @@ begin
 
     gtp_reset <= cs_sync_out(3 downto 0);
 
-    chipscope_ila_inst : entity work.chipscope_ila port map (CONTROL => cs_icon1, CLK => gtx_clk, TRIG0 => cs_ila0, TRIG1 => cs_ila1, TRIG2 => cs_ila2, TRIG3 => cs_ila3);
+    chipscope_ila_inst : entity work.chipscope_ila port map (CONTROL => cs_icon1, CLK => gtx_clk, TRIG0 => cs_ila0, TRIG1 => cs_ila1, TRIG2 => cs_ila2, TRIG3 => cs_ila3, TRIG4 => cs_ila4);
 
     cs_ila0 <= tx_data(15 downto 0) & rx_data(15 downto 0);
     cs_ila1 <= tx_data(47 downto 32) & rx_data(47 downto 32);
@@ -901,6 +902,11 @@ begin
     cs_ila3 <= (0 => ext_lv1a, 1 => req_lv1a, 2 => t1_lv1a, 3 => '0',
                 4 => t1_calpulse, 5 => t1_resync, 6 => t1_bc0, 7 => '0',
                 others => '0');
+                
+    cs_ila4 <= vfat2_data(23).sbits & vfat2_data(22).sbits & vfat2_data(21).sbits & vfat2_data(20).sbits & vfat2_data(19).sbits & vfat2_data(18).sbits &
+               vfat2_data(17).sbits & vfat2_data(16).sbits & vfat2_data(15).sbits & vfat2_data(14).sbits & vfat2_data(13).sbits & vfat2_data(12).sbits &
+               vfat2_data(11).sbits & vfat2_data(10).sbits & vfat2_data(9).sbits & vfat2_data(8).sbits & vfat2_data(7).sbits & vfat2_data(6).sbits &
+               vfat2_data(5).sbits & vfat2_data(4).sbits & vfat2_data(3).sbits & vfat2_data(2).sbits & vfat2_data(1).sbits & vfat2_data(0).sbits;
 
 end Behavioral;
 

@@ -1,5 +1,5 @@
 The following files were generated for 'chipscope_ila' in directory
-C:\Users\tlenzi\Desktop\ipcore_dir\
+D:\ipcore_dir\
 
 XCO file generator:
    Generate an XCO file for compatibility with legacy flows.
