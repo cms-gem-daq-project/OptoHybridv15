@@ -230,7 +230,7 @@ architecture Behavioral of optohybrid_top is
     
     --== GTX ==--
     
-    signal gtp_reset            : std_logic_vector(3 downto 0) := (others => '0');
+    signal gtp_reset            : std_logic := '0';
     signal gtx_clk              : std_logic := '0';
     signal rx_error             : std_logic_vector(3 downto 0);
     signal rx_kchar             : std_logic_vector(7 downto 0);
@@ -499,7 +499,7 @@ begin
 	gtx_wrapper_inst : entity work.gtx_wrapper
 	port map(
 		gtx_clk_o       => gtx_clk,
-		reset_i         => gtp_reset(0),
+		reset_i         => gtp_reset,
 		rx_error_o      => rx_error,
 		rx_kchar_o      => rx_kchar,
 		rx_data_o       => rx_data,
@@ -860,12 +860,12 @@ begin
 
     chipscope_vio_inst : entity work.chipscope_vio port map (CONTROL => cs_icon0, CLK => gtx_clk, ASYNC_IN => cs_async_in, ASYNC_OUT => cs_async_out, SYNC_IN => cs_sync_in, SYNC_OUT => cs_sync_out);
 
-    gtp_reset <= cs_sync_out(3 downto 0);
+    gtp_reset <= cs_sync_out(0);
 
     chipscope_ila_inst : entity work.chipscope_ila port map (CONTROL => cs_icon1, CLK => gtx_clk, TRIG0 => cs_ila0, TRIG1 => cs_ila1, TRIG2 => cs_ila2, TRIG3 => cs_ila3, TRIG4 => cs_ila4);
 
-    cs_ila0 <= tx_data(15 downto 0) & rx_data(15 downto 0);
-    cs_ila1 <= tx_data(47 downto 32) & rx_data(47 downto 32);
+    cs_ila0 <= rx_data(31 downto 16) & rx_data(15 downto 0);
+    cs_ila1 <= rx_data(63 downto 48) & rx_data(47 downto 32);
     
     cs_ila2 <= (0 => vfat2_data_valid(0), 
                 1 => vfat2_data_valid(1),
