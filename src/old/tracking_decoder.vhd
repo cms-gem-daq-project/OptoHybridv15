@@ -17,95 +17,68 @@ port(
 end tracking_decoder;
 
 architecture Behavioral of tracking_decoder is
+
+    signal data : std_logic_vector(194 downto 0); -- The data packet is 192 bits wide but we include the two IDLE bits in front of each packet 
+                                                  -- and the computation time for the algorithm (the data will be shifted while computing)
+
 begin
 
+    --=======================--
+    --== Data deserializer ==--
+    --=======================--
+
+    process(vfat2_clk_i)    
+    begin
+        if (rising_edge(vfat2_clk_i)) then
+            if (reset_i = '1') then
+                data <= (others => '0');
+            else
+                data(194 downto 1) <= data(193 downto 0);
+                data(0) <= data_i;
+            end if;
+        end if;
+    end process;
+    
+    --================--
+    --== Validation ==--
+    --================--
+    
     process(vfat2_clk_i)
     
-        variable state      : integer range 0 to 3 := 0;
-    
-        variable data       : std_logic_vector(191 downto 0) := (others => '0'); -- MSB sent first
-        variable data_cnt   : integer range 0 to 192 := 0;
-        
-        variable last       : std_logic := '0';
+        variable tests  : std_logic_vector(2 downto 0);
         
     begin
-    
         if (rising_edge(vfat2_clk_i)) then
-        
             if (reset_i = '1') then
-            
                 en_o <= '0';
-                
-                state := 0;      
-                
+                data_o <= (others => '0');
+                tests := (others => '0');
             else
-            
-                -- Wait state
-                if (state = 0) then
-                
-                    en_o <= '0';
-                
-                    if (data_i = '1' and last = '0') then
-                    
-                        data(191) := data_i;
-                        
-                        data_cnt := 190;
-                    
-                        state := 1;
-                        
-                    end if;
-                
-                -- Collect data
-                elsif (state = 1) then
-                
-                    data(data_cnt) := data_i;
-                    
-                    if (data_cnt = 0) then
-                    
-                        state := 2;
-                        
-                    else
-                    
-                        data_cnt := data_cnt - 1;
-                        
-                    end if;
-                    
-                -- Check data
-                elsif (state = 2) then
-                
-                    if (data(191 downto 188) = "1010" and data(175 downto 172) = "1100" and data(159 downto 156) = "1110") then
-                    
-                        state := 3;
-                        
-                    else
-                    
-                        state := 0;
-                        
-                    end if;
-                
-                -- Data ready
-                elsif (state = 3) then
-                
-                    data_o <= data;
-                
-                    en_o <= '1';
-                    
-                    state := 0;
-                    
-                else
-                
-                    en_o <= '0';
-                
-                    state := 0;
-                    
-                end if;
-                
-                last := data_i;
-                
+                -- 6 fixed bits 
+                case data(193 downto 188) is
+                    when "001010" => tests(0) := '1';
+                    when others => tests(0) := '0';
+                end case;
+                -- 4 next fixed bits
+                case data(175 downto 172) is
+                    when "1100" => tests(1) := '1';
+                    when others => tests(1) := '0';
+                end case;
+                -- 4 next fixed bits
+                case data(159 downto 156) is
+                    when "1110" => tests(2) := '1';
+                    when others => tests(2) := '0';
+                end case;
+                -- Verification
+                case tests is
+                    when "111" =>      
+                        en_o <= '1';
+                        data_o <= data(191 downto 0);
+                    when others =>  
+                        en_o <= '0';
+                end case;                
             end if;
-            
         end if;
-        
     end process;
     
 end Behavioral;
