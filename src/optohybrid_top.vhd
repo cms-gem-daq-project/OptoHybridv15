@@ -187,13 +187,19 @@ port(
     
     --== GTX ==--
     
-    mgt_112_clk0_p_i        : in std_logic;
-    mgt_112_clk0_n_i        : in std_logic;
+--    mgt_116_clk1_p_i        : in std_logic;
+--    mgt_116_clk1_n_i        : in std_logic;
+--    
+--    mgt_116_rx_p_i          : in std_logic_vector(3 downto 0);
+--    mgt_116_rx_n_i          : in std_logic_vector(3 downto 0);
+--    mgt_116_tx_p_o          : out std_logic_vector(3 downto 0);
+--    mgt_116_tx_n_o          : out std_logic_vector(3 downto 0);
     
     mgt_112_rx_p_i          : in std_logic_vector(3 downto 0);
     mgt_112_rx_n_i          : in std_logic_vector(3 downto 0);
     mgt_112_tx_p_o          : out std_logic_vector(3 downto 0);
     mgt_112_tx_n_o          : out std_logic_vector(3 downto 0);
+    
     
     tmds_d_p_io             : in std_logic_vector(1 downto 0)
 
@@ -494,7 +500,7 @@ begin
 
     --== GTX ==--
     
-    gtx_clk_inst : ibufds_gtxe1 port map(o => open, odiv2 => open, ceb => '0', i => mgt_112_clk0_p_i, ib => mgt_112_clk0_n_i);  
+    --gtx_clk_inst : ibufds_gtxe1 port map(o => gtx_ref_clk, odiv2 => open, ceb => '0', i => mgt_116_clk1_p_i, ib => mgt_116_clk1_n_i);  
     
 	gtx_wrapper_inst : entity work.gtx_wrapper
 	port map(
@@ -789,7 +795,7 @@ begin
     
     -- Fixed registers : 23 -- read _ firmware version
     
-    request_read(23) <= x"AA150623"; 
+    request_read(23) <= x"AA150730"; 
     
     -- Reserved : 25 downto 24
     

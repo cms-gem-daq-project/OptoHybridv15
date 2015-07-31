@@ -702,15 +702,18 @@ INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i TRANS_TIME_TO_P2                       
 
 
 # GTX
-#INST "gtx_wrapper_inst/gtx_0_inst/gtxe1_i" LOC = GTXE1_X0Y0;
-#INST "gtx_wrapper_inst/gtx_1_inst/gtxe1_i" LOC = GTXE1_X0Y1;
-#INST "gtx_wrapper_inst/gtx_2_inst/gtxe1_i" LOC = GTXE1_X0Y2;
-#INST "gtx_wrapper_inst/gtx_3_inst/gtxe1_i" LOC = GTXE1_X0Y3;
-
 INST "gtx_wrapper_inst/gtx_0_inst/gtxe1_i" LOC = GTXE1_X0Y0;
 INST "gtx_wrapper_inst/gtx_1_inst/gtxe1_i" LOC = GTXE1_X0Y2;
 INST "gtx_wrapper_inst/gtx_2_inst/gtxe1_i" LOC = GTXE1_X0Y4;
 INST "gtx_wrapper_inst/gtx_3_inst/gtxe1_i" LOC = GTXE1_X0Y6;
 
-NET "mgt_112_clk0_p_i"      LOC = AK6;
-NET "mgt_112_clk0_n_i"      LOC = AK5;
+#INST "gtx_wrapper_inst/gtx_0_inst/gtxe1_i" LOC = GTXE1_X0Y16;
+#INST "gtx_wrapper_inst/gtx_1_inst/gtxe1_i" LOC = GTXE1_X0Y17;
+#INST "gtx_wrapper_inst/gtx_2_inst/gtxe1_i" LOC = GTXE1_X0Y18;
+#INST "gtx_wrapper_inst/gtx_3_inst/gtxe1_i" LOC = GTXE1_X0Y19;
+
+#NET "mgt_112_clk0_p_i"      LOC = AK6;
+#NET "mgt_112_clk0_n_i"      LOC = AK5;
+
+#NET "mgt_116_clk1_p_i"      LOC = F6; # 160 MHz
+#NET "mgt_116_clk1_n_i"      LOC = F5;

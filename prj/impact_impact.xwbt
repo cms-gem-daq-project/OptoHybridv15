@@ -1,0 +1,8 @@
+INTSTYLE=impact
+INFILE=C:\Users\Administrator\Documents\firmware\OptoHybridv15\prj\impact.xsl
+OUTFILE=C:\Users\Administrator\Documents\firmware\OptoHybridv15\prj\impact.xsl
+FAMILY=Single
+PART=Single
+WORKINGDIR=C:\Users\Administrator\Documents\firmware\OptoHybridv15\prj
+LICENSE=iMPACT
+USER_INFO=iMPACT

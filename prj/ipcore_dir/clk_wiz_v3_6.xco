@@ -1,7 +1,7 @@
 ##############################################################
 #
 # Xilinx Core Generator version 14.7
-# Date: Thu Apr 16 14:37:16 2015
+# Date: Wed Jul 29 13:08:33 2015
 #
 ##############################################################
 #
@@ -225,7 +225,7 @@ CSET pll_ref_jitter=0.010
 CSET power_down_port=POWER_DOWN
 CSET prim_in_freq=50.000
 CSET prim_in_jitter=0.010
-CSET prim_source=Single_ended_clock_capable_pin
+CSET prim_source=Global_buffer
 CSET primary_port=clk_50Mhz_i
 CSET primitive=MMCM
 CSET primtype_sel=MMCM_ADV
@@ -266,4 +266,4 @@ CSET use_status=false
 MISC pkg_timestamp=2012-05-10T12:44:55Z
 # END Extra information
 GENERATE
-# CRC: cee79f52
+# CRC: 14085003
