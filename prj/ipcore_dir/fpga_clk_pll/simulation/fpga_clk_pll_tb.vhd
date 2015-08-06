@@ -82,11 +82,13 @@ architecture test of fpga_clk_pll_tb is
 
 
   -- we'll be using the period in many locations
-  constant PER1        : time := 10.000 ns;
+  constant PER1        : time := 25.000 ns;
 
 
   -- Declare the input clock signals
   signal CLK_IN1       : std_logic := '1';
+  signal CLK_IN1_P     : std_logic := '1';
+  signal CLK_IN1_N     : std_logic := '0';
   -- The high bits of the sampling counters
   signal COUNT         : std_logic_vector(2 downto 1);
   -- Status and control signals
@@ -97,10 +99,10 @@ architecture test of fpga_clk_pll_tb is
   signal CLK_OUT : std_logic_vector(2 downto 1);
 --Freq Check using the M & D values setting and actual Frequency generated
   signal period1 : time := 0 ps;
-constant  ref_period1_clkin1 : time := (10.000*1*4.000/4.000)*1000 ps;
+constant  ref_period1_clkin1 : time := (25.000*1*24.000/24.000)*1000 ps;
    signal prev_rise1 : time := 0 ps;
   signal period2 : time := 0 ps;
-constant  ref_period2_clkin1 : time := (10.000*1*1/4.000)*1000 ps;
+constant  ref_period2_clkin1 : time := (25.000*1*4/24.000)*1000 ps;
    signal prev_rise2 : time := 0 ps;
 
 component fpga_clk_pll_exdes
@@ -108,7 +110,8 @@ generic (
   TCQ               : in time := 100 ps);
 port
  (-- Clock in ports
-  CLK_IN1           : in  std_logic;
+  CLK_IN1_P         : in  std_logic;
+  CLK_IN1_N         : in  std_logic;
   -- Reset that only drives logic in example design
   COUNTER_RESET     : in  std_logic;
   CLK_OUT           : out std_logic_vector(2 downto 1) ;
@@ -126,6 +129,8 @@ begin
   process begin
     CLK_IN1 <= not CLK_IN1; wait for (PER1/2);
   end process;
+  CLK_IN1_P <=     CLK_IN1;
+  CLK_IN1_N <= not CLK_IN1;
 
   -- Test sequence
   process 
@@ -187,7 +192,8 @@ begin
     TCQ                => TCQ)
   port map
    (-- Clock in ports
-    CLK_IN1            => CLK_IN1,
+    CLK_IN1_P          => CLK_IN1_P,
+    CLK_IN1_N          => CLK_IN1_N,
     -- Reset for logic in example design
     COUNTER_RESET      => COUNTER_RESET,
     CLK_OUT            => CLK_OUT,

@@ -8,7 +8,7 @@
 <!-- Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.    -->
 
 <messages>
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/Users/Administrator/Documents/firmware/OptoHybridv15/prj/ipcore_dir/clk_wiz_v3_6.vhd&quot; into library work</arg>
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/Users/Administrator/Documents/firmware/OptoHybridv15/prj/ipcore_dir/gtx_clk_pll.vhd&quot; into library work</arg>
 </msg>
 
 </messages>

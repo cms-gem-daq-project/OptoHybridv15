@@ -2,6 +2,7 @@
 _xmsgs\pn_parser.xmsgs
 fpga_clk_pll.asy
 fpga_clk_pll.gise
+fpga_clk_pll.sym
 fpga_clk_pll.ucf
 fpga_clk_pll.vhd
 fpga_clk_pll.vho

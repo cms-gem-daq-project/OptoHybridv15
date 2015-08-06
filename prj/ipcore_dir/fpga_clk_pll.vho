@@ -54,13 +54,13 @@
 -- "Output    Output      Phase     Duty      Pk-to-Pk        Phase"
 -- "Clock    Freq (MHz) (degrees) Cycle (%) Jitter (ps)  Error (ps)"
 ------------------------------------------------------------------------------
--- CLK_OUT1___100.000______0.000______50.0______141.804____153.899
--- CLK_OUT2___400.000______0.000______50.0______109.127____153.899
+-- CLK_OUT1____40.000______0.000______50.0______247.096____196.976
+-- CLK_OUT2___240.000______0.000______50.0______158.000____196.976
 --
 ------------------------------------------------------------------------------
 -- "Input Clock   Freq (MHz)    Input Jitter (UI)"
 ------------------------------------------------------------------------------
--- __primary__________50.000____________0.010
+-- __primary__________40.000____________0.010
 
 
 -- The following code must appear in the VHDL architecture header:
@@ -68,12 +68,13 @@
 component fpga_clk_pll
 port
  (-- Clock in ports
-  fpga_clk_i           : in     std_logic;
+  clk_40MHz_i_P         : in     std_logic;
+  clk_40MHz_i_N         : in     std_logic;
   -- Clock out ports
-  fpga_clk_o          : out    std_logic;
-  vfat2_clk_fpga_o          : out    std_logic;
+  clk_40MHz_o          : out    std_logic;
+  clk_240MHz_o          : out    std_logic;
   -- Status and control signals
-  fpga_pll_locked_o            : out    std_logic
+  locked_o            : out    std_logic
  );
 end component;
 
@@ -84,10 +85,11 @@ end component;
 your_instance_name : fpga_clk_pll
   port map
    (-- Clock in ports
-    fpga_clk_i => fpga_clk_i,
+    clk_40MHz_i_P => clk_40MHz_i_P,
+    clk_40MHz_i_N => clk_40MHz_i_N,
     -- Clock out ports
-    fpga_clk_o => fpga_clk_o,
-    vfat2_clk_fpga_o => vfat2_clk_fpga_o,
+    clk_40MHz_o => clk_40MHz_o,
+    clk_240MHz_o => clk_240MHz_o,
     -- Status and control signals
-    fpga_pll_locked_o => fpga_pll_locked_o);
+    locked_o => locked_o);
 -- INST_TAG_END ------ End INSTANTIATION Template ------------

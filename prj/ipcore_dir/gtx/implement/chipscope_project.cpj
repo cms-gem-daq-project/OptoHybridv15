@@ -1,6 +1,6 @@
 #ChipScope Pro Analyzer Project File, Version 3.0
 #Thu Jul 27 15:56:09 IST 2006
-device.1.configFileDir=C:/Users/tlenzi/Desktop/ipcore_dir/gtx/implement/
+device.1.configFileDir=C:/Users/Administrator/Documents/firmware/OptoHybridv15/prj/ipcore_dir/gtx/implement/
 device.1.configFilename=gtx_top.bit
 deviceChain.deviceName0=System_ACE
 deviceChain.deviceName1=XC6VLX130T

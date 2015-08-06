@@ -77,7 +77,7 @@ if(clk_edge) begin
 	 
 	 third:begin
 	 count6<=count6+11'b1;
-	 pState<=count6[4]?fourth:third;
+	 pState<=count6[8]?fourth:third;
 	 clk_condition<=1'b0;
 	 end
 	 
@@ -115,6 +115,7 @@ if(clk_edge) begin
 	 pState<=tenth;
 	 clk_condition<=1'b1;
 	 end
+     
 	 endcase
 	 end
 	 end

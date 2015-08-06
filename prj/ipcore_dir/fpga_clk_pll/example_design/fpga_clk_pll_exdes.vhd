@@ -68,7 +68,8 @@ generic (
   TCQ               : in time := 100 ps);
 port
  (-- Clock in ports
-  CLK_IN1           : in  std_logic;
+  CLK_IN1_P         : in  std_logic;
+  CLK_IN1_N         : in  std_logic;
   -- Reset that only drives logic in example design
   COUNTER_RESET     : in  std_logic;
   CLK_OUT           : out std_logic_vector(2 downto 1) ;
@@ -108,12 +109,13 @@ architecture xilinx of fpga_clk_pll_exdes is
 component fpga_clk_pll is
 port
  (-- Clock in ports
-  fpga_clk_i           : in     std_logic;
+  clk_40MHz_i_P         : in     std_logic;
+  clk_40MHz_i_N         : in     std_logic;
   -- Clock out ports
-  fpga_clk_o          : out    std_logic;
-  vfat2_clk_fpga_o          : out    std_logic;
+  clk_40MHz_o          : out    std_logic;
+  clk_240MHz_o          : out    std_logic;
   -- Status and control signals
-  fpga_pll_locked_o            : out    std_logic
+  locked_o            : out    std_logic
  );
 end component;
 
@@ -147,12 +149,13 @@ end generate counters_1;
   clknetwork : fpga_clk_pll
   port map
    (-- Clock in ports
-    fpga_clk_i            => CLK_IN1,
+    clk_40MHz_i_P          => CLK_IN1_P,
+    clk_40MHz_i_N          => CLK_IN1_N,
     -- Clock out ports
-    fpga_clk_o           => clk_int(1),
-    vfat2_clk_fpga_o           => clk_int(2),
+    clk_40MHz_o           => clk_int(1),
+    clk_240MHz_o           => clk_int(2),
     -- Status and control signals
-    fpga_pll_locked_o             => locked_int);
+    locked_o             => locked_int);
 
 
   gen_outclk_oddr: 
@@ -171,10 +174,7 @@ end generate counters_1;
   -- Connect the output clocks to the design
   -------------------------------------------
   clk(1) <= clk_int(1);
-  clkout2_buf : BUFG
-  port map
-   (O => clk(2),
-    I => clk_int(2));
+  clk(2) <= clk_int(2);
 
   -- Output clock sampling
   -------------------------------------

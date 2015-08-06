@@ -108,6 +108,9 @@ wave add /DEMO_TB/gtx_top_i/gtx_i/gtx0_gtx_i/TXN_OUT
 wave add /DEMO_TB/gtx_top_i/gtx_i/gtx0_gtx_i/TXP_OUT
 divider add "Transmit Ports - TX PLL Ports"
 wave add /DEMO_TB/gtx_top_i/gtx_i/gtx0_gtx_i/GTXTXRESET_IN
+wave add /DEMO_TB/gtx_top_i/gtx_i/gtx0_gtx_i/MGTREFCLKTX_IN
+wave add /DEMO_TB/gtx_top_i/gtx_i/gtx0_gtx_i/PLLTXRESET_IN
+wave add /DEMO_TB/gtx_top_i/gtx_i/gtx0_gtx_i/TXPLLLKDET_OUT
 wave add /DEMO_TB/gtx_top_i/gtx_i/gtx0_gtx_i/TXRESETDONE_OUT
 
 divider add "Receive Ports - 8b10b Decoder"
@@ -145,6 +148,9 @@ wave add /DEMO_TB/gtx_top_i/gtx_i/gtx1_gtx_i/TXN_OUT
 wave add /DEMO_TB/gtx_top_i/gtx_i/gtx1_gtx_i/TXP_OUT
 divider add "Transmit Ports - TX PLL Ports"
 wave add /DEMO_TB/gtx_top_i/gtx_i/gtx1_gtx_i/GTXTXRESET_IN
+wave add /DEMO_TB/gtx_top_i/gtx_i/gtx1_gtx_i/MGTREFCLKTX_IN
+wave add /DEMO_TB/gtx_top_i/gtx_i/gtx1_gtx_i/PLLTXRESET_IN
+wave add /DEMO_TB/gtx_top_i/gtx_i/gtx1_gtx_i/TXPLLLKDET_OUT
 wave add /DEMO_TB/gtx_top_i/gtx_i/gtx1_gtx_i/TXRESETDONE_OUT
 
 divider add "Receive Ports - 8b10b Decoder"
@@ -182,6 +188,9 @@ wave add /DEMO_TB/gtx_top_i/gtx_i/gtx2_gtx_i/TXN_OUT
 wave add /DEMO_TB/gtx_top_i/gtx_i/gtx2_gtx_i/TXP_OUT
 divider add "Transmit Ports - TX PLL Ports"
 wave add /DEMO_TB/gtx_top_i/gtx_i/gtx2_gtx_i/GTXTXRESET_IN
+wave add /DEMO_TB/gtx_top_i/gtx_i/gtx2_gtx_i/MGTREFCLKTX_IN
+wave add /DEMO_TB/gtx_top_i/gtx_i/gtx2_gtx_i/PLLTXRESET_IN
+wave add /DEMO_TB/gtx_top_i/gtx_i/gtx2_gtx_i/TXPLLLKDET_OUT
 wave add /DEMO_TB/gtx_top_i/gtx_i/gtx2_gtx_i/TXRESETDONE_OUT
 
 divider add "Receive Ports - 8b10b Decoder"
@@ -219,6 +228,9 @@ wave add /DEMO_TB/gtx_top_i/gtx_i/gtx3_gtx_i/TXN_OUT
 wave add /DEMO_TB/gtx_top_i/gtx_i/gtx3_gtx_i/TXP_OUT
 divider add "Transmit Ports - TX PLL Ports"
 wave add /DEMO_TB/gtx_top_i/gtx_i/gtx3_gtx_i/GTXTXRESET_IN
+wave add /DEMO_TB/gtx_top_i/gtx_i/gtx3_gtx_i/MGTREFCLKTX_IN
+wave add /DEMO_TB/gtx_top_i/gtx_i/gtx3_gtx_i/PLLTXRESET_IN
+wave add /DEMO_TB/gtx_top_i/gtx_i/gtx3_gtx_i/TXPLLLKDET_OUT
 wave add /DEMO_TB/gtx_top_i/gtx_i/gtx3_gtx_i/TXRESETDONE_OUT
 
 run 61 us

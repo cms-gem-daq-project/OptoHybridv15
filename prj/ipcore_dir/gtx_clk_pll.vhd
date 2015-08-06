@@ -55,8 +55,8 @@
 -- "Output    Output      Phase     Duty      Pk-to-Pk        Phase"
 -- "Clock    Freq (MHz) (degrees) Cycle (%) Jitter (ps)  Error (ps)"
 ------------------------------------------------------------------------------
--- CLK_OUT1___160.000______0.000______50.0______158.173____191.950
--- CLK_OUT2____40.000______0.000______50.0______207.443____191.950
+-- CLK_OUT1____40.000______0.000______50.0______143.129_____95.076
+-- CLK_OUT2___160.000______0.000______50.0______108.430_____95.076
 --
 ------------------------------------------------------------------------------
 -- "Input Clock   Freq (MHz)    Input Jitter (UI)"
@@ -75,16 +75,19 @@ use unisim.vcomponents.all;
 entity gtx_clk_pll is
 port
  (-- Clock in ports
-  clk160MHz_i           : in     std_logic;
+  clk_160MHz_i           : in     std_logic;
   -- Clock out ports
-  clk160MHz_o          : out    std_logic;
-  clk40MHz_o          : out    std_logic
+  clk_40MHz_o          : out    std_logic;
+  clk_160MHz_o          : out    std_logic;
+  -- Status and control signals
+  reset_i             : in     std_logic;
+  locked_o            : out    std_logic
  );
 end gtx_clk_pll;
 
 architecture xilinx of gtx_clk_pll is
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of xilinx : architecture is "gtx_clk_pll,clk_wiz_v3_6,{component_name=gtx_clk_pll,use_phase_alignment=true,use_min_o_jitter=false,use_max_i_jitter=false,use_dyn_phase_shift=false,use_inclk_switchover=false,use_dyn_reconfig=false,feedback_source=FDBK_AUTO,primtype_sel=MMCM_ADV,num_out_clk=2,clkin1_period=6.250,clkin2_period=10.000,use_power_down=false,use_reset=false,use_locked=false,use_inclk_stopped=false,use_status=false,use_freeze=false,use_clk_valid=false,feedback_type=SINGLE,clock_mgr_type=MANUAL,manual_override=false}";
+  attribute CORE_GENERATION_INFO of xilinx : architecture is "gtx_clk_pll,clk_wiz_v3_6,{component_name=gtx_clk_pll,use_phase_alignment=true,use_min_o_jitter=false,use_max_i_jitter=false,use_dyn_phase_shift=false,use_inclk_switchover=false,use_dyn_reconfig=false,feedback_source=FDBK_AUTO,primtype_sel=MMCM_ADV,num_out_clk=2,clkin1_period=6.250,clkin2_period=10.0,use_power_down=false,use_reset=true,use_locked=true,use_inclk_stopped=false,use_status=false,use_freeze=false,use_clk_valid=false,feedback_type=SINGLE,clock_mgr_type=MANUAL,manual_override=false}";
   -- Input clock buffering / unused connectors
   signal clkin1      : std_logic;
   -- Output clock buffering / unused connectors
@@ -108,7 +111,6 @@ architecture xilinx of gtx_clk_pll is
   -- Dynamic phase shift unused signals
   signal psdone_unused    : std_logic;
   -- Unused status signals
-  signal locked_unused    : std_logic;
   signal clkfbstopped_unused : std_logic;
   signal clkinstopped_unused : std_logic;
 begin
@@ -119,7 +121,7 @@ begin
   clkin1_buf : BUFG
   port map
    (O => clkin1,
-    I => clk160MHz_i);
+    I => clk_160MHz_i);
 
 
   -- Clocking primitive
@@ -134,15 +136,15 @@ begin
     CLOCK_HOLD           => FALSE,
     COMPENSATION         => "ZHOLD",
     STARTUP_WAIT         => FALSE,
-    DIVCLK_DIVIDE        => 4,
-    CLKFBOUT_MULT_F      => 25.000,
+    DIVCLK_DIVIDE        => 1,
+    CLKFBOUT_MULT_F      => 6.000,
     CLKFBOUT_PHASE       => 0.000,
     CLKFBOUT_USE_FINE_PS => FALSE,
-    CLKOUT0_DIVIDE_F     => 6.250,
+    CLKOUT0_DIVIDE_F     => 24.000,
     CLKOUT0_PHASE        => 0.000,
     CLKOUT0_DUTY_CYCLE   => 0.500,
     CLKOUT0_USE_FINE_PS  => FALSE,
-    CLKOUT1_DIVIDE       => 25,
+    CLKOUT1_DIVIDE       => 6,
     CLKOUT1_PHASE        => 0.000,
     CLKOUT1_DUTY_CYCLE   => 0.500,
     CLKOUT1_USE_FINE_PS  => FALSE,
@@ -183,11 +185,11 @@ begin
     PSINCDEC            => '0',
     PSDONE              => psdone_unused,
     -- Other control and status signals
-    LOCKED              => locked_unused,
+    LOCKED              => locked_o,
     CLKINSTOPPED        => clkinstopped_unused,
     CLKFBSTOPPED        => clkfbstopped_unused,
     PWRDWN              => '0',
-    RST                 => '0');
+    RST                 => reset_i);
 
   -- Output buffering
   -------------------------------------
@@ -199,14 +201,14 @@ begin
 
   clkout1_buf : BUFG
   port map
-   (O   => clk160MHz_o,
+   (O   => clk_40MHz_o,
     I   => clkout0);
 
 
 
   clkout2_buf : BUFG
   port map
-   (O   => clk40MHz_o,
+   (O   => clk_160MHz_o,
     I   => clkout1);
 
 end xilinx;

@@ -184,6 +184,9 @@ port(
     cdce_clk_n_i            : in std_logic;
     cdce_pri_p_o            : out std_logic;
     cdce_pri_n_o            : out std_logic;
+
+    qpll_clk_p_i            : in std_logic;
+    qpll_clk_n_i            : in std_logic;
     
     --== GTX ==--
     
@@ -200,8 +203,16 @@ port(
     mgt_112_tx_p_o          : out std_logic_vector(3 downto 0);
     mgt_112_tx_n_o          : out std_logic_vector(3 downto 0);
     
+    mgt_112_clk0_p_i        : in std_logic;
+    mgt_112_clk0_n_i        : in std_logic
     
-    tmds_d_p_io             : in std_logic_vector(1 downto 0)
+--    
+--    tmds_d_p_io             : out std_logic_vector(1 downto 0);
+--    tmds_d_n_io             : out std_logic_vector(1 downto 0);
+--    tmds_clk_p_io           : out std_logic;
+--    tmds_clk_n_io           : out std_logic;
+--    hdmi_scl_io             : out std_logic_vector(1 downto 0);
+--    hdmi_sda_io             : out std_logic_vector(1 downto 0)
 
 );
 end optohybrid_top;
@@ -226,17 +237,31 @@ architecture Behavioral of optohybrid_top is
     
     --== Clocking ==--
     
-    signal clk_50MHz            : std_logic;
-    signal clk_40MHz            : std_logic;
-    signal clk_160MHz           : std_logic;
-    signal clk_40MHz_ext        : std_logic;
-    signal clk_160MHz_ext       : std_logic;
-    signal gtx_ref_clk          : std_logic;
-    signal pll_locked           : std_logic;
+    signal qpll_clk             : std_logic;
+    
+    signal clk_local            : std_logic;
+    signal clk_qpll_locked      : std_logic;
+    
+    signal clk_gtx_rec          : std_logic;
+    signal clk_gtx_locked       : std_logic;
+    
+    signal clk_rec              : std_logic;
+    signal clk_rec_locked       : std_logic;
+    
+    signal clk_mgt              : std_logic;
+    
+    signal clk_cdce             : std_logic;
+    signal clk_cdce_sel         : std_logic;
+ 
+    signal clk_fast             : std_logic;
+    
+    signal switch_edge          : std_logic;
+    
+    signal cdce_in_clk          : std_logic;
     
     --== GTX ==--
     
-    signal gtp_reset            : std_logic := '0';
+    signal gtx_reset            : std_logic := '0';
     signal gtx_clk              : std_logic := '0';
     signal rx_error             : std_logic_vector(3 downto 0);
     signal rx_kchar             : std_logic_vector(7 downto 0);
@@ -348,7 +373,8 @@ architecture Behavioral of optohybrid_top is
     
 begin
 
-    reset <= '0';
+    reset <= '0';    
+    vfat2_reset <= reset;
 
     --== VFAT2 buffers ==--
     
@@ -477,35 +503,96 @@ begin
     
     --== Clocking & Reset : PLL & CDCE & VFAT2 ==--
     
-    pll_inst : entity work.clk_wiz_v3_6
+    ibu : ibufgds port map(i => qpll_clk_p_i, ib => qpll_clk_n_i, o => qpll_clk);
+    clk_qpll_locked <= '1';
+
+    gtx_clk_pll_inst : entity work.gtx_clk_pll
     port map(
-        clk_50Mhz_i     => clk_50Mhz_i,
-        clk_50Mhz_o     => clk_50Mhz,
-        clk_40Mhz_o     => clk_40Mhz,
-        clk_160Mhz_o    => clk_160Mhz,
-        pll_locked_o    => pll_locked
-    );    
+        clk_160Mhz_i    => clk_gtx_rec,
+        clk_40Mhz_o     => clk_rec,
+        clk_160Mhz_o    => clk_fast,
+        reset_i         => not clk_gtx_locked,
+        locked_o        => clk_rec_locked
+    );    	
     
-    vfat2_mclk <= clk_40MHz;
-    gtx_ref_clk <= clk_160MHz;
-   
-    cdce_primary_clk_obufds : obufds port map(i => vfat2_mclk, o => cdce_pri_p_o, ob => cdce_pri_n_o);
+    Inst_clock_switch: entity work.clock_switch PORT MAP(
+		start => clk_rec_locked,
+		c_lock => cdce_locked_i,
+		clk1 => qpll_clk,
+		clk2 => clk_rec,
+		clk3 => clk_fast,
+		clk_edge => open,
+		state => open,
+		done => clk_cdce_sel,
+		counter => open,
+		clk_condition => open,
+		reset => open
+	);
+    
+    
+    bufgmux_inst : bufgmux 
+    generic map(
+        clk_sel_type    => "async"
+    )
+    port map(
+        i0              => qpll_clk,
+        i1              => clk_rec,
+        o               => clk_cdce,
+        s               => cs_sync_out(1) --clk_cdce_sel --clk_rec_locked
+    );
+
+    gtx_clk_inst : ibufds_gtxe1 port map(o => clk_mgt, odiv2 => open, ceb => '0', i => mgt_112_clk0_p_i, ib => mgt_112_clk0_n_i); 
+--    gtx_clk_inst : ibufds_gtxe1 port map(o => clk_mgt, odiv2 => open, ceb => '0', i => mgt_116_clk1_p_i, ib => mgt_116_clk1_n_i); 
+    
+   cdce_primary_clk_obufds : obufds port map(i => clk_cdce, o => cdce_pri_p_o, ob => cdce_pri_n_o);
+
+    vfat2_mclk <= clk_cdce;
+    
+    cdce_in_clk_i : ibufds port map(i => cdce_clk_p_i, ib => cdce_clk_n_i, o => cdce_in_clk);
+
+--    tmds_d_p_io(1) <= switch_edge;
+--    tmds_d_n_io(1) <= '0';
+--    
+--    tmds_clk_p_io <= qpll_clk;
+--    tmds_clk_n_io <= '0';
+--    
+--    hdmi_scl_io(0) <= clk_rec;
+--    hdmi_scl_io(1) <= '0';
+--    
+--    hdmi_sda_io(0) <= cdce_locked_i;
+--    hdmi_sda_io(1) <= '0';
+--    
+--    tmds_d_p_io(0) <= clk_cdce_sel;
+--    tmds_d_n_io(0) <= '0';
+    
+    --
     
     cdce_ref_o <= '1';
-    cdce_pwrdown_o <= pll_locked;
     cdce_sync_o <= '1';
-    cdce_le_o <= '1';        
-                  
-    vfat2_reset <= reset;
-
-    --== GTX ==--
+    cdce_le_o <= '1';   
     
-    --gtx_clk_inst : ibufds_gtxe1 port map(o => gtx_ref_clk, odiv2 => open, ceb => '0', i => mgt_116_clk1_p_i, ib => mgt_116_clk1_n_i);  
+    process(clk_50MHz_i)
+        variable cnt : integer range 0 to 31 := 0;
+    begin
+        if (rising_edge(clk_50MHz_i)) then
+            if (cnt < 20) then
+                cdce_pwrdown_o <= '0';
+                cnt := cnt + 1;
+            else
+                cdce_pwrdown_o <= '1';
+                cnt := 20;
+            end if;
+        end if;
+    end process;
+
+    --== GTX ==-- 
     
 	gtx_wrapper_inst : entity work.gtx_wrapper
 	port map(
-		gtx_clk_o       => gtx_clk,
-		reset_i         => gtp_reset,
+		gtx_usr_clk_o   => gtx_clk,
+		reset_i         => gtx_reset,
+        clk_gtx_rec_o   => clk_gtx_rec,
+        clk_gtx_locked_o => clk_gtx_locked,
 		rx_error_o      => rx_error,
 		rx_kchar_o      => rx_kchar,
 		rx_data_o       => rx_data,
@@ -515,8 +602,26 @@ begin
 		tx_data_i       => tx_data,
 		tx_n_o          => mgt_112_tx_n_o,
 		tx_p_o          => mgt_112_tx_p_o,
-		gtx_clk         => gtx_ref_clk
+		mgt_ref_clk_i   => clk_mgt
 	);
+
+--	gtx_wrapper_inst : entity work.gtx_wrapper
+--	port map(
+--		gtx_usr_clk_o   => gtx_clk,
+--		reset_i         => gtx_reset,
+--        clk_gtx_rec_o   => clk_gtx_rec,
+--        clk_gtx_locked_o => clk_gtx_locked,
+--		rx_error_o      => rx_error,
+--		rx_kchar_o      => rx_kchar,
+--		rx_data_o       => rx_data,
+--		rx_n_i          => mgt_116_rx_n_i,
+--		rx_p_i          => mgt_116_rx_p_i,
+--		tx_kchar_i      => tx_kchar,
+--		tx_data_i       => tx_data,
+--		tx_n_o          => mgt_116_tx_n_o,
+--		tx_p_o          => mgt_116_tx_p_o,
+--		mgt_ref_clk_i   => clk_mgt
+--	);
     
     --== Links ==--
     
@@ -777,7 +882,7 @@ begin
     
     -- PLL status : 17 downto 15
     
-    request_read(15) <= (0 => pll_locked, others => '0'); -- read _ FPGA PLL locked
+    request_read(15) <= (0 => clk_qpll_locked, others => '0'); -- read _ FPGA PLL locked
    
     request_read(16) <= (0 => cdce_locked_i, others => '0'); -- read _ CDCE Locked
     
@@ -795,7 +900,7 @@ begin
     
     -- Fixed registers : 23 -- read _ firmware version
     
-    request_read(23) <= x"AA150730"; 
+    request_read(23) <= x"AA150806"; 
     
     -- Reserved : 25 downto 24
     
@@ -857,6 +962,8 @@ begin
     
     
     -- Other registers : 63 downto 48
+    
+    cdce_lock_counter : entity work.counter port map(fabric_clk_i => cdce_locked_i, reset_i => '0', en_i => '1', data_o => request_read(48));
 
     --================================--
     -- ChipScope
@@ -866,7 +973,7 @@ begin
 
     chipscope_vio_inst : entity work.chipscope_vio port map (CONTROL => cs_icon0, CLK => gtx_clk, ASYNC_IN => cs_async_in, ASYNC_OUT => cs_async_out, SYNC_IN => cs_sync_in, SYNC_OUT => cs_sync_out);
 
-    gtp_reset <= cs_sync_out(0);
+    gtx_reset <= cs_sync_out(0);
 
     chipscope_ila_inst : entity work.chipscope_ila port map (CONTROL => cs_icon1, CLK => gtx_clk, TRIG0 => cs_ila0, TRIG1 => cs_ila1, TRIG2 => cs_ila2, TRIG3 => cs_ila3, TRIG4 => cs_ila4);
 
@@ -905,9 +1012,11 @@ begin
                 29 => vfat2_data(23).data_out,
                 others => '0');
                 
-    cs_ila3 <= (0 => ext_lv1a, 1 => req_lv1a, 2 => t1_lv1a, 3 => '0',
+    cs_ila3(12 downto 0) <= (0 => ext_lv1a, 1 => req_lv1a, 2 => t1_lv1a, 3 => '0',
                 4 => t1_calpulse, 5 => t1_resync, 6 => t1_bc0, 7 => '0',
+                8 => clk_qpll_locked, 9 => cdce_locked_i, 10 => clk_gtx_locked, 11 => clk_rec_locked, 12 => clk_cdce_sel,
                 others => '0');
+    cs_ila3(31 downto 13) <= request_read(48)(18 downto 0);
                 
     cs_ila4 <= vfat2_data(23).sbits & vfat2_data(22).sbits & vfat2_data(21).sbits & vfat2_data(20).sbits & vfat2_data(19).sbits & vfat2_data(18).sbits &
                vfat2_data(17).sbits & vfat2_data(16).sbits & vfat2_data(15).sbits & vfat2_data(14).sbits & vfat2_data(13).sbits & vfat2_data(12).sbits &

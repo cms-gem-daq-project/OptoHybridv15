@@ -9,8 +9,11 @@ library work;
 entity gtx_wrapper is
 port(
 
-    gtx_clk_o       : out std_logic;
+    gtx_usr_clk_o   : out std_logic;
     reset_i         : in std_logic;
+    
+    clk_gtx_rec_o   : out std_logic;
+    clk_gtx_locked_o : out std_logic;
     
     rx_error_o      : out std_logic_vector(3 downto 0);
     tx_kchar_i      : in std_logic_vector(7 downto 0);
@@ -24,7 +27,7 @@ port(
     tx_n_o          : out std_logic_vector(3 downto 0);
     tx_p_o          : out std_logic_vector(3 downto 0);
 
-    gtx_clk      	  : in std_logic
+    mgt_ref_clk_i   : in std_logic
     
 );
 end gtx_wrapper;
@@ -40,7 +43,7 @@ architecture Behavioral of gtx_wrapper is
     
 begin
     
-    gtx_clk_o <= gtx0_tx_out_clk2;
+    gtx_usr_clk_o <= gtx0_tx_out_clk2;
     
     
     --
@@ -52,7 +55,7 @@ begin
 
     --
 
-    gtx0_mgtrefclkrx <= '0' & gtx_clk;
+    gtx0_mgtrefclkrx <= '0' & mgt_ref_clk_i;
 
     --
 
@@ -63,8 +66,8 @@ begin
     gtx_0_inst : entity work.gtx_gtx
     generic map(
         GTX_SIM_GTXRESET_SPEEDUP    => 1,
-        GTX_TX_CLK_SOURCE           => "RXPLL",
-        GTX_POWER_SAVE              => "0000110100"
+        GTX_TX_CLK_SOURCE           => "TXPLL",
+        GTX_POWER_SAVE              => "0000110000"
     )
     port map(
         RXCHARISK_OUT       => rx_kchar_o(1 downto 0),
@@ -75,7 +78,7 @@ begin
         RXENMCOMMAALIGN_IN  => '1',
         RXENPCOMMAALIGN_IN  => '1',
         RXDATA_OUT          => rx_data_o(15 downto 0),
-        RXRECCLK_OUT        => open,
+        RXRECCLK_OUT        => clk_gtx_rec_o,
         RXUSRCLK2_IN        => gtx0_tx_out_clk2,
         RXN_IN              => rx_n_i(0),
         RXP_IN              => rx_p_i(0),
@@ -83,7 +86,7 @@ begin
         GTXRXRESET_IN       => reset_i,
         MGTREFCLKRX_IN      => gtx0_mgtrefclkrx,
         PLLRXRESET_IN       => reset_i,
-        RXPLLLKDET_OUT      => open,
+        RXPLLLKDET_OUT      => clk_gtx_locked_o,
         RXRESETDONE_OUT     => open,
         TXCHARISK_IN        => tx_kchar_i(1 downto 0),
         TXDATA_IN           => tx_data_i(15 downto 0),
@@ -101,8 +104,8 @@ begin
     gtx_1_inst : entity work.gtx_gtx
     generic map(
         GTX_SIM_GTXRESET_SPEEDUP    => 1,
-        GTX_TX_CLK_SOURCE           => "RXPLL",
-        GTX_POWER_SAVE              => "0000110100"
+        GTX_TX_CLK_SOURCE           => "TXPLL",
+        GTX_POWER_SAVE              => "0000110000"
     )
     port map(
         RXCHARISK_OUT       => rx_kchar_o(3 downto 2),
@@ -139,8 +142,8 @@ begin
     gtx_2_inst : entity work.gtx_gtx
     generic map(
         GTX_SIM_GTXRESET_SPEEDUP    => 1,
-        GTX_TX_CLK_SOURCE           => "RXPLL",
-        GTX_POWER_SAVE              => "0000110100"
+        GTX_TX_CLK_SOURCE           => "TXPLL",
+        GTX_POWER_SAVE              => "0000110000"
     )
     port map(
         RXCHARISK_OUT       => rx_kchar_o(5 downto 4),
@@ -177,8 +180,8 @@ begin
     gtx_3_inst : entity work.gtx_gtx
     generic map(
         GTX_SIM_GTXRESET_SPEEDUP    => 1,
-        GTX_TX_CLK_SOURCE           => "RXPLL",
-        GTX_POWER_SAVE              => "0000110100"
+        GTX_TX_CLK_SOURCE           => "TXPLL",
+        GTX_POWER_SAVE              => "0000110000"
     )
     port map(
         RXCHARISK_OUT       => rx_kchar_o(7 downto 6),

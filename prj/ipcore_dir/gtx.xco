@@ -1,7 +1,7 @@
 ##############################################################
 #
 # Xilinx Core Generator version 14.7
-# Date: Thu Apr 16 07:48:18 2015
+# Date: Mon Aug 03 09:32:39 2015
 #
 ##############################################################
 #
@@ -251,8 +251,8 @@ CSET tx_en_rate_reset_buf=true
 CSET tx_idle_assert_delay=100
 CSET tx_idle_deassert_delay=010
 CSET tx_line_rate=3.2
-CSET tx_refclk_x0_y0=use_rx_pll
-CSET tx_refclk_x0_y1=use_rx_pll
+CSET tx_refclk_x0_y0=REFCLK0_Q0
+CSET tx_refclk_x0_y1=REFCLK0_Q0
 CSET tx_refclk_x0_y10=use_rx_pll
 CSET tx_refclk_x0_y11=use_rx_pll
 CSET tx_refclk_x0_y12=use_rx_pll
@@ -263,7 +263,7 @@ CSET tx_refclk_x0_y16=use_rx_pll
 CSET tx_refclk_x0_y17=use_rx_pll
 CSET tx_refclk_x0_y18=use_rx_pll
 CSET tx_refclk_x0_y19=use_rx_pll
-CSET tx_refclk_x0_y2=use_rx_pll
+CSET tx_refclk_x0_y2=REFCLK0_Q0
 CSET tx_refclk_x0_y20=use_rx_pll
 CSET tx_refclk_x0_y21=use_rx_pll
 CSET tx_refclk_x0_y22=use_rx_pll
@@ -274,7 +274,7 @@ CSET tx_refclk_x0_y26=use_rx_pll
 CSET tx_refclk_x0_y27=use_rx_pll
 CSET tx_refclk_x0_y28=use_rx_pll
 CSET tx_refclk_x0_y29=use_rx_pll
-CSET tx_refclk_x0_y3=use_rx_pll
+CSET tx_refclk_x0_y3=REFCLK0_Q0
 CSET tx_refclk_x0_y30=use_rx_pll
 CSET tx_refclk_x0_y31=use_rx_pll
 CSET tx_refclk_x0_y32=use_rx_pll
@@ -394,18 +394,18 @@ CSET use_rx_eq=false
 CSET use_rx_oob=false
 CSET use_rx_oversampling=false
 CSET use_rxbuffer=true
-CSET use_rxpllrefclk=true
+CSET use_rxpllrefclk=false
 CSET use_rxprbserr_loopback=false
 CSET use_turbo_mode=false
 CSET use_two_cb_sequences=false
 CSET use_two_cc_sequences=false
 CSET use_tx_oversampling=false
 CSET use_txbuffer=true
-CSET use_txpllrefclk=true
+CSET use_txpllrefclk=false
 CSET wideband_highpass_mix=000
 # END Parameters
 # BEGIN Extra information
 MISC pkg_timestamp=2011-04-08T05:24:23Z
 # END Extra information
 GENERATE
-# CRC: 45670f68
+# CRC: ec91a5a3

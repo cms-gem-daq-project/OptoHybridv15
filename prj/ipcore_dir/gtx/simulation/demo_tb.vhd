@@ -257,8 +257,8 @@ begin
     )
     port map
     (
-        Q0_CLK0_MGTREFCLK_PAD_N_IN       =>  rx_refclk_n_r,
-        Q0_CLK0_MGTREFCLK_PAD_P_IN       =>  rx_refclk_p_r,
+        Q0_CLK0_MGTREFCLK_PAD_N_IN       =>  tx_refclk_n_r,
+        Q0_CLK0_MGTREFCLK_PAD_P_IN       =>  tx_refclk_p_r,
         GTXTXRESET_IN               =>  reset_i,
         GTXRXRESET_IN               =>  reset_i,
         TRACK_DATA_OUT              =>  track_data_i,

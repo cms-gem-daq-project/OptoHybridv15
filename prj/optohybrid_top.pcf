@@ -1,12 +1,8 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Thu Jul 30 16:39:57 2015
+// Written by: Map P.20131013 on Thu Aug 06 11:38:38 2015
 //! **************************************************************************
 
 SCHEMATIC START;
-COMP "gtx_wrapper_inst/gtx_2_inst/gtxe1_i" LOCATE = SITE "GTXE1_X0Y4" LEVEL 1;
-COMP "gtx_wrapper_inst/gtx_1_inst/gtxe1_i" LOCATE = SITE "GTXE1_X0Y2" LEVEL 1;
-COMP "gtx_wrapper_inst/gtx_0_inst/gtxe1_i" LOCATE = SITE "GTXE1_X0Y0" LEVEL 1;
-COMP "gtx_wrapper_inst/gtx_3_inst/gtxe1_i" LOCATE = SITE "GTXE1_X0Y6" LEVEL 1;
 COMP "vfat2_18_sbits_n_i<0>" LOCATE = SITE "AF31" LEVEL 1;
 COMP "vfat2_18_sbits_n_i<1>" LOCATE = SITE "AH30" LEVEL 1;
 COMP "vfat2_18_sbits_n_i<2>" LOCATE = SITE "AJ32" LEVEL 1;
@@ -119,7 +115,6 @@ COMP "vfat2_17_sbits_p_i<4>" LOCATE = SITE "AN25" LEVEL 1;
 COMP "vfat2_17_sbits_p_i<5>" LOCATE = SITE "AK23" LEVEL 1;
 COMP "vfat2_17_sbits_p_i<6>" LOCATE = SITE "AK22" LEVEL 1;
 COMP "vfat2_17_sbits_p_i<7>" LOCATE = SITE "AM21" LEVEL 1;
-COMP "cdce_pwrdown_o" LOCATE = SITE "AE17" LEVEL 1;
 COMP "vfat2_16_data_out_n_i" LOCATE = SITE "AM11" LEVEL 1;
 COMP "vfat2_16_data_out_p_i" LOCATE = SITE "AL11" LEVEL 1;
 COMP "vfat2_7_sbits_n_i<0>" LOCATE = SITE "U32" LEVEL 1;
@@ -203,10 +198,12 @@ COMP "vfat2_16_sbits_p_i<0>" LOCATE = SITE "AK19" LEVEL 1;
 COMP "vfat2_16_sbits_p_i<1>" LOCATE = SITE "AJ19" LEVEL 1;
 COMP "vfat2_16_sbits_p_i<2>" LOCATE = SITE "AK18" LEVEL 1;
 COMP "vfat2_16_sbits_p_i<3>" LOCATE = SITE "AL16" LEVEL 1;
+COMP "qpll_clk_n_i" LOCATE = SITE "M10" LEVEL 1;
 COMP "vfat2_16_sbits_p_i<4>" LOCATE = SITE "AN15" LEVEL 1;
 COMP "vfat2_16_sbits_p_i<5>" LOCATE = SITE "AL15" LEVEL 1;
 COMP "vfat2_16_sbits_p_i<6>" LOCATE = SITE "AK13" LEVEL 1;
 COMP "vfat2_16_sbits_p_i<7>" LOCATE = SITE "AK12" LEVEL 1;
+COMP "qpll_clk_p_i" LOCATE = SITE "L10" LEVEL 1;
 COMP "vfat2_23_data_out_n_i" LOCATE = SITE "V33" LEVEL 1;
 COMP "vfat2_15_data_out_n_i" LOCATE = SITE "AF29" LEVEL 1;
 COMP "vfat2_23_data_out_p_i" LOCATE = SITE "V32" LEVEL 1;
@@ -231,6 +228,8 @@ COMP "vfat2_6_sbits_p_i<7>" LOCATE = SITE "A28" LEVEL 1;
 COMP "vfat2_5_data_out_n_i" LOCATE = SITE "A19" LEVEL 1;
 COMP "vfat2_5_data_out_p_i" LOCATE = SITE "A18" LEVEL 1;
 COMP "cdce_locked_i" LOCATE = SITE "AE12" LEVEL 1;
+PIN cdce_locked_i_pin<0> = BEL "cdce_locked_i" PINNAME PAD;
+PIN "cdce_locked_i_pin<0>" CLOCK_DEDICATED_ROUTE = FALSE;
 COMP "vfat2_10_sbits_n_i<0>" LOCATE = SITE "G20" LEVEL 1;
 COMP "vfat2_10_sbits_n_i<1>" LOCATE = SITE "G22" LEVEL 1;
 COMP "vfat2_10_sbits_n_i<2>" LOCATE = SITE "J22" LEVEL 1;
@@ -263,6 +262,7 @@ COMP "vfat2_0_sbits_p_i<4>" LOCATE = SITE "F14" LEVEL 1;
 COMP "vfat2_0_sbits_p_i<5>" LOCATE = SITE "G15" LEVEL 1;
 COMP "vfat2_0_sbits_p_i<6>" LOCATE = SITE "E16" LEVEL 1;
 COMP "vfat2_0_sbits_p_i<7>" LOCATE = SITE "E18" LEVEL 1;
+COMP "cdce_pwrdown_o" LOCATE = SITE "AE17" LEVEL 1;
 COMP "vfat2_sda_io<0>" LOCATE = SITE "W25" LEVEL 1;
 COMP "vfat2_sda_io<1>" LOCATE = SITE "K22" LEVEL 1;
 COMP "vfat2_sda_io<2>" LOCATE = SITE "Y26" LEVEL 1;
@@ -326,8 +326,6 @@ COMP "vfat2_4_data_out_p_i" LOCATE = SITE "J11" LEVEL 1;
 COMP "vfat2_resb_o<0>" LOCATE = SITE "K23" LEVEL 1;
 COMP "vfat2_resb_o<1>" LOCATE = SITE "H20" LEVEL 1;
 COMP "vfat2_resb_o<2>" LOCATE = SITE "AC19" LEVEL 1;
-COMP "cdce_clk_n_i" LOCATE = SITE "AJ9" LEVEL 1;
-COMP "cdce_clk_p_i" LOCATE = SITE "AH9" LEVEL 1;
 COMP "vfat2_19_data_out_n_i" LOCATE = SITE "AF33" LEVEL 1;
 COMP "vfat2_19_data_out_p_i" LOCATE = SITE "AE33" LEVEL 1;
 COMP "vfat2_resh_o<0>" LOCATE = SITE "K24" LEVEL 1;
@@ -371,8 +369,6 @@ COMP "cdce_pri_n_o" LOCATE = SITE "AP10" LEVEL 1;
 COMP "cdce_pri_p_o" LOCATE = SITE "AN10" LEVEL 1;
 COMP "vfat2_21_data_out_n_i" LOCATE = SITE "AP26" LEVEL 1;
 COMP "vfat2_13_data_out_n_i" LOCATE = SITE "AF18" LEVEL 1;
-COMP "tmds_d_p_io<0>" LOCATE = SITE "AC13" LEVEL 1;
-COMP "tmds_d_p_io<1>" LOCATE = SITE "AD12" LEVEL 1;
 COMP "vfat2_21_data_out_p_i" LOCATE = SITE "AP27" LEVEL 1;
 COMP "vfat2_13_data_out_p_i" LOCATE = SITE "AE18" LEVEL 1;
 COMP "vfat2_scl_o<0>" LOCATE = SITE "V25" LEVEL 1;
@@ -477,6 +473,8 @@ COMP "vfat2_t1_n_o<2>" LOCATE = SITE "AG21" LEVEL 1;
 COMP "vfat2_t1_p_o<0>" LOCATE = SITE "L25" LEVEL 1;
 COMP "vfat2_t1_p_o<1>" LOCATE = SITE "K18" LEVEL 1;
 COMP "vfat2_t1_p_o<2>" LOCATE = SITE "AG20" LEVEL 1;
+COMP "mgt_112_clk0_n_i" LOCATE = SITE "AK5" LEVEL 1;
+COMP "mgt_112_clk0_p_i" LOCATE = SITE "AK6" LEVEL 1;
 COMP "vfat2_3_sbits_n_i<0>" LOCATE = SITE "K29" LEVEL 1;
 COMP "vfat2_3_sbits_n_i<1>" LOCATE = SITE "K31" LEVEL 1;
 COMP "vfat2_3_sbits_n_i<2>" LOCATE = SITE "L31" LEVEL 1;
@@ -495,19 +493,32 @@ COMP "vfat2_3_sbits_p_i<6>" LOCATE = SITE "R31" LEVEL 1;
 COMP "vfat2_3_sbits_p_i<7>" LOCATE = SITE "T30" LEVEL 1;
 COMP "vfat2_2_data_out_n_i" LOCATE = SITE "H30" LEVEL 1;
 COMP "vfat2_2_data_out_p_i" LOCATE = SITE "G31" LEVEL 1;
+COMP "gtx_wrapper_inst/gtx_2_inst/gtxe1_i" LOCATE = SITE "GTXE1_X0Y4" LEVEL 1;
+COMP "gtx_wrapper_inst/gtx_1_inst/gtxe1_i" LOCATE = SITE "GTXE1_X0Y2" LEVEL 1;
+COMP "gtx_wrapper_inst/gtx_0_inst/gtxe1_i" LOCATE = SITE "GTXE1_X0Y0" LEVEL 1;
+COMP "gtx_wrapper_inst/gtx_3_inst/gtxe1_i" LOCATE = SITE "GTXE1_X0Y6" LEVEL 1;
 PIN MMCM_PHASE_CALIBRATION_ML_LUT2_13_pins<2> = BEL
         "MMCM_PHASE_CALIBRATION_ML_LUT2_13" PINNAME O6;
+PIN MMCM_PHASE_CALIBRATION_ML_FDCPE_I0_12_pins<3> = BEL
+        "MMCM_PHASE_CALIBRATION_ML_FDCPE_I0_12" PINNAME SR;
 PIN MMCM_PHASE_CALIBRATION_ML_FDCPE_I0_12_pins<2> = BEL
         "MMCM_PHASE_CALIBRATION_ML_FDCPE_I0_12" PINNAME Q;
+PIN MMCM_PHASE_CALIBRATION_ML_FDCPE_I0_11_pins<3> = BEL
+        "MMCM_PHASE_CALIBRATION_ML_FDCPE_I0_11" PINNAME SR;
 PIN MMCM_PHASE_CALIBRATION_ML_FDCPE_I0_11_pins<2> = BEL
         "MMCM_PHASE_CALIBRATION_ML_FDCPE_I0_11" PINNAME Q;
+PIN MMCM_PHASE_CALIBRATION_ML_FDCPE_I0_10_pins<3> = BEL
+        "MMCM_PHASE_CALIBRATION_ML_FDCPE_I0_10" PINNAME SR;
 PIN MMCM_PHASE_CALIBRATION_ML_FDCPE_I0_10_pins<2> = BEL
         "MMCM_PHASE_CALIBRATION_ML_FDCPE_I0_10" PINNAME Q;
 PIN MMCM_PHASE_CALIBRATION_ML_LDCPE_I0_9_pins<0> = BEL
         "MMCM_PHASE_CALIBRATION_ML_LDCPE_I0_9" PINNAME CK;
 PIN "MMCM_PHASE_CALIBRATION_ML_LUT2_13_pins<2>" TIG;
+PIN "MMCM_PHASE_CALIBRATION_ML_FDCPE_I0_12_pins<3>" TIG;
 PIN "MMCM_PHASE_CALIBRATION_ML_FDCPE_I0_12_pins<2>" TIG;
+PIN "MMCM_PHASE_CALIBRATION_ML_FDCPE_I0_11_pins<3>" TIG;
 PIN "MMCM_PHASE_CALIBRATION_ML_FDCPE_I0_11_pins<2>" TIG;
+PIN "MMCM_PHASE_CALIBRATION_ML_FDCPE_I0_10_pins<3>" TIG;
 PIN "MMCM_PHASE_CALIBRATION_ML_FDCPE_I0_10_pins<2>" TIG;
 PIN "MMCM_PHASE_CALIBRATION_ML_LDCPE_I0_9_pins<0>" TIG;
 SCHEMATIC END;

@@ -65,6 +65,9 @@ port
     GTX0_TXP_OUT                            : out  std_logic;
     ----------------------- Transmit Ports - TX PLL Ports ----------------------
     GTX0_GTXTXRESET_IN                      : in   std_logic;
+    GTX0_MGTREFCLKTX_IN                     : in   std_logic;
+    GTX0_PLLTXRESET_IN                      : in   std_logic;
+    GTX0_TXPLLLKDET_OUT                     : out  std_logic;
     GTX0_TXRESETDONE_OUT                    : out  std_logic;
 
 
@@ -108,6 +111,9 @@ port
     GTX1_TXP_OUT                            : out  std_logic;
     ----------------------- Transmit Ports - TX PLL Ports ----------------------
     GTX1_GTXTXRESET_IN                      : in   std_logic;
+    GTX1_MGTREFCLKTX_IN                     : in   std_logic;
+    GTX1_PLLTXRESET_IN                      : in   std_logic;
+    GTX1_TXPLLLKDET_OUT                     : out  std_logic;
     GTX1_TXRESETDONE_OUT                    : out  std_logic;
 
 
@@ -151,6 +157,9 @@ port
     GTX2_TXP_OUT                            : out  std_logic;
     ----------------------- Transmit Ports - TX PLL Ports ----------------------
     GTX2_GTXTXRESET_IN                      : in   std_logic;
+    GTX2_MGTREFCLKTX_IN                     : in   std_logic;
+    GTX2_PLLTXRESET_IN                      : in   std_logic;
+    GTX2_TXPLLLKDET_OUT                     : out  std_logic;
     GTX2_TXRESETDONE_OUT                    : out  std_logic;
 
 
@@ -194,6 +203,9 @@ port
     GTX3_TXP_OUT                            : out  std_logic;
     ----------------------- Transmit Ports - TX PLL Ports ----------------------
     GTX3_GTXTXRESET_IN                      : in   std_logic;
+    GTX3_MGTREFCLKTX_IN                     : in   std_logic;
+    GTX3_PLLTXRESET_IN                      : in   std_logic;
+    GTX3_TXPLLLKDET_OUT                     : out  std_logic;
     GTX3_TXRESETDONE_OUT                    : out  std_logic
 
 
@@ -258,6 +270,9 @@ end component;
         GTX0_TXP_OUT                    =>      ,
         ----------------------- Transmit Ports - TX PLL Ports ----------------------
         GTX0_GTXTXRESET_IN              =>      ,
+        GTX0_MGTREFCLKTX_IN             =>      ,
+        GTX0_PLLTXRESET_IN              =>      ,
+        GTX0_TXPLLLKDET_OUT             =>      ,
         GTX0_TXRESETDONE_OUT            =>      ,
 
 
@@ -300,6 +315,9 @@ end component;
         GTX1_TXP_OUT                    =>      ,
         ----------------------- Transmit Ports - TX PLL Ports ----------------------
         GTX1_GTXTXRESET_IN              =>      ,
+        GTX1_MGTREFCLKTX_IN             =>      ,
+        GTX1_PLLTXRESET_IN              =>      ,
+        GTX1_TXPLLLKDET_OUT             =>      ,
         GTX1_TXRESETDONE_OUT            =>      ,
 
 
@@ -342,6 +360,9 @@ end component;
         GTX2_TXP_OUT                    =>      ,
         ----------------------- Transmit Ports - TX PLL Ports ----------------------
         GTX2_GTXTXRESET_IN              =>      ,
+        GTX2_MGTREFCLKTX_IN             =>      ,
+        GTX2_PLLTXRESET_IN              =>      ,
+        GTX2_TXPLLLKDET_OUT             =>      ,
         GTX2_TXRESETDONE_OUT            =>      ,
 
 
@@ -384,6 +405,9 @@ end component;
         GTX3_TXP_OUT                    =>      ,
         ----------------------- Transmit Ports - TX PLL Ports ----------------------
         GTX3_GTXTXRESET_IN              =>      ,
+        GTX3_MGTREFCLKTX_IN             =>      ,
+        GTX3_PLLTXRESET_IN              =>      ,
+        GTX3_TXPLLLKDET_OUT             =>      ,
         GTX3_TXRESETDONE_OUT            =>      
 
 
