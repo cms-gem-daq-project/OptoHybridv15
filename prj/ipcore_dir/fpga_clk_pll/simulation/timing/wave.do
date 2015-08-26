@@ -55,7 +55,6 @@ add wave -noupdate -divider {Output clocks}
 add wave -noupdate /fpga_clk_pll_tb/clk_in1
 add wave -noupdate /fpga_clk_pll_tb/count
 add wave -noupdate /fpga_clk_pll_tb/counter_reset
-add wave -noupdate /fpga_clk_pll_tb/locked
 TreeUpdate [SetDefaultTree]
 WaveRestoreCursors {{Cursor 1} {3223025 ps} 0}
 configure wave -namecolwidth 238

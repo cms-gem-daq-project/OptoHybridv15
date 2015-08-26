@@ -188,6 +188,8 @@ port(
     qpll_clk_p_i            : in std_logic;
     qpll_clk_n_i            : in std_logic;
     
+    qpll_alt_i              : in std_logic;
+    
     --== GTX ==--
     
 --    mgt_116_clk1_p_i        : in std_logic;
@@ -258,6 +260,8 @@ architecture Behavioral of optohybrid_top is
     signal switch_edge          : std_logic;
     
     signal cdce_in_clk          : std_logic;
+    
+    signal slow_clk             : std_logic;
     
     --== GTX ==--
     
@@ -503,7 +507,20 @@ begin
     
     --== Clocking & Reset : PLL & CDCE & VFAT2 ==--
     
-    ibu : ibufgds port map(i => qpll_clk_p_i, ib => qpll_clk_n_i, o => qpll_clk);
+    
+    -- board with QPLL
+    --ibu : ibufgds port map(i => qpll_clk_p_i, ib => qpll_clk_n_i, o => qpll_clk);
+    --slow_clk <= clk_50MHz_i;
+    -- board without QPLL
+    ibu : entity work.fpga_clk_pll port map(clk_50MHz_i => qpll_alt_i, clk_40MHz_o => qpll_clk);
+    slow_clk <= qpll_alt_i;
+    
+    
+    
+    
+    
+    
+    
     clk_qpll_locked <= '1';
 
     gtx_clk_pll_inst : entity work.gtx_clk_pll
@@ -528,7 +545,6 @@ begin
 		clk_condition => open,
 		reset => open
 	);
-    
     
     bufgmux_inst : bufgmux 
     generic map(
@@ -571,10 +587,10 @@ begin
     cdce_sync_o <= '1';
     cdce_le_o <= '1';   
     
-    process(clk_50MHz_i)
+    process(slow_clk)
         variable cnt : integer range 0 to 31 := 0;
     begin
-        if (rising_edge(clk_50MHz_i)) then
+        if (rising_edge(slow_clk)) then
             if (cnt < 20) then
                 cdce_pwrdown_o <= '0';
                 cnt := cnt + 1;
@@ -978,7 +994,8 @@ begin
     chipscope_ila_inst : entity work.chipscope_ila port map (CONTROL => cs_icon1, CLK => gtx_clk, TRIG0 => cs_ila0, TRIG1 => cs_ila1, TRIG2 => cs_ila2, TRIG3 => cs_ila3, TRIG4 => cs_ila4);
 
     cs_ila0 <= rx_data(31 downto 16) & rx_data(15 downto 0);
-    cs_ila1 <= rx_data(63 downto 48) & rx_data(47 downto 32);
+    cs_ila1 <= tx_data(31 downto 16) & tx_data(15 downto 0);
+    --cs_ila1 <= rx_data(63 downto 48) & rx_data(47 downto 32);
     
     cs_ila2 <= (0 => vfat2_data_valid(0), 
                 1 => vfat2_data_valid(1),

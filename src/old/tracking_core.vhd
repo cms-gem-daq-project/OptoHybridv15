@@ -74,14 +74,14 @@ begin
     -- Tracking decoder
     --================================--  
 
-    track_0_inst : entity work.tracking_decoder port map(vfat2_clk_i => vfat2_clk_i, reset_i => reset_i, en_i => vfat2_dvalid_i(0), data_i => vfat2_data_0_i, en_o => track_en(0), data_o => track_data(0));
-    track_1_inst : entity work.tracking_decoder port map(vfat2_clk_i => vfat2_clk_i, reset_i => reset_i, en_i => vfat2_dvalid_i(0), data_i => vfat2_data_1_i, en_o => track_en(1), data_o => track_data(1));
-    track_2_inst : entity work.tracking_decoder port map(vfat2_clk_i => vfat2_clk_i, reset_i => reset_i, en_i => vfat2_dvalid_i(0), data_i => vfat2_data_2_i, en_o => track_en(2), data_o => track_data(2));
-    track_3_inst : entity work.tracking_decoder port map(vfat2_clk_i => vfat2_clk_i, reset_i => reset_i, en_i => vfat2_dvalid_i(1), data_i => vfat2_data_3_i, en_o => track_en(3), data_o => track_data(3)); -- Should be 0
-    track_4_inst : entity work.tracking_decoder port map(vfat2_clk_i => vfat2_clk_i, reset_i => reset_i, en_i => vfat2_dvalid_i(1), data_i => vfat2_data_4_i, en_o => track_en(4), data_o => track_data(4)); 
-    track_5_inst : entity work.tracking_decoder port map(vfat2_clk_i => vfat2_clk_i, reset_i => reset_i, en_i => vfat2_dvalid_i(1), data_i => vfat2_data_5_i, en_o => track_en(5), data_o => track_data(5));
-    track_6_inst : entity work.tracking_decoder port map(vfat2_clk_i => vfat2_clk_i, reset_i => reset_i, en_i => vfat2_dvalid_i(1), data_i => vfat2_data_6_i, en_o => track_en(6), data_o => track_data(6));
-    track_7_inst : entity work.tracking_decoder port map(vfat2_clk_i => vfat2_clk_i, reset_i => reset_i, en_i => vfat2_dvalid_i(1), data_i => vfat2_data_7_i, en_o => track_en(7), data_o => track_data(7));
+    track_0_inst : entity work.tracking_decoder port map(vfat2_clk_i => vfat2_clk_i, reset_i => reset_i, data_i => vfat2_data_0_i, en_o => track_en(0), data_o => track_data(0));
+    track_1_inst : entity work.tracking_decoder port map(vfat2_clk_i => vfat2_clk_i, reset_i => reset_i, data_i => vfat2_data_1_i, en_o => track_en(1), data_o => track_data(1));
+    track_2_inst : entity work.tracking_decoder port map(vfat2_clk_i => vfat2_clk_i, reset_i => reset_i, data_i => vfat2_data_2_i, en_o => track_en(2), data_o => track_data(2));
+    track_3_inst : entity work.tracking_decoder port map(vfat2_clk_i => vfat2_clk_i, reset_i => reset_i, data_i => vfat2_data_3_i, en_o => track_en(3), data_o => track_data(3)); -- Should be 0
+    track_4_inst : entity work.tracking_decoder port map(vfat2_clk_i => vfat2_clk_i, reset_i => reset_i, data_i => vfat2_data_4_i, en_o => track_en(4), data_o => track_data(4)); 
+    track_5_inst : entity work.tracking_decoder port map(vfat2_clk_i => vfat2_clk_i, reset_i => reset_i, data_i => vfat2_data_5_i, en_o => track_en(5), data_o => track_data(5));
+    track_6_inst : entity work.tracking_decoder port map(vfat2_clk_i => vfat2_clk_i, reset_i => reset_i, data_i => vfat2_data_6_i, en_o => track_en(6), data_o => track_data(6));
+    track_7_inst : entity work.tracking_decoder port map(vfat2_clk_i => vfat2_clk_i, reset_i => reset_i, data_i => vfat2_data_7_i, en_o => track_en(7), data_o => track_data(7));
 
     --================================--
     -- Concentrator

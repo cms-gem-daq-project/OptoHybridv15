@@ -8,7 +8,7 @@
 <msg type="info" file="LIT" num="243" delta="old" >Logical network <arg fmt="%s" index="1">cs_icon1&lt;35&gt;</arg> has no load.
 </msg>
 
-<msg type="info" file="LIT" num="395" delta="old" >The above <arg fmt="%s" index="1">info</arg> message is repeated <arg fmt="%d" index="2">59</arg> more times for the following (max. 5 shown):
+<msg type="info" file="LIT" num="395" delta="old" >The above <arg fmt="%s" index="1">info</arg> message is repeated <arg fmt="%d" index="2">62</arg> more times for the following (max. 5 shown):
 <arg fmt="%s" index="3">cs_icon1&lt;34&gt;,
 cs_icon1&lt;33&gt;,
 cs_icon1&lt;32&gt;,
@@ -65,10 +65,7 @@ To see the details of these <arg fmt="%s" index="4">info</arg> messages, please 
 <msg type="info" file="Map" num="215" delta="old" >The Interim Design Summary has been generated in the MAP Report (.mrp).
 </msg>
 
-<msg type="warning" file="Place" num="1154" delta="old" >A clock IOB / BUFGCTRL clock component pair have been found that are not placed at an optimal clock IOB / BUFGCTRL site pair. The clock IOB component &lt;<arg fmt="%s" index="1">clk_50MHz_i</arg>&gt; is placed at site &lt;<arg fmt="%s" index="2">A11</arg>&gt;. The corresponding BUFGCTRL component &lt;<arg fmt="%s" index="3">clk_50MHz_i_BUFGP/BUFG</arg>&gt; is placed at site &lt;<arg fmt="%s" index="4">BUFGCTRL_X0Y16</arg>&gt;. The clock IO can use the fast path between the IOB and the Clock Buffer if a) the IOB is placed on a Global Clock Capable IOB site that has the fastest dedicated path to all BUFGCTRL sites, or b) the IOB is placed on a Local Clock Capable IOB site that has dedicated fast path to BUFGCTRL sites in its half of the device (TOP or BOTTOM). You may want to analyze why this problem exists and correct it. This is normally an ERROR but the CLOCK_DEDICATED_ROUTE constraint was applied on COMP.PIN &lt;<arg fmt="%s" index="5">clk_50MHz_i.PAD</arg>&gt; allowing your design to continue. This constraint disables all clock placer rules related to the specified COMP.PIN. The use of this override is highly discouraged as it may lead to very poor timing results. It is recommended that this error condition be corrected in the design.
-</msg>
-
-<msg type="warning" file="Place" num="1154" delta="old" >A clock IOB / BUFGCTRL clock component pair have been found that are not placed at an optimal clock IOB / BUFGCTRL site pair. The clock IOB component &lt;<arg fmt="%s" index="1">cdce_locked_i</arg>&gt; is placed at site &lt;<arg fmt="%s" index="2">AE12</arg>&gt;. The corresponding BUFGCTRL component &lt;<arg fmt="%s" index="3">cdce_locked_i_IBUF_BUFG</arg>&gt; is placed at site &lt;<arg fmt="%s" index="4">BUFGCTRL_X0Y26</arg>&gt;. The clock IO can use the fast path between the IOB and the Clock Buffer if a) the IOB is placed on a Global Clock Capable IOB site that has the fastest dedicated path to all BUFGCTRL sites, or b) the IOB is placed on a Local Clock Capable IOB site that has dedicated fast path to BUFGCTRL sites in its half of the device (TOP or BOTTOM). You may want to analyze why this problem exists and correct it. This is normally an ERROR but the CLOCK_DEDICATED_ROUTE constraint was applied on COMP.PIN &lt;<arg fmt="%s" index="5">cdce_locked_i.PAD</arg>&gt; allowing your design to continue. This constraint disables all clock placer rules related to the specified COMP.PIN. The use of this override is highly discouraged as it may lead to very poor timing results. It is recommended that this error condition be corrected in the design.
+<msg type="warning" file="Place" num="1154" delta="old" >A clock IOB / BUFGCTRL clock component pair have been found that are not placed at an optimal clock IOB / BUFGCTRL site pair. The clock IOB component &lt;<arg fmt="%s" index="1">cdce_locked_i</arg>&gt; is placed at site &lt;<arg fmt="%s" index="2">AE12</arg>&gt;. The corresponding BUFGCTRL component &lt;<arg fmt="%s" index="3">cdce_locked_i_IBUF_BUFG</arg>&gt; is placed at site &lt;<arg fmt="%s" index="4">BUFGCTRL_X0Y29</arg>&gt;. The clock IO can use the fast path between the IOB and the Clock Buffer if a) the IOB is placed on a Global Clock Capable IOB site that has the fastest dedicated path to all BUFGCTRL sites, or b) the IOB is placed on a Local Clock Capable IOB site that has dedicated fast path to BUFGCTRL sites in its half of the device (TOP or BOTTOM). You may want to analyze why this problem exists and correct it. This is normally an ERROR but the CLOCK_DEDICATED_ROUTE constraint was applied on COMP.PIN &lt;<arg fmt="%s" index="5">cdce_locked_i.PAD</arg>&gt; allowing your design to continue. This constraint disables all clock placer rules related to the specified COMP.PIN. The use of this override is highly discouraged as it may lead to very poor timing results. It is recommended that this error condition be corrected in the design.
 </msg>
 
 <msg type="info" file="Pack" num="1650" delta="old" >Map created a placed design.
@@ -78,6 +75,18 @@ To see the details of these <arg fmt="%s" index="4">info</arg> messages, please 
 </msg>
 
 <msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/RESET</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;12&gt;</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;13&gt;</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;14&gt;</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;15&gt;</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
 </msg>
 
 <msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_UPDATE_OUT[63].UPDATE_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
@@ -107,18 +116,6 @@ To see the details of these <arg fmt="%s" index="4">info</arg> messages, please 
 <msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;3&gt;</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
 </msg>
 
-<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;12&gt;</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
-</msg>
-
-<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;13&gt;</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
-</msg>
-
-<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;14&gt;</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
-</msg>
-
-<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;15&gt;</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
-</msg>
-
 <msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;4&gt;</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
 </msg>
 
@@ -131,34 +128,13 @@ To see the details of these <arg fmt="%s" index="4">info</arg> messages, please 
 <msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;7&gt;</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
 </msg>
 
-<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[21].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
-</msg>
-
-<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[22].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
-</msg>
-
-<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[31].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
-</msg>
-
-<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[20].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
-</msg>
-
 <msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[18].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
 </msg>
 
 <msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[23].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
 </msg>
 
-<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[19].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
-</msg>
-
-<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[24].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
-</msg>
-
-<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[25].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
-</msg>
-
-<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[26].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[31].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
 </msg>
 
 <msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[27].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
@@ -167,10 +143,31 @@ To see the details of these <arg fmt="%s" index="4">info</arg> messages, please 
 <msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[30].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
 </msg>
 
-<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[28].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[26].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[22].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[19].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[25].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
 </msg>
 
 <msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[29].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[28].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[24].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[21].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[20].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
 </msg>
 
 </messages>

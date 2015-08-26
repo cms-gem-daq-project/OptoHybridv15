@@ -1,11 +1,11 @@
 Release 14.7 - par P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Thu Aug 06 11:40:02 2015
+Wed Aug 26 08:59:42 2015
 
 All signals are completely routed.
 
-WARNING:ParHelpers:361 - There are 32 loadless signals in this design. This design will cause Bitgen to issue DRC
+WARNING:ParHelpers:361 - There are 35 loadless signals in this design. This design will cause Bitgen to issue DRC
    warnings.
 
    chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[18].SYNC_OUT_CELL/out_temp
@@ -40,5 +40,8 @@ WARNING:ParHelpers:361 - There are 32 loadless signals in this design. This desi
    chipscope_vio_inst/U0/I_VIO/UPDATE<7>
    chipscope_vio_inst/U0/I_VIO/UPDATE<8>
    chipscope_vio_inst/U0/I_VIO/UPDATE<9>
+   clk_50MHz_i_IBUF
+   qpll_clk_n_i_IBUF
+   qpll_clk_p_i_IBUF
 
 

@@ -7,7 +7,6 @@ port(
     vfat2_clk_i     : in std_logic;
     reset_i         : in std_logic;
     
-    en_i            : in std_logic;
     data_i          : in std_logic;
     
     en_o            : out std_logic;
