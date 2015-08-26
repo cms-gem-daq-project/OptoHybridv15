@@ -53,6 +53,9 @@
 <msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;3&gt;</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
 </msg>
 
+<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[31].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
 <msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/UPDATE&lt;4&gt;</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
 </msg>
 
@@ -68,43 +71,40 @@
 <msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[18].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
 </msg>
 
-<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[23].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
-</msg>
-
-<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[31].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
-</msg>
-
-<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[27].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
-</msg>
-
 <msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[30].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
-</msg>
-
-<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[26].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
-</msg>
-
-<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[22].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
 </msg>
 
 <msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[19].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
 </msg>
 
-<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[25].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
-</msg>
-
 <msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[29].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
 </msg>
 
-<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[28].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
-</msg>
-
-<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[24].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[22].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
 </msg>
 
 <msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[21].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
 </msg>
 
 <msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[20].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[27].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[26].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[28].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[23].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[24].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">chipscope_vio_inst/U0/I_VIO/GEN_SYNC_OUT[25].SYNC_OUT_CELL/out_temp</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
 </msg>
 
 </messages>

@@ -37,54 +37,54 @@ Setup/Hold to clock qpll_alt_i
                      |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
 Source               | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
 ---------------------+------------+------------+------------+------------+------------------+--------+
-vfat2_0_data_out_n_i |    1.470(R)|      SLOW  |   -0.523(R)|      SLOW  |clk_cdce          |   0.000|
-vfat2_0_data_out_p_i |    1.470(R)|      SLOW  |   -0.523(R)|      SLOW  |clk_cdce          |   0.000|
-vfat2_1_data_out_n_i |    1.467(R)|      SLOW  |   -0.390(R)|      SLOW  |clk_cdce          |   0.000|
-vfat2_1_data_out_p_i |    1.467(R)|      SLOW  |   -0.390(R)|      SLOW  |clk_cdce          |   0.000|
-vfat2_2_data_out_n_i |    2.057(R)|      SLOW  |   -0.993(R)|      FAST  |clk_cdce          |   0.000|
-vfat2_2_data_out_p_i |    2.057(R)|      SLOW  |   -0.993(R)|      FAST  |clk_cdce          |   0.000|
-vfat2_3_data_out_n_i |    0.325(R)|      FAST  |    0.647(R)|      SLOW  |clk_cdce          |   0.000|
-vfat2_3_data_out_p_i |    0.325(R)|      FAST  |    0.647(R)|      SLOW  |clk_cdce          |   0.000|
-vfat2_4_data_out_n_i |    1.511(R)|      SLOW  |   -0.432(R)|      SLOW  |clk_cdce          |   0.000|
-vfat2_4_data_out_p_i |    1.511(R)|      SLOW  |   -0.432(R)|      SLOW  |clk_cdce          |   0.000|
-vfat2_5_data_out_n_i |    2.790(R)|      SLOW  |   -1.063(R)|      FAST  |clk_cdce          |   0.000|
-vfat2_5_data_out_p_i |    2.790(R)|      SLOW  |   -1.063(R)|      FAST  |clk_cdce          |   0.000|
-vfat2_6_data_out_n_i |    0.847(R)|      FAST  |    0.027(R)|      SLOW  |clk_cdce          |   0.000|
-vfat2_6_data_out_p_i |    0.847(R)|      FAST  |    0.027(R)|      SLOW  |clk_cdce          |   0.000|
-vfat2_7_data_out_n_i |    4.147(R)|      SLOW  |   -1.536(R)|      FAST  |clk_cdce          |   0.000|
-vfat2_7_data_out_p_i |    4.147(R)|      SLOW  |   -1.536(R)|      FAST  |clk_cdce          |   0.000|
-vfat2_8_data_out_n_i |    0.756(R)|      FAST  |    0.155(R)|      SLOW  |clk_cdce          |   0.000|
-vfat2_8_data_out_p_i |    0.756(R)|      FAST  |    0.155(R)|      SLOW  |clk_cdce          |   0.000|
-vfat2_9_data_out_n_i |    3.349(R)|      SLOW  |   -1.301(R)|      FAST  |clk_cdce          |   0.000|
-vfat2_9_data_out_p_i |    3.349(R)|      SLOW  |   -1.301(R)|      FAST  |clk_cdce          |   0.000|
-vfat2_10_data_out_n_i|    0.813(R)|      SLOW  |    0.203(R)|      SLOW  |clk_cdce          |   0.000|
-vfat2_10_data_out_p_i|    0.813(R)|      SLOW  |    0.203(R)|      SLOW  |clk_cdce          |   0.000|
-vfat2_11_data_out_n_i|    1.520(R)|      SLOW  |   -0.351(R)|      SLOW  |clk_cdce          |   0.000|
-vfat2_11_data_out_p_i|    1.520(R)|      SLOW  |   -0.351(R)|      SLOW  |clk_cdce          |   0.000|
-vfat2_12_data_out_n_i|    0.275(R)|      FAST  |    0.740(R)|      SLOW  |clk_cdce          |   0.000|
-vfat2_12_data_out_p_i|    0.275(R)|      FAST  |    0.740(R)|      SLOW  |clk_cdce          |   0.000|
-vfat2_13_data_out_n_i|    2.329(R)|      SLOW  |   -0.898(R)|      FAST  |clk_cdce          |   0.000|
-vfat2_13_data_out_p_i|    2.329(R)|      SLOW  |   -0.898(R)|      FAST  |clk_cdce          |   0.000|
-vfat2_14_data_out_n_i|    3.082(R)|      SLOW  |   -1.212(R)|      FAST  |clk_cdce          |   0.000|
-vfat2_14_data_out_p_i|    3.082(R)|      SLOW  |   -1.212(R)|      FAST  |clk_cdce          |   0.000|
-vfat2_15_data_out_n_i|    3.512(R)|      SLOW  |   -1.385(R)|      FAST  |clk_cdce          |   0.000|
-vfat2_15_data_out_p_i|    3.512(R)|      SLOW  |   -1.385(R)|      FAST  |clk_cdce          |   0.000|
-vfat2_16_data_out_n_i|    0.198(R)|      FAST  |    1.033(R)|      SLOW  |clk_cdce          |   0.000|
-vfat2_16_data_out_p_i|    0.198(R)|      FAST  |    1.033(R)|      SLOW  |clk_cdce          |   0.000|
-vfat2_17_data_out_n_i|    4.035(R)|      SLOW  |   -1.616(R)|      FAST  |clk_cdce          |   0.000|
-vfat2_17_data_out_p_i|    4.035(R)|      SLOW  |   -1.616(R)|      FAST  |clk_cdce          |   0.000|
-vfat2_18_data_out_n_i|    0.498(R)|      FAST  |    0.554(R)|      SLOW  |clk_cdce          |   0.000|
-vfat2_18_data_out_p_i|    0.498(R)|      FAST  |    0.554(R)|      SLOW  |clk_cdce          |   0.000|
-vfat2_19_data_out_n_i|    1.383(R)|      SLOW  |   -0.283(R)|      SLOW  |clk_cdce          |   0.000|
-vfat2_19_data_out_p_i|    1.383(R)|      SLOW  |   -0.283(R)|      SLOW  |clk_cdce          |   0.000|
-vfat2_20_data_out_n_i|    0.550(R)|      SLOW  |    0.391(R)|      SLOW  |clk_cdce          |   0.000|
-vfat2_20_data_out_p_i|    0.550(R)|      SLOW  |    0.391(R)|      SLOW  |clk_cdce          |   0.000|
-vfat2_21_data_out_n_i|    0.323(R)|      FAST  |    0.770(R)|      SLOW  |clk_cdce          |   0.000|
-vfat2_21_data_out_p_i|    0.323(R)|      FAST  |    0.770(R)|      SLOW  |clk_cdce          |   0.000|
-vfat2_22_data_out_n_i|    0.863(R)|      SLOW  |    0.117(R)|      SLOW  |clk_cdce          |   0.000|
-vfat2_22_data_out_p_i|    0.863(R)|      SLOW  |    0.117(R)|      SLOW  |clk_cdce          |   0.000|
-vfat2_23_data_out_n_i|    2.872(R)|      SLOW  |   -1.356(R)|      FAST  |clk_cdce          |   0.000|
-vfat2_23_data_out_p_i|    2.872(R)|      SLOW  |   -1.356(R)|      FAST  |clk_cdce          |   0.000|
+vfat2_0_data_out_n_i |    1.043(R)|      SLOW  |    0.024(R)|      SLOW  |clk_cdce          |   0.000|
+vfat2_0_data_out_p_i |    1.043(R)|      SLOW  |    0.024(R)|      SLOW  |clk_cdce          |   0.000|
+vfat2_1_data_out_n_i |    0.748(R)|      SLOW  |    0.098(R)|      SLOW  |clk_cdce          |   0.000|
+vfat2_1_data_out_p_i |    0.748(R)|      SLOW  |    0.098(R)|      SLOW  |clk_cdce          |   0.000|
+vfat2_2_data_out_n_i |    3.506(R)|      SLOW  |   -1.284(R)|      FAST  |clk_cdce          |   0.000|
+vfat2_2_data_out_p_i |    3.506(R)|      SLOW  |   -1.284(R)|      FAST  |clk_cdce          |   0.000|
+vfat2_3_data_out_n_i |    0.348(R)|      FAST  |    0.666(R)|      SLOW  |clk_cdce          |   0.000|
+vfat2_3_data_out_p_i |    0.348(R)|      FAST  |    0.666(R)|      SLOW  |clk_cdce          |   0.000|
+vfat2_4_data_out_n_i |    1.110(R)|      SLOW  |   -0.168(R)|      SLOW  |clk_cdce          |   0.000|
+vfat2_4_data_out_p_i |    1.110(R)|      SLOW  |   -0.168(R)|      SLOW  |clk_cdce          |   0.000|
+vfat2_5_data_out_n_i |    1.203(R)|      SLOW  |   -0.317(R)|      SLOW  |clk_cdce          |   0.000|
+vfat2_5_data_out_p_i |    1.203(R)|      SLOW  |   -0.317(R)|      SLOW  |clk_cdce          |   0.000|
+vfat2_6_data_out_n_i |    1.919(R)|      SLOW  |   -0.867(R)|      SLOW  |clk_cdce          |   0.000|
+vfat2_6_data_out_p_i |    1.919(R)|      SLOW  |   -0.867(R)|      SLOW  |clk_cdce          |   0.000|
+vfat2_7_data_out_n_i |    1.345(R)|      SLOW  |   -0.243(R)|      SLOW  |clk_cdce          |   0.000|
+vfat2_7_data_out_p_i |    1.345(R)|      SLOW  |   -0.243(R)|      SLOW  |clk_cdce          |   0.000|
+vfat2_8_data_out_n_i |   -0.119(R)|      FAST  |    1.280(R)|      SLOW  |clk_cdce          |   0.000|
+vfat2_8_data_out_p_i |   -0.119(R)|      FAST  |    1.280(R)|      SLOW  |clk_cdce          |   0.000|
+vfat2_9_data_out_n_i |    1.604(R)|      SLOW  |   -0.632(R)|      SLOW  |clk_cdce          |   0.000|
+vfat2_9_data_out_p_i |    1.604(R)|      SLOW  |   -0.632(R)|      SLOW  |clk_cdce          |   0.000|
+vfat2_10_data_out_n_i|    3.159(R)|      SLOW  |   -1.669(R)|      FAST  |clk_cdce          |   0.000|
+vfat2_10_data_out_p_i|    3.159(R)|      SLOW  |   -1.669(R)|      FAST  |clk_cdce          |   0.000|
+vfat2_11_data_out_n_i|    2.238(R)|      SLOW  |   -1.112(R)|      FAST  |clk_cdce          |   0.000|
+vfat2_11_data_out_p_i|    2.238(R)|      SLOW  |   -1.112(R)|      FAST  |clk_cdce          |   0.000|
+vfat2_12_data_out_n_i|   -0.001(R)|      FAST  |    1.237(R)|      SLOW  |clk_cdce          |   0.000|
+vfat2_12_data_out_p_i|   -0.001(R)|      FAST  |    1.237(R)|      SLOW  |clk_cdce          |   0.000|
+vfat2_13_data_out_n_i|   -0.003(R)|      FAST  |    1.175(R)|      SLOW  |clk_cdce          |   0.000|
+vfat2_13_data_out_p_i|   -0.003(R)|      FAST  |    1.175(R)|      SLOW  |clk_cdce          |   0.000|
+vfat2_14_data_out_n_i|    2.847(R)|      SLOW  |   -1.252(R)|      FAST  |clk_cdce          |   0.000|
+vfat2_14_data_out_p_i|    2.847(R)|      SLOW  |   -1.252(R)|      FAST  |clk_cdce          |   0.000|
+vfat2_15_data_out_n_i|    0.436(R)|      FAST  |    0.727(R)|      SLOW  |clk_cdce          |   0.000|
+vfat2_15_data_out_p_i|    0.436(R)|      FAST  |    0.727(R)|      SLOW  |clk_cdce          |   0.000|
+vfat2_16_data_out_n_i|    0.604(R)|      FAST  |    0.368(R)|      SLOW  |clk_cdce          |   0.000|
+vfat2_16_data_out_p_i|    0.604(R)|      FAST  |    0.368(R)|      SLOW  |clk_cdce          |   0.000|
+vfat2_17_data_out_n_i|    0.107(R)|      FAST  |    1.183(R)|      SLOW  |clk_cdce          |   0.000|
+vfat2_17_data_out_p_i|    0.107(R)|      FAST  |    1.183(R)|      SLOW  |clk_cdce          |   0.000|
+vfat2_18_data_out_n_i|    0.635(R)|      FAST  |    0.384(R)|      SLOW  |clk_cdce          |   0.000|
+vfat2_18_data_out_p_i|    0.635(R)|      FAST  |    0.384(R)|      SLOW  |clk_cdce          |   0.000|
+vfat2_19_data_out_n_i|   -0.257(R)|      FAST  |    1.555(R)|      SLOW  |clk_cdce          |   0.000|
+vfat2_19_data_out_p_i|   -0.257(R)|      FAST  |    1.555(R)|      SLOW  |clk_cdce          |   0.000|
+vfat2_20_data_out_n_i|    1.420(R)|      SLOW  |   -0.304(R)|      SLOW  |clk_cdce          |   0.000|
+vfat2_20_data_out_p_i|    1.420(R)|      SLOW  |   -0.304(R)|      SLOW  |clk_cdce          |   0.000|
+vfat2_21_data_out_n_i|    0.225(R)|      FAST  |    1.021(R)|      SLOW  |clk_cdce          |   0.000|
+vfat2_21_data_out_p_i|    0.225(R)|      FAST  |    1.021(R)|      SLOW  |clk_cdce          |   0.000|
+vfat2_22_data_out_n_i|   -0.449(R)|      FAST  |    1.914(R)|      SLOW  |clk_cdce          |   0.000|
+vfat2_22_data_out_p_i|   -0.449(R)|      FAST  |    1.914(R)|      SLOW  |clk_cdce          |   0.000|
+vfat2_23_data_out_n_i|    2.008(R)|      SLOW  |   -0.791(R)|      FAST  |clk_cdce          |   0.000|
+vfat2_23_data_out_p_i|    2.008(R)|      SLOW  |   -0.791(R)|      FAST  |clk_cdce          |   0.000|
 ---------------------+------------+------------+------------+------------+------------------+--------+
 
 Clock qpll_alt_i to Pad
@@ -92,7 +92,7 @@ Clock qpll_alt_i to Pad
                  |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
 Destination      |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
 -----------------+-----------------+------------+-----------------+------------+------------------+--------+
-cdce_pwrdown_o   |         8.745(R)|      SLOW  |         4.063(R)|      FAST  |qpll_alt_i_IBUFG  |   0.000|
+cdce_pwrdown_o   |         8.587(R)|      SLOW  |         3.998(R)|      FAST  |qpll_alt_i_IBUFG  |   0.000|
 vfat2_mclk_n_o<0>|         5.794(R)|      SLOW  |         2.687(R)|      FAST  |clk_cdce          |   0.000|
                  |         5.794(F)|      SLOW  |         2.687(F)|      FAST  |clk_cdce          |   0.000|
 vfat2_mclk_n_o<1>|         5.877(R)|      SLOW  |         2.695(R)|      FAST  |clk_cdce          |   0.000|
@@ -105,12 +105,12 @@ vfat2_mclk_p_o<1>|         5.876(R)|      SLOW  |         2.694(R)|      FAST  |
                  |         5.876(F)|      SLOW  |         2.694(F)|      FAST  |clk_cdce          |   0.000|
 vfat2_mclk_p_o<2>|         5.957(R)|      SLOW  |         2.724(R)|      FAST  |clk_cdce          |   0.000|
                  |         5.957(F)|      SLOW  |         2.724(F)|      FAST  |clk_cdce          |   0.000|
-vfat2_t1_n_o<0>  |        11.758(R)|      SLOW  |         5.794(R)|      FAST  |clk_cdce          |   0.000|
-vfat2_t1_n_o<1>  |        13.595(R)|      SLOW  |         6.935(R)|      FAST  |clk_cdce          |   0.000|
-vfat2_t1_n_o<2>  |        12.150(R)|      SLOW  |         6.123(R)|      FAST  |clk_cdce          |   0.000|
-vfat2_t1_p_o<0>  |        11.757(R)|      SLOW  |         5.793(R)|      FAST  |clk_cdce          |   0.000|
-vfat2_t1_p_o<1>  |        13.594(R)|      SLOW  |         6.934(R)|      FAST  |clk_cdce          |   0.000|
-vfat2_t1_p_o<2>  |        12.149(R)|      SLOW  |         6.122(R)|      FAST  |clk_cdce          |   0.000|
+vfat2_t1_n_o<0>  |        11.813(R)|      SLOW  |         5.499(R)|      FAST  |clk_cdce          |   0.000|
+vfat2_t1_n_o<1>  |        15.539(R)|      SLOW  |         7.328(R)|      FAST  |clk_cdce          |   0.000|
+vfat2_t1_n_o<2>  |        13.346(R)|      SLOW  |         6.093(R)|      FAST  |clk_cdce          |   0.000|
+vfat2_t1_p_o<0>  |        11.812(R)|      SLOW  |         5.498(R)|      FAST  |clk_cdce          |   0.000|
+vfat2_t1_p_o<1>  |        15.538(R)|      SLOW  |         7.327(R)|      FAST  |clk_cdce          |   0.000|
+vfat2_t1_p_o<2>  |        13.345(R)|      SLOW  |         6.092(R)|      FAST  |clk_cdce          |   0.000|
 -----------------+-----------------+------------+-----------------+------------+------------------+--------+
 
 Clock to Setup on destination clock cdce_locked_i
@@ -118,7 +118,7 @@ Clock to Setup on destination clock cdce_locked_i
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-cdce_locked_i  |    1.928|         |         |         |
+cdce_locked_i  |    1.734|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock qpll_alt_i
@@ -126,7 +126,7 @@ Clock to Setup on destination clock qpll_alt_i
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-qpll_alt_i     |   10.225|         |         |    3.543|
+qpll_alt_i     |   11.296|         |         |    3.022|
 ---------------+---------+---------+---------+---------+
 
 Pad to Pad
@@ -138,14 +138,14 @@ qpll_alt_i     |cdce_pri_p_o   |    6.488|
 ---------------+---------------+---------+
 
 
-Analysis completed Wed Aug 26 09:00:06 2015 
+Analysis completed Wed Aug 26 13:15:09 2015 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 800 MB
+Peak Memory Usage: 888 MB
 
 
 

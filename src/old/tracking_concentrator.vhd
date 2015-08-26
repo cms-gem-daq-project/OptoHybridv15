@@ -11,16 +11,20 @@ port(
     vfat2_clk_i         : in std_logic;
     reset_i             : in std_logic;
     
-    en_i                : in std_logic_vector(7 downto 0);
-    data_i              : in array192(7 downto 0);
+    en_i                : in std_logic_vector(23 downto 0);
+    data_i              : in array192(23 downto 0);
     
     fifo_read_o         : out std_logic;
     fifo_valid_i        : in std_logic;
     fifo_underflow_i    : in std_logic;
     fifo_data_i         : in std_logic_vector(31 downto 0);
     
-    en_o                : out std_logic;
-    data_o              : out std_logic_vector(223 downto 0)
+    en_0_o              : out std_logic;
+    data_0_o            : out std_logic_vector(223 downto 0);    
+    en_1_o              : out std_logic;
+    data_1_o            : out std_logic_vector(223 downto 0);    
+    en_2_o              : out std_logic;
+    data_2_o            : out std_logic_vector(223 downto 0)
     
 );
 end tracking_concentrator;
@@ -30,14 +34,14 @@ architecture Behavioral of tracking_concentrator is
     type state_t is (LOOPING, BX_REQ, BX_ACK);
     
     signal state    : state_t;    
-    signal vfat_cnt : integer range 0 to 7;
+    signal vfat_cnt : integer range 0 to 23;
 
     signal bx_time  : integer range 0 to 255;
     signal last_bx  : std_logic_vector(31 downto 0);
     
-    signal data     : array192(7 downto 0);
-    signal data_stb : std_logic_vector(7 downto 0);
-    signal data_ack : std_logic_vector(7 downto 0);
+    signal data     : array192(23 downto 0);
+    signal data_stb : std_logic_vector(23 downto 0);
+    signal data_ack : std_logic_vector(23 downto 0);
     
 begin
 
@@ -48,7 +52,7 @@ begin
                 data <= (others => (others => '0'));
                 data_stb <= (others => '0');
             else
-                for I in 0 to 7 loop
+                for I in 0 to 23 loop
                     -- Free to receive data
                     if (data_stb(I) = '0' and data_ack(I) = '0') then
                         if (en_i(I) = '1') then
@@ -69,9 +73,13 @@ begin
     
         if (rising_edge(vfat2_clk_i)) then        
             if (reset_i = '1') then            
-                fifo_read_o <= '0';            
-                en_o <= '0';  
-                data_o <= (others => '0');
+                fifo_read_o <= '0'; 
+                en_0_o <= '0';
+                en_1_o <= '0';
+                en_2_o <= '0';
+                data_0_o <= (others => '0');
+                data_1_o <= (others => '0');
+                data_2_o <= (others => '0');
                 state <= LOOPING;          
                 vfat_cnt <= 0;          
                 bx_time <= 0;          
@@ -82,7 +90,7 @@ begin
                     when LOOPING =>
                         fifo_read_o <= '0';
                         -- Loop over VFAT2s
-                        if (vfat_cnt = 7) then
+                        if (vfat_cnt = 23) then
                             vfat_cnt <= 0;
                         else
                             vfat_cnt <= vfat_cnt + 1;
@@ -100,20 +108,40 @@ begin
                                 -- Too long ago, update BX
                                 state <= BX_REQ;
                                 -- Reset the strobe
-                                en_o <= '0';
+                                en_0_o <= '0';
+                                en_1_o <= '0';
+                                en_2_o <= '0';
                             else
                                 -- Still good, save data
-                                en_o <= '1';
-                                data_o <= last_bx & data(vfat_cnt);
+                                if (vfat_cnt < 8) then                                
+                                    en_0_o <= '1';
+                                    en_1_o <= '0';
+                                    en_2_o <= '0';
+                                    data_0_o <= last_bx & data(vfat_cnt);
+                                elsif (vfat_cnt < 16) then                             
+                                    en_0_o <= '0';
+                                    en_1_o <= '1';
+                                    en_2_o <= '0';
+                                    data_1_o <= last_bx & data(vfat_cnt);
+                                else                                        
+                                    en_0_o <= '0';
+                                    en_1_o <= '0';
+                                    en_2_o <= '1';
+                                    data_2_o <= last_bx & data(vfat_cnt);
+                                end if;
                                 data_ack(vfat_cnt) <= '1';
                             end if;
                         elsif (data_stb(vfat_cnt) = '0' and data_ack(vfat_cnt) = '1') then
                             data_ack(vfat_cnt) <= '0';
                             -- Reset the strobe
-                            en_o <= '0';
+                            en_0_o <= '0';
+                            en_1_o <= '0';
+                            en_2_o <= '0';
                         else
                             -- Reset the strobe
-                            en_o <= '0';
+                            en_0_o <= '0';
+                            en_1_o <= '0';
+                            en_2_o <= '0';
                         end if; 
                     when BX_REQ =>
                         fifo_read_o <= '1';
@@ -130,8 +158,12 @@ begin
                         end if;
                     when others =>                 
                         fifo_read_o <= '0';            
-                        en_o <= '0';  
-                        data_o <= (others => '0');
+                        en_0_o <= '0';
+                        en_1_o <= '0';
+                        en_2_o <= '0';
+                        data_0_o <= (others => '0');
+                        data_1_o <= (others => '0');
+                        data_2_o <= (others => '0');
                         state <= LOOPING;          
                         vfat_cnt <= 0;          
                         bx_time <= 0;          

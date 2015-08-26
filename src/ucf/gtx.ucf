@@ -1,5 +1,9 @@
+
 ##________________________ Attributes for GTX 0_____________________
-INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i TX_CLK_SOURCE                          = "RXPLL";
+ 
+
+##--------------------------TX PLL----------------------------
+INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i TX_CLK_SOURCE                          = "TXPLL";
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i TX_OVERSAMPLE_MODE                     = "FALSE";
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i TXPLL_COM_CFG                          = 24'h21680a;
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i TXPLL_CP_CFG                           = 8'h0D;
@@ -12,12 +16,16 @@ INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i TX_CLK25_DIVIDER                       
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i TXPLL_SATA                             = 2'b00;
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i TX_TDCC_CFG                            = 2'b11;
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i PMA_CAS_CLK_EN                         = "FALSE";
-INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i POWER_SAVE                             = 10'b0000110100;
+INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i POWER_SAVE                             = 10'b0000110000;
+
+##-----------------------TX Interface-------------------------
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i GEN_TXUSRCLK                           = "TRUE";
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i TX_DATA_WIDTH                          = 20;
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i TX_USRCLK_CFG                          = 6'h00;
-INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i TXOUTCLK_CTRL                          = "TXPLLREFCLK_DIV1";
+INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i TXOUTCLK_CTRL                          = "TXOUTCLKPMA_DIV2";
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i TXOUTCLK_DLY                           = 10'b0000000000;
+
+##------------TX Buffering and Phase Alignment----------------
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i TX_PMADATA_OPT                         = 1'b0;
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i PMA_TX_CFG                             = 20'h80082;
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i TX_BUFFER_USE                          = "TRUE";
@@ -28,14 +36,22 @@ INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i TX_DLYALIGN_CTRINC                     
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i TX_DLYALIGN_LPFINC                     = 4'b0110;
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i TX_DLYALIGN_MONSEL                     = 3'b000;
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i TX_DLYALIGN_OVRDSETTING                = 8'b10000000;
+
+##-----------------------TX Gearbox---------------------------
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i GEARBOX_ENDEC                          = 3'b000;
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i TXGEARBOX_USE                          = "FALSE";
+
+##--------------TX Driver and OOB Signalling------------------
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i TX_DRIVE_MODE                          = "DIRECT";
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i TX_IDLE_ASSERT_DELAY                   = 3'b100;
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i TX_IDLE_DEASSERT_DELAY                 = 3'b010;
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i TXDRIVE_LOOPBACK_HIZ                   = "FALSE";
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i TXDRIVE_LOOPBACK_PD                    = "FALSE";
+
+##------------TX Pipe Control for PCI Express/SATA------------
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i COM_BURST_VAL                          = 4'b1111;
+
+##----------------TX Attributes for PCI Express---------------
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i TX_DEEMPH_0                            = 5'b11010;
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i TX_DEEMPH_1                            = 5'b10000;
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i TX_MARGIN_FULL_0                       = 7'b1001110;
@@ -48,6 +64,8 @@ INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i TX_MARGIN_LOW_1                        
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i TX_MARGIN_LOW_2                        = 7'b1000010;
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i TX_MARGIN_LOW_3                        = 7'b1000000;
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i TX_MARGIN_LOW_4                        = 7'b1000000;
+
+##--------------------------RX PLL----------------------------
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i RX_OVERSAMPLE_MODE                     = "FALSE";
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i RXPLL_COM_CFG                          = 24'h21680a;
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i RXPLL_CP_CFG                           = 8'h0D;
@@ -57,11 +75,15 @@ INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i RXPLL_DIVSEL_REF                       
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i RXPLL_DIVSEL45_FB                      = 5;
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i RXPLL_LKDET_CFG                        = 3'b111;
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i RX_CLK25_DIVIDER                       = 7;
+
+##-----------------------RX Interface-------------------------
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i GEN_RXUSRCLK                           = "TRUE";
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i RX_DATA_WIDTH                          = 20;
-INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i RXRECCLK_CTRL                          = "RXPLLREFCLK_DIV2";
+INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i RXRECCLK_CTRL                          = "RXRECCLKPMA_DIV2";
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i RXRECCLK_DLY                           = 10'b0000000000;
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i RXUSRCLK_DLY                           = 16'h0000;
+
+##--------RX Driver,OOB signalling,Coupling and Eq.,CDR-------
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i AC_CAP_DIS                             = "TRUE";
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i CDR_PH_ADJ_TIME                        = 5'b10100;
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i OOBDETECT_THRESHOLD                    = 3'b011;
@@ -80,12 +102,18 @@ INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i PMA_RXSYNC_CFG                         
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i PMA_CFG                                = 76'h0040000040000000003;
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i BGTEST_CFG                             = 2'b00;
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i BIAS_CFG                               = 17'h00000;
+
+##------------RX Decision Feedback Equalizer(DFE)-------------
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i DFE_CAL_TIME                           = 5'b01100;
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i DFE_CFG                                = 8'b00011011;
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i RX_EN_IDLE_HOLD_DFE                    = "TRUE";
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i RX_EYE_OFFSET                          = 8'h4C;
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i RX_EYE_SCANMODE                        = 2'b00;
+
+##-----------------------PRBS Detection-----------------------
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i RXPRBSERR_LOOPBACK                     = 1'b0;
+
+##----------------Comma Detection and Alignment---------------
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i ALIGN_COMMA_WORD                       = 2;
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i COMMA_10B_ENABLE                       = 10'b1111111111;
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i COMMA_DOUBLE                           = "FALSE";
@@ -100,10 +128,16 @@ INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i RX_DECODE_SEQ_MATCH                    
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i RX_SLIDE_AUTO_WAIT                     = 5;
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i RX_SLIDE_MODE                          = "OFF";
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i SHOW_REALIGN_COMMA                     = "TRUE";
+
+##---------------RX Loss-of-sync State Machine----------------
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i RX_LOS_INVALID_INCR                    = 8;
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i RX_LOS_THRESHOLD                       = 128;
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i RX_LOSS_OF_SYNC_FSM                    = "TRUE";
+
+##-----------------------RX Gearbox---------------------------
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i RXGEARBOX_USE                          = "FALSE";
+
+##-----------RX Elastic Buffer and Phase alignment------------
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i RX_BUFFER_USE                          = "TRUE";
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i RX_EN_IDLE_RESET_BUF                   = "FALSE";
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i RX_EN_MODE_RESET_BUF                   = "TRUE";
@@ -119,6 +153,8 @@ INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i RX_DLYALIGN_EDGESET                    
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i RX_DLYALIGN_LPFINC                     = 4'b1110;
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i RX_DLYALIGN_MONSEL                     = 3'b000;
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i RX_DLYALIGN_OVRDSETTING                = 8'b10000000;
+
+##----------------------Clock Correction----------------------
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i CLK_COR_ADJ_LEN                        = 2;
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i CLK_COR_DET_LEN                        = 1;
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i CLK_COR_INSERT_IDLE_FLAG               = "FALSE";
@@ -139,6 +175,8 @@ INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i CLK_COR_SEQ_2_4                        
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i CLK_COR_SEQ_2_ENABLE                   = 4'b1111;
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i CLK_COR_SEQ_2_USE                      = "FALSE";
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i CLK_CORRECT_USE                        = "FALSE";
+
+##----------------------Channel Bonding----------------------
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i CHAN_BOND_1_MAX_SKEW                   = 1;
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i CHAN_BOND_2_MAX_SKEW                   = 1;
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i CHAN_BOND_KEEP_ALIGN                   = "FALSE";
@@ -156,6 +194,8 @@ INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i CHAN_BOND_SEQ_2_ENABLE                 
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i CHAN_BOND_SEQ_2_USE                    = "FALSE";
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i CHAN_BOND_SEQ_LEN                      = 1;
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i PCI_EXPRESS_MODE                       = "FALSE";
+
+##-----------RX Attributes for PCI Express/SATA/SAS----------
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i SAS_MAX_COMSAS                         = 52;
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i SAS_MIN_COMSAS                         = 40;
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i SATA_BURST_VAL                         = 3'b100;
@@ -171,8 +211,12 @@ INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i TRANS_TIME_NON_P2                      
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i TRANS_TIME_RATE                        = 8'hff;
 INST gtx_wrapper_inst/gtx_0_inst/gtxe1_i TRANS_TIME_TO_P2                       = 10'h064;
 
+
 ##________________________ Attributes for GTX 1_____________________
-INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i TX_CLK_SOURCE                          = "RXPLL";
+ 
+
+##--------------------------TX PLL----------------------------
+INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i TX_CLK_SOURCE                          = "TXPLL";
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i TX_OVERSAMPLE_MODE                     = "FALSE";
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i TXPLL_COM_CFG                          = 24'h21680a;
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i TXPLL_CP_CFG                           = 8'h0D;
@@ -185,12 +229,16 @@ INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i TX_CLK25_DIVIDER                       
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i TXPLL_SATA                             = 2'b00;
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i TX_TDCC_CFG                            = 2'b11;
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i PMA_CAS_CLK_EN                         = "FALSE";
-INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i POWER_SAVE                             = 10'b0000110100;
+INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i POWER_SAVE                             = 10'b0000110000;
+
+##-----------------------TX Interface-------------------------
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i GEN_TXUSRCLK                           = "TRUE";
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i TX_DATA_WIDTH                          = 20;
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i TX_USRCLK_CFG                          = 6'h00;
-INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i TXOUTCLK_CTRL                          = "TXPLLREFCLK_DIV1";
+INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i TXOUTCLK_CTRL                          = "TXOUTCLKPMA_DIV2";
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i TXOUTCLK_DLY                           = 10'b0000000000;
+
+##------------TX Buffering and Phase Alignment----------------
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i TX_PMADATA_OPT                         = 1'b0;
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i PMA_TX_CFG                             = 20'h80082;
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i TX_BUFFER_USE                          = "TRUE";
@@ -201,14 +249,22 @@ INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i TX_DLYALIGN_CTRINC                     
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i TX_DLYALIGN_LPFINC                     = 4'b0110;
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i TX_DLYALIGN_MONSEL                     = 3'b000;
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i TX_DLYALIGN_OVRDSETTING                = 8'b10000000;
+
+##-----------------------TX Gearbox---------------------------
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i GEARBOX_ENDEC                          = 3'b000;
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i TXGEARBOX_USE                          = "FALSE";
+
+##--------------TX Driver and OOB Signalling------------------
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i TX_DRIVE_MODE                          = "DIRECT";
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i TX_IDLE_ASSERT_DELAY                   = 3'b100;
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i TX_IDLE_DEASSERT_DELAY                 = 3'b010;
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i TXDRIVE_LOOPBACK_HIZ                   = "FALSE";
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i TXDRIVE_LOOPBACK_PD                    = "FALSE";
+
+##------------TX Pipe Control for PCI Express/SATA------------
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i COM_BURST_VAL                          = 4'b1111;
+
+##----------------TX Attributes for PCI Express---------------
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i TX_DEEMPH_0                            = 5'b11010;
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i TX_DEEMPH_1                            = 5'b10000;
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i TX_MARGIN_FULL_0                       = 7'b1001110;
@@ -221,6 +277,8 @@ INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i TX_MARGIN_LOW_1                        
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i TX_MARGIN_LOW_2                        = 7'b1000010;
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i TX_MARGIN_LOW_3                        = 7'b1000000;
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i TX_MARGIN_LOW_4                        = 7'b1000000;
+
+##--------------------------RX PLL----------------------------
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i RX_OVERSAMPLE_MODE                     = "FALSE";
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i RXPLL_COM_CFG                          = 24'h21680a;
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i RXPLL_CP_CFG                           = 8'h0D;
@@ -230,11 +288,15 @@ INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i RXPLL_DIVSEL_REF                       
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i RXPLL_DIVSEL45_FB                      = 5;
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i RXPLL_LKDET_CFG                        = 3'b111;
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i RX_CLK25_DIVIDER                       = 7;
+
+##-----------------------RX Interface-------------------------
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i GEN_RXUSRCLK                           = "TRUE";
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i RX_DATA_WIDTH                          = 20;
-INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i RXRECCLK_CTRL                          = "RXPLLREFCLK_DIV2";
+INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i RXRECCLK_CTRL                          = "RXRECCLKPMA_DIV2";
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i RXRECCLK_DLY                           = 10'b0000000000;
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i RXUSRCLK_DLY                           = 16'h0000;
+
+##--------RX Driver,OOB signalling,Coupling and Eq.,CDR-------
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i AC_CAP_DIS                             = "TRUE";
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i CDR_PH_ADJ_TIME                        = 5'b10100;
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i OOBDETECT_THRESHOLD                    = 3'b011;
@@ -253,12 +315,18 @@ INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i PMA_RXSYNC_CFG                         
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i PMA_CFG                                = 76'h0040000040000000003;
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i BGTEST_CFG                             = 2'b00;
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i BIAS_CFG                               = 17'h00000;
+
+##------------RX Decision Feedback Equalizer(DFE)-------------
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i DFE_CAL_TIME                           = 5'b01100;
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i DFE_CFG                                = 8'b00011011;
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i RX_EN_IDLE_HOLD_DFE                    = "TRUE";
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i RX_EYE_OFFSET                          = 8'h4C;
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i RX_EYE_SCANMODE                        = 2'b00;
+
+##-----------------------PRBS Detection-----------------------
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i RXPRBSERR_LOOPBACK                     = 1'b0;
+
+##----------------Comma Detection and Alignment---------------
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i ALIGN_COMMA_WORD                       = 2;
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i COMMA_10B_ENABLE                       = 10'b1111111111;
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i COMMA_DOUBLE                           = "FALSE";
@@ -273,10 +341,16 @@ INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i RX_DECODE_SEQ_MATCH                    
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i RX_SLIDE_AUTO_WAIT                     = 5;
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i RX_SLIDE_MODE                          = "OFF";
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i SHOW_REALIGN_COMMA                     = "TRUE";
+
+##---------------RX Loss-of-sync State Machine----------------
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i RX_LOS_INVALID_INCR                    = 8;
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i RX_LOS_THRESHOLD                       = 128;
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i RX_LOSS_OF_SYNC_FSM                    = "TRUE";
+
+##-----------------------RX Gearbox---------------------------
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i RXGEARBOX_USE                          = "FALSE";
+
+##-----------RX Elastic Buffer and Phase alignment------------
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i RX_BUFFER_USE                          = "TRUE";
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i RX_EN_IDLE_RESET_BUF                   = "FALSE";
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i RX_EN_MODE_RESET_BUF                   = "TRUE";
@@ -292,6 +366,8 @@ INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i RX_DLYALIGN_EDGESET                    
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i RX_DLYALIGN_LPFINC                     = 4'b1110;
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i RX_DLYALIGN_MONSEL                     = 3'b000;
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i RX_DLYALIGN_OVRDSETTING                = 8'b10000000;
+
+##----------------------Clock Correction----------------------
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i CLK_COR_ADJ_LEN                        = 2;
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i CLK_COR_DET_LEN                        = 1;
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i CLK_COR_INSERT_IDLE_FLAG               = "FALSE";
@@ -312,6 +388,8 @@ INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i CLK_COR_SEQ_2_4                        
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i CLK_COR_SEQ_2_ENABLE                   = 4'b1111;
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i CLK_COR_SEQ_2_USE                      = "FALSE";
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i CLK_CORRECT_USE                        = "FALSE";
+
+##----------------------Channel Bonding----------------------
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i CHAN_BOND_1_MAX_SKEW                   = 1;
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i CHAN_BOND_2_MAX_SKEW                   = 1;
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i CHAN_BOND_KEEP_ALIGN                   = "FALSE";
@@ -329,6 +407,8 @@ INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i CHAN_BOND_SEQ_2_ENABLE                 
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i CHAN_BOND_SEQ_2_USE                    = "FALSE";
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i CHAN_BOND_SEQ_LEN                      = 1;
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i PCI_EXPRESS_MODE                       = "FALSE";
+
+##-----------RX Attributes for PCI Express/SATA/SAS----------
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i SAS_MAX_COMSAS                         = 52;
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i SAS_MIN_COMSAS                         = 40;
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i SATA_BURST_VAL                         = 3'b100;
@@ -344,8 +424,12 @@ INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i TRANS_TIME_NON_P2                      
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i TRANS_TIME_RATE                        = 8'hff;
 INST gtx_wrapper_inst/gtx_1_inst/gtxe1_i TRANS_TIME_TO_P2                       = 10'h064;
 
+
 ##________________________ Attributes for GTX 2_____________________
-INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i TX_CLK_SOURCE                          = "RXPLL";
+ 
+
+##--------------------------TX PLL----------------------------
+INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i TX_CLK_SOURCE                          = "TXPLL";
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i TX_OVERSAMPLE_MODE                     = "FALSE";
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i TXPLL_COM_CFG                          = 24'h21680a;
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i TXPLL_CP_CFG                           = 8'h0D;
@@ -358,12 +442,16 @@ INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i TX_CLK25_DIVIDER                       
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i TXPLL_SATA                             = 2'b00;
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i TX_TDCC_CFG                            = 2'b11;
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i PMA_CAS_CLK_EN                         = "FALSE";
-INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i POWER_SAVE                             = 10'b0000110100;
+INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i POWER_SAVE                             = 10'b0000110000;
+
+##-----------------------TX Interface-------------------------
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i GEN_TXUSRCLK                           = "TRUE";
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i TX_DATA_WIDTH                          = 20;
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i TX_USRCLK_CFG                          = 6'h00;
-INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i TXOUTCLK_CTRL                          = "TXPLLREFCLK_DIV1";
+INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i TXOUTCLK_CTRL                          = "TXOUTCLKPMA_DIV2";
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i TXOUTCLK_DLY                           = 10'b0000000000;
+
+##------------TX Buffering and Phase Alignment----------------
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i TX_PMADATA_OPT                         = 1'b0;
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i PMA_TX_CFG                             = 20'h80082;
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i TX_BUFFER_USE                          = "TRUE";
@@ -374,14 +462,22 @@ INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i TX_DLYALIGN_CTRINC                     
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i TX_DLYALIGN_LPFINC                     = 4'b0110;
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i TX_DLYALIGN_MONSEL                     = 3'b000;
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i TX_DLYALIGN_OVRDSETTING                = 8'b10000000;
+
+##-----------------------TX Gearbox---------------------------
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i GEARBOX_ENDEC                          = 3'b000;
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i TXGEARBOX_USE                          = "FALSE";
+
+##--------------TX Driver and OOB Signalling------------------
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i TX_DRIVE_MODE                          = "DIRECT";
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i TX_IDLE_ASSERT_DELAY                   = 3'b100;
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i TX_IDLE_DEASSERT_DELAY                 = 3'b010;
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i TXDRIVE_LOOPBACK_HIZ                   = "FALSE";
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i TXDRIVE_LOOPBACK_PD                    = "FALSE";
+
+##------------TX Pipe Control for PCI Express/SATA------------
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i COM_BURST_VAL                          = 4'b1111;
+
+##----------------TX Attributes for PCI Express---------------
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i TX_DEEMPH_0                            = 5'b11010;
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i TX_DEEMPH_1                            = 5'b10000;
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i TX_MARGIN_FULL_0                       = 7'b1001110;
@@ -394,6 +490,8 @@ INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i TX_MARGIN_LOW_1                        
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i TX_MARGIN_LOW_2                        = 7'b1000010;
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i TX_MARGIN_LOW_3                        = 7'b1000000;
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i TX_MARGIN_LOW_4                        = 7'b1000000;
+
+##--------------------------RX PLL----------------------------
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i RX_OVERSAMPLE_MODE                     = "FALSE";
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i RXPLL_COM_CFG                          = 24'h21680a;
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i RXPLL_CP_CFG                           = 8'h0D;
@@ -403,11 +501,15 @@ INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i RXPLL_DIVSEL_REF                       
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i RXPLL_DIVSEL45_FB                      = 5;
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i RXPLL_LKDET_CFG                        = 3'b111;
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i RX_CLK25_DIVIDER                       = 7;
+
+##-----------------------RX Interface-------------------------
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i GEN_RXUSRCLK                           = "TRUE";
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i RX_DATA_WIDTH                          = 20;
-INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i RXRECCLK_CTRL                          = "RXPLLREFCLK_DIV2";
+INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i RXRECCLK_CTRL                          = "RXRECCLKPMA_DIV2";
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i RXRECCLK_DLY                           = 10'b0000000000;
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i RXUSRCLK_DLY                           = 16'h0000;
+
+##--------RX Driver,OOB signalling,Coupling and Eq.,CDR-------
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i AC_CAP_DIS                             = "TRUE";
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i CDR_PH_ADJ_TIME                        = 5'b10100;
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i OOBDETECT_THRESHOLD                    = 3'b011;
@@ -426,12 +528,18 @@ INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i PMA_RXSYNC_CFG                         
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i PMA_CFG                                = 76'h0040000040000000003;
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i BGTEST_CFG                             = 2'b00;
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i BIAS_CFG                               = 17'h00000;
+
+##------------RX Decision Feedback Equalizer(DFE)-------------
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i DFE_CAL_TIME                           = 5'b01100;
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i DFE_CFG                                = 8'b00011011;
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i RX_EN_IDLE_HOLD_DFE                    = "TRUE";
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i RX_EYE_OFFSET                          = 8'h4C;
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i RX_EYE_SCANMODE                        = 2'b00;
+
+##-----------------------PRBS Detection-----------------------
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i RXPRBSERR_LOOPBACK                     = 1'b0;
+
+##----------------Comma Detection and Alignment---------------
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i ALIGN_COMMA_WORD                       = 2;
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i COMMA_10B_ENABLE                       = 10'b1111111111;
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i COMMA_DOUBLE                           = "FALSE";
@@ -446,10 +554,16 @@ INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i RX_DECODE_SEQ_MATCH                    
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i RX_SLIDE_AUTO_WAIT                     = 5;
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i RX_SLIDE_MODE                          = "OFF";
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i SHOW_REALIGN_COMMA                     = "TRUE";
+
+##---------------RX Loss-of-sync State Machine----------------
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i RX_LOS_INVALID_INCR                    = 8;
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i RX_LOS_THRESHOLD                       = 128;
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i RX_LOSS_OF_SYNC_FSM                    = "TRUE";
+
+##-----------------------RX Gearbox---------------------------
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i RXGEARBOX_USE                          = "FALSE";
+
+##-----------RX Elastic Buffer and Phase alignment------------
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i RX_BUFFER_USE                          = "TRUE";
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i RX_EN_IDLE_RESET_BUF                   = "FALSE";
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i RX_EN_MODE_RESET_BUF                   = "TRUE";
@@ -465,6 +579,8 @@ INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i RX_DLYALIGN_EDGESET                    
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i RX_DLYALIGN_LPFINC                     = 4'b1110;
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i RX_DLYALIGN_MONSEL                     = 3'b000;
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i RX_DLYALIGN_OVRDSETTING                = 8'b10000000;
+
+##----------------------Clock Correction----------------------
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i CLK_COR_ADJ_LEN                        = 2;
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i CLK_COR_DET_LEN                        = 1;
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i CLK_COR_INSERT_IDLE_FLAG               = "FALSE";
@@ -485,6 +601,8 @@ INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i CLK_COR_SEQ_2_4                        
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i CLK_COR_SEQ_2_ENABLE                   = 4'b1111;
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i CLK_COR_SEQ_2_USE                      = "FALSE";
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i CLK_CORRECT_USE                        = "FALSE";
+
+##----------------------Channel Bonding----------------------
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i CHAN_BOND_1_MAX_SKEW                   = 1;
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i CHAN_BOND_2_MAX_SKEW                   = 1;
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i CHAN_BOND_KEEP_ALIGN                   = "FALSE";
@@ -502,6 +620,8 @@ INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i CHAN_BOND_SEQ_2_ENABLE                 
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i CHAN_BOND_SEQ_2_USE                    = "FALSE";
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i CHAN_BOND_SEQ_LEN                      = 1;
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i PCI_EXPRESS_MODE                       = "FALSE";
+
+##-----------RX Attributes for PCI Express/SATA/SAS----------
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i SAS_MAX_COMSAS                         = 52;
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i SAS_MIN_COMSAS                         = 40;
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i SATA_BURST_VAL                         = 3'b100;
@@ -517,8 +637,12 @@ INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i TRANS_TIME_NON_P2                      
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i TRANS_TIME_RATE                        = 8'hff;
 INST gtx_wrapper_inst/gtx_2_inst/gtxe1_i TRANS_TIME_TO_P2                       = 10'h064;
 
+
 ##________________________ Attributes for GTX 3_____________________
-INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i TX_CLK_SOURCE                          = "RXPLL";
+ 
+
+##--------------------------TX PLL----------------------------
+INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i TX_CLK_SOURCE                          = "TXPLL";
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i TX_OVERSAMPLE_MODE                     = "FALSE";
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i TXPLL_COM_CFG                          = 24'h21680a;
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i TXPLL_CP_CFG                           = 8'h0D;
@@ -531,12 +655,16 @@ INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i TX_CLK25_DIVIDER                       
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i TXPLL_SATA                             = 2'b00;
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i TX_TDCC_CFG                            = 2'b11;
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i PMA_CAS_CLK_EN                         = "FALSE";
-INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i POWER_SAVE                             = 10'b0000110100;
+INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i POWER_SAVE                             = 10'b0000110000;
+
+##-----------------------TX Interface-------------------------
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i GEN_TXUSRCLK                           = "TRUE";
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i TX_DATA_WIDTH                          = 20;
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i TX_USRCLK_CFG                          = 6'h00;
-INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i TXOUTCLK_CTRL                          = "TXPLLREFCLK_DIV1";
+INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i TXOUTCLK_CTRL                          = "TXOUTCLKPMA_DIV2";
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i TXOUTCLK_DLY                           = 10'b0000000000;
+
+##------------TX Buffering and Phase Alignment----------------
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i TX_PMADATA_OPT                         = 1'b0;
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i PMA_TX_CFG                             = 20'h80082;
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i TX_BUFFER_USE                          = "TRUE";
@@ -547,14 +675,22 @@ INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i TX_DLYALIGN_CTRINC                     
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i TX_DLYALIGN_LPFINC                     = 4'b0110;
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i TX_DLYALIGN_MONSEL                     = 3'b000;
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i TX_DLYALIGN_OVRDSETTING                = 8'b10000000;
+
+##-----------------------TX Gearbox---------------------------
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i GEARBOX_ENDEC                          = 3'b000;
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i TXGEARBOX_USE                          = "FALSE";
+
+##--------------TX Driver and OOB Signalling------------------
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i TX_DRIVE_MODE                          = "DIRECT";
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i TX_IDLE_ASSERT_DELAY                   = 3'b100;
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i TX_IDLE_DEASSERT_DELAY                 = 3'b010;
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i TXDRIVE_LOOPBACK_HIZ                   = "FALSE";
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i TXDRIVE_LOOPBACK_PD                    = "FALSE";
+
+##------------TX Pipe Control for PCI Express/SATA------------
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i COM_BURST_VAL                          = 4'b1111;
+
+##----------------TX Attributes for PCI Express---------------
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i TX_DEEMPH_0                            = 5'b11010;
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i TX_DEEMPH_1                            = 5'b10000;
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i TX_MARGIN_FULL_0                       = 7'b1001110;
@@ -567,6 +703,8 @@ INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i TX_MARGIN_LOW_1                        
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i TX_MARGIN_LOW_2                        = 7'b1000010;
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i TX_MARGIN_LOW_3                        = 7'b1000000;
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i TX_MARGIN_LOW_4                        = 7'b1000000;
+
+##--------------------------RX PLL----------------------------
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i RX_OVERSAMPLE_MODE                     = "FALSE";
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i RXPLL_COM_CFG                          = 24'h21680a;
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i RXPLL_CP_CFG                           = 8'h0D;
@@ -576,11 +714,15 @@ INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i RXPLL_DIVSEL_REF                       
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i RXPLL_DIVSEL45_FB                      = 5;
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i RXPLL_LKDET_CFG                        = 3'b111;
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i RX_CLK25_DIVIDER                       = 7;
+
+##-----------------------RX Interface-------------------------
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i GEN_RXUSRCLK                           = "TRUE";
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i RX_DATA_WIDTH                          = 20;
-INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i RXRECCLK_CTRL                          = "RXPLLREFCLK_DIV2";
+INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i RXRECCLK_CTRL                          = "RXRECCLKPMA_DIV2";
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i RXRECCLK_DLY                           = 10'b0000000000;
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i RXUSRCLK_DLY                           = 16'h0000;
+
+##--------RX Driver,OOB signalling,Coupling and Eq.,CDR-------
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i AC_CAP_DIS                             = "TRUE";
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i CDR_PH_ADJ_TIME                        = 5'b10100;
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i OOBDETECT_THRESHOLD                    = 3'b011;
@@ -599,12 +741,18 @@ INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i PMA_RXSYNC_CFG                         
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i PMA_CFG                                = 76'h0040000040000000003;
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i BGTEST_CFG                             = 2'b00;
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i BIAS_CFG                               = 17'h00000;
+
+##------------RX Decision Feedback Equalizer(DFE)-------------
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i DFE_CAL_TIME                           = 5'b01100;
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i DFE_CFG                                = 8'b00011011;
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i RX_EN_IDLE_HOLD_DFE                    = "TRUE";
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i RX_EYE_OFFSET                          = 8'h4C;
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i RX_EYE_SCANMODE                        = 2'b00;
+
+##-----------------------PRBS Detection-----------------------
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i RXPRBSERR_LOOPBACK                     = 1'b0;
+
+##----------------Comma Detection and Alignment---------------
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i ALIGN_COMMA_WORD                       = 2;
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i COMMA_10B_ENABLE                       = 10'b1111111111;
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i COMMA_DOUBLE                           = "FALSE";
@@ -619,10 +767,16 @@ INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i RX_DECODE_SEQ_MATCH                    
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i RX_SLIDE_AUTO_WAIT                     = 5;
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i RX_SLIDE_MODE                          = "OFF";
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i SHOW_REALIGN_COMMA                     = "TRUE";
+
+##---------------RX Loss-of-sync State Machine----------------
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i RX_LOS_INVALID_INCR                    = 8;
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i RX_LOS_THRESHOLD                       = 128;
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i RX_LOSS_OF_SYNC_FSM                    = "TRUE";
+
+##-----------------------RX Gearbox---------------------------
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i RXGEARBOX_USE                          = "FALSE";
+
+##-----------RX Elastic Buffer and Phase alignment------------
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i RX_BUFFER_USE                          = "TRUE";
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i RX_EN_IDLE_RESET_BUF                   = "FALSE";
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i RX_EN_MODE_RESET_BUF                   = "TRUE";
@@ -638,6 +792,8 @@ INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i RX_DLYALIGN_EDGESET                    
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i RX_DLYALIGN_LPFINC                     = 4'b1110;
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i RX_DLYALIGN_MONSEL                     = 3'b000;
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i RX_DLYALIGN_OVRDSETTING                = 8'b10000000;
+
+##----------------------Clock Correction----------------------
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i CLK_COR_ADJ_LEN                        = 2;
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i CLK_COR_DET_LEN                        = 1;
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i CLK_COR_INSERT_IDLE_FLAG               = "FALSE";
@@ -658,6 +814,8 @@ INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i CLK_COR_SEQ_2_4                        
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i CLK_COR_SEQ_2_ENABLE                   = 4'b1111;
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i CLK_COR_SEQ_2_USE                      = "FALSE";
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i CLK_CORRECT_USE                        = "FALSE";
+
+##----------------------Channel Bonding----------------------
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i CHAN_BOND_1_MAX_SKEW                   = 1;
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i CHAN_BOND_2_MAX_SKEW                   = 1;
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i CHAN_BOND_KEEP_ALIGN                   = "FALSE";
@@ -675,6 +833,8 @@ INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i CHAN_BOND_SEQ_2_ENABLE                 
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i CHAN_BOND_SEQ_2_USE                    = "FALSE";
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i CHAN_BOND_SEQ_LEN                      = 1;
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i PCI_EXPRESS_MODE                       = "FALSE";
+
+##-----------RX Attributes for PCI Express/SATA/SAS----------
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i SAS_MAX_COMSAS                         = 52;
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i SAS_MIN_COMSAS                         = 40;
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i SATA_BURST_VAL                         = 3'b100;
@@ -690,13 +850,15 @@ INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i TRANS_TIME_NON_P2                      
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i TRANS_TIME_RATE                        = 8'hff;
 INST gtx_wrapper_inst/gtx_3_inst/gtxe1_i TRANS_TIME_TO_P2                       = 10'h064;
 
+
+
 # Clocks
 #NET "gtx_wrapper_inst/gtx_clk" TNM_NET = "gtx_clk";
 #TIMESPEC TS_gtx_clk = PERIOD "gtx_clk" 6.25 ns;
-
+#
 #NET "gtx_wrapper_inst/gtx0_tx_out_clk" TNM_NET = "gtx0_tx_out_clk";
 #TIMESPEC TS_gtx0_tx_out_clk = PERIOD "gtx0_tx_out_clk" 6.25 ns;
-
+#
 #NET "gtx_clk" TNM_NET = "usr_gtx_clk";
 #TIMESPEC TS_usr_gtx_clk = PERIOD "usr_gtx_clk" 6.25 ns;
 

@@ -373,7 +373,21 @@ architecture Behavioral of optohybrid_top is
     signal cs_ila3                  : std_logic_vector(31 downto 0);
     signal cs_ila4                  : std_logic_vector(191 downto 0);
 	 
-	 signal gtx_clk_select				: std_logic;
+	 signal gtx_clk_select          : std_logic;
+    
+    -- Tracking
+    
+    signal track_tx_ready_0         : std_logic;
+    signal track_tx_done_0          : std_logic;
+    signal track_tx_data_0          : std_logic_vector(223 downto 0);
+    
+    signal track_tx_ready_1         : std_logic;
+    signal track_tx_done_1          : std_logic;
+    signal track_tx_data_1          : std_logic_vector(223 downto 0);
+    
+    signal track_tx_ready_2         : std_logic;
+    signal track_tx_done_2          : std_logic;
+    signal track_tx_data_2          : std_logic_vector(223 downto 0);
     
 begin
 
@@ -639,96 +653,125 @@ begin
 --		mgt_ref_clk_i   => clk_mgt
 --	);
     
+
+    --================================--
+    -- Tracking path
+    --================================--
+
+    tracking_core_inst : entity work.tracking_core
+    port map(
+        gtp_clk_i           => gtx_clk,
+        vfat2_clk_i         => vfat2_mclk,
+        reset_i             => reset,
+        lv1a_sent_i         => t1_lv1a,
+        bx_counter_i        => bx_counter,
+        vfat2_data_0_i      => vfat2_data(0).data_out,
+        vfat2_data_1_i      => vfat2_data(1).data_out,
+        vfat2_data_2_i      => vfat2_data(2).data_out,
+        vfat2_data_3_i      => vfat2_data(3).data_out,
+        vfat2_data_4_i      => vfat2_data(4).data_out,
+        vfat2_data_5_i      => vfat2_data(5).data_out,
+        vfat2_data_6_i      => vfat2_data(6).data_out,
+        vfat2_data_7_i      => vfat2_data(7).data_out,
+        vfat2_data_8_i      => vfat2_data(8).data_out,
+        vfat2_data_9_i      => vfat2_data(9).data_out,
+        vfat2_data_10_i     => vfat2_data(10).data_out,
+        vfat2_data_11_i     => vfat2_data(11).data_out,
+        vfat2_data_12_i     => vfat2_data(12).data_out,
+        vfat2_data_13_i     => vfat2_data(13).data_out,
+        vfat2_data_14_i     => vfat2_data(14).data_out,
+        vfat2_data_15_i     => vfat2_data(15).data_out,
+        vfat2_data_16_i     => vfat2_data(16).data_out,
+        vfat2_data_17_i     => vfat2_data(17).data_out,
+        vfat2_data_18_i     => vfat2_data(18).data_out,
+        vfat2_data_19_i     => vfat2_data(19).data_out,
+        vfat2_data_20_i     => vfat2_data(20).data_out,
+        vfat2_data_21_i     => vfat2_data(21).data_out,
+        vfat2_data_22_i     => vfat2_data(22).data_out,
+        vfat2_data_23_i     => vfat2_data(23).data_out,
+        track_tx_ready_0_o  => track_tx_ready_0,
+        track_tx_done_0_i   => track_tx_done_0,
+        track_tx_data_0_o   => track_tx_data_0,
+        track_tx_ready_1_o  => track_tx_ready_1,
+        track_tx_done_1_i   => track_tx_done_1,
+        track_tx_data_1_o   => track_tx_data_1,
+        track_tx_ready_2_o  => track_tx_ready_2,
+        track_tx_done_2_i   => track_tx_done_2,
+        track_tx_data_2_o   => track_tx_data_2
+    );
+    
     --== Links ==--
     
     link_tracking_0_inst : entity work.link_tracking
     port map(
-        gtp_clk_i       => gtx_clk,
-        vfat2_clk_i     => vfat2_mclk,
-        reset_i         => reset,
-        rx_error_i      => rx_error(0),
-        rx_kchar_i      => rx_kchar(1 downto 0),
-        rx_data_i       => rx_data(15 downto 0),
-        tx_kchar_o      => tx_kchar(1 downto 0),
-        tx_data_o       => tx_data(15 downto 0),
-        request_write_o => request_write_0,
-        request_tri_o   => request_tri_0,
-        request_read_i  => request_read,
-        lv1a_sent_i     => t1_lv1a,
-        bx_counter_i    => bx_counter,
-        vfat2_sda_i     => vfat2_sda_in(1 downto 0),
-        vfat2_sda_o     => vfat2_sda_out(1 downto 0),
-        vfat2_sda_t     => vfat2_sda_tri(1 downto 0),
-        vfat2_scl_o     => vfat2_scl(1 downto 0),
-        vfat2_dvalid_i  => vfat2_data_valid(1 downto 0),
-        vfat2_data_0_i  => vfat2_data(0).data_out,
-        vfat2_data_1_i  => vfat2_data(1).data_out,
-        vfat2_data_2_i  => vfat2_data(2).data_out,
-        vfat2_data_3_i  => vfat2_data(3).data_out,
-        vfat2_data_4_i  => vfat2_data(4).data_out,
-        vfat2_data_5_i  => vfat2_data(5).data_out,
-        vfat2_data_6_i  => vfat2_data(6).data_out,
-        vfat2_data_7_i  => vfat2_data(7).data_out
+        gtp_clk_i           => gtx_clk,
+        vfat2_clk_i         => vfat2_mclk,
+        reset_i             => reset,
+        rx_error_i          => rx_error(0),
+        rx_kchar_i          => rx_kchar(1 downto 0),
+        rx_data_i           => rx_data(15 downto 0),
+        tx_kchar_o          => tx_kchar(1 downto 0),
+        tx_data_o           => tx_data(15 downto 0),
+        request_write_o     => request_write_0,
+        request_tri_o       => request_tri_0,
+        request_read_i      => request_read,
+        lv1a_sent_i         => t1_lv1a,
+        bx_counter_i        => bx_counter,
+        vfat2_sda_i         => vfat2_sda_in(1 downto 0),
+        vfat2_sda_o         => vfat2_sda_out(1 downto 0),
+        vfat2_sda_t         => vfat2_sda_tri(1 downto 0),
+        vfat2_scl_o         => vfat2_scl(1 downto 0),
+        track_tx_ready_i    => track_tx_ready_0,
+        track_tx_done_o     => track_tx_done_0,
+        track_tx_data_i     => track_tx_data_0
     );
     
     link_tracking_1_inst : entity work.link_tracking
     port map(
-        gtp_clk_i       => gtx_clk,
-        vfat2_clk_i     => vfat2_mclk,
-        reset_i         => reset,
-        rx_error_i      => rx_error(1),
-        rx_kchar_i      => rx_kchar(3 downto 2),
-        rx_data_i       => rx_data(31 downto 16),
-        tx_kchar_o      => tx_kchar(3 downto 2),
-        tx_data_o       => tx_data(31 downto 16),
-        request_write_o => request_write_1,
-        request_tri_o   => request_tri_1,
-        request_read_i  => request_read,
-        lv1a_sent_i     => t1_lv1a,
-        bx_counter_i    => bx_counter,
-        vfat2_sda_i     => vfat2_sda_in(3 downto 2),
-        vfat2_sda_o     => vfat2_sda_out(3 downto 2),
-        vfat2_sda_t     => vfat2_sda_tri(3 downto 2),
-        vfat2_scl_o     => vfat2_scl(3 downto 2),
-        vfat2_dvalid_i  => vfat2_data_valid(3 downto 2),
-        vfat2_data_0_i  => vfat2_data(8).data_out,
-        vfat2_data_1_i  => vfat2_data(9).data_out,
-        vfat2_data_2_i  => vfat2_data(10).data_out,
-        vfat2_data_3_i  => vfat2_data(11).data_out,
-        vfat2_data_4_i  => vfat2_data(12).data_out,
-        vfat2_data_5_i  => vfat2_data(13).data_out,
-        vfat2_data_6_i  => vfat2_data(14).data_out,
-        vfat2_data_7_i  => vfat2_data(15).data_out
+        gtp_clk_i           => gtx_clk,
+        vfat2_clk_i         => vfat2_mclk,
+        reset_i             => reset,
+        rx_error_i          => rx_error(1),
+        rx_kchar_i          => rx_kchar(3 downto 2),
+        rx_data_i           => rx_data(31 downto 16),
+        tx_kchar_o          => tx_kchar(3 downto 2),
+        tx_data_o           => tx_data(31 downto 16),
+        request_write_o     => request_write_1,
+        request_tri_o       => request_tri_1,
+        request_read_i      => request_read,
+        lv1a_sent_i         => t1_lv1a,
+        bx_counter_i        => bx_counter,
+        vfat2_sda_i         => vfat2_sda_in(3 downto 2),
+        vfat2_sda_o         => vfat2_sda_out(3 downto 2),
+        vfat2_sda_t         => vfat2_sda_tri(3 downto 2),
+        vfat2_scl_o         => vfat2_scl(3 downto 2),
+        track_tx_ready_i    => track_tx_ready_1,
+        track_tx_done_o     => track_tx_done_1,
+        track_tx_data_i     => track_tx_data_1
     );    
     
     link_tracking_2_inst : entity work.link_tracking
     port map(
-        gtp_clk_i       => gtx_clk,
-        vfat2_clk_i     => vfat2_mclk,
-        reset_i         => reset,
-        rx_error_i      => rx_error(3),
-        rx_kchar_i      => rx_kchar(5 downto 4),
-        rx_data_i       => rx_data(47 downto 32),
-        tx_kchar_o      => tx_kchar(5 downto 4),
-        tx_data_o       => tx_data(47 downto 32),
-        request_write_o => request_write_2,
-        request_tri_o   => request_tri_2,
-        request_read_i  => request_read,
-        lv1a_sent_i     => t1_lv1a,
-        bx_counter_i    => bx_counter,
-        vfat2_sda_i     => vfat2_sda_in(5 downto 4),
-        vfat2_sda_o     => vfat2_sda_out(5 downto 4),
-        vfat2_sda_t     => vfat2_sda_tri(5 downto 4),
-        vfat2_scl_o     => vfat2_scl(5 downto 4),
-        vfat2_dvalid_i  => vfat2_data_valid(5 downto 4),
-        vfat2_data_0_i  => vfat2_data(16).data_out,
-        vfat2_data_1_i  => vfat2_data(17).data_out,
-        vfat2_data_2_i  => vfat2_data(18).data_out,
-        vfat2_data_3_i  => vfat2_data(19).data_out,
-        vfat2_data_4_i  => vfat2_data(20).data_out,
-        vfat2_data_5_i  => vfat2_data(21).data_out,
-        vfat2_data_6_i  => vfat2_data(22).data_out,
-        vfat2_data_7_i  => vfat2_data(23).data_out
+        gtp_clk_i           => gtx_clk,
+        vfat2_clk_i         => vfat2_mclk,
+        reset_i             => reset,
+        rx_error_i          => rx_error(3),
+        rx_kchar_i          => rx_kchar(5 downto 4),
+        rx_data_i           => rx_data(47 downto 32),
+        tx_kchar_o          => tx_kchar(5 downto 4),
+        tx_data_o           => tx_data(47 downto 32),
+        request_write_o     => request_write_2,
+        request_tri_o       => request_tri_2,
+        request_read_i      => request_read,
+        lv1a_sent_i         => t1_lv1a,
+        bx_counter_i        => bx_counter,
+        vfat2_sda_i         => vfat2_sda_in(5 downto 4),
+        vfat2_sda_o         => vfat2_sda_out(5 downto 4),
+        vfat2_sda_t         => vfat2_sda_tri(5 downto 4),
+        vfat2_scl_o         => vfat2_scl(5 downto 4),
+        track_tx_ready_i    => track_tx_ready_2,
+        track_tx_done_o     => track_tx_done_2,
+        track_tx_data_i     => track_tx_data_2
     );    
     
     requests: for I in 0 to 63 generate
@@ -916,7 +959,7 @@ begin
     
     -- Fixed registers : 23 -- read _ firmware version
     
-    request_read(23) <= x"AA150806"; 
+    request_read(23) <= x"AA150826"; 
     
     -- Reserved : 25 downto 24
     
@@ -994,8 +1037,7 @@ begin
     chipscope_ila_inst : entity work.chipscope_ila port map (CONTROL => cs_icon1, CLK => gtx_clk, TRIG0 => cs_ila0, TRIG1 => cs_ila1, TRIG2 => cs_ila2, TRIG3 => cs_ila3, TRIG4 => cs_ila4);
 
     cs_ila0 <= rx_data(31 downto 16) & rx_data(15 downto 0);
-    cs_ila1 <= tx_data(31 downto 16) & tx_data(15 downto 0);
-    --cs_ila1 <= rx_data(63 downto 48) & rx_data(47 downto 32);
+    cs_ila1 <= rx_data(63 downto 48) & rx_data(47 downto 32);
     
     cs_ila2 <= (0 => vfat2_data_valid(0), 
                 1 => vfat2_data_valid(1),

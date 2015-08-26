@@ -1,7 +1,7 @@
 ##############################################################
 #
 # Xilinx Core Generator version 14.7
-# Date: Mon Aug 03 09:32:39 2015
+# Date: Wed Aug 26 10:45:34 2015
 #
 ##############################################################
 #
@@ -188,7 +188,7 @@ CSET rx_idle_lo_cnt=0000
 CSET rx_line_rate=3.2
 CSET rx_oob_threshold=011
 CSET rx_refclk_x0_y0=REFCLK0_Q0
-CSET rx_refclk_x0_y1=REFCLK0_Q0
+CSET rx_refclk_x0_y1=REFCLK1_Q0
 CSET rx_refclk_x0_y10=REFCLK1_Q2
 CSET rx_refclk_x0_y11=REFCLK1_Q2
 CSET rx_refclk_x0_y12=REFCLK1_Q3
@@ -210,16 +210,16 @@ CSET rx_refclk_x0_y26=REFCLK1_Q6
 CSET rx_refclk_x0_y27=REFCLK1_Q6
 CSET rx_refclk_x0_y28=REFCLK1_Q7
 CSET rx_refclk_x0_y29=REFCLK1_Q7
-CSET rx_refclk_x0_y3=REFCLK0_Q0
+CSET rx_refclk_x0_y3=REFCLK1_Q0
 CSET rx_refclk_x0_y30=REFCLK1_Q7
 CSET rx_refclk_x0_y31=REFCLK1_Q7
 CSET rx_refclk_x0_y32=REFCLK1_Q8
 CSET rx_refclk_x0_y33=REFCLK1_Q8
 CSET rx_refclk_x0_y34=REFCLK1_Q8
 CSET rx_refclk_x0_y35=REFCLK1_Q8
-CSET rx_refclk_x0_y4=REFCLK1_Q1
+CSET rx_refclk_x0_y4=REFCLK0_Q0
 CSET rx_refclk_x0_y5=REFCLK1_Q1
-CSET rx_refclk_x0_y6=REFCLK1_Q1
+CSET rx_refclk_x0_y6=REFCLK0_Q0
 CSET rx_refclk_x0_y7=REFCLK1_Q1
 CSET rx_refclk_x0_y8=REFCLK1_Q2
 CSET rx_refclk_x0_y9=REFCLK1_Q2
@@ -252,7 +252,7 @@ CSET tx_idle_assert_delay=100
 CSET tx_idle_deassert_delay=010
 CSET tx_line_rate=3.2
 CSET tx_refclk_x0_y0=REFCLK0_Q0
-CSET tx_refclk_x0_y1=REFCLK0_Q0
+CSET tx_refclk_x0_y1=use_rx_pll
 CSET tx_refclk_x0_y10=use_rx_pll
 CSET tx_refclk_x0_y11=use_rx_pll
 CSET tx_refclk_x0_y12=use_rx_pll
@@ -274,16 +274,16 @@ CSET tx_refclk_x0_y26=use_rx_pll
 CSET tx_refclk_x0_y27=use_rx_pll
 CSET tx_refclk_x0_y28=use_rx_pll
 CSET tx_refclk_x0_y29=use_rx_pll
-CSET tx_refclk_x0_y3=REFCLK0_Q0
+CSET tx_refclk_x0_y3=use_rx_pll
 CSET tx_refclk_x0_y30=use_rx_pll
 CSET tx_refclk_x0_y31=use_rx_pll
 CSET tx_refclk_x0_y32=use_rx_pll
 CSET tx_refclk_x0_y33=use_rx_pll
 CSET tx_refclk_x0_y34=use_rx_pll
 CSET tx_refclk_x0_y35=use_rx_pll
-CSET tx_refclk_x0_y4=use_rx_pll
+CSET tx_refclk_x0_y4=REFCLK0_Q0
 CSET tx_refclk_x0_y5=use_rx_pll
-CSET tx_refclk_x0_y6=use_rx_pll
+CSET tx_refclk_x0_y6=REFCLK0_Q0
 CSET tx_refclk_x0_y7=use_rx_pll
 CSET tx_refclk_x0_y8=use_rx_pll
 CSET tx_refclk_x0_y9=use_rx_pll
@@ -299,7 +299,7 @@ CSET use_comma_detect=true
 CSET use_external_rxusrclk=false
 CSET use_external_txusrclk=false
 CSET use_gtx_x0_y0=true
-CSET use_gtx_x0_y1=true
+CSET use_gtx_x0_y1=false
 CSET use_gtx_x0_y10=false
 CSET use_gtx_x0_y11=false
 CSET use_gtx_x0_y12=false
@@ -321,16 +321,16 @@ CSET use_gtx_x0_y26=false
 CSET use_gtx_x0_y27=false
 CSET use_gtx_x0_y28=false
 CSET use_gtx_x0_y29=false
-CSET use_gtx_x0_y3=true
+CSET use_gtx_x0_y3=false
 CSET use_gtx_x0_y30=false
 CSET use_gtx_x0_y31=false
 CSET use_gtx_x0_y32=false
 CSET use_gtx_x0_y33=false
 CSET use_gtx_x0_y34=false
 CSET use_gtx_x0_y35=false
-CSET use_gtx_x0_y4=false
+CSET use_gtx_x0_y4=true
 CSET use_gtx_x0_y5=false
-CSET use_gtx_x0_y6=false
+CSET use_gtx_x0_y6=true
 CSET use_gtx_x0_y7=false
 CSET use_gtx_x0_y8=false
 CSET use_gtx_x0_y9=false
@@ -408,4 +408,4 @@ CSET wideband_highpass_mix=000
 MISC pkg_timestamp=2011-04-08T05:24:23Z
 # END Extra information
 GENERATE
-# CRC: ec91a5a3
+# CRC: 72461c97

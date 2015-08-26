@@ -93,13 +93,13 @@ NET Q0_CLK0_MGTREFCLK_PAD_P_IN  LOC=AK6;
 INST gtx_i/gtx0_gtx_i/gtxe1_i LOC=GTXE1_X0Y0;
 
 ##---------- Set placement for gtx1_gtx_wrapper_i/GTX_DUAL ------
-INST gtx_i/gtx1_gtx_i/gtxe1_i LOC=GTXE1_X0Y1;
+INST gtx_i/gtx1_gtx_i/gtxe1_i LOC=GTXE1_X0Y2;
 
 ##---------- Set placement for gtx2_gtx_wrapper_i/GTX_DUAL ------
-INST gtx_i/gtx2_gtx_i/gtxe1_i LOC=GTXE1_X0Y2;
+INST gtx_i/gtx2_gtx_i/gtxe1_i LOC=GTXE1_X0Y4;
 
 ##---------- Set placement for gtx3_gtx_wrapper_i/GTX_DUAL ------
-INST gtx_i/gtx3_gtx_i/gtxe1_i LOC=GTXE1_X0Y3;
+INST gtx_i/gtx3_gtx_i/gtxe1_i LOC=GTXE1_X0Y6;
 
 
 
