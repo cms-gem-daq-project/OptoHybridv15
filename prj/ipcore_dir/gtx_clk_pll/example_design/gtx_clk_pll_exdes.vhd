@@ -73,7 +73,10 @@ port
   COUNTER_RESET     : in  std_logic;
   CLK_OUT           : out std_logic_vector(2 downto 1) ;
   -- High bits of counters driven by clocks
-  COUNT             : out std_logic_vector(2 downto 1)
+  COUNT             : out std_logic_vector(2 downto 1);
+  -- Status and control signals
+  RESET             : in  std_logic;
+  LOCKED            : out std_logic
  );
 end gtx_clk_pll_exdes;
 
@@ -89,7 +92,8 @@ architecture xilinx of gtx_clk_pll_exdes is
   -- Array typedef
   type ctrarr is array (1 to NUM_C) of std_logic_vector(C_W-1 downto 0);
 
-  -- Reset for counters when lock status changes
+  -- When the clock goes out of lock, reset the counters
+  signal   locked_int : std_logic;
   signal   reset_int  : std_logic                     := '0';
   -- Declare the clocks and counters
   signal   clk        : std_logic_vector(NUM_C downto 1);
@@ -105,16 +109,22 @@ architecture xilinx of gtx_clk_pll_exdes is
 component gtx_clk_pll is
 port
  (-- Clock in ports
-  clk160MHz_i           : in     std_logic;
+  clk_160MHz_i           : in     std_logic;
   -- Clock out ports
-  clk160MHz_o          : out    std_logic;
-  clk40MHz_o          : out    std_logic
+  clk_40MHz_o          : out    std_logic;
+  clk_160MHz_o          : out    std_logic;
+  -- Status and control signals
+  reset_i             : in     std_logic;
+  locked_o            : out    std_logic
  );
 end component;
 
 begin
-  -- Create reset for the counters
-  reset_int <= COUNTER_RESET;
+  -- Alias output to internally used signal
+  LOCKED    <= locked_int;
+
+  -- When the clock goes out of lock, reset the counters
+  reset_int <= (not locked_int) or RESET or COUNTER_RESET;
 
 
   counters_1: for count_gen in 1 to NUM_C generate begin
@@ -139,10 +149,13 @@ end generate counters_1;
   clknetwork : gtx_clk_pll
   port map
    (-- Clock in ports
-    clk160MHz_i            => CLK_IN1,
+    clk_160MHz_i            => CLK_IN1,
     -- Clock out ports
-    clk160MHz_o           => clk_int(1),
-    clk40MHz_o           => clk_int(2));
+    clk_40MHz_o           => clk_int(1),
+    clk_160MHz_o           => clk_int(2),
+    -- Status and control signals
+    reset_i              => RESET,
+    locked_o             => locked_int);
 
 
   gen_outclk_oddr: 

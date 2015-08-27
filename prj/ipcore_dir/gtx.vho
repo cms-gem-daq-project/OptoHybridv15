@@ -65,13 +65,16 @@ port
     GTX0_TXP_OUT                            : out  std_logic;
     ----------------------- Transmit Ports - TX PLL Ports ----------------------
     GTX0_GTXTXRESET_IN                      : in   std_logic;
+    GTX0_MGTREFCLKTX_IN                     : in   std_logic;
+    GTX0_PLLTXRESET_IN                      : in   std_logic;
+    GTX0_TXPLLLKDET_OUT                     : out  std_logic;
     GTX0_TXRESETDONE_OUT                    : out  std_logic;
 
 
     
     --_________________________________________________________________________
     --_________________________________________________________________________
-    --GTX1  (X0_Y1)
+    --GTX1  (X0_Y2)
 
     ----------------------- Receive Ports - 8b10b Decoder ----------------------
     GTX1_RXCHARISK_OUT                      : out  std_logic_vector(1 downto 0);
@@ -108,13 +111,16 @@ port
     GTX1_TXP_OUT                            : out  std_logic;
     ----------------------- Transmit Ports - TX PLL Ports ----------------------
     GTX1_GTXTXRESET_IN                      : in   std_logic;
+    GTX1_MGTREFCLKTX_IN                     : in   std_logic;
+    GTX1_PLLTXRESET_IN                      : in   std_logic;
+    GTX1_TXPLLLKDET_OUT                     : out  std_logic;
     GTX1_TXRESETDONE_OUT                    : out  std_logic;
 
 
     
     --_________________________________________________________________________
     --_________________________________________________________________________
-    --GTX2  (X0_Y2)
+    --GTX2  (X0_Y4)
 
     ----------------------- Receive Ports - 8b10b Decoder ----------------------
     GTX2_RXCHARISK_OUT                      : out  std_logic_vector(1 downto 0);
@@ -151,13 +157,16 @@ port
     GTX2_TXP_OUT                            : out  std_logic;
     ----------------------- Transmit Ports - TX PLL Ports ----------------------
     GTX2_GTXTXRESET_IN                      : in   std_logic;
+    GTX2_MGTREFCLKTX_IN                     : in   std_logic;
+    GTX2_PLLTXRESET_IN                      : in   std_logic;
+    GTX2_TXPLLLKDET_OUT                     : out  std_logic;
     GTX2_TXRESETDONE_OUT                    : out  std_logic;
 
 
     
     --_________________________________________________________________________
     --_________________________________________________________________________
-    --GTX3  (X0_Y3)
+    --GTX3  (X0_Y6)
 
     ----------------------- Receive Ports - 8b10b Decoder ----------------------
     GTX3_RXCHARISK_OUT                      : out  std_logic_vector(1 downto 0);
@@ -194,6 +203,9 @@ port
     GTX3_TXP_OUT                            : out  std_logic;
     ----------------------- Transmit Ports - TX PLL Ports ----------------------
     GTX3_GTXTXRESET_IN                      : in   std_logic;
+    GTX3_MGTREFCLKTX_IN                     : in   std_logic;
+    GTX3_PLLTXRESET_IN                      : in   std_logic;
+    GTX3_TXPLLLKDET_OUT                     : out  std_logic;
     GTX3_TXRESETDONE_OUT                    : out  std_logic
 
 
@@ -258,12 +270,15 @@ end component;
         GTX0_TXP_OUT                    =>      ,
         ----------------------- Transmit Ports - TX PLL Ports ----------------------
         GTX0_GTXTXRESET_IN              =>      ,
+        GTX0_MGTREFCLKTX_IN             =>      ,
+        GTX0_PLLTXRESET_IN              =>      ,
+        GTX0_TXPLLLKDET_OUT             =>      ,
         GTX0_TXRESETDONE_OUT            =>      ,
 
 
         --_____________________________________________________________________
         --_____________________________________________________________________
-        --GTX1  (X0Y1)
+        --GTX1  (X0Y2)
 
         ----------------------- Receive Ports - 8b10b Decoder ----------------------
         GTX1_RXCHARISK_OUT              =>      ,
@@ -300,12 +315,15 @@ end component;
         GTX1_TXP_OUT                    =>      ,
         ----------------------- Transmit Ports - TX PLL Ports ----------------------
         GTX1_GTXTXRESET_IN              =>      ,
+        GTX1_MGTREFCLKTX_IN             =>      ,
+        GTX1_PLLTXRESET_IN              =>      ,
+        GTX1_TXPLLLKDET_OUT             =>      ,
         GTX1_TXRESETDONE_OUT            =>      ,
 
 
         --_____________________________________________________________________
         --_____________________________________________________________________
-        --GTX2  (X0Y2)
+        --GTX2  (X0Y4)
 
         ----------------------- Receive Ports - 8b10b Decoder ----------------------
         GTX2_RXCHARISK_OUT              =>      ,
@@ -342,12 +360,15 @@ end component;
         GTX2_TXP_OUT                    =>      ,
         ----------------------- Transmit Ports - TX PLL Ports ----------------------
         GTX2_GTXTXRESET_IN              =>      ,
+        GTX2_MGTREFCLKTX_IN             =>      ,
+        GTX2_PLLTXRESET_IN              =>      ,
+        GTX2_TXPLLLKDET_OUT             =>      ,
         GTX2_TXRESETDONE_OUT            =>      ,
 
 
         --_____________________________________________________________________
         --_____________________________________________________________________
-        --GTX3  (X0Y3)
+        --GTX3  (X0Y6)
 
         ----------------------- Receive Ports - 8b10b Decoder ----------------------
         GTX3_RXCHARISK_OUT              =>      ,
@@ -384,6 +405,9 @@ end component;
         GTX3_TXP_OUT                    =>      ,
         ----------------------- Transmit Ports - TX PLL Ports ----------------------
         GTX3_GTXTXRESET_IN              =>      ,
+        GTX3_MGTREFCLKTX_IN             =>      ,
+        GTX3_PLLTXRESET_IN              =>      ,
+        GTX3_TXPLLLKDET_OUT             =>      ,
         GTX3_TXRESETDONE_OUT            =>      
 
 

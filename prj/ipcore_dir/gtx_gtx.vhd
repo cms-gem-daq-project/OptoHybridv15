@@ -212,7 +212,7 @@ begin
         GEN_TXUSRCLK                            =>     (TRUE),
         TX_DATA_WIDTH                           =>     (20),
         TX_USRCLK_CFG                           =>     (x"00"),
-        TXOUTCLK_CTRL                           =>     ("TXPLLREFCLK_DIV1"),
+        TXOUTCLK_CTRL                           =>     ("TXOUTCLKPMA_DIV2"),
         TXOUTCLK_DLY                            =>     ("0000000000"),
 
        --------------TX Buffering and Phase Alignment----------------
@@ -269,7 +269,7 @@ begin
        -------------------------RX Interface-------------------------
         GEN_RXUSRCLK                            =>     (TRUE),
         RX_DATA_WIDTH                           =>     (20),
-        RXRECCLK_CTRL                           =>     ("RXPLLREFCLK_DIV2"),
+        RXRECCLK_CTRL                           =>     ("RXRECCLKPMA_DIV1"),
         RXRECCLK_DLY                            =>     ("0000000000"),
         RXUSRCLK_DLY                            =>     (x"0000"),
 
@@ -450,8 +450,8 @@ begin
         RXPRBSERR                       =>      open,
         ------------------- Receive Ports - RX Data Path interface -----------------
         RXDATA                          =>      rxdata_i,
-        RXRECCLK                        =>      RXRECCLK_OUT,
-        RXRECCLKPCS                     =>      open,
+        RXRECCLK                        =>      open,--RXRECCLK_OUT,
+        RXRECCLKPCS                     =>      RXRECCLK_OUT,
         RXRESET                         =>      tied_to_ground_i,
         RXUSRCLK                        =>      tied_to_ground_i,
         RXUSRCLK2                       =>      RXUSRCLK2_IN,

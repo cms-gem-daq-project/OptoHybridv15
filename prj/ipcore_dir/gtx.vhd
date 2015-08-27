@@ -118,13 +118,16 @@ port
     GTX0_TXP_OUT                            : out  std_logic;
     ----------------------- Transmit Ports - TX PLL Ports ----------------------
     GTX0_GTXTXRESET_IN                      : in   std_logic;
+    GTX0_MGTREFCLKTX_IN                     : in   std_logic;
+    GTX0_PLLTXRESET_IN                      : in   std_logic;
+    GTX0_TXPLLLKDET_OUT                     : out  std_logic;
     GTX0_TXRESETDONE_OUT                    : out  std_logic;
 
     
     
     --_________________________________________________________________________
     --_________________________________________________________________________
-    --GTX1  (X0Y1)
+    --GTX1  (X0Y2)
     
     ----------------------- Receive Ports - 8b10b Decoder ----------------------
     GTX1_RXCHARISK_OUT                      : out  std_logic_vector(1 downto 0);
@@ -161,13 +164,16 @@ port
     GTX1_TXP_OUT                            : out  std_logic;
     ----------------------- Transmit Ports - TX PLL Ports ----------------------
     GTX1_GTXTXRESET_IN                      : in   std_logic;
+    GTX1_MGTREFCLKTX_IN                     : in   std_logic;
+    GTX1_PLLTXRESET_IN                      : in   std_logic;
+    GTX1_TXPLLLKDET_OUT                     : out  std_logic;
     GTX1_TXRESETDONE_OUT                    : out  std_logic;
 
     
     
     --_________________________________________________________________________
     --_________________________________________________________________________
-    --GTX2  (X0Y2)
+    --GTX2  (X0Y4)
     
     ----------------------- Receive Ports - 8b10b Decoder ----------------------
     GTX2_RXCHARISK_OUT                      : out  std_logic_vector(1 downto 0);
@@ -204,13 +210,16 @@ port
     GTX2_TXP_OUT                            : out  std_logic;
     ----------------------- Transmit Ports - TX PLL Ports ----------------------
     GTX2_GTXTXRESET_IN                      : in   std_logic;
+    GTX2_MGTREFCLKTX_IN                     : in   std_logic;
+    GTX2_PLLTXRESET_IN                      : in   std_logic;
+    GTX2_TXPLLLKDET_OUT                     : out  std_logic;
     GTX2_TXRESETDONE_OUT                    : out  std_logic;
 
     
     
     --_________________________________________________________________________
     --_________________________________________________________________________
-    --GTX3  (X0Y3)
+    --GTX3  (X0Y6)
     
     ----------------------- Receive Ports - 8b10b Decoder ----------------------
     GTX3_RXCHARISK_OUT                      : out  std_logic_vector(1 downto 0);
@@ -247,6 +256,9 @@ port
     GTX3_TXP_OUT                            : out  std_logic;
     ----------------------- Transmit Ports - TX PLL Ports ----------------------
     GTX3_GTXTXRESET_IN                      : in   std_logic;
+    GTX3_MGTREFCLKTX_IN                     : in   std_logic;
+    GTX3_PLLTXRESET_IN                      : in   std_logic;
+    GTX3_TXPLLLKDET_OUT                     : out  std_logic;
     GTX3_TXRESETDONE_OUT                    : out  std_logic
 
     
@@ -269,16 +281,16 @@ architecture RTL of gtx is
 
 
   
-    signal  gtx0_share_rxpll_i           :   std_logic_vector(1 downto 0);
+    signal  gtx0_mgtrefclktx_i           :   std_logic_vector(1 downto 0);
     signal  gtx0_mgtrefclkrx_i           :   std_logic_vector(1 downto 0);
   
-    signal  gtx1_share_rxpll_i           :   std_logic_vector(1 downto 0);
+    signal  gtx1_mgtrefclktx_i           :   std_logic_vector(1 downto 0);
     signal  gtx1_mgtrefclkrx_i           :   std_logic_vector(1 downto 0);
   
-    signal  gtx2_share_rxpll_i           :   std_logic_vector(1 downto 0);
+    signal  gtx2_mgtrefclktx_i           :   std_logic_vector(1 downto 0);
     signal  gtx2_mgtrefclkrx_i           :   std_logic_vector(1 downto 0);
   
-    signal  gtx3_share_rxpll_i           :   std_logic_vector(1 downto 0);
+    signal  gtx3_mgtrefclktx_i           :   std_logic_vector(1 downto 0);
     signal  gtx3_mgtrefclkrx_i           :   std_logic_vector(1 downto 0);
    
 --*************************** Component Declarations **************************
@@ -350,9 +362,13 @@ begin
                      
 
    
+    gtx0_mgtrefclktx_i <= (tied_to_ground_i & GTX0_MGTREFCLKTX_IN);
     gtx0_mgtrefclkrx_i <= (tied_to_ground_i & GTX0_MGTREFCLKRX_IN);
+    gtx1_mgtrefclktx_i <= (tied_to_ground_i & GTX1_MGTREFCLKTX_IN);
     gtx1_mgtrefclkrx_i <= (tied_to_ground_i & GTX1_MGTREFCLKRX_IN);
+    gtx2_mgtrefclktx_i <= (tied_to_ground_i & GTX2_MGTREFCLKTX_IN);
     gtx2_mgtrefclkrx_i <= (tied_to_ground_i & GTX2_MGTREFCLKRX_IN);
+    gtx3_mgtrefclktx_i <= (tied_to_ground_i & GTX3_MGTREFCLKTX_IN);
     gtx3_mgtrefclkrx_i <= (tied_to_ground_i & GTX3_MGTREFCLKRX_IN);
 
  
@@ -370,9 +386,9 @@ begin
         GTX_SIM_GTXRESET_SPEEDUP    => WRAPPER_SIM_GTXRESET_SPEEDUP,
         
         -- Share RX PLL parameter
-        GTX_TX_CLK_SOURCE           => "RXPLL",
+        GTX_TX_CLK_SOURCE           => "TXPLL",
         -- Save power parameter
-        GTX_POWER_SAVE              => "0000110100"
+        GTX_POWER_SAVE              => "0000110000"
     )
     port map
     (
@@ -411,9 +427,9 @@ begin
         TXP_OUT                         =>      GTX0_TXP_OUT,
         ----------------------- Transmit Ports - TX PLL Ports ----------------------
         GTXTXRESET_IN                   =>      GTX0_GTXTXRESET_IN,
-        MGTREFCLKTX_IN                  =>      gtx0_mgtrefclkrx_i,
-        PLLTXRESET_IN                   =>      tied_to_ground_i,
-        TXPLLLKDET_OUT                  =>      open,
+        MGTREFCLKTX_IN                  =>      gtx0_mgtrefclktx_i,
+        PLLTXRESET_IN                   =>      GTX0_PLLTXRESET_IN,
+        TXPLLLKDET_OUT                  =>      GTX0_TXPLLLKDET_OUT,
         TXRESETDONE_OUT                 =>      GTX0_TXRESETDONE_OUT
 
     );
@@ -422,7 +438,7 @@ begin
 
     --_________________________________________________________________________
     --_________________________________________________________________________
-    --GTX1  (X0Y1)
+    --GTX1  (X0Y2)
 
     gtx1_gtx_i : gtx_gtx
     generic map
@@ -431,9 +447,9 @@ begin
         GTX_SIM_GTXRESET_SPEEDUP    => WRAPPER_SIM_GTXRESET_SPEEDUP,
         
         -- Share RX PLL parameter
-        GTX_TX_CLK_SOURCE           => "RXPLL",
+        GTX_TX_CLK_SOURCE           => "TXPLL",
         -- Save power parameter
-        GTX_POWER_SAVE              => "0000110100"
+        GTX_POWER_SAVE              => "0000110000"
     )
     port map
     (
@@ -472,9 +488,9 @@ begin
         TXP_OUT                         =>      GTX1_TXP_OUT,
         ----------------------- Transmit Ports - TX PLL Ports ----------------------
         GTXTXRESET_IN                   =>      GTX1_GTXTXRESET_IN,
-        MGTREFCLKTX_IN                  =>      gtx1_mgtrefclkrx_i,
-        PLLTXRESET_IN                   =>      tied_to_ground_i,
-        TXPLLLKDET_OUT                  =>      open,
+        MGTREFCLKTX_IN                  =>      gtx1_mgtrefclktx_i,
+        PLLTXRESET_IN                   =>      GTX1_PLLTXRESET_IN,
+        TXPLLLKDET_OUT                  =>      GTX1_TXPLLLKDET_OUT,
         TXRESETDONE_OUT                 =>      GTX1_TXRESETDONE_OUT
 
     );
@@ -483,7 +499,7 @@ begin
 
     --_________________________________________________________________________
     --_________________________________________________________________________
-    --GTX2  (X0Y2)
+    --GTX2  (X0Y4)
 
     gtx2_gtx_i : gtx_gtx
     generic map
@@ -492,9 +508,9 @@ begin
         GTX_SIM_GTXRESET_SPEEDUP    => WRAPPER_SIM_GTXRESET_SPEEDUP,
         
         -- Share RX PLL parameter
-        GTX_TX_CLK_SOURCE           => "RXPLL",
+        GTX_TX_CLK_SOURCE           => "TXPLL",
         -- Save power parameter
-        GTX_POWER_SAVE              => "0000110100"
+        GTX_POWER_SAVE              => "0000110000"
     )
     port map
     (
@@ -533,9 +549,9 @@ begin
         TXP_OUT                         =>      GTX2_TXP_OUT,
         ----------------------- Transmit Ports - TX PLL Ports ----------------------
         GTXTXRESET_IN                   =>      GTX2_GTXTXRESET_IN,
-        MGTREFCLKTX_IN                  =>      gtx2_mgtrefclkrx_i,
-        PLLTXRESET_IN                   =>      tied_to_ground_i,
-        TXPLLLKDET_OUT                  =>      open,
+        MGTREFCLKTX_IN                  =>      gtx2_mgtrefclktx_i,
+        PLLTXRESET_IN                   =>      GTX2_PLLTXRESET_IN,
+        TXPLLLKDET_OUT                  =>      GTX2_TXPLLLKDET_OUT,
         TXRESETDONE_OUT                 =>      GTX2_TXRESETDONE_OUT
 
     );
@@ -544,7 +560,7 @@ begin
 
     --_________________________________________________________________________
     --_________________________________________________________________________
-    --GTX3  (X0Y3)
+    --GTX3  (X0Y6)
 
     gtx3_gtx_i : gtx_gtx
     generic map
@@ -553,9 +569,9 @@ begin
         GTX_SIM_GTXRESET_SPEEDUP    => WRAPPER_SIM_GTXRESET_SPEEDUP,
         
         -- Share RX PLL parameter
-        GTX_TX_CLK_SOURCE           => "RXPLL",
+        GTX_TX_CLK_SOURCE           => "TXPLL",
         -- Save power parameter
-        GTX_POWER_SAVE              => "0000110100"
+        GTX_POWER_SAVE              => "0000110000"
     )
     port map
     (
@@ -594,9 +610,9 @@ begin
         TXP_OUT                         =>      GTX3_TXP_OUT,
         ----------------------- Transmit Ports - TX PLL Ports ----------------------
         GTXTXRESET_IN                   =>      GTX3_GTXTXRESET_IN,
-        MGTREFCLKTX_IN                  =>      gtx3_mgtrefclkrx_i,
-        PLLTXRESET_IN                   =>      tied_to_ground_i,
-        TXPLLLKDET_OUT                  =>      open,
+        MGTREFCLKTX_IN                  =>      gtx3_mgtrefclktx_i,
+        PLLTXRESET_IN                   =>      GTX3_PLLTXRESET_IN,
+        TXPLLLKDET_OUT                  =>      GTX3_TXPLLLKDET_OUT,
         TXRESETDONE_OUT                 =>      GTX3_TXRESETDONE_OUT
 
     );

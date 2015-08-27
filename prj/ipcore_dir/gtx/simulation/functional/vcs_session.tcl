@@ -129,6 +129,9 @@
   gui_sg_addsignal -group gtx_Group {:gtx_top_i:gtx_i:gtx0_gtx_i:TXP_OUT}
   gui_sg_addsignal -group gtx_Group {{Transmit Ports - TX PLL Ports}} -divider
   gui_sg_addsignal -group gtx_Group {:gtx_top_i:gtx_i:gtx0_gtx_i:GTXTXRESET_IN}
+  gui_sg_addsignal -group gtx_Group {:gtx_top_i:gtx_i:gtx0_gtx_i:MGTREFCLKTX_IN}
+  gui_sg_addsignal -group gtx_Group {:gtx_top_i:gtx_i:gtx0_gtx_i:PLLTXRESET_IN}
+  gui_sg_addsignal -group gtx_Group {:gtx_top_i:gtx_i:gtx0_gtx_i:TXPLLLKDET_OUT}
   gui_sg_addsignal -group gtx_Group {:gtx_top_i:gtx_i:gtx0_gtx_i:TXRESETDONE_OUT}
 
   gui_sg_addsignal -group gtx_Group {{GTX1_GTX}} -divider
@@ -167,6 +170,9 @@
   gui_sg_addsignal -group gtx_Group {:gtx_top_i:gtx_i:gtx1_gtx_i:TXP_OUT}
   gui_sg_addsignal -group gtx_Group {{Transmit Ports - TX PLL Ports}} -divider
   gui_sg_addsignal -group gtx_Group {:gtx_top_i:gtx_i:gtx1_gtx_i:GTXTXRESET_IN}
+  gui_sg_addsignal -group gtx_Group {:gtx_top_i:gtx_i:gtx1_gtx_i:MGTREFCLKTX_IN}
+  gui_sg_addsignal -group gtx_Group {:gtx_top_i:gtx_i:gtx1_gtx_i:PLLTXRESET_IN}
+  gui_sg_addsignal -group gtx_Group {:gtx_top_i:gtx_i:gtx1_gtx_i:TXPLLLKDET_OUT}
   gui_sg_addsignal -group gtx_Group {:gtx_top_i:gtx_i:gtx1_gtx_i:TXRESETDONE_OUT}
 
   gui_sg_addsignal -group gtx_Group {{GTX2_GTX}} -divider
@@ -205,6 +211,9 @@
   gui_sg_addsignal -group gtx_Group {:gtx_top_i:gtx_i:gtx2_gtx_i:TXP_OUT}
   gui_sg_addsignal -group gtx_Group {{Transmit Ports - TX PLL Ports}} -divider
   gui_sg_addsignal -group gtx_Group {:gtx_top_i:gtx_i:gtx2_gtx_i:GTXTXRESET_IN}
+  gui_sg_addsignal -group gtx_Group {:gtx_top_i:gtx_i:gtx2_gtx_i:MGTREFCLKTX_IN}
+  gui_sg_addsignal -group gtx_Group {:gtx_top_i:gtx_i:gtx2_gtx_i:PLLTXRESET_IN}
+  gui_sg_addsignal -group gtx_Group {:gtx_top_i:gtx_i:gtx2_gtx_i:TXPLLLKDET_OUT}
   gui_sg_addsignal -group gtx_Group {:gtx_top_i:gtx_i:gtx2_gtx_i:TXRESETDONE_OUT}
 
   gui_sg_addsignal -group gtx_Group {{GTX3_GTX}} -divider
@@ -243,6 +252,9 @@
   gui_sg_addsignal -group gtx_Group {:gtx_top_i:gtx_i:gtx3_gtx_i:TXP_OUT}
   gui_sg_addsignal -group gtx_Group {{Transmit Ports - TX PLL Ports}} -divider
   gui_sg_addsignal -group gtx_Group {:gtx_top_i:gtx_i:gtx3_gtx_i:GTXTXRESET_IN}
+  gui_sg_addsignal -group gtx_Group {:gtx_top_i:gtx_i:gtx3_gtx_i:MGTREFCLKTX_IN}
+  gui_sg_addsignal -group gtx_Group {:gtx_top_i:gtx_i:gtx3_gtx_i:PLLTXRESET_IN}
+  gui_sg_addsignal -group gtx_Group {:gtx_top_i:gtx_i:gtx3_gtx_i:TXPLLLKDET_OUT}
   gui_sg_addsignal -group gtx_Group {:gtx_top_i:gtx_i:gtx3_gtx_i:TXRESETDONE_OUT}
 
 

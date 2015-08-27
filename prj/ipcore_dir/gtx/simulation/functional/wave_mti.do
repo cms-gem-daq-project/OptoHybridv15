@@ -112,6 +112,9 @@ add wave -noupdate -format Logic /DEMO_TB/gtx_top_i/gtx_i/gtx0_gtx_i/TXN_OUT
 add wave -noupdate -format Logic /DEMO_TB/gtx_top_i/gtx_i/gtx0_gtx_i/TXP_OUT
 add wave -noupdate -divider {Transmit Ports - TX PLL Ports }
 add wave -noupdate -format Logic /DEMO_TB/gtx_top_i/gtx_i/gtx0_gtx_i/GTXTXRESET_IN
+add wave -noupdate -format Logic /DEMO_TB/gtx_top_i/gtx_i/gtx0_gtx_i/MGTREFCLKTX_IN
+add wave -noupdate -format Logic /DEMO_TB/gtx_top_i/gtx_i/gtx0_gtx_i/PLLTXRESET_IN
+add wave -noupdate -format Logic /DEMO_TB/gtx_top_i/gtx_i/gtx0_gtx_i/TXPLLLKDET_OUT
 add wave -noupdate -format Logic /DEMO_TB/gtx_top_i/gtx_i/gtx0_gtx_i/TXRESETDONE_OUT
 
 add wave -noupdate -divider {GTX1_GTX }
@@ -150,6 +153,9 @@ add wave -noupdate -format Logic /DEMO_TB/gtx_top_i/gtx_i/gtx1_gtx_i/TXN_OUT
 add wave -noupdate -format Logic /DEMO_TB/gtx_top_i/gtx_i/gtx1_gtx_i/TXP_OUT
 add wave -noupdate -divider {Transmit Ports - TX PLL Ports }
 add wave -noupdate -format Logic /DEMO_TB/gtx_top_i/gtx_i/gtx1_gtx_i/GTXTXRESET_IN
+add wave -noupdate -format Logic /DEMO_TB/gtx_top_i/gtx_i/gtx1_gtx_i/MGTREFCLKTX_IN
+add wave -noupdate -format Logic /DEMO_TB/gtx_top_i/gtx_i/gtx1_gtx_i/PLLTXRESET_IN
+add wave -noupdate -format Logic /DEMO_TB/gtx_top_i/gtx_i/gtx1_gtx_i/TXPLLLKDET_OUT
 add wave -noupdate -format Logic /DEMO_TB/gtx_top_i/gtx_i/gtx1_gtx_i/TXRESETDONE_OUT
 
 add wave -noupdate -divider {GTX2_GTX }
@@ -188,6 +194,9 @@ add wave -noupdate -format Logic /DEMO_TB/gtx_top_i/gtx_i/gtx2_gtx_i/TXN_OUT
 add wave -noupdate -format Logic /DEMO_TB/gtx_top_i/gtx_i/gtx2_gtx_i/TXP_OUT
 add wave -noupdate -divider {Transmit Ports - TX PLL Ports }
 add wave -noupdate -format Logic /DEMO_TB/gtx_top_i/gtx_i/gtx2_gtx_i/GTXTXRESET_IN
+add wave -noupdate -format Logic /DEMO_TB/gtx_top_i/gtx_i/gtx2_gtx_i/MGTREFCLKTX_IN
+add wave -noupdate -format Logic /DEMO_TB/gtx_top_i/gtx_i/gtx2_gtx_i/PLLTXRESET_IN
+add wave -noupdate -format Logic /DEMO_TB/gtx_top_i/gtx_i/gtx2_gtx_i/TXPLLLKDET_OUT
 add wave -noupdate -format Logic /DEMO_TB/gtx_top_i/gtx_i/gtx2_gtx_i/TXRESETDONE_OUT
 
 add wave -noupdate -divider {GTX3_GTX }
@@ -226,6 +235,9 @@ add wave -noupdate -format Logic /DEMO_TB/gtx_top_i/gtx_i/gtx3_gtx_i/TXN_OUT
 add wave -noupdate -format Logic /DEMO_TB/gtx_top_i/gtx_i/gtx3_gtx_i/TXP_OUT
 add wave -noupdate -divider {Transmit Ports - TX PLL Ports }
 add wave -noupdate -format Logic /DEMO_TB/gtx_top_i/gtx_i/gtx3_gtx_i/GTXTXRESET_IN
+add wave -noupdate -format Logic /DEMO_TB/gtx_top_i/gtx_i/gtx3_gtx_i/MGTREFCLKTX_IN
+add wave -noupdate -format Logic /DEMO_TB/gtx_top_i/gtx_i/gtx3_gtx_i/PLLTXRESET_IN
+add wave -noupdate -format Logic /DEMO_TB/gtx_top_i/gtx_i/gtx3_gtx_i/TXPLLLKDET_OUT
 add wave -noupdate -format Logic /DEMO_TB/gtx_top_i/gtx_i/gtx3_gtx_i/TXRESETDONE_OUT
 
 TreeUpdate [SetDefaultTree]

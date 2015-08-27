@@ -50,9 +50,7 @@
 add wave -noupdate -divider {Input clocks}
 add wave -noupdate -format Logic /fpga_clk_pll_tb/CLK_IN1
 add wave -noupdate -divider {Output clocks}
-add wave -noupdate -format Literal -expand /fpga_clk_pll_tb/dut/clk
-add wave -noupdate -divider Status/control
-add wave -noupdate -format Logic /fpga_clk_pll_tb/LOCKED
+add wave -noupdate -format Logic /fpga_clk_pll_tb/dut/clk
 add wave -noupdate -divider Counters
 add wave -noupdate -format Literal -radix hexadecimal /fpga_clk_pll_tb/COUNT
-add wave -noupdate -format Literal -radix hexadecimal -expand /fpga_clk_pll_tb/dut/counter
+add wave -noupdate -format Literal -radix hexadecimal /fpga_clk_pll_tb/dut/counter

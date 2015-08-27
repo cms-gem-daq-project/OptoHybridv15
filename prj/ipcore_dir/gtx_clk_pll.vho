@@ -54,8 +54,8 @@
 -- "Output    Output      Phase     Duty      Pk-to-Pk        Phase"
 -- "Clock    Freq (MHz) (degrees) Cycle (%) Jitter (ps)  Error (ps)"
 ------------------------------------------------------------------------------
--- CLK_OUT1___160.000______0.000______50.0______158.173____191.950
--- CLK_OUT2____40.000______0.000______50.0______207.443____191.950
+-- CLK_OUT1____40.000______0.000______50.0______143.129_____95.076
+-- CLK_OUT2___160.000______0.000______50.0______108.430_____95.076
 --
 ------------------------------------------------------------------------------
 -- "Input Clock   Freq (MHz)    Input Jitter (UI)"
@@ -68,10 +68,13 @@
 component gtx_clk_pll
 port
  (-- Clock in ports
-  clk160MHz_i           : in     std_logic;
+  clk_160MHz_i           : in     std_logic;
   -- Clock out ports
-  clk160MHz_o          : out    std_logic;
-  clk40MHz_o          : out    std_logic
+  clk_40MHz_o          : out    std_logic;
+  clk_160MHz_o          : out    std_logic;
+  -- Status and control signals
+  reset_i             : in     std_logic;
+  locked_o            : out    std_logic
  );
 end component;
 
@@ -82,8 +85,11 @@ end component;
 your_instance_name : gtx_clk_pll
   port map
    (-- Clock in ports
-    clk160MHz_i => clk160MHz_i,
+    clk_160MHz_i => clk_160MHz_i,
     -- Clock out ports
-    clk160MHz_o => clk160MHz_o,
-    clk40MHz_o => clk40MHz_o);
+    clk_40MHz_o => clk_40MHz_o,
+    clk_160MHz_o => clk_160MHz_o,
+    -- Status and control signals
+    reset_i  => reset_i,
+    locked_o => locked_o);
 -- INST_TAG_END ------ End INSTANTIATION Template ------------

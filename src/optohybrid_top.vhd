@@ -184,6 +184,11 @@ port(
     cdce_clk_n_i            : in std_logic;
     cdce_pri_p_o            : out std_logic;
     cdce_pri_n_o            : out std_logic;
+
+    qpll_clk_p_i            : in std_logic;
+    qpll_clk_n_i            : in std_logic;
+    
+    qpll_alt_i              : in std_logic;
     
     --== GTX ==--
     
@@ -200,8 +205,16 @@ port(
     mgt_112_tx_p_o          : out std_logic_vector(3 downto 0);
     mgt_112_tx_n_o          : out std_logic_vector(3 downto 0);
     
+    mgt_112_clk0_p_i        : in std_logic;
+    mgt_112_clk0_n_i        : in std_logic
     
-    tmds_d_p_io             : in std_logic_vector(1 downto 0)
+--    
+--    tmds_d_p_io             : out std_logic_vector(1 downto 0);
+--    tmds_d_n_io             : out std_logic_vector(1 downto 0);
+--    tmds_clk_p_io           : out std_logic;
+--    tmds_clk_n_io           : out std_logic;
+--    hdmi_scl_io             : out std_logic_vector(1 downto 0);
+--    hdmi_sda_io             : out std_logic_vector(1 downto 0)
 
 );
 end optohybrid_top;
@@ -226,17 +239,33 @@ architecture Behavioral of optohybrid_top is
     
     --== Clocking ==--
     
-    signal clk_50MHz            : std_logic;
-    signal clk_40MHz            : std_logic;
-    signal clk_160MHz           : std_logic;
-    signal clk_40MHz_ext        : std_logic;
-    signal clk_160MHz_ext       : std_logic;
-    signal gtx_ref_clk          : std_logic;
-    signal pll_locked           : std_logic;
+    signal qpll_clk             : std_logic;
+    
+    signal clk_local            : std_logic;
+    signal clk_qpll_locked      : std_logic;
+    
+    signal clk_gtx_rec          : std_logic;
+    signal clk_gtx_locked       : std_logic;
+    
+    signal clk_rec              : std_logic;
+    signal clk_rec_locked       : std_logic;
+    
+    signal clk_mgt              : std_logic;
+    
+    signal clk_cdce             : std_logic;
+    signal clk_cdce_sel         : std_logic;
+ 
+    signal clk_fast             : std_logic;
+    
+    signal switch_edge          : std_logic;
+    
+    signal cdce_in_clk          : std_logic;
+    
+    signal slow_clk             : std_logic;
     
     --== GTX ==--
     
-    signal gtp_reset            : std_logic := '0';
+    signal gtx_reset            : std_logic := '0';
     signal gtx_clk              : std_logic := '0';
     signal rx_error             : std_logic_vector(3 downto 0);
     signal rx_kchar             : std_logic_vector(7 downto 0);
@@ -344,11 +373,26 @@ architecture Behavioral of optohybrid_top is
     signal cs_ila3                  : std_logic_vector(31 downto 0);
     signal cs_ila4                  : std_logic_vector(191 downto 0);
 	 
-	 signal gtx_clk_select				: std_logic;
+	 signal gtx_clk_select          : std_logic;
+    
+    -- Tracking
+    
+    signal track_tx_ready_0         : std_logic;
+    signal track_tx_done_0          : std_logic;
+    signal track_tx_data_0          : std_logic_vector(223 downto 0);
+    
+    signal track_tx_ready_1         : std_logic;
+    signal track_tx_done_1          : std_logic;
+    signal track_tx_data_1          : std_logic_vector(223 downto 0);
+    
+    signal track_tx_ready_2         : std_logic;
+    signal track_tx_done_2          : std_logic;
+    signal track_tx_data_2          : std_logic_vector(223 downto 0);
     
 begin
 
-    reset <= '0';
+    reset <= '0';    
+    vfat2_reset <= reset;
 
     --== VFAT2 buffers ==--
     
@@ -477,35 +521,108 @@ begin
     
     --== Clocking & Reset : PLL & CDCE & VFAT2 ==--
     
-    pll_inst : entity work.clk_wiz_v3_6
-    port map(
-        clk_50Mhz_i     => clk_50Mhz_i,
-        clk_50Mhz_o     => clk_50Mhz,
-        clk_40Mhz_o     => clk_40Mhz,
-        clk_160Mhz_o    => clk_160Mhz,
-        pll_locked_o    => pll_locked
-    );    
     
-    vfat2_mclk <= clk_40MHz;
-    gtx_ref_clk <= clk_160MHz;
-   
-    cdce_primary_clk_obufds : obufds port map(i => vfat2_mclk, o => cdce_pri_p_o, ob => cdce_pri_n_o);
+    -- board with QPLL
+    --ibu : ibufgds port map(i => qpll_clk_p_i, ib => qpll_clk_n_i, o => qpll_clk);
+    --slow_clk <= clk_50MHz_i;
+    -- board without QPLL
+    ibu : entity work.fpga_clk_pll port map(clk_50MHz_i => qpll_alt_i, clk_40MHz_o => qpll_clk);
+    slow_clk <= qpll_alt_i;
+    
+    
+    
+    
+    
+    
+    
+    clk_qpll_locked <= '1';
+
+    gtx_clk_pll_inst : entity work.gtx_clk_pll
+    port map(
+        clk_160Mhz_i    => clk_gtx_rec,
+        clk_40Mhz_o     => clk_rec,
+        clk_160Mhz_o    => clk_fast,
+        reset_i         => not clk_gtx_locked,
+        locked_o        => clk_rec_locked
+    );    	
+    
+    Inst_clock_switch: entity work.clock_switch PORT MAP(
+		start => clk_rec_locked,
+		c_lock => cdce_locked_i,
+		clk1 => qpll_clk,
+		clk2 => clk_rec,
+		clk3 => clk_fast,
+		clk_edge => open,
+		state => open,
+		done => clk_cdce_sel,
+		counter => open,
+		clk_condition => open,
+		reset => open
+	);
+    
+    bufgmux_inst : bufgmux 
+    generic map(
+        clk_sel_type    => "async"
+    )
+    port map(
+        i0              => qpll_clk,
+        i1              => clk_rec,
+        o               => clk_cdce,
+        s               => cs_sync_out(1) --clk_cdce_sel --clk_rec_locked
+    );
+
+    gtx_clk_inst : ibufds_gtxe1 port map(o => clk_mgt, odiv2 => open, ceb => '0', i => mgt_112_clk0_p_i, ib => mgt_112_clk0_n_i); 
+--    gtx_clk_inst : ibufds_gtxe1 port map(o => clk_mgt, odiv2 => open, ceb => '0', i => mgt_116_clk1_p_i, ib => mgt_116_clk1_n_i); 
+    
+   cdce_primary_clk_obufds : obufds port map(i => clk_cdce, o => cdce_pri_p_o, ob => cdce_pri_n_o);
+
+    vfat2_mclk <= clk_cdce;
+    
+    cdce_in_clk_i : ibufds port map(i => cdce_clk_p_i, ib => cdce_clk_n_i, o => cdce_in_clk);
+
+--    tmds_d_p_io(1) <= switch_edge;
+--    tmds_d_n_io(1) <= '0';
+--    
+--    tmds_clk_p_io <= qpll_clk;
+--    tmds_clk_n_io <= '0';
+--    
+--    hdmi_scl_io(0) <= clk_rec;
+--    hdmi_scl_io(1) <= '0';
+--    
+--    hdmi_sda_io(0) <= cdce_locked_i;
+--    hdmi_sda_io(1) <= '0';
+--    
+--    tmds_d_p_io(0) <= clk_cdce_sel;
+--    tmds_d_n_io(0) <= '0';
+    
+    --
     
     cdce_ref_o <= '1';
-    cdce_pwrdown_o <= pll_locked;
     cdce_sync_o <= '1';
-    cdce_le_o <= '1';        
-                  
-    vfat2_reset <= reset;
-
-    --== GTX ==--
+    cdce_le_o <= '1';   
     
-    --gtx_clk_inst : ibufds_gtxe1 port map(o => gtx_ref_clk, odiv2 => open, ceb => '0', i => mgt_116_clk1_p_i, ib => mgt_116_clk1_n_i);  
+    process(slow_clk)
+        variable cnt : integer range 0 to 31 := 0;
+    begin
+        if (rising_edge(slow_clk)) then
+            if (cnt < 20) then
+                cdce_pwrdown_o <= '0';
+                cnt := cnt + 1;
+            else
+                cdce_pwrdown_o <= '1';
+                cnt := 20;
+            end if;
+        end if;
+    end process;
+
+    --== GTX ==-- 
     
 	gtx_wrapper_inst : entity work.gtx_wrapper
 	port map(
-		gtx_clk_o       => gtx_clk,
-		reset_i         => gtp_reset,
+		gtx_usr_clk_o   => gtx_clk,
+		reset_i         => gtx_reset,
+        clk_gtx_rec_o   => clk_gtx_rec,
+        clk_gtx_locked_o => clk_gtx_locked,
 		rx_error_o      => rx_error,
 		rx_kchar_o      => rx_kchar,
 		rx_data_o       => rx_data,
@@ -515,99 +632,146 @@ begin
 		tx_data_i       => tx_data,
 		tx_n_o          => mgt_112_tx_n_o,
 		tx_p_o          => mgt_112_tx_p_o,
-		gtx_clk         => gtx_ref_clk
+		mgt_ref_clk_i   => clk_mgt
 	);
+
+--	gtx_wrapper_inst : entity work.gtx_wrapper
+--	port map(
+--		gtx_usr_clk_o   => gtx_clk,
+--		reset_i         => gtx_reset,
+--        clk_gtx_rec_o   => clk_gtx_rec,
+--        clk_gtx_locked_o => clk_gtx_locked,
+--		rx_error_o      => rx_error,
+--		rx_kchar_o      => rx_kchar,
+--		rx_data_o       => rx_data,
+--		rx_n_i          => mgt_116_rx_n_i,
+--		rx_p_i          => mgt_116_rx_p_i,
+--		tx_kchar_i      => tx_kchar,
+--		tx_data_i       => tx_data,
+--		tx_n_o          => mgt_116_tx_n_o,
+--		tx_p_o          => mgt_116_tx_p_o,
+--		mgt_ref_clk_i   => clk_mgt
+--	);
+    
+
+    --================================--
+    -- Tracking path
+    --================================--
+
+    tracking_core_inst : entity work.tracking_core
+    port map(
+        gtp_clk_i           => gtx_clk,
+        vfat2_clk_i         => vfat2_mclk,
+        reset_i             => reset,
+        lv1a_sent_i         => t1_lv1a,
+        bx_counter_i        => bx_counter,
+        vfat2_data_0_i      => vfat2_data(0).data_out,
+        vfat2_data_1_i      => vfat2_data(1).data_out,
+        vfat2_data_2_i      => vfat2_data(2).data_out,
+        vfat2_data_3_i      => vfat2_data(3).data_out,
+        vfat2_data_4_i      => vfat2_data(4).data_out,
+        vfat2_data_5_i      => vfat2_data(5).data_out,
+        vfat2_data_6_i      => vfat2_data(6).data_out,
+        vfat2_data_7_i      => vfat2_data(7).data_out,
+        vfat2_data_8_i      => vfat2_data(8).data_out,
+        vfat2_data_9_i      => vfat2_data(9).data_out,
+        vfat2_data_10_i     => vfat2_data(10).data_out,
+        vfat2_data_11_i     => vfat2_data(11).data_out,
+        vfat2_data_12_i     => vfat2_data(12).data_out,
+        vfat2_data_13_i     => vfat2_data(13).data_out,
+        vfat2_data_14_i     => vfat2_data(14).data_out,
+        vfat2_data_15_i     => vfat2_data(15).data_out,
+        vfat2_data_16_i     => vfat2_data(16).data_out,
+        vfat2_data_17_i     => vfat2_data(17).data_out,
+        vfat2_data_18_i     => vfat2_data(18).data_out,
+        vfat2_data_19_i     => vfat2_data(19).data_out,
+        vfat2_data_20_i     => vfat2_data(20).data_out,
+        vfat2_data_21_i     => vfat2_data(21).data_out,
+        vfat2_data_22_i     => vfat2_data(22).data_out,
+        vfat2_data_23_i     => vfat2_data(23).data_out,
+        track_tx_ready_0_o  => track_tx_ready_0,
+        track_tx_done_0_i   => track_tx_done_0,
+        track_tx_data_0_o   => track_tx_data_0,
+        track_tx_ready_1_o  => track_tx_ready_1,
+        track_tx_done_1_i   => track_tx_done_1,
+        track_tx_data_1_o   => track_tx_data_1,
+        track_tx_ready_2_o  => track_tx_ready_2,
+        track_tx_done_2_i   => track_tx_done_2,
+        track_tx_data_2_o   => track_tx_data_2
+    );
     
     --== Links ==--
     
     link_tracking_0_inst : entity work.link_tracking
     port map(
-        gtp_clk_i       => gtx_clk,
-        vfat2_clk_i     => vfat2_mclk,
-        reset_i         => reset,
-        rx_error_i      => rx_error(0),
-        rx_kchar_i      => rx_kchar(1 downto 0),
-        rx_data_i       => rx_data(15 downto 0),
-        tx_kchar_o      => tx_kchar(1 downto 0),
-        tx_data_o       => tx_data(15 downto 0),
-        request_write_o => request_write_0,
-        request_tri_o   => request_tri_0,
-        request_read_i  => request_read,
-        lv1a_sent_i     => t1_lv1a,
-        bx_counter_i    => bx_counter,
-        vfat2_sda_i     => vfat2_sda_in(1 downto 0),
-        vfat2_sda_o     => vfat2_sda_out(1 downto 0),
-        vfat2_sda_t     => vfat2_sda_tri(1 downto 0),
-        vfat2_scl_o     => vfat2_scl(1 downto 0),
-        vfat2_dvalid_i  => vfat2_data_valid(1 downto 0),
-        vfat2_data_0_i  => vfat2_data(0).data_out,
-        vfat2_data_1_i  => vfat2_data(1).data_out,
-        vfat2_data_2_i  => vfat2_data(2).data_out,
-        vfat2_data_3_i  => vfat2_data(3).data_out,
-        vfat2_data_4_i  => vfat2_data(4).data_out,
-        vfat2_data_5_i  => vfat2_data(5).data_out,
-        vfat2_data_6_i  => vfat2_data(6).data_out,
-        vfat2_data_7_i  => vfat2_data(7).data_out
+        gtp_clk_i           => gtx_clk,
+        vfat2_clk_i         => vfat2_mclk,
+        reset_i             => reset,
+        rx_error_i          => rx_error(0),
+        rx_kchar_i          => rx_kchar(1 downto 0),
+        rx_data_i           => rx_data(15 downto 0),
+        tx_kchar_o          => tx_kchar(1 downto 0),
+        tx_data_o           => tx_data(15 downto 0),
+        request_write_o     => request_write_0,
+        request_tri_o       => request_tri_0,
+        request_read_i      => request_read,
+        lv1a_sent_i         => t1_lv1a,
+        bx_counter_i        => bx_counter,
+        vfat2_sda_i         => vfat2_sda_in(1 downto 0),
+        vfat2_sda_o         => vfat2_sda_out(1 downto 0),
+        vfat2_sda_t         => vfat2_sda_tri(1 downto 0),
+        vfat2_scl_o         => vfat2_scl(1 downto 0),
+        track_tx_ready_i    => track_tx_ready_0,
+        track_tx_done_o     => track_tx_done_0,
+        track_tx_data_i     => track_tx_data_0
     );
     
     link_tracking_1_inst : entity work.link_tracking
     port map(
-        gtp_clk_i       => gtx_clk,
-        vfat2_clk_i     => vfat2_mclk,
-        reset_i         => reset,
-        rx_error_i      => rx_error(1),
-        rx_kchar_i      => rx_kchar(3 downto 2),
-        rx_data_i       => rx_data(31 downto 16),
-        tx_kchar_o      => tx_kchar(3 downto 2),
-        tx_data_o       => tx_data(31 downto 16),
-        request_write_o => request_write_1,
-        request_tri_o   => request_tri_1,
-        request_read_i  => request_read,
-        lv1a_sent_i     => t1_lv1a,
-        bx_counter_i    => bx_counter,
-        vfat2_sda_i     => vfat2_sda_in(3 downto 2),
-        vfat2_sda_o     => vfat2_sda_out(3 downto 2),
-        vfat2_sda_t     => vfat2_sda_tri(3 downto 2),
-        vfat2_scl_o     => vfat2_scl(3 downto 2),
-        vfat2_dvalid_i  => vfat2_data_valid(3 downto 2),
-        vfat2_data_0_i  => vfat2_data(8).data_out,
-        vfat2_data_1_i  => vfat2_data(9).data_out,
-        vfat2_data_2_i  => vfat2_data(10).data_out,
-        vfat2_data_3_i  => vfat2_data(11).data_out,
-        vfat2_data_4_i  => vfat2_data(12).data_out,
-        vfat2_data_5_i  => vfat2_data(13).data_out,
-        vfat2_data_6_i  => vfat2_data(14).data_out,
-        vfat2_data_7_i  => vfat2_data(15).data_out
+        gtp_clk_i           => gtx_clk,
+        vfat2_clk_i         => vfat2_mclk,
+        reset_i             => reset,
+        rx_error_i          => rx_error(1),
+        rx_kchar_i          => rx_kchar(3 downto 2),
+        rx_data_i           => rx_data(31 downto 16),
+        tx_kchar_o          => tx_kchar(3 downto 2),
+        tx_data_o           => tx_data(31 downto 16),
+        request_write_o     => request_write_1,
+        request_tri_o       => request_tri_1,
+        request_read_i      => request_read,
+        lv1a_sent_i         => t1_lv1a,
+        bx_counter_i        => bx_counter,
+        vfat2_sda_i         => vfat2_sda_in(3 downto 2),
+        vfat2_sda_o         => vfat2_sda_out(3 downto 2),
+        vfat2_sda_t         => vfat2_sda_tri(3 downto 2),
+        vfat2_scl_o         => vfat2_scl(3 downto 2),
+        track_tx_ready_i    => track_tx_ready_1,
+        track_tx_done_o     => track_tx_done_1,
+        track_tx_data_i     => track_tx_data_1
     );    
     
     link_tracking_2_inst : entity work.link_tracking
     port map(
-        gtp_clk_i       => gtx_clk,
-        vfat2_clk_i     => vfat2_mclk,
-        reset_i         => reset,
-        rx_error_i      => rx_error(3),
-        rx_kchar_i      => rx_kchar(5 downto 4),
-        rx_data_i       => rx_data(47 downto 32),
-        tx_kchar_o      => tx_kchar(5 downto 4),
-        tx_data_o       => tx_data(47 downto 32),
-        request_write_o => request_write_2,
-        request_tri_o   => request_tri_2,
-        request_read_i  => request_read,
-        lv1a_sent_i     => t1_lv1a,
-        bx_counter_i    => bx_counter,
-        vfat2_sda_i     => vfat2_sda_in(5 downto 4),
-        vfat2_sda_o     => vfat2_sda_out(5 downto 4),
-        vfat2_sda_t     => vfat2_sda_tri(5 downto 4),
-        vfat2_scl_o     => vfat2_scl(5 downto 4),
-        vfat2_dvalid_i  => vfat2_data_valid(5 downto 4),
-        vfat2_data_0_i  => vfat2_data(16).data_out,
-        vfat2_data_1_i  => vfat2_data(17).data_out,
-        vfat2_data_2_i  => vfat2_data(18).data_out,
-        vfat2_data_3_i  => vfat2_data(19).data_out,
-        vfat2_data_4_i  => vfat2_data(20).data_out,
-        vfat2_data_5_i  => vfat2_data(21).data_out,
-        vfat2_data_6_i  => vfat2_data(22).data_out,
-        vfat2_data_7_i  => vfat2_data(23).data_out
+        gtp_clk_i           => gtx_clk,
+        vfat2_clk_i         => vfat2_mclk,
+        reset_i             => reset,
+        rx_error_i          => rx_error(3),
+        rx_kchar_i          => rx_kchar(5 downto 4),
+        rx_data_i           => rx_data(47 downto 32),
+        tx_kchar_o          => tx_kchar(5 downto 4),
+        tx_data_o           => tx_data(47 downto 32),
+        request_write_o     => request_write_2,
+        request_tri_o       => request_tri_2,
+        request_read_i      => request_read,
+        lv1a_sent_i         => t1_lv1a,
+        bx_counter_i        => bx_counter,
+        vfat2_sda_i         => vfat2_sda_in(5 downto 4),
+        vfat2_sda_o         => vfat2_sda_out(5 downto 4),
+        vfat2_sda_t         => vfat2_sda_tri(5 downto 4),
+        vfat2_scl_o         => vfat2_scl(5 downto 4),
+        track_tx_ready_i    => track_tx_ready_2,
+        track_tx_done_o     => track_tx_done_2,
+        track_tx_data_i     => track_tx_data_2
     );    
     
     requests: for I in 0 to 63 generate
@@ -777,7 +941,7 @@ begin
     
     -- PLL status : 17 downto 15
     
-    request_read(15) <= (0 => pll_locked, others => '0'); -- read _ FPGA PLL locked
+    request_read(15) <= (0 => clk_qpll_locked, others => '0'); -- read _ FPGA PLL locked
    
     request_read(16) <= (0 => cdce_locked_i, others => '0'); -- read _ CDCE Locked
     
@@ -795,7 +959,7 @@ begin
     
     -- Fixed registers : 23 -- read _ firmware version
     
-    request_read(23) <= x"AA150730"; 
+    request_read(23) <= x"AA150826"; 
     
     -- Reserved : 25 downto 24
     
@@ -857,6 +1021,8 @@ begin
     
     
     -- Other registers : 63 downto 48
+    
+    cdce_lock_counter : entity work.counter port map(fabric_clk_i => cdce_locked_i, reset_i => '0', en_i => '1', data_o => request_read(48));
 
     --================================--
     -- ChipScope
@@ -866,7 +1032,7 @@ begin
 
     chipscope_vio_inst : entity work.chipscope_vio port map (CONTROL => cs_icon0, CLK => gtx_clk, ASYNC_IN => cs_async_in, ASYNC_OUT => cs_async_out, SYNC_IN => cs_sync_in, SYNC_OUT => cs_sync_out);
 
-    gtp_reset <= cs_sync_out(0);
+    gtx_reset <= cs_sync_out(0);
 
     chipscope_ila_inst : entity work.chipscope_ila port map (CONTROL => cs_icon1, CLK => gtx_clk, TRIG0 => cs_ila0, TRIG1 => cs_ila1, TRIG2 => cs_ila2, TRIG3 => cs_ila3, TRIG4 => cs_ila4);
 
@@ -905,9 +1071,11 @@ begin
                 29 => vfat2_data(23).data_out,
                 others => '0');
                 
-    cs_ila3 <= (0 => ext_lv1a, 1 => req_lv1a, 2 => t1_lv1a, 3 => '0',
+    cs_ila3(12 downto 0) <= (0 => ext_lv1a, 1 => req_lv1a, 2 => t1_lv1a, 3 => '0',
                 4 => t1_calpulse, 5 => t1_resync, 6 => t1_bc0, 7 => '0',
+                8 => clk_qpll_locked, 9 => cdce_locked_i, 10 => clk_gtx_locked, 11 => clk_rec_locked, 12 => clk_cdce_sel,
                 others => '0');
+    cs_ila3(31 downto 13) <= request_read(48)(18 downto 0);
                 
     cs_ila4 <= vfat2_data(23).sbits & vfat2_data(22).sbits & vfat2_data(21).sbits & vfat2_data(20).sbits & vfat2_data(19).sbits & vfat2_data(18).sbits &
                vfat2_data(17).sbits & vfat2_data(16).sbits & vfat2_data(15).sbits & vfat2_data(14).sbits & vfat2_data(13).sbits & vfat2_data(12).sbits &

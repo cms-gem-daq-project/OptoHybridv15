@@ -40,18 +40,11 @@ port(
     vfat2_sda_t     : out std_logic_vector(1 downto 0);
     vfat2_scl_o     : out std_logic_vector(1 downto 0);
 
-    -- VFAT2 data lines
+    -- Tracking signals
 
-    vfat2_dvalid_i  : in std_logic_vector(1 downto 0);
-
-    vfat2_data_0_i  : in std_logic;
-    vfat2_data_1_i  : in std_logic;
-    vfat2_data_2_i  : in std_logic;
-    vfat2_data_3_i  : in std_logic;
-    vfat2_data_4_i  : in std_logic;
-    vfat2_data_5_i  : in std_logic;
-    vfat2_data_6_i  : in std_logic;
-    vfat2_data_7_i  : in std_logic
+    track_tx_ready_i: in std_logic;
+    track_tx_done_o : out std_logic;
+    track_tx_data_i : in std_logic_vector(223 downto 0)
 
 );
 end link_tracking;
@@ -65,12 +58,6 @@ architecture Behavioral of link_tracking is
     signal vi2c_tx_ready            : std_logic := '0';
     signal vi2c_tx_done             : std_logic := '0';
     signal vi2c_tx_data             : std_logic_vector(31 downto 0) := (others => '0');
-
-    -- Tracking signals
-
-    signal track_tx_ready           : std_logic := '0';
-    signal track_tx_done            : std_logic := '0';
-    signal track_tx_data            : std_logic_vector(223 downto 0) := (others => '0');
 
     -- Registers requests
 
@@ -132,9 +119,9 @@ begin
         regs_ready_i    => regs_tx_ready,
         regs_done_o     => regs_tx_done,
         regs_data_i     => regs_tx_data,
-        track_ready_i   => track_tx_ready,
-        track_done_o    => track_tx_done,
-        track_data_i    => track_tx_data,
+        track_ready_i   => track_tx_ready_i,
+        track_done_o    => track_tx_done_o,
+        track_data_i    => track_tx_data_i,
         tx_kchar_o      => tx_kchar_o,
         tx_data_o       => tx_data_o
     );
@@ -156,31 +143,6 @@ begin
         sda_o           => vfat2_sda_o,
         sda_t           => vfat2_sda_t,
         scl_o           => vfat2_scl_o
-    );
-
-    --================================--
-    -- Tracking path
-    --================================--
-
-    tracking_core_inst : entity work.tracking_core
-    port map(
-        gtp_clk_i       => gtp_clk_i,
-        vfat2_clk_i     => vfat2_clk_i,
-        reset_i         => reset_i,
-        tx_ready_o      => track_tx_ready,
-        tx_done_i       => track_tx_done,
-        tx_data_o       => track_tx_data,
-        lv1a_sent_i     => lv1a_sent_i,
-        bx_counter_i    => bx_counter_i,
-        vfat2_dvalid_i  => vfat2_dvalid_i,
-        vfat2_data_0_i  => vfat2_data_0_i,
-        vfat2_data_1_i  => vfat2_data_1_i,
-        vfat2_data_2_i  => vfat2_data_2_i,
-        vfat2_data_3_i  => vfat2_data_3_i,
-        vfat2_data_4_i  => vfat2_data_4_i,
-        vfat2_data_5_i  => vfat2_data_5_i,
-        vfat2_data_6_i  => vfat2_data_6_i,
-        vfat2_data_7_i  => vfat2_data_7_i
     );
     
     --================================--

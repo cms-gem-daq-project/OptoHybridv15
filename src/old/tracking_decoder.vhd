@@ -7,7 +7,6 @@ port(
     vfat2_clk_i     : in std_logic;
     reset_i         : in std_logic;
     
-    en_i            : in std_logic;
     data_i          : in std_logic;
     
     en_o            : out std_logic;
@@ -44,9 +43,10 @@ begin
     --================--
     
     process(vfat2_clk_i)
-    
-        variable tests  : std_logic_vector(2 downto 0);
-        
+        -- Holds the results of the tests    
+        variable tests  : std_logic_vector(3 downto 0);
+        -- Hold the computed CRC
+        variable crc    : std_logic_vector(15 downto 0); 
     begin
         if (rising_edge(vfat2_clk_i)) then
             if (reset_i = '1') then
@@ -69,9 +69,27 @@ begin
                     when "1110" => tests(2) := '1';
                     when others => tests(2) := '0';
                 end case;
+                -- Compute CRC
+                crc := x"FFFF";
+                for I in 11 downto 1 loop
+                    for J in 0 to 15 loop
+                        if (data((I * 16) + J) = crc(0)) then
+                            crc := '0' & crc(15 downto 1);
+                        else
+                            crc := '0' & crc(15 downto 1);
+                            crc := crc xor x"8408";
+                        end if;
+                    end loop;
+                end loop; 
+                -- Check CRC
+                if (crc = data(15 downto 0)) then
+                    tests(3) := '1';
+                else
+                    tests(3) := '0';
+                end if;                
                 -- Verification
                 case tests is
-                    when "111" =>      
+                    when "1111" =>      
                         en_o <= '1';
                         data_o <= data(191 downto 0);
                     when others =>  

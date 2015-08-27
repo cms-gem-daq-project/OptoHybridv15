@@ -82,26 +82,21 @@ architecture test of fpga_clk_pll_tb is
 
 
   -- we'll be using the period in many locations
-  constant PER1        : time := 10.000 ns;
+  constant PER1        : time := 20.000 ns;
 
 
   -- Declare the input clock signals
   signal CLK_IN1       : std_logic := '1';
-  -- The high bits of the sampling counters
-  signal COUNT         : std_logic_vector(2 downto 1);
-  -- Status and control signals
-  signal LOCKED        : std_logic;
+  -- The high bit of the sampling counter
+  signal COUNT         : std_logic;
   signal COUNTER_RESET : std_logic := '0';
 --  signal defined to stop mti simulation without severity failure in the report
   signal end_of_sim : std_logic := '0';
-  signal CLK_OUT : std_logic_vector(2 downto 1);
+  signal CLK_OUT : std_logic_vector(1 downto 1);
 --Freq Check using the M & D values setting and actual Frequency generated
   signal period1 : time := 0 ps;
-constant  ref_period1_clkin1 : time := (10.000*1*4.000/4.000)*1000 ps;
+constant  ref_period1_clkin1 : time := (20.000*1*25.000/20.000)*1000 ps;
    signal prev_rise1 : time := 0 ps;
-  signal period2 : time := 0 ps;
-constant  ref_period2_clkin1 : time := (10.000*1*1/4.000)*1000 ps;
-   signal prev_rise2 : time := 0 ps;
 
 component fpga_clk_pll_exdes
 generic (
@@ -111,11 +106,9 @@ port
   CLK_IN1           : in  std_logic;
   -- Reset that only drives logic in example design
   COUNTER_RESET     : in  std_logic;
-  CLK_OUT           : out std_logic_vector(2 downto 1) ;
+  CLK_OUT           : out std_logic_vector(1 downto 1) ;
   -- High bits of counters driven by clocks
-  COUNT             : out std_logic_vector(2 downto 1);
-  -- Status and control signals
-  LOCKED            : out std_logic
+  COUNT             : out std_logic
  );
 end component;
 
@@ -161,15 +154,14 @@ begin
     end simfreqprint;
 
   begin
-    wait until LOCKED = '1';
+    -- can't probe into hierarchy, wait "some time" for lock
+    wait for (PER1*2500);
     COUNTER_RESET <= '1';
     wait for (PER1*20);
     COUNTER_RESET <= '0';
     wait for (PER1*COUNT_PHASE);
     simfreqprint(period1, 1);
     assert (((period1 - ref_period1_clkin1) >= -100 ps) and ((period1 - ref_period1_clkin1) <= 100 ps)) report "ERROR: Freq of CLK_OUT(1) is not correct"  severity note;
-    simfreqprint(period2, 2);
-    assert (((period2 - ref_period2_clkin1) >= -100 ps) and ((period2 - ref_period2_clkin1) <= 100 ps)) report "ERROR: Freq of CLK_OUT(2) is not correct"  severity note;
 
 
     simtimeprint;
@@ -192,9 +184,7 @@ begin
     COUNTER_RESET      => COUNTER_RESET,
     CLK_OUT            => CLK_OUT,
     -- High bits of the counters
-    COUNT              => COUNT,
-    -- Status and control signals
-    LOCKED             => LOCKED);
+    COUNT              => COUNT);
 
 -- Freq Check 
    process(CLK_OUT(1))
@@ -204,15 +194,6 @@ begin
        period1 <= NOW - prev_rise1;
      end if;
      prev_rise1 <= NOW; 
-   end if;
-   end process;
-   process(CLK_OUT(2))
-   begin
-   if (CLK_OUT(2)'event and CLK_OUT(2) = '1') then
-     if (prev_rise2 /= 0 ps) then
-       period2 <= NOW - prev_rise2;
-     end if;
-     prev_rise2 <= NOW; 
    end if;
    end process;
 

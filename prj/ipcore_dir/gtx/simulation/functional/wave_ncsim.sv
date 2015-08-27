@@ -114,6 +114,9 @@
   waveform  add  -signals  :gtx_top_i:gtx_i:gtx0_gtx_i:TXP_OUT
   waveform  add  -label Transmit_Ports_-_TX_PLL_Ports  -comment  Transmit_Ports_-_TX_PLL_Ports
   waveform  add  -signals  :gtx_top_i:gtx_i:gtx0_gtx_i:GTXTXRESET_IN
+  waveform  add  -signals  :gtx_top_i:gtx_i:gtx0_gtx_i:MGTREFCLKTX_IN
+  waveform  add  -signals  :gtx_top_i:gtx_i:gtx0_gtx_i:PLLTXRESET_IN
+  waveform  add  -signals  :gtx_top_i:gtx_i:gtx0_gtx_i:TXPLLLKDET_OUT
   waveform  add  -signals  :gtx_top_i:gtx_i:gtx0_gtx_i:TXRESETDONE_OUT
 
   waveform  add  -label GTX1_GTX -comment GTX1_GTX
@@ -152,6 +155,9 @@
   waveform  add  -signals  :gtx_top_i:gtx_i:gtx1_gtx_i:TXP_OUT
   waveform  add  -label Transmit_Ports_-_TX_PLL_Ports  -comment  Transmit_Ports_-_TX_PLL_Ports
   waveform  add  -signals  :gtx_top_i:gtx_i:gtx1_gtx_i:GTXTXRESET_IN
+  waveform  add  -signals  :gtx_top_i:gtx_i:gtx1_gtx_i:MGTREFCLKTX_IN
+  waveform  add  -signals  :gtx_top_i:gtx_i:gtx1_gtx_i:PLLTXRESET_IN
+  waveform  add  -signals  :gtx_top_i:gtx_i:gtx1_gtx_i:TXPLLLKDET_OUT
   waveform  add  -signals  :gtx_top_i:gtx_i:gtx1_gtx_i:TXRESETDONE_OUT
 
   waveform  add  -label GTX2_GTX -comment GTX2_GTX
@@ -190,6 +196,9 @@
   waveform  add  -signals  :gtx_top_i:gtx_i:gtx2_gtx_i:TXP_OUT
   waveform  add  -label Transmit_Ports_-_TX_PLL_Ports  -comment  Transmit_Ports_-_TX_PLL_Ports
   waveform  add  -signals  :gtx_top_i:gtx_i:gtx2_gtx_i:GTXTXRESET_IN
+  waveform  add  -signals  :gtx_top_i:gtx_i:gtx2_gtx_i:MGTREFCLKTX_IN
+  waveform  add  -signals  :gtx_top_i:gtx_i:gtx2_gtx_i:PLLTXRESET_IN
+  waveform  add  -signals  :gtx_top_i:gtx_i:gtx2_gtx_i:TXPLLLKDET_OUT
   waveform  add  -signals  :gtx_top_i:gtx_i:gtx2_gtx_i:TXRESETDONE_OUT
 
   waveform  add  -label GTX3_GTX -comment GTX3_GTX
@@ -228,6 +237,9 @@
   waveform  add  -signals  :gtx_top_i:gtx_i:gtx3_gtx_i:TXP_OUT
   waveform  add  -label Transmit_Ports_-_TX_PLL_Ports  -comment  Transmit_Ports_-_TX_PLL_Ports
   waveform  add  -signals  :gtx_top_i:gtx_i:gtx3_gtx_i:GTXTXRESET_IN
+  waveform  add  -signals  :gtx_top_i:gtx_i:gtx3_gtx_i:MGTREFCLKTX_IN
+  waveform  add  -signals  :gtx_top_i:gtx_i:gtx3_gtx_i:PLLTXRESET_IN
+  waveform  add  -signals  :gtx_top_i:gtx_i:gtx3_gtx_i:TXPLLLKDET_OUT
   waveform  add  -signals  :gtx_top_i:gtx_i:gtx3_gtx_i:TXRESETDONE_OUT
 
   console submit -using simulator -wait no "run 61 us"

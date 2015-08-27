@@ -89,16 +89,19 @@ architecture test of gtx_clk_pll_tb is
   signal CLK_IN1       : std_logic := '1';
   -- The high bits of the sampling counters
   signal COUNT         : std_logic_vector(2 downto 1);
+  -- Status and control signals
+  signal RESET         : std_logic := '0';
+  signal LOCKED        : std_logic;
   signal COUNTER_RESET : std_logic := '0';
 --  signal defined to stop mti simulation without severity failure in the report
   signal end_of_sim : std_logic := '0';
   signal CLK_OUT : std_logic_vector(2 downto 1);
 --Freq Check using the M & D values setting and actual Frequency generated
   signal period1 : time := 0 ps;
-constant  ref_period1_clkin1 : time := (6.250*4*6.250/25.000)*1000 ps;
+constant  ref_period1_clkin1 : time := (6.250*1*24.000/6.000)*1000 ps;
    signal prev_rise1 : time := 0 ps;
   signal period2 : time := 0 ps;
-constant  ref_period2_clkin1 : time := (6.250*4*25/25.000)*1000 ps;
+constant  ref_period2_clkin1 : time := (6.250*1*6/6.000)*1000 ps;
    signal prev_rise2 : time := 0 ps;
 
 component gtx_clk_pll_exdes
@@ -111,7 +114,10 @@ port
   COUNTER_RESET     : in  std_logic;
   CLK_OUT           : out std_logic_vector(2 downto 1) ;
   -- High bits of counters driven by clocks
-  COUNT             : out std_logic_vector(2 downto 1)
+  COUNT             : out std_logic_vector(2 downto 1);
+  -- Status and control signals
+  RESET             : in  std_logic;
+  LOCKED            : out std_logic
  );
 end component;
 
@@ -157,8 +163,10 @@ begin
     end simfreqprint;
 
   begin
-    -- can't probe into hierarchy, wait "some time" for lock
-    wait for (PER1*2500);
+    RESET      <= '1';
+    wait for (PER1*6);
+    RESET      <= '0';
+    wait until LOCKED = '1';
     COUNTER_RESET <= '1';
     wait for (PER1*20);
     COUNTER_RESET <= '0';
@@ -189,7 +197,10 @@ begin
     COUNTER_RESET      => COUNTER_RESET,
     CLK_OUT            => CLK_OUT,
     -- High bits of the counters
-    COUNT              => COUNT);
+    COUNT              => COUNT,
+    -- Status and control signals
+    RESET              => RESET,
+    LOCKED             => LOCKED);
 
 -- Freq Check 
    process(CLK_OUT(1))

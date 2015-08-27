@@ -148,13 +148,16 @@ port
     GTX0_TXP_OUT                            : out  std_logic;
     ----------------------- Transmit Ports - TX PLL Ports ----------------------
     GTX0_GTXTXRESET_IN                      : in   std_logic;
+    GTX0_MGTREFCLKTX_IN                     : in   std_logic;
+    GTX0_PLLTXRESET_IN                      : in   std_logic;
+    GTX0_TXPLLLKDET_OUT                     : out  std_logic;
     GTX0_TXRESETDONE_OUT                    : out  std_logic;
 
 
 
     --_________________________________________________________________________
     --_________________________________________________________________________
-    --GTX1  (X0_Y1)
+    --GTX1  (X0_Y2)
 
     ----------------------- Receive Ports - 8b10b Decoder ----------------------
     GTX1_RXCHARISK_OUT                      : out  std_logic_vector(1 downto 0);
@@ -191,13 +194,16 @@ port
     GTX1_TXP_OUT                            : out  std_logic;
     ----------------------- Transmit Ports - TX PLL Ports ----------------------
     GTX1_GTXTXRESET_IN                      : in   std_logic;
+    GTX1_MGTREFCLKTX_IN                     : in   std_logic;
+    GTX1_PLLTXRESET_IN                      : in   std_logic;
+    GTX1_TXPLLLKDET_OUT                     : out  std_logic;
     GTX1_TXRESETDONE_OUT                    : out  std_logic;
 
 
 
     --_________________________________________________________________________
     --_________________________________________________________________________
-    --GTX2  (X0_Y2)
+    --GTX2  (X0_Y4)
 
     ----------------------- Receive Ports - 8b10b Decoder ----------------------
     GTX2_RXCHARISK_OUT                      : out  std_logic_vector(1 downto 0);
@@ -234,13 +240,16 @@ port
     GTX2_TXP_OUT                            : out  std_logic;
     ----------------------- Transmit Ports - TX PLL Ports ----------------------
     GTX2_GTXTXRESET_IN                      : in   std_logic;
+    GTX2_MGTREFCLKTX_IN                     : in   std_logic;
+    GTX2_PLLTXRESET_IN                      : in   std_logic;
+    GTX2_TXPLLLKDET_OUT                     : out  std_logic;
     GTX2_TXRESETDONE_OUT                    : out  std_logic;
 
 
 
     --_________________________________________________________________________
     --_________________________________________________________________________
-    --GTX3  (X0_Y3)
+    --GTX3  (X0_Y6)
 
     ----------------------- Receive Ports - 8b10b Decoder ----------------------
     GTX3_RXCHARISK_OUT                      : out  std_logic_vector(1 downto 0);
@@ -277,6 +286,9 @@ port
     GTX3_TXP_OUT                            : out  std_logic;
     ----------------------- Transmit Ports - TX PLL Ports ----------------------
     GTX3_GTXTXRESET_IN                      : in   std_logic;
+    GTX3_MGTREFCLKTX_IN                     : in   std_logic;
+    GTX3_PLLTXRESET_IN                      : in   std_logic;
+    GTX3_TXPLLLKDET_OUT                     : out  std_logic;
     GTX3_TXRESETDONE_OUT                    : out  std_logic
 
 
@@ -626,12 +638,14 @@ attribute syn_noprune of ila   : component is TRUE;
     signal  gtx0_txoutclk_i                 : std_logic;
     ----------------------- Transmit Ports - TX PLL Ports ----------------------
     signal  gtx0_gtxtxreset_i               : std_logic;
+    signal  gtx0_plltxreset_i               : std_logic;
+    signal  gtx0_txplllkdet_i               : std_logic;
     signal  gtx0_txresetdone_i              : std_logic;
 
 
     --________________________________________________________________________
     --________________________________________________________________________
-    --GTX1   (X0Y1)
+    --GTX1   (X0Y2)
 
     ----------------------- Receive Ports - 8b10b Decoder ----------------------
     signal  gtx1_rxcharisk_i                : std_logic_vector(1 downto 0);
@@ -659,12 +673,14 @@ attribute syn_noprune of ila   : component is TRUE;
     signal  gtx1_txoutclk_i                 : std_logic;
     ----------------------- Transmit Ports - TX PLL Ports ----------------------
     signal  gtx1_gtxtxreset_i               : std_logic;
+    signal  gtx1_plltxreset_i               : std_logic;
+    signal  gtx1_txplllkdet_i               : std_logic;
     signal  gtx1_txresetdone_i              : std_logic;
 
 
     --________________________________________________________________________
     --________________________________________________________________________
-    --GTX2   (X0Y2)
+    --GTX2   (X0Y4)
 
     ----------------------- Receive Ports - 8b10b Decoder ----------------------
     signal  gtx2_rxcharisk_i                : std_logic_vector(1 downto 0);
@@ -692,12 +708,14 @@ attribute syn_noprune of ila   : component is TRUE;
     signal  gtx2_txoutclk_i                 : std_logic;
     ----------------------- Transmit Ports - TX PLL Ports ----------------------
     signal  gtx2_gtxtxreset_i               : std_logic;
+    signal  gtx2_plltxreset_i               : std_logic;
+    signal  gtx2_txplllkdet_i               : std_logic;
     signal  gtx2_txresetdone_i              : std_logic;
 
 
     --________________________________________________________________________
     --________________________________________________________________________
-    --GTX3   (X0Y3)
+    --GTX3   (X0Y6)
 
     ----------------------- Receive Ports - 8b10b Decoder ----------------------
     signal  gtx3_rxcharisk_i                : std_logic_vector(1 downto 0);
@@ -725,6 +743,8 @@ attribute syn_noprune of ila   : component is TRUE;
     signal  gtx3_txoutclk_i                 : std_logic;
     ----------------------- Transmit Ports - TX PLL Ports ----------------------
     signal  gtx3_gtxtxreset_i               : std_logic;
+    signal  gtx3_plltxreset_i               : std_logic;
+    signal  gtx3_txplllkdet_i               : std_logic;
     signal  gtx3_txresetdone_i              : std_logic;
 
 
@@ -1023,6 +1043,9 @@ begin
         GTX0_TXP_OUT                    =>      TXP_OUT(0),
         ----------------------- Transmit Ports - TX PLL Ports ----------------------
         GTX0_GTXTXRESET_IN              =>      gtx0_gtxtxreset_i,
+        GTX0_MGTREFCLKTX_IN             =>      q0_clk0_refclk_i,
+        GTX0_PLLTXRESET_IN              =>      gtx0_plltxreset_i,
+        GTX0_TXPLLLKDET_OUT             =>      gtx0_txplllkdet_i,
         GTX0_TXRESETDONE_OUT            =>      gtx0_txresetdone_i,
 
 
@@ -1033,7 +1056,7 @@ begin
 
         --_____________________________________________________________________
         --_____________________________________________________________________
-        --GTX1  (X0Y1)
+        --GTX1  (X0Y2)
         ----------------------- Receive Ports - 8b10b Decoder ----------------------
         GTX1_RXCHARISK_OUT              =>      gtx1_rxcharisk_i,
         GTX1_RXDISPERR_OUT              =>      gtx1_rxdisperr_i,
@@ -1069,6 +1092,9 @@ begin
         GTX1_TXP_OUT                    =>      TXP_OUT(1),
         ----------------------- Transmit Ports - TX PLL Ports ----------------------
         GTX1_GTXTXRESET_IN              =>      gtx1_gtxtxreset_i,
+        GTX1_MGTREFCLKTX_IN             =>      q0_clk0_refclk_i,
+        GTX1_PLLTXRESET_IN              =>      gtx1_plltxreset_i,
+        GTX1_TXPLLLKDET_OUT             =>      gtx1_txplllkdet_i,
         GTX1_TXRESETDONE_OUT            =>      gtx1_txresetdone_i,
 
 
@@ -1079,7 +1105,7 @@ begin
 
         --_____________________________________________________________________
         --_____________________________________________________________________
-        --GTX2  (X0Y2)
+        --GTX2  (X0Y4)
         ----------------------- Receive Ports - 8b10b Decoder ----------------------
         GTX2_RXCHARISK_OUT              =>      gtx2_rxcharisk_i,
         GTX2_RXDISPERR_OUT              =>      gtx2_rxdisperr_i,
@@ -1115,6 +1141,9 @@ begin
         GTX2_TXP_OUT                    =>      TXP_OUT(2),
         ----------------------- Transmit Ports - TX PLL Ports ----------------------
         GTX2_GTXTXRESET_IN              =>      gtx2_gtxtxreset_i,
+        GTX2_MGTREFCLKTX_IN             =>      q0_clk0_refclk_i,
+        GTX2_PLLTXRESET_IN              =>      gtx2_plltxreset_i,
+        GTX2_TXPLLLKDET_OUT             =>      gtx2_txplllkdet_i,
         GTX2_TXRESETDONE_OUT            =>      gtx2_txresetdone_i,
 
 
@@ -1125,7 +1154,7 @@ begin
 
         --_____________________________________________________________________
         --_____________________________________________________________________
-        --GTX3  (X0Y3)
+        --GTX3  (X0Y6)
         ----------------------- Receive Ports - 8b10b Decoder ----------------------
         GTX3_RXCHARISK_OUT              =>      gtx3_rxcharisk_i,
         GTX3_RXDISPERR_OUT              =>      gtx3_rxdisperr_i,
@@ -1161,6 +1190,9 @@ begin
         GTX3_TXP_OUT                    =>      TXP_OUT(3),
         ----------------------- Transmit Ports - TX PLL Ports ----------------------
         GTX3_GTXTXRESET_IN              =>      gtx3_gtxtxreset_i,
+        GTX3_MGTREFCLKTX_IN             =>      q0_clk0_refclk_i,
+        GTX3_PLLTXRESET_IN              =>      gtx3_plltxreset_i,
+        GTX3_TXPLLLKDET_OUT             =>      gtx3_txplllkdet_i,
         GTX3_TXRESETDONE_OUT            =>      gtx3_txresetdone_i
 
 
@@ -2239,14 +2271,14 @@ chipscope : if EXAMPLE_USE_CHIPSCOPE = 1 generate
     gtx2_rx_system_reset_c                       <= not gtx2_rxresetdone_r3 or user_rx_reset_i;
     gtx3_rx_system_reset_c                       <= not gtx3_rxresetdone_r3 or user_rx_reset_i;
 
-    gtx0_gtxtxreset_i                            <= gtxtxreset_i or gtxrxreset_i;
-    gtx0_gtxrxreset_i                            <= gtxtxreset_i or gtxrxreset_i;
-    gtx1_gtxtxreset_i                            <= gtxtxreset_i or gtxrxreset_i;
-    gtx1_gtxrxreset_i                            <= gtxtxreset_i or gtxrxreset_i;
-    gtx2_gtxtxreset_i                            <= gtxtxreset_i or gtxrxreset_i;
-    gtx2_gtxrxreset_i                            <= gtxtxreset_i or gtxrxreset_i;
-    gtx3_gtxtxreset_i                            <= gtxtxreset_i or gtxrxreset_i;
-    gtx3_gtxrxreset_i                            <= gtxtxreset_i or gtxrxreset_i;
+    gtx0_gtxtxreset_i                            <= gtxtxreset_i;
+    gtx0_gtxrxreset_i                            <= gtxrxreset_i;
+    gtx1_gtxtxreset_i                            <= gtxtxreset_i;
+    gtx1_gtxrxreset_i                            <= gtxrxreset_i;
+    gtx2_gtxtxreset_i                            <= gtxtxreset_i;
+    gtx2_gtxrxreset_i                            <= gtxrxreset_i;
+    gtx3_gtxtxreset_i                            <= gtxtxreset_i;
+    gtx3_gtxrxreset_i                            <= gtxrxreset_i;
 
     -- Shared VIO Outputs
     gtxtxreset_i                                 <= shared_vio_out_i(31);
@@ -2259,10 +2291,11 @@ chipscope : if EXAMPLE_USE_CHIPSCOPE = 1 generate
     shared_vio_in_i(31 downto 0)                 <= "00000000000000000000000000000000";
 
     -- Chipscope connections on GTX 0
-    gtx0_tx_data_vio_async_in_i(31)              <= '0';
+    gtx0_tx_data_vio_async_in_i(31)              <= gtx0_txplllkdet_i;
     gtx0_tx_data_vio_async_in_i(30)              <= gtx0_txresetdone_i;
     gtx0_tx_data_vio_async_in_i(29 downto 0)     <= "000000000000000000000000000000";
     gtx0_tx_data_vio_sync_in_i(31 downto 0)      <= "00000000000000000000000000000000";
+    gtx0_plltxreset_i                            <= tx_data_vio_async_out_i(31);
     gtx0_rx_data_vio_async_in_i(31)              <= gtx0_rxplllkdet_i;
     gtx0_rx_data_vio_async_in_i(30)              <= gtx0_rxresetdone_i;
     gtx0_rx_data_vio_async_in_i(29 downto 0)     <= "000000000000000000000000000000";
@@ -2279,10 +2312,11 @@ chipscope : if EXAMPLE_USE_CHIPSCOPE = 1 generate
     gtx0_ila_in_i(50 downto 0)                   <= "000000000000000000000000000000000000000000000000000";
 
     -- Chipscope connections on GTX 1
-    gtx1_tx_data_vio_async_in_i(31)              <= '0';
+    gtx1_tx_data_vio_async_in_i(31)              <= gtx1_txplllkdet_i;
     gtx1_tx_data_vio_async_in_i(30)              <= gtx1_txresetdone_i;
     gtx1_tx_data_vio_async_in_i(29 downto 0)     <= "000000000000000000000000000000";
     gtx1_tx_data_vio_sync_in_i(31 downto 0)      <= "00000000000000000000000000000000";
+    gtx1_plltxreset_i                            <= tx_data_vio_async_out_i(31);
     gtx1_rx_data_vio_async_in_i(31)              <= gtx1_rxplllkdet_i;
     gtx1_rx_data_vio_async_in_i(30)              <= gtx1_rxresetdone_i;
     gtx1_rx_data_vio_async_in_i(29 downto 0)     <= "000000000000000000000000000000";
@@ -2299,10 +2333,11 @@ chipscope : if EXAMPLE_USE_CHIPSCOPE = 1 generate
     gtx1_ila_in_i(50 downto 0)                   <= "000000000000000000000000000000000000000000000000000";
 
     -- Chipscope connections on GTX 2
-    gtx2_tx_data_vio_async_in_i(31)              <= '0';
+    gtx2_tx_data_vio_async_in_i(31)              <= gtx2_txplllkdet_i;
     gtx2_tx_data_vio_async_in_i(30)              <= gtx2_txresetdone_i;
     gtx2_tx_data_vio_async_in_i(29 downto 0)     <= "000000000000000000000000000000";
     gtx2_tx_data_vio_sync_in_i(31 downto 0)      <= "00000000000000000000000000000000";
+    gtx2_plltxreset_i                            <= tx_data_vio_async_out_i(31);
     gtx2_rx_data_vio_async_in_i(31)              <= gtx2_rxplllkdet_i;
     gtx2_rx_data_vio_async_in_i(30)              <= gtx2_rxresetdone_i;
     gtx2_rx_data_vio_async_in_i(29 downto 0)     <= "000000000000000000000000000000";
@@ -2319,10 +2354,11 @@ chipscope : if EXAMPLE_USE_CHIPSCOPE = 1 generate
     gtx2_ila_in_i(50 downto 0)                   <= "000000000000000000000000000000000000000000000000000";
 
     -- Chipscope connections on GTX 3
-    gtx3_tx_data_vio_async_in_i(31)              <= '0';
+    gtx3_tx_data_vio_async_in_i(31)              <= gtx3_txplllkdet_i;
     gtx3_tx_data_vio_async_in_i(30)              <= gtx3_txresetdone_i;
     gtx3_tx_data_vio_async_in_i(29 downto 0)     <= "000000000000000000000000000000";
     gtx3_tx_data_vio_sync_in_i(31 downto 0)      <= "00000000000000000000000000000000";
+    gtx3_plltxreset_i                            <= tx_data_vio_async_out_i(31);
     gtx3_rx_data_vio_async_in_i(31)              <= gtx3_rxplllkdet_i;
     gtx3_rx_data_vio_async_in_i(30)              <= gtx3_rxresetdone_i;
     gtx3_rx_data_vio_async_in_i(29 downto 0)     <= "000000000000000000000000000000";
@@ -2402,9 +2438,13 @@ no_chipscope : if EXAMPLE_USE_CHIPSCOPE = 0 generate
     user_tx_reset_i                              <= tied_to_ground_i;
     user_rx_reset_i                              <= tied_to_ground_i;
     mux_sel_i                                    <= tied_to_ground_vec_i(1 downto 0);
+    gtx0_plltxreset_i                            <= tied_to_ground_i;
     gtx0_pllrxreset_i                            <= tied_to_ground_i;
+    gtx1_plltxreset_i                            <= tied_to_ground_i;
     gtx1_pllrxreset_i                            <= tied_to_ground_i;
+    gtx2_plltxreset_i                            <= tied_to_ground_i;
     gtx2_pllrxreset_i                            <= tied_to_ground_i;
+    gtx3_plltxreset_i                            <= tied_to_ground_i;
     gtx3_pllrxreset_i                            <= tied_to_ground_i;
 
 

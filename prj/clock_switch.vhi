@@ -1,5 +1,5 @@
 
--- VHDL Instantiation Created from source file clock_switch.vhd -- 11:55:12 07/31/2015
+-- VHDL Instantiation Created from source file clock_switch.vhd -- 11:00:43 08/06/2015
 --
 -- Notes: 
 -- 1) This instantiation template has been automatically generated using types

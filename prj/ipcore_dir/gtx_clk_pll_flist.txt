@@ -2,6 +2,7 @@
 _xmsgs\pn_parser.xmsgs
 gtx_clk_pll.asy
 gtx_clk_pll.gise
+gtx_clk_pll.sym
 gtx_clk_pll.ucf
 gtx_clk_pll.vhd
 gtx_clk_pll.vho

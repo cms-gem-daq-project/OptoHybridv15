@@ -68,7 +68,7 @@
  
 
 ##--------------------------TX PLL----------------------------
-INST gtx_i/gtx0_gtx_i/gtxe1_i TX_CLK_SOURCE                          = "RXPLL";
+INST gtx_i/gtx0_gtx_i/gtxe1_i TX_CLK_SOURCE                          = "TXPLL";
 INST gtx_i/gtx0_gtx_i/gtxe1_i TX_OVERSAMPLE_MODE                     = "FALSE";
 INST gtx_i/gtx0_gtx_i/gtxe1_i TXPLL_COM_CFG                          = 24'h21680a;
 INST gtx_i/gtx0_gtx_i/gtxe1_i TXPLL_CP_CFG                           = 8'h0D;
@@ -81,13 +81,13 @@ INST gtx_i/gtx0_gtx_i/gtxe1_i TX_CLK25_DIVIDER                       = 7;
 INST gtx_i/gtx0_gtx_i/gtxe1_i TXPLL_SATA                             = 2'b00;
 INST gtx_i/gtx0_gtx_i/gtxe1_i TX_TDCC_CFG                            = 2'b11;
 INST gtx_i/gtx0_gtx_i/gtxe1_i PMA_CAS_CLK_EN                         = "FALSE";
-INST gtx_i/gtx0_gtx_i/gtxe1_i POWER_SAVE                             = 10'b0000110100;
+INST gtx_i/gtx0_gtx_i/gtxe1_i POWER_SAVE                             = 10'b0000110000;
 
 ##-----------------------TX Interface-------------------------
 INST gtx_i/gtx0_gtx_i/gtxe1_i GEN_TXUSRCLK                           = "TRUE";
 INST gtx_i/gtx0_gtx_i/gtxe1_i TX_DATA_WIDTH                          = 20;
 INST gtx_i/gtx0_gtx_i/gtxe1_i TX_USRCLK_CFG                          = 6'h00;
-INST gtx_i/gtx0_gtx_i/gtxe1_i TXOUTCLK_CTRL                          = "TXPLLREFCLK_DIV1";
+INST gtx_i/gtx0_gtx_i/gtxe1_i TXOUTCLK_CTRL                          = "TXOUTCLKPMA_DIV2";
 INST gtx_i/gtx0_gtx_i/gtxe1_i TXOUTCLK_DLY                           = 10'b0000000000;
 
 ##------------TX Buffering and Phase Alignment----------------
@@ -144,7 +144,7 @@ INST gtx_i/gtx0_gtx_i/gtxe1_i RX_CLK25_DIVIDER                       = 7;
 ##-----------------------RX Interface-------------------------
 INST gtx_i/gtx0_gtx_i/gtxe1_i GEN_RXUSRCLK                           = "TRUE";
 INST gtx_i/gtx0_gtx_i/gtxe1_i RX_DATA_WIDTH                          = 20;
-INST gtx_i/gtx0_gtx_i/gtxe1_i RXRECCLK_CTRL                          = "RXPLLREFCLK_DIV2";
+INST gtx_i/gtx0_gtx_i/gtxe1_i RXRECCLK_CTRL                          = "RXRECCLKPMA_DIV2";
 INST gtx_i/gtx0_gtx_i/gtxe1_i RXRECCLK_DLY                           = 10'b0000000000;
 INST gtx_i/gtx0_gtx_i/gtxe1_i RXUSRCLK_DLY                           = 16'h0000;
 
@@ -281,7 +281,7 @@ INST gtx_i/gtx0_gtx_i/gtxe1_i TRANS_TIME_TO_P2                       = 10'h064;
  
 
 ##--------------------------TX PLL----------------------------
-INST gtx_i/gtx1_gtx_i/gtxe1_i TX_CLK_SOURCE                          = "RXPLL";
+INST gtx_i/gtx1_gtx_i/gtxe1_i TX_CLK_SOURCE                          = "TXPLL";
 INST gtx_i/gtx1_gtx_i/gtxe1_i TX_OVERSAMPLE_MODE                     = "FALSE";
 INST gtx_i/gtx1_gtx_i/gtxe1_i TXPLL_COM_CFG                          = 24'h21680a;
 INST gtx_i/gtx1_gtx_i/gtxe1_i TXPLL_CP_CFG                           = 8'h0D;
@@ -294,13 +294,13 @@ INST gtx_i/gtx1_gtx_i/gtxe1_i TX_CLK25_DIVIDER                       = 7;
 INST gtx_i/gtx1_gtx_i/gtxe1_i TXPLL_SATA                             = 2'b00;
 INST gtx_i/gtx1_gtx_i/gtxe1_i TX_TDCC_CFG                            = 2'b11;
 INST gtx_i/gtx1_gtx_i/gtxe1_i PMA_CAS_CLK_EN                         = "FALSE";
-INST gtx_i/gtx1_gtx_i/gtxe1_i POWER_SAVE                             = 10'b0000110100;
+INST gtx_i/gtx1_gtx_i/gtxe1_i POWER_SAVE                             = 10'b0000110000;
 
 ##-----------------------TX Interface-------------------------
 INST gtx_i/gtx1_gtx_i/gtxe1_i GEN_TXUSRCLK                           = "TRUE";
 INST gtx_i/gtx1_gtx_i/gtxe1_i TX_DATA_WIDTH                          = 20;
 INST gtx_i/gtx1_gtx_i/gtxe1_i TX_USRCLK_CFG                          = 6'h00;
-INST gtx_i/gtx1_gtx_i/gtxe1_i TXOUTCLK_CTRL                          = "TXPLLREFCLK_DIV1";
+INST gtx_i/gtx1_gtx_i/gtxe1_i TXOUTCLK_CTRL                          = "TXOUTCLKPMA_DIV2";
 INST gtx_i/gtx1_gtx_i/gtxe1_i TXOUTCLK_DLY                           = 10'b0000000000;
 
 ##------------TX Buffering and Phase Alignment----------------
@@ -357,7 +357,7 @@ INST gtx_i/gtx1_gtx_i/gtxe1_i RX_CLK25_DIVIDER                       = 7;
 ##-----------------------RX Interface-------------------------
 INST gtx_i/gtx1_gtx_i/gtxe1_i GEN_RXUSRCLK                           = "TRUE";
 INST gtx_i/gtx1_gtx_i/gtxe1_i RX_DATA_WIDTH                          = 20;
-INST gtx_i/gtx1_gtx_i/gtxe1_i RXRECCLK_CTRL                          = "RXPLLREFCLK_DIV2";
+INST gtx_i/gtx1_gtx_i/gtxe1_i RXRECCLK_CTRL                          = "RXRECCLKPMA_DIV2";
 INST gtx_i/gtx1_gtx_i/gtxe1_i RXRECCLK_DLY                           = 10'b0000000000;
 INST gtx_i/gtx1_gtx_i/gtxe1_i RXUSRCLK_DLY                           = 16'h0000;
 
@@ -494,7 +494,7 @@ INST gtx_i/gtx1_gtx_i/gtxe1_i TRANS_TIME_TO_P2                       = 10'h064;
  
 
 ##--------------------------TX PLL----------------------------
-INST gtx_i/gtx2_gtx_i/gtxe1_i TX_CLK_SOURCE                          = "RXPLL";
+INST gtx_i/gtx2_gtx_i/gtxe1_i TX_CLK_SOURCE                          = "TXPLL";
 INST gtx_i/gtx2_gtx_i/gtxe1_i TX_OVERSAMPLE_MODE                     = "FALSE";
 INST gtx_i/gtx2_gtx_i/gtxe1_i TXPLL_COM_CFG                          = 24'h21680a;
 INST gtx_i/gtx2_gtx_i/gtxe1_i TXPLL_CP_CFG                           = 8'h0D;
@@ -507,13 +507,13 @@ INST gtx_i/gtx2_gtx_i/gtxe1_i TX_CLK25_DIVIDER                       = 7;
 INST gtx_i/gtx2_gtx_i/gtxe1_i TXPLL_SATA                             = 2'b00;
 INST gtx_i/gtx2_gtx_i/gtxe1_i TX_TDCC_CFG                            = 2'b11;
 INST gtx_i/gtx2_gtx_i/gtxe1_i PMA_CAS_CLK_EN                         = "FALSE";
-INST gtx_i/gtx2_gtx_i/gtxe1_i POWER_SAVE                             = 10'b0000110100;
+INST gtx_i/gtx2_gtx_i/gtxe1_i POWER_SAVE                             = 10'b0000110000;
 
 ##-----------------------TX Interface-------------------------
 INST gtx_i/gtx2_gtx_i/gtxe1_i GEN_TXUSRCLK                           = "TRUE";
 INST gtx_i/gtx2_gtx_i/gtxe1_i TX_DATA_WIDTH                          = 20;
 INST gtx_i/gtx2_gtx_i/gtxe1_i TX_USRCLK_CFG                          = 6'h00;
-INST gtx_i/gtx2_gtx_i/gtxe1_i TXOUTCLK_CTRL                          = "TXPLLREFCLK_DIV1";
+INST gtx_i/gtx2_gtx_i/gtxe1_i TXOUTCLK_CTRL                          = "TXOUTCLKPMA_DIV2";
 INST gtx_i/gtx2_gtx_i/gtxe1_i TXOUTCLK_DLY                           = 10'b0000000000;
 
 ##------------TX Buffering and Phase Alignment----------------
@@ -570,7 +570,7 @@ INST gtx_i/gtx2_gtx_i/gtxe1_i RX_CLK25_DIVIDER                       = 7;
 ##-----------------------RX Interface-------------------------
 INST gtx_i/gtx2_gtx_i/gtxe1_i GEN_RXUSRCLK                           = "TRUE";
 INST gtx_i/gtx2_gtx_i/gtxe1_i RX_DATA_WIDTH                          = 20;
-INST gtx_i/gtx2_gtx_i/gtxe1_i RXRECCLK_CTRL                          = "RXPLLREFCLK_DIV2";
+INST gtx_i/gtx2_gtx_i/gtxe1_i RXRECCLK_CTRL                          = "RXRECCLKPMA_DIV2";
 INST gtx_i/gtx2_gtx_i/gtxe1_i RXRECCLK_DLY                           = 10'b0000000000;
 INST gtx_i/gtx2_gtx_i/gtxe1_i RXUSRCLK_DLY                           = 16'h0000;
 
@@ -707,7 +707,7 @@ INST gtx_i/gtx2_gtx_i/gtxe1_i TRANS_TIME_TO_P2                       = 10'h064;
  
 
 ##--------------------------TX PLL----------------------------
-INST gtx_i/gtx3_gtx_i/gtxe1_i TX_CLK_SOURCE                          = "RXPLL";
+INST gtx_i/gtx3_gtx_i/gtxe1_i TX_CLK_SOURCE                          = "TXPLL";
 INST gtx_i/gtx3_gtx_i/gtxe1_i TX_OVERSAMPLE_MODE                     = "FALSE";
 INST gtx_i/gtx3_gtx_i/gtxe1_i TXPLL_COM_CFG                          = 24'h21680a;
 INST gtx_i/gtx3_gtx_i/gtxe1_i TXPLL_CP_CFG                           = 8'h0D;
@@ -720,13 +720,13 @@ INST gtx_i/gtx3_gtx_i/gtxe1_i TX_CLK25_DIVIDER                       = 7;
 INST gtx_i/gtx3_gtx_i/gtxe1_i TXPLL_SATA                             = 2'b00;
 INST gtx_i/gtx3_gtx_i/gtxe1_i TX_TDCC_CFG                            = 2'b11;
 INST gtx_i/gtx3_gtx_i/gtxe1_i PMA_CAS_CLK_EN                         = "FALSE";
-INST gtx_i/gtx3_gtx_i/gtxe1_i POWER_SAVE                             = 10'b0000110100;
+INST gtx_i/gtx3_gtx_i/gtxe1_i POWER_SAVE                             = 10'b0000110000;
 
 ##-----------------------TX Interface-------------------------
 INST gtx_i/gtx3_gtx_i/gtxe1_i GEN_TXUSRCLK                           = "TRUE";
 INST gtx_i/gtx3_gtx_i/gtxe1_i TX_DATA_WIDTH                          = 20;
 INST gtx_i/gtx3_gtx_i/gtxe1_i TX_USRCLK_CFG                          = 6'h00;
-INST gtx_i/gtx3_gtx_i/gtxe1_i TXOUTCLK_CTRL                          = "TXPLLREFCLK_DIV1";
+INST gtx_i/gtx3_gtx_i/gtxe1_i TXOUTCLK_CTRL                          = "TXOUTCLKPMA_DIV2";
 INST gtx_i/gtx3_gtx_i/gtxe1_i TXOUTCLK_DLY                           = 10'b0000000000;
 
 ##------------TX Buffering and Phase Alignment----------------
@@ -783,7 +783,7 @@ INST gtx_i/gtx3_gtx_i/gtxe1_i RX_CLK25_DIVIDER                       = 7;
 ##-----------------------RX Interface-------------------------
 INST gtx_i/gtx3_gtx_i/gtxe1_i GEN_RXUSRCLK                           = "TRUE";
 INST gtx_i/gtx3_gtx_i/gtxe1_i RX_DATA_WIDTH                          = 20;
-INST gtx_i/gtx3_gtx_i/gtxe1_i RXRECCLK_CTRL                          = "RXPLLREFCLK_DIV2";
+INST gtx_i/gtx3_gtx_i/gtxe1_i RXRECCLK_CTRL                          = "RXRECCLKPMA_DIV2";
 INST gtx_i/gtx3_gtx_i/gtxe1_i RXRECCLK_DLY                           = 10'b0000000000;
 INST gtx_i/gtx3_gtx_i/gtxe1_i RXUSRCLK_DLY                           = 16'h0000;
 
